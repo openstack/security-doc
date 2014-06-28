@@ -66,7 +66,7 @@
             </revision>
         </revhistory>
     </info>
-    <xi:include href="../common/ch_preface.xml"/>
+    <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/ch_preface.xml" />
     <xi:include href="ch001_acknowledgements.xml"/>
     <xi:include href="ch002_why-and-how-we-wrote-this-book.xml"/>
     <xi:include href="ch004_book-introduction.xml"/>
@@ -122,6 +122,6 @@
     <xi:include href="ch064_certifications-compliance-statements.xml"/>
     <xi:include href="ch065_privacy.xml"/>
     <xi:include href="ch066_case-studies-compliance.xml"/>
-    <xi:include href="../common/app_support.xml"/>
+    <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/app_support.xml"/>
   <glossary role="auto"/>
 </book>

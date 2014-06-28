@@ -246,7 +246,7 @@
       policies.</para>
     <para>Below is a snippet of the Block Storage service
       <filename>policy.json</filename> file.</para>
-    <programlisting language="json"><xi:include href="../common/samples/authentication.json" parse="text"/></programlisting>
+    <programlisting language="json"><xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/samples/authentication.json" parse="text"/></programlisting>
     <para>Note the <emphasis role="bold">default</emphasis> rule
       specifies that the user must be either an admin or the owner of
       the volume. It essentially says only the owner of a volume or
@@ -269,7 +269,7 @@
     <para>The following example shows a PKI token. Note that, in
       practice, the token id value is about 3500 bytes. We shorten it
       in this example.</para>
-    <programlisting language="json"><xi:include href="../common/samples/token.json" parse="text"/></programlisting>
+    <programlisting language="json"><xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/samples/token.json" parse="text"/></programlisting>
     <para>Note that the token is often passed within the structure of
       a larger context of an Identity Service response. These
       responses also provide a catalog of the various OpenStack

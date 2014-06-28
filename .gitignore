@@ -1,0 +1,24 @@
+.DS_Store
+*.xpr
+
+# Packages
+.venv
+*.egg
+*.egg-info
+
+# Testenvironment
+.tox
+
+# Build directories
+target/
+publish-docs/
+generated/
+/build-*.log.gz
+
+# Transifex Client Setting
+.tx
+
+# Editors
+*~
+.*.swp
+.bak

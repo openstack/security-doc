@@ -33,7 +33,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <includes>bk-openstack-sec-guide.xml</includes>
+                            <includes>bk-openstack-security-guide.xml</includes>
                             <sourceDirectory>.</sourceDirectory>
                             <glossaryCollection>glossary-terms.xml</glossaryCollection>
                             <webhelpDirname>security-guide</webhelpDirname>

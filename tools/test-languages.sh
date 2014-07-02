@@ -31,7 +31,7 @@ function test_security_guide {
             RET=$?
             ;;
         publish)
-            openstack-doc-test -v --publish --check-build "$SET_LANG" \
+            openstack-doc-test -v --publish --check-build -l "$SET_LANG" \
                 --only-book security-guide
             RET=$?
             ;;

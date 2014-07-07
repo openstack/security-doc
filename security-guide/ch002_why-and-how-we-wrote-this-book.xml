@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!ENTITY % openstack SYSTEM "openstack.ent">
+%openstack;
+]>
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          xmlns="http://docbook.org/ns/docbook"
@@ -94,7 +98,7 @@
         </listitem>
         <listitem>
           <para><emphasis role="bold">Adam Hyde</emphasis></para>
-          <para>Adam facilitated this Book Sprint. He also founded the Book Sprint methodology and is the most experienced Book Sprint facilitator around. Adam founded FLOSS Manuals—a community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print.</para>
+          <para>Adam facilitated this Book Sprint. He also founded the Book Sprint methodology and is the most experienced Book Sprint facilitator around. Adam founded FLOSS Manuals&mdash;a community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print.</para>
         </listitem>
       </itemizedlist>
       <para>During the sprint we also had help from Anne Gentle, Warren Wang, Paul McMillan, Brian Schott and Lorin Hochstein.</para>

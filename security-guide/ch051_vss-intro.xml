@@ -551,7 +551,7 @@
       <para>Many hypervisors use memory optimization techniques to
         overcommit memory to guest virtual machines. This is a useful
         feature that allows you to deploy very dense compute clusters.
-        One way to achieve this is through de-duplication or “sharing”
+        One way to achieve this is through de-duplication or "sharing"
         of memory pages. When two virtual machines have identical data
         in memory, there are advantages to having them reference the
         same memory.</para>

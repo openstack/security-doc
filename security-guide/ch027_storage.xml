@@ -61,7 +61,7 @@
             organization's internal network infrastructure.</para>
     </note>
     <section xml:id="ch027_storage-idpA">
-        <title>First thing to secure – the network</title>
+        <title>First thing to secure: the network</title>
         <para>The first aspect of a secure architecture design for
             Object Storage is in the networking component. The Storage
             service nodes use rsync between each other for copying
@@ -115,9 +115,9 @@
             </mediaobject>
         </figure>
     </section>
-    <!-- First thing to secure – The Network -->
+    <!-- First thing to secure - The Network -->
     <section xml:id="ch027_storage-idpC1">
-        <title>Securing services – general</title>
+        <title>Securing services: general</title>
         <section xml:id="ch027_storage-idpC12">
             <title>Service runas user</title>
             <para>It is recommended that you configure each service to
@@ -140,7 +140,7 @@
                 the swift group.</para>
         </section>
     </section>
-    <!-- Securing Services – General -->
+    <!-- Securing Services - General -->
     <section xml:id="ch027_storage-idpD1">
         <title>Securing storage services</title>
         <para>The following are the default listening ports for the
@@ -299,7 +299,7 @@ Group swift</programlisting>
                 clients using the HTTP REST API and performing
                 authentication they will normally automatically grab
                 the full REST API URL they are to use as provided by
-                the authentication response. OpenStack’s REST API
+                the authentication response. OpenStack's REST API
                 allows for a client to authenticate to one URL and
                 then be told to use a completely different URL for the
                 actual service. Example: Client authenticates to

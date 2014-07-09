@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch048_key-management">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch048_key-management">
   <?dbhtml stop-chunking?>
     <title>Key management</title>
     <para>To address the often mentioned concern of tenant data privacy and limiting cloud provider liability, there is greater interest within the OpenStack community to make data encryption more ubiquitous. It is relatively easy for an end-user to encrypt their data prior to saving it to the cloud, and this is a viable path for tenant objects such as media files, database archives among others. However, when client side encryption is used for virtual machine images, block storage etc, client intervention is necessary in the form of presenting keys to unlock the data for further use. To seamlessly secure the data and yet have it accessible without burdening the client with having to manage their keys and interactively provide them calls for a key management service within OpenStack. Providing encryption and key management services as part of OpenStack eases data-at-rest security adoption, addresses customer concerns about the privacy and misuse of their data with the added advantage of limiting cloud provider liability. Provider liability is of concern in multi-tenant public clouds with respect to handing over tenant data during a misuse investigation.</para>

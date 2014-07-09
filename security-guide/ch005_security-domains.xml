@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch005_security-domains">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch005_security-domains">
   <?dbhtml stop-chunking?>
     <title>Security boundaries and threats</title>
     <para>A cloud can be abstracted as a collection of logical components by virtue of their function, users, and shared security concerns, which we call security domains. Threat actors and vectors are classified based on their motivation and access to resources. Our goal is to provide you a sense of the security concerns with respect to each domain depending on your risk/vulnerability protection objectives.</para>

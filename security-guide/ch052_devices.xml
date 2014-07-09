@@ -3,11 +3,11 @@
 <!ENTITY % openstack SYSTEM "openstack.ent">
 %openstack;
 ]>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch052_devices">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch052_devices">
   <?dbhtml stop-chunking?>
     <title>Hardening the virtualization layers</title>
     <para>

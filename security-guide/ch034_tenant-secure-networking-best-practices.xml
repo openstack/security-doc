@@ -3,11 +3,11 @@
 <!ENTITY % openstack SYSTEM "openstack.ent">
 %openstack;
 ]>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch034_tenant-secure-networking-best-practices">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch034_tenant-secure-networking-best-practices">
   <?dbhtml stop-chunking?>
     <title>Networking services security best practices</title>
     <para>This section discusses OpenStack Networking configuration best practices as they apply to tenant network security within your OpenStack deployment.</para>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0" xml:id="ch065_privacy">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch065_privacy">
   <?dbhtml stop-chunking?>
     <title>Privacy</title>
     <para>Privacy is an increasingly important element of a compliance program. Businesses are being held to a higher standard by their customers, who have increased interest in understanding how their data is treated from a privacy perspective.</para>

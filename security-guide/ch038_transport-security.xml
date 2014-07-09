@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch038_transport-security">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch038_transport-security">
   <?dbhtml stop-chunking?>
     <title>Messaging security</title>
     <para>This chapter discusses security hardening approaches for the three most common message queuing solutions use in OpenStack: RabbitMQ, Qpid, and ZeroMQ.</para>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch011_management-introduction">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch011_management-introduction">
   <?dbhtml stop-chunking?>
     <title>Management introduction</title>
     <para>A cloud deployment is a living system. Machines age and fail, software becomes outdated, vulnerabilities are discovered. When errors or omissions are made in configuration, or when software fixes must be applied, these changes must be made in a secure, but convenient, fashion. These changes are typically solved through configuration management.</para>

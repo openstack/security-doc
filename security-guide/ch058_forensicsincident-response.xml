@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch058_forensicsincident-response">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch058_forensicsincident-response">
   <?dbhtml stop-chunking?>
     <title>Forensics and incident response</title>
     <para>A lot of activity goes on within a cloud environment. It is a mix of hardware, operating systems, virtual machine managers, the OpenStack services, cloud-user activity such as creating instances and attaching storage, the network underlying the whole, and finally end-users using the applications running on the various instances.</para>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch061_compliance-overview">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch061_compliance-overview">
   <?dbhtml stop-chunking?>
     <title>Compliance overview</title>
     <para>An OpenStack deployment may require compliance activities for many purposes, such as regulatory and legal requirements, customer need, privacy considerations, and security best practices. Compliance, when done correctly, unifies and strengthens the other security topics discussed in this guide. This chapter has several objectives:</para>

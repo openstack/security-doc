@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch063_compliance-activities">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch063_compliance-activities">
   <?dbhtml stop-chunking?>
     <title>Compliance activities</title>
     <para>There are a number of standard activities that will greatly assist with the compliance process. In this chapter we outline some of the most common compliance activities. These are not specific to OpenStack, however we provide references to relevant sections in this book as useful context.</para>

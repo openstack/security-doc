@@ -5,8 +5,10 @@
 ]>
 
 <glossary xmlns="http://docbook.org/ns/docbook"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="rs_glossary"
-    version="5.0" role="auto">
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="rs_glossary">
     <title>Glossary</title>
     <info>
         <legalnotice>

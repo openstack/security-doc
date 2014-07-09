@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch017_threat-models-confidence-and-confidentiality">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch017_threat-models-confidence-and-confidentiality">
   <?dbhtml stop-chunking?>
     <title>Introduction to SSL/TLS</title>
     <para>OpenStack services receive requests on behalf of users on public networks as well as from other internal services over management networks. Inter-service communications can also occur over public networks depending on deployment and architecture choices.</para>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://docbook.org/ns/docbook"
-         version="5.0"
-         xml:id="ch047_data-encryption">
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="ch047_data-encryption">
   <?dbhtml stop-chunking?>
     <title>Data encryption</title>
     <para>The option exists for implementors to encrypt tenant data wherever it is stored on disk or transported over a network. This is above and beyond the general recommendation that users encrypt their own data before sending it to their provider.</para>

@@ -3,9 +3,10 @@
 <!ENTITY % openstack SYSTEM "openstack.ent">
 %openstack;
 ]>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns="http://docbook.org/ns/docbook" version="5.0"
+  version="5.0"
   xml:id="ch051_vss-intro">
   <?dbhtml stop-chunking?>
   <title>Hypervisor selection</title>

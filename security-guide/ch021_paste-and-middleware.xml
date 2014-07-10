@@ -112,7 +112,7 @@ s3_use_ssl=True</programlisting>
           Because API endpoints typically bridge multiple security
           domains, you must pay particular attention to the
           compartmentalization of the API processes. See <xref
-          linkend="ch005_security-domains-idp61360"/> for additional
+          linkend="security-boundaries-and-threats-idp61360"/> for additional
           information in this area.</para>
         <para>
           With careful modeling, you can use network ACLs and IDS

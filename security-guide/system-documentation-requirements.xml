@@ -3,7 +3,7 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="ch008_system-roles-types">
+  xml:id="system-documentation-requirements">
   <?dbhtml stop-chunking?>
   <title>System documentation requirements</title>
   <para>The system documentation for an OpenStack cloud deployment
@@ -14,7 +14,7 @@
     a given system. There are common challenges across the industry
     related to documenting the dynamic cloud infrastructure and
     keeping the information up-to-date.</para>
-  <section xml:id="ch008_system-roles-types-idp44832">
+  <section xml:id="system-documentation-requirements-idp44832">
     <title>System roles and types</title>
     <para>The two broadly defined types of
       nodes that generally make up an OpenStack installation are:</para>
@@ -33,7 +33,7 @@
       </listitem>
     </itemizedlist>
   </section>
-  <section xml:id="ch008_system-roles-types-idp48496">
+  <section xml:id="system-documentation-requirements-idp48496">
     <title>System inventory</title>
     <para>Documentation should provide a general description of the
       OpenStack environment and cover all systems used (production,
@@ -44,7 +44,7 @@
       system inventory may need to capture ephemeral resources such as
       virtual machines or virtual disk volumes that would otherwise be
       persistent resources in a traditional IT system.</para>
-    <section xml:id="ch008_system-roles-types-idp50832">
+    <section xml:id="system-documentation-requirements-idp50832">
       <title>Hardware inventory</title>
       <para>Clouds without stringent compliance requirements for
         written documentation might benefit from having a
@@ -59,7 +59,7 @@
         especially if auto-discovery features of hardware attributes
         are available.</para>
     </section>
-    <section xml:id="ch008_system-roles-types-idp53536">
+    <section xml:id="system-documentation-requirements-idp53536">
       <title>Software inventory</title>
       <para>Just as with hardware, all software components within the
         OpenStack deployment should be documented. Components here
@@ -72,7 +72,7 @@
         software.</para>
     </section>
   </section>
-  <section xml:id="ch008_system-roles-types-idp55328">
+  <section xml:id="system-documentation-requirements-idp55328">
     <title>Network topology</title>
     <para>A network topology should be provided with highlights
       specifically calling out the data flows and bridging points
@@ -84,7 +84,7 @@
       the system along with virtual machine instances and gateways
       created by OpenStack.</para>
   </section>
-  <section xml:id="ch008_system-roles-types-idp57520">
+  <section xml:id="system-documentation-requirements-idp57520">
     <title>Services, protocols and ports</title>
     <para>The service, protocols and ports table provides important
       additional detail of an OpenStack deployment. A table view of

@@ -75,7 +75,7 @@
         firmware after use. Clearly there is a need to balance
         hardware longevity with security as some firmwares will fail
         after a large number of writes. TPM technology, described in
-        <xref linkend="ch013_node-bootstrapping-idp44768"/>, provides
+        <xref linkend="integrity-life-cycle-idp44768"/>, provides
         a solution for detecting unauthorized firmware
         changes. Regardless of the strategy selected, it is important
         to understand the risks associated with this kind of hardware

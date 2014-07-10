@@ -7,7 +7,7 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="ch013_node-bootstrapping">
+  xml:id="integrity-life-cycle">
   <?dbhtml stop-chunking?>
   <title>Integrity life-cycle</title>
   <para>We define integrity life cycle as a deliberate process that
@@ -17,7 +17,7 @@
     through configuration management and security monitoring. This
     chapter provides recommendations on how to approach the integrity
     life-cycle process.</para>
-  <section xml:id="ch013_node-bootstrapping-idp44768">
+  <section xml:id="integrity-life-cycle-idp44768">
     <title>Secure bootstrapping</title>
     <para>Nodes in the cloud&mdash;including compute, storage, network,
       service, and hybrid nodes&mdash;should have an automated
@@ -50,7 +50,7 @@
       provisioning process. For additional details, cloud architects
       should refer to the related specifications and software
       configuration manuals.</para>
-    <section xml:id="ch013_node-bootstrapping-idp48720">
+    <section xml:id="integrity-life-cycle-idp48720">
       <title>Node provisioning</title>
       <para>Nodes should use Preboot eXecution Environment (PXE) for
         provisioning. This significantly reduces the effort required
@@ -92,7 +92,7 @@
         limiting the number of insecure, plain text network
         operations.</para>
     </section>
-    <section xml:id="ch013_node-bootstrapping-idp58144">
+    <section xml:id="integrity-life-cycle-idp58144">
       <title>Verified boot</title>
       <para>In general, there are two different strategies for
         verifying the boot process. Traditional <emphasis>secure
@@ -243,7 +243,7 @@
         administrator to investigate the problem. The right policy
         here will be deployment and failure mode specific.</para>
     </section>
-    <section xml:id="ch013_node-bootstrapping-idp3728">
+    <section xml:id="integrity-life-cycle-idp3728">
       <title>Node hardening</title>
       <para>At this point we know that the node has booted with the
         correct kernel and underlying components. There are many paths
@@ -289,7 +289,7 @@
           >dm-verity</link>.</para>
     </section>
   </section>
-  <section xml:id="ch013_node-bootstrapping-idp11376">
+  <section xml:id="integrity-life-cycle-idp11376">
     <title>Runtime verification</title>
     <para>Once the node is running, we need to ensure that it remains
       in a good state over time. Broadly speaking, this includes both
@@ -298,7 +298,7 @@
       higher assurance that the system is operating as desired. We
       discuss configuration management in the management section, and
       security monitoring below.</para>
-    <section xml:id="ch013_node-bootstrapping-idp135504">
+    <section xml:id="integrity-life-cycle-idp135504">
       <title>Intrusion detection system</title>
       <para>Host-based intrusion detection tools are also useful for
         automated validation of the cloud internals. There are a wide

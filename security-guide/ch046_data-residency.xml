@@ -147,7 +147,7 @@
         <para>
           Additionally, it is possible for tenants of a bare metal
           system to modify system firmware. TPM technology, described
-          in <xref linkend="ch013_node-bootstrapping-idp44768"/>,
+          in <xref linkend="integrity-life-cycle-idp44768"/>,
           provides a solution for detecting unauthorized firmware
           changes.
         </para>

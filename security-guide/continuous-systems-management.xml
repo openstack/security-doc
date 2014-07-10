@@ -3,7 +3,7 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="ch012_configuration-management">
+  xml:id="continuous-systems-management">
   <?dbhtml stop-chunking?>
   <title>Continuous systems management</title>
   <para>A cloud will always have bugs. Some of these will be security
@@ -12,7 +12,7 @@
     This involves smart use of configuration management tools, which
     are discussed below. This also involves knowing when an upgrade is
     necessary.</para>
-  <section xml:id="ch012_configuration-management-idp44720">
+  <section xml:id="continuous-systems-management-idp44720">
     <title>Vulnerability management</title>
     <para>For announcements regarding security relevant changes,
       subscribe to the <link
@@ -52,7 +52,7 @@
         </itemizedlist>
       </para>
     </note>
-    <section xml:id="ch012_configuration-management-idp48592">
+    <section xml:id="continuous-systems-management-idp48592">
       <title>Triage</title>
       <para>After you are notified of a security update, the next step
         is to determine how critical this update is to a given cloud
@@ -161,7 +161,7 @@
         might require the cloud to be upgraded on a specified time
         line, whereas a low-level update might be more relaxed.</para>
     </section>
-    <section xml:id="ch012_configuration-management-idp100864">
+    <section xml:id="continuous-systems-management-idp100864">
       <title>Testing the updates</title>
       <para>You should test any update before you deploy it in a
         production environment. Typically this requires having a
@@ -173,7 +173,7 @@
         verify that the problem theoretically addressed by the update,
         such as a specific vulnerability, is actually fixed.</para>
     </section>
-    <section xml:id="ch012_configuration-management-idp102976">
+    <section xml:id="continuous-systems-management-idp102976">
       <title>Deploying the updates</title>
       <para>Once the updates are fully tested, they can be deployed to
         the production environment. This deployment should be fully
@@ -181,7 +181,7 @@
         below.</para>
     </section>
   </section>
-  <section xml:id="ch012_configuration-management-idp104464">
+  <section xml:id="continuous-systems-management-idp104464">
     <title>Configuration management</title>
     <para>A production quality cloud should always use tools to
       automate configuration and deployment. This eliminates human
@@ -232,7 +232,7 @@
         <para>Ansible</para>
       </listitem>
     </itemizedlist>
-    <section xml:id="ch012_configuration-management-idp8400">
+    <section xml:id="continuous-systems-management-idp8400">
       <title>Policy changes</title>
       <para>Whenever a policy or configuration management is changed,
         it is good practice to log the activity, and backup a copy of
@@ -240,13 +240,13 @@
         stored in a version controlled repository such as git.</para>
     </section>
   </section>
-  <section xml:id="ch012_configuration-management-idp10160">
+  <section xml:id="continuous-systems-management-idp10160">
     <title>Secure backup and recovery</title>
     <para>It is important to include Backup procedures and policies in
       the overall System Security Plan. For a good overview of
       OpenStack's Backup and Recovery capabilities and procedures,
       please refer to the OpenStack Operations Guide.</para>
-    <section xml:id="ch012_configuration-management-idp123104">
+    <section xml:id="continuous-systems-management-idp123104">
       <title>Security considerations</title>
       <itemizedlist>
         <listitem>
@@ -272,7 +272,7 @@
         </listitem>
       </itemizedlist>
     </section>
-    <section xml:id="ch012_configuration-management-idp128032">
+    <section xml:id="continuous-systems-management-idp128032">
       <title>References</title>
       <itemizedlist>
         <listitem>
@@ -293,7 +293,7 @@
       </itemizedlist>
     </section>
   </section>
-  <section xml:id="ch012_configuration-management-idp131856">
+  <section xml:id="continuous-systems-management-idp131856">
     <title>Security auditing tools</title>
     <para>Security auditing tools can complement the configuration
       management tools. Security auditing tools automate the process

@@ -3,7 +3,7 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="ch004_book-introduction">
+  xml:id="introduction-to-openstack">
   <?dbhtml stop-chunking?>
   <title>Introduction to OpenStack</title>
   <para>This guide provides security insight into OpenStack
@@ -28,7 +28,7 @@
     hybrid before presenting an overview of the OpenStack components
     and their related security concerns in the remainder of the
     chapter.</para>
-  <section xml:id="ch004_book-introduction-idp117824">
+  <section xml:id="introduction-to-openstack-idp117824">
     <title>Cloud types</title>
     <para>OpenStack is a key enabler in adoption of cloud technology
       and has several common deployment use cases. These are commonly
@@ -38,7 +38,7 @@
         xlink:href="http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf"
         >definition of cloud</link> to introduce these different types
       of cloud as they apply to OpenStack.</para>
-    <section xml:id="ch004_book-introduction-idp119328">
+    <section xml:id="introduction-to-openstack-idp119328">
       <title>Public cloud</title>
       <para>According to NIST, a public cloud is one in which the
         infrastructure is open to the general public for consumption.
@@ -57,7 +57,7 @@
         ensure tenant isolation as well as protecting management
         infrastructure from external attacks.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp121488">
+    <section xml:id="introduction-to-openstack-idp121488">
       <title>Private cloud</title>
       <para>At the opposite end of the spectrum is the private cloud.
         As NIST defines it, a private cloud is provisioned for
@@ -68,7 +68,7 @@
         Private cloud use cases are diverse, as such, their individual
         security concerns vary.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp123456">
+    <section xml:id="introduction-to-openstack-idp123456">
       <title>Community cloud</title>
       <para>NIST defines a community cloud as one whose
         infrastructure is provisioned for the exclusive use by a
@@ -79,7 +79,7 @@
         the community, a third-party, or some combination of them, and
         it may exist on or off premises.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp125312">
+    <section xml:id="introduction-to-openstack-idp125312">
       <title>Hybrid cloud</title>
       <para>A hybrid cloud is defined by NIST as a composition of two
         or more distinct cloud infrastructures, such as private, community, or
@@ -100,7 +100,7 @@
         private public continuum.</para>
     </section>
   </section>
-  <section xml:id="ch004_book-introduction-idp128528">
+  <section xml:id="introduction-to-openstack-idp128528">
     <title>OpenStack service overview</title>
     <para>OpenStack embraces a modular architecture to provide a set
       of core services that facilitates scalability and elasticity as
@@ -118,7 +118,7 @@
             scalefit="1" width="100%"/>
         </imageobject>
       </inlinemediaobject></para>
-    <section xml:id="ch004_book-introduction-idp134736">
+    <section xml:id="introduction-to-openstack-idp134736">
       <title>Compute</title>
       <para>OpenStack Compute service (nova) provides services to
         support the management of virtual machine instances at scale,
@@ -140,7 +140,7 @@
         Compute sub-components, and resiliency of public-facing
           <glossterm>API</glossterm> endpoints.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp138800">
+    <section xml:id="introduction-to-openstack-idp138800">
       <title>Object Storage</title>
       <para>The OpenStack Object Storage service (swift) provides
         support for storing and retrieving arbitrary data in the
@@ -157,7 +157,7 @@
         relate to system abuse, illegal or malicious content storage,
         and cross authentication attack vectors.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp141536">
+    <section xml:id="introduction-to-openstack-idp141536">
       <title>Block Storage</title>
       <para>The OpenStack Block Storage service (cinder) provides
         persistent block storage for compute instances. The Block
@@ -167,7 +167,7 @@
       <para>Security considerations for block storage are similar to
         that of object storage.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp143424">
+    <section xml:id="introduction-to-openstack-idp143424">
       <title>OpenStack Networking</title>
       <para>The OpenStack Networking service (neutron, previously
         called quantum) provides various networking services to cloud
@@ -182,7 +182,7 @@
         networking service include network traffic isolation,
         availability, integrity and confidentiality.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp145600">
+    <section xml:id="introduction-to-openstack-idp145600">
       <title>Dashboard</title>
       <para>The OpenStack dashboard (horizon) provides a
         web-based interface for both cloud administrators and cloud
@@ -191,7 +191,7 @@
         commonly deployed in a public facing manner with all the usual
         security concerns of public web portals.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp147104">
+    <section xml:id="introduction-to-openstack-idp147104">
       <title>Identity service</title>
       <para>The OpenStack Identity service (keystone) is a <emphasis
           role="bold">shared service</emphasis> that provides
@@ -202,7 +202,7 @@
         management of authorization tokens, and secure
         communication.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp149712">
+    <section xml:id="introduction-to-openstack-idp149712">
       <title>Image Service</title>
       <para>The OpenStack Image Service (glance) provides disk image
         management services. The Image Service provides image
@@ -212,7 +212,7 @@
         images are required, as are all the previously mentioned
         issues with respect to data security.</para>
     </section>
-    <section xml:id="ch004_book-introduction-idp152400">
+    <section xml:id="introduction-to-openstack-idp152400">
       <title>Other supporting technology</title>
       <para>OpenStack relies on messaging for internal communication
         between several of its services. By default, OpenStack uses

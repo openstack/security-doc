@@ -68,16 +68,16 @@
         </revhistory>
     </info>
     <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/ch_preface.xml" />
-    <xi:include href="acknowledgements.xml"/>
-    <xi:include href="why-and-how-we-wrote-this-book.xml"/>
-    <xi:include href="introduction-to-openstack.xml"/>
-    <xi:include href="security-boundaries-and-threats.xml"/>
-    <xi:include href="introduction-to-case-studies.xml"/>
-    <xi:include href="system-documentation-requirements.xml"/>
-    <xi:include href="case-studies-system-documentation.xml"/>
-    <xi:include href="management-introduction.xml"/>
-    <xi:include href="continuous-systems-management.xml"/>
-    <xi:include href="integrity-life-cycle.xml"/>
+    <xi:include href="ch_acknowledgements.xml"/>
+    <xi:include href="ch_why-and-how-we-wrote-this-book.xml"/>
+    <xi:include href="ch_introduction-to-openstack.xml"/>
+    <xi:include href="ch_security-boundaries-and-threats.xml"/>
+    <xi:include href="ch_introduction-to-case-studies.xml"/>
+    <xi:include href="ch_system-documentation-requirements.xml"/>
+    <xi:include href="ch_case-studies-system-documentation.xml"/>
+    <xi:include href="ch_management-introduction.xml"/>
+    <xi:include href="ch_continuous-systems-management.xml"/>
+    <xi:include href="ch_integrity-life-cycle.xml"/>
     <xi:include href="ch_management-interfaces.xml"/>
     <xi:include href="ch_case-studies-management-interfaces.xml"/>
     <xi:include href="ch_introduction-to-ssl-tls.xml"/>

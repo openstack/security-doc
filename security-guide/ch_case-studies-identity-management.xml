@@ -43,8 +43,8 @@
       <title>Bob's public cloud</title>
       <para>
         Because Bob must support authentication for the general
-        public, he decides to use use user name and password
-        authentication. He has concerns about brute force attacks
+        public, he decides to use authentication based on a user name and password.
+        He has concerns about brute force attacks
         attempting to crack user passwords, so he also uses an
         external authentication extension that throttles the number of
         failed login attempts. Bob's management network is separate

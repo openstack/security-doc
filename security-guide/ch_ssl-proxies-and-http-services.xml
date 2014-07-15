@@ -6,8 +6,12 @@
   xml:id="ssl-proxies-and-http-services">
   <?dbhtml stop-chunking?>
     <title>SSL proxies and HTTP services</title>
-    <para>OpenStack endpoints are HTTP services providing APIs to both end-users on public networks and to other OpenStack services within the same deployment operating over the management network. It is highly recommended these requests, both those internal and external, operate over SSL.</para>
-    <para>In order for API requests to be encrypted by SSL it's necessary to position the API services behind a proxy that will establish and terminate SSL sessions. The following table offers a non-exhaustive list of software services that can proxy SSL traffic for API requests:</para>
+    <para>OpenStack endpoints are HTTP services providing APIs to both end-users on public networks
+    and to other OpenStack services on the management network. It is highly recommended that all of
+    these requests, both internal and external, operate over SSL. To achieve this goal, API services
+    must be deployed behind a SSL proxy that can establish and terminate SSL sessions. The following
+    table offers a non-exhaustive list of open source software that can be used for this
+    purpose:</para>
     <itemizedlist><listitem>
         <para><link xlink:href="http://www.apsis.ch/pound">Pound</link></para>
       </listitem>
@@ -20,14 +24,15 @@
 <listitem>
         <para><link xlink:href="http://www.apache.org/">Apache httpd</link></para>
       </listitem>
-<listitem>
-        <para>Hardware appliance SSL acceleration proxies</para>
-      </listitem>
 </itemizedlist>
-    <para>It is important to be mindful of the size of requests that will be processed by any chosen SSL proxy.</para>
+    <para>In cases where software termination offers insufficient performance, hardware accelerators
+    may be worth exploring as an alternative option. It is important to be mindful of the size of
+    requests that will be processed by any chosen SSL proxy.</para>
     <section xml:id="ssl-proxies-and-http-services-idp44384">
       <title>Examples</title>
-      <para>Below we provide some sample recommended configuration settings for enabling SSL in some of the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of these examples as this will be required in many deployments for client compatibility.</para>
+      <para>Below we provide sample recommended configuration settings for enabling SSL in some of
+      the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of
+      these examples as this will be required in many deployments for client compatibility.</para>
       <para>Before we delve into the configurations, we briefly discuss the ciphers' configuration element and its format. A  more exhaustive treatment on available ciphers and the OpenSSL cipher list format can be found at: <link xlink:href="https://www.openssl.org/docs/apps/ciphers.html">ciphers</link>.</para>
 <programlisting>
 ciphers = "HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
@@ -74,20 +79,25 @@ ciphers = "kEECDH:kEDH:kRSA:HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
     <varlistentry>
      <term><code>!aNULL:!eNULL</code></term>
      <listitem>
-              <para>Disallows clear text</para>
+              <para>Disallows clear text.</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term><code>!EXP</code></term>
      <listitem>
-              <para>Disallows export encryption algorithms, which by design tend to were weak, typically using 40 and 56 bit keys.</para>
+              <para>Disallows export encryption algorithms, which by design tend to be weak,
+            typically using 40 and 56 bit keys.</para>
               <para>US Export restrictions on cryptography systems have been lifted and no longer need to be supported.</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term><code>!LOW:!MEDIUM</code></term>
      <listitem>
-              <para>Disallows low (keys 56 or  64 bits long) and medium (128 bit long keys) ciphers because of their vulnerability to brute force attacks (example 2-DES). This constraint leaves acceptable Triple Data Encryption Standard (Triple DES) also known as Triple Data Encryption Algorithm (TDEA) and the Advanced Encryption Standard (AES), each of which has keys greater than equal to 128 bits and thus more secure.</para>
+              <para>Disallows low (56 or 64 bit long keys) and medium (128 bit long keys) ciphers
+            because of their vulnerability to brute force attacks (example 2-DES). This rule still
+            permits Triple Data Encryption Standard (Triple DES) also known as Triple Data
+            Encryption Algorithm (TDEA) and the Advanced Encryption Standard (AES), each of which
+            has keys greater than equal to 128 bits and thus more secure.</para>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -98,7 +108,9 @@ ciphers = "kEECDH:kEDH:kRSA:HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
    </varlistentry>
  </variablelist>
       <section xml:id="ssl-proxies-and-http-services-idp45712">
-        <title>Pound - with AES-NI acceleration</title>
+        <title>Pound</title>
+        <para>This Pound example enables <literal>AES-NI</literal> acceleration, which helps to
+        improve performance on systems with processors that support this feature.</para>
         <programlisting>## see pound(8) for details
 daemon      1
 ######################################################################
@@ -151,7 +163,9 @@ End</programlisting>
       </section>
       <section xml:id="ssl-proxies-and-http-services-idp50320">
         <title>Stud</title>
-        <para>This stud example enables SSL v3 for client compatibility. The ciphers line can be tweaked based on your needs, however this is a reasonable starting place.</para>
+        <para>This stud example enables SSL v3 for client compatibility. The <emphasis role="italic"
+          >ciphers</emphasis> line can be tweaked based on your needs, however this is a reasonable
+        starting place.</para>
         <programlisting># SSL x509 certificate file.
 pem-file = "
 # SSL protocol.
@@ -185,11 +199,11 @@ daemon = off
 # Report client address using SENDPROXY protocol for haproxy
 # Disabling this until we upgrade to HAProxy 1.5
 write-proxy = off</programlisting>
-      </section>
     </section>
     <section xml:id="ssl-proxies-and-http-services-idp53424">
       <title>nginx</title>
-      <para>This nginx example requires TLS v1.1 or v1.2 for maximum security. The ssl_ciphers line can be tweaked based on your needs, however this is a reasonable starting place.</para>
+      <para>This nginx example requires TLS v1.1 or v1.2 for maximum security.  The <option>ssl_ciphers</option> line can be tweaked based on your needs, however this
+      is a reasonable starting place.</para>
       <programlisting>server {
     listen : ssl;
     ssl_certificate ;
@@ -204,6 +218,7 @@ write-proxy = off</programlisting>
 
     }
 }</programlisting>
+    </section>
       <section xml:id="ssl-proxies-and-http-services-idp55264">
         <title>Apache</title>
         <programlisting>&lt;VirtualHost &lt;ip address&gt;:80&gt;
@@ -255,8 +270,14 @@ write-proxy = off</programlisting>
     </section>
     <section xml:id="ssl-proxies-and-http-services-idp59152">
       <title>HTTP strict transport security</title>
-      <para>We recommend that all production deployments use HSTS. This header prevents browsers from making insecure connections after they have made a single secure one. If you have deployed your HTTP services on a public or an untrusted domain, HSTS is especially important. To enable HSTS, configure your web server to send a header like this with all requests:</para>
+      <para>We recommend that all production deployments use HTTP strict transport security (HSTS).
+      This header prevents browsers from making insecure connections after they have made a single
+      secure one. If you have deployed your HTTP services on a public or an untrusted domain, HSTS
+      is especially important. To enable HSTS, configure your web server to send a header like this
+      with all requests:</para>
       <screen><computeroutput>Strict-Transport-Security: max-age=31536000; includeSubDomains</computeroutput></screen>
-      <para>Start with a short timeout of 1 day during testing, and raise it to one year after testing has shown that you haven't introduced problems for users. Note that once this header is set to a large timeout, it is (by design) very difficult to disable.</para>
+      <para>Start with a short timeout of 1 day during testing, and raise it to one year after
+      testing has shown that you have not introduced problems for users. Note that once this header
+      is set to a large timeout, it is (by design) very difficult to disable.</para>
     </section>
   </chapter>

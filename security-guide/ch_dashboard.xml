@@ -14,7 +14,7 @@
   <para>The dashboard is based on the Django web framework, therefore
     secure deployment practices for Django apply directly to horizon.
     This guide provides a popular set of Django security
-    recommendations, further information can be found by reading the
+    recommendations. Further information can be found by reading the
       <link
       xlink:href="https://docs.djangoproject.com/en/1.5/#security"
       >Django deployment and security documentation</link>.</para>
@@ -27,7 +27,7 @@
     <para>The dashboard should be deployed as a Web Services Gateway
       Interface (WSGI) application behind an HTTPS proxy such as
       Apache or nginx. If Apache is not already in use, we recommend
-      nginx since it is lighter weight and easier to configure
+      nginx since it is lightweight and easier to configure
       correctly.</para>
     <para>When using nginx, we recommend <link
         xlink:href="http://docs.gunicorn.org/en/latest/deploy.html"
@@ -61,8 +61,8 @@
       server, rather than using an HTTP server with HTTPS
       functionality, follow the <link
         xlink:href="https://docs.djangoproject.com/en/1.5/ref/settings/#secure-proxy-ssl-header"
-        >Django documentation on modifying the SECURE_PROXY_SSL_HEADER
-        variable</link>.</para>
+        >Django documentation on modifying the
+        <literal>SECURE_PROXY_SSL_HEADER</literal> variable</link>.</para>
     </note>
     <para>See the chapter on PKI/SSL Everywhere for more specific
       recommendations and server configurations for HTTPS
@@ -136,18 +136,18 @@
   </section>
   <section xml:id="dashboard-idp255696">
     <title>Secret key</title>
-    <para>Dashboard depends on a shared SECRET_KEY setting for some
-      security functions. It should be a randomly generated string at
-      least 64 characters long. It must be shared across all active
-      dashboard instances. Compromise of this key may allow a remote
-      attacker to execute arbitrary code. Rotating this key
-      invalidates existing user sessions and caching. Do not commit
-      this key to public repositories.</para>
+    <para>Dashboard depends on a shared <option>SECRET_KEY</option>
+      setting for some security functions. It should be a randomly
+      generated string at least 64 characters long. It must be shared
+      across all active dashboard instances. Compromise of this key
+      may allow a remote attacker to execute arbitrary code. Rotating
+      this key invalidates existing user sessions and caching. Do not
+      commit this key to public repositories.</para>
   </section>
   <section xml:id="dashboard-idp257248">
     <title>Session back-end</title>
     <para>Horizon's default session back-end
-        (<emphasis>django.contrib.sessions.backends.signed_cookies</emphasis>)
+        (<literal>django.contrib.sessions.backends.signed_cookies</literal>)
       stores user data in <emphasis>signed</emphasis> but
         <emphasis>unencrypted </emphasis>cookies stored in the
       browser. This approach allows the most simple session backend
@@ -158,7 +158,7 @@
       tampered with, but the data itself is not encrypted other than
       the encryption provided by HTTPS.</para>
     <para>If your architecture allows it, we recommend using
-        <emphasis>django.contrib.sessions.backends.cache</emphasis> as
+        <literal>django.contrib.sessions.backends.cache</literal> as
       your session backend with memcache as the cache. Memcache must
       not be exposed publicly, and should communicate over a secured
       private channel. If you choose to use the signed cookies
@@ -170,11 +170,12 @@
   </section>
   <section xml:id="dashboard-idp262288">
     <title>Allowed hosts</title>
-    <para>Configure the ALLOWED_HOSTS setting with the domain or
-      domains where the dashboard is available. Failure to configure this
-      setting (especially if not following the recommendation above
-      regarding second level domains) opens the dashboard to a number of
-      serious attacks. Wild card domains should be avoided.</para>
+    <para>Configure the <option>ALLOWED_HOSTS</option> setting with
+      the domain or domains where the dashboard is available. Failure
+      to configure this setting (especially if not following the
+      recommendation above regarding second level domains) opens the
+      dashboard to a number of serious attacks. Wild card domains
+      should be avoided.</para>
     <para>For further details, see the <link
         xlink:href="https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts"
         >Django documentation on settings</link>.</para>
@@ -207,9 +208,9 @@ SESSION_COOKIE_SECURE = True</programlisting>
       introducing cross-site scripting vulnerabilities with custom
       dashboards. However, it is important to audit custom dashboards,
       especially ones that are javascript-heavy for inappropriate use
-      of the @csrf_exempt decorator. Dashboards which do not follow
-      these recommended security settings should be carefully
-      evaluated before restrictions are relaxed.</para>
+      of the <literal>@csrf_exempt</literal> decorator. Dashboards
+      which do not follow these recommended security settings should
+      be carefully evaluated before restrictions are relaxed.</para>
   </section>
   <section xml:id="dashboard-idp270608">
     <title>Cross Site Scripting (XSS)</title>
@@ -220,8 +221,10 @@ SESSION_COOKIE_SECURE = True</programlisting>
     <para>Dashboard provides tools for developers to avoid creating
       XSS vulnerabilities, but they only work if developers use them
       correctly. Audit any custom dashboards, paying particular
-      attention to use of the mark_safe function, use of is_safe with
-      custom template tags, the safe template tag, anywhere auto escape
+      attention to use of the <literal>mark_safe</literal> function,
+      use of <literal>is_safe</literal> with
+      custom template tags, the <literal>safe</literal> template tag, anywhere
+      auto escape
       is turned off, and any JavaScript which might evaluate
       improperly escaped data.</para>
   </section>
@@ -252,8 +255,10 @@ SESSION_COOKIE_SECURE = True</programlisting>
   </section>
   <section xml:id="dashboard-idp278672">
     <title>Debug</title>
-    <para>Make sure DEBUG is set to False in production. In Django,
-      DEBUG displays stack traces and sensitive web server state
-      information on any exception.</para>
+
+    <para>Make sure <option>DEBUG</option> is set to <literal>False</literal>
+      in production. In Django, <option>DEBUG</option> displays stack traces
+      and sensitive web server state information on any
+      exception.</para>
   </section>
 </chapter>

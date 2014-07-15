@@ -168,7 +168,7 @@
         that of object storage.</para>
     </section>
     <section xml:id="introduction-to-openstack-idp143424">
-      <title>OpenStack Networking</title>
+      <title>Networking</title>
       <para>The OpenStack Networking service (neutron, previously
         called quantum) provides various networking services to cloud
         users (tenants) such as IP address management,

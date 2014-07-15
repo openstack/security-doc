@@ -123,7 +123,7 @@
             <title>Service runas user</title>
             <para>It is recommended that you configure each service to
                 run under a non-root (UID 0) service account. One
-                recommendation is the username "swift" with primary
+                recommendation is the user name "swift" with primary
                 group "swift."</para>
         </section>
         <section xml:id="object-storage-idpC123">
@@ -341,7 +341,7 @@ Group swift</programlisting>
         <para>Object Storage uses wsgi to provide a middleware for
             authentication of end-point clients. The authentication
             provider defines what roles and user types exist. Some use
-            traditional username and password credentials while others
+            traditional user name and password credentials while others
             may leverage API key tokens or even client-side x.509 SSL
             certificates. Custom providers can be integrated in using
             the wsgi model.</para>

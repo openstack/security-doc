@@ -7,7 +7,7 @@
   <?dbhtml stop-chunking?>
   <title>Identity</title>
   <para>The OpenStack Identity service (keystone) supports multiple
-    methods of authentication, including username &amp; password,
+    methods of authentication, including user name &amp; password,
     LDAP, and external authentication methods. Upon successful
     authentication, The Identity Service provides the user with an
     authorization token used for subsequent service requests.</para>
@@ -184,7 +184,7 @@
       <para>The Identity Service supports client authentication for
         SSL which may be enabled. SSL client authentication provides
         an additional authentication factor, in addition to the
-        username / password, that provides greater reliability on user
+        user name / password, that provides greater reliability on user
         identification. It reduces the risk of unauthorized access
         when user names and passwords may be compromised. However,
         there is additional administrative overhead and cost to issue

@@ -74,7 +74,7 @@
       <title>Management</title>
       <para>The management security domain is where services interact. Sometimes referred to as the
         "control plane", the networks in this domain transport confidential data such as
-        configuration parameters, usernames, and passwords. Command and Control traffic typically
+        configuration parameters, user names, and passwords. Command and Control traffic typically
         resides in this domain, which necessitates strong integrity requirements. Access to this
         domain should be highly restricted and monitored. At the same time, this domain should still
         employ all of the security best practices described in this guide.</para>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-12 06:09+0000\n"
+"POT-Creation-Date: 2014-07-16 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,7 +150,7 @@ msgid "Bob's public cloud"
 msgstr ""
 
 #: ./security-guide/ch_case-studies-pki-and-certificate-management.xml:16(para)
-msgid "Bob is architecting a public cloud and needs to ensure that the publicly facing OpenStack services are using certificates issued by a major public CA. Bob acquires certificates for his public OpenStack services and configures the services to use PKI and SSL and includes the public CAs in his trust bundle for the services. Additionally, Bob also wants to further isolate the internal communications amongst the services within the management security domain. Bob contacts the team within his organization that is responsible for managing his organizations PKI and issuance of certificates using their own internal CA. Bob obtains certificates issued by this internal CA and configures the services that communicate within the management security domain to use these certificates and configures the services to only accept client certificates issued by his internal CA."
+msgid "Bob is architecting a public cloud and needs to ensure that the publicly facing OpenStack services are using certificates issued by a major public CA. Bob acquires certificates for his public OpenStack services and configures the services to use PKI and SSL and includes the public CAs in his trust bundle for the services. Additionally, Bob also wants to further isolate the internal communications amongst the services within the management security domain. Bob contacts the team within his organization that is responsible for managing his organization's PKI and issuance of certificates using their own internal CA. Bob obtains certificates issued by this internal CA and configures the services that communicate within the management security domain to use these certificates and configures the services to only accept client certificates issued by his internal CA."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:8(title)
@@ -3368,7 +3368,7 @@ msgid "Horizon is the OpenStack dashboard that provides users a self-service por
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:14(para)
-msgid "The dashboard is based on the Django web framework, therefore secure deployment practices for Django apply directly to horizon. This guide provides a popular set of Django security recommendations, further information can be found by reading the <link href=\"https://docs.djangoproject.com/en/1.5/#security\">Django deployment and security documentation</link>."
+msgid "The dashboard is based on the Django web framework, therefore secure deployment practices for Django apply directly to horizon. This guide provides a popular set of Django security recommendations. Further information can be found by reading the <link href=\"https://docs.djangoproject.com/en/1.5/#security\">Django deployment and security documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:21(para)
@@ -3380,7 +3380,7 @@ msgid "Basic web server configuration"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:27(para)
-msgid "The dashboard should be deployed as a Web Services Gateway Interface (WSGI) application behind an HTTPS proxy such as Apache or nginx. If Apache is not already in use, we recommend nginx since it is lighter weight and easier to configure correctly."
+msgid "The dashboard should be deployed as a Web Services Gateway Interface (WSGI) application behind an HTTPS proxy such as Apache or nginx. If Apache is not already in use, we recommend nginx since it is lightweight and easier to configure correctly."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:32(para)
@@ -3412,7 +3412,7 @@ msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:60(para)
-msgid "If you are using an HTTPS proxy in front of your web server, rather than using an HTTP server with HTTPS functionality, follow the <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#secure-proxy-ssl-header\">Django documentation on modifying the SECURE_PROXY_SSL_HEADER variable</link>."
+msgid "If you are using an HTTPS proxy in front of your web server, rather than using an HTTP server with HTTPS functionality, follow the <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#secure-proxy-ssl-header\">Django documentation on modifying the <literal>SECURE_PROXY_SSL_HEADER</literal> variable</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:67(para)
@@ -3468,7 +3468,7 @@ msgid "Secret key"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:139(para)
-msgid "Dashboard depends on a shared SECRET_KEY setting for some security functions. It should be a randomly generated string at least 64 characters long. It must be shared across all active dashboard instances. Compromise of this key may allow a remote attacker to execute arbitrary code. Rotating this key invalidates existing user sessions and caching. Do not commit this key to public repositories."
+msgid "Dashboard depends on a shared <option>SECRET_KEY</option> setting for some security functions. It should be a randomly generated string at least 64 characters long. It must be shared across all active dashboard instances. Compromise of this key may allow a remote attacker to execute arbitrary code. Rotating this key invalidates existing user sessions and caching. Do not commit this key to public repositories."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:148(title)
@@ -3476,11 +3476,11 @@ msgid "Session back-end"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:149(para)
-msgid "Horizon's default session back-end (<emphasis>django.contrib.sessions.backends.signed_cookies</emphasis>) stores user data in <emphasis>signed</emphasis> but <emphasis>unencrypted </emphasis>cookies stored in the browser. This approach allows the most simple session backend scaling since each dashboard instance is stateless, but it comes at the cost of <emphasis>storing sensitive access tokens in the client browser</emphasis> and transmitting them with every request. This backend ensures that session data has not been tampered with, but the data itself is not encrypted other than the encryption provided by HTTPS."
+msgid "Horizon's default session back-end (<literal>django.contrib.sessions.backends.signed_cookies</literal>) stores user data in <emphasis>signed</emphasis> but <emphasis>unencrypted </emphasis>cookies stored in the browser. This approach allows the most simple session backend scaling since each dashboard instance is stateless, but it comes at the cost of <emphasis>storing sensitive access tokens in the client browser</emphasis> and transmitting them with every request. This backend ensures that session data has not been tampered with, but the data itself is not encrypted other than the encryption provided by HTTPS."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:160(para)
-msgid "If your architecture allows it, we recommend using <emphasis>django.contrib.sessions.backends.cache</emphasis> as your session backend with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies backend, refer to the Django documentation understand the security trade-offs."
+msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session backend with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies backend, refer to the Django documentation understand the security trade-offs."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:167(para)
@@ -3492,91 +3492,91 @@ msgid "Allowed hosts"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:173(para)
-msgid "Configure the ALLOWED_HOSTS setting with the domain or domains where the dashboard is available. Failure to configure this setting (especially if not following the recommendation above regarding second level domains) opens the dashboard to a number of serious attacks. Wild card domains should be avoided."
+msgid "Configure the <option>ALLOWED_HOSTS</option> setting with the domain or domains where the dashboard is available. Failure to configure this setting (especially if not following the recommendation above regarding second level domains) opens the dashboard to a number of serious attacks. Wild card domains should be avoided."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:178(para)
+#: ./security-guide/ch_dashboard.xml:179(para)
 msgid "For further details, see the <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts\">Django documentation on settings</link>."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:183(title)
+#: ./security-guide/ch_dashboard.xml:184(title)
 msgid "Cookies"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:184(para)
+#: ./security-guide/ch_dashboard.xml:185(para)
 msgid "Session Cookies should be set to HTTPONLY:"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:186(para)
+#: ./security-guide/ch_dashboard.xml:187(para)
 msgid "Never configure CSRF or session cookies to have a wild card domain with a leading dot. Horizon's session and CSRF cookie should be secured when deployed with HTTPS:"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:193(title)
+#: ./security-guide/ch_dashboard.xml:194(title)
 msgid "Password auto complete"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:194(para)
+#: ./security-guide/ch_dashboard.xml:195(para)
 msgid "We recommend that implementers do not change the default password auto complete behavior. Users choose stronger passwords in environments that allow them to use the secure browser password manager. Organizations which forbid the browser password manager should enforce this policy at the desktop level."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:202(title)
+#: ./security-guide/ch_dashboard.xml:203(title)
 msgid "Cross Site Request Forgery (CSRF)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:203(para)
+#: ./security-guide/ch_dashboard.xml:204(para)
 msgid "Django has a dedicated middleware for <link href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works\">cross-site request forgery</link> (CSRF)."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:206(para)
-msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are javascript-heavy for inappropriate use of the @csrf_exempt decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
+#: ./security-guide/ch_dashboard.xml:207(para)
+msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are javascript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:215(title)
+#: ./security-guide/ch_dashboard.xml:216(title)
 msgid "Cross Site Scripting (XSS)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:216(para)
+#: ./security-guide/ch_dashboard.xml:217(para)
 msgid "Unlike many similar systems, OpenStack dashboard allows the entire Unicode character set in most fields. This means developers have less latitude to make escaping mistakes that open attack vectors for cross-site scripting (XSS)."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:220(para)
-msgid "Dashboard provides tools for developers to avoid creating XSS vulnerabilities, but they only work if developers use them correctly. Audit any custom dashboards, paying particular attention to use of the mark_safe function, use of is_safe with custom template tags, the safe template tag, anywhere auto escape is turned off, and any JavaScript which might evaluate improperly escaped data."
+#: ./security-guide/ch_dashboard.xml:221(para)
+msgid "Dashboard provides tools for developers to avoid creating XSS vulnerabilities, but they only work if developers use them correctly. Audit any custom dashboards, paying particular attention to use of the <literal>mark_safe</literal> function, use of <literal>is_safe</literal> with custom template tags, the <literal>safe</literal> template tag, anywhere auto escape is turned off, and any JavaScript which might evaluate improperly escaped data."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:229(title)
+#: ./security-guide/ch_dashboard.xml:232(title)
 msgid "Cross Origin Resource Sharing (CORS)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:230(para)
+#: ./security-guide/ch_dashboard.xml:233(para)
 msgid "Configure your web server to send a restrictive CORS header with each response, allowing only the dashboard domain and protocol:"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:234(para)
+#: ./security-guide/ch_dashboard.xml:237(para)
 msgid "Never allow the wild card origin."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:237(title)
+#: ./security-guide/ch_dashboard.xml:240(title)
 msgid "Horizon image upload"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:238(para)
+#: ./security-guide/ch_dashboard.xml:241(para)
 msgid "We recommend that implementers <link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads\">disable HORIZON_IMAGES_ALLOW_UPLOAD</link> unless they have implemented a plan to prevent resource exhaustion and denial of service."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:245(title)
+#: ./security-guide/ch_dashboard.xml:248(title)
 msgid "Upgrading"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:246(para)
+#: ./security-guide/ch_dashboard.xml:249(para)
 msgid "Django security releases are generally well tested and aggressively backwards compatible. In almost all cases, new major releases of Django are also fully backwards compatible with previous releases. Dashboard implementers are strongly encouraged to run the latest stable release of Django with up-to-date security releases."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:254(title)
+#: ./security-guide/ch_dashboard.xml:257(title)
 msgid "Debug"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:255(para)
-msgid "Make sure DEBUG is set to False in production. In Django, DEBUG displays stack traces and sensitive web server state information on any exception."
+#: ./security-guide/ch_dashboard.xml:259(para)
+msgid "Make sure <option>DEBUG</option> is set to <literal>False</literal> in production. In Django, <option>DEBUG</option> displays stack traces and sensitive web server state information on any exception."
 msgstr ""
 
 #: ./security-guide/ch_forensics-and-incident-response.xml:8(title)
@@ -12244,7 +12244,7 @@ msgid "Alice decides to use SPICE instead of VNC for the virtual console. She wa
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:44(para)
-msgid "Because Bob must support authentication for the general public, he decides to use use user name and password authentication. He has concerns about brute force attacks attempting to crack user passwords, so he also uses an external authentication extension that throttles the number of failed login attempts. Bob's management network is separate from the other networks within his cloud, but can be reached from his corporate network through ssh. As recommended earlier, Bob requires administrators to use two-factor authentication on the Management network to reduce the risk from compromised administrator passwords."
+msgid "Because Bob must support authentication for the general public, he decides to use authentication based on a user name and password. He has concerns about brute force attacks attempting to crack user passwords, so he also uses an external authentication extension that throttles the number of failed login attempts. Bob's management network is separate from the other networks within his cloud, but can be reached from his corporate network through ssh. As recommended earlier, Bob requires administrators to use two-factor authentication on the Management network to reduce the risk from compromised administrator passwords."
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:56(para)

@@ -209,8 +209,8 @@
         The data generated and stored in private clouds is normally owned by the operator of the
         cloud, who is able to deploy technologies such as data loss prevention (DLP) protection,
         file inspection, deep packet inspection and prescriptive firewalling. In contrast, privacy
-        is one of the primary barriers to adoption for the public cloud, as many of these controls
-        do not exist.</para>
+        is one of the primary barriers for the adoption of public cloud infrastructures, as many of
+        the previously mentioned controls do not exist.</para>
     </section>
     <section xml:id="security-boundaries-and-threats-idp116736">
       <title>Outbound attacks and reputational risk</title>

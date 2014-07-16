@@ -187,7 +187,7 @@
     <para>Never configure CSRF or session cookies to have a wild card
       domain with a leading dot. Horizon's session and CSRF cookie
       should be secured when deployed with HTTPS:</para>
-    <programlisting>Code CSRF_COOKIE_SECURE = True
+    <programlisting>CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True</programlisting>
   </section>
   <section xml:id="dashboard-idp266976">

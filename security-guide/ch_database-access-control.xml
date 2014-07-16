@@ -6,7 +6,7 @@
   xml:id="database-access-control">
   <?dbhtml stop-chunking?>
     <title>Database access control</title>
-    <para>Each of the core OpenStack services (Compute, Identity, Networking, Block Storage) store state and configuration information in databases. In this chapter, we discuss how databases are used currently in OpenStack. We also explore security concerns, and the security ramifications of database backend choices.</para>
+    <para>Each of the core OpenStack services (Compute, Identity, Networking, Block Storage) store state and configuration information in databases. In this chapter, we discuss how databases are used currently in OpenStack. We also explore security concerns, and the security ramifications of database back end choices.</para>
     <section xml:id="database-access-control-idp44624">
       <title>OpenStack database access model</title>
       <para>All of the services within an OpenStack project access a single database. There are presently no reference policies for creating table or row based access restrictions to the database.</para>
@@ -90,7 +90,12 @@
     </section>
     <section xml:id="database-access-control-idp97536">
       <title>OpenStack service database configuration</title>
-      <para>If your database server is configured to require X.509 certificates for authentication you will need to specify the appropriate SQLAlchemy query parameters for the database backend. These parameters specify the certificate, private key, and certificate authority information for use with the initial connection string.</para>
+      <para>If your database server is configured to require X.509
+      certificates for authentication you will need to specify the
+      appropriate SQLAlchemy query parameters for the database back
+      end. These parameters specify the certificate, private key, and
+      certificate authority information for use with the initial
+      connection string.</para>
       <para>Example of an <literal>:sql_connection</literal> string for X.509 certificate authentication to MySQL:</para>
       <programlisting language="ini">sql_connection = mysql://compute01:password@localhost/nova?
 charset=utf8&amp;ssl_ca=/etc/mysql/cacert.pem&amp;ssl_cert=/etc/mysql/server-cert.pem&amp;ssl_key=/etc/mysql/server-key.pem</programlisting>

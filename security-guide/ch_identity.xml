@@ -294,7 +294,7 @@
       for each project.</para>
     <para>The Identity V3 API supports multiple domains. Users of
       different domains may be represented in different authentication
-      backends and even have different attributes that must be mapped
+      back ends and even have different attributes that must be mapped
       to a single set of roles and privileges, that are used in the
       policy definitions to access the various service
       resources.</para>

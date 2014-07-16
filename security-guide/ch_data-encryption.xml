@@ -29,7 +29,7 @@
     </section>
     <section xml:id="data-encryption-idp53616">
       <title>Block Storage volumes and instance ephemeral filesystems</title>
-      <para>The ability to encrypt volumes depends on the service backends chosen. Some backends may not support this at all.</para>
+      <para>The ability to encrypt volumes depends on the service back ends chosen. Some back ends may not support this at all.</para>
       <para>As both block storage and compute support LVM backed storage, we can easily provide an example applicable to both systems. In deployments using LVM, encryption may be performed against the backing physical volumes. An encrypted block device would be created using the standard Linux tools, with the LVM physical volume (PV) created on top of the decrypted block device using pvcreate. Then, the vgcreate or vgmodify tool may be used to add the encrypted physical volume to an LVM volume group (VG).</para>
       <para>A feature aimed for the Havana release provides encryption of the VM's data before it is written to disk. This allows the privacy of data to be maintained while residing on the storage device. The idea is similar to how self-encrypting drives work. This feature presents a normal block storage device to the VM but encrypts the bytes in the virtualization host before writing them to the disk. The block server operates exactly as it does when reading and writing unencrypted blocks, except special handling will be required for Block Storage features such as snapshots and live migration. Note that this feature uses an independent key manager.</para>
     </section>
@@ -39,6 +39,6 @@
       other tunnels. This is not functionality common or standard in
       OpenStack, but is an option available to motivated and
       interested implementors.</para>
-      <para>Block storage supports a variety of mechanisms for supplying mountable volumes. It is outside the scope of this guide to specify recommendations for each Block Storage backend driver. For the purpose of performance, many storage protocols are unencrypted. Some protocols such as iSCSI can provide authentication and encrypted sessions, it is our recommendation to enable these features.</para>
+      <para>Block storage supports a variety of mechanisms for supplying mountable volumes. It is outside the scope of this guide to specify recommendations for each Block Storage back-end driver. For the purpose of performance, many storage protocols are unencrypted. Some protocols such as iSCSI can provide authentication and encrypted sessions, it is our recommendation to enable these features.</para>
     </section>
   </chapter>

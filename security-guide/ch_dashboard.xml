@@ -145,28 +145,28 @@
       commit this key to public repositories.</para>
   </section>
   <section xml:id="dashboard-idp257248">
-    <title>Session back-end</title>
-    <para>Horizon's default session back-end
+    <title>Session back end</title>
+    <para>Horizon's default session back end
         (<literal>django.contrib.sessions.backends.signed_cookies</literal>)
       stores user data in <emphasis>signed</emphasis> but
         <emphasis>unencrypted </emphasis>cookies stored in the
-      browser. This approach allows the most simple session backend
+      browser. This approach allows the most simple session back-end
       scaling since each dashboard instance is stateless, but it comes
       at the cost of <emphasis>storing sensitive access tokens in the
         client browser</emphasis> and transmitting them with every
-      request. This backend ensures that session data has not been
+      request. This back end ensures that session data has not been
       tampered with, but the data itself is not encrypted other than
       the encryption provided by HTTPS.</para>
     <para>If your architecture allows it, we recommend using
         <literal>django.contrib.sessions.backends.cache</literal> as
-      your session backend with memcache as the cache. Memcache must
+      your session back end with memcache as the cache. Memcache must
       not be exposed publicly, and should communicate over a secured
       private channel. If you choose to use the signed cookies
-      backend, refer to the Django documentation understand the
+      back end, refer to the Django documentation understand the
       security trade-offs.</para>
     <para>For further details, consult the <link
         xlink:href="https://docs.djangoproject.com/en/1.5/topics/http/sessions/#configuring-the-session-engine"
-        >Django session backend documentation</link>.</para>
+        >Django session back end documentation</link>.</para>
   </section>
   <section xml:id="dashboard-idp262288">
     <title>Allowed hosts</title>

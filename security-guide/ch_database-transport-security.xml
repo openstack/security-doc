@@ -38,14 +38,14 @@ bind-address &lt;ip address or hostname of management network interface&gt;</pro
       <para>
         In addition to restricting database communications to the
         management network, we also strongly recommend that the cloud
-        administrator configure their database backend to require
+        administrator configure their database back end to require
         SSL. Using SSL for the database client connections protects
         the communications from tampering and eavesdropping. As will
         be discussed in the next section, using SSL also provides the
         framework for doing database user authentication through X.509
         certificates (commonly referred to as PKI). Below is guidance
         on how SSL is typically configured for the two popular
-        database backends MySQL and PostgreSQL.</para>
+        database back ends MySQL and PostgreSQL.</para>
       <note>
         <para>
           When installing the certificate and key files, ensure that

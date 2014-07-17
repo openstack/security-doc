@@ -91,7 +91,7 @@
         cloud that allows for elastic provisioning. This would enable
         them to handle seasonal loads in a flexible, cost-effective
         fashion. Once a customer begins to process their order, they
-        are transferred to the more secure private cloud backend that
+        are transferred to the more secure private cloud back end that
         is PCI compliant.</para>
       <para>For the purposes of this document, we treat Community and
         Hybrid similarly, dealing explicitly only with the extremes of
@@ -219,7 +219,7 @@
         message queues based on the Advanced Message Queue Protocol
         (<glossterm baseform="Advanced Message Queuing Protocol (AMQP)">AMQP
         </glossterm>). Similar to most OpenStack services, it supports
-        pluggable components. Today the implementation backend could be
+        pluggable components. Today the implementation back end could be
           <glossterm>RabbitMQ</glossterm>,
         <glossterm>Qpid</glossterm>, or
         <glossterm>ZeroMQ</glossterm>.</para>

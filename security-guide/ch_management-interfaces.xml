@@ -65,7 +65,10 @@
             <para>The web server that hosts dashboard should be configured for SSL to ensure data is encrypted.</para>
           </listitem>
 <listitem>
-            <para>Both the horizon web service and the OpenStack API it uses to communicate with the back-end are susceptible to web attack vectors such as denial of service and must be monitored.</para>
+            <para>Both the horizon web service and the OpenStack API it
+              uses to communicate with the back end are susceptible to
+              web attack vectors such as denial of service and must be
+              monitored.</para>
           </listitem>
           <listitem>
             <para>

@@ -205,7 +205,7 @@
             administrator</emphasis>"</para>
       </blockquote>
       <para>While many hypervisor vendors, such as Red Hat, Microsoft,
-        and VMWare have achieved Common Criteria Certification their
+        and VMware have achieved Common Criteria Certification their
         underlying certified feature set differs. It is recommended to
         evaluate vendor claims to ensure they minimally satisfy the
         following requirements:</para>

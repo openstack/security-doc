@@ -93,9 +93,9 @@
       for example <uri>https://openstack.example.org</uri> or
         <uri>https://horizon.openstack.example.org</uri>. We also
       advise against deploying to bare internal domains like
-        <uri>https://horizon/</uri>.</para>
-    <para>This recommendation is based on the limitations browser
-      same-origin-policy. The recommendations in this guide cannot
+        <uri>https://horizon/</uri>. These recommendations are based on the limitations of
+      browser same-origin-policy.</para>
+    <para>The recommendations in this guide cannot
       effectively protect users against known attacks if dashboard is
       deployed on a domain which also hosts user-generated content,
       such as scripts, images, or uploads of any kind, even if the

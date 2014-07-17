@@ -51,14 +51,15 @@
             token authenticated.</para>
           </listitem>
           <listitem>
-            <!-- TODO - check if havana had this feature -->
-            <para>By default, the remote desktop traffic is not encrypted. Havana is expected to have VNC connections secured by Kerberos.</para>
+            <para>By default, the remote desktop traffic is not encrypted.
+            SSL can be enabled to encrypt the VNC traffic.</para>
           </listitem>
 </itemizedlist>
       </section>
       <section xml:id="compute-idp54592">
         <title>References</title>
         <para><link xlink:href="http://blog.malchuk.ru/2013/05/21/47">Secure Connections to VNC ports</link></para>
+        <para><link xlink:href="http://www.iamlinux.com/2014/06/using-ssl-encryption-with-openstack-nova-novncproxy/">Using SSL encryption with nova novncproxy</link></para>
       </section>
       <section xml:id="compute-idp55824">
         <title>Simple Protocol for Independent Computing Environments (SPICE)</title>

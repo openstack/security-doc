@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-16 06:04+0000\n"
+"POT-Creation-Date: 2014-07-17 06:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -158,7 +158,7 @@ msgid "Identity"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:9(para)
-msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including username &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity Service provides the user with an authorization token used for subsequent service requests."
+msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity Service provides the user with an authorization token used for subsequent service requests."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:14(para)
@@ -298,7 +298,7 @@ msgid "The Compute and Object Storage services can be configured to use either t
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:184(para)
-msgid "The Identity Service supports client authentication for SSL which may be enabled. SSL client authentication provides an additional authentication factor, in addition to the username / password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
+msgid "The Identity Service supports client authentication for SSL which may be enabled. SSL client authentication provides an additional authentication factor, in addition to the user name / password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:194(para)
@@ -378,7 +378,7 @@ msgid "Domains are high-level containers for projects, users and groups. As such
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:295(para)
-msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication backends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
+msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:301(para)
@@ -866,7 +866,7 @@ msgid "http://www.mirantis.com/blog/on-disk-encryption-prototype-for-openstack-s
 msgstr ""
 
 #: ./security-guide/ch_data-encryption.xml:32(para)
-msgid "The ability to encrypt volumes depends on the service backends chosen. Some backends may not support this at all."
+msgid "The ability to encrypt volumes depends on the service back ends chosen. Some back ends may not support this at all."
 msgstr ""
 
 #: ./security-guide/ch_data-encryption.xml:33(para)
@@ -882,7 +882,7 @@ msgid "Tenant data for compute could be encrypted over IPSec or other tunnels. T
 msgstr ""
 
 #: ./security-guide/ch_data-encryption.xml:42(para)
-msgid "Block storage supports a variety of mechanisms for supplying mountable volumes. It is outside the scope of this guide to specify recommendations for each Block Storage backend driver. For the purpose of performance, many storage protocols are unencrypted. Some protocols such as iSCSI can provide authentication and encrypted sessions, it is our recommendation to enable these features."
+msgid "Block storage supports a variety of mechanisms for supplying mountable volumes. It is outside the scope of this guide to specify recommendations for each Block Storage back-end driver. For the purpose of performance, many storage protocols are unencrypted. Some protocols such as iSCSI can provide authentication and encrypted sessions, it is our recommendation to enable these features."
 msgstr ""
 
 #: ./security-guide/ch_introduction-to-ssl-tls.xml:8(title)
@@ -1056,7 +1056,7 @@ msgid "Acknowledgments"
 msgstr ""
 
 #: ./security-guide/ch_acknowledgements.xml:9(para)
-msgid "The OpenStack Security Group would like to acknowledge contributions from the following organizations who were instrumental in making this book possible. These are:"
+msgid "The OpenStack Security Group would like to acknowledge contributions from the following organizations that were instrumental in making this book possible. The organizations are:"
 msgstr ""
 
 #: ./security-guide/ch_case-studies-management-interfaces.xml:8(title)
@@ -1244,11 +1244,11 @@ msgid "RabbitMQ and Qpid offer authentication and access control mechanisms for 
 msgstr ""
 
 #: ./security-guide/ch_messaging-security.xml:59(para)
-msgid "Simple Authentication and Security Layer (SASL) is a framework for authentication and data security in Internet protocols. Both RabbitMQ and Qpid offer SASL and other pluggable authentication mechanisms beyond simple usernames and passwords that allow for increased authentication security. While RabbitMQ supports SASL, support in OpenStack does not currently allow for requesting a specific SASL authentication mechanism. RabbitMQ support in OpenStack allows for either username and password authentication over an unencrypted connection or username and password in conjunction with X.509 client certificates to establish the secure SSL connection."
+msgid "Simple Authentication and Security Layer (SASL) is a framework for authentication and data security in Internet protocols. Both RabbitMQ and Qpid offer SASL and other pluggable authentication mechanisms beyond simple user names and passwords that allow for increased authentication security. While RabbitMQ supports SASL, support in OpenStack does not currently allow for requesting a specific SASL authentication mechanism. RabbitMQ support in OpenStack allows for either user name and password authentication over an unencrypted connection or user name and password in conjunction with X.509 client certificates to establish the secure SSL connection."
 msgstr ""
 
 #: ./security-guide/ch_messaging-security.xml:60(para)
-msgid "We recommend configuring X.509 client certificates on all the OpenStack service nodes for client connections to the messaging queue and where possible (currently only Qpid) perform authentication with X.509 client certificates. When using usernames and passwords, accounts should be created per-service and node for finer grained auditability of access to the queue."
+msgid "We recommend configuring X.509 client certificates on all the OpenStack service nodes for client connections to the messaging queue and where possible (currently only Qpid) perform authentication with X.509 client certificates. When using user names and passwords, accounts should be created per-service and node for finer grained auditability of access to the queue."
 msgstr ""
 
 #: ./security-guide/ch_messaging-security.xml:61(para)
@@ -1373,7 +1373,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/ch_database-access-control.xml:104(None) ./security-guide/ch_database-access-control.xml:107(None)
+#: ./security-guide/ch_database-access-control.xml:109(None) ./security-guide/ch_database-access-control.xml:112(None)
 msgid "@@image: 'static/novaconductor.png'; md5=dbc1ba139bd1af333f0415bb48704843"
 msgstr ""
 
@@ -1382,7 +1382,7 @@ msgid "Database access control"
 msgstr ""
 
 #: ./security-guide/ch_database-access-control.xml:9(para)
-msgid "Each of the core OpenStack services (Compute, Identity, Networking, Block Storage) store state and configuration information in databases. In this chapter, we discuss how databases are used currently in OpenStack. We also explore security concerns, and the security ramifications of database backend choices."
+msgid "Each of the core OpenStack services (Compute, Identity, Networking, Block Storage) store state and configuration information in databases. In this chapter, we discuss how databases are used currently in OpenStack. We also explore security concerns, and the security ramifications of database back end choices."
 msgstr ""
 
 #: ./security-guide/ch_database-access-control.xml:11(title)
@@ -1405,7 +1405,7 @@ msgstr ""
 msgid "By default, each of the OpenStack services and their processes access the database using a shared set of credentials. This makes auditing database operations and revoking access privileges from a service and its processes to the database particularly difficult."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:26(title) ./security-guide/ch_database-access-control.xml:99(title)
+#: ./security-guide/ch_database-access-control.xml:26(title) ./security-guide/ch_database-access-control.xml:104(title)
 msgid "Nova-conductor"
 msgstr ""
 
@@ -1434,7 +1434,7 @@ msgid "Database authentication and access control"
 msgstr ""
 
 #: ./security-guide/ch_database-access-control.xml:53(para)
-msgid "Given the risks around access to the database, we strongly recommend that unique database user accounts be created per node needing access to the database. Doing this facilitates better analysis and auditing for ensuring compliance or in the event of a compromise of a node allows you to isolate the compromised host by removing access for that node to the database upon detection. When creating these per service endpoint database user accounts, care should be taken to ensure that they are configured to require SSL. Alternatively, for increased security it is recommended that the database accounts be configured using X.509 certificate authentication in addition to usernames and passwords."
+msgid "Given the risks around access to the database, we strongly recommend that unique database user accounts be created per node needing access to the database. Doing this facilitates better analysis and auditing for ensuring compliance or in the event of a compromise of a node allows you to isolate the compromised host by removing access for that node to the database upon detection. When creating these per service endpoint database user accounts, care should be taken to ensure that they are configured to require SSL. Alternatively, for increased security it is recommended that the database accounts be configured using X.509 certificate authentication in addition to user names and passwords."
 msgstr ""
 
 #: ./security-guide/ch_database-access-control.xml:55(title)
@@ -1486,42 +1486,42 @@ msgid "OpenStack service database configuration"
 msgstr ""
 
 #: ./security-guide/ch_database-access-control.xml:93(para)
-msgid "If your database server is configured to require X.509 certificates for authentication you will need to specify the appropriate SQLAlchemy query parameters for the database backend. These parameters specify the certificate, private key, and certificate authority information for use with the initial connection string."
+msgid "If your database server is configured to require X.509 certificates for authentication you will need to specify the appropriate SQLAlchemy query parameters for the database back end. These parameters specify the certificate, private key, and certificate authority information for use with the initial connection string."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:94(para)
+#: ./security-guide/ch_database-access-control.xml:99(para)
 msgid "Example of an <literal>:sql_connection</literal> string for X.509 certificate authentication to MySQL:"
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:100(para)
+#: ./security-guide/ch_database-access-control.xml:105(para)
 msgid "OpenStack Compute offers a sub-service called <systemitem class=\"service\">nova-conductor</systemitem> which proxies database connections, with the primary purpose of having the nova compute nodes interfacing with <systemitem class=\"service\">nova-conductor</systemitem> to meet data persistence needs as opposed to directly communicating with the database."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:101(para)
+#: ./security-guide/ch_database-access-control.xml:106(para)
 msgid "Nova-conductor receives requests over RPC and performs actions on behalf of the calling service without granting granular access to the database, its tables, or data within. Nova-conductor essentially abstracts direct database access away from compute nodes."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:102(para)
+#: ./security-guide/ch_database-access-control.xml:107(para)
 msgid "This abstraction offers the advantage of restricting services to executing methods with parameters, similar to stored procedures, preventing a large number of systems from directly accessing or modifying database data. This is accomplished without having these procedures stored or executed within the context or scope of the database itself, a frequent criticism of typical stored procedures."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:110(para)
+#: ./security-guide/ch_database-access-control.xml:115(para)
 msgid "Unfortunately, this solution complicates the task of more fine-grained access control and the ability to audit data access. Because the <systemitem class=\"service\">nova-conductor</systemitem> service receives requests over RPC, it highlights the importance of improving the security of messaging. Any node with access to the message queue may execute these methods provided by the <systemitem class=\"service\">nova-conductor</systemitem> and effectively modifying the database."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:111(para)
+#: ./security-guide/ch_database-access-control.xml:116(para)
 msgid "Finally, it should be noted that as of the Grizzly release, gaps exist where <systemitem class=\"service\">nova-conductor</systemitem> is not used throughout OpenStack Compute. Depending on one's configuration, the use of <systemitem class=\"service\">nova-conductor</systemitem> may not allow deployers to avoid the necessity of providing database GRANTs to individual compute host systems."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:112(para)
+#: ./security-guide/ch_database-access-control.xml:117(para)
 msgid "Note, as <systemitem class=\"service\">nova-conductor</systemitem> only applies to OpenStack Compute, direct database access from compute hosts may still be necessary for the operation of other OpenStack components such as Telemetry (ceilometer), Networking, and Block Storage."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:118(para)
+#: ./security-guide/ch_database-access-control.xml:123(para)
 msgid "Implementors should weigh the benefits and risks of both configurations before enabling or disabling the <systemitem class=\"service\">nova-conductor</systemitem> service. We are not yet prepared to recommend the use of <systemitem class=\"service\">nova-conductor</systemitem> in the Grizzly release. However, we do believe that this recommendation will change as additional features are added into OpenStack."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:119(para)
+#: ./security-guide/ch_database-access-control.xml:124(para)
 msgid "To disable the <systemitem class=\"service\">nova-conductor</systemitem>, place the following into your <filename>nova.conf</filename> file (on your compute hosts):"
 msgstr ""
 
@@ -2674,7 +2674,7 @@ msgid "Public cloud providers and private cloud providers who do not have string
 msgstr ""
 
 #: ./security-guide/ch_security-boundaries-and-threats.xml:75(para)
-msgid "The management security domain is where services interact. Sometimes referred to as the \"control plane\", the networks in this domain transport confidential data such as configuration parameters, usernames, and passwords. Command and Control traffic typically resides in this domain, which necessitates strong integrity requirements. Access to this domain should be highly restricted and monitored. At the same time, this domain should still employ all of the security best practices described in this guide."
+msgid "The management security domain is where services interact. Sometimes referred to as the \"control plane\", the networks in this domain transport confidential data such as configuration parameters, user names, and passwords. Command and Control traffic typically resides in this domain, which necessitates strong integrity requirements. Access to this domain should be highly restricted and monitored. At the same time, this domain should still employ all of the security best practices described in this guide."
 msgstr ""
 
 #: ./security-guide/ch_security-boundaries-and-threats.xml:81(para)
@@ -2758,7 +2758,7 @@ msgid "A notable difference in the attack surface of public clouds is that they 
 msgstr ""
 
 #: ./security-guide/ch_security-boundaries-and-threats.xml:208(para)
-msgid "Privacy concerns for public and private cloud users are typically diametrically opposed. The data generated and stored in private clouds is normally owned by the operator of the cloud, who is able to deploy technologies such as data loss prevention (DLP) protection, file inspection, deep packet inspection and prescriptive firewalling. In contrast, privacy is one of the primary barriers to adoption for the public cloud, as many of these controls do not exist."
+msgid "Privacy concerns for public and private cloud users are typically diametrically opposed. The data generated and stored in private clouds is normally owned by the operator of the cloud, who is able to deploy technologies such as data loss prevention (DLP) protection, file inspection, deep packet inspection and prescriptive firewalling. In contrast, privacy is one of the primary barriers for the adoption of public cloud infrastructures, as many of the previously mentioned controls do not exist."
 msgstr ""
 
 #: ./security-guide/ch_security-boundaries-and-threats.xml:216(title)
@@ -2802,7 +2802,7 @@ msgid "OpenStack Object Storage (swift) is a service that provides storage and r
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:14(para)
-msgid "A consumer can store objects, modify them, or access them using the HTTP protocol and REST APIs. Backend components of Object Storage use different protocols for keeping the information synchronized in a redundant cluster of services. For more details on the API and the backend components see the <link href=\"http://docs.openstack.org/api/openstack-object-storage/1.0/content/\">OpenStack Storage documentation</link>."
+msgid "A consumer can store objects, modify them, or access them using the HTTP protocol and REST APIs. Backend components of Object Storage use different protocols for keeping the information synchronized in a redundant cluster of services. For more details on the API and the back-end components see the <link href=\"http://docs.openstack.org/api/openstack-object-storage/1.0/content/\">OpenStack Storage documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:22(para)
@@ -2890,7 +2890,7 @@ msgid "Service runas user"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:124(para)
-msgid "It is recommended that you configure each service to run under a non-root (UID 0) service account. One recommendation is the username \"swift\" with primary group \"swift.\""
+msgid "It is recommended that you configure each service to run under a non-root (UID 0) service account. One recommendation is the user name \"swift\" with primary group \"swift.\""
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:130(title)
@@ -3058,7 +3058,7 @@ msgid "Object storage authentication"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:341(para)
-msgid "Object Storage uses wsgi to provide a middleware for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional username and password credentials while others may leverage API key tokens or even client-side x.509 SSL certificates. Custom providers can be integrated in using the wsgi model."
+msgid "Object Storage uses wsgi to provide a middleware for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 SSL certificates. Custom providers can be integrated in using the wsgi model."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:349(title)
@@ -3472,19 +3472,19 @@ msgid "Dashboard depends on a shared <option>SECRET_KEY</option> setting for som
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:148(title)
-msgid "Session back-end"
+msgid "Session back end"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:149(para)
-msgid "Horizon's default session back-end (<literal>django.contrib.sessions.backends.signed_cookies</literal>) stores user data in <emphasis>signed</emphasis> but <emphasis>unencrypted </emphasis>cookies stored in the browser. This approach allows the most simple session backend scaling since each dashboard instance is stateless, but it comes at the cost of <emphasis>storing sensitive access tokens in the client browser</emphasis> and transmitting them with every request. This backend ensures that session data has not been tampered with, but the data itself is not encrypted other than the encryption provided by HTTPS."
+msgid "Horizon's default session back end (<literal>django.contrib.sessions.backends.signed_cookies</literal>) stores user data in <emphasis>signed</emphasis> but <emphasis>unencrypted </emphasis>cookies stored in the browser. This approach allows the most simple session back-end scaling since each dashboard instance is stateless, but it comes at the cost of <emphasis>storing sensitive access tokens in the client browser</emphasis> and transmitting them with every request. This back end ensures that session data has not been tampered with, but the data itself is not encrypted other than the encryption provided by HTTPS."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:160(para)
-msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session backend with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies backend, refer to the Django documentation understand the security trade-offs."
+msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session back end with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies back end, refer to the Django documentation understand the security trade-offs."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:167(para)
-msgid "For further details, consult the <link href=\"https://docs.djangoproject.com/en/1.5/topics/http/sessions/#configuring-the-session-engine\">Django session backend documentation</link>."
+msgid "For further details, consult the <link href=\"https://docs.djangoproject.com/en/1.5/topics/http/sessions/#configuring-the-session-engine\">Django session back end documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:172(title)
@@ -3655,7 +3655,7 @@ msgstr ""
 msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud may also want to run such tools on their instances."
 msgstr ""
 
-#: ./security-guide/ch_forensics-and-incident-response.xml:48(title) ./security-guide/ch_continuous-systems-management.xml:276(title) ./security-guide/ch_management-interfaces.xml:90(title) ./security-guide/ch_management-interfaces.xml:160(title) ./security-guide/ch_management-interfaces.xml:199(title) ./security-guide/ch_compute.xml:60(title) ./security-guide/ch_compute.xml:106(title)
+#: ./security-guide/ch_forensics-and-incident-response.xml:48(title) ./security-guide/ch_continuous-systems-management.xml:276(title) ./security-guide/ch_management-interfaces.xml:93(title) ./security-guide/ch_management-interfaces.xml:163(title) ./security-guide/ch_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:60(title) ./security-guide/ch_compute.xml:107(title)
 msgid "References"
 msgstr ""
 
@@ -4004,7 +4004,7 @@ msgid "Database transport"
 msgstr ""
 
 #: ./security-guide/ch_database-transport-security.xml:38(para)
-msgid "In addition to restricting database communications to the management network, we also strongly recommend that the cloud administrator configure their database backend to require SSL. Using SSL for the database client connections protects the communications from tampering and eavesdropping. As will be discussed in the next section, using SSL also provides the framework for doing database user authentication through X.509 certificates (commonly referred to as PKI). Below is guidance on how SSL is typically configured for the two popular database backends MySQL and PostgreSQL."
+msgid "In addition to restricting database communications to the management network, we also strongly recommend that the cloud administrator configure their database back end to require SSL. Using SSL for the database client connections protects the communications from tampering and eavesdropping. As will be discussed in the next section, using SSL also provides the framework for doing database user authentication through X.509 certificates (commonly referred to as PKI). Below is guidance on how SSL is typically configured for the two popular database back ends MySQL and PostgreSQL."
 msgstr ""
 
 #: ./security-guide/ch_database-transport-security.xml:50(para)
@@ -4247,7 +4247,7 @@ msgstr ""
 msgid "It is important to include Backup procedures and policies in the overall System Security Plan. For a good overview of OpenStack's Backup and Recovery capabilities and procedures, please refer to the OpenStack Operations Guide."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:250(title) ./security-guide/ch_management-interfaces.xml:60(title) ./security-guide/ch_management-interfaces.xml:117(title) ./security-guide/ch_management-interfaces.xml:150(title) ./security-guide/ch_management-interfaces.xml:174(title) ./security-guide/ch_compute.xml:45(title) ./security-guide/ch_compute.xml:90(title)
+#: ./security-guide/ch_continuous-systems-management.xml:250(title) ./security-guide/ch_management-interfaces.xml:60(title) ./security-guide/ch_management-interfaces.xml:120(title) ./security-guide/ch_management-interfaces.xml:153(title) ./security-guide/ch_management-interfaces.xml:177(title) ./security-guide/ch_compute.xml:45(title) ./security-guide/ch_compute.xml:91(title)
 msgid "Security considerations"
 msgstr ""
 
@@ -4416,175 +4416,167 @@ msgid "SSL proxies and HTTP services"
 msgstr ""
 
 #: ./security-guide/ch_ssl-proxies-and-http-services.xml:9(para)
-msgid "OpenStack endpoints are HTTP services providing APIs to both end-users on public networks and to other OpenStack services within the same deployment operating over the management network. It is highly recommended these requests, both those internal and external, operate over SSL."
+msgid "OpenStack endpoints are HTTP services providing APIs to both end-users on public networks and to other OpenStack services on the management network. It is highly recommended that all of these requests, both internal and external, operate over SSL. To achieve this goal, API services must be deployed behind a SSL proxy that can establish and terminate SSL sessions. The following table offers a non-exhaustive list of open source software that can be used for this purpose:"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:10(para)
-msgid "In order for API requests to be encrypted by SSL it's necessary to position the API services behind a proxy that will establish and terminate SSL sessions. The following table offers a non-exhaustive list of software services that can proxy SSL traffic for API requests:"
-msgstr ""
-
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:12(link)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:16(link) ./security-guide/ch_ssl-proxies-and-http-services.xml:111(title)
 msgid "Pound"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:15(link) ./security-guide/ch_ssl-proxies-and-http-services.xml:153(title)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:19(link) ./security-guide/ch_ssl-proxies-and-http-services.xml:165(title)
 msgid "Stud"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:18(link) ./security-guide/ch_ssl-proxies-and-http-services.xml:191(title)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:22(link) ./security-guide/ch_ssl-proxies-and-http-services.xml:204(title)
 msgid "nginx"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:21(link)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:25(link)
 msgid "Apache httpd"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:24(para)
-msgid "Hardware appliance SSL acceleration proxies"
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:28(para)
+msgid "In cases where software termination offers insufficient performance, hardware accelerators may be worth exploring as an alternative option. It is important to be mindful of the size of requests that will be processed by any chosen SSL proxy."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:27(para)
-msgid "It is important to be mindful of the size of requests that will be processed by any chosen SSL proxy."
-msgstr ""
-
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:29(title)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:32(title)
 msgid "Examples"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:30(para)
-msgid "Below we provide some sample recommended configuration settings for enabling SSL in some of the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of these examples as this will be required in many deployments for client compatibility."
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:33(para)
+msgid "Below we provide sample recommended configuration settings for enabling SSL in some of the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of these examples as this will be required in many deployments for client compatibility."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:31(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:36(para)
 msgid "Before we delve into the configurations, we briefly discuss the ciphers' configuration element and its format. A more exhaustive treatment on available ciphers and the OpenSSL cipher list format can be found at: <link href=\"https://www.openssl.org/docs/apps/ciphers.html\">ciphers</link>."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:35(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:40(para)
 msgid "or"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:39(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:44(para)
 msgid "Cipher string options are separated by \":\", while \"!\" provides negation of the immediately following element. Element order indicates preference unless overridden by qualifiers such as HIGH. Let us take a closer look at the elements in the above sample strings."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:42(code)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:47(code)
 msgid "kEECDH:kEDH"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:44(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:49(para)
 msgid "Ephemeral Elliptic Curve Diffie-Hellman (abbreviated as EECDH and ECDHE)."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:45(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:50(para)
 msgid "Ephemeral Diffie-Hellman (abbreviated either as EDH or DHE) uses prime field groups."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:46(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:51(para)
 msgid "Both approaches provide <link href=\"http://en.wikipedia.org/wiki/Forward_secrecy\">Perfect Forward Secrecy (PFS)</link>."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:47(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:52(para)
 msgid "Ephemeral Elliptic Curves require the server to be configured with a named curve, and provide better security than prime field groups and at lower computational cost. However, prime field groups are more widely implemented, and thus typically both are included in list."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:51(code)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:56(code)
 msgid "kRSA"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:53(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:58(para)
 msgid "Cipher suites using the <link href=\"http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29\">RSA</link> exchange, authentication or either respectively."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:57(code)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:62(code)
 msgid "HIGH"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:59(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:64(para)
 msgid "Selects highest possible security cipher in the negotiation phase. These typically have keys of length 128 bits or longer."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:63(code)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:68(code)
 msgid "!RC4"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:65(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:70(para)
 msgid "No RC4. RC4 has flaws in the context of TLS/SSL V3. See <link href=\"cr.yp.to/streamciphers/rc4biases-20130708.pdf\"> On the Security of RC4 in TLS and WPA</link>."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:69(code)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:74(code)
 msgid "!MD5"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:71(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:76(para)
 msgid "No MD5. MD5 is not collision resistant, and thus not acceptable for Message Authentication Codes (MAC) or signatures."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:75(code)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:80(code)
 msgid "!aNULL:!eNULL"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:77(para)
-msgid "Disallows clear text"
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:82(para)
+msgid "Disallows clear text."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:81(code)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:86(code)
 msgid "!EXP"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:83(para)
-msgid "Disallows export encryption algorithms, which by design tend to were weak, typically using 40 and 56 bit keys."
-msgstr ""
-
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:84(para)
-msgid "US Export restrictions on cryptography systems have been lifted and no longer need to be supported."
-msgstr ""
-
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:88(code)
-msgid "!LOW:!MEDIUM"
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:88(para)
+msgid "Disallows export encryption algorithms, which by design tend to be weak, typically using 40 and 56 bit keys."
 msgstr ""
 
 #: ./security-guide/ch_ssl-proxies-and-http-services.xml:90(para)
-msgid "Disallows low (keys 56 or 64 bits long) and medium (128 bit long keys) ciphers because of their vulnerability to brute force attacks (example 2-DES). This constraint leaves acceptable Triple Data Encryption Standard (Triple DES) also known as Triple Data Encryption Algorithm (TDEA) and the Advanced Encryption Standard (AES), each of which has keys greater than equal to 128 bits and thus more secure."
+msgid "US Export restrictions on cryptography systems have been lifted and no longer need to be supported."
 msgstr ""
 
 #: ./security-guide/ch_ssl-proxies-and-http-services.xml:94(code)
-msgid "Protocols"
+msgid "!LOW:!MEDIUM"
 msgstr ""
 
 #: ./security-guide/ch_ssl-proxies-and-http-services.xml:96(para)
+msgid "Disallows low (56 or 64 bit long keys) and medium (128 bit long keys) ciphers because of their vulnerability to brute force attacks (example 2-DES). This rule still permits Triple Data Encryption Standard (Triple DES) also known as Triple Data Encryption Algorithm (TDEA) and the Advanced Encryption Standard (AES), each of which has keys greater than equal to 128 bits and thus more secure."
+msgstr ""
+
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:104(code)
+msgid "Protocols"
+msgstr ""
+
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:106(para)
 msgid "Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2 and enabling TLS or SSLv3 (which was standardised as TLS with a few changes)."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:101(title)
-msgid "Pound - with AES-NI acceleration"
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:112(para)
+msgid "This Pound example enables <literal>AES-NI</literal> acceleration, which helps to improve performance on systems with processors that support this feature."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:154(para)
-msgid "This stud example enables SSL v3 for client compatibility. The ciphers line can be tweaked based on your needs, however this is a reasonable starting place."
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:166(para)
+msgid "This stud example enables SSL v3 for client compatibility. The <emphasis role=\"italic\">ciphers</emphasis> line can be tweaked based on your needs, however this is a reasonable starting place."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:192(para)
-msgid "This nginx example requires TLS v1.1 or v1.2 for maximum security. The ssl_ciphers line can be tweaked based on your needs, however this is a reasonable starting place."
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:205(para)
+msgid "This nginx example requires TLS v1.1 or v1.2 for maximum security. The <option>ssl_ciphers</option> line can be tweaked based on your needs, however this is a reasonable starting place."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:208(title) ./security-guide/glossary-terms.xml:335(primary)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:223(title) ./security-guide/glossary-terms.xml:335(primary)
 msgid "Apache"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:233(para)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:248(para)
 msgid "Compute API SSL endpoint in Apache, which you must pair with a short WSGI script."
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:257(title)
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:272(title)
 msgid "HTTP strict transport security"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:258(para)
-msgid "We recommend that all production deployments use HSTS. This header prevents browsers from making insecure connections after they have made a single secure one. If you have deployed your HTTP services on a public or an untrusted domain, HSTS is especially important. To enable HSTS, configure your web server to send a header like this with all requests:"
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:273(para)
+msgid "We recommend that all production deployments use HTTP strict transport security (HSTS). This header prevents browsers from making insecure connections after they have made a single secure one. If you have deployed your HTTP services on a public or an untrusted domain, HSTS is especially important. To enable HSTS, configure your web server to send a header like this with all requests:"
 msgstr ""
 
-#: ./security-guide/ch_ssl-proxies-and-http-services.xml:260(para)
-msgid "Start with a short timeout of 1 day during testing, and raise it to one year after testing has shown that you haven't introduced problems for users. Note that once this header is set to a large timeout, it is (by design) very difficult to disable."
+#: ./security-guide/ch_ssl-proxies-and-http-services.xml:279(para)
+msgid "Start with a short timeout of 1 day during testing, and raise it to one year after testing has shown that you have not introduced problems for users. Note that once this header is set to a large timeout, it is (by design) very difficult to disable."
 msgstr ""
 
 #: ./security-guide/ch_case-studies-instance-management.xml:8(title)
@@ -12820,7 +12812,7 @@ msgid "In some deployments it may be required to add host-based IDS on sensitive
 msgstr ""
 
 #: ./security-guide/ch_database-backend-considerations.xml:8(title)
-msgid "Database back-end considerations"
+msgid "Database back end considerations"
 msgstr ""
 
 #: ./security-guide/ch_database-backend-considerations.xml:9(para)
@@ -12836,7 +12828,7 @@ msgid "MySQL has a large community, widespread adoption, and provides high avail
 msgstr ""
 
 #: ./security-guide/ch_database-backend-considerations.xml:13(title)
-msgid "Security references for database back-ends"
+msgid "Security references for database back ends"
 msgstr ""
 
 #: ./security-guide/ch_database-backend-considerations.xml:14(para)
@@ -12911,11 +12903,11 @@ msgstr ""
 msgid "OpenStack dashboard (horizon)"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:18(para) ./security-guide/ch_management-interfaces.xml:95(title)
+#: ./security-guide/ch_management-interfaces.xml:18(para) ./security-guide/ch_management-interfaces.xml:98(title)
 msgid "OpenStack API"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:21(para) ./security-guide/ch_management-interfaces.xml:128(title)
+#: ./security-guide/ch_management-interfaces.xml:21(para) ./security-guide/ch_management-interfaces.xml:131(title)
 msgid "Secure shell (SSH)"
 msgstr ""
 
@@ -12931,7 +12923,7 @@ msgstr ""
 msgid "The OpenStack dashboard (horizon) provides administrators and tenants with a web-based graphical interface to provision and access cloud-based resources. The dashboard communicates with the back-end services through calls to the OpenStack API."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:41(title) ./security-guide/ch_management-interfaces.xml:103(title) ./security-guide/ch_compute.xml:22(title) ./security-guide/ch_compute.xml:67(title)
+#: ./security-guide/ch_management-interfaces.xml:41(title) ./security-guide/ch_management-interfaces.xml:106(title) ./security-guide/ch_compute.xml:22(title) ./security-guide/ch_compute.xml:68(title)
 msgid "Capabilities"
 msgstr ""
 
@@ -12964,118 +12956,118 @@ msgid "The web server that hosts dashboard should be configured for SSL to ensur
 msgstr ""
 
 #: ./security-guide/ch_management-interfaces.xml:68(para)
-msgid "Both the horizon web service and the OpenStack API it uses to communicate with the back-end are susceptible to web attack vectors such as denial of service and must be monitored."
+msgid "Both the horizon web service and the OpenStack API it uses to communicate with the back end are susceptible to web attack vectors such as denial of service and must be monitored."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:71(para)
+#: ./security-guide/ch_management-interfaces.xml:74(para)
 msgid "It is now possible (though there are numerous deployment/security implications) to upload an image file directly from a user's hard disk to OpenStack Image Service through the dashboard. For multi-gigabyte images it is still strongly recommended that the upload be done using the <placeholder-1/> CLI."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:81(para)
+#: ./security-guide/ch_management-interfaces.xml:84(para)
 msgid "Create and manage security groups through dashboard. The security groups allows L3-L4 packet filtering for security policies to protect virtual machines."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:91(citetitle)
+#: ./security-guide/ch_management-interfaces.xml:94(citetitle)
 msgid "Grizzly Release Notes"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:96(para)
+#: ./security-guide/ch_management-interfaces.xml:99(para)
 msgid "The OpenStack API is a RESTful web service endpoint to access, provision and automate cloud-based resources. Operators and users typically access the API through command-line utilities (for example, <placeholder-1/> or <placeholder-2/>), language-specific libraries, or third-party tools."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:105(para)
+#: ./security-guide/ch_management-interfaces.xml:108(para)
 msgid "To the cloud administrator, the API provides an overall view of the size and state of the cloud deployment and allows the creation of users, tenants/projects, assigning users to tenants/projects, and specifying resource quotas on a per tenant/project basis."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:112(para)
+#: ./security-guide/ch_management-interfaces.xml:115(para)
 msgid "The API provides a tenant interface for provisioning, managing, and accessing their resources."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:119(para)
+#: ./security-guide/ch_management-interfaces.xml:122(para)
 msgid "The API service should be configured for SSL to ensure data is encrypted."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:122(para)
+#: ./security-guide/ch_management-interfaces.xml:125(para)
 msgid "As a web service, OpenStack API is susceptible to familiar web site attack vectors such as denial of service attacks."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:129(para)
+#: ./security-guide/ch_management-interfaces.xml:132(para)
 msgid "It has become industry practice to use secure shell (SSH) access for the management of Linux and Unix systems. SSH uses secure cryptographic primitives for communication. With the scope and importance of SSH in typical OpenStack deployments, it is important to understand best practices for deploying SSH."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:131(title)
+#: ./security-guide/ch_management-interfaces.xml:134(title)
 msgid "Host key fingerprints"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:132(para)
+#: ./security-guide/ch_management-interfaces.xml:135(para)
 msgid "Often overlooked is the need for key management for SSH hosts. As most or all hosts in an OpenStack deployment will provide an SSH service, it is important to have confidence in connections to these hosts. It cannot be understated that failing to provide a reasonably secure and accessible method to verify SSH host key fingerprints is ripe for abuse and exploitation."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:133(para)
+#: ./security-guide/ch_management-interfaces.xml:136(para)
 msgid "All SSH daemons have private host keys and, upon connection, offer a host key fingerprint. This host key fingerprint is the hash of an unsigned public key. It is important these host key fingerprints are known in advance of making SSH connections to those hosts. Verification of host key fingerprints is instrumental in detecting man-in-the-middle attacks."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:134(para)
+#: ./security-guide/ch_management-interfaces.xml:137(para)
 msgid "Typically, when an SSH daemon is installed, host keys will be generated. It is necessary that the hosts have sufficient entropy during host key generation. Insufficient entropy during host key generation can result in the possibility to eavesdrop on SSH sessions."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:135(para)
+#: ./security-guide/ch_management-interfaces.xml:138(para)
 msgid "Once the SSH host key is generated, the host key fingerprint should be stored in a secure and queriable location. One particularly convenient solution is DNS using SSHFP resource records as defined in RFC-4255. For this to be secure, it is necessary that DNSSEC be deployed."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:139(title)
+#: ./security-guide/ch_management-interfaces.xml:142(title)
 msgid "Management utilities"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:140(para)
+#: ./security-guide/ch_management-interfaces.xml:143(para)
 msgid "The OpenStack Management Utilities are open-source Python command-line clients that make API calls. There is a client for each OpenStack service (for example, <systemitem class=\"service\">nova</systemitem>, <systemitem class=\"service\">glance</systemitem>). In addition to the standard CLI client, most of the services have a management command-line utility which makes direct calls to the database. These dedicated management utilities are slowly being deprecated."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:152(para)
+#: ./security-guide/ch_management-interfaces.xml:155(para)
 msgid "The dedicated management utilities (*-manage) in some cases use the direct database connection."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:155(para)
+#: ./security-guide/ch_management-interfaces.xml:158(para)
 msgid "Ensure that the .rc file which has your credential information is secured."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:161(para)
+#: ./security-guide/ch_management-interfaces.xml:164(para)
 msgid "<citetitle>OpenStack End User Guide</citetitle> section <link href=\"http://docs.openstack.org/user-guide/content/section_cli_overview.html\">command-line clients overview</link>"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:162(para)
+#: ./security-guide/ch_management-interfaces.xml:165(para)
 msgid "<citetitle>OpenStack End User Guide</citetitle> section <link href=\"http://docs.openstack.org/user-guide/content/cli_openrc.html\">Download and source the OpenStack RC file</link>"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:166(title)
+#: ./security-guide/ch_management-interfaces.xml:169(title)
 msgid "Out-of-band management interface"
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:167(para)
+#: ./security-guide/ch_management-interfaces.xml:170(para)
 msgid "OpenStack management relies on out-of-band management interfaces such as the IPMI protocol to access into nodes running OpenStack components. IPMI is a very popular specification to remotely manage, diagnose, and reboot servers whether the operating system is running or the system has crashed."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:176(para)
+#: ./security-guide/ch_management-interfaces.xml:179(para)
 msgid "Use strong passwords and safeguard them, or use client-side SSL authentication."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:179(para)
+#: ./security-guide/ch_management-interfaces.xml:182(para)
 msgid "Ensure that the network interfaces are on their own private(management or a separate) network. Segregate management domains with firewalls or other network gear."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:182(para)
+#: ./security-guide/ch_management-interfaces.xml:185(para)
 msgid "If you use a web interface to interact with the <glossterm>BMC</glossterm>/IPMI, always use the SSL interface, such as https or port 443. This SSL interface should <emphasis role=\"bold\">NOT</emphasis> use self-signed certificates, as is often default, but should have trusted certificates using the correctly defined fully qualified domain names (FQDNs)."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:191(para)
+#: ./security-guide/ch_management-interfaces.xml:194(para)
 msgid "Monitor the traffic on the management network. The anomalies might be easier to track than on the busier compute nodes."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:196(para)
+#: ./security-guide/ch_management-interfaces.xml:199(para)
 msgid "Out of band management interfaces also often include graphical machine console access. It is often possible, although not necessarily default, that these interfaces are encrypted. Consult with your system software documentation for encrypting these interfaces."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:200(link)
+#: ./security-guide/ch_management-interfaces.xml:203(link)
 msgid "Hacking servers that are turned off"
 msgstr ""
 
@@ -13203,11 +13195,11 @@ msgstr ""
 msgid "Instance memory scrubbing"
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:108(para) ./security-guide/ch_data-privacy-concerns.xml:132(title)
+#: ./security-guide/ch_data-privacy-concerns.xml:108(para) ./security-guide/ch_data-privacy-concerns.xml:140(title)
 msgid "Compute instance ephemeral storage"
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:111(para) ./security-guide/ch_data-privacy-concerns.xml:139(title)
+#: ./security-guide/ch_data-privacy-concerns.xml:111(para) ./security-guide/ch_data-privacy-concerns.xml:147(title)
 msgid "Bare metal server sanitization"
 msgstr ""
 
@@ -13244,34 +13236,34 @@ msgid "Plugins to OpenStack Block Storage will store data in a variety of ways. 
 msgstr ""
 
 #: ./security-guide/ch_data-privacy-concerns.xml:128(para)
-msgid "Some backends such as ZFS will support copy-on-write to prevent data exposure. In these cases, reads from unwritten blocks will always return zero. Other backends such as LVM may not natively support this, thus the Block Storage plug-in takes the responsibility to override previously written blocks before handing them to users. It is important to review what assurances your chosen volume backend provides and to see what mediations may be available for those assurances not provided."
+msgid "Some back ends such as ZFS will support copy-on-write to prevent data exposure. In these cases, reads from unwritten blocks will always return zero. Other back ends such as LVM may not natively support this, thus the Block Storage plug-in takes the responsibility to override previously written blocks before handing them to users. It is important to review what assurances your chosen volume back end provides and to see what mediations may be available for those assurances not provided."
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:129(para)
+#: ./security-guide/ch_data-privacy-concerns.xml:137(para)
 msgid "Finally, while not a feature of OpenStack, vendors and implementors may choose to add or support encryption of volumes. In this case, destruction of data is as simple as throwing away the key."
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:133(para)
+#: ./security-guide/ch_data-privacy-concerns.xml:141(para)
 msgid "The creation and destruction of ephemeral storage will be somewhat dependent on the chosen hypervisor and the OpenStack Compute plug-in."
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:134(para)
+#: ./security-guide/ch_data-privacy-concerns.xml:142(para)
 msgid "The libvirt plug-in for compute may maintain ephemeral storage directly on a filesystem, or in LVM. Filesystem storage generally will not overwrite data when it is removed, although there is a guarantee that dirty extents are not provisioned to users."
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:135(para)
+#: ./security-guide/ch_data-privacy-concerns.xml:143(para)
 msgid "When using LVM backed ephemeral storage, which is block-based, it is necessary that the OpenStack Compute software securely erases blocks to prevent information disclosure. There have in the past been information disclosure vulnerabilities related to improperly erased ephemeral block storage devices."
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:136(para)
+#: ./security-guide/ch_data-privacy-concerns.xml:144(para)
 msgid "Filesystem storage is a more secure solution for ephemeral block storage devices than LVM as dirty extents cannot be provisioned to users. However, it is important to be mindful that user data is not destroyed, so it is suggested to encrypt the backing filesystem."
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:140(para)
+#: ./security-guide/ch_data-privacy-concerns.xml:148(para)
 msgid "A bare metal server driver for Compute was under development and has since moved into a separate project called <link href=\"https://wiki.openstack.org/wiki/Ironic\">ironic</link>. At the time of this writing, ironic does not appear to address sanitization of tenant data resident the physical hardware."
 msgstr ""
 
-#: ./security-guide/ch_data-privacy-concerns.xml:147(para)
+#: ./security-guide/ch_data-privacy-concerns.xml:155(para)
 msgid "Additionally, it is possible for tenants of a bare metal system to modify system firmware. TPM technology, described in <xref linkend=\"integrity-life-cycle-idp44768\"/>, provides a solution for detecting unauthorized firmware changes."
 msgstr ""
 
@@ -13438,7 +13430,7 @@ msgid "Hybrid cloud"
 msgstr ""
 
 #: ./security-guide/ch_introduction-to-openstack.xml:84(para)
-msgid "A hybrid cloud is defined by NIST as a composition of two or more distinct cloud infrastructures, such as private, community, or public, that remain unique entities, but are bound together by standardized or proprietary technology that enables data and application portability, such as cloud bursting for load balancing between clouds. For example an online retailer may have their advertising and catalogue presented on a public cloud that allows for elastic provisioning. This would enable them to handle seasonal loads in a flexible, cost-effective fashion. Once a customer begins to process their order, they are transferred to the more secure private cloud backend that is PCI compliant."
+msgid "A hybrid cloud is defined by NIST as a composition of two or more distinct cloud infrastructures, such as private, community, or public, that remain unique entities, but are bound together by standardized or proprietary technology that enables data and application portability, such as cloud bursting for load balancing between clouds. For example an online retailer may have their advertising and catalogue presented on a public cloud that allows for elastic provisioning. This would enable them to handle seasonal loads in a flexible, cost-effective fashion. Once a customer begins to process their order, they are transferred to the more secure private cloud back end that is PCI compliant."
 msgstr ""
 
 #: ./security-guide/ch_introduction-to-openstack.xml:96(para)
@@ -13534,7 +13526,7 @@ msgid "Other supporting technology"
 msgstr ""
 
 #: ./security-guide/ch_introduction-to-openstack.xml:217(para)
-msgid "OpenStack relies on messaging for internal communication between several of its services. By default, OpenStack uses message queues based on the Advanced Message Queue Protocol (<glossterm baseform=\"Advanced Message Queuing Protocol (AMQP)\">AMQP </glossterm>). Similar to most OpenStack services, it supports pluggable components. Today the implementation backend could be <glossterm>RabbitMQ</glossterm>, <glossterm>Qpid</glossterm>, or <glossterm>ZeroMQ</glossterm>."
+msgid "OpenStack relies on messaging for internal communication between several of its services. By default, OpenStack uses message queues based on the Advanced Message Queue Protocol (<glossterm baseform=\"Advanced Message Queuing Protocol (AMQP)\">AMQP </glossterm>). Similar to most OpenStack services, it supports pluggable components. Today the implementation back end could be <glossterm>RabbitMQ</glossterm>, <glossterm>Qpid</glossterm>, or <glossterm>ZeroMQ</glossterm>."
 msgstr ""
 
 #: ./security-guide/ch_introduction-to-openstack.xml:226(para)
@@ -13609,60 +13601,63 @@ msgstr ""
 msgid "The <systemitem class=\"service\">nova-novncproxy</systemitem> and <systemitem class=\"service\">nova-xvpvncproxy</systemitem> services by default open public-facing ports that are token authenticated."
 msgstr ""
 
-#. TODO - check if havana had this feature
-#: ./security-guide/ch_compute.xml:55(para)
-msgid "By default, the remote desktop traffic is not encrypted. Havana is expected to have VNC connections secured by Kerberos."
+#: ./security-guide/ch_compute.xml:54(para)
+msgid "By default, the remote desktop traffic is not encrypted. SSL can be enabled to encrypt the VNC traffic."
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:61(link)
 msgid "Secure Connections to VNC ports"
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:64(title)
+#: ./security-guide/ch_compute.xml:62(link)
+msgid "Using SSL encryption with nova novncproxy"
+msgstr ""
+
+#: ./security-guide/ch_compute.xml:65(title)
 msgid "Simple Protocol for Independent Computing Environments (SPICE)"
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:65(para)
+#: ./security-guide/ch_compute.xml:66(para)
 msgid "As an alternative to VNC, OpenStack provides remote desktop access to guest virtual machines using the Simple Protocol for Independent Computing Environments (SPICE) protocol."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:69(para)
+#: ./security-guide/ch_compute.xml:70(para)
 msgid "SPICE is supported by the OpenStack dashboard (horizon) directly on the instance web page. This requires the <systemitem class=\"service\">nova-spicehtml5proxy</systemitem> service."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:78(para)
+#: ./security-guide/ch_compute.xml:79(para)
 msgid "The nova command-line utility can return a URL for SPICE console for access by a SPICE-html client."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:83(title)
+#: ./security-guide/ch_compute.xml:84(title)
 msgid "Limitations"
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:85(para)
+#: ./security-guide/ch_compute.xml:86(para)
 msgid "Although SPICE has many advantages over VNC, the spice-html5 browser integration currently doesn't really allow admins to take advantage of any of the benefits. To take advantage of SPICE features like multi-monitor, USB pass through, etc. admins are recommended to use a standalone SPICE client within the Management Network."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:92(para)
+#: ./security-guide/ch_compute.xml:93(para)
 msgid "The <systemitem class=\"service\">nova-spicehtml5proxy</systemitem> service by default opens public-facing ports that are token authenticated."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:98(para)
+#: ./security-guide/ch_compute.xml:99(para)
 msgid "The functionality and integration are still evolving. We will access the features in the next release and make recommendations."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:101(para)
+#: ./security-guide/ch_compute.xml:102(para)
 msgid "As is the case for VNC, at this time we recommend using SPICE from the management network in addition to limiting use to few individuals."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:107(link)
+#: ./security-guide/ch_compute.xml:108(link)
 msgid "SPICE Console"
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:108(link)
+#: ./security-guide/ch_compute.xml:109(link)
 msgid "Red Hat bug 913607"
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:109(link)
+#: ./security-guide/ch_compute.xml:110(link)
 msgid "SPICE support in RDO Grizzly"
 msgstr ""
 

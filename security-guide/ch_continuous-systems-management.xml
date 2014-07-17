@@ -197,9 +197,10 @@
       required for a configuration management utility, you are able to
       satisfy a number of documentation and regulatory reporting
       requirements. Further, configuration management can also
-      function as part of your BCP and DR plans wherein you can
-      rebuild a node or service back to a known state in a DR event or
-      given a compromise.</para>
+      function as part of your business continuity plan (BCP) and
+      data recovery (DR) plans wherein you can rebuild a node or
+      service back to a known state in a DR event or given a
+      compromise.</para>
     <para>Additionally, when combined with a version control system
       such as Git or SVN, you can track changes to your environment
       over time and re-mediate unauthorized changes that may occur.

@@ -152,7 +152,7 @@
           executable (PIE), and address space layout randomization
           (ASLR).</para>
         <para>
-          Many modern linux distributions already build QEMU with
+          Many modern Linux distributions already build QEMU with
           compiler hardening enabled, so you may want to verify your
           existing executable before proceeding with the information
           below. One tool that can assist you with this verification
@@ -202,7 +202,7 @@
             <para>
               This ensures that placement of both code and data
               regions will be randomized. Enabled by the kernel (all
-              modern linux kernels support ASLR), when the executable
+              modern Linux kernels support ASLR), when the executable
               is built with PIE.</para>
           </listitem>
           </varlistentry>

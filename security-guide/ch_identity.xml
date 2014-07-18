@@ -38,9 +38,10 @@
         be used to reduce the attack effectiveness, and thus dissuade
         the attacker.</para>
       <para>In addition, it is useful to examine account activity for
-        unusual login times and suspicious actions, with possibly
-        disable the account. Oftentimes this approach is taken by
-        credit card providers for fraud detection and alert.</para>
+        unusual login times and suspicious actions, and take corrective
+        actions such as disabling the account. Oftentimes this approach
+        is taken by credit card providers for fraud detection and alert.
+      </para>
     </section>
     <section xml:id="identity-idp241008">
       <title>Multi-factor authentication</title>

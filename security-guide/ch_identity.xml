@@ -196,7 +196,7 @@
           Service.</para>
       </note>
       <para>The cloud administrator should protect sensitive
-        configuration files for unauthorized modification. This can be
+        configuration files from unauthorized modification. This can be
         achieved with mandatory access control frameworks such as
         SELinux, including <filename>/etc/keystone.conf</filename> and
         X.509 certificates.</para>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-17 06:05+0000\n"
+"POT-Creation-Date: 2014-07-18 06:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1662,7 +1662,7 @@ msgid "\"<emphasis>provide system-inherent separation mechanisms to the resource
 msgstr ""
 
 #: ./security-guide/ch_hypervisor-selection.xml:207(para)
-msgid "While many hypervisor vendors, such as Red Hat, Microsoft, and VMWare have achieved Common Criteria Certification their underlying certified feature set differs. It is recommended to evaluate vendor claims to ensure they minimally satisfy the following requirements:"
+msgid "While many hypervisor vendors, such as Red Hat, Microsoft, and VMware have achieved Common Criteria Certification their underlying certified feature set differs. It is recommended to evaluate vendor claims to ensure they minimally satisfy the following requirements:"
 msgstr ""
 
 #: ./security-guide/ch_hypervisor-selection.xml:219(para)
@@ -3172,7 +3172,7 @@ msgid "The next step is to harden QEMU using compiler hardening options. Modern 
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:154(para)
-msgid "Many modern linux distributions already build QEMU with compiler hardening enabled, so you may want to verify your existing executable before proceeding with the information below. One tool that can assist you with this verification is called <link href=\"http://www.trapkit.de/tools/checksec.html\"><literal>checksec.sh</literal></link>."
+msgid "Many modern Linux distributions already build QEMU with compiler hardening enabled, so you may want to verify your existing executable before proceeding with the information below. One tool that can assist you with this verification is called <link href=\"http://www.trapkit.de/tools/checksec.html\"><literal>checksec.sh</literal></link>."
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:163(term)
@@ -3212,7 +3212,7 @@ msgid "Address Space Layout Randomization (ASLR)"
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:202(para)
-msgid "This ensures that placement of both code and data regions will be randomized. Enabled by the kernel (all modern linux kernels support ASLR), when the executable is built with PIE."
+msgid "This ensures that placement of both code and data regions will be randomized. Enabled by the kernel (all modern Linux kernels support ASLR), when the executable is built with PIE."
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:210(para)
@@ -3436,11 +3436,11 @@ msgid "Many organizations typically deploy web applications at subdomains of an 
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:89(para)
-msgid "We strongly recommend deploying horizon to a <emphasis>second-level domain</emphasis>, such as <uri>https://example.com</uri>, and advise against deploying horizon on a <emphasis>shared subdomain</emphasis> of any level, for example <uri>https://openstack.example.org</uri> or <uri>https://horizon.openstack.example.org</uri>. We also advise against deploying to bare internal domains like <uri>https://horizon/</uri>."
+msgid "We strongly recommend deploying horizon to a <emphasis>second-level domain</emphasis>, such as <uri>https://example.com</uri>, and advise against deploying horizon on a <emphasis>shared subdomain</emphasis> of any level, for example <uri>https://openstack.example.org</uri> or <uri>https://horizon.openstack.example.org</uri>. We also advise against deploying to bare internal domains like <uri>https://horizon/</uri>. These recommendations are based on the limitations of browser same-origin-policy."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:97(para)
-msgid "This recommendation is based on the limitations browser same-origin-policy. The recommendations in this guide cannot effectively protect users against known attacks if dashboard is deployed on a domain which also hosts user-generated content, such as scripts, images, or uploads of any kind, even if the user-generated content is on a different subdomain. This approach is used by most major web presences, such as googleusercontent.com, fbcdn.com, github.io, and twimg.com, to ensure that user generated content stays separate from cookies and security tokens."
+#: ./security-guide/ch_dashboard.xml:98(para)
+msgid "The recommendations in this guide cannot effectively protect users against known attacks if dashboard is deployed on a domain which also hosts user-generated content, such as scripts, images, or uploads of any kind, even if the user-generated content is on a different subdomain. This approach is used by most major web presences, such as googleusercontent.com, fbcdn.com, github.io, and twimg.com, to ensure that user generated content stays separate from cookies and security tokens."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:107(para)
@@ -9227,7 +9227,7 @@ msgstr ""
 msgid "The <literal>nova-network</literal> worker daemon; provides services such as giving an IP address to a booting nova instance."
 msgstr ""
 
-#: ./security-guide/glossary-terms.xml:4727(glossterm)
+#: ./security-guide/glossary-terms.xml:4727(glossterm) ./security-guide/ch_introduction-to-openstack.xml:171(title)
 msgid "Networking"
 msgstr ""
 
@@ -13485,10 +13485,6 @@ msgstr ""
 msgid "Security considerations for block storage are similar to that of object storage."
 msgstr ""
 
-#: ./security-guide/ch_introduction-to-openstack.xml:171(title)
-msgid "OpenStack Networking"
-msgstr ""
-
 #: ./security-guide/ch_introduction-to-openstack.xml:172(para)
 msgid "The OpenStack Networking service (neutron, previously called quantum) provides various networking services to cloud users (tenants) such as IP address management, <glossterm>DNS</glossterm>, <glossterm>DHCP</glossterm>, load balancing, and security groups (network access rules, like firewall policies). It provides a framework for software defined networking (SDN) that allows for pluggable integration with various networking solutions."
 msgstr ""
@@ -13602,7 +13598,7 @@ msgid "The <systemitem class=\"service\">nova-novncproxy</systemitem> and <syste
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:54(para)
-msgid "By default, the remote desktop traffic is not encrypted. SSL can be enabled to encrypt the VNC traffic."
+msgid "By default, the remote desktop traffic is not encrypted. SSL can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to SSL/TLS</link> for appropriate recommendations."
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:61(link)

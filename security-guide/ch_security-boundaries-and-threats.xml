@@ -36,9 +36,9 @@
     </orderedlist>
     <para>We selected these security domains because they can be mapped independently or combined to
       represent the majority of the possible areas of trust within a given OpenStack deployment. For
-      example, some deployment topologies combine both guest and data domains onto one physical
-      network versus others, which have these networks physically separated. In each case, the cloud
-      operator should be aware of the appropriate security concerns. Security domains should be
+      example, some deployment topologies may consist of a combination of guest and data domains onto
+      one physical network while other topologies have these domains separated. In each case, the
+      cloud operator should be aware of the appropriate security concerns. Security domains should be
       mapped out against your specific OpenStack deployment topology. The domains and their trust
       requirements depend upon whether the cloud instance is public, private, or hybrid.</para>
     <para><inlinemediaobject>

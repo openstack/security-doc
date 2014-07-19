@@ -254,7 +254,7 @@
       <para>
         With unique kernel-level architecture and National Security
         Agency (NSA) developed security mechanisms, KVM provides
-        foundational isolation technologies for multi tenancy.  With
+        foundational isolation technologies for multi-tenancy.  With
         developmental origins dating back to 2002, the Secure
         Virtualization (sVirt) technology is the application of
         SELinux against modern day virtualization. SELinux, which was

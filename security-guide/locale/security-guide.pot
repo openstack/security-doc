@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-18 06:05+0000\n"
+"POT-Creation-Date: 2014-07-20 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,202 +186,202 @@ msgid "If prevention is not an option, detection can be used to mitigate damage.
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:40(para)
-msgid "In addition, it is useful to examine account activity for unusual login times and suspicious actions, with possibly disable the account. Oftentimes this approach is taken by credit card providers for fraud detection and alert."
+msgid "In addition, it is useful to examine account activity for unusual login times and suspicious actions, and take corrective actions such as disabling the account. Oftentimes this approach is taken by credit card providers for fraud detection and alert."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:46(title)
+#: ./security-guide/ch_identity.xml:47(title)
 msgid "Multi-factor authentication"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:47(para)
+#: ./security-guide/ch_identity.xml:48(para)
 msgid "Employ multi-factor authentication for network access to privileged user accounts. The Identity Service supports external authentication services through the Apache web server that can provide this functionality. Servers may also enforce client-side authentication using certificates."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:52(para)
+#: ./security-guide/ch_identity.xml:53(para)
 msgid "This recommendation provides insulation from brute force, social engineering, and both spear and mass phishing attacks that may compromise administrator passwords."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:58(title)
+#: ./security-guide/ch_identity.xml:59(title)
 msgid "Authentication methods"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:60(title)
+#: ./security-guide/ch_identity.xml:61(title)
 msgid "Internally implemented authentication methods"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:61(para)
+#: ./security-guide/ch_identity.xml:62(para)
 msgid "The Identity Service can store user credentials in an SQL Database, or may use an LDAP-compliant directory server. The Identity database may be separate from databases used by other OpenStack services to reduce the risk of a compromise of the stored credentials."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:66(para)
+#: ./security-guide/ch_identity.xml:67(para)
 msgid "When you use a user name and password to authenticate, Identity does not enforce policies on password strength, expiration, or failed authentication attempts as recommended by NIST Special Publication 800-118 (draft). Organizations that desire to enforce stronger password policies should consider using Identity extensions or external authentication services."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:74(para)
+#: ./security-guide/ch_identity.xml:75(para)
 msgid "LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:77(para)
+#: ./security-guide/ch_identity.xml:78(para)
 msgid "Authentication and authorization policy in OpenStack may be delegated to an external LDAP server. A typical use case is an organization that seeks to deploy a private cloud and already has a database of employees, the users. This may be in an LDAP system. Using LDAP as a source of authority authentication, requests to Identity Service are delegated to the LDAP service, which will authorize or deny requests based on locally set policies. A token is generated on successful authentication."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:86(para)
+#: ./security-guide/ch_identity.xml:87(para)
 msgid "Note that if the LDAP system has attributes defined for the user such as admin, finance, HR etc, these must be mapped into roles and groups within Identity for use by the various OpenStack services. The <filename>/etc/keystone.conf</filename> file maps LDAP attributes to Identity attributes."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:91(para)
+#: ./security-guide/ch_identity.xml:92(para)
 msgid "The Identity Service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed to write to LDAP services used for authentication outside of the OpenStack deployment as this would allow a sufficiently privileged keystone user to make changes to the LDAP directory. This would allow privilege escalation within the wider organization or facilitate unauthorized access to other information and resources. In such a deployment, user provisioning would be out of the realm of the OpenStack deployment."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:101(para)
+#: ./security-guide/ch_identity.xml:102(para)
 msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1168252\">OpenStack Security Note (OSSN) regarding keystone.conf permissions</link>."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:105(para)
+#: ./security-guide/ch_identity.xml:106(para)
 msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1155566\">OpenStack Security Note (OSSN) regarding potential DoS attacks</link>."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:112(title)
+#: ./security-guide/ch_identity.xml:113(title)
 msgid "External authentication methods"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:113(para)
+#: ./security-guide/ch_identity.xml:114(para)
 msgid "Organizations may desire to implement external authentication for compatibility with existing authentication services or to enforce stronger authentication policy requirements. Although passwords are the most common form of authentication, they can be compromised through numerous methods, including keystroke logging and password compromise. External authentication services can provide alternative forms of authentication that minimize the risk from weak passwords."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:122(para)
+#: ./security-guide/ch_identity.xml:123(para)
 msgid "These include:"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:125(para)
+#: ./security-guide/ch_identity.xml:126(para)
 msgid "Password policy enforcement: Requires user passwords to conform to minimum standards for length, diversity of characters, expiration, or failed login attempts."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:130(para)
+#: ./security-guide/ch_identity.xml:131(para)
 msgid "Multi-factor authentication: The authentication service requires the user to provide information based on something they have, such as a one-time password token or X.509 certificate, and something they know, such as a password."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:137(para)
+#: ./security-guide/ch_identity.xml:138(para)
 msgid "Kerberos"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:143(title)
+#: ./security-guide/ch_identity.xml:144(title)
 msgid "Authorization"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:144(para)
+#: ./security-guide/ch_identity.xml:145(para)
 msgid "The Identity Service supports the notion of groups and roles. Users belong to groups. A group has a list of roles. OpenStack services reference the roles of the user attempting to access the service. The OpenStack policy enforcer middleware takes into consideration the policy rule associated with each resource and the user's group/roles and tenant association to determine if he/she has access to the requested resource."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:151(para)
+#: ./security-guide/ch_identity.xml:152(para)
 msgid "The Policy enforcement middleware enables fine-grained access control to OpenStack resources. Only admin users can provision new users and have access to various management functionality. The cloud tenant would be able to only spin up instances, attach volumes, etc."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:157(title)
+#: ./security-guide/ch_identity.xml:158(title)
 msgid "Establish formal access control policies"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:158(para)
+#: ./security-guide/ch_identity.xml:159(para)
 msgid "Prior to configuring roles, groups, and users, document your required access control policies for the OpenStack installation. The policies should be consistent with any regulatory or legal requirements for the organization. Future modifications to access control configuration should be done consistently with the formal policies. The policies should include the conditions and processes for creating, deleting, disabling, and enabling accounts, and for assigning privileges to the accounts. Periodically review the policies and ensure that configuration is in compliance with approved policies."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:171(title)
+#: ./security-guide/ch_identity.xml:172(title)
 msgid "Service authorization"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:172(para)
+#: ./security-guide/ch_identity.xml:173(para)
 msgid "As described in the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/index.html\"><citetitle>OpenStack Cloud Administrator Guide</citetitle></link>, cloud administrators must define a user for each service, with a role of Admin. This service user account provides the service with the authorization to authenticate users."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:179(para)
+#: ./security-guide/ch_identity.xml:180(para)
 msgid "The Compute and Object Storage services can be configured to use either the \"tempAuth\" file or Identity Service to store authentication information. The \"tempAuth\" solution MUST NOT be deployed in a production environment since it stores passwords in plain text."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:184(para)
+#: ./security-guide/ch_identity.xml:185(para)
 msgid "The Identity Service supports client authentication for SSL which may be enabled. SSL client authentication provides an additional authentication factor, in addition to the user name / password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:194(para)
+#: ./security-guide/ch_identity.xml:195(para)
 msgid "We recommend that you use client authentication with SSL for the authentication of services to the Identity Service."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:198(para)
-msgid "The cloud administrator should protect sensitive configuration files for unauthorized modification. This can be achieved with mandatory access control frameworks such as SELinux, including <filename>/etc/keystone.conf</filename> and X.509 certificates."
+#: ./security-guide/ch_identity.xml:199(para)
+msgid "The cloud administrator should protect sensitive configuration files from unauthorized modification. This can be achieved with mandatory access control frameworks such as SELinux, including <filename>/etc/keystone.conf</filename> and X.509 certificates."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:204(para)
+#: ./security-guide/ch_identity.xml:205(para)
 msgid "For client authentication with SSL, you need to issue certificates. These certificates can be signed by an external authority or by the cloud administrator. OpenStack services by default check the signatures of certificates and connections fail if the signature cannot be checked. If the administrator uses self-signed certificates, the check might need to be disabled. To disable these certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:218(title)
+#: ./security-guide/ch_identity.xml:219(title)
 msgid "Administrative users"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:219(para)
+#: ./security-guide/ch_identity.xml:220(para)
 msgid "We recommend that admin users authenticate using Identity Service and an external authentication service that supports 2-factor authentication, such as a certificate. This reduces the risk from passwords that may be compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) guidance in the use of multi factor authentication for network access to privileged accounts."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:228(title)
+#: ./security-guide/ch_identity.xml:229(title)
 msgid "End users"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:229(para)
+#: ./security-guide/ch_identity.xml:230(para)
 msgid "The Identity Service can directly provide end-user authentication, or can be configured to use external authentication methods to conform to an organization's security policies and requirements."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:236(title)
+#: ./security-guide/ch_identity.xml:237(title)
 msgid "Policies"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:237(para)
+#: ./security-guide/ch_identity.xml:238(para)
 msgid "Each OpenStack service has a policy file in JSON format, called <filename>policy.json</filename>. The policy file specifies rules, and the rule that governs each resource. A resource could be API access, the ability to attach to a volume, or to fire up instances."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:242(para)
+#: ./security-guide/ch_identity.xml:243(para)
 msgid "The policies can be updated by the cloud administrator to further control access to the various resources. The middleware could also be further customized. Note that your users must be assigned to groups/roles that you refer to in your policies."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:247(para)
+#: ./security-guide/ch_identity.xml:248(para)
 msgid "Below is a snippet of the Block Storage service <filename>policy.json</filename> file."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:250(para)
+#: ./security-guide/ch_identity.xml:251(para)
 msgid "Note the <emphasis role=\"bold\">default</emphasis> rule specifies that the user must be either an admin or the owner of the volume. It essentially says only the owner of a volume or the admin may create/delete/update volumes. Certain other operations such as managing volume types are accessible only to admin users."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:258(title)
+#: ./security-guide/ch_identity.xml:259(title)
 msgid "Tokens"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:259(para)
+#: ./security-guide/ch_identity.xml:260(para)
 msgid "Once a user is authenticated, a token is generated and used internally in OpenStack for authorization and access. The default token <emphasis role=\"bold\">lifespan</emphasis> is<emphasis role=\"bold\"> 24 hours</emphasis>. It is recommended that this value be set lower but caution needs to be taken as some internal services will need sufficient time to complete their work. The cloud may not provide services if tokens expire too early. An example of this would be the time needed by the Compute service to transfer a disk image onto the hypervisor for local caching."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:269(para)
+#: ./security-guide/ch_identity.xml:270(para)
 msgid "The following example shows a PKI token. Note that, in practice, the token id value is about 3500 bytes. We shorten it in this example."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:273(para)
+#: ./security-guide/ch_identity.xml:274(para)
 msgid "Note that the token is often passed within the structure of a larger context of an Identity Service response. These responses also provide a catalog of the various OpenStack services. Each service is listed with its name, access endpoints for internal, admin, and public access."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:278(para)
+#: ./security-guide/ch_identity.xml:279(para)
 msgid "The Identity Service supports token revocation. This manifests as an API to revoke a token, to list revoked tokens and individual OpenStack services that cache tokens to query for the revoked tokens and remove them from their cache and append the same to their list of cached revoked tokens."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:285(title)
+#: ./security-guide/ch_identity.xml:286(title)
 msgid "Future"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:286(para)
+#: ./security-guide/ch_identity.xml:287(para)
 msgid "Domains are high-level containers for projects, users and groups. As such, they can be used to centrally manage all keystone-based identity components. With the introduction of account domains, server, storage and other resources can now be logically grouped into multiple projects (previously called tenants) which can themselves be grouped under a master account-like container. In addition, multiple users can be managed within an account domain and assigned roles that vary for each project."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:295(para)
+#: ./security-guide/ch_identity.xml:296(para)
 msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:301(para)
+#: ./security-guide/ch_identity.xml:302(para)
 msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
 msgstr ""
 
@@ -1112,70 +1112,70 @@ msgid "Information Security Management system (ISMS)"
 msgstr ""
 
 #: ./security-guide/ch_compliance-activities.xml:12(para)
-msgid "An Information Security Management System (ISMS) is a comprehensive set of policies and processes that an organization creates and maintains to manage risk to information assets. The most common ISMS for cloud deployments is <link href=\"http://www.27000.org/iso-27001.htm\">ISO/IEC 27001/2</link>, which creates a solid foundation of security controls and practices for achieving more stringent compliance certifications."
+msgid "An Information Security Management System (ISMS) is a comprehensive set of policies and processes that an organization creates and maintains to manage risk to information assets. The most common ISMS for cloud deployments is <link href=\"http://www.27000.org/iso-27001.htm\">ISO/IEC 27001/2</link>, which creates a solid foundation of security controls and practices for achieving more stringent compliance certifications. This standard was updated in 2013 to reflect the growing use of cloud services and places more emphasis on measuring and evaluating how well an organisation's ISMS is performing."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:15(title)
+#: ./security-guide/ch_compliance-activities.xml:22(title)
 msgid "Risk assessment"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:16(para)
+#: ./security-guide/ch_compliance-activities.xml:23(para)
 msgid "A risk assessment framework identifies risks within an organization or service, and specifies ownership of these risks, along with implementation and mitigation strategies. Risks apply to all areas of the service, from technical controls to environmental disaster scenarios and human elements, for example a malicious insider (or rogue employee). Risks can be rated using a variety of mechanisms, for example likelihood vs impact. An OpenStack deployment risk assessment can include control gaps that are described in this book."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:19(title)
+#: ./security-guide/ch_compliance-activities.xml:26(title)
 msgid "Access and log reviews"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:20(para)
+#: ./security-guide/ch_compliance-activities.xml:27(para)
 msgid "Periodic access and log reviews are required to ensure authentication, authorization, and accountability in a service deployment. Specific guidance for OpenStack on these topics are discussed in-depth in the logging section."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:23(title)
+#: ./security-guide/ch_compliance-activities.xml:30(title)
 msgid "Backup and disaster recovery"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:24(para)
+#: ./security-guide/ch_compliance-activities.xml:31(para)
 msgid "Disaster Recovery (DR) and Business Continuity Planning (BCP) plans are common requirements for ISMS and compliance activities. These plans must be periodically tested as well as documented. In OpenStack key areas are found in the management security domain, and anywhere that single points of failure (SPOFs) can be identified. See the section on secure backup and recovery for additional details."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:27(title)
+#: ./security-guide/ch_compliance-activities.xml:34(title)
 msgid "Security training"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:28(para)
+#: ./security-guide/ch_compliance-activities.xml:35(para)
 msgid "Annual, role-specific, security training is a mandatory requirement for almost all compliance certifications and attestations. To optimise the effectiveness of security training, a common method is to provide role specific training, for example to developers, operational personnel, and non-technical employees. Additional cloud security or OpenStack security training based on this hardening guide would be ideal."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:31(title)
+#: ./security-guide/ch_compliance-activities.xml:38(title)
 msgid "Security reviews"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:32(para)
+#: ./security-guide/ch_compliance-activities.xml:39(para)
 msgid "As OpenStack is a popular open source project, much of the codebase and architecture has been scrutinized by individual contributors, organizations and enterprises. This can be advantageous from a security perspective, however the need for security reviews is still a critical consideration for service providers, as deployments vary, and security is not always the primary concern for contributors. A comprehensive security review process may include architectural review, threat modelling, source code analysis and penetration testing. There are many techniques and recommendations for conducting security reviews that can be found publicly posted. A well-tested example is the <link href=\"http://www.microsoft.com/security/sdl/process/release.aspx\">Microsoft SDL</link>, created as part of the Microsoft Trustworthy Computing Initiative."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:48(title) ./security-guide/ch_continuous-systems-management.xml:16(title)
+#: ./security-guide/ch_compliance-activities.xml:55(title) ./security-guide/ch_continuous-systems-management.xml:16(title)
 msgid "Vulnerability management"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:49(para)
+#: ./security-guide/ch_compliance-activities.xml:56(para)
 msgid "Security updates are critical to any IaaS deployment, whether private or public. Vulnerable systems expand attack surfaces, and are obvious targets for attackers. Common scanning technologies and vulnerability notification services can help mitigate this threat. It is important that scans are authenticated and that mitigation strategies extend beyond simple perimeter hardening. Multi-tenant architectures such as OpenStack are particularly prone to hypervisor vulnerabilities, making this a critical part of the system for vulnerability management. See the section on instance isolation for additional details."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:52(title)
+#: ./security-guide/ch_compliance-activities.xml:59(title)
 msgid "Data classification"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:53(para)
+#: ./security-guide/ch_compliance-activities.xml:60(para)
 msgid "Data Classification defines a method for classifying and handling information, often to protect customer information from accidental or deliberate theft, loss, or inappropriate disclosure. Most commonly this involves classifying information as sensitive or non-sensitive, or as personally identifiable information (PII). Depending on the context of the deployment various other classifying criteria may be used (government, health-care etc). The underlying principle is that data classifications are clearly defined and in-use. The most common protective mechanisms include industry standard encryption technologies. See the data security section for additional details."
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:56(title)
+#: ./security-guide/ch_compliance-activities.xml:63(title)
 msgid "Exception process"
 msgstr ""
 
-#: ./security-guide/ch_compliance-activities.xml:57(para)
+#: ./security-guide/ch_compliance-activities.xml:64(para)
 msgid "An exception process is an important component of an ISMS. When certain actions are not compliant with security policies that an organization has defined, they must be logged. Appropriate justification, description and mitigation details need to be included, and signed off by appropriate authorities. OpenStack default configurations may vary in meeting various compliance criteria, areas that fail to meet compliance requirements should be logged, with potential fixes considered for contribution to the community."
 msgstr ""
 
@@ -2654,7 +2654,7 @@ msgid "Data"
 msgstr ""
 
 #: ./security-guide/ch_security-boundaries-and-threats.xml:37(para)
-msgid "We selected these security domains because they can be mapped independently or combined to represent the majority of the possible areas of trust within a given OpenStack deployment. For example, some deployment topologies combine both guest and data domains onto one physical network versus others, which have these networks physically separated. In each case, the cloud operator should be aware of the appropriate security concerns. Security domains should be mapped out against your specific OpenStack deployment topology. The domains and their trust requirements depend upon whether the cloud instance is public, private, or hybrid."
+msgid "We selected these security domains because they can be mapped independently or combined to represent the majority of the possible areas of trust within a given OpenStack deployment. For example, some deployment topologies may consist of a combination of guest and data domains onto one physical network while other topologies have these domains separated. In each case, the cloud operator should be aware of the appropriate security concerns. Security domains should be mapped out against your specific OpenStack deployment topology. The domains and their trust requirements depend upon whether the cloud instance is public, private, or hybrid."
 msgstr ""
 
 #: ./security-guide/ch_security-boundaries-and-threats.xml:56(para)
@@ -3128,7 +3128,7 @@ msgid "The IOMMU feature is marketed as VT-d by Intel and AMD-Vi by AMD."
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:59(para)
-msgid "A hardware infection occurs when an instance makes a malicious modification to the firmware or some other part of a device. As this device is used by other instances, or even the host OS, the malicious code can spread into these systems. The end result is that one instance can run code outside of its security domain. This is a potential problem in any hardware sharing scenario. The problem is specific to this scenario because it is harder to reset the state of physical hardware than virtual hardware."
+msgid "A hardware infection occurs when an instance makes a malicious modification to the firmware or some other part of a device. As this device is used by other instances or the host OS, the malicious code can spread into those systems. The end result is that one instance can run code outside of its security domain. This is a significant breach as it is harder to reset the state of physical hardware than virtual hardware, and can lead to additional exposure such as access to the management network."
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:69(para)
@@ -3655,7 +3655,7 @@ msgstr ""
 msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud may also want to run such tools on their instances."
 msgstr ""
 
-#: ./security-guide/ch_forensics-and-incident-response.xml:48(title) ./security-guide/ch_continuous-systems-management.xml:276(title) ./security-guide/ch_management-interfaces.xml:93(title) ./security-guide/ch_management-interfaces.xml:163(title) ./security-guide/ch_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:60(title) ./security-guide/ch_compute.xml:107(title)
+#: ./security-guide/ch_forensics-and-incident-response.xml:48(title) ./security-guide/ch_continuous-systems-management.xml:277(title) ./security-guide/ch_management-interfaces.xml:93(title) ./security-guide/ch_management-interfaces.xml:163(title) ./security-guide/ch_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:60(title) ./security-guide/ch_compute.xml:107(title)
 msgid "References"
 msgstr ""
 
@@ -4204,94 +4204,94 @@ msgid "A production quality cloud should always use tools to automate configurat
 msgstr ""
 
 #: ./security-guide/ch_continuous-systems-management.xml:191(para)
-msgid "When building an OpenStack cloud it is strongly recommended to approach your design and implementation with a configuration management tool or framework in mind. Configuration management allows you to avoid the many pitfalls inherent in building, managing, and maintaining an infrastructure as complex as OpenStack. By producing the manifests, cookbooks, or templates required for a configuration management utility, you are able to satisfy a number of documentation and regulatory reporting requirements. Further, configuration management can also function as part of your BCP and DR plans wherein you can rebuild a node or service back to a known state in a DR event or given a compromise."
+msgid "When building an OpenStack cloud it is strongly recommended to approach your design and implementation with a configuration management tool or framework in mind. Configuration management allows you to avoid the many pitfalls inherent in building, managing, and maintaining an infrastructure as complex as OpenStack. By producing the manifests, cookbooks, or templates required for a configuration management utility, you are able to satisfy a number of documentation and regulatory reporting requirements. Further, configuration management can also function as part of your business continuity plan (BCP) and data recovery (DR) plans wherein you can rebuild a node or service back to a known state in a DR event or given a compromise."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:203(para)
+#: ./security-guide/ch_continuous-systems-management.xml:204(para)
 msgid "Additionally, when combined with a version control system such as Git or SVN, you can track changes to your environment over time and re-mediate unauthorized changes that may occur. For example, a <filename>nova.conf</filename> file or other configuration file falls out of compliance with your standard, your configuration management tool can revert or replace the file and bring your configuration back into a known state. Finally a configuration management tool can also be used to deploy updates; simplifying the security patch process. These tools have a broad range of capabilities that are useful in this space. The key point for securing your cloud is to choose a tool for configuration management and use it."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:215(para)
+#: ./security-guide/ch_continuous-systems-management.xml:216(para)
 msgid "There are many configuration management solutions; at the time of this writing there are two in the marketplace that are robust in their support of OpenStack environments: <glossterm>Chef</glossterm> and <glossterm>Puppet</glossterm>. A non-exhaustive listing of tools in this space is provided below:"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:223(para) ./security-guide/glossary-terms.xml:1295(primary)
+#: ./security-guide/ch_continuous-systems-management.xml:224(para) ./security-guide/glossary-terms.xml:1295(primary)
 msgid "Chef"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:226(para) ./security-guide/glossary-terms.xml:5633(primary)
+#: ./security-guide/ch_continuous-systems-management.xml:227(para) ./security-guide/glossary-terms.xml:5633(primary)
 msgid "Puppet"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:229(para)
+#: ./security-guide/ch_continuous-systems-management.xml:230(para)
 msgid "Salt Stack"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:232(para)
+#: ./security-guide/ch_continuous-systems-management.xml:233(para)
 msgid "Ansible"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:236(title)
+#: ./security-guide/ch_continuous-systems-management.xml:237(title)
 msgid "Policy changes"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:237(para)
+#: ./security-guide/ch_continuous-systems-management.xml:238(para)
 msgid "Whenever a policy or configuration management is changed, it is good practice to log the activity, and backup a copy of the new set. Often, such policies and configurations are stored in a version controlled repository such as git."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:244(title)
+#: ./security-guide/ch_continuous-systems-management.xml:245(title)
 msgid "Secure backup and recovery"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:245(para)
+#: ./security-guide/ch_continuous-systems-management.xml:246(para)
 msgid "It is important to include Backup procedures and policies in the overall System Security Plan. For a good overview of OpenStack's Backup and Recovery capabilities and procedures, please refer to the OpenStack Operations Guide."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:250(title) ./security-guide/ch_management-interfaces.xml:60(title) ./security-guide/ch_management-interfaces.xml:120(title) ./security-guide/ch_management-interfaces.xml:153(title) ./security-guide/ch_management-interfaces.xml:177(title) ./security-guide/ch_compute.xml:45(title) ./security-guide/ch_compute.xml:91(title)
+#: ./security-guide/ch_continuous-systems-management.xml:251(title) ./security-guide/ch_management-interfaces.xml:60(title) ./security-guide/ch_management-interfaces.xml:120(title) ./security-guide/ch_management-interfaces.xml:153(title) ./security-guide/ch_management-interfaces.xml:177(title) ./security-guide/ch_compute.xml:45(title) ./security-guide/ch_compute.xml:91(title)
 msgid "Security considerations"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:253(para)
+#: ./security-guide/ch_continuous-systems-management.xml:254(para)
 msgid "Ensure only authenticated users and backup clients have access to the backup server."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:257(para)
+#: ./security-guide/ch_continuous-systems-management.xml:258(para)
 msgid "Use data encryption options for storage and transmission of backups."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:261(para)
+#: ./security-guide/ch_continuous-systems-management.xml:262(para)
 msgid "Use a dedicated and hardened backup servers. The logs for the backup server must be monitored daily and accessible by only few individuals."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:266(para)
+#: ./security-guide/ch_continuous-systems-management.xml:267(para)
 msgid "Test data recovery options regularly. One of the things that can be restored from secured backups is the images. In case of a compromise, the best practice would be to terminate running instances immediately and then relaunch the instances from the images in the secured backup repository."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:279(para)
+#: ./security-guide/ch_continuous-systems-management.xml:280(para)
 msgid "<citetitle>OpenStack Operations Guide</citetitle> on <link href=\"http://docs.openstack.org/openstack-ops/content/backup_and_recovery.html\">backup and recovery</link>"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:287(link)
+#: ./security-guide/ch_continuous-systems-management.xml:288(link)
 msgid "http://www.sans.org/reading_room/whitepapers/backup/security-considerations-enterprise-level-backups_515"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:291(link)
+#: ./security-guide/ch_continuous-systems-management.xml:292(link)
 msgid "OpenStack Security Primer"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:297(title)
+#: ./security-guide/ch_continuous-systems-management.xml:298(title)
 msgid "Security auditing tools"
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:298(para)
+#: ./security-guide/ch_continuous-systems-management.xml:299(para)
 msgid "Security auditing tools can complement the configuration management tools. Security auditing tools automate the process of verifying that a large number of security controls are satisfied for a given system configuration. These tools help to bridge the gap from security configuration guidance documentation (for example, the STIG and NSA Guides) to a specific system installation. For example, <link href=\"https://fedorahosted.org/scap-security-guide/\">SCAP</link> can compare a running system to a pre-defined profile. SCAP outputs a report detailing which controls in the profile were satisfied, which ones failed, and which ones were not checked."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:310(para)
+#: ./security-guide/ch_continuous-systems-management.xml:311(para)
 msgid "Combining configuration management and security auditing tools creates a powerful combination. The auditing tools will highlight deployment concerns. And the configuration management tools simplify the process of changing each system to address the audit concerns. Used together in this fashion, these tools help to maintain a cloud that satisfies security requirements ranging from basic hardening to compliance validation."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:317(para)
+#: ./security-guide/ch_continuous-systems-management.xml:318(para)
 msgid "Configuration management and security auditing tools will introduce another layer of complexity into the cloud. This complexity brings additional security concerns with it. We view this as an acceptable risk trade-off, given their security benefits. Securing the operational use of these tools is beyond the scope of this guide."
 msgstr ""
 
@@ -12816,7 +12816,7 @@ msgid "Database back end considerations"
 msgstr ""
 
 #: ./security-guide/ch_database-backend-considerations.xml:9(para)
-msgid "The choice of database server is an important consideration in the security of an OpenStack deployment. While security considerations are not the only basis on which a database server must be chosen, security considerations are the only ones within the scope of this book. In practice, OpenStack only supports two database types: PostgreSQL and MySQL."
+msgid "The choice of database server is an important consideration in the security of an OpenStack deployment. Multiple factors should be considered when deciding on a database server, however for the scope of this book only security considerations will be discussed. OpenStack supports PostgreSQL and MySQL database types."
 msgstr ""
 
 #: ./security-guide/ch_database-backend-considerations.xml:10(para)

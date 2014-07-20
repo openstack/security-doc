@@ -33,7 +33,7 @@
       <para>Below we provide sample recommended configuration settings for enabling SSL in some of
       the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of
       these examples as this will be required in many deployments for client compatibility.</para>
-      <para>Before we delve into the configurations, we briefly discuss the ciphers' configuration element and its format. A  more exhaustive treatment on available ciphers and the OpenSSL cipher list format can be found at: <link xlink:href="https://www.openssl.org/docs/apps/ciphers.html">ciphers</link>.</para>
+      <para>Before we delve into the configurations, we briefly discuss the ciphers' configuration element and its format. A more exhaustive treatment on available ciphers and the OpenSSL cipher list format can be found at: <link xlink:href="https://www.openssl.org/docs/apps/ciphers.html">ciphers</link>.</para>
 <programlisting>
 ciphers = "HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
 </programlisting>
@@ -202,7 +202,7 @@ write-proxy = off</programlisting>
     </section>
     <section xml:id="ssl-proxies-and-http-services-idp53424">
       <title>nginx</title>
-      <para>This nginx example requires TLS v1.1 or v1.2 for maximum security.  The <option>ssl_ciphers</option> line can be tweaked based on your needs, however this
+      <para>This nginx example requires TLS v1.1 or v1.2 for maximum security. The <option>ssl_ciphers</option> line can be tweaked based on your needs, however this
       is a reasonable starting place.</para>
       <programlisting>server {
     listen : ssl;

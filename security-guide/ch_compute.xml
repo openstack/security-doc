@@ -17,10 +17,9 @@
       <section xml:id="compute-idp46336">
         <title>Virtual Network Computer (VNC)</title>
         <para>OpenStack can be configured to provide remote desktop console access to instances for tenants and/or administrators using the Virtual Network Computer (VNC) protocol.</para>
-      </section>
-      <section xml:id="compute-idp48352">
-        <title>Capabilities</title>
-        <itemizedlist><listitem>
+        <section xml:id="compute-idp48352">
+          <title>Capabilities</title>
+          <itemizedlist><listitem>
             <para>
               The OpenStack dashboard (horizon) can provide a VNC
               console for instances directly on the web page using the
@@ -39,11 +38,11 @@
             bridge from the public network to the management
             network.</para>
           </listitem>
-        </itemizedlist>
-      </section>
-      <section xml:id="compute-idp51760">
-        <title>Security considerations</title>
-        <itemizedlist><listitem>
+          </itemizedlist>
+        </section>
+        <section xml:id="compute-idp51760">
+          <title>Security considerations</title>
+          <itemizedlist><listitem>
             <para>The <systemitem
             class="service">nova-novncproxy</systemitem> and
             <systemitem class="service">nova-xvpvncproxy</systemitem>
@@ -54,12 +53,13 @@
             <para>By default, the remote desktop traffic is not encrypted.
             SSL can be enabled to encrypt the VNC traffic. Please refer to <link linkend="introduction-to-ssl-tls">Introduction to SSL/TLS</link> for appropriate recommendations.</para>
           </listitem>
-</itemizedlist>
-      </section>
-      <section xml:id="compute-idp54592">
-        <title>References</title>
-        <para><link xlink:href="http://blog.malchuk.ru/2013/05/21/47">Secure Connections to VNC ports</link></para>
-        <para><link xlink:href="http://www.iamlinux.com/2014/06/using-ssl-encryption-with-openstack-nova-novncproxy/">Using SSL encryption with nova novncproxy</link></para>
+          </itemizedlist>
+        </section>
+        <section xml:id="compute-idp54592">
+          <title>References</title>
+          <para><link xlink:href="http://blog.malchuk.ru/2013/05/21/47">Secure Connections to VNC ports</link></para>
+          <para><link xlink:href="http://www.iamlinux.com/2014/06/using-ssl-encryption-with-openstack-nova-novncproxy/">Using SSL encryption with nova novncproxy</link></para>
+        </section>
       </section>
       <section xml:id="compute-idp55824">
         <title>Simple Protocol for Independent Computing Environments (SPICE)</title>

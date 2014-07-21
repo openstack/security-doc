@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-20 06:04+0000\n"
+"POT-Creation-Date: 2014-07-21 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -849,7 +849,7 @@ msgstr ""
 msgid "Block Storage volumes and instance ephemeral filesystems"
 msgstr ""
 
-#: ./security-guide/ch_data-encryption.xml:21(para) ./security-guide/ch_data-encryption.xml:37(title)
+#: ./security-guide/ch_data-encryption.xml:21(para) ./security-guide/ch_data-encryption.xml:38(title)
 msgid "Network data"
 msgstr ""
 
@@ -866,23 +866,23 @@ msgid "http://www.mirantis.com/blog/on-disk-encryption-prototype-for-openstack-s
 msgstr ""
 
 #: ./security-guide/ch_data-encryption.xml:32(para)
-msgid "The ability to encrypt volumes depends on the service back ends chosen. Some back ends may not support this at all."
+msgid "Block Storage supports a variety of mechanisms for supplying mountable volumes. The ability to encrypt volumes depends on the service back ends chosen. Some back ends may not support this at all. It is outside the scope of this guide to specify recommendations for each Block Storage back-end driver."
 msgstr ""
 
 #: ./security-guide/ch_data-encryption.xml:33(para)
-msgid "As both block storage and compute support LVM backed storage, we can easily provide an example applicable to both systems. In deployments using LVM, encryption may be performed against the backing physical volumes. An encrypted block device would be created using the standard Linux tools, with the LVM physical volume (PV) created on top of the decrypted block device using pvcreate. Then, the vgcreate or vgmodify tool may be used to add the encrypted physical volume to an LVM volume group (VG)."
+msgid "For the purpose of performance, many storage protocols are unencrypted. Some protocols such as iSCSI can provide authentication and encrypted sessions, it is our recommendation to enable these features."
 msgstr ""
 
 #: ./security-guide/ch_data-encryption.xml:34(para)
+msgid "As both block storage and compute support LVM backed storage, we can easily provide an example applicable to both systems. In deployments using LVM, encryption may be performed against the backing physical volumes. An encrypted block device would be created using the standard Linux tools, with the LVM physical volume (PV) created on top of the decrypted block device using pvcreate. Then, the vgcreate or vgmodify tool may be used to add the encrypted physical volume to an LVM volume group (VG)."
+msgstr ""
+
+#: ./security-guide/ch_data-encryption.xml:35(para)
 msgid "A feature aimed for the Havana release provides encryption of the VM's data before it is written to disk. This allows the privacy of data to be maintained while residing on the storage device. The idea is similar to how self-encrypting drives work. This feature presents a normal block storage device to the VM but encrypts the bytes in the virtualization host before writing them to the disk. The block server operates exactly as it does when reading and writing unencrypted blocks, except special handling will be required for Block Storage features such as snapshots and live migration. Note that this feature uses an independent key manager."
 msgstr ""
 
-#: ./security-guide/ch_data-encryption.xml:38(para)
+#: ./security-guide/ch_data-encryption.xml:39(para)
 msgid "Tenant data for compute could be encrypted over IPSec or other tunnels. This is not functionality common or standard in OpenStack, but is an option available to motivated and interested implementors."
-msgstr ""
-
-#: ./security-guide/ch_data-encryption.xml:42(para)
-msgid "Block storage supports a variety of mechanisms for supplying mountable volumes. It is outside the scope of this guide to specify recommendations for each Block Storage back-end driver. For the purpose of performance, many storage protocols are unencrypted. Some protocols such as iSCSI can provide authentication and encrypted sessions, it is our recommendation to enable these features."
 msgstr ""
 
 #: ./security-guide/ch_introduction-to-ssl-tls.xml:8(title)
@@ -1184,178 +1184,186 @@ msgid "Messaging security"
 msgstr ""
 
 #: ./security-guide/ch_messaging-security.xml:9(para)
-msgid "This chapter discusses security hardening approaches for the three most common message queuing solutions use in OpenStack: RabbitMQ, Qpid, and ZeroMQ."
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:11(title)
-msgid "Messaging transport security"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:12(para)
-msgid "AMQP based solutions (Qpid and RabbitMQ) support transport-level security using SSL. ZeroMQ messaging does not natively support SSL, but transport-level security is possible using labelled IPSec or CIPSO network labels."
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:13(para)
-msgid "We highly recommend enabling transport-level cryptography for your message queue. Using SSL for the messaging client connections provides protection of the communications from tampering and eavesdropping in-transit to the messaging server. Below is guidance on how SSL is typically configured for the two popular messaging servers Qpid and RabbitMQ. When configuring the trusted certificate authority (CA) bundle that your messaging server uses to verify client connections, it is recommended that this be limited to only the CA used for your nodes, preferably an internally managed CA. The bundle of trusted CAs will determine which client certificates will be authorized and pass the client-server verification step of the setting up the SSL connection. Note, when installing the certificate and key files, ensure that the file permissions are restricted, for example chmod 0600, and the ownership is restricted to the messaging server daemon user to prevent unauthorized access by other processes and users on the messaging server."
+msgid "This chapter discusses security hardening approaches for the three most common message queuing solutions used in OpenStack: RabbitMQ, Qpid, and ZeroMQ."
 msgstr ""
 
 #: ./security-guide/ch_messaging-security.xml:15(title)
-msgid "RabbitMQ server SSL configuration"
+msgid "Messaging transport security"
 msgstr ""
 
 #: ./security-guide/ch_messaging-security.xml:16(para)
+msgid "AMQP based solutions (Qpid and RabbitMQ) support transport-level security using SSL. ZeroMQ messaging does not natively support SSL, but transport-level security is possible using labelled IPSec or CIPSO network labels."
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:22(para)
+msgid "We highly recommend enabling transport-level cryptography for your message queue. Using SSL for the messaging client connections provides protection of the communications from tampering and eavesdropping in-transit to the messaging server. Below is guidance on how SSL is typically configured for the two popular messaging servers Qpid and RabbitMQ. When configuring the trusted certificate authority (CA) bundle that your messaging server uses to verify client connections, it is recommended that this be limited to only the CA used for your nodes, preferably an internally managed CA. The bundle of trusted CAs will determine which client certificates will be authorized and pass the client-server verification step of the setting up the SSL connection. Note, when installing the certificate and key files, ensure that the file permissions are restricted, for example using <placeholder-1/>, and the ownership is restricted to the messaging server daemon user to prevent unauthorized access by other processes and users on the messaging server."
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:44(title)
+msgid "RabbitMQ server SSL configuration"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:45(para)
 msgid "The following lines should be added to the system-wide RabbitMQ configuration file, typically <filename>/etc/rabbitmq/rabbitmq.config</filename>:"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:31(para)
+#: ./security-guide/ch_messaging-security.xml:60(para)
 msgid "Note, the <literal>tcp_listeners</literal> option is set to <literal>[]</literal> to prevent it from listening an on non-SSL port. The <literal>ssl_listeners</literal> option should be restricted to only listen on the management network for the services."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:36(para)
+#: ./security-guide/ch_messaging-security.xml:65(para)
 msgid "For more information on RabbitMQ SSL configuration see:"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:39(link)
+#: ./security-guide/ch_messaging-security.xml:68(link)
 msgid "RabbitMQ Configuration"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:43(link)
+#: ./security-guide/ch_messaging-security.xml:72(link)
 msgid "RabbitMQ SSL"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:48(title)
+#: ./security-guide/ch_messaging-security.xml:77(title)
 msgid "Qpid server SSL configuration"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:49(para)
+#: ./security-guide/ch_messaging-security.xml:78(para)
 msgid "The Apache Foundation has a messaging security guide for Qpid. See:"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:51(link)
+#: ./security-guide/ch_messaging-security.xml:80(link)
 msgid "Apache Qpid SSL"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:57(title)
+#: ./security-guide/ch_messaging-security.xml:86(title)
 msgid "Queue authentication and access control"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:58(para)
+#: ./security-guide/ch_messaging-security.xml:87(para)
 msgid "RabbitMQ and Qpid offer authentication and access control mechanisms for controlling access to queues. ZeroMQ offers no such mechanisms."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:59(para)
+#: ./security-guide/ch_messaging-security.xml:92(para)
 msgid "Simple Authentication and Security Layer (SASL) is a framework for authentication and data security in Internet protocols. Both RabbitMQ and Qpid offer SASL and other pluggable authentication mechanisms beyond simple user names and passwords that allow for increased authentication security. While RabbitMQ supports SASL, support in OpenStack does not currently allow for requesting a specific SASL authentication mechanism. RabbitMQ support in OpenStack allows for either user name and password authentication over an unencrypted connection or user name and password in conjunction with X.509 client certificates to establish the secure SSL connection."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:60(para)
+#: ./security-guide/ch_messaging-security.xml:106(para)
 msgid "We recommend configuring X.509 client certificates on all the OpenStack service nodes for client connections to the messaging queue and where possible (currently only Qpid) perform authentication with X.509 client certificates. When using user names and passwords, accounts should be created per-service and node for finer grained auditability of access to the queue."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:61(para)
+#: ./security-guide/ch_messaging-security.xml:115(para)
 msgid "Before deployment, consider the SSL libraries that the queuing servers use. Qpid uses Mozilla's NSS library, whereas RabbitMQ uses Erlang's SSL module which uses OpenSSL."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:66(title)
+#: ./security-guide/ch_messaging-security.xml:120(title)
 msgid "Authentication configuration example: RabbitMQ"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:67(para)
+#: ./security-guide/ch_messaging-security.xml:121(para)
 msgid "On the RabbitMQ server, delete the default <literal>guest</literal> user:"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:70(para)
+#: ./security-guide/ch_messaging-security.xml:124(para)
 msgid "On the RabbitMQ server, for each OpenStack service or node that communicates with the message queue set up user accounts and privileges:"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:75(para)
-msgid "For additional configuration information see:"
+#: ./security-guide/ch_messaging-security.xml:127(replaceable) ./security-guide/ch_messaging-security.xml:153(replaceable) ./security-guide/ch_messaging-security.xml:178(replaceable)
+msgid "PASSWORD"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:77(link)
-msgid "RabbitMQ Access Control"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:80(link)
-msgid "RabbitMQ Authentication"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:83(link)
-msgid "RabbitMQ Plugins"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:86(link)
-msgid "RabbitMQ SASL External Auth"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:91(title)
-msgid "OpenStack service configuration: RabbitMQ"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:104(title)
-msgid "Authentication configuration example: Qpid"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:105(para)
-msgid "For configuration information see:"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:107(link)
-msgid "Apache Qpid Authentication"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:110(link)
-msgid "Apache Qpid Authorization"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:115(title)
-msgid "OpenStack service configuration: Qpid"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:124(para)
-msgid "Optionally, if using SASL with Qpid specify the SASL mechanisms in use by adding:"
-msgstr ""
-
-#: ./security-guide/ch_messaging-security.xml:129(title)
-msgid "Message queue process isolation and policy"
+#: ./security-guide/ch_messaging-security.xml:129(para)
+msgid "Replace <replaceable>PASSWORD</replaceable> with a suitable password."
 msgstr ""
 
 #: ./security-guide/ch_messaging-security.xml:130(para)
+msgid "For additional configuration information see:"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:132(link)
+msgid "RabbitMQ Access Control"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:135(link)
+msgid "RabbitMQ Authentication"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:138(link)
+msgid "RabbitMQ Plugins"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:141(link)
+msgid "RabbitMQ SASL External Auth"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:146(title)
+msgid "OpenStack service configuration: RabbitMQ"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:159(title)
+msgid "Authentication configuration example: Qpid"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:160(para)
+msgid "For configuration information see:"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:162(link)
+msgid "Apache Qpid Authentication"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:165(link)
+msgid "Apache Qpid Authorization"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:170(title)
+msgid "OpenStack service configuration: Qpid"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:179(para)
+msgid "Optionally, if using SASL with Qpid specify the SASL mechanisms in use by adding:"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:184(title)
+msgid "Message queue process isolation and policy"
+msgstr ""
+
+#: ./security-guide/ch_messaging-security.xml:185(para)
 msgid "Each project provides a number of services which send and consume messages. Each binary which sends a message is expected to consume messages, if only replies, from the queue."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:131(para)
+#: ./security-guide/ch_messaging-security.xml:190(para)
 msgid "Message queue service processes should be isolated from each other and other processes on a machine."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:133(title) ./security-guide/ch_api-endpoint-configuration-recommendations.xml:102(title)
+#: ./security-guide/ch_messaging-security.xml:195(title) ./security-guide/ch_api-endpoint-configuration-recommendations.xml:102(title)
 msgid "Namespaces"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:134(para)
+#: ./security-guide/ch_messaging-security.xml:196(para)
 msgid "Network namespaces are highly recommended for all services running on OpenStack Compute Hypervisors. This will help prevent against the bridging of network traffic between VM guests and the management network."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:135(para)
+#: ./security-guide/ch_messaging-security.xml:202(para)
 msgid "When using ZeroMQ messaging, each host must run at least one ZeroMQ message receiver to receive messages from the network and forward messages to local processes through IPC. It is possible and advisable to run an independent message receiver per project within an IPC namespace, along with other services within the same project."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:144(title) ./security-guide/ch_api-endpoint-configuration-recommendations.xml:110(title)
+#: ./security-guide/ch_messaging-security.xml:211(title) ./security-guide/ch_api-endpoint-configuration-recommendations.xml:110(title)
 msgid "Network policy"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:145(para)
+#: ./security-guide/ch_messaging-security.xml:212(para)
 msgid "Queue servers should only accept connections from the management network. This applies to all implementations. This should be implemented through configuration of services and optionally enforced through global network policy."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:146(para)
+#: ./security-guide/ch_messaging-security.xml:219(para)
 msgid "When using ZeroMQ messaging, each project should run a separate ZeroMQ receiver process on a port dedicated to services belonging to that project. This is equivalent to the AMQP concept of control exchanges."
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:149(title) ./security-guide/ch_hardening-the-virtualization-layers.xml:238(title) ./security-guide/ch_api-endpoint-configuration-recommendations.xml:129(title)
+#: ./security-guide/ch_messaging-security.xml:227(title) ./security-guide/ch_hardening-the-virtualization-layers.xml:238(title) ./security-guide/ch_api-endpoint-configuration-recommendations.xml:129(title)
 msgid "Mandatory access controls"
 msgstr ""
 
-#: ./security-guide/ch_messaging-security.xml:150(para)
+#: ./security-guide/ch_messaging-security.xml:228(para)
 msgid "Use both mandatory access controls (MACs) and discretionary access controls (DACs) to restrict the configuration for processes to only those processes. This restriction prevents these processes from being isolated from other processes that run on the same machine(s)."
 msgstr ""
 
@@ -2264,7 +2272,7 @@ msgid "As OpenStack adoption continues to grow and the product matures, security
 msgstr ""
 
 #: ./security-guide/ch_why-and-how-we-wrote-this-book.xml:14(para)
-msgid "The guide augments the <link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link> and can be referenced to harden existing OpenStack deployments or to evaluate the security controls of OpenStack cloud providers."
+msgid "This guide augments the <link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link> and can be referenced to harden existing OpenStack deployments or to evaluate the security controls of OpenStack cloud providers."
 msgstr ""
 
 #: ./security-guide/ch_why-and-how-we-wrote-this-book.xml:16(title)
@@ -3244,7 +3252,7 @@ msgid "sVirt: SELinux and virtualization"
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:254(para)
-msgid "With unique kernel-level architecture and National Security Agency (NSA) developed security mechanisms, KVM provides foundational isolation technologies for multi tenancy. With developmental origins dating back to 2002, the Secure Virtualization (sVirt) technology is the application of SELinux against modern day virtualization. SELinux, which was designed to apply separation control based upon labels, has been extended to provide isolation between virtual machine processes, devices, data files and system processes acting upon their behalf."
+msgid "With unique kernel-level architecture and National Security Agency (NSA) developed security mechanisms, KVM provides foundational isolation technologies for multi-tenancy. With developmental origins dating back to 2002, the Secure Virtualization (sVirt) technology is the application of SELinux against modern day virtualization. SELinux, which was designed to apply separation control based upon labels, has been extended to provide isolation between virtual machine processes, devices, data files and system processes acting upon their behalf."
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:265(para)
@@ -3655,7 +3663,7 @@ msgstr ""
 msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud may also want to run such tools on their instances."
 msgstr ""
 
-#: ./security-guide/ch_forensics-and-incident-response.xml:48(title) ./security-guide/ch_continuous-systems-management.xml:277(title) ./security-guide/ch_management-interfaces.xml:93(title) ./security-guide/ch_management-interfaces.xml:163(title) ./security-guide/ch_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:60(title) ./security-guide/ch_compute.xml:107(title)
+#: ./security-guide/ch_forensics-and-incident-response.xml:48(title) ./security-guide/ch_continuous-systems-management.xml:277(title) ./security-guide/ch_management-interfaces.xml:93(title) ./security-guide/ch_management-interfaces.xml:163(title) ./security-guide/ch_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:107(title)
 msgid "References"
 msgstr ""
 
@@ -4247,7 +4255,7 @@ msgstr ""
 msgid "It is important to include Backup procedures and policies in the overall System Security Plan. For a good overview of OpenStack's Backup and Recovery capabilities and procedures, please refer to the OpenStack Operations Guide."
 msgstr ""
 
-#: ./security-guide/ch_continuous-systems-management.xml:251(title) ./security-guide/ch_management-interfaces.xml:60(title) ./security-guide/ch_management-interfaces.xml:120(title) ./security-guide/ch_management-interfaces.xml:153(title) ./security-guide/ch_management-interfaces.xml:177(title) ./security-guide/ch_compute.xml:45(title) ./security-guide/ch_compute.xml:91(title)
+#: ./security-guide/ch_continuous-systems-management.xml:251(title) ./security-guide/ch_management-interfaces.xml:60(title) ./security-guide/ch_management-interfaces.xml:120(title) ./security-guide/ch_management-interfaces.xml:153(title) ./security-guide/ch_management-interfaces.xml:177(title) ./security-guide/ch_compute.xml:44(title) ./security-guide/ch_compute.xml:91(title)
 msgid "Security considerations"
 msgstr ""
 
@@ -12923,7 +12931,7 @@ msgstr ""
 msgid "The OpenStack dashboard (horizon) provides administrators and tenants with a web-based graphical interface to provision and access cloud-based resources. The dashboard communicates with the back-end services through calls to the OpenStack API."
 msgstr ""
 
-#: ./security-guide/ch_management-interfaces.xml:41(title) ./security-guide/ch_management-interfaces.xml:106(title) ./security-guide/ch_compute.xml:22(title) ./security-guide/ch_compute.xml:68(title)
+#: ./security-guide/ch_management-interfaces.xml:41(title) ./security-guide/ch_management-interfaces.xml:106(title) ./security-guide/ch_compute.xml:21(title) ./security-guide/ch_compute.xml:68(title)
 msgid "Capabilities"
 msgstr ""
 
@@ -13585,27 +13593,27 @@ msgstr ""
 msgid "OpenStack can be configured to provide remote desktop console access to instances for tenants and/or administrators using the Virtual Network Computer (VNC) protocol."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:24(para)
+#: ./security-guide/ch_compute.xml:23(para)
 msgid "The OpenStack dashboard (horizon) can provide a VNC console for instances directly on the web page using the HTML5 noVNC client. This requires the <systemitem class=\"service\">nova-novncproxy</systemitem> service to bridge from the public network to the management network."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:34(para)
+#: ./security-guide/ch_compute.xml:33(para)
 msgid "The <placeholder-1/> command-line utility can return a URL for the VNC console for access by the <systemitem class=\"service\">nova</systemitem> Java VNC client. This requires the <systemitem class=\"service\">nova-xvpvncproxy</systemitem> service to bridge from the public network to the management network."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:47(para)
+#: ./security-guide/ch_compute.xml:46(para)
 msgid "The <systemitem class=\"service\">nova-novncproxy</systemitem> and <systemitem class=\"service\">nova-xvpvncproxy</systemitem> services by default open public-facing ports that are token authenticated."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:54(para)
+#: ./security-guide/ch_compute.xml:53(para)
 msgid "By default, the remote desktop traffic is not encrypted. SSL can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to SSL/TLS</link> for appropriate recommendations."
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:61(link)
+#: ./security-guide/ch_compute.xml:60(link)
 msgid "Secure Connections to VNC ports"
 msgstr ""
 
-#: ./security-guide/ch_compute.xml:62(link)
+#: ./security-guide/ch_compute.xml:61(link)
 msgid "Using SSL encryption with nova novncproxy"
 msgstr ""
 

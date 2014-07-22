@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-21 06:04+0000\n"
+"POT-Creation-Date: 2014-07-22 06:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -310,78 +310,78 @@ msgid "The cloud administrator should protect sensitive configuration files from
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:205(para)
-msgid "For client authentication with SSL, you need to issue certificates. These certificates can be signed by an external authority or by the cloud administrator. OpenStack services by default check the signatures of certificates and connections fail if the signature cannot be checked. If the administrator uses self-signed certificates, the check might need to be disabled. To disable these certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
+msgid "Client authentication with SSL requires certificates be issued to services. These certificates can be signed by an external or internal certificate authority. OpenStack services check the validity of certificate signatures against trusted CAs by default and connections will fail if the signature is not valid or the CA is not trusted. Cloud deployers may use self-signed certificates. In this case, the validity check must disabled or the certificate marked as trusted. To disable validation of self-signed certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:219(title)
+#: ./security-guide/ch_identity.xml:220(title)
 msgid "Administrative users"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:220(para)
+#: ./security-guide/ch_identity.xml:221(para)
 msgid "We recommend that admin users authenticate using Identity Service and an external authentication service that supports 2-factor authentication, such as a certificate. This reduces the risk from passwords that may be compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) guidance in the use of multi factor authentication for network access to privileged accounts."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:229(title)
+#: ./security-guide/ch_identity.xml:230(title)
 msgid "End users"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:230(para)
+#: ./security-guide/ch_identity.xml:231(para)
 msgid "The Identity Service can directly provide end-user authentication, or can be configured to use external authentication methods to conform to an organization's security policies and requirements."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:237(title)
+#: ./security-guide/ch_identity.xml:238(title)
 msgid "Policies"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:238(para)
+#: ./security-guide/ch_identity.xml:239(para)
 msgid "Each OpenStack service has a policy file in JSON format, called <filename>policy.json</filename>. The policy file specifies rules, and the rule that governs each resource. A resource could be API access, the ability to attach to a volume, or to fire up instances."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:243(para)
+#: ./security-guide/ch_identity.xml:244(para)
 msgid "The policies can be updated by the cloud administrator to further control access to the various resources. The middleware could also be further customized. Note that your users must be assigned to groups/roles that you refer to in your policies."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:248(para)
+#: ./security-guide/ch_identity.xml:249(para)
 msgid "Below is a snippet of the Block Storage service <filename>policy.json</filename> file."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:251(para)
+#: ./security-guide/ch_identity.xml:252(para)
 msgid "Note the <emphasis role=\"bold\">default</emphasis> rule specifies that the user must be either an admin or the owner of the volume. It essentially says only the owner of a volume or the admin may create/delete/update volumes. Certain other operations such as managing volume types are accessible only to admin users."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:259(title)
+#: ./security-guide/ch_identity.xml:260(title)
 msgid "Tokens"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:260(para)
+#: ./security-guide/ch_identity.xml:261(para)
 msgid "Once a user is authenticated, a token is generated and used internally in OpenStack for authorization and access. The default token <emphasis role=\"bold\">lifespan</emphasis> is<emphasis role=\"bold\"> 24 hours</emphasis>. It is recommended that this value be set lower but caution needs to be taken as some internal services will need sufficient time to complete their work. The cloud may not provide services if tokens expire too early. An example of this would be the time needed by the Compute service to transfer a disk image onto the hypervisor for local caching."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:270(para)
+#: ./security-guide/ch_identity.xml:271(para)
 msgid "The following example shows a PKI token. Note that, in practice, the token id value is about 3500 bytes. We shorten it in this example."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:274(para)
+#: ./security-guide/ch_identity.xml:275(para)
 msgid "Note that the token is often passed within the structure of a larger context of an Identity Service response. These responses also provide a catalog of the various OpenStack services. Each service is listed with its name, access endpoints for internal, admin, and public access."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:279(para)
+#: ./security-guide/ch_identity.xml:280(para)
 msgid "The Identity Service supports token revocation. This manifests as an API to revoke a token, to list revoked tokens and individual OpenStack services that cache tokens to query for the revoked tokens and remove them from their cache and append the same to their list of cached revoked tokens."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:286(title)
+#: ./security-guide/ch_identity.xml:287(title)
 msgid "Future"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:287(para)
+#: ./security-guide/ch_identity.xml:288(para)
 msgid "Domains are high-level containers for projects, users and groups. As such, they can be used to centrally manage all keystone-based identity components. With the introduction of account domains, server, storage and other resources can now be logically grouped into multiple projects (previously called tenants) which can themselves be grouped under a master account-like container. In addition, multiple users can be managed within an account domain and assigned roles that vary for each project."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:296(para)
+#: ./security-guide/ch_identity.xml:297(para)
 msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:302(para)
+#: ./security-guide/ch_identity.xml:303(para)
 msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
 msgstr ""
 

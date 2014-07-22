@@ -95,7 +95,7 @@
         When running a virtual machine, virtual hardware is a software
         layer that provides the hardware interface for the virtual
         machine. Instances use this functionality to provide network,
-        storage, video, and other devices that may be needed.  With
+        storage, video, and other devices that may be needed. With
         this in mind, most instances in your environment will
         exclusively use virtual hardware, with a minority that will
         require direct hardware access. The major open source
@@ -104,7 +104,7 @@
         to be a very challenging software project to write and
         maintain. Much of the functionality in QEMU is implemented
         with low-level code that is difficult for most developers to
-        comprehend.  Furthermore, the hardware virtualized by QEMU
+        comprehend. Furthermore, the hardware virtualized by QEMU
         includes many legacy devices that have their own set of
         quirks. Putting all of this together, QEMU has been the source
         of many security problems, including hypervisor breakout
@@ -254,7 +254,7 @@
       <para>
         With unique kernel-level architecture and National Security
         Agency (NSA) developed security mechanisms, KVM provides
-        foundational isolation technologies for multi-tenancy.  With
+        foundational isolation technologies for multi-tenancy. With
         developmental origins dating back to 2002, the Secure
         Virtualization (sVirt) technology is the application of
         SELinux against modern day virtualization. SELinux, which was
@@ -284,7 +284,7 @@
             threat vector unique to virtualization and represents
             considerable risk as a multitude of virtual machine file
             images could be compromised due to vulnerability in a
-            single application.  This virtual network attack is a
+            single application. This virtual network attack is a
             major concern as the administrative techniques for
             protecting real networks do not directly apply to the
             virtual environment.</para>

@@ -107,7 +107,6 @@
           <title>References</title>
           <para><link xlink:href="http://docs.openstack.org/trunk/config-reference/content/spice-console.html">SPICE Console</link></para>
           <para><link xlink:href="https://bugzilla.redhat.com/show_bug.cgi?id=913607">Red Hat bug 913607</link></para>
-          <para><link xlink:href="http://openstack.redhat.com/forum/discussion/67/resolved-spice-support-in-rdo-grizzly/p1">SPICE support in RDO Grizzly</link></para>
         </section>
       </section>
     </section>

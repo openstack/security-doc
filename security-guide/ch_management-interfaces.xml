@@ -91,7 +91,7 @@
       </section>
       <section xml:id="management-interfaces-idp62384">
         <title>References</title>
-        <para><link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly"><citetitle>Grizzly Release Notes</citetitle></link></para>
+        <para><link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse"><citetitle>Icehouse Release Notes</citetitle></link></para>
       </section>
     </section>
     <section xml:id="management-interfaces-idp63760">

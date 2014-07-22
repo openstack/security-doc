@@ -22,7 +22,7 @@
       <section xml:id="networking-services-idp50512">
         <title>L2 tunneling</title>
         <para>Network tunneling encapsulates each tenant/network combination with a unique "tunnel-id" that is used to identify the network traffic belonging to that combination. The tenant's L2 network connectivity is independent of physical locality or underlying network design. By encapsulating traffic inside IP packets, that traffic can cross Layer-3 boundaries, removing the need for preconfigured VLANs and VLAN trunking. Tunneling adds a layer of obfuscation to network data traffic, reducing the visibility of individual tenant traffic from a monitoring point of view.</para>
-        <para>OpenStack Networking currently only supports GRE encapsulation with planned future support of VXLAN due in the Havana release.</para>
+        <para>OpenStack Networking currently supports both GRE and VXLAN encapsulation.</para>
         <para>The choice of technology to provide L2 isolation is dependent upon the scope and size of tenant networks that will be created in your deployment. If your environment has limited VLAN ID availability or will have a large number of L2 networks, it is our recommendation that you utilize tunneling.</para>
       </section>
     </section>
@@ -45,7 +45,7 @@
       </section>
       <section xml:id="networking-services-idp62880">
         <title>Quality of Service (QoS)</title>
-        <para>The ability to set QoS on the virtual interface ports of tenant instances is a current deficiency for OpenStack Networking. The application of QoS for traffic shaping and rate-limiting at the physical network edge device is insufficient due to the dynamic nature of workloads in an OpenStack deployment and can not be leveraged in the traditional way. QoS-as-a-Service (QoSaaS) is currently in development for the OpenStack Networking Havana release as an experimental feature. QoSaaS is planning to provide the following services:</para>
+        <para>The ability to set QoS on the virtual interface ports of tenant instances is a current deficiency for OpenStack Networking. The application of QoS for traffic shaping and rate-limiting at the physical network edge device is insufficient due to the dynamic nature of workloads in an OpenStack deployment and can not be leveraged in the traditional way. QoS-as-a-Service (QoSaaS) is currently in development for the OpenStack Networking Icehouse release as an experimental feature. QoSaaS is planning to provide the following services:</para>
         <itemizedlist><listitem>
             <para>Traffic shaping through DSCP markings</para>
           </listitem>
@@ -63,11 +63,11 @@
       </section>
       <section xml:id="networking-services-idp69408">
         <title>Load balancing</title>
-        <para>An experimental feature in the Grizzly release of OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS API gives early adopters and vendors a chance to build implementations of the technology. The reference implementation however, is still experimental and should likely not be run in a production environment. The current reference implementation is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports.</para>
+        <para>Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation, is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports.</para>
       </section>
       <section xml:id="networking-services-idp71664">
         <title>Firewalls</title>
-        <para>FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Havana release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this.</para>
+        <para>FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Icehouse release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this.</para>
         <para>It is critical during the design of an OpenStack Networking infrastructure to understand the current features and limitations of network services that are available. Understanding where the boundaries of your virtual and physical networks will help you add the required security controls in your environment.</para>
       </section>
     </section>

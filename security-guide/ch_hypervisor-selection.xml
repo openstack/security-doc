@@ -262,7 +262,8 @@
                 objects. Sensitivity labels are automatically attached
                 to processes and objects. The access control policy
                 enforced using these labels is derived from the
-                BellLaPadula access control model.</para><para>SELinux
+                <glossterm baseform="Bell-LaPadula model">Bell-LaPadula
+                access control model</glossterm>.</para><para>SELinux
                 categories are attached to virtual machines and its
                 resources. The access control policy enforced using
                 these categories grant virtual machines access to

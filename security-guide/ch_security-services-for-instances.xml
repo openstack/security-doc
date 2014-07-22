@@ -216,7 +216,7 @@
         </section>
         <section xml:id="security-services-for-instances-idp189488">
           <title>Migration network</title>
-          <para>As a general practice, live migration traffic should be restricted to the management security domain. Indeed live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure.</para>
+          <para>As a general practice, live migration traffic should be restricted to the management security domain, see <xref linkend="security-boundaries-and-threats-idp55632" />. With live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure.</para>
         </section>
         <section xml:id="security-services-for-instances-idp191072">
           <title>Encrypted live migration</title>

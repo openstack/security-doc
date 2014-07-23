@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-22 06:05+0000\n"
+"POT-Creation-Date: 2014-07-23 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -714,7 +714,7 @@ msgid "Note, it is the recommendation of this guide to shy away from the manual 
 msgstr ""
 
 #: ./security-guide/ch_security-services-for-instances.xml:150(para)
-msgid "If subscribing to a public cloud service, you should check with the cloud provider for an outline of the process used to produce their default images. If the provider allows you to upload your own images, you will want to ensure that you are able to verify that your image was not modified before you spin it up. To do this, refer to the following section on Image Provenance."
+msgid "If subscribing to a public cloud service, you should check with the cloud provider for an outline of the process used to produce their default images. If the provider allows you to upload your own images, you will want to ensure that you are able to verify that your image was not modified before using it to create an instance. To do this, refer to the following section on Image Provenance."
 msgstr ""
 
 #: ./security-guide/ch_security-services-for-instances.xml:153(title)
@@ -1518,18 +1518,10 @@ msgid "Unfortunately, this solution complicates the task of more fine-grained ac
 msgstr ""
 
 #: ./security-guide/ch_database-access-control.xml:116(para)
-msgid "Finally, it should be noted that as of the Grizzly release, gaps exist where <systemitem class=\"service\">nova-conductor</systemitem> is not used throughout OpenStack Compute. Depending on one's configuration, the use of <systemitem class=\"service\">nova-conductor</systemitem> may not allow deployers to avoid the necessity of providing database GRANTs to individual compute host systems."
-msgstr ""
-
-#: ./security-guide/ch_database-access-control.xml:117(para)
 msgid "Note, as <systemitem class=\"service\">nova-conductor</systemitem> only applies to OpenStack Compute, direct database access from compute hosts may still be necessary for the operation of other OpenStack components such as Telemetry (ceilometer), Networking, and Block Storage."
 msgstr ""
 
-#: ./security-guide/ch_database-access-control.xml:123(para)
-msgid "Implementors should weigh the benefits and risks of both configurations before enabling or disabling the <systemitem class=\"service\">nova-conductor</systemitem> service. We are not yet prepared to recommend the use of <systemitem class=\"service\">nova-conductor</systemitem> in the Grizzly release. However, we do believe that this recommendation will change as additional features are added into OpenStack."
-msgstr ""
-
-#: ./security-guide/ch_database-access-control.xml:124(para)
+#: ./security-guide/ch_database-access-control.xml:122(para)
 msgid "To disable the <systemitem class=\"service\">nova-conductor</systemitem>, place the following into your <filename>nova.conf</filename> file (on your compute hosts):"
 msgstr ""
 
@@ -2158,14 +2150,14 @@ msgid "State of networking"
 msgstr ""
 
 #: ./security-guide/ch_state-of-networking.xml:9(para)
-msgid "OpenStack Networking in the Grizzly release enables the end-user or tenant to define, utilize, and consume networking resources in new ways that had not been possible in previous OpenStack Networking releases. OpenStack Networking provides a tenant-facing API for defining network connectivity and IP addressing for instances in the cloud in addition to orchestrating the network configuration. With the transition to an API-centric networking service, cloud architects and administrators should take into consideration best practices to secure physical and virtual network infrastructure and services."
+msgid "OpenStack Networking enables the end-user or tenant to define, utilize, and consume networking resources. OpenStack Networking provides a tenant-facing API for defining network connectivity and IP addressing for instances in the cloud in addition to orchestrating the network configuration. With the transition to an API-centric networking service, cloud architects and administrators should take into consideration best practices to secure physical and virtual network infrastructure and services."
 msgstr ""
 
-#: ./security-guide/ch_state-of-networking.xml:10(para)
+#: ./security-guide/ch_state-of-networking.xml:18(para)
 msgid "OpenStack Networking was designed with a plug-in architecture that provides extensibility of the API through open source community or third-party services. As you evaluate your architectural design requirements, it is important to determine what features are available in OpenStack Networking core services, any additional services that are provided by third-party products, and what supplemental services are required to be implemented in the physical infrastructure."
 msgstr ""
 
-#: ./security-guide/ch_state-of-networking.xml:20(para)
+#: ./security-guide/ch_state-of-networking.xml:28(para)
 msgid "This section is a high-level overview of what processes and best practices should be considered when implementing OpenStack Networking. We will talk about the current state of services that are available, what future services will be implemented, and the current limitations in this project."
 msgstr ""
 
@@ -12394,7 +12386,7 @@ msgid "Network tunneling encapsulates each tenant/network combination with a uni
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:25(para)
-msgid "OpenStack Networking currently only supports GRE encapsulation with planned future support of VXLAN due in the Havana release."
+msgid "OpenStack Networking currently supports both GRE and VXLAN encapsulation."
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:26(para)
@@ -12450,7 +12442,7 @@ msgid "Quality of Service (QoS)"
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:48(para)
-msgid "The ability to set QoS on the virtual interface ports of tenant instances is a current deficiency for OpenStack Networking. The application of QoS for traffic shaping and rate-limiting at the physical network edge device is insufficient due to the dynamic nature of workloads in an OpenStack deployment and can not be leveraged in the traditional way. QoS-as-a-Service (QoSaaS) is currently in development for the OpenStack Networking Havana release as an experimental feature. QoSaaS is planning to provide the following services:"
+msgid "The ability to set QoS on the virtual interface ports of tenant instances is a current deficiency for OpenStack Networking. The application of QoS for traffic shaping and rate-limiting at the physical network edge device is insufficient due to the dynamic nature of workloads in an OpenStack deployment and can not be leveraged in the traditional way. QoS-as-a-Service (QoSaaS) is currently in development for the OpenStack Networking Icehouse release as an experimental feature. QoSaaS is planning to provide the following services:"
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:50(para)
@@ -12478,7 +12470,7 @@ msgid "Load balancing"
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:66(para)
-msgid "An experimental feature in the Grizzly release of OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS API gives early adopters and vendors a chance to build implementations of the technology. The reference implementation however, is still experimental and should likely not be run in a production environment. The current reference implementation is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports."
+msgid "Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation, is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports."
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:69(title)
@@ -12486,7 +12478,7 @@ msgid "Firewalls"
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:70(para)
-msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Havana release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this."
+msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Icehouse release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this."
 msgstr ""
 
 #: ./security-guide/ch_networking-services.xml:71(para)
@@ -12976,7 +12968,7 @@ msgid "Create and manage security groups through dashboard. The security groups 
 msgstr ""
 
 #: ./security-guide/ch_management-interfaces.xml:94(citetitle)
-msgid "Grizzly Release Notes"
+msgid "Icehouse Release Notes"
 msgstr ""
 
 #: ./security-guide/ch_management-interfaces.xml:99(para)
@@ -13659,10 +13651,6 @@ msgstr ""
 
 #: ./security-guide/ch_compute.xml:109(link)
 msgid "Red Hat bug 913607"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:110(link)
-msgid "SPICE support in RDO Grizzly"
 msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2

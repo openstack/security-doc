@@ -220,7 +220,12 @@
         </section>
         <section xml:id="security-services-for-instances-idp191072">
           <title>Encrypted live migration</title>
-          <para>If your use case involves keeping live migration enabled, then libvirtd can provide tunneled, encrypted live migrations. That said, this feature is not currently exposed in OpenStack Dashboard, nor the nova-client commands and can only be accessed through manual configuration of libvirtd. Encrypted live migration modifies the live migration process by first copying the instance data from the running hypervisor to libvirtd. From there an encrypted tunnel is created between the libvirtd processes on both hosts. Finally, the destination libvirtd process copies the instance back to the underlying hypervisor.</para>
+          <para>If there is a sufficient business case for keeping live migration enabled, then libvirtd can provide encrypted tunnels for the live migrations. However, this feature is not currently exposed in either the OpenStack Dashboard or nova-client commands, and can only be accessed through manual configuration of libvirtd. The live migration process then changes to the following high-level steps:</para>
+<orderedlist>
+  <listitem><para>Instance data is copied from the hypervisor to libvirtd.</para></listitem>
+  <listitem><para>An encrypted tunnel is created between libvirtd processes on both source and destination hosts.</para></listitem>
+  <listitem><para>Destination libvirtd host copies the instances back to an underlying hypervisor.</para></listitem>
+</orderedlist>
         </section>
       </section>
     </section>

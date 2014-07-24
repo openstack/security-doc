@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-23 06:06+0000\n"
+"POT-Creation-Date: 2014-07-24 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -810,11 +810,23 @@ msgid "Migration network"
 msgstr ""
 
 #: ./security-guide/ch_security-services-for-instances.xml:219(para)
-msgid "As a general practice, live migration traffic should be restricted to the management security domain. Indeed live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure."
+msgid "As a general practice, live migration traffic should be restricted to the management security domain, see <xref linkend=\"security-boundaries-and-threats-idp55632\"/>. With live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure."
 msgstr ""
 
 #: ./security-guide/ch_security-services-for-instances.xml:223(para)
-msgid "If your use case involves keeping live migration enabled, then libvirtd can provide tunneled, encrypted live migrations. That said, this feature is not currently exposed in OpenStack Dashboard, nor the nova-client commands and can only be accessed through manual configuration of libvirtd. Encrypted live migration modifies the live migration process by first copying the instance data from the running hypervisor to libvirtd. From there an encrypted tunnel is created between the libvirtd processes on both hosts. Finally, the destination libvirtd process copies the instance back to the underlying hypervisor."
+msgid "If there is a sufficient business case for keeping live migration enabled, then libvirtd can provide encrypted tunnels for the live migrations. However, this feature is not currently exposed in either the OpenStack Dashboard or nova-client commands, and can only be accessed through manual configuration of libvirtd. The live migration process then changes to the following high-level steps:"
+msgstr ""
+
+#: ./security-guide/ch_security-services-for-instances.xml:225(para)
+msgid "Instance data is copied from the hypervisor to libvirtd."
+msgstr ""
+
+#: ./security-guide/ch_security-services-for-instances.xml:226(para)
+msgid "An encrypted tunnel is created between libvirtd processes on both source and destination hosts."
+msgstr ""
+
+#: ./security-guide/ch_security-services-for-instances.xml:227(para)
+msgid "Destination libvirtd host copies the instances back to an underlying hypervisor."
 msgstr ""
 
 #: ./security-guide/ch_data-encryption.xml:8(title)
@@ -2560,7 +2572,7 @@ msgid "Key management"
 msgstr ""
 
 #: ./security-guide/ch_key-management.xml:9(para)
-msgid "To address the often mentioned concern of tenant data privacy and limiting cloud provider liability, there is greater interest within the OpenStack community to make data encryption more ubiquitous. It is relatively easy for an end-user to encrypt their data prior to saving it to the cloud, and this is a viable path for tenant objects such as media files, database archives among others. However, when client side encryption is used for virtual machine images, block storage etc, client intervention is necessary in the form of presenting keys to unlock the data for further use. To seamlessly secure the data and yet have it accessible without burdening the client with having to manage their keys and interactively provide them calls for a key management service within OpenStack. Providing encryption and key management services as part of OpenStack eases data-at-rest security adoption, addresses customer concerns about the privacy and misuse of their data with the added advantage of limiting cloud provider liability. Provider liability is of concern in multi-tenant public clouds with respect to handing over tenant data during a misuse investigation."
+msgid "To address the often mentioned concern of tenant data privacy and limiting cloud provider liability, there is greater interest within the OpenStack community to make data encryption more ubiquitous. It is relatively easy for an end-user to encrypt their data prior to saving it to the cloud, and this is a viable path for tenant objects such as media files, database archives among others. However, when client side encryption is used for virtual machine images, block storage etc, client intervention is necessary in the form of presenting keys to unlock the data for further use. To seamlessly secure the data and yet have it accessible without burdening the client with having to manage their keys and interactively provide them calls for a key management service within OpenStack. Providing encryption and key management services as part of OpenStack eases data-at-rest security adoption and addresses customer concerns about privacy or misuse of data, while also limiting cloud provider liability. Provider liability is of concern in multi-tenant public clouds with respect to handing over tenant data during a misuse investigation."
 msgstr ""
 
 #: ./security-guide/ch_key-management.xml:10(para)
@@ -3108,7 +3120,7 @@ msgid "Physical hardware (PCI passthrough)"
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:22(para)
-msgid "Many hypervisors offer a functionality known as PCI passthrough. This allows an instance to have direct access to a piece of hardware on the node. For example, this could be used to allow instances to access video cards offering the compute unified device architecture (CUDA) for high performance computation. This feature carries two types of security risks: direct memory access and hardware infection."
+msgid "Many hypervisors offer a functionality known as PCI passthrough. This allows an instance to have direct access to a piece of hardware on the node. For example, this could be used to allow instances to access video cards or GPUs offering the compute unified device architecture (CUDA) for high performance computation. This feature carries two types of security risks: direct memory access and hardware infection."
 msgstr ""
 
 #: ./security-guide/ch_hardening-the-virtualization-layers.xml:31(para)
@@ -3604,7 +3616,7 @@ msgid "For instance, analyzing the access logs of Identity Service or its replac
 msgstr ""
 
 #: ./security-guide/ch_forensics-and-incident-response.xml:14(para)
-msgid "On detection, further action may be to black list an IP, or recommend strengthening user passwords, or even de-activating a user account if it is deemed dormant."
+msgid "Actions may be taken to mitigate potential malicious activity such as blacklisting an IP address, recommending the strengthening of user passwords, or de-activating a user account if it is deemed dormant."
 msgstr ""
 
 #: ./security-guide/ch_forensics-and-incident-response.xml:16(title)

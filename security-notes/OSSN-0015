@@ -1,0 +1,46 @@
+Glance allows non-admin users to create public images
+---
+
+### Summary ###
+The default policy settings in Glance allow any user to upload an image
+that is publicly available to all users. This can allow a malicious user
+to upload a vulnerable image that other users may use, unknowingly
+exposing themselves to attack.
+
+### Affected Services / Software ###
+Glance, Folsom, Grizzly, Havana, Icehouse
+
+### Discussion ###
+When uploading an image to Glance, the user performing the upload is
+able to mark the image as public. This allows all other users to see and
+use the image when they create new instances. The ability to share
+images with all users within an OpenStack deployment is very useful, but
+it can potentially be abused for malicious purposes. For example, an
+image can be uploaded that contains a backdoor that allows the attacker
+to have unauthorized access to instances that are created from that
+image.
+
+Glance does allow for the ability to publicize images to be controlled
+by policy. However, the default policy setting allows all users to
+publicize images.
+
+### Recommended Actions ###
+It is recommended that the ability to publicize images in Glance be
+restricted to trusted users, such as users with the "admin" role.  This
+can be done by modifying the "publicize_image" capability in Glance's
+policy.json file.  Here is an example of restricting this capability to
+users with the "admin" role:
+
+---- begin example policy.json snippet ----
+"publicize_image": "role:admin",
+---- end example policy.json snippet ----
+
+The default policy setting in Glance is planned to be changed to
+restrict the ability to publicize images to users with the "admin" role
+in the Juno release of OpenStack.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0015
+Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1313746
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

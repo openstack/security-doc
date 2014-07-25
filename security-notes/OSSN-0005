@@ -1,0 +1,54 @@
+Glance allows sharing of images between projects without consumer project
+approval
+---
+
+### Summary ###
+Glance allows images to be shared between projects. In certain API versions,
+images can be shared without the consumer project's approval. This allows
+potentially malicious images to show up in a project's image list.
+
+### Affected Services / Software ###
+Glance, Image Service, Diablo, Essex, Folsom, Grizzly, Havana
+
+### Discussion ###
+Since the OpenStack Diablo release, Glance allows images to be shared between
+projects. To share an image, the producer of the image adds the consumer
+project as a member of the image. When using the Image Service API v1, the
+image producer is able to share an image with a consumer project without their
+approval. This results in the shared image showing up in the image list for the
+consumer project. This can mislead users with roles in the consumer project
+into running a potentially malicious image.
+
+The Image Service API v2.0 does not allow image sharing between projects, so a
+project is not susceptible to running unauthorized images shared by other
+projects. The Image Service API v2.1 allows image sharing using a two-step
+process. An image producer must add a consumer as a member of the image, and
+the consumer must accept the shared image before it shows up in their image
+list. This additional approval process allows a consumer to control what images
+show up in their image list, thus preventing potentially malicious images being
+used without the consumers knowledge.
+
+### Recommended Actions ###
+In the OpenStack Diablo, Essex, and Folsom releases, Glance supports image
+sharing using the Image Service API v1. There is no way to require approval of
+a shared image by consumer projects. Users should be cautioned to be careful
+when using images from their image list, as they may be using an image that was
+shared with them without their knowledge.
+
+In the OpenStack Grizzly and Havana releases, Glance supports the Image Service
+API v2.1 or later. Support is still provided for Image Service API v1, which
+allows image sharing between projects without consumer project approval. It is
+recommended to disable v1 of the Image Service API if possible. This can be
+done by setting the following directive in the glance-api.conf configuration
+file:
+
+---- begin example glance-api.conf snippet ----
+enable_v1_api = False
+---- end example glance-api.conf snippet ----
+
+### Contacts / References ###
+This OSSN : https://bugs.launchpad.net/ossn/+bug/1226078
+Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1226078
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+CVE: CVE-2013-4354

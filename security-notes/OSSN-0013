@@ -1,0 +1,92 @@
+Some versions of Glance do not apply property protections as expected
+---
+
+### Summary ###
+Tom Leaman reported an issue to the OpenStack mailing list that
+affects Glance property protections. A permissive property setting in the
+Glance property protections configuration file will override any previously
+set stricter ones.
+
+### Affected Services / Software ###
+Glance, Folsom, Grizzly
+
+### Discussion ###
+Glance property protections limit the users who can perform CRUD operations on
+a Glance property to those in specific roles. When the property protections
+rules are processed in the Folsom and Grizzly OpenStack releases, a matching
+rule will only stop the processing of subsequent rules if it authorizes the
+attempted action. If there is a matching rule that would reject an action that
+is followed by another matching rule that would accept the action, then the
+action is accepted even though one may expect it to be rejected.
+
+In the following policy-protections.conf example, the desired result is to
+restrict 'update' and 'delete' permissions for any property beginning with
+'provider_' to only users with the 'admin' role.
+
+--- begin example property-protections.conf snippet ---
+[^provider_.*$]
+create = admin
+read = admin,_member_
+update = admin
+delete = admin
+
+[.*]
+create = _member_
+read = _member_
+update = _member_
+delete = _member_
+--- end example property-protections.conf snippet ---
+
+Due to the way that the rules are processed in the Folsom and Grizzly OpenStack
+releases, the admin restriction for properties beginning with 'provider_' is
+nullified by the '.*' permissions since it also matches the same properties.
+This results in all users with the '_member_' role  being allowed the 'create',
+'update', and 'delete' permissions on properties beginning with 'provider_',
+which is not what was intended.
+
+This bug only affects the use of user-roles in Glance. It does not occur when
+policies are used to determine property protections.
+
+### Recommended Actions ###
+This issue has been fixed in Havana (Glance 2013.2.2) and subsequent releases
+by changing the property protections rule processing to stop at the first rule
+that matches the property, even if it does not allow the attempted action.
+
+Users of affected releases should avoid using multiple rules that would match
+the same property. Specifically, wildcard rules should be avoided unless they
+are the most restricive rules defined.
+
+If a permissive rule is needed that is intended to match all properties that
+are not matched by other rules, a carefully crafted regular expression should
+be used instead of a wildcard as demonstrated below.
+
+--- begin example property-protections.conf snippet ---
+[^provider_.*$]
+create = admin
+read = admin,_member_
+update = admin
+delete = admin
+
+[^((?!provider_).)*$]
+create = _member_
+read = _member_
+update = _member_
+delete = _member_
+--- end example property-protections.conf snippet ---
+
+In the above example, 'create', 'update', and 'delete' operations are only
+allowed for users with the '_member_' role for properties that do not begin
+with 'provider_'.
+
+Configuration files with multiple property protection entries set should be
+tested to ensure that CRUD actions are constrained in the way the administrator
+intended.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0013
+Original Launchpad Bug : https://bugs.launchpad.net/glance/+bug/1271426
+Original Report : http://lists.openstack.org/pipermail/openstack-dev/2014-January/024861.html
+Glance Property Protections : https://wiki.openstack.org/wiki/Glance-property-protections
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+

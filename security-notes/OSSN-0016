@@ -1,0 +1,44 @@
+Cinder wipe fails in an insecure manner on Grizzly
+---
+
+### Summary ###
+A configuration error can prevent the secure erase of volumes in Cinder on
+Grizzly, potentially allowing a user to recover another user’s data.
+
+### Affected Services / Software ###
+Cinder, Grizzly
+
+### Discussion ###
+In Cinder on Grizzly, a configurable method to perform a secure erase of
+volumes was added. In the event of a misconfiguration no secure erase will
+be performed.
+
+The default code path in Cinder’s clear_volume() method, which is taken
+in the event of a configuration error, results in no wiping of the volume -
+even in the event that the user had flagged the volume for wiping.
+
+This is the same behaviour as if the volume_clear = ‘none’ option was
+selected. This could let an attacker recover data from a volume that was
+intended to be securely erased. Examples of possible incorrect
+configuration options include values that would appear to result in a
+secure erase, for example “volume_clear = true” or “volume_clear =
+yes”.
+
+In the event of a misconfiguration resulting in this issue, the message
+“Error unrecognized volume_clear option” should be present in log
+files.
+
+### Recommended Actions ###
+- Create and clear a volume (cinder create --display_name erasetest 10;
+cinder delete erasetest)
+- Review log files for the above error message (grep “Error unrecognized
+volume_clear option” <logfile>)
+- Review configuration files to ensure that the valid options ‘zero’ or
+‘shred’ are specified.
+
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0016
+Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1322766
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

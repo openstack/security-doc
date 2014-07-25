@@ -1,0 +1,69 @@
+Owners of compromised accounts should verify Keystone trusts
+---
+
+### Summary ###
+The Keystone 'trusts' API allows for delegation of privileges to one
+user on behalf of another. This API can allow for an attacker of a
+compromised account to set up backdoor access into the account. This
+backdoor may not be easily detected, even if the account compromise is
+detected.
+
+### Affected Services / Software ###
+Keystone, Grizzly, Havana, Icehouse
+
+### Discussion ###
+The Keystone trusts system allows for delegation of roles to Keystone
+users without disclosing the main token, or sharing the account secret
+key with those users. That means, after an account is compromised, the
+change of the secret key and the invalidation of existing tokens may not
+be enough to prevent future access from an attackers.
+
+If an attacker obtains access to the account (via stolen credentials or
+service exploitation), they can create a new Keystone trust. This new
+trust may grant access not dependent on any knowledge of the compromised
+user's secret key and can also be set to never expire. In this case, the
+trust has to be manually found and removed by the account owner.
+
+Information about using trusts can be found at:
+
+    https://wiki.openstack.org/wiki/Keystone/Trusts
+
+### Recommended Actions ###
+If the account has been compromised, or is being audited, the owner
+should check the list of active trusts and verify that:
+
+- all the active trusts are needed
+- all the active trusts have the expected roles and delegation depth
+- all the active trusts have appropriate expiration lifetimes
+
+At the time of writing this OSSN, trusts can be listed by using the
+Keystone API directly:
+
+---- begin CLI example ----
+    # get ENDPOINT from the last field of the output
+    keystone endpoint-get --service identity --attr versionId \
+      --value 3.0
+    # get TOKEN from the last field of the output
+    keystone token-get
+    # list the trusts by running:
+    curl -i -X GET "ENDPOINT/trusts/" -H "X-Auth-Token: TOKEN" \
+      -H "Content-Type: application/json" -H "Accept: application/json"
+---- end CLI example ----
+
+If some trust (with id TRUST_ID) is identified as invalid, it can be
+deleted using:
+
+---- begin CLI example ----
+    curl -i -X DELETE "ENDPOINT/trusts/TRUST_ID" \
+      -H "X-Auth-Token: TOKEN" -H "Content-Type: application/json" \
+      -H "Accept: application/json"
+---- end CLI example ----
+
+In the future, operators will be able to use keystoneclient for a more
+convenient method of accessing and updating this information.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0021
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1341849
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

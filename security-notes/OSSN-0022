@@ -1,0 +1,57 @@
+Nova Networking does not enforce security group rules following a soft
+reboot of an instance
+---
+
+### Summary ###
+In deployments using Nova Networking, security group rules associated
+with an instance may not be enforced after a soft reboot. Nova is
+designed to apply the configured security group rules to an instance
+when certain operations are performed, such as a normal boot operation.
+If an operation has been performed that results in the clearing of
+security group rules, such as restarting the nova compute service, then
+performing a soft reboot of that instance will cause it to be
+started without security group rules being applied.
+
+Deployments using Neutron are not impacted.
+
+### Affected Services / Software ###
+Nova, Havana, Grizzly
+
+### Discussion ###
+In Nova deployments using Nova Networking, security groups are
+implemented using iptables, which is used to configure and control
+network traffic into Nova instances. When an instance is first booted
+using the normal boot method (nova boot <instance_id>), the security
+group rules are applied to that instance.
+
+When an instance is rebooted using the soft reboot method (nova reboot
+<instance_id>), the security group rules are not reapplied since they
+should have been already applied when the instance was initially
+booted. If the security group rules have not been applied following an
+event that resulted in their clearing, such as restarting the compute
+service, the instance will be brought up without security group
+enforcement. This situation is most likely to arise in cases where the
+Nova compute service has been terminated or restarted, which removes
+all iptables rules. If a stopped instance is then started by using a
+soft reboot, it will not have any security group rules applied. A hard
+reboot (nova reboot --hard <instance_id>) reapplies the security group
+rules, so it is not susceptible to this issue.
+
+Depending on the deployment architecture, this could breach security
+assumptions and leave an instance vulnerable to network based attacks.
+
+This issue only affects the Havana and Grizzly releases. The Icehouse
+release does not allow a stopped instance to be started using a soft
+reboot, therefore this issue does not affect the Icehouse release.
+
+### Recommended Actions ###
+Do not to use the soft reboot method to start instances from the
+stopped state. If instances are in the stopped state, boot using "nova
+boot <instance_id>" or reboot using "nova reboot --hard <instance_id>"
+to force the security group rules to be applied.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0022
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1316822
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

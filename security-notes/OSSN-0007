@@ -1,0 +1,214 @@
+Live migration instructions recommend unsecured libvirt remote access
+---
+
+### Summary ###
+When using the KVM hypervisor with libvirt on OpenStack Compute nodes,
+live migration of instances from one Compute server to another requires
+that the libvirt daemon is configured for remote network connectivity.
+The libvirt daemon configuration recommended in the OpenStack
+Configuration Reference manual configures libvirtd to listen for
+incoming TCP connections on all network interfaces without requiring any
+authentication or using any encryption.  This insecure configuration
+allows for anyone with network access to the libvirt daemon TCP port on
+OpenStack Compute nodes to control the hypervisor through the libvirt
+API.
+
+### Affected Services / Software ###
+Nova, Compute, KVM, libvirt, Grizzly, Havana, Icehouse
+
+### Discussion ###
+The default configuration of the libvirt daemon is to not allow remote
+access.  Live migration of running instances between OpenStack Compute
+nodes requires libvirt daemon remote access between OpenStack Compute
+nodes.
+
+The libvirt daemon should not be configured to allow unauthenticated
+remote access.  The libvirt daemon  has a choice of 4 secure options for
+remote access over TCP.  These options are:
+
+ - SSH tunnel to libvirtd's UNIX socket
+ - libvirtd TCP socket, with GSSAPI/Kerberos for auth+data encryption
+ - libvirtd TCP socket, with TLS for encryption and x.509 client
+   certificates for authentication
+ - libvirtd TCP socket, with TLS for encryption and Kerberos for
+   authentication
+
+It is not necessary for the libvirt daemon to listen for remote TCP
+connections on all interfaces.  Remote network connectivity to the
+libvirt daemon should be restricted as much as possible.  Remote
+access is only needed between the OpenStack Compute nodes, so the
+libvirt daemon only needs to listen for remote TCP connections on the
+interface that is used for this communication.  A firewall can be
+configured to lock down access to the TCP port that the libvirt daemon
+listens on, but this does not sufficiently protect access to the libvirt
+API.  Other processes on a remote OpenStack Compute node might have
+network access, but should not be authorized to remotely control the
+hypervisor on another OpenStack Compute node.
+
+### Recommended Actions ###
+If you are using the KVM hypervisor with libvirt on OpenStack Compute
+nodes, you should review your libvirt daemon configuration to ensure
+that it is not allowing unauthenticated remote access.
+
+Remote access to the libvirt daemon via TCP is configured by the
+"listen_tls", "listen_tcp", and "auth_tcp" configuration directives.  By
+default, these directives are all commented out.  This results in remote
+access via TCP being disabled.
+
+If you do not need remote libvirt daemon access, you should ensure that
+the following configuration directives are set as follows in the
+/etc/libvirt/libvirtd.conf configuration file.  Commenting out these
+directives will have the same effect, as these values match the internal
+defaults:
+
+---- begin example libvirtd.conf snippet ----
+listen_tls = 1
+listen_tcp = 0
+auth_tcp = "sasl"
+---- end example libvirtd.conf snippet ----
+
+If you need to allow remote access to the libvirt daemon between
+OpenStack Compute nodes for live migration, you should ensure that
+authentication is required.  Additionally, you should consider enabling
+TLS to allow remote connections to be encrypted.
+
+The following libvirt daemon configuration directives will allow for
+unencrypted remote connections that use SASL for authentication:
+
+---- begin example libvirtd.conf snippet ----
+listen_tls = 0
+listen_tcp = 1
+auth_tcp = "sasl"
+---- end example libvirtd.conf snippet ----
+
+If you want to require TLS encrypted remote connections, you will have
+to obtain X.509 certificates and configure the libvirt daemon to use
+them to use TLS.  Details on this configuration are in the libvirt
+daemon documentation.  Once the certificates are configured, you should
+set the following libvirt daemon configuration directives:
+
+---- begin example libvirtd.conf snippet ----
+listen_tls = 1
+listen_tcp = 0
+auth_tls = "none"
+---- end example libvirtd.conf snippet ----
+
+When using TLS, setting the "auth_tls" configuration directive to "none"
+uses X.509 client certificates for authentication.  You can additionally
+require SASL authentication by setting the following libvirt daemon
+configuration directives:
+
+---- begin example libvirtd.conf snippet ----
+listen_tls = 1
+listen_tcp = 0
+auth_tls = "sasl"
+---- end example libvirtd.conf snippet ----
+
+When using TLS, it is also necessary to configure the OpenStack Compute
+nodes to use a non-default URI for live migration.  This is done by
+setting the following configuration directive in /etc/nova/nova.conf:
+
+---- begin example nova.conf snippet ----
+live_migration_uri=qemu+tls://%s/system
+---- end example nova.conf snippet ----
+
+For more details on libvirt daemon remote URI formats, please see the
+following libvirt daemon documentation:
+
+  http://libvirt.org/remote.html#Remote_URI_reference
+
+For details on configuring SASL authentication and X.509 certificates
+for the libvirt daemon, please consult the libvirt daemon documentation
+at the following locations:
+
+  http://libvirt.org/remote.html
+  http://libvirt.org/auth.html
+
+When configuring the libvirt daemon for authentication, it is also
+important to configure authorization to restrict remote access to your
+OpenStack Compute nodes.  For example, if you don't configure
+authorization, any X.509 client certificate that is signed by your
+issuing CA will be allowed access.  When using SASL/GSSAPI for Kerberos
+authentication, any client with a valid TGT will be granted access.
+Lack of authorization can allow unintended remote access.  The libvirt
+daemon documentation should be consulted for details on configuring
+authorization.
+
+In addition to requiring authentication for remote access to the libvirt
+daemon on your OpenStack Compute nodes, it is also recommended to
+restrict network access such that connectivity is only allowed between
+the Compute nodes.
+
+The first thing that should be done is to restrict the network
+interfaces that the libvirt daemon listens on for remote connections.
+By default, the libvirt daemon listens on all interfaces when remote
+access is enabled.  This can be restricted by setting the following
+configuration directive in /etc/libvirt/libvirtd.conf:
+
+---- begin example libvirtd.conf snippet ----
+listen_addr = <IP address or hostname>
+---- end example libvirtd.conf snippet ----
+
+Migration in the libvirt daemon also uses a range of ephemeral ports by
+default.  The connections to these ephemeral ports are not authenticated
+or encrypted.  It is possible to tunnel the migration traffic over the
+regular libvirt daemon remote access port, which will use the
+authentication and encryption settings that you have defined for that
+port.  It is recommended that you do this for the additional security
+that it provides.  To enable tunnelling of the migration traffic, you
+must tell your OpenStack Compute nodes to set the VIR_MIGRATE_TUNNELLED
+flag for live migration.  This is done by setting the following
+directive in /etc/nova/nova.conf:
+
+---- begin example nova.conf snippet ----
+live_migration_flag=VIR_MIGRATE_UNDEFINE_SOURCE, VIR_MIGRATE_PEER2PEER, VIR_MIGRATE_TUNNELLED
+---- end example nova.conf snippet ----
+
+The tunnelling of migration traffic described above does not apply to
+live block migration.  Live block migration is currently only possible
+over ephemeral ports.
+
+If you choose to use the ephemeral migration ports, there are a few
+things that you should be aware of.  Unfortunately, there is no way to
+restrict the network interfaces that these ephemeral ports will listen
+on in libvirt versions prior to 1.1.4.  If you are running version 1.1.4
+or later of the libvirt daemon, you can set the following directive in
+/etc/libvirt/qemu.conf to specify what interfaces are used for the
+ephemeral migration ports:
+
+---- begin example qemu.conf snippet ----
+migration_address = <IP address>
+---- end example qemu.conf snippet ----
+
+It is also recommended to configure the firewall on each OpenStack
+Compute node to only allow other Compute nodes to access the ports that
+are used for remote access to the libvirt daemon.  By default, this is
+port 16514 for TLS and 16509 for unencrypted TCP.
+
+Additionally, migration over ephemeral ports uses a port range of
+49152-49215.  You will need to allow your OpenStack Compute nodes to
+communicate with each other over these ports if you choose not to tunnel
+the migration traffic over the libvirt daemon remote access port.
+
+You can check what ports you have configured for the libvirt daemon by
+looking at the following configuration directives:
+
+  tls_port (libvirtd.conf)
+  tcp_port (libvirtd.conf)
+  migration_port_min (qemu.conf)
+  migration_port_max (qemu.conf)
+
+If you are running a version of the libvirt daemon older than 1.1.4 and
+you want to perform live block migration, you will need to allow your
+OpenStack Compute nodes to communicate over port range 5900-49151.  If
+you are running version 1.1.4 or later of the libvirt daemon, the
+regular ephemeral migration port range is used for live block migration.
+
+Please consult the documentation for your firewall software for
+instructions on configuring the appropriate firewall rules.
+
+### Contacts / References ###
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0007
+Original LaunchPad Bug : https://bugs.launchpad.net/openstack-manuals/+bug/1287194
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

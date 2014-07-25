@@ -1,0 +1,63 @@
+Keystone can allow user impersonation when using REMOTE_USER for external
+authentication
+---
+
+### Summary ###
+When external authentication is used with Keystone using the "ExternalDefault"
+plug-in, external usernames containing "@" characters are truncated at the "@"
+character before being mapped to a local Keystone user. This can result in
+separate external users mapping to the same local Keystone user, which could
+lead to user impersonation.
+
+### Affected Services / Software ###
+Keystone, Havana
+
+### Discussion ###
+When Keystone is run in the Apache HTTP Server, the webserver can handle
+authentication and pass the authenticated username to Keystone using the
+REMOTE_USER environment variable. External authentication behavior is handled
+by authentication plugins in Keystone. In the Havana release of OpenStack, if
+the external username provided in the REMOTE_USER environment variable
+contains an "@" character Keystone will only use the portion preceding the "@"
+character as the username when using the "ExternalDefault" authentication
+plugin. This results in the ability for multiple unique external usernames to
+map to the same single username in Keystone. For example, the external
+usernames "jdoe@example1.com" and "jdoe@example2.com" would both map to the
+Keystone user "jdoe". This behavior could potentially be abused to allow one to
+impersonate another similarly named external user.
+
+Keystone in OpenStack releases prior to Havana uses the entire value contained
+in the REMOTE_USER environment variable, so those versions are not vulnerable
+to this impersonation issue.
+
+### Recommended Actions ###
+If the "ExternalDefault" plugin is being used for external authentication in
+the Havana release, you should ensure that external usernames do not contain
+"@" characters unless you want to collapse similarly named external users into
+a single user on the Keystone side.
+
+If your external usernames do contain "@" characters and you do not want to
+collapse similarly named external users into a single user on the Keystone
+side, you might be able to use the "ExternalDomain" plug-in. This plugin
+considers the portion of the external username that follows an "@" character to
+be the domain that the user belongs to in Keystone. This allows similarly named
+external users to map to separate Keystone users if the portion of the external
+username that follows an "@" character maps to a Keystone domain name. To
+configure the "ExternalDomain" authentication plugin, set the "external"
+parameter in the "[auth]" section of Keystone's keystone.conf as follows:
+
+---- begin example keystone.conf snippet ----
+[auth]
+methods = external,password,token
+external = keystone.auth.plugins.external.ExternalDomain
+---- end example keystone.conf snippet ----
+
+If neither of the above recommendations work for your deployment, a custom
+authentication plugin can be created that uses the external username that
+contains an "@" character as-is.
+
+### Contacts / References ###
+This OSSN : https://bugs.launchpad.net/ossn/+bug/1254619
+Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1254619
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

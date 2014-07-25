@@ -1,0 +1,60 @@
+Authenticated users are able to update passwords without providing their
+current password
+---
+
+### Summary ###
+An authenticated user is able to change their password without providing their
+current password. This allows compromised authentication tokens to be used to
+permanently compromise a user account.
+
+### Affected Services / Software ###
+Horizon, Keystone, Identity, Grizzly
+
+### Discussion ###
+Horizon allows a user to change their own password, which uses the Identity API
+to perform the password change. A user is required to supply their current
+password to successfully perform a password change. This requirement prevents a
+malicious user from stealing a user's authentication token and changing that
+user's password to permanently compromise their account. With this additional
+password check, a compromised authentication token only compromises the user
+account until the token is no longer valid due to expiration or revocation.
+
+When using the Identity v3 API, a user is able to successfully change their
+password without supplying the correct current password. This leaves users
+vulnerable to permanently compromised accounts if their authentication token is
+compromised. The Identity v2 API is not vulnerable to this issue, as it has a
+separate API call for updating user passwords that properly validates the
+current password.
+
+### Recommended Actions ###
+In the OpenStack Grizzly release, a user is allowed to update the attributes in
+their own entry by default. It is recommended that you restrict user updates to
+only be allowed by admin users. This is done by setting the "update_user"
+policy to "admin_required" in Keystone's policy.json file. Here is an example
+snippet of a properly configured policy.json file:
+
+---- begin example policy.json snippet ----
+    "identity:get_user": [["rule:admin_required"]],
+    "identity:list_users": [["rule:admin_required"]],
+    "identity:create_user": [["rule:admin_required"]],
+    "identity:update_user": [["rule:admin_required"]],
+    "identity:delete_user": [["rule:admin_required"]],
+---- end example policy.json snippet ----
+
+This change has the side-effect of restricting a user from updating any of
+their own attributes, not just their password.
+
+In the OpenStack Havana release, the default policy is to only allow admin
+users to update attributes in user entries. In addition, Horizon will not
+allow a user to change their own password if it is using the Identity v3 API,
+even if Keystone is configured to allow users to update their own entries.
+Despite this restriction in Horizon, it is recommended to leave the default
+"update_user" policy setting as is, as an attacker could target Keystone
+directly without using Horizon to initiate a password change.
+
+### Contacts / References ###
+This OSSN : https://bugs.launchpad.net/ossn/+bug/1237989
+Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1237989
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+CVE: CVE-2013-4471

@@ -1,0 +1,96 @@
+Session-fixation vulnerability in Horizon when using the default signed cookie sessions
+---
+
+### Summary ###
+The default setting in Horizon is to use signed cookies to store
+session state on the client side.  This creates the possibility that if
+an attacker is able to capture a user's cookie, they may perform all
+actions as that user, even if the user has logged out.
+
+### Affected Services / Software ###
+Horizon, Folsom, Grizzly, Havana, Icehouse
+
+### Discussion ###
+When configured to use client side sessions, the server isn't aware
+of the user's login state.  The OpenStack authorization tokens are
+stored in the session ID in the cookie.  If an attacker can steal the
+cookie, they can perform all actions as the target user, even after the
+user has logged out.
+
+There are several ways attackers can steal the cookie.  One example is
+by intercepting it over the wire if Horizon is not configured to use
+SSL.  The attacker may also access the cookie from the filesystem if
+they have access to the machine.  There are also other ways to steal
+cookies that are beyond the scope of this note.
+
+By enabling a server side session tracking solution such as memcache,
+the session is terminated when the user logs out.  This prevents an
+attacker from using cookies from terminated sessions.
+
+It should be noted that Horizon does request that Keystone invalidate
+the token upon user logout, but this has not been implemented for the
+Identity API v3.  Token invalidation may also fail if the Keystone
+service is unavailable.  Therefore, to ensure that sessions are not
+usable after the user logs out, it is recommended to use server side
+session tracking.
+
+### Recommended Actions ###
+It is recommended that you configure Horizon to use a different session
+backend rather than signed cookies.  One possible alternative is to use
+memcache sessions.  To check if you are using signed cookies, look for
+this line in Horizon's local_settings.py
+
+--- begin example local_settings.py snippet ---
+  SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+--- end example local_settings.py snippet ---
+
+If the SESSION_ENGINE is set to value other than
+'django.contrib.sessions.backends.signed_cookies' this vulnerability
+is not present.  If SESSION_ENGINE is not set in local_settings.py,
+check for it in settings.py.
+
+Here are the steps to configure memcache sessions:
+
+  1. Ensure the memcached service is running on your system
+  2. Ensure that python-memcached is installed
+  3. Configure memcached cache backend in local_settings.py
+
+--- begin example local_settings.py snippet ---
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+--- end example local_settings.py snippet ---
+
+     Make sure to use the actual IP and port of the memcached service.
+
+  4. Add a line in local_settings.py to use the cache backend:
+
+--- begin example local_settings.py snippet ---
+  SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+--- end example local_settings.py snippet ---
+
+  5. Restart Horizon's webserver service (typically 'apache2' or
+  httpd')
+
+Furthermore, you should always enable SSL for Horizon to help mitigate
+such attack scenarios.
+
+Please note that regardless of which session backend is used, if the
+cookie is compromised, an attacker may assume all privileges of the
+user for as long as their session is valid.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0017
+Original LaunchPad Bug : https://bugs.launchpad.net/horizon/+bug/1327425
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Further discussion of the issue:
+        http://www.pabloendres.com/horizon-and-cookies/#comment-115
+Django docs:
+        https://docs.djangoproject.com/en/1.6/ref/settings/
+        https://docs.djangoproject.com/en/1.6/topics/http/sessions/#configuring-sessions
+
+

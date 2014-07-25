@@ -1,0 +1,71 @@
+Multiple Cinder drivers set insecure file permissions
+---
+
+### Summary ###
+Several Cinder volume drivers set insecure file permissions for various
+files and directories. These permissions render the files accessible for
+read and write to any user with access to the Cinder host as well as any
+processes running on it. This exposes user block storage data to
+potential disclosure, corruption, or destruction.
+
+### Affected Services / Software ###
+Cinder, Folsom, Grizzly, Havana, Icehouse
+
+### Discussion ###
+Several Cinder drivers set file permissions that allow read and write
+access to 'group' and 'others'. Affected drivers include:
+
+ - GPFS
+ - GlusterFS
+ - Huawei
+ - NetApp/NFS
+ - Nexenta
+ - NFS
+ - Scality
+
+Essentially, user volumes are made accessible to all who have access to
+the Cinder host. Daemons running on the host are also able to access the
+affected user volumes. The relaxed file permissions can be exploited to
+disclose, modify, corrupt, or destroy user volume data.
+
+All versions of Cinder are vulnerable in Icehouse and earlier releases
+with a single exception: systems using the Icehouse GPFS driver.
+
+This issue was reported by Dirk Mueller of SUSE.
+
+### Recommended Actions ###
+The GPFS driver in the Icehouse release fixes the file permissions issue
+and also executes shell commands in non-root mode where possible.
+Unfortunately, it is not practical to back-port the fix for the GPFS
+driver to earlier OpenStack releases. It is anticipated that the other
+affected drivers will be fixed in the OpenStack Juno release.
+
+It is not possible to simply modify the file permissions to mitigate
+the issue, as several of the affected drivers currently require the
+relaxed file permissions to function. Additionally, file manipulation
+cannot be uniformly restricted to a non-root user because often times a
+file may be created on one host using one uid, but mounted on another
+host using a different uid.
+
+You can check what drivers are being used by Cinder by executing the
+following command on your Cinder host:
+
+  > grep "^volume_driver" /etc/cinder/cinder.conf
+
+You should compare the results of the above command against the list of
+known vulerable drivers in the "Discussion" section above to see if you
+are affected. If you are running the Icehouse version of Cinder and the
+GPFS driver is the only driver in use, your Cinder system is not
+vulnerable to this issue.
+
+In the likely scenario that your system is vulnerable, you should limit
+access to the Cinder host as much as possible.  You should also explore
+alternatives such as applying mandatory access control policies
+(SELinux, AppArmor, etc) or using NFS uid squashing to control access
+to the files in order to minimize the possible exposure.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0014
+Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1260679
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -1,0 +1,62 @@
+Cinder SSH Pool will auto-accept SSH host signatures by default
+---
+
+### Summary###
+In OpenStack releases prior to Juno, the SSH connection pool used by
+Cinder drivers to control SAN hosts will silently auto-accept SSH host
+fingerprints. This potentially allows for a man in the middle attack
+through the impersonation of a legitimate storage host.
+
+### Affected Services / Software ###
+Cinder, Icehouse, Havana, Grizzly, Folsom
+
+### Discussion ###
+Cinder drivers for controlling SAN hardware communicate with storage
+hosts over SSH. To facilitate creation of these drivers, Cinder provides
+a utility mechanism to manage pooled SSH connections. This connection
+pool is using a policy that will silently accept the SSH fingerprint
+of any unknown host when it first connects. However, it is not properly
+maintaing the list of known hosts and will thus permit connections to a
+host regardless of the SSH fingerprint presented. This impacts all
+drivers built using the utility. At the time of writing these drivers
+include, but may not be limited to:
+
+- Solaris ISCSI driver
+- HP LeftHand SAN ISCSI driver
+- Huawei OceanStor T series and Dorado series storage arrays
+- Dell EqualLogic Storage
+- IBM Storwize SVC
+
+In the event that a malicious adversary has a point of presence on the
+storage network, they could undermine network communications between
+Cinder and the SAN host. Should an adversary manage to impersonate the
+storage host, Cinder will silently accept the newly presented
+fingerprint of the bogus host and allow the connection. This behaviour
+constitutes a typical Man in the Middle attack that could intercept and
+manipulate communications with the storage host, possibly leaking login
+credentials.
+
+If login credentials can be acquired, then direct interaction with the
+legitimate storage host becomes possible. This could result in Cinder
+volumes being accessed or modified to export compromised code and data
+to other services.
+
+The presence of this defect can be detected by initially connecting to a
+storage host and then re-generating that hosts local SSH details. Cinder
+will still allow connections to the host despite its now modified
+fingerprint. This is the default configuration.
+
+### Recommended Actions ###
+Deployers should pay attention to the SSH interface between the Cinder
+driver and the SAN host and take appropriate measures to defend the
+storage network. These measures could include physical network isolation
+or placing an Intrusion Detection System on the network. The IDS should
+detect attacks such as ARP table poisoning, DHCP spoofing or DNS forgery
+that could be used to impersonate a SAN host and enact an Man in the
+Middle attack.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0019
+Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1320056
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -1,0 +1,46 @@
+Selecting LXC as Nova Virtualization Driver can lead to data compromise
+---
+
+### Summary###
+LXC does not provide the same level of separation as hypervisors when chosen as
+the Nova 'virtualization driver'. Attempting to use LXC as a drop in
+replacement for a hypervisor can result in data exposure between tenants.
+
+### Affected Services / Software ###
+Nova, LXC, Libvirt, 'Virtualization Driver'
+
+### Discussion ###
+The Libvirt LXC functionality exposed by OpenStack is built on the kernel
+namespace & cgroup technologies. Until Linux 3.8, there has been no support for
+separate user namespaces in the kernel. As such, there has been no way to
+securely isolate containers from each other or the host environment using DAC
+(discretionary access control). For example, they can escape their resource
+constraints by modifying cgroups settings, or attack the host via various files
+in the proc and sysfs filesystems. The use of MAC (mandatory access control)
+technologies like SELinux or AppArmour can mitigate these problems, but it is
+not practical to write MAC policies that would allow running full OS installs
+in LXC under OpenStack.
+
+Although initial user namespace support was merged in Linux 3.8, it is not yet
+complete, or mature enough to be considered secure. Work is ongoing to finish
+the kernel namespace support and enhance libvirt LXC to take advantage of it.
+
+### Recommended Actions ###
+The OSSG advises that anyone deploying Nova in environments that require any
+level of separation use a hypervisor such as Xen, KVM, VMware or Hyper-V.
+
+LXC security pivots on a system known as DAC (discretionary access control)
+which is not currently capable of providing strong isolation of guests. Work is
+underway to improve DAC but it’s not ready for production use at this time.
+
+The OSSG recommends against using LXC for enforcing secure separation of guests.
+Even with appropriate AppArmour policies applied.
+
+### Contacts / References ###
+Nova : http://docs.openstack.org/developer/nova/
+LXC : http://lxc.sourceforge.net/
+Libvirt : http://libvirt.org/
+KVM : http://www.linux-kvm.org/page/Main_Page
+Xen: http://xen.org/products/xenhyp.html
+LXC DAC : https://wiki.ubuntu.com/UserNamespace
+LXC LibVirt Discussion : https://www.berrange.com/posts/2011/09/27/getting-started-with-lxc-using-libvirt/

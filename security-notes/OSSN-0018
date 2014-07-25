@@ -1,0 +1,63 @@
+Nova Network configuration allows guest VMs to connect to host services
+---
+
+### Summary ###
+When using Nova Network to manage networking for compute instances,
+instances are able to reach network services running on the host
+system. This may be a security issue for the operator.
+
+### Affected Services / Software ###
+Nova, Folsom, Grizzly, Havana, Icehouse
+
+### Discussion ###
+OpenStack deployments using Nova Network, rather than Neutron for
+network configuration will cause the host running the instances to be
+reachable on the virtual network. Specifically, booted instances can
+check the address of their gateway and try to connect to it. Any host
+service which listens on the interfaces created by OpenStack and does
+not apply any additional filtering will receive such traffic.
+
+This is a security issue for deployments where the OpenStack service
+users are not trusted parties, or should not be allowed to access
+underlying services of the host system.
+
+Using a specific example of devstack in default configuration, the
+instance spawned inside of it will see the following routing table:
+
+    $ ip r s
+    default via 172.16.1.1 dev eth0
+    172.16.1.0/24 dev eth0  src 172.16.1.2
+
+The instance can then use the gateway's address (172.16.1.1) to connect
+to the sshd service on the host system (if one is running and listening
+on all interfaces). The host system will see the connection coming from
+interface `br100`.
+
+### Recommended Actions ###
+Connections like this can be stopped at various levels (libvirt filters,
+specific host's iptables entries, ebtables, network service
+configuration). The recommended way to protect against the incoming
+connections is to stop the critical services from binding to the
+Nova-controlled interfaces.
+
+Using the sshd service as an example, the default configuration on most
+systems is to bind to all interfaces and all local addresses
+("ListenAddress :22" in sshd_config).  In order to configure it only on
+a specific interface, use "ListenAddress a.b.c.d:22" where a.b.c.d is
+the address assigned to the chosen interface. Similar settings can be
+found for most other services.
+
+The list of services listening on all interfaces can be obtained by
+running command 'netstat -ltu', where the '*:port' in the "Local
+Address" field means the service will likely accept connections from the
+local Nova instances.
+
+If filtering of the traffic is chosen instead, care must be taken to
+allow traffic coming from the running instances to services controlled
+by Nova - DHCP and DNS providers.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0018
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1316271
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

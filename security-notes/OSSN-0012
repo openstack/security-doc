@@ -1,0 +1,73 @@
+OpenSSL Heartbleed vulnerability can lead to OpenStack compromise
+---
+
+### Summary ###
+A vulnerability in OpenSSL can lead to leaking of confidential data
+protected by SSL/TLS in an OpenStack deployment.
+
+### Affected Services / Software ###
+Grizzly, Havana, OpenSSL
+
+### Discussion ###
+A vulnerability in OpenSSL code-named Heartbleed was recently discovered
+that allows remote attackers limited access to data in the memory of any
+service using OpenSSL to provide encryption for network communications.
+This can include key material used for SSL/TLS, which means that any
+confidential data that has been sent over SSL/TLS may be compromised.
+For full details, see the following website that describes this
+vulnerability in detail:
+
+    http://heartbleed.com/
+
+While OpenStack software itself is not directly affected, any deployment
+of OpenStack is very likely using OpenSSL to provide SSL/TLS
+functionality.
+
+### Recommended Actions ###
+It is recommended that you immediately update OpenSSL software on the
+systems you use to run OpenStack services.  In most cases, you will want
+to upgrade to OpenSSL version 1.0.1g, though it is recommended that you
+review the exact affected version details on the Heartbleed website
+referenced above.
+
+After upgrading your OpenSSL software, you will need to restart any
+services that use the OpenSSL libraries.  You can get a list of all
+processes that have the old version of OpenSSL loaded by running the
+following command:
+
+    lsof | grep ssl | grep DEL
+
+Any processes shown by the above command will need to be restarted, or
+you can choose to restart your entire system if desired.  In an
+OpenStack deployment, OpenSSL is commonly used to enable SSL/TLS
+protection for OpenStack API endpoints, SSL terminators, databases,
+message brokers, and Libvirt remote access.  In addition to the native
+OpenStack services, some commonly used software that may need to be
+restarted includes:
+
+  Apache HTTPD
+  Libvirt
+  MySQL
+  Nginx
+  PostgreSQL
+  Pound
+  Qpid
+  RabbitMQ
+  Stud
+
+It is also recommended that you treat your existing SSL/TLS keys as
+compromised and generate new keys.  This includes keys used to enable
+SSL/TLS protection for OpenStack API endpoints, databases, message
+brokers, and libvirt remote access.
+
+In addition, any confidential data such as credentials that have been
+sent over a SSL/TLS connection may have been compromised.  It is
+recommended that cloud administrators change any passwords, tokens, or
+other credentials that may have been communicated over SSL/TLS.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0012
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Heartbleed Website: http://heartbleed.com/
+CVE: CVE-2014-0160

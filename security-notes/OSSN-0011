@@ -1,0 +1,144 @@
+Heat templates with invalid references allows unintended network access
+---
+
+### Summary ###
+Orchestration templates can create security groups to define network
+access rules.  When creating these rules, it is possible to have a rule
+grant incoming network access to instances belonging to another security
+group.  If a rule references a non-existent security group, it can
+result in allowing incoming access to all hosts for that rule.
+
+### Affected Services / Software ###
+Heat, nova-network, Havana
+
+### Discussion ###
+When defining security groups of the "AWS::EC2::SecurityGroup" type in a
+CloudFormation-compatible format (CFN) orchestration template, it is
+possible to use references to other security groups as the source for
+ingress rules.  When these rules are evaluated by Heat in the OpenStack
+Havana release, a reference to a non-existent security group will be
+silently ignored.  This results in the rule using a "CidrIp" property of
+"0.0.0.0/0".  This will allow incoming access to any host for the
+affected rule.  This has the effect of allowing unintended network
+access to instances.
+
+This issue only occurs when Nova is used for networking (nova-network).
+The Neutron networking service is not affected by this issue.
+
+The OpenStack Icehouse release is not affected by this issue.  In the
+Icehouse release, Heat will check if a non-existent security group is
+referenced in a template and return an error, causing the creation of
+the security group to fail.
+
+### Recommended Actions ###
+If you are using Heat in the OpenStack Havana release with Nova for
+networking (nova-network), you should review your orchestration
+templates to ensure that all references to security groups in ingress
+rules are valid.  Specifically, you should look at the use of the
+"SourceSecurityGroupName" property in your templates to ensure that
+all referenced security groups exist.
+
+One particular improper usage of security group references that you
+should look for is the case where you define multiple security groups
+in one template and use references between them.  In this case, you
+need to make sure that you are using the "Ref" intrinsic function to
+indicate that you are referencing a security group that is defined in
+the same template.  Here is an example of a template with a valid
+security group reference:
+
+---- begin example correct template snippet ----
+"WikiDatabaseSecurityGroup" : {
+  "Type" : "AWS::EC2::SecurityGroup",
+  "Properties" : {
+    "GroupDescription" : "Enable HTTP access plus SSH access",
+    "SecurityGroupIngress" : [
+      {
+        "IpProtocol" : "icmp",
+        "FromPort" : "-1",
+        "ToPort" : "-1",
+        "CidrIp" : "10.1.1.0/24"
+      },
+      {
+        "IpProtocol" : "tcp",
+        "FromPort" : "80",
+        "ToPort" : "80",
+        "CidrIp" : "10.1.1.0/24"
+      },
+      {
+        "IpProtocol" : "tcp",
+        "FromPort" : "22",
+        "ToPort" : "22",
+        "CidrIp" : "10.1.1.0/24"
+      },
+      {
+        "IpProtocol" : "tcp",
+        "FromPort" : "3306",
+        "ToPort" : "3306",
+        "SourceSecurityGroupName" : {
+          "Ref": "WebServerSecurityGroup"
+        }
+      }
+    ]
+  }
+},
+
+"WebServerSecurityGroup" : {
+  "Type" : "AWS::EC2::SecurityGroup",
+  "Properties" : {
+    "GroupDescription" : "Enable HTTP access plus SSH access",
+    "SecurityGroupIngress" : [
+      {
+        "IpProtocol" : "icmp",
+        "FromPort" : "-1",
+        "ToPort" : "-1",
+        "CidrIp" : "10.1.1.0/24"
+      },
+      {
+        "IpProtocol" : "tcp",
+        "FromPort" : "80",
+        "ToPort" : "80",
+        "CidrIp" : "10.1.1.0/24"
+      },
+      {
+        "IpProtocol" : "tcp",
+        "FromPort" : "22",
+        "ToPort" : "22",
+        "CidrIp" : "10.1.1.0/24"
+      }
+    ]
+  }
+},
+---- end example correct template snippet ----
+
+Here is an example of an incorrect reference to a security group defined
+in the same template:
+
+---- begin example INVALID template snippet ----
+      {
+        "IpProtocol" : "tcp",
+        "FromPort" : "3306",
+        "ToPort" : "3306",
+        "SourceSecurityGroupName" : "WebServerSecurityGroup" #INCORRECT!
+      }
+---- end example INVALID template snippet ----
+
+The above invalid reference will result in allowing incoming networking
+on port 3306 from all hosts:
+
+    IP Protocol | From Port | To Port | IP Range    | Source Group |
+  +-------------+-----------+---------+-------------+--------------+
+  |        icmp |        -1 |      -1 | 10.1.1.0/24 |              |
+  |         tcp |        80 |      80 | 10.1.1.0/24 |              |
+  |         tcp |        22 |      22 | 10.1.1.0/24 |              |
+  |         tcp |      3306 |    3306 |   0.0.0.0/0 |              |
+  +-------------+-----------+---------+-------------+--------------+
+
+It is also recommended that you test your templates if you are using
+security group references to ensure that the resulting network rules
+are as intended.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0011
+Original LaunchPad Bug : https://bugs.launchpad.net/heat/+bug/1291091
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

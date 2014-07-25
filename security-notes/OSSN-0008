@@ -1,0 +1,49 @@
+DoS style attack on noVNC server can lead to service interruption or disruption
+---
+
+### Summary ###
+There is currently no limit to the number of noVNC or SPICE console
+sessions that can be established by a single user. The console host has
+limited resources and an attacker launching many sessions may be able to
+exhaust the available resources, resulting in a Denial of Service (DoS)
+condition.
+
+### Affected Services / Software ###
+Horizon, Nova, noVNC proxy, SPICE console, Grizzly, Havana
+
+### Discussion ###
+Currently with a single user token, no restrictions are enforced on the
+number or frequency of noVNC or SPICE console sessions that may be
+established.  While a user can only access their own virtual machine
+instances, resources can be exhausted on the console proxy host by
+creating an excessive number of simultaneous console sessions.  This can
+result in timeouts for subsequent connection requests to instances using
+the same console proxy.  Not only would this prevent the user from
+accessing their own instances, but other legitimate users would also be
+deprived of console access.  Further, other services running on the
+noVNC proxy and Compute hosts may degrade in responsiveness.
+
+By taking advantage of this lack of restrictions around noVNC or SPICE
+console connections, a single user could cause the console proxy
+endpoint to become unresponsive, resulting in a Denial Of Service (DoS)
+style attack.  It should be noted that there is no amplification effect.
+
+### Recommended Actions ###
+For current stable OpenStack releases (Grizzly, Havana), users need to
+workaround this vulnerability by using rate-limiting proxies to cover
+access to the noVNC proxy service.  Rate-limiting is a common mechanism
+to prevent DoS and Brute-Force attacks.
+
+For example, if you are using a proxy such as Repose, enable the rate
+limiting feature by following these steps:
+
+  https://repose.atlassian.net/wiki/display/REPOSE/Rate+Limiting+Filter
+
+Future OpenStack releases are looking to add the ability to restrict
+noVNC and SPICE console connections.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0008
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1227575
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

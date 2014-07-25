@@ -1,0 +1,44 @@
+Keystone configuration should not be world readable
+---
+
+### Summary ###
+In some deployments keystone.conf which contains confidential information, is
+set to world readable.
+
+### Affected Services / Software ###
+Keystone, DevStack, Deployment
+
+### Discussion ###
+It is important that deployers of OpenStack ensure that keystone.conf is not
+world readable. In some deployments the keystone configuration file is readable
+by all users (and processes) on the installation system. This file should be
+set with the most restrictive permissions that allow the system to continue
+proper operations.
+
+In particular, the password configuration of the LDAP section and the
+admin_token contain secret information:
+
+---- being example config snippet ----
+[ldap]
+url = ldap://localhost
+user = dc=Manager,dc=example,dc=com
+password = None <- should be secret
+suffix = cn=example,cn=com
+use_dumb_member = False
+allow_subtree_delete = False
+dumb_member = cn=dumb,dc=example,dc=com
+
+[DEFAULT]
+admin_token = passw0rd <- should be secret
+---- end example config snippet ----
+
+### Recommended Actions ###
+Ensure that in your deployment keystone.conf uses the most restrictive
+permissions that allow the system to continue proper operations.
+
+### Contacts / References ###
+This OSSN : https://bugs.launchpad.net/ossn/+bug/1168252
+Original LaunchPad Bug : https://bugs.launchpad.net/devstack/+bug/1168252
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+CVE: CVE-2013-1977

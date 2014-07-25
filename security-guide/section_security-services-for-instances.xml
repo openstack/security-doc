@@ -158,13 +158,12 @@
       <title>Instance migrations</title>
       <para>
       OpenStack and the underlying virtualization layers provide for
-      the live migration of images between OpenStack nodes allowing
+      the live migration of images between OpenStack nodes, allowing
       you to seamlessly perform rolling upgrades of your OpenStack
       compute nodes without instance downtime. However, live
-      migrations also come with their fair share of risk. To
-      understand the risks involved, it is important to first
-      understand how a live migration works. The following are the
-      high level steps preformed during a live migration.
+      migrations also carry significant risk. To understand the risks
+      involved, the following are the high-level steps performed
+      during a live migration:
       </para>
       <orderedlist>
           <listitem><para>Start instance on destination host</para> </listitem>

@@ -68,18 +68,9 @@
         </revhistory>
     </info>
     <xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/ch_preface.xml" />
-    <xi:include href="ch_acknowledgements.xml"/>
-    <xi:include href="ch_why-and-how-we-wrote-this-book.xml"/>
-    <xi:include href="ch_introduction-to-openstack.xml"/>
-    <xi:include href="ch_security-boundaries-and-threats.xml"/>
-    <xi:include href="ch_introduction-to-case-studies.xml"/>
-    <xi:include href="ch_system-documentation-requirements.xml"/>
-    <xi:include href="ch_case-studies-system-documentation.xml"/>
-    <xi:include href="ch_management-introduction.xml"/>
-    <xi:include href="ch_continuous-systems-management.xml"/>
-    <xi:include href="ch_integrity-life-cycle.xml"/>
-    <xi:include href="ch_management-interfaces.xml"/>
-    <xi:include href="ch_case-studies-management-interfaces.xml"/>
+    <xi:include href="ch_introduction.xml"/>
+    <xi:include href="ch_documentation.xml"/>
+    <xi:include href="ch_management.xml"/>
     <xi:include href="ch_introduction-to-ssl-tls.xml"/>
     <xi:include href="ch_case-studies-pki-and-certificate-management.xml"/>
     <xi:include href="ch_ssl-proxies-and-http-services.xml"/>
@@ -90,12 +81,7 @@
     <xi:include href="ch_compute.xml"/>
     <xi:include href="ch_object-storage.xml"/>
     <xi:include href="ch_case-studies-identity-management.xml"/>
-    <xi:include href="ch_state-of-networking.xml"/>
-    <xi:include href="ch_networking-architecture.xml"/>
-    <xi:include href="ch_networking-services.xml"/>
-    <xi:include href="ch_securing-openstack-networking-services.xml"/>
-    <xi:include href="ch_networking-services-security-best-practices.xml"/>
-    <xi:include href="ch_case-studies-networking.xml"/>
+    <xi:include href="ch_networking.xml"/>
     <xi:include href="ch_message-queuing-architecture.xml"/>
     <xi:include href="ch_messaging-security.xml"/>
     <xi:include href="ch_case-studies-messaging.xml"/>

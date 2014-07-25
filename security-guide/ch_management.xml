@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="management">
+  <title>Management</title>
+
+  <xi:include href="section_management-introduction.xml"/>
+  <xi:include href="section_continuous-systems-management.xml"/>
+  <xi:include href="section_integrity-life-cycle.xml"/>
+  <xi:include href="section_management-interfaces.xml"/>
+  <xi:include href="section_case-studies-management-interfaces.xml"/>
+
+</chapter>

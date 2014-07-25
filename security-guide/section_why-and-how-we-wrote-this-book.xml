@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
+<!DOCTYPE section [
 <!ENTITY % openstack SYSTEM "openstack.ent">
 %openstack;
 ]>
-<chapter xmlns="http://docbook.org/ns/docbook"
+<section xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
@@ -133,4 +133,4 @@
       docs: <link xlink:href="http://wiki.openstack.org/Documentation/HowTo">http://wiki.openstack.org/Documentation/HowTo</link>.
       </para>
     </section>
-  </chapter>
+</section>

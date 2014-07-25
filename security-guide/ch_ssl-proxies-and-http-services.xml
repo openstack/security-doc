@@ -67,7 +67,7 @@ ciphers = "kEECDH:kEDH:kRSA:HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
     <varlistentry>
      <term><code>!RC4</code></term>
      <listitem>
-              <para>No RC4. RC4 has flaws in the context of TLS/SSL V3. See <link xlink:href="cr.yp.to/streamciphers/rc4biases-20130708.pdf"> On the Security of RC4 in TLS and WPA</link>.</para>
+              <para>No RC4. RC4 has flaws in the context of TLS/SSL V3. See <link xlink:href="http://cr.yp.to/streamciphers/rc4biases-20130708.pdf"> On the Security of RC4 in TLS and WPA</link>.</para>
      </listitem>
     </varlistentry>
     <varlistentry>

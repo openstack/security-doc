@@ -91,16 +91,14 @@
       <para>With regards to images, users will be working with pre-installed images or images that they upload themselves. In both cases, users will want to ensure that the image they are ultimately running has not been tampered with. This requires some source of truth such as a checksum for the known good version of an image as well as verification of the running image. This section describes the current best practices around image handling, while also calling out some of the existing gaps in this space.</para>
       <section xml:id="security-services-for-instances-idp151952">
         <title>Image creation process</title>
-        <para>
-          The OpenStack Documentation provides guidance on how to
-          create and upload an image to the Image
-          Service. Additionally it is assumed that you have a process
-          by which you install and harden operating systems. Thus, the
-          following items will provide additional guidance on how to
-          ensure your images are built securely prior to upload. There
-          are a variety of options for obtaining images. Each has
-          specific steps that help validate the image's provenance.
-        </para>
+        <para>The OpenStack Documentation provides guidance on how to
+        create and upload an image to the Image Service. Additionally
+        it is assumed that you have a process by which you install and
+        harden operating systems. Thus, the following items will
+        provide additional guidance on how to ensure your images are
+        transferred securely into OpenStack. There are a variety of
+        options for obtaining images. Each has specific steps that
+        help validate the image's provenance.</para>
         <para>The first option is to obtain boot media from a trusted source.</para>
         <screen><prompt>$</prompt> <userinput>mkdir -p /tmp/download_directorycd /tmp/download_directory</userinput>
 <prompt>$</prompt> <userinput>wget http://mirror.anl.gov/pub/ubuntu-iso/CDs/precise/ubuntu-12.04.2-server-amd64.iso</userinput>

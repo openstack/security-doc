@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="tenant-data">
+  <title>Tenant data privacy</title>
+
+  <xi:include href="section_data-privacy-concerns.xml"/>
+  <xi:include href="section_data-encryption.xml"/>
+  <xi:include href="section_key-management.xml"/>
+  <xi:include href="section_case-studies-tenant-data.xml"/>
+
+</chapter>

@@ -3,10 +3,10 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="documentation">
-  <title>System documentation</title>
+  xml:id="api-endpoints">
+  <title>API endpoints</title>
 
-  <xi:include href="section_system-documentation-requirements.xml"/>
-  <xi:include href="section_case-studies-system-documentation.xml"/>
+  <xi:include href="section_api-endpoint-configuration-recommendations.xml"/>
+  <xi:include href="section_case-studies-api-endpoints.xml"/>
 
 </chapter>

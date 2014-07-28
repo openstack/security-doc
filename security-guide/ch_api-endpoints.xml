@@ -6,6 +6,11 @@
   xml:id="api-endpoints">
   <title>API endpoints</title>
 
+  <para>
+    This chapter recommends security enhancements for both public and
+    private-facing API endpoints.
+  </para>
+
   <xi:include href="section_api-endpoint-configuration-recommendations.xml"/>
   <xi:include href="section_case-studies-api-endpoints.xml"/>
 

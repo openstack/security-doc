@@ -61,7 +61,7 @@
       <title>Require user accounts to require SSL transport</title>
       <section xml:id="database-access-control-idp88784">
         <title>Configuration example #1: (MySQL)</title>
-        <programlisting>GRANT ALL ON dbname.* to 'compute01'@'hostname' IDENTIFIED BY 'password' REQUIRE SSL;</programlisting>
+        <programlisting>GRANT ALL ON dbname.* to 'compute01'@'hostname' IDENTIFIED BY '<replaceable>NOVA_DBPASS</replaceable>' REQUIRE SSL;</programlisting>
       </section>
       <section xml:id="database-access-control-idp90096">
         <title>Configuration example #2: (PostgreSQL)</title>
@@ -79,7 +79,7 @@
       <para>Security may be enhanced by requiring X.509 client certificates for authentication. Authenticating to the database in this manner provides greater identity assurance of the client making the connection to the database and ensures that the communications are encrypted.</para>
       <section xml:id="database-access-control-idp94704">
         <title>Configuration example #1: (MySQL)</title>
-        <programlisting>GRANT ALL on dbname.* to 'compute01'@'hostname' IDENTIFIED BY 'password' REQUIRE SUBJECT
+        <programlisting>GRANT ALL on dbname.* to 'compute01'@'hostname' IDENTIFIED BY '<replaceable>NOVA_DBPASS</replaceable>' REQUIRE SUBJECT
 '/C=XX/ST=YYY/L=ZZZZ/O=cloudycloud/CN=compute01' AND ISSUER
 '/C=XX/ST=YYY/L=ZZZZ/O=cloudycloud/CN=cloud-ca';</programlisting>
       </section>
@@ -97,7 +97,7 @@
       certificate authority information for use with the initial
       connection string.</para>
       <para>Example of an <literal>:sql_connection</literal> string for X.509 certificate authentication to MySQL:</para>
-      <programlisting language="ini">sql_connection = mysql://compute01:password@localhost/nova?
+      <programlisting language="ini">sql_connection = mysql://compute01:<replaceable>NOVA_DBPASS</replaceable>@localhost/nova?
 charset=utf8&amp;ssl_ca=/etc/mysql/cacert.pem&amp;ssl_cert=/etc/mysql/server-cert.pem&amp;ssl_key=/etc/mysql/server-key.pem</programlisting>
     </section>
     <section xml:id="database-access-control-idp100688">

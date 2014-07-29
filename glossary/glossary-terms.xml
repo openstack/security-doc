@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
-<!ENTITY % openstack SYSTEM "openstack.ent">
+<!DOCTYPE glossary [
+<!ENTITY % openstack SYSTEM "../security-guide/openstack.ent">
 %openstack;
 ]>
 
@@ -8,7 +8,8 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="rs_glossary">
+  xml:id="rs_glossary"
+  role="auto">
     <title>Glossary</title>
     <info>
         <legalnotice>
@@ -92,7 +93,7 @@
       <glossdef>
         <para>Checks for missing replicas and incorrect or corrupted objects
         in a specified Object Storage account by running queries against the
-        backend SQLite database.</para>
+        back-end SQLite database.</para>
       </glossdef>
     </glossentry>
 
@@ -750,8 +751,8 @@
     <title>B</title>
 
     <glossentry>
-      <glossterm>backend<indexterm class="singular">
-          <primary>backend interactions</primary>
+      <glossterm>back end<indexterm class="singular">
+          <primary>back-end interactions</primary>
 
           <secondary>definition of</secondary>
         </indexterm></glossterm>
@@ -764,8 +765,8 @@
     </glossentry>
 
     <glossentry>
-      <glossterm>backend catalog<indexterm class="singular">
-          <primary>backend interactions</primary>
+      <glossterm>back-end catalog<indexterm class="singular">
+          <primary>back-end interactions</primary>
 
           <secondary>catalog</secondary>
         </indexterm></glossterm>
@@ -774,13 +775,13 @@
         <para>The storage method used by the Identity Service catalog service
         to store and retrieve information about API endpoints that are
         available to the client. Examples include a SQL database, LDAP
-        database, or KVS backend.</para>
+        database, or KVS back end.</para>
       </glossdef>
     </glossentry>
 
     <glossentry>
-      <glossterm>backend store<indexterm class="singular">
-          <primary>backend interactions</primary>
+      <glossterm>back-end store<indexterm class="singular">
+          <primary>back-end interactions</primary>
 
           <secondary>store</secondary>
         </indexterm></glossterm>
@@ -788,7 +789,7 @@
       <glossdef>
         <para>The persistent data store used to save and retrieve information
         for a service, such as lists of Object Storage objects, current state
-        of guest VMs, lists of usernames, and so on. Also, the method that the
+        of guest VMs, lists of user names, and so on. Also, the method that the
         Image Service uses to get and store VM images. Options include Object
         Storage, local file system, S3, and HTTP.</para>
       </glossdef>
@@ -1122,7 +1123,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>A Compute backend database table that contains the current
+        <para>A Compute back-end database table that contains the current
         workload, amount of free RAM, and number of VMs running on each host.
         Used to determine on which VM a host starts.</para>
       </glossdef>
@@ -1710,7 +1711,7 @@
 
       <glossdef>
         <para>Checks for missing replicas or incorrect objects in specified
-        Object Storage containers through queries to the SQLite backend
+        Object Storage containers through queries to the SQLite back-end
         database.</para>
       </glossdef>
     </glossentry>
@@ -2011,7 +2012,7 @@
 
       <glossdef>
         <para>The process of finding duplicate data at the disk block, file,
-        and/or object level to minimize storage use—currently unsupported
+        and/or object level to minimize storage use&mdash;currently unsupported
         within OpenStack.</para>
       </glossdef>
     </glossentry>
@@ -2239,7 +2240,7 @@
 
       <glossdef>
         <para>The underlying format that a disk image for a VM is stored as
-        within the Image Service backend store. For example, AMI, ISO, QCOW2,
+        within the Image Service back-end store. For example, AMI, ISO, QCOW2,
         VMDK, and so on.</para>
       </glossdef>
     </glossentry>
@@ -2739,7 +2740,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Connected to by a direct consumer in RabbitMQ—Compute, the
+        <para>Connected to by a direct consumer in RabbitMQ&mdash;Compute, the
         message can be consumed only by the current connection.</para>
       </glossdef>
     </glossentry>
@@ -3104,7 +3105,7 @@
       <glossdef>
         <para>Processes client requests for VMs, updates Image Service
         metadata on the registry server, and communicates with the store
-        adapter to upload VM images from the backend store.</para>
+        adapter to upload VM images from the back-end store.</para>
       </glossdef>
     </glossentry>
 
@@ -3525,10 +3526,10 @@
     </glossentry>
 
     <glossentry>
-      <glossterm>Identity backend<indexterm class="singular">
+      <glossterm>Identity back end<indexterm class="singular">
           <primary>Identity Service</primary>
 
-          <secondary>Identity backend</secondary>
+          <secondary>Identity back end</secondary>
         </indexterm></glossterm>
 
       <glossdef>
@@ -3710,7 +3711,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>The backend store used by Image Service to store VM images,
+        <para>The back-end store used by Image Service to store VM images,
         options include Object Storage, local file system, S3, or HTTP.</para>
       </glossdef>
     </glossentry>
@@ -4119,6 +4120,21 @@
         Hat, Fedora, and CentOS-based Linux distributions.</para>
       </glossdef>
     </glossentry>
+
+    <glossentry>
+      <glossterm>Kilo<indexterm class="singular">
+          <primary>Kilo</primary>
+        </indexterm></glossterm>
+
+      <glossdef>
+        <para>The code name for the eleventh release of OpenStack. The
+        design summit took place in Paris, France. Due to delays in the name
+        selection, the release was known only as K. Because <literal>k</literal> is the
+        unit symbol for kilo and the reference artifact is stored near Paris
+        in the Pavillon de Breteuil in Sèvres, the community chose Kilo as
+        the release name.</para>
+      </glossdef>
+    </glossentry>
   </glossdiv>
 
   <!-- .L. -->
@@ -4228,7 +4244,7 @@
 
       <glossdef>
         <para>A load balancer is a logical device that belongs to a cloud
-        account. It is used to distribute workloads between multiple backend
+        account. It is used to distribute workloads between multiple back-end
         systems or services, based on the criteria defined as part of its
         configuration.</para>
       </glossdef>
@@ -4246,9 +4262,9 @@
     </glossentry>
 
     <glossentry>
-      <glossterm>Load-Balancing-as-a-Service (LBaaS)<indexterm
+      <glossterm>Load-Balancer-as-a-Service (LBaaS)<indexterm
           class="singular">
-          <primary>Load-Balancing-as-a-Service (LBaaS)</primary>
+          <primary>Load-Balancer-as-a-Service (LBaaS)</primary>
         </indexterm></glossterm>
 
       <glossdef>
@@ -5147,7 +5163,7 @@
         <para>
           Each OpenStack release has a code name. Code names ascend in
           alphabetical order: Austin, Bexar, Cactus, Diablo, Essex,
-          Folsom, Grizzly, Havana, Icehouse, and Juno.  Code names are
+          Folsom, Grizzly, Havana, Icehouse, Juno, and Kilo.  Code names are
           cities or counties near where the corresponding OpenStack
           design summit took place. An exception, called the Waldon
           exception, is granted to elements of the state flag that
@@ -6033,7 +6049,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>The Object Storage backend process that creates and manages
+        <para>The Object Storage back-end process that creates and manages
         object replicas.</para>
       </glossdef>
     </glossentry>
@@ -6271,7 +6287,7 @@
 
       <glossdef>
         <para>Object storage service by Amazon; similar in function to Object
-        Storage, it can act as a backend store for Image Service VM <phrase
+        Storage, it can act as a back-end store for Image Service VM <phrase
         role="keep-together">images</phrase>.</para>
       </glossdef>
     </glossentry>
@@ -6480,10 +6496,10 @@
     </glossentry>
 
     <glossentry>
-      <glossterm>session backend<indexterm class="singular">
+      <glossterm>session back end<indexterm class="singular">
           <primary>sessions</primary>
 
-          <secondary>session backend</secondary>
+          <secondary>session back end</secondary>
         </indexterm></glossterm>
 
       <glossdef>
@@ -6753,8 +6769,8 @@
     </glossentry>
 
     <glossentry>
-      <glossterm>storage backend<indexterm class="singular">
-          <primary>storage backend</primary>
+      <glossterm>storage back end<indexterm class="singular">
+          <primary>storage back end</primary>
         </indexterm></glossterm>
 
       <glossdef>
@@ -6788,15 +6804,15 @@
 
       <glossdef>
         <para>A XenAPI component that provides a pluggable interface to
-        support a wide variety of persistent storage backends.</para>
+        support a wide variety of persistent storage back ends.</para>
       </glossdef>
     </glossentry>
 
     <glossentry>
-      <glossterm>storage manager backend<indexterm class="singular">
+      <glossterm>storage manager back end<indexterm class="singular">
           <primary>storage</primary>
 
-          <secondary>storage manager backend</secondary>
+          <secondary>storage manager back end</secondary>
         </indexterm></glossterm>
 
       <glossdef>
@@ -7376,7 +7392,7 @@
       <glossdef>
         <para>An Internet Protocol (IP) address configured on the load
         balancer for use by clients connecting to a service that is load
-        balanced. Incoming connections are distributed to backend nodes based
+        balanced. Incoming connections are distributed to back-end nodes based
         on the configuration of the load balancer.</para>
       </glossdef>
     </glossentry>
@@ -7701,7 +7717,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>Provides support for new and specialized types of backend
+        <para>Provides support for new and specialized types of back-end
         storage for the Block Storage volume manager.</para>
       </glossdef>
     </glossentry>
@@ -7712,7 +7728,7 @@
         </indexterm></glossterm>
 
       <glossdef>
-        <para>A cinder component that interacts with backend storage to manage
+        <para>A cinder component that interacts with back-end storage to manage
         the creation and deletion of volumes and the creation of compute
         volumes, provided by the <systemitem
         class="service">cinder-volume</systemitem> daemon.</para>
@@ -7736,8 +7752,8 @@
     <title>W</title>
 
     <glossentry>
-      <glossterm>weighing<indexterm class="singular">
-          <primary>weighing</primary>
+      <glossterm>weighting<indexterm class="singular">
+          <primary>weighting</primary>
         </indexterm></glossterm>
 
       <glossdef>

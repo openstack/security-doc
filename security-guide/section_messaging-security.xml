@@ -124,9 +124,9 @@
         <para>On the RabbitMQ server, for each OpenStack service or
         node that communicates with the message queue set up user
         accounts and privileges:</para>
-        <screen><prompt>#</prompt> <userinput>rabbitmqctl add_user compute01 <replaceable>PASSWORD</replaceable></userinput>
+        <screen><prompt>#</prompt> <userinput>rabbitmqctl add_user compute01 <replaceable>RABBIT_PASS</replaceable></userinput>
 <prompt>#</prompt> <userinput>rabbitmqctl set_permissions compute01 ".*"".*"".*"</userinput></screen>
-        <para>Replace <replaceable>PASSWORD</replaceable> with a suitable password.</para>
+        <para>Replace <replaceable>RABBIT_PASS</replaceable> with a suitable password.</para>
         <para>For additional configuration information see:</para>
         <itemizedlist><listitem>
             <para><link xlink:href="http://www.rabbitmq.com/access-control.html">RabbitMQ Access Control</link></para>
@@ -150,7 +150,7 @@ rabbit_use_ssl=True
 rabbit_host=
 rabbit_port=5671
 rabbit_user=compute01
-rabbit_password=<replaceable>PASSWORD</replaceable>
+rabbit_password=<replaceable>RABBIT_PASS</replaceable>
 kombu_ssl_keyfile=/etc/ssl/node-key.pem
 kombu_ssl_certfile=/etc/ssl/node-cert.pem
 kombu_ssl_ca_certs=/etc/ssl/cacert.pem</programlisting>
@@ -175,7 +175,7 @@ qpid_protocol=ssl
 qpid_hostname=&lt;IP or hostname of management network interface of messaging server&gt;
 qpid_port=5671
 qpid_username=compute01
-qpid_password=<replaceable>PASSWORD</replaceable></programlisting>
+qpid_password=<replaceable>QPID_PASS</replaceable></programlisting>
         <para>Optionally, if using SASL with Qpid specify the SASL mechanisms in use by adding:</para>
         <programlisting language="ini">qpid_sasl_mechanisms=&lt;space separated list of SASL mechanisms to use for auth&gt;</programlisting>
       </section>

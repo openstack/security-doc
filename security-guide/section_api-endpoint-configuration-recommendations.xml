@@ -6,9 +6,6 @@
   xml:id="api-endpoint-configuration-recommendations">
   <?dbhtml stop-chunking?>
     <title>API endpoint configuration recommendations</title>
-    <para>
-      This chapter provides recommendations security enhancements for
-      both public and private-facing API endpoints.</para>
     <section xml:id="api-endpoint-configuration-recommendations-idp38176">
       <title>Internal API communications</title>
       <para>

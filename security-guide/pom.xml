@@ -35,7 +35,7 @@
                         <configuration>
                             <includes>bk-openstack-security-guide.xml</includes>
                             <sourceDirectory>.</sourceDirectory>
-                            <glossaryCollection>glossary-terms.xml</glossaryCollection>
+                            <glossaryCollection>${basedir}/../glossary/glossary-terms.xml</glossaryCollection>
                             <webhelpDirname>security-guide</webhelpDirname>
                             <pdfFilenameBase>security-guide</pdfFilenameBase>
                             <enableDisqus>${comments.enabled}</enableDisqus>

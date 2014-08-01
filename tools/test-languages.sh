@@ -16,7 +16,8 @@ function setup_lang {
     echo "Setting up files for $SET_LANG"
     echo "======================="
     echo "  Directories:"
-    setup_directory $SET_LANG 'security-guide'
+    # openstack.ent is in security-guide but needed by glossary
+    setup_directory $SET_LANG 'security-guide' 'glossary'
 }
 
 function test_security_guide {

@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="case-studies-pki-and-certificate-management">
   <?dbhtml stop-chunking?>
-    <title>Case studies: PKI and certificate management</title>
+    <title>Case studies</title>
     <para>In this case study we discuss how Alice and Bob would address deployment of PKI certification authorities (CA) and certificate management.</para>
     <section xml:id="case-studies-pki-and-certificate-management-idp44432">
       <title>Alice's private cloud</title>

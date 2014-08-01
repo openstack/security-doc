@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="case-studies-instance-management">
   <?dbhtml stop-chunking?>
-    <title>Case studies: instance management</title>
+    <title>Case studies</title>
     <para>In this case study we discuss how Alice and Bob would architect their clouds with respect to instance entropy, scheduling instances, trusted images, and instance migrations.</para>
     <section xml:id="case-studies-instance-management-idp44448">
       <title>Alice's private cloud</title>

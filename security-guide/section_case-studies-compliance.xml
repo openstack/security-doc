@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="case-studies-compliance">
   <?dbhtml stop-chunking?>
-    <title>Case studies: compliance</title>
+    <title>Case studies</title>
     <para>In this case study we discuss how Alice and Bob would address common compliance requirements. The preceding chapter refers to a wide variety of compliance certifications and standards. Alice will address compliance in a private cloud, while Bob will be focused on compliance for a public cloud.</para>
     <section xml:id="case-studies-compliance-idp44592">
       <title>Alice's private cloud</title>

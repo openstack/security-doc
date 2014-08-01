@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="case-studies-monitoring-and-logging">
   <?dbhtml stop-chunking?>
-    <title>Case studies: monitoring and logging</title>
+    <title>Case studies</title>
     <para>In this case study we discuss how Alice and Bob would address monitoring and logging in the public vs a private cloud. In both instances, time synchronization and a centralized store of logs become extremely important for performing proper assessments and troubleshooting of anomalies. Just collecting logs is not very useful, a robust monitoring system must be built to generate actionable events.</para>
     <section xml:id="case-studies-monitoring-and-logging-idp194928">
       <title>Alice's private cloud</title>

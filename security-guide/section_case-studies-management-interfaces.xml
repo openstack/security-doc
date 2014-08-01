@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="case-studies-management-interfaces">
   <?dbhtml stop-chunking?>
-    <title>Case studies: management interfaces</title>
+    <title>Case studies</title>
     <para>Previously we discussed typical OpenStack management
     interfaces and associated backplane issues. We will now approach
     these issues by returning to our Alice and Bob case study.

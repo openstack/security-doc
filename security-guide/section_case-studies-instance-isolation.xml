@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="case-studies-instance-isolation">
   <?dbhtml stop-chunking?>
-    <title>Case studies: instance isolation</title>
+    <title>Case studies</title>
     <para>In this case study we discuss how Alice and Bob would ensure that their instances are properly isolated. First we consider hypervisor selection, and then techniques for hardening QEMU and applying mandatory access controls.</para>
     <section xml:id="case-studies-instance-isolation-idp480000">
       <title>Alice's private cloud</title>

@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="case-studies-messaging">
   <?dbhtml stop-chunking?>
-    <title>Case studies: messaging</title>
+    <title>Case studies</title>
     <para>The message queue is a critical piece of infrastructure that supports a number of OpenStack services but is most strongly associated with the Compute service. Due to the nature of the message queue service, Alice and Bob have similar security concerns. One of the larger concerns that remains is that many systems have access to this queue and there is no way for a consumer of the queue messages to verify which host or service placed the messages on the queue. An attacker who is able to successfully place messages on the queue is able to create and delete VM instances, attach the block storage of any tenant and a myriad of other malicious actions. There are a number of solutions on the horizon to fix this, with several proposals for message signing and encryption making their way through the OpenStack development process.</para>
     <section xml:id="case-studies-messaging-idp38416">
       <title>Alice's private cloud</title>

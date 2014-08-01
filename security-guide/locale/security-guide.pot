@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-31 06:04+0000\n"
+"POT-Creation-Date: 2014-08-01 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6102,7 +6102,7 @@ msgid "The Compute service (nova) is one of the more complex OpenStack services.
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:11(title)
-msgid "Virtual console selection"
+msgid "How to select virtual consoles"
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:12(para)

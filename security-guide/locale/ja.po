@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-07-30 16:14+0000\n"
-"PO-Revision-Date: 2014-07-30 16:14+0000\n"
+"POT-Creation-Date: 2014-07-31 19:54+0000\n"
+"PO-Revision-Date: 2014-07-31 19:54+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -10263,8 +10263,8 @@ msgid ""
 msgstr "Compute Service (Nova) は最も複雑な OpenStack サービスの一つです。クラウドの隅々まで多くの場所で動作し、さまざまな内部サービスと通信します。この理由により、Compute Service 設定のベストプラクティスに関する推奨事項の多くは、本書を通して配布されます。管理、API エンドポイント、メッセージング、データベースのセクションで具体的な詳細を提供します。"
 
 #: ./security-guide/ch_compute.xml11(title)
-msgid "Virtual console selection"
-msgstr "仮想コンソールの選択"
+msgid "How to select virtual consoles"
+msgstr ""
 
 #: ./security-guide/ch_compute.xml12(para)
 msgid ""

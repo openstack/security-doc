@@ -5,16 +5,22 @@
   version="5.0"
   xml:id="acknowledgements">
   <?dbhtml stop-chunking?>
-    <title>Acknowledgments</title>
-    <para>The OpenStack Security Group would like to acknowledge contributions from the following organizations that were instrumental in making this book possible. The organizations are:</para>
-    <para>
-        <inlinemediaobject>
-            <imageobject role="html">
-                <imagedata contentdepth="900" contentwidth="600" fileref="static/book-sprint-all-logos.png" format="PNG" scalefit="1"/>
-            </imageobject>
-            <imageobject role="fo">
-                <imagedata contentdepth="100%" fileref="static/book-sprint-all-logos.png" format="PNG" scalefit="1" width="90%"/>
-            </imageobject>
-        </inlinemediaobject>
-    </para>
+  <title>Acknowledgments</title>
+  <para>The OpenStack Security Group would like to acknowledge contributions
+    from the following organizations that were instrumental in making this
+    book possible. The organizations are:</para>
+  <para>
+    <inlinemediaobject>
+      <imageobject role="html">
+        <imagedata contentdepth="900" contentwidth="600"
+                   fileref="static/book-sprint-all-logos.png"
+                   format="PNG" scalefit="1"/>
+        </imageobject>
+      <imageobject role="fo">
+        <imagedata contentdepth="100%"
+                   fileref="static/book-sprint-all-logos.png"
+                   format="PNG" scalefit="1" width="90%"/>
+      </imageobject>
+    </inlinemediaobject>
+  </para>
 </section>

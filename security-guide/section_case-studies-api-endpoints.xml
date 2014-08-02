@@ -19,8 +19,8 @@
         obtains certificates issued by this CA and configures the
         services within both the public and management security
         domains to use these certificates. Since Alice's OpenStack
-        deployment exists entirely on a disconnected from the Internet
-        network, she makes sure to remove all default CA bundles that
+        deployment exists entirely on a network disconnected from the
+        Internet, she makes sure to remove all default CA bundles that
         contain external public CA providers to ensure the OpenStack
         services only accept client certificates issued by her
         agency's CA. Alice has registered all of the services in the

@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-07-31 19:54+0000\n"
-"PO-Revision-Date: 2014-07-31 19:54+0000\n"
+"POT-Creation-Date: 2014-08-01 22:06+0000\n"
+"PO-Revision-Date: 2014-08-01 22:06+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1098,8 +1098,19 @@ msgid ""
 msgstr "ルールにより管理ユーザーとテナントに所属するユーザーのみにアクセス権を設定されるかもしれないため、マッピングは些細なことかもしれません。他のシナリオの場合、クラウド管理者がテナントごとのマッピング作業を承認する必要があるかもしれません。"
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml8(title)
-msgid "Case studies: PKI and certificate management"
-msgstr "ケーススタディ: PKI と証明書管理"
+#: ./security-guide/section_case-studies-system-documentation.xml8(title)
+#: ./security-guide/section_case-studies-monitoring-and-logging.xml8(title)
+#: ./security-guide/section_case-studies-database.xml8(title)
+#: ./security-guide/section_case-studies-tenant-data.xml8(title)
+#: ./security-guide/section_case-studies-messaging.xml8(title)
+#: ./security-guide/section_case-studies-instance-isolation.xml8(title)
+#: ./security-guide/section_case-studies-management-interfaces.xml8(title)
+#: ./security-guide/section_case-studies-compliance.xml8(title)
+#: ./security-guide/section_case-studies-instance-management.xml8(title)
+#: ./security-guide/section_case-studies-api-endpoints.xml8(title)
+#: ./security-guide/section_case-studies-networking.xml8(title)
+msgid "Case studies"
+msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml9(para)
 msgid ""
@@ -1168,10 +1179,6 @@ msgid ""
 "services to only accept client certificates issued by his internal CA."
 msgstr ""
 
-#: ./security-guide/section_case-studies-system-documentation.xml8(title)
-msgid "Case studies: system documentation"
-msgstr "ケーススタディ: システムのドキュメント"
-
 #: ./security-guide/section_case-studies-system-documentation.xml9(para)
 msgid ""
 "In this case study we discuss how Alice and Bob would address their system "
@@ -1203,10 +1210,6 @@ msgstr "アリスは、クラウドで実行中の各ネットワークサービ
 #: ./security-guide/section_case-studies-system-documentation.xml17(para)
 msgid "In this case, Bob will approach these steps the same as Alice."
 msgstr "今回のケーススタディでは、ボブはアリスと同様の手段を取ります。"
-
-#: ./security-guide/section_case-studies-monitoring-and-logging.xml8(title)
-msgid "Case studies: monitoring and logging"
-msgstr "ケーススタディ: 監視とログ採取"
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml9(para)
 msgid ""
@@ -1247,10 +1250,6 @@ msgid ""
 "along with a robust set of alerts and integration with his CMDB to provide "
 "operational awareness to both customers and cloud administrators."
 msgstr "ログが作成された際、（パブリッククラウドプロバイダとして）法律順守と状況判断の両方で、ボブはログ採取に興味があります。これはつまり、ボブの顧客のコンプライアンス監査の為、彼らの代わりにタイムリーかつ関連のあるログ又はレポートを提供する為の彼の能力と同様、コンプライアンスはプロバイダとしてのボブが従うべきものであるという事です。それを念頭に置いて、ボブは彼のインスタンス、ノード、インフラデバイス全てで外部の良好と知られている時間デバイスを用いて時間同期を実行するよう設定しています。加えて、ボブのチームは彼の顧客用に、ボブの SIEM ツールからセルフサービスでログ取得を実行する為の Django ベースの Web アプリケーションを構築しています。ボブは、顧客とクラウド管理者の双方に運用判断を提供する為、ロバストな警告セットがあり、彼の CMDB インテグレーションを持つSIEM ツールも使用します。"
-
-#: ./security-guide/section_case-studies-database.xml8(title)
-msgid "Case studies: database"
-msgstr "ケーススタディ: データベース"
 
 #: ./security-guide/section_case-studies-database.xml9(para)
 msgid ""
@@ -2105,10 +2104,6 @@ msgid ""
 "record."
 msgstr "サービス、プロトコル、ポートの表を参照すると、OpenStack のコンポーネント間の関係を理解するのに役立ちます。OpenStack のデプロイメントには、これと同様の情報を記録することを強く推奨します。"
 
-#: ./security-guide/section_case-studies-tenant-data.xml8(title)
-msgid "Case studies: tenant data"
-msgstr "ケーススタディ: テナントデータ"
-
 #: ./security-guide/section_case-studies-tenant-data.xml9(para)
 msgid ""
 "Returning to Alice and Bob, we will use this section to dive into their "
@@ -2179,10 +2174,6 @@ msgid ""
 "To provide secure ephemeral instance storage, Bob implements qcow2 files on "
 "an encrypted filesystems."
 msgstr "安全な一時ディスクを提供するために、ボブは暗号化ファイルシステム上に qcow2 のファイルを実装しています。"
-
-#: ./security-guide/section_case-studies-messaging.xml8(title)
-msgid "Case studies: messaging"
-msgstr "ケーススタディ: メッセージング"
 
 #: ./security-guide/section_case-studies-messaging.xml9(para)
 msgid ""
@@ -4840,10 +4831,6 @@ msgid ""
 "href=\"http://wiki.openstack.org/Documentation/HowTo\">http://wiki.openstack.org/Documentation/HowTo</link>."
 msgstr "OpenStack ドキュメントに貢献する方法について: <link href=\"http://wiki.openstack.org/Documentation/HowTo\">http://wiki.openstack.org/Documentation/HowTo</link>"
 
-#: ./security-guide/section_case-studies-instance-isolation.xml8(title)
-msgid "Case studies: instance isolation"
-msgstr "ケーススタディ：インスタンス分離"
-
 #: ./security-guide/section_case-studies-instance-isolation.xml9(para)
 msgid ""
 "In this case study we discuss how Alice and Bob would ensure that their "
@@ -6661,10 +6648,6 @@ msgid ""
 "directly mappable between hypervisors."
 msgstr "* この表にある機能はすべてのハイパーバイザーに適用できないかもしれません。また、ハイパーバイザー間で直接対応付けできないかもしれません。"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml8(title)
-msgid "Case studies: management interfaces"
-msgstr "ケーススタディ: 管理インターフェース"
-
 #: ./security-guide/section_case-studies-management-interfaces.xml9(para)
 msgid ""
 "Previously we discussed typical OpenStack management interfaces and "
@@ -7119,10 +7102,6 @@ msgstr "攻撃の形式ごとの規範的な防御については、本書の対
 #: ./security-guide/ch_compliance.xml7(title)
 msgid "Compliance"
 msgstr "コンプライアンス"
-
-#: ./security-guide/section_case-studies-compliance.xml8(title)
-msgid "Case studies: compliance"
-msgstr "ケーススタディ: コンプライアンス"
 
 #: ./security-guide/section_case-studies-compliance.xml9(para)
 msgid ""
@@ -7802,10 +7781,6 @@ msgid ""
 " the <citetitle>OpenStack Cloud Administrator Guide</citetitle>."
 msgstr "更なる情報は、<citetitle>OpenStack Cloud Administrator Guide</citetitle> 中の <link href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html\">Networking</link> の章を参照して下さい。"
 
-#: ./security-guide/section_case-studies-instance-management.xml8(title)
-msgid "Case studies: instance management"
-msgstr "ケーススタディ：インスタンス管理"
-
 #: ./security-guide/section_case-studies-instance-management.xml9(para)
 msgid ""
 "In this case study we discuss how Alice and Bob would architect their clouds"
@@ -7927,10 +7902,6 @@ msgid ""
 "practiced for OpenStack deployments."
 msgstr "包括的なプライバシー管理には、十分な準備、考慮と投資が必要です。また、グローバルなOpenStackクラウドの構築時には、さらなる複雑さに気づくでしょう。米国および、それより厳しいEUのプライバシー法令の違いが良い例です。加えて、クレジットカード番号や医療情報など、機密性の高い個人情報を扱う場合にはさらなる注意が必要です。これら機密性の高い情報はプライバシー法令だけでなく、監視当局や政府規制にも関連します。政府によって発行されたものなど、ベストプラクティスに従うことで、OpenStack環境向けの総合的なプライバシー管理ポリシーが確立、実践されていくでしょう。"
 
-#: ./security-guide/section_case-studies-api-endpoints.xml8(title)
-msgid "Case studies: API endpoints"
-msgstr "ケーススタディ: API エンドポイント"
-
 #: ./security-guide/section_case-studies-api-endpoints.xml9(para)
 msgid ""
 "In this case study we discuss how Alice and Bob would address endpoint "
@@ -8002,10 +7973,6 @@ msgid ""
 "about the current state of services that are available, what future services"
 " will be implemented, and the current limitations in this project."
 msgstr "本項には、OpenStack Networking を実装する際に検討すべきプロセスとベストプラクティスについての大まかな概要をまとめています。提供されているサービスの現在の状況 、将来実装されるサービス、本プロジェクトにおける現在の制限事項などについて説明します。"
-
-#: ./security-guide/section_case-studies-networking.xml8(title)
-msgid "Case studies: Networking"
-msgstr "ケーススタディ: Networking"
 
 #: ./security-guide/section_case-studies-networking.xml9(para)
 msgid ""

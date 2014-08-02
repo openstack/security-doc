@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-01 06:04+0000\n"
+"POT-Creation-Date: 2014-08-02 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -647,8 +647,8 @@ msgstr ""
 msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:8(title)
-msgid "Case studies: PKI and certificate management"
+#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:8(title) ./security-guide/section_case-studies-system-documentation.xml:8(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:8(title) ./security-guide/section_case-studies-database.xml:8(title) ./security-guide/section_case-studies-tenant-data.xml:8(title) ./security-guide/section_case-studies-messaging.xml:8(title) ./security-guide/section_case-studies-instance-isolation.xml:8(title) ./security-guide/section_case-studies-management-interfaces.xml:8(title) ./security-guide/section_case-studies-compliance.xml:8(title) ./security-guide/section_case-studies-instance-management.xml:8(title) ./security-guide/section_case-studies-api-endpoints.xml:8(title) ./security-guide/section_case-studies-networking.xml:8(title)
+msgid "Case studies"
 msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:9(para)
@@ -671,10 +671,6 @@ msgstr ""
 msgid "Bob is architecting a public cloud and needs to ensure that the publicly facing OpenStack services are using certificates issued by a major public CA. Bob acquires certificates for his public OpenStack services and configures the services to use PKI and SSL and includes the public CAs in his trust bundle for the services. Additionally, Bob also wants to further isolate the internal communications amongst the services within the management security domain. Bob contacts the team within his organization that is responsible for managing his organization's PKI and issuance of certificates using their own internal CA. Bob obtains certificates issued by this internal CA and configures the services that communicate within the management security domain to use these certificates and configures the services to only accept client certificates issued by his internal CA."
 msgstr ""
 
-#: ./security-guide/section_case-studies-system-documentation.xml:8(title)
-msgid "Case studies: system documentation"
-msgstr ""
-
 #: ./security-guide/section_case-studies-system-documentation.xml:9(para)
 msgid "In this case study we discuss how Alice and Bob would address their system documentation requirements. The documentation suggested above includes hardware and software records, network diagrams, and system configuration details."
 msgstr ""
@@ -691,10 +687,6 @@ msgstr ""
 msgid "In this case, Bob will approach these steps the same as Alice."
 msgstr ""
 
-#: ./security-guide/section_case-studies-monitoring-and-logging.xml:8(title)
-msgid "Case studies: monitoring and logging"
-msgstr ""
-
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml:9(para)
 msgid "In this case study we discuss how Alice and Bob would address monitoring and logging in the public vs a private cloud. In both instances, time synchronization and a centralized store of logs become extremely important for performing proper assessments and troubleshooting of anomalies. Just collecting logs is not very useful, a robust monitoring system must be built to generate actionable events."
 msgstr ""
@@ -705,10 +697,6 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml:16(para)
 msgid "When it comes to logging, as a public cloud provider, Bob is interested in logging both for situational awareness as well as compliance. That is, compliance that Bob as a provider is subject to as well as his ability to provide timely and relevant logs or reports on the behalf of his customers for their compliance audits. With that in mind, Bob configures all of his instances, nodes, and infrastructure devices to perform time synchronization with an external, known good time device. Additionally, Bob's team has built a Django based web applications for his customers to perform self-service log retrieval from Bob's SIEM tool. Bob also uses this SIEM tool along with a robust set of alerts and integration with his CMDB to provide operational awareness to both customers and cloud administrators."
-msgstr ""
-
-#: ./security-guide/section_case-studies-database.xml:8(title)
-msgid "Case studies: database"
 msgstr ""
 
 #: ./security-guide/section_case-studies-database.xml:9(para)
@@ -1221,10 +1209,6 @@ msgstr ""
 msgid "Referencing a table of services, protocols and ports can help in understanding the relationship between OpenStack components. It is highly recommended that OpenStack deployments have information similar to this on record."
 msgstr ""
 
-#: ./security-guide/section_case-studies-tenant-data.xml:8(title)
-msgid "Case studies: tenant data"
-msgstr ""
-
 #: ./security-guide/section_case-studies-tenant-data.xml:9(para)
 msgid "Returning to Alice and Bob, we will use this section to dive into their particular tenant data privacy requirements. Specifically, we will look into how Alice and Bob both handle tenant data, data destruction, and data encryption."
 msgstr ""
@@ -1267,10 +1251,6 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-tenant-data.xml:75(para)
 msgid "To provide secure ephemeral instance storage, Bob implements qcow2 files on an encrypted filesystems."
-msgstr ""
-
-#: ./security-guide/section_case-studies-messaging.xml:8(title)
-msgid "Case studies: messaging"
 msgstr ""
 
 #: ./security-guide/section_case-studies-messaging.xml:9(para)
@@ -2833,10 +2813,6 @@ msgstr ""
 msgid "Learn more about how to contribute to the OpenStack docs: <link href=\"http://wiki.openstack.org/Documentation/HowTo\">http://wiki.openstack.org/Documentation/HowTo</link>."
 msgstr ""
 
-#: ./security-guide/section_case-studies-instance-isolation.xml:8(title)
-msgid "Case studies: instance isolation"
-msgstr ""
-
 #: ./security-guide/section_case-studies-instance-isolation.xml:9(para)
 msgid "In this case study we discuss how Alice and Bob would ensure that their instances are properly isolated. First we consider hypervisor selection, and then techniques for hardening QEMU and applying mandatory access controls."
 msgstr ""
@@ -3983,10 +3959,6 @@ msgstr ""
 msgid "* Features in this table might not be applicable to all hypervisors or directly mappable between hypervisors."
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:8(title)
-msgid "Case studies: management interfaces"
-msgstr ""
-
 #: ./security-guide/section_case-studies-management-interfaces.xml:9(para)
 msgid "Previously we discussed typical OpenStack management interfaces and associated backplane issues. We will now approach these issues by returning to our Alice and Bob case study. Specifically, we will look into how both Alice and Bob will address:"
 msgstr ""
@@ -4219,10 +4191,6 @@ msgstr ""
 
 #: ./security-guide/ch_compliance.xml:7(title)
 msgid "Compliance"
-msgstr ""
-
-#: ./security-guide/section_case-studies-compliance.xml:8(title)
-msgid "Case studies: compliance"
 msgstr ""
 
 #: ./security-guide/section_case-studies-compliance.xml:9(para)
@@ -4617,10 +4585,6 @@ msgstr ""
 msgid "For additional information see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html\">Networking chapter</link> in the <citetitle>OpenStack Cloud Administrator Guide</citetitle>."
 msgstr ""
 
-#: ./security-guide/section_case-studies-instance-management.xml:8(title)
-msgid "Case studies: instance management"
-msgstr ""
-
 #: ./security-guide/section_case-studies-instance-management.xml:9(para)
 msgid "In this case study we discuss how Alice and Bob would architect their clouds with respect to instance entropy, scheduling instances, trusted images, and instance migrations."
 msgstr ""
@@ -4673,10 +4637,6 @@ msgstr ""
 msgid "Comprehensive privacy management requires significant preparation, thought and investment. Additional complications are introduced when building global OpenStack clouds, for example navigating the differences between U.S. and more restrictive E.U. privacy laws. In addition, extra care needs to be taken when dealing with sensitive PII that may include information such as credit card numbers or medical records. This sensitive data is not only subject to privacy laws but also regulatory and governmental regulations. By deferring to established best practices, including those published by governments, a holistic privacy management policy may be created and practiced for OpenStack deployments."
 msgstr ""
 
-#: ./security-guide/section_case-studies-api-endpoints.xml:8(title)
-msgid "Case studies: API endpoints"
-msgstr ""
-
 #: ./security-guide/section_case-studies-api-endpoints.xml:9(para)
 msgid "In this case study we discuss how Alice and Bob would address endpoint configuration to secure their private and public clouds. Alice's cloud is not publicly accessible, but she is still concerned about securing the endpoints against improper use. Bob's cloud, being public, must take measures to reduce the risk of attacks by external adversaries."
 msgstr ""
@@ -4699,10 +4659,6 @@ msgstr ""
 
 #: ./security-guide/ch_networking.xml:29(para)
 msgid "This section is a high-level overview of what processes and best practices should be considered when implementing OpenStack Networking. We will talk about the current state of services that are available, what future services will be implemented, and the current limitations in this project."
-msgstr ""
-
-#: ./security-guide/section_case-studies-networking.xml:8(title)
-msgid "Case studies: Networking"
 msgstr ""
 
 #: ./security-guide/section_case-studies-networking.xml:9(para)

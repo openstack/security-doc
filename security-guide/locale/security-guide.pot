@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-02 06:04+0000\n"
+"POT-Creation-Date: 2014-08-03 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4642,7 +4642,7 @@ msgid "In this case study we discuss how Alice and Bob would address endpoint co
 msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:12(para)
-msgid "Alice's organization requires that the security architecture protect the access to the public and private endpoints, so she elects to use the Apache SSL proxy on both public and internal services. Alice's organization has implemented its own certificate authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a disconnected from the Internet network, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA. Alice has registered all of the services in the Identity service's catalog, using the internal URLs for access by internal services. She has installed host-based intrusion detection on all of the API endpoints."
+msgid "Alice's organization requires that the security architecture protect the access to the public and private endpoints, so she elects to use the Apache SSL proxy on both public and internal services. Alice's organization has implemented its own certificate authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a network disconnected from the Internet, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA. Alice has registered all of the services in the Identity service's catalog, using the internal URLs for access by internal services. She has installed host-based intrusion detection on all of the API endpoints."
 msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:34(para)

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-03 06:04+0000\n"
+"POT-Creation-Date: 2014-08-05 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1051,7 +1051,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_acknowledgements.xml:13(None) ./security-guide/section_acknowledgements.xml:16(None)
+#: ./security-guide/section_acknowledgements.xml:17(None) ./security-guide/section_acknowledgements.xml:22(None)
 msgid "@@image: 'static/book-sprint-all-logos.png'; md5=f2d97c3130c32f31412f5af41ad72d39"
 msgstr ""
 
@@ -2613,7 +2613,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:39(None) ./security-guide/section_why-and-how-we-wrote-this-book.xml:42(None)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:66(None) ./security-guide/section_why-and-how-we-wrote-this-book.xml:70(None)
 msgid "@@image: 'static/group.png'; md5=aec1f0af66d29c1a5d1f174df1f12812"
 msgstr ""
 
@@ -2625,192 +2625,192 @@ msgstr ""
 msgid "As OpenStack adoption continues to grow and the product matures, security has become a priority. The OpenStack Security Group has recognized the need for a comprehensive and authoritative security guide. The <emphasis role=\"bold\">OpenStack Security Guide</emphasis> has been written to provide an overview of security best practices, guidelines, and recommendations for increasing the security of an OpenStack deployment. The authors bring their expertise from deploying and securing OpenStack in a variety of environments."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:14(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:21(para)
 msgid "This guide augments the <link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link> and can be referenced to harden existing OpenStack deployments or to evaluate the security controls of OpenStack cloud providers."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:16(title)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:27(title)
 msgid "Objectives"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:18(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:30(para)
 msgid "Identify the security domains in OpenStack"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:21(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:33(para)
 msgid "Provide guidance to secure your OpenStack deployment"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:24(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:36(para)
 msgid "Highlight security concerns and potential mitigations in present day OpenStack"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:27(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:40(para)
 msgid "Discuss upcoming security features"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:30(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:43(para)
 msgid "To provide a community driven facility for knowledge capture and dissemination"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:35(title)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:49(title)
 msgid "How"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:36(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:50(para)
 msgid "As with the OpenStack Operations Guide, we followed the book sprint methodology. The book sprint process allows for rapid development and production of large bodies of written work. Coordinators from the OpenStack Security Group re-enlisted the services of Adam Hyde as facilitator. Corporate support was obtained and the project was formally announced during the OpenStack summit in Portland, Oregon."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:37(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:56(para)
 msgid "The team converged in Annapolis, MD due to the close proximity of some key members of the group. This was a remarkable collaboration between public sector intelligence community members, silicon valley startups and some large, well-known technology companies. The book sprint ran during the last week in June 2013 and the first edition was created in five days."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:45(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:73(para)
 msgid "The team included:"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:48(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:76(para)
 msgid "<emphasis role=\"bold\">Bryan D. Payne</emphasis>, Nebula"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:49(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:77(para)
 msgid "Dr. Bryan D. Payne is the Director of Security Research at Nebula and co-founder of the OpenStack Security Group (OSSG). Prior to joining Nebula, he worked at Sandia National Labs, the National Security Agency, BAE Systems, and IBM Research. He graduated with a Ph.D. in Computer Science from the Georgia Tech College of Computing, specializing in systems security."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:52(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:85(para)
 msgid "<emphasis role=\"bold\">Robert Clark</emphasis>, HP"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:53(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:86(para)
 msgid "Robert Clark is the Lead Security Architect for HP Cloud Services and co-founder of the OpenStack Security Group (OSSG). Prior to being recruited by HP, he worked in the UK Intelligence Community. Robert has a strong background in threat modeling, security architecture and virtualization technology. Robert has a master's degree in Software Engineering from the University of Wales."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:56(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:95(para)
 msgid "<emphasis role=\"bold\">Keith Basil</emphasis>, Red Hat"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:57(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:96(para)
 msgid "Keith Basil is a Principal Product Manager for Red Hat OpenStack and is focused on Red Hat's OpenStack product management, development and strategy. Within the US public sector, Basil brings previous experience from the design of an authorized, secure, high-performance cloud architecture for Federal civilian agencies and contractors."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:60(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:104(para)
 msgid "<emphasis role=\"bold\">Cody Bunch</emphasis>, Rackspace"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:61(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:105(para)
 msgid "Cody Bunch is a Private Cloud architect with Rackspace. Cody has co-authored an update to \"The OpenStack Cookbook\" as well as books on VMware automation."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:64(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:110(para)
 msgid "<emphasis role=\"bold\">Malini Bhandaru</emphasis>, Intel"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:65(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:111(para)
 msgid "Malini Bhandaru is a security architect at Intel. She has a varied background, having worked on platform power and performance at Intel, speech products at Nuance, remote monitoring and management at ComBrio, and web commerce at Verizon. She has a Ph.D. in Artificial Intelligence from the University of Massachusetts, Amherst."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:68(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:118(para)
 msgid "<emphasis role=\"bold\">Gregg Tally</emphasis>, Johns Hopkins University Applied Physics Laboratory"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:69(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:120(para)
 msgid "Gregg Tally is the Chief Engineer at JHU/APL's Cyber Systems Group within the Asymmetric Operations Department. He works primarily in systems security engineering. Previously, he has worked at SPARTA, McAfee, and Trusted Information Systems where he was involved in cyber security research projects."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:72(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:127(para)
 msgid "<emphasis role=\"bold\">Eric Lopez</emphasis>, VMware"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:73(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:128(para)
 msgid "Eric Lopez is Senior Solution Architect at VMware's Networking and Security Business Unit where he helps customers implement OpenStack and VMware NSX (formerly known as Nicira's Network Virtualization Platform). Prior to joining VMware (through the company's acquisition of Nicira), he worked for Q1 Labs, Symantec, Vontu, and Brightmail. He has a B.S in Electrical Engineering/Computer Science and Nuclear Engineering from U.C. Berkeley and MBA from the University of San Francisco."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:76(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:138(para)
 msgid "<emphasis role=\"bold\">Shawn Wells</emphasis>, Red Hat"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:77(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:139(para)
 msgid "Shawn Wells is the Director, Innovation Programs at Red Hat, focused on improving the process of adopting, contributing to, and managing open source technologies within the U.S. Government. Additionally, Shawn is an upstream maintainer of the SCAP Security Guide project which forms virtualization and operating system hardening policy with the U.S. Military, NSA, and DISA. Formerly an NSA civilian, Shawn developed SIGINT collection systems utilizing large distributed computing infrastructures."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:80(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:149(para)
 msgid "<emphasis role=\"bold\">Ben de Bont</emphasis>, HP"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:81(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:150(para)
 msgid "Ben de Bont is the CSO for HP Cloud Services. Prior to his current role Ben led the information security group at MySpace and the incident response team at MSN Security. Ben holds a master's degree in Computer Science from the Queensland University of Technology."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:84(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:157(para)
 msgid "<emphasis role=\"bold\">Nathanael Burton</emphasis>, National Security Agency"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:85(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:159(para)
 msgid "Nathanael Burton is a Computer Scientist at the National Security Agency. He has worked for the Agency for over 10 years working on distributed systems, large-scale hosting, open source initiatives, operating systems, security, storage, and virtualization technology. He has a B.S. in Computer Science from Virginia Tech."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:88(emphasis)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:166(emphasis)
 msgid "Vibha Fauver"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:89(para)
-msgid "Vibha Fauver, GWEB, CISSP, PMP, has over fifteen years of experience in Information Technology. Her areas of specialization include software engineering, project management and information security. She has a B.S. in Computer &amp; Information Science and a M.S. in Engineering Management with specialization and a certificate in Systems Engineering."
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:167(para)
+msgid "Vibha Fauver, GWEB, CISSP, PMP, has over fifteen years of experience in Information Technology. Her areas of specialization include software engineering, project management and informationsecurity. She has a B.S. in Computer &amp; Information Science and a M.S. in Engineering Management with specialization and a certificate in Systems Engineering."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:92(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:175(para)
 msgid "<emphasis role=\"bold\">Eric Windisch</emphasis>, Cloudscaling"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:93(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:177(para)
 msgid "Eric Windisch is a Principal Engineer at Cloudscaling where he has been contributing to OpenStack for over two years. Eric has been in the trenches of hostile environments, building tenant isolation and infrastructure security through more than a decade of experience in the web hosting industry. He has been building cloud computing infrastructure and automation since 2007."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:96(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:185(para)
 msgid "<emphasis role=\"bold\">Andrew Hay</emphasis>, CloudPassage"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:97(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:186(para)
 msgid "Andrew Hay is the Director of Applied Security Research at CloudPassage, Inc. where he leads the security research efforts for the company and its server security products purpose-built for dynamic public, private, and hybrid cloud hosting environments."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:100(emphasis)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:192(emphasis)
 msgid "Adam Hyde"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:101(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:193(para)
 msgid "Adam facilitated this Book Sprint. He also founded the Book Sprint methodology and is the most experienced Book Sprint facilitator around. Adam founded FLOSS Manualsa community of some 3,000 individuals developing Free Manuals about Free Software. He is also the founder and project manager for Booktype, an open source project for writing, editing, and publishing books online and in print."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:104(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:201(para)
 msgid "During the sprint we also had help from Anne Gentle, Warren Wang, Paul McMillan, Brian Schott and Lorin Hochstein."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:105(para)
-msgid "This Book was produced in a 5 day book sprint. A book sprint is an intensely collaborative, facilitated process which brings together a group to produce a book in 3-5 days. It is a strongly facilitated process with a specific methodology founded and developed by Adam Hyde. For more information visit the book sprint web page at <link href=\"http://www.booksprints.net\">http://www.booksprints.net</link>."
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:203(para)
+msgid "This Book was produced in a 5 day book sprint. A book sprint is an intensely collaborative, facilitated process which brings together a group to produce a book in 3-5 days. It is a strongly facilitated process with a specific methodology founded and developed by Adam Hyde. For more information visit the book sprint web page at <link href=\"http://www.booksprints.net\"> http://www.booksprints.net</link>."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:113(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:210(para)
 msgid "After initial publication, the following added new content:"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:116(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:213(para)
 msgid "<emphasis role=\"bold\">Rodney D. Beede</emphasis>, Seagate Technology"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:119(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:215(para)
 msgid "Rodney D. Beede is the Cloud Security Engineer for Seagate Technology. He contributed the missing chapter on securing OpenStack Object Storage (swift). He holds a M.S. in Computer Science from the University of Colorado."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:128(title)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:223(title)
 msgid "How to contribute to this book"
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:129(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:224(para)
 msgid "The initial work on this book was conducted in an overly air-conditioned room that served as our group office for the entirety of the documentation sprint."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:132(para)
-msgid "Learn more about how to contribute to the OpenStack docs: <link href=\"http://wiki.openstack.org/Documentation/HowTo\">http://wiki.openstack.org/Documentation/HowTo</link>."
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml:227(para)
+msgid "Learn more about how to contribute to the OpenStack docs: <link href=\"http://wiki.openstack.org/Documentation/HowTo\"> http://wiki.openstack.org/Documentation/HowTo</link>."
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-isolation.xml:9(para)
@@ -5118,7 +5118,7 @@ msgid "To address the often mentioned concern of tenant data privacy and limitin
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:10(para)
-msgid "A key management service is in the early stages of being developed and has a way to go before becoming an official component of OpenStack. Refer to <link href=\"https://github.com/cloudkeep/barbican/wiki/_pages\">https://github.com/cloudkeep/barbican/wiki/_pages</link> for details."
+msgid "A key management service is in the early stages of being developed and has a way to go before becoming an official component of OpenStack. Refer to <link href=\"http://docs.openstack.org/developer/barbican/\">http://docs.openstack.org/developer/barbican/</link> for details."
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:11(para)
@@ -5134,7 +5134,7 @@ msgid "References:"
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:16(link)
-msgid "Barbican"
+msgid "Barbican developer documentation"
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:19(link)
@@ -5762,7 +5762,7 @@ msgid "Instance migrations"
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:27(para)
-msgid "We consider entropy to refer to the quality and source of random data that is available to an instance. Cryptographic technologies typically rely heavily on randomness, requiring a high quality pool of entropy to draw from. It is typically hard for a virtual machine to get enough entropy to support these operations. Entropy starvation can manifest in instances as something seemingly unrelated for example, slow boot times because the instance is waiting for ssh key generation. Entropy starvation may also motivate users to employ poor quality entropy sources from within the instance, making applications running in the cloud less secure overall."
+msgid "We consider entropy to refer to the quality and source of random data that is available to an instance. Cryptographic technologies typically rely heavily on randomness, requiring a high quality pool of entropy to draw from. It is typically hard for a virtual machine to get enough entropy to support these operations, which is referred to as entropy starvation. Entropy starvation can manifest in instances as something seemingly unrelated. For example, slow boot time may be caused by the instance waiting for ssh key generation. Entropy starvation may also motivate users to employ poor quality entropy sources from within the instance, making applications running in the cloud less secure overall."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:28(para)

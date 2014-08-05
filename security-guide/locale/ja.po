@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-08-02 09:32+0000\n"
-"PO-Revision-Date: 2014-08-02 06:21+0000\n"
+"POT-Creation-Date: 2014-08-04 17:56+0000\n"
+"PO-Revision-Date: 2014-08-05 03:00+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1821,8 +1821,8 @@ msgstr "仮想マシンが X Window System と通信することを許可しま�
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_acknowledgements.xml13(None)
-#: ./security-guide/section_acknowledgements.xml16(None)
+#: ./security-guide/section_acknowledgements.xml17(None)
+#: ./security-guide/section_acknowledgements.xml22(None)
 msgid ""
 "@@image: 'static/book-sprint-all-logos.png'; "
 "md5=f2d97c3130c32f31412f5af41ad72d39"
@@ -4508,8 +4508,8 @@ msgstr "一部のコンポーネントは、間接的にデータベースを使
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml39(None)
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml42(None)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml66(None)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml70(None)
 msgid "@@image: 'static/group.png'; md5=aec1f0af66d29c1a5d1f174df1f12812"
 msgstr "@@image: 'static/group.png'; md5=aec1f0af66d29c1a5d1f174df1f12812"
 
@@ -4529,7 +4529,7 @@ msgid ""
 "variety of environments."
 msgstr "OpenStack が拡大を続け、製品が成熟してきたので、セキュリティが重要事項になってきました。OpenStack Security Group は包括的かつ権威のあるセキュリティガイドの必要性を認識しました。<emphasis role=\"bold\">OpenStack セキュリティガイド</emphasis>は、OpenStack のセキュリティ向上を目的とした、セキュリティのベストプラクティス、ガイドライン、推奨事項の概要について記載しています。著者は\nさまざまな環境で OpenStack の導入やセキュア化をした専門知識をもたらします。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml14(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml21(para)
 msgid ""
 "This guide augments the <link "
 "href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations "
@@ -4538,39 +4538,39 @@ msgid ""
 "providers."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml16(title)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml27(title)
 msgid "Objectives"
 msgstr "本書の目的"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml18(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml30(para)
 msgid "Identify the security domains in OpenStack"
 msgstr "OpenStack のセキュリティ領域の明確化"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml21(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml33(para)
 msgid "Provide guidance to secure your OpenStack deployment"
 msgstr "OpenStack をセキュア化するガイドの提供"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml24(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml36(para)
 msgid ""
 "Highlight security concerns and potential mitigations in present day "
 "OpenStack"
 msgstr "現在の OpenStack におけるセキュリティ懸念事項と実現可能な軽減策の紹介"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml27(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml40(para)
 msgid "Discuss upcoming security features"
 msgstr "今後予定されているセキュリティ機能の議論"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml30(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml43(para)
 msgid ""
 "To provide a community driven facility for knowledge capture and "
 "dissemination"
 msgstr "コミュニティ主導のナレッジ蓄積と普及の場の提供"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml35(title)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml49(title)
 msgid "How"
 msgstr "本書の執筆方法"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml36(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml50(para)
 msgid ""
 "As with the OpenStack Operations Guide, we followed the book sprint "
 "methodology. The book sprint process allows for rapid development and "
@@ -4580,7 +4580,7 @@ msgid ""
 " the OpenStack summit in Portland, Oregon."
 msgstr "本書はOpenStack Operations Guide（OpenStack 運用ガイド）と同様に「ブックスプリントメソッド」を用いました。このメソッドでは、迅速な大量文章の作成を実現します。OpenStack Security Group のコーディネーターは再びAdam Hydeをファシリテーターとして力を借りました。さらに企業からのサポートが得られ、オレゴン州ポートランドで開催されたOpenStack サミットでプロジェクトが正式に公表されました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml37(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml56(para)
 msgid ""
 "The team converged in Annapolis, MD due to the close proximity of some key "
 "members of the group. This was a remarkable collaboration between public "
@@ -4589,15 +4589,15 @@ msgid ""
 "week in June 2013 and the first edition was created in five days."
 msgstr "チームは、グループの主要なメンバーが集まるために、メリーランド州アナポリスに集まりました。これは、公共部門のインテリジェンス・コミュニティーのメンバー、シリコンバレーのスタートアップ、いくつかの有名な大手技術企業の間での驚くべきコラボレーションです。Book Sprint は 2013 年 6 月の最終週に行われ、初版は 5 日間で作成されました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml45(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml73(para)
 msgid "The team included:"
 msgstr "チームメンバーは以下のとおりです。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml48(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml76(para)
 msgid "<emphasis role=\"bold\">Bryan D. Payne</emphasis>, Nebula"
 msgstr "<emphasis role=\"bold\">Bryan D. Payne</emphasis>, Nebula"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml49(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml77(para)
 msgid ""
 "Dr. Bryan D. Payne is the Director of Security Research at Nebula and co-"
 "founder of the OpenStack Security Group (OSSG). Prior to joining Nebula, he "
@@ -4606,11 +4606,11 @@ msgid ""
 "Georgia Tech College of Computing, specializing in systems security."
 msgstr "Dr. Bryan D. Payne は、Nebula の Security Research の Director です。また、OpenStack Security Group (OSSG) の共同創設者です。Nebula に参加する前は、Sandia National Labs、National Security Agency、BAE Systems、IBM Research に勤務していました。Georgia Tech College of Computing でシステムセキュリティを専攻し、コンピューターサイエンスの Ph.D. を取得しました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml52(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml85(para)
 msgid "<emphasis role=\"bold\">Robert Clark</emphasis>, HP"
 msgstr "<emphasis role=\"bold\">Robert Clark</emphasis>, HP"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml53(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml86(para)
 msgid ""
 "Robert Clark is the Lead Security Architect for HP Cloud Services and co-"
 "founder of the OpenStack Security Group (OSSG). Prior to being recruited by "
@@ -4620,11 +4620,11 @@ msgid ""
 "University of Wales."
 msgstr "Robert Clark は、Nebula の HP Cloud Services の Lead Security Architect です。また、OpenStack Security Group (OSSG) の共同創設者です。HP に入社する前は、UK Intelligence Community に勤務していました。脅威モデリング、セキュリティアーキテクチャ、仮想化技術に関する強固なバックグラウンドを持ちます。University of Wales のソフトウェアエンジニアリングの修士号を持っています。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml56(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml95(para)
 msgid "<emphasis role=\"bold\">Keith Basil</emphasis>, Red Hat"
 msgstr "<emphasis role=\"bold\">Keith Basil</emphasis>, Red Hat"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml57(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml96(para)
 msgid ""
 "Keith Basil is a Principal Product Manager for Red Hat OpenStack and is "
 "focused on Red Hat's OpenStack product management, development and strategy."
@@ -4633,22 +4633,22 @@ msgid ""
 "Federal civilian agencies and contractors."
 msgstr "Keith Basil は Red Hat OpenStack の Principal Product Manager です。Red Hat の OpenStack 製品マネジメント、開発、戦略に注力しています。アメリカの公共部門の中で、アメリカの民間機関と委託業者向けの認定済み、セキュアかつハイパフォーマンスなクラウドアーキテクチャの設計から、これまでの経験をもたらします。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml60(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml104(para)
 msgid "<emphasis role=\"bold\">Cody Bunch</emphasis>, Rackspace"
 msgstr "<emphasis role=\"bold\">Cody Bunch</emphasis>, Rackspace"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml61(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml105(para)
 msgid ""
 "Cody Bunch is a Private Cloud architect with Rackspace. Cody has co-authored"
 " an update to \"The OpenStack Cookbook\" as well as books on VMware "
 "automation."
 msgstr "Cody Bunch は Rackspace の Private Cloud architect です。『The OpenStack Cookbook』と VMware 自動化の書籍の共同執筆者です。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml64(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml110(para)
 msgid "<emphasis role=\"bold\">Malini Bhandaru</emphasis>, Intel"
 msgstr "<emphasis role=\"bold\">Malini Bhandaru</emphasis>, Intel"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml65(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml111(para)
 msgid ""
 "Malini Bhandaru is a security architect at Intel. She has a varied "
 "background, having worked on platform power and performance at Intel, speech"
@@ -4657,13 +4657,13 @@ msgid ""
 "University of Massachusetts, Amherst."
 msgstr "Malini Bhandaru は Intel のセキュリティアーキテクトです。Intel でプラットフォームの電力とパフォーマンス、Nuance でスピーチ製品、ComBrio でリモートモニタリングと管理、Verizon でウェブコマースに関するさまざまなバックグラウンドを持ちます。University of Massachusetts, Amherst で人工知能に関する  Ph.D. を持っています。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml68(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml118(para)
 msgid ""
 "<emphasis role=\"bold\">Gregg Tally</emphasis>, Johns Hopkins University "
 "Applied Physics Laboratory"
 msgstr "<emphasis role=\"bold\">Gregg Tally</emphasis>, Johns Hopkins University Applied Physics Laboratory"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml69(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml120(para)
 msgid ""
 "Gregg Tally is the Chief Engineer at JHU/APL's Cyber Systems Group within "
 "the Asymmetric Operations Department. He works primarily in systems security"
@@ -4672,11 +4672,11 @@ msgid ""
 "projects."
 msgstr "Gregg Tally は Asymmetric Operations Department の JHU/APL's Cyber Systems Group の Chief Engineer です。主にシステムセキュリティエンジニアリングに関する仕事をしています。以前は、サイバーセキュリティ研究プロジェクトに関わり、SPARTA、McAfee、Trusted Information Systems に勤務していました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml72(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml127(para)
 msgid "<emphasis role=\"bold\">Eric Lopez</emphasis>, VMware"
 msgstr "<emphasis role=\"bold\">Eric Lopez</emphasis>, VMware"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml73(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml128(para)
 msgid ""
 "Eric Lopez is Senior Solution Architect at VMware's Networking and Security "
 "Business Unit where he helps customers implement OpenStack and VMware NSX "
@@ -4687,11 +4687,11 @@ msgid ""
 "MBA from the University of San Francisco."
 msgstr "Eric Lopez は VMware の Networking and Security Business Unit の Senior Solution Architect です。顧客が OpenStack や VMware NSX (以前は Nicira の Network Virtualization Platform として知られていました) を導入する支援をしています。VMware (Nicira の企業買収により) に参加する前は、Q1 Labs、Symantec、Vontu、Brightmail に勤務していました。U.C. Berkeley の Electrical Engineering/Computer Science、Nuclear Engineering の B.S. を保持してます。また、University of San Francisco の MBA を保持しています。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml76(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml138(para)
 msgid "<emphasis role=\"bold\">Shawn Wells</emphasis>, Red Hat"
 msgstr "<emphasis role=\"bold\">Shawn Wells</emphasis>, Red Hat"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml77(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml139(para)
 msgid ""
 "Shawn Wells is the Director, Innovation Programs at Red Hat, focused on "
 "improving the process of adopting, contributing to, and managing open source"
@@ -4702,11 +4702,11 @@ msgid ""
 "utilizing large distributed computing infrastructures."
 msgstr "Shawn Wells は Red Hat の Innovation Programs の Director です。アメリカ政府の中でオープンソース技術を適用、貢献、管理するプロセスを改善することに注力しています。さらに、SCAP Security Guide プロジェクトのアップストリームのメンテナーです。このプロジェクトは、 U.S. Military、NSA、DISA で仮想化とオペレーティングシステムの強化ポリシーを作成しています。NSA の契約者になる前は、大規模分散コンピューティング環境を利便化する SIGINT 収集システムを開発していました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml80(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml149(para)
 msgid "<emphasis role=\"bold\">Ben de Bont</emphasis>, HP"
 msgstr "<emphasis role=\"bold\">Ben de Bont</emphasis>, HP"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml81(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml150(para)
 msgid ""
 "Ben de Bont is the CSO for HP Cloud Services. Prior to his current role Ben "
 "led the information security group at MySpace and the incident response team"
@@ -4714,13 +4714,13 @@ msgid ""
 "Queensland University of Technology."
 msgstr "Ben de Bont は HP Cloud Services の CSO です。その前は、MySpace の情報セキュリティグループ、MSN Security のインシデントレスポンスチームを率いていました。Queensland University of Technology のコンピューターサイエンスの修士号を保持しています。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml84(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml157(para)
 msgid ""
 "<emphasis role=\"bold\">Nathanael Burton</emphasis>, National Security "
 "Agency"
 msgstr "<emphasis role=\"bold\">Nathanael Burton</emphasis>, National Security Agency"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml85(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml159(para)
 msgid ""
 "Nathanael Burton is a Computer Scientist at the National Security Agency. He"
 " has worked for the Agency for over 10 years working on distributed systems,"
@@ -4729,24 +4729,24 @@ msgid ""
 "from Virginia Tech."
 msgstr "Nathanael Burton は National Security Agency のコンピューターサイエンティストです。Agency に 10 年以上勤務し、分散システム、大規模ホスティング、オープンソースイニシアティブ、オペレーティングシステム、セキュリティ、ストレージ、仮想化技術に携わっています。Virginia Tech でコンピューターサイエンスの B.S. を取得しました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml88(emphasis)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml166(emphasis)
 msgid "Vibha Fauver"
 msgstr "Vibha Fauver"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml89(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml167(para)
 msgid ""
 "Vibha Fauver, GWEB, CISSP, PMP, has over fifteen years of experience in "
 "Information Technology. Her areas of specialization include software "
-"engineering, project management and information security. She has a B.S. in "
+"engineering, project management and informationsecurity. She has a B.S. in "
 "Computer &amp; Information Science and a M.S. in Engineering Management with"
 " specialization and a certificate in Systems Engineering."
-msgstr "Vibha Fauver (GWEB, CISSP, PMP) は情報技術に関する 15 年以上の経験があります。専門分野はソフトウェアエンジニアリング、プロジェクト管理と情報セキュリティです。Computer &amp; Information Science の B.S. と Engineering Management の M.S. を保持しています。Systems Engineering の資格を保持しています。"
+msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml92(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml175(para)
 msgid "<emphasis role=\"bold\">Eric Windisch</emphasis>, Cloudscaling"
 msgstr "<emphasis role=\"bold\">Eric Windisch</emphasis>, Cloudscaling"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml93(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml177(para)
 msgid ""
 "Eric Windisch is a Principal Engineer at Cloudscaling where he has been "
 "contributing to OpenStack for over two years. Eric has been in the trenches "
@@ -4756,11 +4756,11 @@ msgid ""
 " since 2007."
 msgstr "Eric Windisch は Cloudscaling の Principal Engineer です。OpenStack に 2 年以上貢献しています。ウェブホスティング業界における 10 年以上の経験から、ホスティング環境の分離性、テナント独立性の構築、インフラセキュリティに携わっています。2007 年以降、クラウドコンピューティング環境の構築と自動化に携わっています。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml96(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml185(para)
 msgid "<emphasis role=\"bold\">Andrew Hay</emphasis>, CloudPassage"
 msgstr "<emphasis role=\"bold\">Andrew Hay</emphasis>, CloudPassage"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml97(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml186(para)
 msgid ""
 "Andrew Hay is the Director of Applied Security Research at CloudPassage, "
 "Inc. where he leads the security research efforts for the company and its "
@@ -4768,11 +4768,11 @@ msgid ""
 "hybrid cloud hosting environments."
 msgstr "Andrew Hay は CloudPassage, Inc. の Applied Security Research の Director です。社内セキュリティおよび、ダイナミックパブリック、プライベート、ハイブリッドクラウドのホスティング環境向けに設計されたサーバーセキュリティ製品のセキュリティ研究チームを率いています。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml100(emphasis)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml192(emphasis)
 msgid "Adam Hyde"
 msgstr "Adam Hyde"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml101(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml193(para)
 msgid ""
 "Adam facilitated this Book Sprint. He also founded the Book Sprint "
 "methodology and is the most experienced Book Sprint facilitator around. Adam"
@@ -4782,31 +4782,31 @@ msgid ""
 "online and in print."
 msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml104(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml201(para)
 msgid ""
 "During the sprint we also had help from Anne Gentle, Warren Wang, Paul "
 "McMillan, Brian Schott and Lorin Hochstein."
 msgstr "また、ブックスプリント期間中、Anne Gentle、Warren Wang、Paul McMillan、Brian Schott、Lorin Hochstein からの支援がありました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml105(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml203(para)
 msgid ""
 "This Book was produced in a 5 day book sprint. A book sprint is an intensely"
 " collaborative, facilitated process which brings together a group to produce"
 " a book in 3-5 days. It is a strongly facilitated process with a specific "
 "methodology founded and developed by Adam Hyde. For more information visit "
-"the book sprint web page at <link "
-"href=\"http://www.booksprints.net\">http://www.booksprints.net</link>."
-msgstr "本書は 5 日間のブックスプリントで作成されました。ブックスプリントでは、3〜5 日でドキュメントを作成するために、高度なコラボレーションと統制されたプロセスによってグループメンバーをひとつにします。ブックスプリントメソッドは Adam Hyde によって設立された高度なファシリテーションプロセスです。詳細はブックスプリントのウェブページ <link href=\"http://www.booksprints.net\">http://www.booksprints.net</link> を参照してください。"
+"the book sprint web page at <link href=\"http://www.booksprints.net\"> "
+"http://www.booksprints.net</link>."
+msgstr ""
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml113(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml210(para)
 msgid "After initial publication, the following added new content:"
 msgstr "初版の発行後、以下の内容を追加しました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml116(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml213(para)
 msgid "<emphasis role=\"bold\">Rodney D. Beede</emphasis>, Seagate Technology"
 msgstr "<emphasis role=\"bold\">Rodney D. Beede</emphasis>, Seagate Technology"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml119(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml215(para)
 msgid ""
 "Rodney D. Beede is the Cloud Security Engineer for Seagate Technology. He "
 "contributed the missing chapter on securing OpenStack Object Storage "
@@ -4814,22 +4814,23 @@ msgid ""
 "Colorado."
 msgstr "Rodney D. Beede は Seagate Technology の Cloud Security Engineer です。彼は OpenStack Object Storage (swift) のセキュア化に関する不足していた章に貢献しました。University of Colorado の Computer Science に関する M.S. を保持しています。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml128(title)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml223(title)
 msgid "How to contribute to this book"
 msgstr "本書への貢献方法"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml129(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml224(para)
 msgid ""
 "The initial work on this book was conducted in an overly air-conditioned "
 "room that served as our group office for the entirety of the documentation "
 "sprint."
 msgstr "執筆作業の初めは空調が効きすぎの部屋で行われました。最終的に、その部屋がグループのオフィスとして執筆スプリント期間中使用されました。"
 
-#: ./security-guide/section_why-and-how-we-wrote-this-book.xml132(para)
+#: ./security-guide/section_why-and-how-we-wrote-this-book.xml227(para)
 msgid ""
 "Learn more about how to contribute to the OpenStack docs: <link "
-"href=\"http://wiki.openstack.org/Documentation/HowTo\">http://wiki.openstack.org/Documentation/HowTo</link>."
-msgstr "OpenStack ドキュメントに貢献する方法について: <link href=\"http://wiki.openstack.org/Documentation/HowTo\">http://wiki.openstack.org/Documentation/HowTo</link>"
+"href=\"http://wiki.openstack.org/Documentation/HowTo\"> "
+"http://wiki.openstack.org/Documentation/HowTo</link>."
+msgstr ""
 
 #: ./security-guide/section_case-studies-instance-isolation.xml9(para)
 msgid ""
@@ -8721,9 +8722,9 @@ msgid ""
 "A key management service is in the early stages of being developed and has a"
 " way to go before becoming an official component of OpenStack. Refer to "
 "<link "
-"href=\"https://github.com/cloudkeep/barbican/wiki/_pages\">https://github.com/cloudkeep/barbican/wiki/_pages</link>"
+"href=\"http://docs.openstack.org/developer/barbican/\">http://docs.openstack.org/developer/barbican/</link>"
 " for details."
-msgstr "鍵管理は、まだ開発の初期段階で、OpenStack の正式コンポーネントになる過程の途中です。詳細は、<link href=\"https://github.com/cloudkeep/barbican/wiki/_pages\">https://github.com/cloudkeep/barbican/wiki/_pages</link>を参照してください。"
+msgstr ""
 
 #: ./security-guide/section_key-management.xml11(para)
 msgid ""
@@ -8746,8 +8747,8 @@ msgid "References:"
 msgstr "参考資料："
 
 #: ./security-guide/section_key-management.xml16(link)
-msgid "Barbican"
-msgstr "Barbican"
+msgid "Barbican developer documentation"
+msgstr ""
 
 #: ./security-guide/section_key-management.xml19(link)
 msgid "KMIP"
@@ -9707,12 +9708,13 @@ msgid ""
 "is available to an instance. Cryptographic technologies typically rely "
 "heavily on randomness, requiring a high quality pool of entropy to draw "
 "from. It is typically hard for a virtual machine to get enough entropy to "
-"support these operations. Entropy starvation can manifest in instances as "
-"something seemingly unrelated for example, slow boot times because the "
-"instance is waiting for ssh key generation. Entropy starvation may also "
-"motivate users to employ poor quality entropy sources from within the "
-"instance, making applications running in the cloud less secure overall."
-msgstr "エントロピーとは、インスタンスがアクセスできるランダムデータの質と提供元のことを捉えています。暗号化技術は一般的にランダム性を採用しており、高品質なエントロピーのプールが必要です。通常、仮想マシンは十分なエントロピーを確保することが容易ではありません。エントロピー不足は一見まったく関係のないところで露見することがあります。例えば、インスタンスがSSHキーの生成を待っているため、ブートが遅くなることがあります。また、エントロピー不足を解決するためにユーザーがインスタンス内部から低品質なエントロピー元を採用し、結果的にクラウド内で稼働するアプリケーションのセキュリティを下げることもあります。"
+"support these operations, which is referred to as entropy starvation. "
+"Entropy starvation can manifest in instances as something seemingly "
+"unrelated. For example, slow boot time may be caused by the instance waiting"
+" for ssh key generation. Entropy starvation may also motivate users to "
+"employ poor quality entropy sources from within the instance, making "
+"applications running in the cloud less secure overall."
+msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml28(para)
 msgid ""

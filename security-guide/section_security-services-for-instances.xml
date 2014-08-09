@@ -54,8 +54,7 @@
 </inlinemediaobject></para>
       <para>The use of scheduler filters may be used to segregate customers, data, or even discard machines of the cloud that cannot be attested as secure. This generally applies to all OpenStack projects offering a scheduler. When building a cloud, you may choose to implement scheduling filters for a variety of security-related purposes.</para>
       <para>Below we highlight a few of the filters that may be useful in a security context, depending on your requirements, the full set of filter documentation is documented in the <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/filter-scheduler.html">Filter Scheduler</link> section of the <citetitle>OpenStack Configuration Reference</citetitle>.</para>
-      <para><emphasis role="bold">Tenant Driven Whole Host Reservation</emphasis></para>
-      <para>There currently exists a <link xlink:href="https://blueprints.launchpad.net/nova/+spec/whole-host-allocation">blueprint for whole host reservation</link> -  This would allow a tenant to exclusively reserve hosts for only it's instances, incurring extra costs.</para>
+
       <section xml:id="security-services-for-instances-idp140080">
         <title>Host aggregates</title>
         <para>While not a filter in themselves, host aggregates allow

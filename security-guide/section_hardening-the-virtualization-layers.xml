@@ -110,11 +110,11 @@
         of many security problems, including hypervisor breakout
         attacks.</para>
       <para>
-        For the reasons stated above, it is important to take
-        proactive steps to harden QEMU. We recommend three specific
-        steps: minimizing the code base, using compiler hardening, and
-        using mandatory access controls, such as sVirt, SELinux, or
-        AppArmor.</para>
+        Therefore, it is important to take proactive steps to harden
+        QEMU. Three specific steps are recommended: minimizing the
+        code base, using compiler hardening, and using mandatory
+        access controls such as sVirt, SELinux, or AppArmor.
+      </para>
       <para>
         Additionally, ensure iptables has the default policy filtering
         network traffic, and consider examining the existing rule set
@@ -213,9 +213,9 @@
           </varlistentry>
         </variablelist>
         <para>
-          Putting this all together, and adding in some additional
-          useful protections, we recommend the following compiler
-          options for GCC when compiling QEMU:</para>
+          The following compiler options are recommend for GCC when
+          compiling QEMU:
+        </para>
         <programlisting>CFLAGS="-arch x86_64 -fstack-protector-all -Wstack-protector \
  --param ssp-buffer-size=4 -pie -fPIE -ftrapv -D_FORTIFY_SOURCE=2 -O2 \
  -Wl,-z,relro,-z,now"</programlisting>
@@ -248,10 +248,12 @@
           controls accomplish this by restricting the privileges on
           QEMU process to only what is needed. This can be
           accomplished using sVirt / SELinux or AppArmor. When using
-          sVirt, SELinux is configured to run every QEMU process under
-          a different security context. AppArmor can be configured to
+          sVirt, SELinux is configured to run each QEMU process under
+          a separate security context. AppArmor can be configured to
           provide similar functionality. We provide more details on
-          sVirt in the instance isolation section below.</para>
+          sVirt and instance isolation in the <link
+          linkend="hardening-the-virtualization-layers-idp510512">section
+          below</link>.</para>
       </section>
     </section>
     <section xml:id="hardening-the-virtualization-layers-idp510512">
@@ -270,31 +272,42 @@
       <para>
         OpenStack's sVirt implementation aspires to protect hypervisor
         hosts and virtual machines against two primary threat
-        vectors:</para>
-      <itemizedlist><listitem>
-          <para><emphasis role="bold">Hypervisor threats</emphasis> A
-            compromised application running within a virtual machine
-            attacks the hypervisor to access underlying resources. For
-            example, the host OS, applications, or devices within the
-            physical machine. This is a threat vector unique to
-            virtualization and represents considerable risk as the
-            underlying real machine can be compromised due to
-            vulnerability in a single virtual application.</para>
-        </listitem>
-        <listitem>
-          <para><emphasis role="bold">Virtual Machine (multi-tenant)
-            threats</emphasis> A compromised application running
-            within a VM attacks the hypervisor to access/control
-            another virtual machine and its resources. This is a
-            threat vector unique to virtualization and represents
-            considerable risk as a multitude of virtual machine file
-            images could be compromised due to vulnerability in a
-            single application. This virtual network attack is a
-            major concern as the administrative techniques for
-            protecting real networks do not directly apply to the
-            virtual environment.</para>
-        </listitem>
-      </itemizedlist>
+        vectors:
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>Hypervisor threats</term>
+          <listitem>
+            <para>
+              A compromised application running within a virtual
+              machine attacks the hypervisor to access underlying
+              resources. For example, when a virtual machine is able
+              to access the hypervisor OS, physical devices, or other
+              applications. This threat vector represents considerable
+              risk as a compromise on a hypervisor can infect the
+              physical hardware as well as exposing other virtual
+              machines and network segments.
+             </para>
+            </listitem>
+           </varlistentry>
+           <varlistentry>
+             <term>Virtual Machine (multi-tenant) threats</term>
+             <listitem>
+               <para>
+                 A compromised application running within a VM attacks
+                 the hypervisor to access or control another virtual
+                 machine and its resources. This is a threat vector
+                 unique to virtualization and represents considerable
+                 risk as a multitude of virtual machine file images
+                 could be compromised due to vulnerability in a single
+                 application. This virtual network attack is a major
+                 concern as the administrative techniques for
+                 protecting real networks do not directly apply to the
+                 virtual environment.
+               </para>
+             </listitem>
+           </varlistentry>
+      </variablelist>
       <para>
         Each KVM-based virtual machine is a process which is labeled
         by SELinux, effectively establishing a security boundary

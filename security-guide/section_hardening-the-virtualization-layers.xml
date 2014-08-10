@@ -115,6 +115,11 @@
         steps: minimizing the code base, using compiler hardening, and
         using mandatory access controls, such as sVirt, SELinux, or
         AppArmor.</para>
+      <para>
+        Additionally, ensure iptables has the default policy filtering
+        network traffic, and consider examining the existing rule set
+        to understand each rule and determine if the policy needs to be
+        expanded upon.</para>
       <section xml:id="hardening-the-virtualization-layers-idp490976">
         <title>Minimizing the QEMU code base</title>
         <para>

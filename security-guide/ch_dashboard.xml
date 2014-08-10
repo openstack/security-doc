@@ -180,6 +180,19 @@
         xlink:href="https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts"
         >Django documentation on settings</link>.</para>
   </section>
+  <section xml:id="dashboard-idp268448">
+    <title>Cross Site Request Forgery (CSRF)</title>
+    <para>Django has a dedicated middleware for <link
+        xlink:href="https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works"
+        >cross-site request forgery</link> (CSRF).</para>
+    <para>Dashboard is designed to discourage developers from
+      introducing cross-site scripting vulnerabilities with custom
+      dashboards. However, it is important to audit custom dashboards,
+      especially ones that are javascript-heavy for inappropriate use
+      of the <literal>@csrf_exempt</literal> decorator. Dashboards
+      which do not follow these recommended security settings should
+      be carefully evaluated before restrictions are relaxed.</para>
+  </section>
   <section xml:id="dashboard-idp264272">
     <title>Cookies</title>
     <para>Session Cookies should be set to HTTPONLY:</para>
@@ -198,19 +211,6 @@ SESSION_COOKIE_SECURE = True</programlisting>
       password manager. Organizations which forbid the browser
       password manager should enforce this policy at the desktop
       level.</para>
-  </section>
-  <section xml:id="dashboard-idp268448">
-    <title>Cross Site Request Forgery (CSRF)</title>
-    <para>Django has a dedicated middleware for <link
-        xlink:href="https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works"
-        >cross-site request forgery</link> (CSRF).</para>
-    <para>Dashboard is designed to discourage developers from
-      introducing cross-site scripting vulnerabilities with custom
-      dashboards. However, it is important to audit custom dashboards,
-      especially ones that are javascript-heavy for inappropriate use
-      of the <literal>@csrf_exempt</literal> decorator. Dashboards
-      which do not follow these recommended security settings should
-      be carefully evaluated before restrictions are relaxed.</para>
   </section>
   <section xml:id="dashboard-idp270608">
     <title>Cross Site Scripting (XSS)</title>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-07 06:02+0000\n"
+"POT-Creation-Date: 2014-08-12 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -655,7 +655,7 @@ msgstr ""
 msgid "In this case study we discuss how Alice and Bob would address deployment of PKI certification authorities (CA) and certificate management."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:11(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:11(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/ch_case-studies-identity-management.xml:18(title) ./security-guide/section_case-studies-management-interfaces.xml:28(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:11(title)
+#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:13(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:11(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/ch_case-studies-identity-management.xml:18(title) ./security-guide/section_case-studies-management-interfaces.xml:28(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:11(title)
 msgid "Alice's private cloud"
 msgstr ""
 
@@ -663,7 +663,7 @@ msgstr ""
 msgid "Alice as a cloud architect within a government agency knows that her agency operates its own certification authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a disconnected from the Internet network, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:15(title) ./security-guide/section_case-studies-system-documentation.xml:16(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:15(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:15(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:43(title) ./security-guide/section_case-studies-management-interfaces.xml:33(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:29(title)
+#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:15(title) ./security-guide/section_case-studies-system-documentation.xml:16(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:15(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:43(title) ./security-guide/section_case-studies-management-interfaces.xml:33(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:29(title)
 msgid "Bob's public cloud"
 msgstr ""
 
@@ -703,12 +703,12 @@ msgstr ""
 msgid "In this case study we discuss how Alice and Bob would address database selection and configuration for their respective private and public clouds."
 msgstr ""
 
-#: ./security-guide/section_case-studies-database.xml:12(para)
-msgid "Alice's organization has high availability concerns, so she has elected to use MySQL for the database. She further places the database on the Management network and uses SSL with mutual authentication among the services to ensure secure access. Given there will be no external access of the database, she uses certificates signed with the organization's self-signed root certificate on the database and its access endpoints. Alice creates separate user accounts for each database user, and configures the database to use both passwords and X.509 certificates for authentication. She elects not to use the <systemitem class=\"service\">nova-conductor</systemitem> sub-service due to the desire for fine-grained access control policies and audit support."
+#: ./security-guide/section_case-studies-database.xml:14(para)
+msgid "Alice's organization has high availability concerns and so she has selected MySQL as the underlying database for the cloud services. She places the database on the Management network, utilizing SSL/TLS with mutual authentication among the services to ensure secure access. Based on the assumption that external access of the database will not be facilitated, she installs a certificate signed with the organization's root certificate on the database and its access endpoints. Alice creates separate user accounts for each database user then configures the database to use both passwords and X.509 certificates for authentication. She elects not to use the <systemitem class=\"service\">nova-conductor</systemitem> sub-service due to the desire for fine-grained access control policies and audit support."
 msgstr ""
 
-#: ./security-guide/section_case-studies-database.xml:16(para)
-msgid "Bob is concerned about strong separation of his tenants' data, so he has elected to use the Postgres database , known for its stronger security features. The database resides on the Management network and uses SSL with mutual authentication with the services. Since the database is on the Management network, the database uses certificates signed with the company's self-signed root certificate. Bob creates separate user accounts for each database user, and configures the database to use both passwords and X.509 certificates for authentication. He elects not to use the <systemitem class=\"service\">nova-conductor</systemitem> sub-service due to a desire for fine-grained access control."
+#: ./security-guide/section_case-studies-database.xml:28(para)
+msgid "Bob is concerned about strong separation of his tenants' data, so he has elected to use the PostgreSQL database, known for its stronger security features. The database resides on the Management network and uses SSL/TLS with mutual authentication with the services. Since the database is on the Management network, the database uses certificates signed with the company's self-signed root certificate. Bob creates separate user accounts for each database user, and configures the database to use both passwords and X.509 certificates for authentication. He elects not to use the <systemitem class=\"service\">nova-conductor</systemitem> sub-service due to a desire for fine-grained access control."
 msgstr ""
 
 #: ./security-guide/section_database-backend-considerations.xml:8(title)
@@ -2262,35 +2262,35 @@ msgid "For further details, see the <link href=\"https://docs.djangoproject.com/
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:184(title)
-msgid "Cookies"
-msgstr ""
-
-#: ./security-guide/ch_dashboard.xml:185(para)
-msgid "Session Cookies should be set to HTTPONLY:"
-msgstr ""
-
-#: ./security-guide/ch_dashboard.xml:187(para)
-msgid "Never configure CSRF or session cookies to have a wild card domain with a leading dot. Horizon's session and CSRF cookie should be secured when deployed with HTTPS:"
-msgstr ""
-
-#: ./security-guide/ch_dashboard.xml:194(title)
-msgid "Password auto complete"
-msgstr ""
-
-#: ./security-guide/ch_dashboard.xml:195(para)
-msgid "We recommend that implementers do not change the default password auto complete behavior. Users choose stronger passwords in environments that allow them to use the secure browser password manager. Organizations which forbid the browser password manager should enforce this policy at the desktop level."
-msgstr ""
-
-#: ./security-guide/ch_dashboard.xml:203(title)
 msgid "Cross Site Request Forgery (CSRF)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:204(para)
+#: ./security-guide/ch_dashboard.xml:185(para)
 msgid "Django has a dedicated middleware for <link href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works\">cross-site request forgery</link> (CSRF)."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:207(para)
+#: ./security-guide/ch_dashboard.xml:188(para)
 msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are javascript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
+msgstr ""
+
+#: ./security-guide/ch_dashboard.xml:197(title)
+msgid "Cookies"
+msgstr ""
+
+#: ./security-guide/ch_dashboard.xml:198(para)
+msgid "Session Cookies should be set to HTTPONLY:"
+msgstr ""
+
+#: ./security-guide/ch_dashboard.xml:200(para)
+msgid "Never configure CSRF or session cookies to have a wild card domain with a leading dot. Horizon's session and CSRF cookie should be secured when deployed with HTTPS:"
+msgstr ""
+
+#: ./security-guide/ch_dashboard.xml:207(title)
+msgid "Password auto complete"
+msgstr ""
+
+#: ./security-guide/ch_dashboard.xml:208(para)
+msgid "We recommend that implementers do not change the default password auto complete behavior. Users choose stronger passwords in environments that allow them to use the secure browser password manager. Organizations which forbid the browser password manager should enforce this policy at the desktop level."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:216(title)

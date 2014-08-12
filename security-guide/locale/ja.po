@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-08-06 21:45+0000\n"
-"PO-Revision-Date: 2014-08-06 22:12+0000\n"
+"POT-Creation-Date: 2014-08-12 03:05+0000\n"
+"PO-Revision-Date: 2014-08-12 00:38+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1121,7 +1121,7 @@ msgstr "このケーススタディでは、アリスとボグがPKI認証局(CA
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml11(title)
 #: ./security-guide/section_case-studies-system-documentation.xml11(title)
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml11(title)
-#: ./security-guide/section_case-studies-database.xml11(title)
+#: ./security-guide/section_case-studies-database.xml13(title)
 #: ./security-guide/section_case-studies-tenant-data.xml17(title)
 #: ./security-guide/section_case-studies-messaging.xml11(title)
 #: ./security-guide/section_case-studies-instance-isolation.xml11(title)
@@ -1150,7 +1150,7 @@ msgstr "アリスは政府機関のクラウドアーキテクトで、彼女の
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml15(title)
 #: ./security-guide/section_case-studies-system-documentation.xml16(title)
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml15(title)
-#: ./security-guide/section_case-studies-database.xml15(title)
+#: ./security-guide/section_case-studies-database.xml27(title)
 #: ./security-guide/section_case-studies-tenant-data.xml50(title)
 #: ./security-guide/section_case-studies-messaging.xml15(title)
 #: ./security-guide/section_case-studies-instance-isolation.xml17(title)
@@ -1257,34 +1257,34 @@ msgid ""
 "selection and configuration for their respective private and public clouds."
 msgstr "このケーススタディでは、アリスとボブがどのようにデータベースを選択し、それぞれのプライベートクラウドとパブリッククラウド用に設定するのかについて議論します。"
 
-#: ./security-guide/section_case-studies-database.xml12(para)
+#: ./security-guide/section_case-studies-database.xml14(para)
 msgid ""
-"Alice's organization has high availability concerns, so she has elected to "
-"use MySQL for the database. She further places the database on the "
-"Management network and uses SSL with mutual authentication among the "
-"services to ensure secure access. Given there will be no external access of "
-"the database, she uses certificates signed with the organization's self-"
-"signed root certificate on the database and its access endpoints. Alice "
-"creates separate user accounts for each database user, and configures the "
-"database to use both passwords and X.509 certificates for authentication. "
-"She elects not to use the <systemitem class=\"service\">nova-"
-"conductor</systemitem> sub-service due to the desire for fine-grained access"
-" control policies and audit support."
-msgstr "アリスの組織は高可用性に関心があります。そのため、データベースに MySQL を使用することにしました。彼女はさらに、管理ネットワークにデータベースを配置し、アクセスを確実にセキュアにするために、サービス間の相互認証とともに SSL を使用します。データベースの外部アクセスはなく、データベースとそのアクセスエンドポイントに、組織の自己署名ルート証明書で署名した証明書を使用します。アリスは各データベースユーザーに対して別々のユーザーアカウントを作成し、認証のためにパスワードと X.509 証明書の両方を使用するようデータベースを設定します。高精細なアクセス制御ポリシーと監査をサポートしたいので、<systemitem class=\"service\">nova-conductor</systemitem> サブサービスを使用しないことにします。"
+"Alice's organization has high availability concerns and so she has selected "
+"MySQL as the underlying database for the cloud services. She places the "
+"database on the Management network, utilizing SSL/TLS with mutual "
+"authentication among the services to ensure secure access. Based on the "
+"assumption that external access of the database will not be facilitated, she"
+" installs a certificate signed with the organization's root certificate on "
+"the database and its access endpoints. Alice creates separate user accounts "
+"for each database user then configures the database to use both passwords "
+"and X.509 certificates for authentication. She elects not to use the "
+"<systemitem class=\"service\">nova-conductor</systemitem> sub-service due to"
+" the desire for fine-grained access control policies and audit support."
+msgstr ""
 
-#: ./security-guide/section_case-studies-database.xml16(para)
+#: ./security-guide/section_case-studies-database.xml28(para)
 msgid ""
 "Bob is concerned about strong separation of his tenants' data, so he has "
-"elected to use the Postgres database , known for its stronger security "
-"features. The database resides on the Management network and uses SSL with "
-"mutual authentication with the services. Since the database is on the "
+"elected to use the PostgreSQL database, known for its stronger security "
+"features. The database resides on the Management network and uses SSL/TLS "
+"with mutual authentication with the services. Since the database is on the "
 "Management network, the database uses certificates signed with the company's"
 " self-signed root certificate. Bob creates separate user accounts for each "
 "database user, and configures the database to use both passwords and X.509 "
 "certificates for authentication. He elects not to use the <systemitem "
 "class=\"service\">nova-conductor</systemitem> sub-service due to a desire "
 "for fine-grained access control."
-msgstr "ボブはプロジェクトのデータの確実な分離に関心があります。そのため、彼はより強力なセキュリティ機能が知られている Postgres データベースを使用することにしました。データベースは管理ネットワークに置かれ、サービス間の相互認証とともに SSL を使用します。データベースは管理ネットワークにあるので、組織の自己署名ルート証明書で署名した証明書を使用します。ボブは各データベースユーザーに対して別々のユーザーアカウントを作成し、認証のためにパスワードと X.509 証明書の両方を使用するようデータベースを設定します。高精細なアクセス制御をしたいので、<systemitem class=\"service\">nova-conductor</systemitem> サブサービスを使用しないことにします。"
+msgstr ""
 
 #: ./security-guide/section_database-backend-considerations.xml8(title)
 msgid "Database back end considerations"
@@ -3889,45 +3889,17 @@ msgid ""
 msgstr "さらなる詳細は <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts\">Django documentation on settings</link> を参照してください。"
 
 #: ./security-guide/ch_dashboard.xml184(title)
-msgid "Cookies"
-msgstr "クッキー"
-
-#: ./security-guide/ch_dashboard.xml185(para)
-msgid "Session Cookies should be set to HTTPONLY:"
-msgstr "セッションクッキーは HTTPONLY に設定すべきです。"
-
-#: ./security-guide/ch_dashboard.xml187(para)
-msgid ""
-"Never configure CSRF or session cookies to have a wild card domain with a "
-"leading dot. Horizon's session and CSRF cookie should be secured when "
-"deployed with HTTPS:"
-msgstr "ドットから始まるワイルドカードドメインを持つよう、CSRF やセッションクッキーを設定してはいけません。Horizon のセッションクッキーと CSRF クッキーは HTTPS を使用した環境のときにセキュア化すべきです。"
-
-#: ./security-guide/ch_dashboard.xml194(title)
-msgid "Password auto complete"
-msgstr "パスワード自動補完"
-
-#: ./security-guide/ch_dashboard.xml195(para)
-msgid ""
-"We recommend that implementers do not change the default password auto "
-"complete behavior. Users choose stronger passwords in environments that "
-"allow them to use the secure browser password manager. Organizations which "
-"forbid the browser password manager should enforce this policy at the "
-"desktop level."
-msgstr "実装者は標準のパスワードオートコンプリート機能を変更しないことを推奨します。ユーザーはセキュアなブラウザのパスワードマネージャーを使用できる環境で、より強力なパスワードを選択します。ブラウザのパスワードマネージャーを禁止している組織は、デスクトップレベルでこのポリシーを強制すべきです。"
-
-#: ./security-guide/ch_dashboard.xml203(title)
 msgid "Cross Site Request Forgery (CSRF)"
 msgstr "クロスサイトリクエストフォージェリ (CSRF)"
 
-#: ./security-guide/ch_dashboard.xml204(para)
+#: ./security-guide/ch_dashboard.xml185(para)
 msgid ""
 "Django has a dedicated middleware for <link "
 "href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works"
 "\">cross-site request forgery</link> (CSRF)."
 msgstr "Django は<link href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works\">cross-site request forgery</link> (CSRF) 用の専用ミドルウェアを持ちます。"
 
-#: ./security-guide/ch_dashboard.xml207(para)
+#: ./security-guide/ch_dashboard.xml188(para)
 msgid ""
 "Dashboard is designed to discourage developers from introducing cross-site "
 "scripting vulnerabilities with custom dashboards. However, it is important "
@@ -3936,6 +3908,34 @@ msgid ""
 "Dashboards which do not follow these recommended security settings should be"
 " carefully evaluated before restrictions are relaxed."
 msgstr ""
+
+#: ./security-guide/ch_dashboard.xml197(title)
+msgid "Cookies"
+msgstr "クッキー"
+
+#: ./security-guide/ch_dashboard.xml198(para)
+msgid "Session Cookies should be set to HTTPONLY:"
+msgstr "セッションクッキーは HTTPONLY に設定すべきです。"
+
+#: ./security-guide/ch_dashboard.xml200(para)
+msgid ""
+"Never configure CSRF or session cookies to have a wild card domain with a "
+"leading dot. Horizon's session and CSRF cookie should be secured when "
+"deployed with HTTPS:"
+msgstr "ドットから始まるワイルドカードドメインを持つよう、CSRF やセッションクッキーを設定してはいけません。Horizon のセッションクッキーと CSRF クッキーは HTTPS を使用した環境のときにセキュア化すべきです。"
+
+#: ./security-guide/ch_dashboard.xml207(title)
+msgid "Password auto complete"
+msgstr "パスワード自動補完"
+
+#: ./security-guide/ch_dashboard.xml208(para)
+msgid ""
+"We recommend that implementers do not change the default password auto "
+"complete behavior. Users choose stronger passwords in environments that "
+"allow them to use the secure browser password manager. Organizations which "
+"forbid the browser password manager should enforce this policy at the "
+"desktop level."
+msgstr "実装者は標準のパスワードオートコンプリート機能を変更しないことを推奨します。ユーザーはセキュアなブラウザのパスワードマネージャーを使用できる環境で、より強力なパスワードを選択します。ブラウザのパスワードマネージャーを禁止している組織は、デスクトップレベルでこのポリシーを強制すべきです。"
 
 #: ./security-guide/ch_dashboard.xml216(title)
 msgid "Cross Site Scripting (XSS)"

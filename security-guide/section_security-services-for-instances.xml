@@ -58,11 +58,14 @@
       <para>There currently exists a <link xlink:href="https://blueprints.launchpad.net/nova/+spec/whole-host-allocation">blueprint for whole host reservation</link> -  This would allow a tenant to exclusively reserve hosts for only it's instances, incurring extra costs.</para>
       <section xml:id="security-services-for-instances-idp140080">
         <title>Host aggregates</title>
-        <para>While not a filter in themselves, host aggregates allow
-        administrators to assign key-value pairs to groups of
-        machines. This allows cloud administrators, not users, to
-        partition up their compute host resources. Each node can have
-        multiple aggregates (see the <link
+        <para>While not a filter, host aggregates allow administrators
+        to assign key-value pairs to groups of machines. This allows
+        cloud administrators to segregate their compute host resources
+        within an availability zone invisible to users. The assigned
+        key-value pairs and the host aggregates itself can be used for
+        advanced filtering and scheduling. The key-value pairs can be
+        applied to multiple aggregates, or have several
+        applied to a single aggregate (see the <link
         xlink:href="http://docs.openstack.org/trunk/config-reference/content/host-aggregates.html">Host
         aggregates</link> section of the <citetitle>OpenStack
         Configuration Reference</citetitle> for more information on

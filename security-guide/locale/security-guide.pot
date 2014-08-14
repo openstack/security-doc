@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-12 06:04+0000\n"
+"POT-Creation-Date: 2014-08-14 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -769,7 +769,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:305(None) ./security-guide/section_hardening-the-virtualization-layers.xml:309(None)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:310(None) ./security-guide/section_hardening-the-virtualization-layers.xml:314(None)
 msgid "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
 msgstr ""
 
@@ -829,223 +829,227 @@ msgstr ""
 msgid "For the reasons stated above, it is important to take proactive steps to harden QEMU. We recommend three specific steps: minimizing the code base, using compiler hardening, and using mandatory access controls, such as sVirt, SELinux, or AppArmor."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:119(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:118(para)
+msgid "Additionally, ensure iptables has the default policy filtering network traffic, and consider examining the existing rule set to understand each rule and determine if the policy needs to be expanded upon."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:124(title)
 msgid "Minimizing the QEMU code base"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:120(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:125(para)
 msgid "One classic security principle is to remove any unused components from your system. QEMU provides support for many different virtual hardware devices. However, only a small number of devices are needed for a given instance. Most instances will use the virtio devices. However, some legacy instances will need access to specific hardware, which can be specified using glance metadata:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:133(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:138(para)
 msgid "A cloud architect should decide what devices to make available to cloud users. Anything that is not needed should be removed from QEMU. This step requires recompiling QEMU after modifying the options passed to the QEMU configure script. For a complete list of up-to-date options simply run <placeholder-1/> from within the QEMU source directory. Decide what is needed for your deployment, and disable the remaining options."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:144(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:149(title)
 msgid "Compiler hardening"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:145(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:150(para)
 msgid "The next step is to harden QEMU using compiler hardening options. Modern compilers provide a variety of compile time options to improve the security of the resulting binaries. These features, which we will describe in more detail below, include relocation read-only (RELRO), stack canaries, never execute (NX), position independent executable (PIE), and address space layout randomization (ASLR)."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:154(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:159(para)
 msgid "Many modern Linux distributions already build QEMU with compiler hardening enabled, so you may want to verify your existing executable before proceeding with the information below. One tool that can assist you with this verification is called <link href=\"http://www.trapkit.de/tools/checksec.html\"><literal>checksec.sh</literal></link>."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:163(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:168(term)
 msgid "RELocation Read-Only (RELRO)"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:165(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:170(para)
 msgid "Hardens the data sections of an executable. Both full and partial RELRO modes are supported by gcc. For QEMU full RELRO is your best choice. This will make the global offset table read-only and place various internal data sections before the program data section in the resulting executable."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:175(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:180(term)
 msgid "Stack canaries"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:177(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:182(para)
 msgid "Places values on the stack and verifies their presence to help prevent buffer overflow attacks."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:183(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:188(term)
 msgid "Never eXecute (NX)"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:185(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:190(para)
 msgid "Also known as Data Execution Prevention (DEP), ensures that data sections of the executable can not be executed."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:192(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:197(term)
 msgid "Position Independent Executable (PIE)"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:194(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:199(para)
 msgid "Produces a position independent executable, which is necessary for ASLR."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:200(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:205(term)
 msgid "Address Space Layout Randomization (ASLR)"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:202(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:207(para)
 msgid "This ensures that placement of both code and data regions will be randomized. Enabled by the kernel (all modern Linux kernels support ASLR), when the executable is built with PIE."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:210(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:215(para)
 msgid "Putting this all together, and adding in some additional useful protections, we recommend the following compiler options for GCC when compiling QEMU:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:217(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:222(para)
 msgid "We recommend testing your QEMU executable file after it is compiled to ensure that the compiler hardening worked properly."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:221(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:226(para)
 msgid "Most cloud deployments will not want to build software such as QEMU by hand. It is better to use packaging to ensure that the process is repeatable and to ensure that the end result can be easily deployed throughout the cloud. The references below provide some additional details on applying compiler hardening options to existing packages."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:230(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:235(para)
 msgid "DEB packages: <link href=\"http://wiki.debian.org/HardeningWalkthrough\">Hardening Walkthrough</link>"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:233(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:238(para)
 msgid "RPM packages: <link href=\"http://fedoraproject.org/wiki/How_to_create_an_RPM_package\">How to create an RPM package</link>"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:238(title) ./security-guide/section_api-endpoint-configuration-recommendations.xml:126(title) ./security-guide/section_messaging-security.xml:227(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:243(title) ./security-guide/section_api-endpoint-configuration-recommendations.xml:126(title) ./security-guide/section_messaging-security.xml:227(title)
 msgid "Mandatory access controls"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:239(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:244(para)
 msgid "Compiler hardening makes it more difficult to attack the QEMU process. However, if an attacker does succeed, we would like to limit the impact of the attack. Mandatory access controls accomplish this by restricting the privileges on QEMU process to only what is needed. This can be accomplished using sVirt / SELinux or AppArmor. When using sVirt, SELinux is configured to run every QEMU process under a different security context. AppArmor can be configured to provide similar functionality. We provide more details on sVirt in the instance isolation section below."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:253(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:258(title)
 msgid "sVirt: SELinux and virtualization"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:254(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:259(para)
 msgid "With unique kernel-level architecture and National Security Agency (NSA) developed security mechanisms, KVM provides foundational isolation technologies for multi-tenancy. With developmental origins dating back to 2002, the Secure Virtualization (sVirt) technology is the application of SELinux against modern day virtualization. SELinux, which was designed to apply separation control based upon labels, has been extended to provide isolation between virtual machine processes, devices, data files and system processes acting upon their behalf."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:265(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:270(para)
 msgid "OpenStack's sVirt implementation aspires to protect hypervisor hosts and virtual machines against two primary threat vectors:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:270(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:275(para)
 msgid "<emphasis role=\"bold\">Hypervisor threats</emphasis> A compromised application running within a virtual machine attacks the hypervisor to access underlying resources. For example, the host OS, applications, or devices within the physical machine. This is a threat vector unique to virtualization and represents considerable risk as the underlying real machine can be compromised due to vulnerability in a single virtual application."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:280(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:285(para)
 msgid "<emphasis role=\"bold\">Virtual Machine (multi-tenant) threats</emphasis> A compromised application running within a VM attacks the hypervisor to access/control another virtual machine and its resources. This is a threat vector unique to virtualization and represents considerable risk as a multitude of virtual machine file images could be compromised due to vulnerability in a single application. This virtual network attack is a major concern as the administrative techniques for protecting real networks do not directly apply to the virtual environment."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:293(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:298(para)
 msgid "Each KVM-based virtual machine is a process which is labeled by SELinux, effectively establishing a security boundary around each virtual machine. This security boundary is monitored and enforced by the Linux kernel, restricting the virtual machine's access to resources outside of its boundary such as host machine data files or other VMs."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:313(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:318(para)
 msgid "As shown above, sVirt isolation is provided regardless of the guest Operating System running inside the virtual machineLinux or Windows VMs can be used. Additionally, many Linux distributions provide SELinux within the operating system, allowing the virtual machine to protect internal virtual resources from threats."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:322(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:327(title)
 msgid "Labels and categories"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:323(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:328(para)
 msgid "KVM-based virtual machine instances are labelled with their own SELinux data type, known as svirt_image_t. Kernel level protections prevent unauthorized system processes, such as malware, from manipulating the virtual machine image files on disk. When virtual machines are powered off, images are stored as svirt_image_t as shown below:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:334(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:339(para)
 msgid "The <literal>svirt_image_t</literal> label uniquely identifies image files on disk, allowing for the SELinux policy to restrict access. When a KVM-based Compute image is powered on, sVirt appends a random numerical identifier to the image. sVirt is technically capable of assigning numerical identifiers to 524,288 virtual machines per hypervisor node, however OpenStack deployments are highly unlikely to encounter this limitation."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:343(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:348(para)
 msgid "This example shows the sVirt category identifier:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:348(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:353(title)
 msgid "Booleans"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:349(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:354(para)
 msgid "To ease the administrative burden of managing SELinux, many enterprise Linux platforms utilize SELinux Booleans to quickly change the security posture of sVirt."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:353(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:358(para)
 msgid "Red Hat Enterprise Linux-based KVM deployments utilize the following sVirt booleans:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:361(emphasis)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:366(emphasis)
 msgid "sVirt SELinux Boolean"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:362(emphasis) ./security-guide/section_hypervisor-selection.xml:486(td)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:367(emphasis) ./security-guide/section_hypervisor-selection.xml:486(td)
 msgid "Description"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:367(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:372(para)
 msgid "virt_use_common"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:368(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:373(para)
 msgid "Allow virt to use serial/parallel communication ports."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:371(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:376(para)
 msgid "virt_use_fusefs"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:372(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:377(para)
 msgid "Allow virt to read FUSE mounted files."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:375(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:380(para)
 msgid "virt_use_nfs"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:376(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:381(para)
 msgid "Allow virt to manage NFS mounted files."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:379(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:384(para)
 msgid "virt_use_samba"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:380(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:385(para)
 msgid "Allow virt to manage CIFS mounted files."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:383(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:388(para)
 msgid "virt_use_sanlock"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:384(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:389(para)
 msgid "Allow confined virtual guests to interact with the sanlock."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:387(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:392(para)
 msgid "virt_use_sysfs"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:388(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:393(para)
 msgid "Allow virt to manage device configuration (PCI)."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:391(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:396(para)
 msgid "virt_use_usb"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:392(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:397(para)
 msgid "Allow virt to use USB devices."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:395(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:400(para)
 msgid "virt_use_xserver"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:396(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:401(para)
 msgid "Allow virtual machine to interact with the X Window System."
 msgstr ""
 
@@ -5753,11 +5757,11 @@ msgstr ""
 msgid "Scheduling instances to nodes"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:19(para) ./security-guide/section_security-services-for-instances.xml:90(title)
+#: ./security-guide/section_security-services-for-instances.xml:19(para) ./security-guide/section_security-services-for-instances.xml:89(title)
 msgid "Trusted images"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:22(para) ./security-guide/section_security-services-for-instances.xml:158(title)
+#: ./security-guide/section_security-services-for-instances.xml:22(para) ./security-guide/section_security-services-for-instances.xml:157(title)
 msgid "Instance migrations"
 msgstr ""
 
@@ -5793,203 +5797,195 @@ msgstr ""
 msgid "Below we highlight a few of the filters that may be useful in a security context, depending on your requirements, the full set of filter documentation is documented in the <link href=\"http://docs.openstack.org/trunk/config-reference/content/filter-scheduler.html\">Filter Scheduler</link> section of the <citetitle>OpenStack Configuration Reference</citetitle>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:57(emphasis)
-msgid "Tenant Driven Whole Host Reservation"
-msgstr ""
-
-#: ./security-guide/section_security-services-for-instances.xml:58(para)
-msgid "There currently exists a <link href=\"https://blueprints.launchpad.net/nova/+spec/whole-host-allocation\">blueprint for whole host reservation</link> - This would allow a tenant to exclusively reserve hosts for only it's instances, incurring extra costs."
-msgstr ""
-
-#: ./security-guide/section_security-services-for-instances.xml:60(title)
+#: ./security-guide/section_security-services-for-instances.xml:59(title)
 msgid "Host aggregates"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:61(para)
+#: ./security-guide/section_security-services-for-instances.xml:60(para)
 msgid "While not a filter in themselves, host aggregates allow administrators to assign key-value pairs to groups of machines. This allows cloud administrators, not users, to partition up their compute host resources. Each node can have multiple aggregates (see the <link href=\"http://docs.openstack.org/trunk/config-reference/content/host-aggregates.html\">Host aggregates</link> section of the <citetitle>OpenStack Configuration Reference</citetitle> for more information on creating and managing aggregates)."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:72(title)
+#: ./security-guide/section_security-services-for-instances.xml:71(title)
 msgid "AggregateMultiTenancyIsolation"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:73(para)
+#: ./security-guide/section_security-services-for-instances.xml:72(para)
 msgid "Isolates tenants to specific host aggregates. If a host is in an aggregate that has the metadata key <literal>filter_tenant_id</literal> it will only create instances from that tenant (or list of tenants). A host can be in multiple aggregates. If a host does not belong to an aggregate with the metadata key, it can create instances from all tenants."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:76(title)
+#: ./security-guide/section_security-services-for-instances.xml:75(title)
 msgid "DifferentHostFilter"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:77(para)
+#: ./security-guide/section_security-services-for-instances.xml:76(para)
 msgid "Schedule the instance on a different host from a set of instances. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>different_host</literal> as the key and a list of instance uuids as the value. This filter is the opposite of the <literal>SameHostFilter</literal>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:80(title)
+#: ./security-guide/section_security-services-for-instances.xml:79(title)
 msgid "GroupAntiAffinityFilter"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:81(para)
+#: ./security-guide/section_security-services-for-instances.xml:80(para)
 msgid "The GroupAntiAffinityFilter ensures that each instance in a group is on a different host. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>group</literal> as the key and a list of instance uuids as the value."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:84(title)
+#: ./security-guide/section_security-services-for-instances.xml:83(title)
 msgid "Trusted compute pools"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:85(para)
+#: ./security-guide/section_security-services-for-instances.xml:84(para)
 msgid "There exists a scheduler filter which integrates with the <link href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation Project</link> (OATS) to define scheduler behavior according to the attestation of PCRs received from a system using Intel TXT."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:86(para)
+#: ./security-guide/section_security-services-for-instances.xml:85(para)
 msgid "It is unclear if this feature is compatible with AMD's similar SEM, although the OpenAttestation agent relies on the vendor-agnostic <link href=\"http://trousers.sourceforge.net/\">TrouSerS library</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:91(para)
+#: ./security-guide/section_security-services-for-instances.xml:90(para)
 msgid "With regards to images, users will be working with pre-installed images or images that they upload themselves. In both cases, users will want to ensure that the image they are ultimately running has not been tampered with. This requires some source of truth such as a checksum for the known good version of an image as well as verification of the running image. This section describes the current best practices around image handling, while also calling out some of the existing gaps in this space."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:93(title)
+#: ./security-guide/section_security-services-for-instances.xml:92(title)
 msgid "Image creation process"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:94(para)
+#: ./security-guide/section_security-services-for-instances.xml:93(para)
 msgid "The OpenStack Documentation provides guidance on how to create and upload an image to the Image Service. Additionally it is assumed that you have a process by which you install and harden operating systems. Thus, the following items will provide additional guidance on how to ensure your images are transferred securely into OpenStack. There are a variety of options for obtaining images. Each has specific steps that help validate the image's provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:102(para)
+#: ./security-guide/section_security-services-for-instances.xml:101(para)
 msgid "The first option is to obtain boot media from a trusted source."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:109(para)
+#: ./security-guide/section_security-services-for-instances.xml:108(para)
 msgid "The second option is to use the <link href=\"http://docs.openstack.org/image-guide/content/\"><citetitle>OpenStack Virtual Machine Image Guide</citetitle></link>. In this case, you will want to follow your organizations OS hardening guidelines or those provided by a trusted third-party such as the <link href=\"http://iase.disa.mil/stigs/os/unix/red_hat.html\">RHEL6 STIG</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:110(para)
+#: ./security-guide/section_security-services-for-instances.xml:109(para)
 msgid "The final option is to use an automated image builder. The following example uses the Oz image builder. The OpenStack community has recently created a newer tool worth investigating: disk-image-builder. We have not evaluated this tool from a security perspective."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:111(para)
+#: ./security-guide/section_security-services-for-instances.xml:110(para)
 msgid "Example of RHEL 6 CCE-26976-1 which will help implement NIST 800-53 Section<emphasis>AC-19(d) in</emphasis> Oz."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:147(para)
+#: ./security-guide/section_security-services-for-instances.xml:146(para)
 msgid "It is recommended to avoid the manual image building process as it is complex and prone to error. Additionally, using an automated system like Oz for image building or a configuration management utility like Chef or Puppet for post-boot image hardening gives you the ability to produce a consistent image as well as track compliance of your base image to its respective hardening guidelines over time."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:148(para)
+#: ./security-guide/section_security-services-for-instances.xml:147(para)
 msgid "If subscribing to a public cloud service, you should check with the cloud provider for an outline of the process used to produce their default images. If the provider allows you to upload your own images, you will want to ensure that you are able to verify that your image was not modified before using it to create an instance. To do this, refer to the following section on Image Provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:151(title)
+#: ./security-guide/section_security-services-for-instances.xml:150(title)
 msgid "Image provenance and validation"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:152(para)
+#: ./security-guide/section_security-services-for-instances.xml:151(para)
 msgid "Unfortunately, it is not currently possible to force Compute to validate an image hash immediately prior to starting an instance. To understand the situation, we begin with a brief overview of how images are handled around the time of image launch."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:153(para)
+#: ./security-guide/section_security-services-for-instances.xml:152(para)
 msgid "Images come from the glance service to the nova service on a node. This transfer should be protected by running over SSL. Once the image is on the node, it is verified with a basic checksum and then it's disk is expanded based on the size of the instance being launched. If, at a later time, the same image is launched with the same instance size on this node, it will be launched from the same expanded image. Since this expanded image is not re-verified before launching, it could be tampered with and the user would not have any way of knowing, beyond a manual inspection of the files in the resulting image."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:154(para)
+#: ./security-guide/section_security-services-for-instances.xml:153(para)
 msgid "We hope that future versions of Compute and/or the Image Service will offer support for validating the image hash before each instance launch. An alternative option that would be even more powerful would be allow users to sign an image and then have the signature validated when the instance is launched."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:159(para)
+#: ./security-guide/section_security-services-for-instances.xml:158(para)
 msgid "OpenStack and the underlying virtualization layers provide for the live migration of images between OpenStack nodes, allowing you to seamlessly perform rolling upgrades of your OpenStack compute nodes without instance downtime. However, live migrations also carry significant risk. To understand the risks involved, the following are the high-level steps performed during a live migration:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:169(para)
+#: ./security-guide/section_security-services-for-instances.xml:168(para)
 msgid "Start instance on destination host"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:170(para)
+#: ./security-guide/section_security-services-for-instances.xml:169(para)
 msgid "Transfer memory"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:171(para)
+#: ./security-guide/section_security-services-for-instances.xml:170(para)
 msgid "Stop the guest &amp; sync disks"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:172(para)
+#: ./security-guide/section_security-services-for-instances.xml:171(para)
 msgid "Transfer state"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:173(para)
+#: ./security-guide/section_security-services-for-instances.xml:172(para)
 msgid "Start the guest"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:176(title)
+#: ./security-guide/section_security-services-for-instances.xml:175(title)
 msgid "Live migration risks"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:177(para)
+#: ./security-guide/section_security-services-for-instances.xml:176(para)
 msgid "At various stages of the live migration process the contents of an instances run time memory and disk are transmitted over the network in plain text. Thus there are several risks that need to be addressed when using live migration. The following in-exhaustive list details some of these risks:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:179(para)
+#: ./security-guide/section_security-services-for-instances.xml:178(para)
 msgid "<emphasis>Denial of Service (DoS)</emphasis>: If something fails during the migration process, the instance could be lost."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:182(para)
+#: ./security-guide/section_security-services-for-instances.xml:181(para)
 msgid "<emphasis>Data exposure</emphasis>: Memory or disk transfers must be handled securely."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:185(para)
+#: ./security-guide/section_security-services-for-instances.xml:184(para)
 msgid "<emphasis>Data manipulation</emphasis>: If memory or disk transfers are not handled securely, then an attacker could manipulate user data during the migration."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:188(para)
+#: ./security-guide/section_security-services-for-instances.xml:187(para)
 msgid "<emphasis>Code injection</emphasis>: If memory or disk transfers are not handled securely, then an attacker could manipulate executables, either on disk or in memory, during the migration."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:193(title)
+#: ./security-guide/section_security-services-for-instances.xml:192(title)
 msgid "Live migration mitigations"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:194(para)
+#: ./security-guide/section_security-services-for-instances.xml:193(para)
 msgid "There are several methods to mitigate some of the risk associated with live migrations, the following list details some of these:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:196(para) ./security-guide/section_security-services-for-instances.xml:206(title)
+#: ./security-guide/section_security-services-for-instances.xml:195(para) ./security-guide/section_security-services-for-instances.xml:205(title)
 msgid "Disable live migration"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:199(para)
+#: ./security-guide/section_security-services-for-instances.xml:198(para)
 msgid "Isolated migration network"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:202(para) ./security-guide/section_security-services-for-instances.xml:219(title)
+#: ./security-guide/section_security-services-for-instances.xml:201(para) ./security-guide/section_security-services-for-instances.xml:218(title)
 msgid "Encrypted live migration"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:207(para)
+#: ./security-guide/section_security-services-for-instances.xml:206(para)
 msgid "At this time, live migration is enabled in OpenStack by default. Live migrations can be disabled by adding the following lines to the nova <filename>policy.json</filename> file:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:215(title)
+#: ./security-guide/section_security-services-for-instances.xml:214(title)
 msgid "Migration network"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:216(para)
+#: ./security-guide/section_security-services-for-instances.xml:215(para)
 msgid "As a general practice, live migration traffic should be restricted to the management security domain, see <xref linkend=\"security-boundaries-and-threats-idp55632\"/>. With live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:220(para)
+#: ./security-guide/section_security-services-for-instances.xml:219(para)
 msgid "If there is a sufficient business case for keeping live migration enabled, then libvirtd can provide encrypted tunnels for the live migrations. However, this feature is not currently exposed in either the OpenStack Dashboard or nova-client commands, and can only be accessed through manual configuration of libvirtd. The live migration process then changes to the following high-level steps:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:222(para)
+#: ./security-guide/section_security-services-for-instances.xml:221(para)
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:223(para)
+#: ./security-guide/section_security-services-for-instances.xml:222(para)
 msgid "An encrypted tunnel is created between libvirtd processes on both source and destination hosts."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:224(para)
+#: ./security-guide/section_security-services-for-instances.xml:223(para)
 msgid "Destination libvirtd host copies the instances back to an underlying hypervisor."
 msgstr ""
 

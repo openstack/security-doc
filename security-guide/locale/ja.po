@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-08-12 03:05+0000\n"
-"PO-Revision-Date: 2014-08-12 00:38+0000\n"
+"POT-Creation-Date: 2014-08-13 12:36+0000\n"
+"PO-Revision-Date: 2014-08-13 12:37+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1363,8 +1363,8 @@ msgstr "監視とログ採取"
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_hardening-the-virtualization-layers.xml305(None)
-#: ./security-guide/section_hardening-the-virtualization-layers.xml309(None)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml310(None)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml314(None)
 msgid ""
 "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
 msgstr "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
@@ -1486,11 +1486,18 @@ msgid ""
 "sVirt, SELinux, or AppArmor."
 msgstr "上記の理由として、QEMU 堅牢化の率先したステップの実行が重要である事が挙げられます。我々は３つの特定のステップを推奨しています。コードベースの最小化、コンパイラーの堅牢化、sVirt・SELinux・AppArmor 等の強制アクセス制御の使用です。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml119(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml118(para)
+msgid ""
+"Additionally, ensure iptables has the default policy filtering network "
+"traffic, and consider examining the existing rule set to understand each "
+"rule and determine if the policy needs to be expanded upon."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml124(title)
 msgid "Minimizing the QEMU code base"
 msgstr "QEMU コードベースの最小化"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml120(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml125(para)
 msgid ""
 "One classic security principle is to remove any unused components from your "
 "system. QEMU provides support for many different virtual hardware devices. "
@@ -1500,7 +1507,7 @@ msgid ""
 "metadata:"
 msgstr "古くからある 1 つのセキュリティ原則は、システムから未使用のコンポーネントを削除することです。QEMU はさまざまな種類の仮想ハードウェアデバイスをサポートします。しかしながら、少しのデバイスだけが指定されたインスタンスに必要になります。多くのインスタンスは virtio デバイスを使用します。しかし、いくつかのレガシーなインスタンスは、glance メタデータを使用して指定できる、特定のハードウェアにアクセスする必要があります。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml133(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml138(para)
 msgid ""
 "A cloud architect should decide what devices to make available to cloud "
 "users. Anything that is not needed should be removed from QEMU. This step "
@@ -1510,11 +1517,11 @@ msgid ""
 "needed for your deployment, and disable the remaining options."
 msgstr "クラウドアーキテクトは、どのデバイスがクラウドユーザーに利用可能であるかを判断すべきです。必要ないすべてのデバイスは QEMU から削除すべきです。この手順は、QEMU 設定スクリプトに渡されるオプションを変更した後で、QEMU を再コンパイルする必要があります。最新の完全なオプション一覧は、QEMU ソースディレクトリの中で <placeholder-1/> を単に実行します。お使いの環境に必要なものを判断し、残りのオプションを無効化します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml144(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml149(title)
 msgid "Compiler hardening"
 msgstr "コンパイラーのセキュリティ強化機能"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml145(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml150(para)
 msgid ""
 "The next step is to harden QEMU using compiler hardening options. Modern "
 "compilers provide a variety of compile time options to improve the security "
@@ -1524,7 +1531,7 @@ msgid ""
 "layout randomization (ASLR)."
 msgstr "次の手順は、コンパイラーのセキュリティ強化オプションを使用して QEMU をセキュリティ強化することです。最近のコンパイラーは、出力バイナリのセキュリティを改善するために、さまざまなコンパイル時オプションを提供します。これらの機能には、より詳細を以下で説明しますが、relocation read-only (RELRO)、Stack Canaries、never execute (NX)、position independent executable (PIE)、address space layout randomization (ASLR) があります。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml154(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml159(para)
 msgid ""
 "Many modern Linux distributions already build QEMU with compiler hardening "
 "enabled, so you may want to verify your existing executable before "
@@ -1533,11 +1540,11 @@ msgid ""
 "href=\"http://www.trapkit.de/tools/checksec.html\"><literal>checksec.sh</literal></link>."
 msgstr "ほとんどの最近の Linux ディストリビューションは、すでにコンパイラーのセキュリティ強化を有効化して QEMU をビルドしています。そのため、以下の情報を続ける前に、既存のバイナリを確認したいでしょう。この確認を手助けできるツールの 1 つは <link href=\"http://www.trapkit.de/tools/checksec.html\"><literal>checksec.sh</literal></link> と呼ばれます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml163(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml168(term)
 msgid "RELocation Read-Only (RELRO)"
 msgstr "RELocation Read-Only (RELRO)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml165(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml170(para)
 msgid ""
 "Hardens the data sections of an executable. Both full and partial RELRO "
 "modes are supported by gcc. For QEMU full RELRO is your best choice. This "
@@ -1545,59 +1552,59 @@ msgid ""
 "sections before the program data section in the resulting executable."
 msgstr "実行ファイルのデータ部分をセキュリティ強化します。全体 RELRO モードと部分 RELRO モードが gcc によりサポートされます。QEMU 完全 RELRO が最善の選択肢です。これにより、グローバルオフセットテーブルが読み込み専用になり、出力実行ファイルのプログラムデータセクションの前にさまざまな内部データ部分が置かれます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml175(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml180(term)
 msgid "Stack canaries"
 msgstr "スタックカナリア"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml177(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml182(para)
 msgid ""
 "Places values on the stack and verifies their presence to help prevent "
 "buffer overflow attacks."
 msgstr "バッファーオーバーフロー攻撃を防ぐ役に立てるために、スタックに値を置き、それらの存在を検証します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml183(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml188(term)
 msgid "Never eXecute (NX)"
 msgstr "Never eXecute (NX)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml185(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml190(para)
 msgid ""
 "Also known as Data Execution Prevention (DEP), ensures that data sections of"
 " the executable can not be executed."
 msgstr "Data Execution Prevention (DEP) としても知られています。実行ファイルのデータ部分を必ず実行できなくします。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml192(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml197(term)
 msgid "Position Independent Executable (PIE)"
 msgstr "Position Independent Executable (PIE)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml194(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml199(para)
 msgid ""
 "Produces a position independent executable, which is necessary for ASLR."
 msgstr "位置に依存しない実行ファイルを生成します。ASLR のために必要です。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml200(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml205(term)
 msgid "Address Space Layout Randomization (ASLR)"
 msgstr "Address Space Layout Randomization (ASLR)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml202(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml207(para)
 msgid ""
 "This ensures that placement of both code and data regions will be "
 "randomized. Enabled by the kernel (all modern Linux kernels support ASLR), "
 "when the executable is built with PIE."
 msgstr "コード領域とデータ領域の配置を確実にランダム化します。実行ファイルが PIE を用いてビルドされるとき、カーネルにより有効化されます (最近の Linux カーネルはすべて ASLR をサポートします)。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml210(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml215(para)
 msgid ""
 "Putting this all together, and adding in some additional useful protections,"
 " we recommend the following compiler options for GCC when compiling QEMU:"
 msgstr "すべてを一緒に利用し、いくつか追加の有用な保護を追加して、QEMU コンパイル時に以下の GCC コンパイラーオプションを推奨します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml217(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml222(para)
 msgid ""
 "We recommend testing your QEMU executable file after it is compiled to "
 "ensure that the compiler hardening worked properly."
 msgstr "コンパイラーが確実に適切なセキュリティ強化を動作させるようコンパイルした後で、お使いの QEMU 実行ファイルをテストすることを推奨します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml221(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml226(para)
 msgid ""
 "Most cloud deployments will not want to build software such as QEMU by hand."
 " It is better to use packaging to ensure that the process is repeatable and "
@@ -1606,27 +1613,27 @@ msgid ""
 "hardening options to existing packages."
 msgstr "ほとんどのクラウド環境は QEMU のようなソフトウェアを手動でビルドしたくないでしょう。プロセスが確実に繰り返し可能であり、最終結果を簡単にクラウドにデプロイできるようにするために、パッケージを使用するほうが良いでしょう。以下の参考情報は、既存のパッケージにコンパイラーのセキュリティ強化オプションを適用することの詳細を提供します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml230(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml235(para)
 msgid ""
 "DEB packages: <link "
 "href=\"http://wiki.debian.org/HardeningWalkthrough\">Hardening "
 "Walkthrough</link>"
 msgstr "DEB パッケージ: <link href=\"http://wiki.debian.org/HardeningWalkthrough\">Hardening Walkthrough</link>"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml233(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml238(para)
 msgid ""
 "RPM packages: <link "
 "href=\"http://fedoraproject.org/wiki/How_to_create_an_RPM_package\">How to "
 "create an RPM package</link>"
 msgstr "RPM パッケージ: <link href=\"http://fedoraproject.org/wiki/How_to_create_an_RPM_package\">How to create an RPM package</link>"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml238(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml243(title)
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml126(title)
 #: ./security-guide/section_messaging-security.xml227(title)
 msgid "Mandatory access controls"
 msgstr "強制アクセス制御"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml239(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml244(para)
 msgid ""
 "Compiler hardening makes it more difficult to attack the QEMU process. "
 "However, if an attacker does succeed, we would like to limit the impact of "
@@ -1638,11 +1645,11 @@ msgid ""
 "sVirt in the instance isolation section below."
 msgstr "コンパイラーのセキュリティ強化機能により、QEMU プロセスへの攻撃をより難しくできます。しかし、攻撃者が成功すると、攻撃の影響範囲を抑えたいでしょう。強制アクセス制御は、QEMU プロセスの権限を必要な範囲に制限することにより、これを実現します。これは sVirt / SELinux または AppArmor により実現できます。sVirt 利用時、SELinux はすべての QEMU プロセスが別々のセキュリティドメインで動作するよう設定されます。AppArmor は同様の機能を提供するよう設定できます。以下のインスタンス分離のセクションで sVirt の詳細を示します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml253(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml258(title)
 msgid "sVirt: SELinux and virtualization"
 msgstr "sVirt: SELinux と 仮想化"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml254(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml259(para)
 msgid ""
 "With unique kernel-level architecture and National Security Agency (NSA) "
 "developed security mechanisms, KVM provides foundational isolation "
@@ -1654,13 +1661,13 @@ msgid ""
 "processes acting upon their behalf."
 msgstr "KVM は複数のテナントを分離する基本技術を提供します。カーネルレベルの独特のアーキテクチャーを用いて、National Security Agency (NSA) により開発されたセキュリティ機構です。開発の起源は 2002 年までさかのぼり、Secure Virtualization (sVirt) 技術は最近の仮想化向けの SELinux の応用技術です。SELinux は、ラベルに基づいた分離制御を適用するために設計され、仮想マシンのプロセス、デバイス、データファイル、それらの上で動作するシステムプロセス間の分離を提供するために拡張されました。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml265(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml270(para)
 msgid ""
 "OpenStack's sVirt implementation aspires to protect hypervisor hosts and "
 "virtual machines against two primary threat vectors:"
 msgstr "OpenStack の sVirt 実装は、2 種類の主要な脅威ベクターに対して、ハイパーバイザーホストと仮想マシンを保護することを目指しています。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml270(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml275(para)
 msgid ""
 "<emphasis role=\"bold\">Hypervisor threats</emphasis> A compromised "
 "application running within a virtual machine attacks the hypervisor to "
@@ -1671,7 +1678,7 @@ msgid ""
 "application."
 msgstr "<emphasis role=\"bold\">ハイパーバイザーの脅威</emphasis> 仮想マシンの中で動作している侵入されたアプリケーションは、バックエンドのリソースにアクセスするためにハイパーバイザーを攻撃します。例えば、ホスト OS、アプリケーション、物理マシンにあるデバイスです。バックエンドの物理マシンが単一の仮想アプリケーションにある脆弱性のために侵入されうるため、これは仮想化に特有の脅威ベクターであり、考慮すべきリスクを表します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml280(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml285(para)
 msgid ""
 "<emphasis role=\"bold\">Virtual Machine (multi-tenant) threats</emphasis> A "
 "compromised application running within a VM attacks the hypervisor to "
@@ -1683,7 +1690,7 @@ msgid ""
 "do not directly apply to the virtual environment."
 msgstr "<emphasis role=\"bold\">仮想マシン (マルチテナント) の脅威</emphasis> 仮想マシンの中で動作している侵入されたアプリケーションは、他の仮想マシンとそのリソースにアクセスし、制御するためにハイパーバイザーを攻撃します。仮想マシンのイメージファイルの集合が単一のアプリケーションにある脆弱性のために侵入されうるため、これは仮想化に特有の脅威ベクターであり、考慮すべきリスクを表します。実ネットワークを保護するための管理技術が仮想マシン環境にそのまま適用できないため、この仮想ネットワークへの攻撃はおもな関心事です。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml293(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml298(para)
 msgid ""
 "Each KVM-based virtual machine is a process which is labeled by SELinux, "
 "effectively establishing a security boundary around each virtual machine. "
@@ -1692,7 +1699,7 @@ msgid ""
 "boundary such as host machine data files or other VMs."
 msgstr "各 KVM ベースの仮想マシンは SELinux によりラベル付けされているプロセスです。これは各仮想マシンのセキュリティ境界を効率的に確立します。このセキュリティ境界は、Linux カーネルにより監視され、強制されます。ホストマシンのデータファイルや他の仮想マシンのような、仮想マシンの境界外のリソースへのアクセスは制限されます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml313(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml318(para)
 msgid ""
 "As shown above, sVirt isolation is provided regardless of the guest "
 "Operating System running inside the virtual machineLinux or Windows VMs can "
@@ -1701,11 +1708,11 @@ msgid ""
 "resources from threats."
 msgstr "上に示したとおり、sVirt による分離は仮想マシン内で動作しているゲストオペレーティングシステムに関わらず提供されます。Linux や Windows の仮想マシンを使用できます。さらに、多くの Linux ディストリビューションはオペレーティングシステム内の SELinux を提供しています。仮想マシンが内部の仮想リソースを脅威から保護できます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml322(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml327(title)
 msgid "Labels and categories"
 msgstr "ラベルとカテゴリ"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml323(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml328(para)
 msgid ""
 "KVM-based virtual machine instances are labelled with their own SELinux data"
 " type, known as svirt_image_t. Kernel level protections prevent unauthorized"
@@ -1714,7 +1721,7 @@ msgid ""
 "stored as svirt_image_t as shown below:"
 msgstr "KVM ベースの仮想マシンインスタンスは、svirt_image_t として知られる、独自の SELinux データタイプでラベル付けされています。カーネルレベルの保護により、悪意のあるソフトウェアのような権限のないシステムプロセスが、ディスクにある仮想マシンのイメージファイルを操作することを防ぎます。仮想マシンが電源オフのとき、イメージは以下のように svirt_image_t として保存されます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml334(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml339(para)
 msgid ""
 "The <literal>svirt_image_t</literal> label uniquely identifies image files "
 "on disk, allowing for the SELinux policy to restrict access. When a KVM-"
@@ -1724,97 +1731,97 @@ msgid ""
 "OpenStack deployments are highly unlikely to encounter this limitation."
 msgstr "<literal>svirt_image_t</literal> ラベルは独自にディスク上のイメージファイルを識別し、SELinux ポリシーがアクセス制限できるようにします。KVM ベースの Compute イメージが電源投入された際、sVirt はイメージに乱数のIDを付与します。sVirt は技術的には１ハイパーバイザーノードあたり 524,288 個の仮想マシンに数字IDを付与する事ができますが、OpenStack デプロイでこの制限に遭遇する事はまずないでしょう。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml343(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml348(para)
 msgid "This example shows the sVirt category identifier:"
 msgstr "この例は sVirt カテゴリー識別子を示します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml348(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml353(title)
 msgid "Booleans"
 msgstr "ブーリアン"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml349(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml354(para)
 msgid ""
 "To ease the administrative burden of managing SELinux, many enterprise Linux"
 " platforms utilize SELinux Booleans to quickly change the security posture "
 "of sVirt."
 msgstr "SELinux の管理負担を減らすために、多くのエンタープライズ Linux プラットフォームは sVirt のセキュリティ設定を簡単に変更するために、SELinux ブーリアンを利用します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml353(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml358(para)
 msgid ""
 "Red Hat Enterprise Linux-based KVM deployments utilize the following sVirt "
 "booleans:"
 msgstr "Red Hat Enterprise Linux ベースの KVM 環境は以下の sVirt ブーリアンを利用します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml361(emphasis)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml366(emphasis)
 msgid "sVirt SELinux Boolean"
 msgstr "sVirt SELinux ブーリアン"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml362(emphasis)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml367(emphasis)
 #: ./security-guide/section_hypervisor-selection.xml486(td)
 msgid "Description"
 msgstr "記述"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml367(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml372(para)
 msgid "virt_use_common"
 msgstr "virt_use_common"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml368(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml373(para)
 msgid "Allow virt to use serial/parallel communication ports."
 msgstr "仮想化がシリアル通信ポートとパラレル通信ポートを使用することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml371(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml376(para)
 msgid "virt_use_fusefs"
 msgstr "virt_use_fusefs"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml372(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml377(para)
 msgid "Allow virt to read FUSE mounted files."
 msgstr "仮想化が FUSE マウントされたファイルを読み取ることを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml375(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml380(para)
 msgid "virt_use_nfs"
 msgstr "virt_use_nfs"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml376(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml381(para)
 msgid "Allow virt to manage NFS mounted files."
 msgstr "仮想化が NFS マウントされたファイルを管理することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml379(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml384(para)
 msgid "virt_use_samba"
 msgstr "virt_use_samba"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml380(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml385(para)
 msgid "Allow virt to manage CIFS mounted files."
 msgstr "仮想化が CIFS マウントされたファイルを管理することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml383(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml388(para)
 msgid "virt_use_sanlock"
 msgstr "virt_use_sanlock"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml384(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml389(para)
 msgid "Allow confined virtual guests to interact with the sanlock."
 msgstr "制限された仮想マシンが sanlock を操作することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml387(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml392(para)
 msgid "virt_use_sysfs"
 msgstr "virt_use_sysfs"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml388(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml393(para)
 msgid "Allow virt to manage device configuration (PCI)."
 msgstr "仮想マシンがデバイス設定 (PCI) を管理することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml391(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml396(para)
 msgid "virt_use_usb"
 msgstr "virt_use_usb"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml392(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml397(para)
 msgid "Allow virt to use USB devices."
 msgstr "仮想化が USB デバイスを使用することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml395(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml400(para)
 msgid "virt_use_xserver"
 msgstr "virt_use_xserver"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml396(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml401(para)
 msgid "Allow virtual machine to interact with the X Window System."
 msgstr "仮想マシンが X Window System と通信することを許可します。"
 
@@ -9695,12 +9702,12 @@ msgid "Scheduling instances to nodes"
 msgstr "ノードへのインスタンスのスケジューリング"
 
 #: ./security-guide/section_security-services-for-instances.xml19(para)
-#: ./security-guide/section_security-services-for-instances.xml90(title)
+#: ./security-guide/section_security-services-for-instances.xml89(title)
 msgid "Trusted images"
 msgstr "信頼されたイメージ"
 
 #: ./security-guide/section_security-services-for-instances.xml22(para)
-#: ./security-guide/section_security-services-for-instances.xml158(title)
+#: ./security-guide/section_security-services-for-instances.xml157(title)
 msgid "Instance migrations"
 msgstr "インスタンスのマイグレーション"
 
@@ -9792,24 +9799,11 @@ msgid ""
 " Configuration Reference</citetitle>."
 msgstr "下記ではセキュリティコンテキストにおいて役に立つ幾つかのフィルターを紹介します。<citetitle>OpenStack Configuration Reference</citetitle>の<link href=\"http://docs.openstack.org/trunk/config-reference/content/filter-scheduler.html\">Filter Scheduler</link>セクションにすべてのフィルター関連ドキュメントが掲載されています。要件に合わせてご参照ください。"
 
-#: ./security-guide/section_security-services-for-instances.xml57(emphasis)
-msgid "Tenant Driven Whole Host Reservation"
-msgstr "テナントによるホスト全体予約"
-
-#: ./security-guide/section_security-services-for-instances.xml58(para)
-msgid ""
-"There currently exists a <link "
-"href=\"https://blueprints.launchpad.net/nova/+spec/whole-host-"
-"allocation\">blueprint for whole host reservation</link> - This would allow "
-"a tenant to exclusively reserve hosts for only it's instances, incurring "
-"extra costs."
-msgstr "現在、<link href=\"https://blueprints.launchpad.net/nova/+spec/whole-host-allocation\">ホスト全体予約のブループリント</link>が公開されています。これによって効率面の負担はありますが、テナントは抱えるインスタンスのみのためにホストを確保できます。"
-
-#: ./security-guide/section_security-services-for-instances.xml60(title)
+#: ./security-guide/section_security-services-for-instances.xml59(title)
 msgid "Host aggregates"
 msgstr "ホスト・アグリゲート"
 
-#: ./security-guide/section_security-services-for-instances.xml61(para)
+#: ./security-guide/section_security-services-for-instances.xml60(para)
 msgid ""
 "While not a filter in themselves, host aggregates allow administrators to "
 "assign key-value pairs to groups of machines. This allows cloud "
@@ -9821,11 +9815,11 @@ msgid ""
 "managing aggregates)."
 msgstr "ホストアグリゲート自体はフィルターではありませんが、管理者にマシンの集合体へキーバリューペアの割り当てを可能にします。これによってユーザーではなく、クラウド管理者によるコンピュートホストリソースの分配ができます。各ノードは複数のアグリゲートを持つことができます。(詳細は<citetitle>OpenStack Configuration Reference</citetitle>の<link href=\"http://docs.openstack.org/trunk/config-reference/content/host-aggregates.html\">Host Aggregates</link>セクションを参照ください。)"
 
-#: ./security-guide/section_security-services-for-instances.xml72(title)
+#: ./security-guide/section_security-services-for-instances.xml71(title)
 msgid "AggregateMultiTenancyIsolation"
 msgstr "AggregateMultiTenancyIsolation"
 
-#: ./security-guide/section_security-services-for-instances.xml73(para)
+#: ./security-guide/section_security-services-for-instances.xml72(para)
 msgid ""
 "Isolates tenants to specific host aggregates. If a host is in an aggregate "
 "that has the metadata key <literal>filter_tenant_id</literal> it will only "
@@ -9834,11 +9828,11 @@ msgid ""
 "metadata key, it can create instances from all tenants."
 msgstr "テナントを特定のホストアグリゲート（集合体）に分離します。ホストが<literal>filter_tenant_id</literal>というメタデータキーを持つアグリゲートの場合、そのテナント(あるいはそのテナント一覧)のみからインスタンスを作成します。ホストは複数のアグリゲートに所属することができます。メタデータキーを持たないアグリゲートに属する場合、すべてのテナントからインスタンスを作成できます。"
 
-#: ./security-guide/section_security-services-for-instances.xml76(title)
+#: ./security-guide/section_security-services-for-instances.xml75(title)
 msgid "DifferentHostFilter"
 msgstr "DifferentHostFilter"
 
-#: ./security-guide/section_security-services-for-instances.xml77(para)
+#: ./security-guide/section_security-services-for-instances.xml76(para)
 msgid ""
 "Schedule the instance on a different host from a set of instances. To take "
 "advantage of this filter, the requester must pass a scheduler hint, using "
@@ -9847,11 +9841,11 @@ msgid ""
 "<literal>SameHostFilter</literal>."
 msgstr "特定のインスタンスのグループとは異なるホスト上にインスタンスをスケジュールします。このフィルタを利用するには、要求時にスケジュール情報としてキーに<literal>different_host</literal>を指定し、値にはインスタンスuuidのリストを渡す必要があります。<literal>SameHostFilter</literal>とは反対の働きを持つフィルターです。"
 
-#: ./security-guide/section_security-services-for-instances.xml80(title)
+#: ./security-guide/section_security-services-for-instances.xml79(title)
 msgid "GroupAntiAffinityFilter"
 msgstr "GroupAntiAffinityFilter"
 
-#: ./security-guide/section_security-services-for-instances.xml81(para)
+#: ./security-guide/section_security-services-for-instances.xml80(para)
 msgid ""
 "The GroupAntiAffinityFilter ensures that each instance in a group is on a "
 "different host. To take advantage of this filter, the requester must pass a "
@@ -9859,11 +9853,11 @@ msgid ""
 "instance uuids as the value."
 msgstr "GroupAntiAffinityFilterはグループに含まれるすべてのインスタンスは異なるホストで稼働していることを保証します。このフィルタを利用するには、要求時にスケジュール情報としてキーに<literal>group</literal>を指定し、値にはインスタンスuuidのリストを渡す必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml84(title)
+#: ./security-guide/section_security-services-for-instances.xml83(title)
 msgid "Trusted compute pools"
 msgstr "信頼済コンピュートプール"
 
-#: ./security-guide/section_security-services-for-instances.xml85(para)
+#: ./security-guide/section_security-services-for-instances.xml84(para)
 msgid ""
 "There exists a scheduler filter which integrates with the <link "
 "href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation"
@@ -9871,14 +9865,14 @@ msgid ""
 "attestation of PCRs received from a system using Intel TXT."
 msgstr "Intel TXTを使用したシステムから送られたPCRの認証によってスケジューラーの対応を定義するために<link href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation Project</link> (OATS)と連携するスケジューラーフィルターがあります。"
 
-#: ./security-guide/section_security-services-for-instances.xml86(para)
+#: ./security-guide/section_security-services-for-instances.xml85(para)
 msgid ""
 "It is unclear if this feature is compatible with AMD's similar SEM, although"
 " the OpenAttestation agent relies on the vendor-agnostic <link "
 "href=\"http://trousers.sourceforge.net/\">TrouSerS library</link>."
 msgstr "OpenAttestationエージェントはベンダー依存ではない<link href=\"http://trousers.sourceforge.net/\">TrouSerSライブラリ</link>を採用していますが、本機能は類似したAMD社のSEMと互換性があるかは不明です。"
 
-#: ./security-guide/section_security-services-for-instances.xml91(para)
+#: ./security-guide/section_security-services-for-instances.xml90(para)
 msgid ""
 "With regards to images, users will be working with pre-installed images or "
 "images that they upload themselves. In both cases, users will want to ensure"
@@ -9889,11 +9883,11 @@ msgid ""
 "calling out some of the existing gaps in this space."
 msgstr "ユーザーはインストール済イメージあるいは自身がアップロードしたイメージを使用します。どちらの場合においても、採用したイメージは改ざんされていないことを確認したいでしょう。確認のためには、正式版のチェックサムなどの検証用情報と稼働しているイメージの証明情報が必要です。このセクションでは、イメージの扱いに関するベストプラクティスと関連する既知の課題について説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml93(title)
+#: ./security-guide/section_security-services-for-instances.xml92(title)
 msgid "Image creation process"
 msgstr "イメージ作成プロセス"
 
-#: ./security-guide/section_security-services-for-instances.xml94(para)
+#: ./security-guide/section_security-services-for-instances.xml93(para)
 msgid ""
 "The OpenStack Documentation provides guidance on how to create and upload an"
 " image to the Image Service. Additionally it is assumed that you have a "
@@ -9904,11 +9898,11 @@ msgid ""
 " image's provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml102(para)
+#: ./security-guide/section_security-services-for-instances.xml101(para)
 msgid "The first option is to obtain boot media from a trusted source."
 msgstr "最初の選択肢は、信頼された提供元からブートメディアを入手することです。"
 
-#: ./security-guide/section_security-services-for-instances.xml109(para)
+#: ./security-guide/section_security-services-for-instances.xml108(para)
 msgid ""
 "The second option is to use the <link href=\"http://docs.openstack.org"
 "/image-guide/content/\"><citetitle>OpenStack Virtual Machine Image "
@@ -9918,7 +9912,7 @@ msgid ""
 "href=\"http://iase.disa.mil/stigs/os/unix/red_hat.html\">RHEL6 STIG</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml110(para)
+#: ./security-guide/section_security-services-for-instances.xml109(para)
 msgid ""
 "The final option is to use an automated image builder. The following example"
 " uses the Oz image builder. The OpenStack community has recently created a "
@@ -9926,13 +9920,13 @@ msgid ""
 "this tool from a security perspective."
 msgstr "最後の手段として説明するのはイメージの自動生成機構の使用です。次の例では、Oz image builderを採用しています。OpenStackコミュニティでは、disk-image-builderというさらに新しいツールが公開されています。本ツールはセキュリティ観点において未検証です。"
 
-#: ./security-guide/section_security-services-for-instances.xml111(para)
+#: ./security-guide/section_security-services-for-instances.xml110(para)
 msgid ""
 "Example of RHEL 6 CCE-26976-1 which will help implement NIST 800-53 "
 "Section<emphasis>AC-19(d) in</emphasis> Oz."
 msgstr "OzでNIST 800-53 セクション<emphasis>AC-19(d)</emphasis> の実装を手助けするRHEL 6 CCE-26976-1の例"
 
-#: ./security-guide/section_security-services-for-instances.xml147(para)
+#: ./security-guide/section_security-services-for-instances.xml146(para)
 msgid ""
 "It is recommended to avoid the manual image building process as it is "
 "complex and prone to error. Additionally, using an automated system like Oz "
@@ -9942,7 +9936,7 @@ msgid ""
 "hardening guidelines over time."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml148(para)
+#: ./security-guide/section_security-services-for-instances.xml147(para)
 msgid ""
 "If subscribing to a public cloud service, you should check with the cloud "
 "provider for an outline of the process used to produce their default images."
@@ -9952,11 +9946,11 @@ msgid ""
 "on Image Provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml151(title)
+#: ./security-guide/section_security-services-for-instances.xml150(title)
 msgid "Image provenance and validation"
 msgstr "イメージの出所と妥当性確認"
 
-#: ./security-guide/section_security-services-for-instances.xml152(para)
+#: ./security-guide/section_security-services-for-instances.xml151(para)
 msgid ""
 "Unfortunately, it is not currently possible to force Compute to validate an "
 "image hash immediately prior to starting an instance. To understand the "
@@ -9964,7 +9958,7 @@ msgid ""
 "the time of image launch."
 msgstr "残念ながら、現在はインスタンス起動直前にコンピュートにイメージのハッシュを検証を強制する方法がありません。状況を理解するために、イメージ起動の際にイメージがどのように扱われるのかを簡単に説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml153(para)
+#: ./security-guide/section_security-services-for-instances.xml152(para)
 msgid ""
 "Images come from the glance service to the nova service on a node. This "
 "transfer should be protected by running over SSL. Once the image is on the "
@@ -9977,7 +9971,7 @@ msgid ""
 "resulting image."
 msgstr "イメージはGlanceサービスからノードのNovaサービスへ供給されます。この転送はSSLによって保護されている必要があります。イメージがノードに転送されたら、一般的なchecksumで検証され、起動するインスタンスのサイズに合わせてディスクが拡張します。以降、このノードで同じサイズの同一イメージを起動する場合はこの拡張されたイメージから起動されます。拡張されたイメージは起動前に再検証されないため、改ざんの可能性があります。これでは作成されたイメージのファイルの手動確認以外に確認方法がありません。"
 
-#: ./security-guide/section_security-services-for-instances.xml154(para)
+#: ./security-guide/section_security-services-for-instances.xml153(para)
 msgid ""
 "We hope that future versions of Compute and/or the Image Service will offer "
 "support for validating the image hash before each instance launch. An "
@@ -9986,7 +9980,7 @@ msgid ""
 "launched."
 msgstr "将来的にコンピュートまたはイメージサービスでインスタンス起動の前にイメージのハッシュを検証する機構を提供することが期待されています。さらに考えられる強力な代替手段はユーザーにイメージを署名させ、インスタンスの起動前に署名の検証を実行させることです。"
 
-#: ./security-guide/section_security-services-for-instances.xml159(para)
+#: ./security-guide/section_security-services-for-instances.xml158(para)
 msgid ""
 "OpenStack and the underlying virtualization layers provide for the live "
 "migration of images between OpenStack nodes, allowing you to seamlessly "
@@ -9996,31 +9990,31 @@ msgid ""
 "performed during a live migration:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml169(para)
+#: ./security-guide/section_security-services-for-instances.xml168(para)
 msgid "Start instance on destination host"
 msgstr "目的先ホストでインスタンスを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml170(para)
+#: ./security-guide/section_security-services-for-instances.xml169(para)
 msgid "Transfer memory"
 msgstr "メモリを転送"
 
-#: ./security-guide/section_security-services-for-instances.xml171(para)
+#: ./security-guide/section_security-services-for-instances.xml170(para)
 msgid "Stop the guest &amp; sync disks"
 msgstr "ゲスト&amp;syncディスクを停止"
 
-#: ./security-guide/section_security-services-for-instances.xml172(para)
+#: ./security-guide/section_security-services-for-instances.xml171(para)
 msgid "Transfer state"
 msgstr "転送状態となる"
 
-#: ./security-guide/section_security-services-for-instances.xml173(para)
+#: ./security-guide/section_security-services-for-instances.xml172(para)
 msgid "Start the guest"
 msgstr "ゲストを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml176(title)
+#: ./security-guide/section_security-services-for-instances.xml175(title)
 msgid "Live migration risks"
 msgstr "ライブマイグレーションのリスク"
 
-#: ./security-guide/section_security-services-for-instances.xml177(para)
+#: ./security-guide/section_security-services-for-instances.xml176(para)
 msgid ""
 "At various stages of the live migration process the contents of an instances"
 " run time memory and disk are transmitted over the network in plain text. "
@@ -10028,68 +10022,68 @@ msgid ""
 "migration. The following in-exhaustive list details some of these risks:"
 msgstr "ライブマイグレーションのステージによっては、インスタンスのランタイムメモリやディスクの今テンスが平文でネットワーク上転送されます。そのため、ライブマイグレーション中には対処が必要なリスクがあります。次は一部のリスクの詳細を列挙しています。"
 
-#: ./security-guide/section_security-services-for-instances.xml179(para)
+#: ./security-guide/section_security-services-for-instances.xml178(para)
 msgid ""
 "<emphasis>Denial of Service (DoS)</emphasis>: If something fails during the "
 "migration process, the instance could be lost."
 msgstr "<emphasis>Denial of Service (DoS)</emphasis>: マイグレーションプロセス中に何かが失敗した場合、インスタンスを失う可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml182(para)
+#: ./security-guide/section_security-services-for-instances.xml181(para)
 msgid ""
 "<emphasis>Data exposure</emphasis>: Memory or disk transfers must be handled"
 " securely."
 msgstr "<emphasis>データの公開</emphasis>: メモリやディスクの転送は安全に行う必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml185(para)
+#: ./security-guide/section_security-services-for-instances.xml184(para)
 msgid ""
 "<emphasis>Data manipulation</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate user data during the "
 "migration."
 msgstr "<emphasis>データの操作</emphasis>: メモリやディスクの転送がセキュアに処理されなければ、攻撃者がマイグレーション中にユーザーデータを操作できる可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml188(para)
+#: ./security-guide/section_security-services-for-instances.xml187(para)
 msgid ""
 "<emphasis>Code injection</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate executables, either on "
 "disk or in memory, during the migration."
 msgstr "<emphasis>コードの挿入</emphasis>: メモリやディスクの転送が安全ではない場合、マイグレーション中に攻撃者によってディスクやメモリ上の実行ファイルが操作される可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml193(title)
+#: ./security-guide/section_security-services-for-instances.xml192(title)
 msgid "Live migration mitigations"
 msgstr "ライブマイグレーションのリスクの軽減"
 
-#: ./security-guide/section_security-services-for-instances.xml194(para)
+#: ./security-guide/section_security-services-for-instances.xml193(para)
 msgid ""
 "There are several methods to mitigate some of the risk associated with live "
 "migrations, the following list details some of these:"
 msgstr "ライブマイグレーションに関連するリスクを軽減するためには様々な手法があります。次のリストで詳しく説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml196(para)
-#: ./security-guide/section_security-services-for-instances.xml206(title)
+#: ./security-guide/section_security-services-for-instances.xml195(para)
+#: ./security-guide/section_security-services-for-instances.xml205(title)
 msgid "Disable live migration"
 msgstr "ライブマイグレーションの無効化"
 
-#: ./security-guide/section_security-services-for-instances.xml199(para)
+#: ./security-guide/section_security-services-for-instances.xml198(para)
 msgid "Isolated migration network"
 msgstr "マイグレーションネットワークの分離"
 
-#: ./security-guide/section_security-services-for-instances.xml202(para)
-#: ./security-guide/section_security-services-for-instances.xml219(title)
+#: ./security-guide/section_security-services-for-instances.xml201(para)
+#: ./security-guide/section_security-services-for-instances.xml218(title)
 msgid "Encrypted live migration"
 msgstr "ライブマイグレーションの暗号化"
 
-#: ./security-guide/section_security-services-for-instances.xml207(para)
+#: ./security-guide/section_security-services-for-instances.xml206(para)
 msgid ""
 "At this time, live migration is enabled in OpenStack by default. Live "
 "migrations can be disabled by adding the following lines to the nova "
 "<filename>policy.json</filename> file:"
 msgstr "現在、OpenStackではデフォルトでライブマイグレーションを有効にしています。ライブマイグレーションは nova <filename>policy.json</filename> ファイルへ下記の行を追加することによって無効化できます。"
 
-#: ./security-guide/section_security-services-for-instances.xml215(title)
+#: ./security-guide/section_security-services-for-instances.xml214(title)
 msgid "Migration network"
 msgstr "マイグレーションネットワーク"
 
-#: ./security-guide/section_security-services-for-instances.xml216(para)
+#: ./security-guide/section_security-services-for-instances.xml215(para)
 msgid ""
 "As a general practice, live migration traffic should be restricted to the "
 "management security domain, see <xref linkend=\"security-boundaries-and-"
@@ -10100,7 +10094,7 @@ msgid ""
 "dedicated network can reduce the risk of exposure."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml220(para)
+#: ./security-guide/section_security-services-for-instances.xml219(para)
 msgid ""
 "If there is a sufficient business case for keeping live migration enabled, "
 "then libvirtd can provide encrypted tunnels for the live migrations. "
@@ -10110,17 +10104,17 @@ msgid ""
 "following high-level steps:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml222(para)
+#: ./security-guide/section_security-services-for-instances.xml221(para)
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml223(para)
+#: ./security-guide/section_security-services-for-instances.xml222(para)
 msgid ""
 "An encrypted tunnel is created between libvirtd processes on both source and"
 " destination hosts."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml224(para)
+#: ./security-guide/section_security-services-for-instances.xml223(para)
 msgid ""
 "Destination libvirtd host copies the instances back to an underlying "
 "hypervisor."

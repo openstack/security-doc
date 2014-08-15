@@ -15,7 +15,7 @@
         xlink:href="http://www.27000.org/iso-27001.htm">ISO/IEC 27001/2</link>, which creates a
       solid foundation of security controls and practices for achieving more stringent compliance
       certifications. This standard was updated in 2013 to reflect the growing use of cloud services
-      and places more emphasis on measuring and evaluating how well an organisation's ISMS is
+      and places more emphasis on measuring and evaluating how well an organization's ISMS is
       performing.</para>
     </section>
     <section xml:id="compliance-activities-idp46224">
@@ -32,7 +32,7 @@
     </section>
     <section xml:id="compliance-activities-idp51008">
       <title>Security training</title>
-      <para>Annual, role-specific, security training is a mandatory requirement for almost all compliance certifications and attestations. To optimise the effectiveness of security training, a common method is to provide role specific training, for example to developers, operational personnel, and non-technical employees. Additional cloud security or OpenStack security training based on this hardening guide would be ideal.</para>
+      <para>Annual, role-specific, security training is a mandatory requirement for almost all compliance certifications and attestations. To optimize the effectiveness of security training, a common method is to provide role specific training, for example to developers, operational personnel, and non-technical employees. Additional cloud security or OpenStack security training based on this hardening guide would be ideal.</para>
     </section>
     <section xml:id="compliance-activities-idp52592">
       <title>Security reviews</title>

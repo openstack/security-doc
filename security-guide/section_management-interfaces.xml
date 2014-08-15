@@ -135,7 +135,7 @@
         <para>Often overlooked is the need for key management for SSH hosts. As most or all hosts in an OpenStack deployment will provide an SSH service, it is important to have confidence in connections to these hosts. It cannot be understated that failing to provide a reasonably secure and accessible method to verify SSH host key fingerprints is ripe for abuse and exploitation.</para>
         <para>All SSH daemons have private host keys and, upon connection, offer a host key fingerprint. This host key fingerprint is the hash of an unsigned public key. It is important these host key fingerprints are known in advance of making SSH connections to those hosts. Verification of host key fingerprints is instrumental in detecting man-in-the-middle attacks.</para>
         <para>Typically, when an SSH daemon is installed, host keys will be generated. It is necessary that the hosts have sufficient entropy during host key generation. Insufficient entropy during host key generation can result in the possibility to eavesdrop on SSH sessions.</para>
-        <para>Once the SSH host key is generated, the host key fingerprint should be stored in a secure and queriable location. One particularly convenient solution is DNS using SSHFP resource records as defined in RFC-4255. For this to be secure, it is necessary that DNSSEC be deployed.</para>
+        <para>Once the SSH host key is generated, the host key fingerprint should be stored in a secure and queryable location. One particularly convenient solution is DNS using SSHFP resource records as defined in RFC-4255. For this to be secure, it is necessary that DNSSEC be deployed.</para>
       </section>
     </section>
     <section xml:id="management-interfaces-idp76272">
@@ -184,7 +184,7 @@
 <listitem>
             <para>If you use a web interface to interact with the
               <glossterm>BMC</glossterm>/IPMI, always use the SSL
-            interface, such as https or port 443. This SSL interface
+            interface, such as HTTPS or port 443. This SSL interface
             should <emphasis role="bold">NOT</emphasis> use
             self-signed certificates, as is often default, but should
             have trusted certificates using the correctly defined

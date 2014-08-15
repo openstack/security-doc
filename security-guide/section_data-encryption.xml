@@ -36,7 +36,7 @@
     </section>
     <section xml:id="data-encryption-idp57488">
       <title>Network data</title>
-      <para>Tenant data for compute could be encrypted over IPSec or
+      <para>Tenant data for compute could be encrypted over IPsec or
       other tunnels. This is not functionality common or standard in
       OpenStack, but is an option available to motivated and
       interested implementors.</para>

@@ -17,7 +17,7 @@
         AMQP based solutions (Qpid and RabbitMQ) support
         transport-level security using SSL. ZeroMQ messaging does not
         natively support SSL, but transport-level security is possible
-        using labelled IPSec or CIPSO network labels.
+        using labelled IPsec or CIPSO network labels.
       </para>
       <para>
         We highly recommend enabling transport-level cryptography for

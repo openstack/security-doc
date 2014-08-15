@@ -103,7 +103,7 @@ ciphers = "kEECDH:kEDH:kRSA:HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
    <varlistentry>
     <term><code>Protocols</code></term>
     <listitem>
-             <para>Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2 and enabling TLS or SSLv3 (which was standardised as TLS with a few changes).</para>
+             <para>Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2 and enabling TLS or SSLv3 (which was standardized as TLS with a few changes).</para>
     </listitem>
    </varlistentry>
  </variablelist>

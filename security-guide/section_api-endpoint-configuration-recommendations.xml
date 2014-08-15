@@ -70,7 +70,7 @@ s3_use_ssl=True</programlisting>
       <title>Paste and middleware</title>
       <para>
         Most API endpoints and other HTTP services in OpenStack use
-        the Python Paste Deploy library. From a securtiy perspective,
+        the Python Paste Deploy library. From a security perspective,
         this library enables manipulation of the request filter
         pipeline through the application's configuration. Each element
         in this chain is referred to as

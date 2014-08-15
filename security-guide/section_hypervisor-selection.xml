@@ -520,8 +520,8 @@
     </section>
     <section xml:id="hypervisor-selection-idp396976">
       <title>Hypervisor vs. baremetal</title>
-      <para>It is important to recognise the difference between using
-        LXC (Linux Containers) or Baremetal systems vs using a
+      <para>It is important to recognize the difference between using
+        LXC (Linux Containers) or baremetal systems vs using a
         hypervisor like KVM. Specifically, the focus of this security
         guide is largely based on having a hypervisor and
         virtualization platform. However, should your implementation

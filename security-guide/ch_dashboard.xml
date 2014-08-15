@@ -31,10 +31,10 @@
       correctly.</para>
     <para>When using nginx, we recommend <link
         xlink:href="http://docs.gunicorn.org/en/latest/deploy.html"
-        >gunicorn</link> as the wsgi host with an appropriate number
+        >gunicorn</link> as the WSGI host with an appropriate number
       of synchronous workers. We strongly advise against deployments
-      using fastcgi, scgi, or uWSGI. We strongly advise against the
-      use of synthetic performance benchmarks when choosing a wsgi
+      using FastCGI, SCGI, or uWSGI. We strongly advise against the
+      use of synthetic performance benchmarks when choosing a WSGI
       server.</para>
     <para>When using Apache, we recommend <link
         xlink:href="https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/"
@@ -123,7 +123,7 @@
         >https://docs.djangoproject.com/en/1.5/ref/settings/#static-root</link>.</para>
     <para>Dashboard's default configuration uses <link
         xlink:href="http://django-compressor.readthedocs.org/"
-        >django_compressor</link> to compress and minify css and
+        >django_compressor</link> to compress and minify CSS and
       JavaScript content before serving it. This process should be
       statically done before deploying dashboard, rather than using
       the default in-request dynamic compression and copying the
@@ -131,7 +131,7 @@
       Compression should be done in a non-production build
       environment. If this is not practical, we recommend disabling
       resource compression entirely. Online compression dependencies
-      (less, nodejs) should not be installed on production
+      (less, Node.js) should not be installed on production
       machines.</para>
   </section>
   <section xml:id="dashboard-idp255696">
@@ -188,7 +188,7 @@
     <para>Dashboard is designed to discourage developers from
       introducing cross-site scripting vulnerabilities with custom
       dashboards. However, it is important to audit custom dashboards,
-      especially ones that are javascript-heavy for inappropriate use
+      especially ones that are JavaScript-heavy for inappropriate use
       of the <literal>@csrf_exempt</literal> decorator. Dashboards
       which do not follow these recommended security settings should
       be carefully evaluated before restrictions are relaxed.</para>

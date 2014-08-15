@@ -13,7 +13,7 @@ To do tasks
 -----------
 
 - Add OpenStack Security Notes (OSSN) as appendix
-- Update for icehouse - this guide is continually released, but hasn't
+- Update for Icehouse - this guide is continually released, but hasn't
   had updates for latest releases of OpenStack
 - Document SSL everywhere (it's there but does it need updating for latest
   releases?)

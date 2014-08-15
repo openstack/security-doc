@@ -224,8 +224,8 @@
         <glossterm>Qpid</glossterm>, or
         <glossterm>ZeroMQ</glossterm>.</para>
       <para>As most management commands flow through the message
-        queueing system, it is a primary security concern for any
-        OpenStack deployment. Message queueing security is discussed
+        queuing system, it is a primary security concern for any
+        OpenStack deployment. Message queuing security is discussed
         in detail later in this guide.</para>
       <para>Several of the components use databases though it is not
         explicitly called out. Securing the access to the databases

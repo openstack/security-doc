@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-08-13 12:36+0000\n"
-"PO-Revision-Date: 2014-08-13 12:37+0000\n"
+"POT-Creation-Date: 2014-08-14 08:18+0000\n"
+"PO-Revision-Date: 2014-08-14 08:18+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1363,8 +1363,8 @@ msgstr "監視とログ採取"
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_hardening-the-virtualization-layers.xml310(None)
-#: ./security-guide/section_hardening-the-virtualization-layers.xml314(None)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml323(None)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml327(None)
 msgid ""
 "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
 msgstr "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
@@ -1480,11 +1480,11 @@ msgstr "仮想マシンの実行時、仮想ハードウェアは仮想マシン
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml112(para)
 msgid ""
-"For the reasons stated above, it is important to take proactive steps to "
-"harden QEMU. We recommend three specific steps: minimizing the code base, "
-"using compiler hardening, and using mandatory access controls, such as "
-"sVirt, SELinux, or AppArmor."
-msgstr "上記の理由として、QEMU 堅牢化の率先したステップの実行が重要である事が挙げられます。我々は３つの特定のステップを推奨しています。コードベースの最小化、コンパイラーの堅牢化、sVirt・SELinux・AppArmor 等の強制アクセス制御の使用です。"
+"Therefore, it is important to take proactive steps to harden QEMU. Three "
+"specific steps are recommended: minimizing the code base, using compiler "
+"hardening, and using mandatory access controls such as sVirt, SELinux, or "
+"AppArmor."
+msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml118(para)
 msgid ""
@@ -1594,9 +1594,8 @@ msgstr "コード領域とデータ領域の配置を確実にランダム化し
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml215(para)
 msgid ""
-"Putting this all together, and adding in some additional useful protections,"
-" we recommend the following compiler options for GCC when compiling QEMU:"
-msgstr "すべてを一緒に利用し、いくつか追加の有用な保護を追加して、QEMU コンパイル時に以下の GCC コンパイラーオプションを推奨します。"
+"The following compiler options are recommend for GCC when compiling QEMU:"
+msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml222(para)
 msgid ""
@@ -1640,16 +1639,17 @@ msgid ""
 "the attack. Mandatory access controls accomplish this by restricting the "
 "privileges on QEMU process to only what is needed. This can be accomplished "
 "using sVirt / SELinux or AppArmor. When using sVirt, SELinux is configured "
-"to run every QEMU process under a different security context. AppArmor can "
-"be configured to provide similar functionality. We provide more details on "
-"sVirt in the instance isolation section below."
-msgstr "コンパイラーのセキュリティ強化機能により、QEMU プロセスへの攻撃をより難しくできます。しかし、攻撃者が成功すると、攻撃の影響範囲を抑えたいでしょう。強制アクセス制御は、QEMU プロセスの権限を必要な範囲に制限することにより、これを実現します。これは sVirt / SELinux または AppArmor により実現できます。sVirt 利用時、SELinux はすべての QEMU プロセスが別々のセキュリティドメインで動作するよう設定されます。AppArmor は同様の機能を提供するよう設定できます。以下のインスタンス分離のセクションで sVirt の詳細を示します。"
+"to run each QEMU process under a separate security context. AppArmor can be "
+"configured to provide similar functionality. We provide more details on "
+"sVirt and instance isolation in the <link linkend=\"hardening-the-"
+"virtualization-layers-idp510512\">section below</link>."
+msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml258(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml260(title)
 msgid "sVirt: SELinux and virtualization"
 msgstr "sVirt: SELinux と 仮想化"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml259(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml261(para)
 msgid ""
 "With unique kernel-level architecture and National Security Agency (NSA) "
 "developed security mechanisms, KVM provides foundational isolation "
@@ -1661,36 +1661,42 @@ msgid ""
 "processes acting upon their behalf."
 msgstr "KVM は複数のテナントを分離する基本技術を提供します。カーネルレベルの独特のアーキテクチャーを用いて、National Security Agency (NSA) により開発されたセキュリティ機構です。開発の起源は 2002 年までさかのぼり、Secure Virtualization (sVirt) 技術は最近の仮想化向けの SELinux の応用技術です。SELinux は、ラベルに基づいた分離制御を適用するために設計され、仮想マシンのプロセス、デバイス、データファイル、それらの上で動作するシステムプロセス間の分離を提供するために拡張されました。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml270(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml272(para)
 msgid ""
 "OpenStack's sVirt implementation aspires to protect hypervisor hosts and "
 "virtual machines against two primary threat vectors:"
 msgstr "OpenStack の sVirt 実装は、2 種類の主要な脅威ベクターに対して、ハイパーバイザーホストと仮想マシンを保護することを目指しています。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml275(para)
-msgid ""
-"<emphasis role=\"bold\">Hypervisor threats</emphasis> A compromised "
-"application running within a virtual machine attacks the hypervisor to "
-"access underlying resources. For example, the host OS, applications, or "
-"devices within the physical machine. This is a threat vector unique to "
-"virtualization and represents considerable risk as the underlying real "
-"machine can be compromised due to vulnerability in a single virtual "
-"application."
-msgstr "<emphasis role=\"bold\">ハイパーバイザーの脅威</emphasis> 仮想マシンの中で動作している侵入されたアプリケーションは、バックエンドのリソースにアクセスするためにハイパーバイザーを攻撃します。例えば、ホスト OS、アプリケーション、物理マシンにあるデバイスです。バックエンドの物理マシンが単一の仮想アプリケーションにある脆弱性のために侵入されうるため、これは仮想化に特有の脅威ベクターであり、考慮すべきリスクを表します。"
+#: ./security-guide/section_hardening-the-virtualization-layers.xml279(term)
+msgid "Hypervisor threats"
+msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml285(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml281(para)
 msgid ""
-"<emphasis role=\"bold\">Virtual Machine (multi-tenant) threats</emphasis> A "
-"compromised application running within a VM attacks the hypervisor to "
-"access/control another virtual machine and its resources. This is a threat "
-"vector unique to virtualization and represents considerable risk as a "
-"multitude of virtual machine file images could be compromised due to "
+"A compromised application running within a virtual machine attacks the "
+"hypervisor to access underlying resources. For example, when a virtual "
+"machine is able to access the hypervisor OS, physical devices, or other "
+"applications. This threat vector represents considerable risk as a "
+"compromise on a hypervisor can infect the physical hardware as well as "
+"exposing other virtual machines and network segments."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml294(term)
+msgid "Virtual Machine (multi-tenant) threats"
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml296(para)
+msgid ""
+"A compromised application running within a VM attacks the hypervisor to "
+"access or control another virtual machine and its resources. This is a "
+"threat vector unique to virtualization and represents considerable risk as a"
+" multitude of virtual machine file images could be compromised due to "
 "vulnerability in a single application. This virtual network attack is a "
 "major concern as the administrative techniques for protecting real networks "
 "do not directly apply to the virtual environment."
-msgstr "<emphasis role=\"bold\">仮想マシン (マルチテナント) の脅威</emphasis> 仮想マシンの中で動作している侵入されたアプリケーションは、他の仮想マシンとそのリソースにアクセスし、制御するためにハイパーバイザーを攻撃します。仮想マシンのイメージファイルの集合が単一のアプリケーションにある脆弱性のために侵入されうるため、これは仮想化に特有の脅威ベクターであり、考慮すべきリスクを表します。実ネットワークを保護するための管理技術が仮想マシン環境にそのまま適用できないため、この仮想ネットワークへの攻撃はおもな関心事です。"
+msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml298(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml311(para)
 msgid ""
 "Each KVM-based virtual machine is a process which is labeled by SELinux, "
 "effectively establishing a security boundary around each virtual machine. "
@@ -1699,7 +1705,7 @@ msgid ""
 "boundary such as host machine data files or other VMs."
 msgstr "各 KVM ベースの仮想マシンは SELinux によりラベル付けされているプロセスです。これは各仮想マシンのセキュリティ境界を効率的に確立します。このセキュリティ境界は、Linux カーネルにより監視され、強制されます。ホストマシンのデータファイルや他の仮想マシンのような、仮想マシンの境界外のリソースへのアクセスは制限されます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml318(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml331(para)
 msgid ""
 "As shown above, sVirt isolation is provided regardless of the guest "
 "Operating System running inside the virtual machineLinux or Windows VMs can "
@@ -1708,11 +1714,11 @@ msgid ""
 "resources from threats."
 msgstr "上に示したとおり、sVirt による分離は仮想マシン内で動作しているゲストオペレーティングシステムに関わらず提供されます。Linux や Windows の仮想マシンを使用できます。さらに、多くの Linux ディストリビューションはオペレーティングシステム内の SELinux を提供しています。仮想マシンが内部の仮想リソースを脅威から保護できます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml327(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml340(title)
 msgid "Labels and categories"
 msgstr "ラベルとカテゴリ"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml328(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml341(para)
 msgid ""
 "KVM-based virtual machine instances are labelled with their own SELinux data"
 " type, known as svirt_image_t. Kernel level protections prevent unauthorized"
@@ -1721,7 +1727,7 @@ msgid ""
 "stored as svirt_image_t as shown below:"
 msgstr "KVM ベースの仮想マシンインスタンスは、svirt_image_t として知られる、独自の SELinux データタイプでラベル付けされています。カーネルレベルの保護により、悪意のあるソフトウェアのような権限のないシステムプロセスが、ディスクにある仮想マシンのイメージファイルを操作することを防ぎます。仮想マシンが電源オフのとき、イメージは以下のように svirt_image_t として保存されます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml339(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml352(para)
 msgid ""
 "The <literal>svirt_image_t</literal> label uniquely identifies image files "
 "on disk, allowing for the SELinux policy to restrict access. When a KVM-"
@@ -1731,97 +1737,97 @@ msgid ""
 "OpenStack deployments are highly unlikely to encounter this limitation."
 msgstr "<literal>svirt_image_t</literal> ラベルは独自にディスク上のイメージファイルを識別し、SELinux ポリシーがアクセス制限できるようにします。KVM ベースの Compute イメージが電源投入された際、sVirt はイメージに乱数のIDを付与します。sVirt は技術的には１ハイパーバイザーノードあたり 524,288 個の仮想マシンに数字IDを付与する事ができますが、OpenStack デプロイでこの制限に遭遇する事はまずないでしょう。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml348(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml361(para)
 msgid "This example shows the sVirt category identifier:"
 msgstr "この例は sVirt カテゴリー識別子を示します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml353(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml366(title)
 msgid "Booleans"
 msgstr "ブーリアン"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml354(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml367(para)
 msgid ""
 "To ease the administrative burden of managing SELinux, many enterprise Linux"
 " platforms utilize SELinux Booleans to quickly change the security posture "
 "of sVirt."
 msgstr "SELinux の管理負担を減らすために、多くのエンタープライズ Linux プラットフォームは sVirt のセキュリティ設定を簡単に変更するために、SELinux ブーリアンを利用します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml358(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml371(para)
 msgid ""
 "Red Hat Enterprise Linux-based KVM deployments utilize the following sVirt "
 "booleans:"
 msgstr "Red Hat Enterprise Linux ベースの KVM 環境は以下の sVirt ブーリアンを利用します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml366(emphasis)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml379(emphasis)
 msgid "sVirt SELinux Boolean"
 msgstr "sVirt SELinux ブーリアン"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml367(emphasis)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml380(emphasis)
 #: ./security-guide/section_hypervisor-selection.xml486(td)
 msgid "Description"
 msgstr "記述"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml372(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml385(para)
 msgid "virt_use_common"
 msgstr "virt_use_common"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml373(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml386(para)
 msgid "Allow virt to use serial/parallel communication ports."
 msgstr "仮想化がシリアル通信ポートとパラレル通信ポートを使用することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml376(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml389(para)
 msgid "virt_use_fusefs"
 msgstr "virt_use_fusefs"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml377(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml390(para)
 msgid "Allow virt to read FUSE mounted files."
 msgstr "仮想化が FUSE マウントされたファイルを読み取ることを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml380(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml393(para)
 msgid "virt_use_nfs"
 msgstr "virt_use_nfs"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml381(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml394(para)
 msgid "Allow virt to manage NFS mounted files."
 msgstr "仮想化が NFS マウントされたファイルを管理することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml384(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml397(para)
 msgid "virt_use_samba"
 msgstr "virt_use_samba"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml385(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml398(para)
 msgid "Allow virt to manage CIFS mounted files."
 msgstr "仮想化が CIFS マウントされたファイルを管理することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml388(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml401(para)
 msgid "virt_use_sanlock"
 msgstr "virt_use_sanlock"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml389(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml402(para)
 msgid "Allow confined virtual guests to interact with the sanlock."
 msgstr "制限された仮想マシンが sanlock を操作することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml392(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml405(para)
 msgid "virt_use_sysfs"
 msgstr "virt_use_sysfs"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml393(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml406(para)
 msgid "Allow virt to manage device configuration (PCI)."
 msgstr "仮想マシンがデバイス設定 (PCI) を管理することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml396(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml409(para)
 msgid "virt_use_usb"
 msgstr "virt_use_usb"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml397(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml410(para)
 msgid "Allow virt to use USB devices."
 msgstr "仮想化が USB デバイスを使用することを許可します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml400(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml413(para)
 msgid "virt_use_xserver"
 msgstr "virt_use_xserver"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml401(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml414(para)
 msgid "Allow virtual machine to interact with the X Window System."
 msgstr "仮想マシンが X Window System と通信することを許可します。"
 

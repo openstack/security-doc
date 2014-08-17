@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-08-14 08:18+0000\n"
-"PO-Revision-Date: 2014-08-14 08:18+0000\n"
+"POT-Creation-Date: 2014-08-16 10:28+0000\n"
+"PO-Revision-Date: 2014-08-16 08:41+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -8774,7 +8774,7 @@ msgid "OpenStack Security Guide"
 msgstr "OpenStack セキュリティガイド"
 
 #: ./security-guide/bk-openstack-security-guide.xml15(orgname)
-#: ./security-guide/bk-openstack-security-guide.xml20(holder)
+#: ./security-guide/bk-openstack-security-guide.xml21(holder)
 msgid "OpenStack Foundation"
 msgstr "OpenStack Foundation"
 
@@ -8782,45 +8782,49 @@ msgstr "OpenStack Foundation"
 msgid "2013"
 msgstr "2013"
 
-#: ./security-guide/bk-openstack-security-guide.xml22(releaseinfo)
+#: ./security-guide/bk-openstack-security-guide.xml20(year)
+msgid "2014"
+msgstr "2014"
+
+#: ./security-guide/bk-openstack-security-guide.xml23(releaseinfo)
 msgid "current"
 msgstr "カレント"
 
-#: ./security-guide/bk-openstack-security-guide.xml23(productname)
+#: ./security-guide/bk-openstack-security-guide.xml24(productname)
 msgid "OpenStack"
 msgstr "OpenStack"
 
-#: ./security-guide/bk-openstack-security-guide.xml27(remark)
+#: ./security-guide/bk-openstack-security-guide.xml28(remark)
 msgid "Copyright details are filled in by the template."
 msgstr "Copyright details are filled in by the template."
 
-#: ./security-guide/bk-openstack-security-guide.xml32(para)
+#: ./security-guide/bk-openstack-security-guide.xml33(para)
 msgid ""
 "This book provides best practices and conceptual information about securing "
 "an OpenStack cloud."
 msgstr "本書は OpenStack クラウドを安全にするためのベストプラクティスと基本的な考え方について書かれています。"
 
-#: ./security-guide/bk-openstack-security-guide.xml39(date)
+#: ./security-guide/bk-openstack-security-guide.xml40(date)
 msgid "2013-12-02"
 msgstr "2013-12-02"
 
-#: ./security-guide/bk-openstack-security-guide.xml43(para)
+#: ./security-guide/bk-openstack-security-guide.xml44(para)
 msgid "Chapter on Object Storage added."
 msgstr "Object Storage に関する章を追加しました。"
 
-#: ./security-guide/bk-openstack-security-guide.xml49(date)
+#: ./security-guide/bk-openstack-security-guide.xml50(date)
 msgid "2013-10-17"
 msgstr "2013-10-17"
 
-#: ./security-guide/bk-openstack-security-guide.xml53(para)
+#: ./security-guide/bk-openstack-security-guide.xml54(para)
 msgid "Havana release."
 msgstr "Havana リリース。"
 
-#: ./security-guide/bk-openstack-security-guide.xml59(date)
+#: ./security-guide/bk-openstack-security-guide.xml60(date)
 msgid "2013-07-02"
 msgstr "2013-07-02"
 
-#: ./security-guide/bk-openstack-security-guide.xml63(para)
+#: ./security-guide/bk-openstack-security-guide.xml64(para)
 msgid "Initial creation..."
 msgstr "初版作成..."
 

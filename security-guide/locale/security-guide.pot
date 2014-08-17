@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-15 06:05+0000\n"
+"POT-Creation-Date: 2014-08-17 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5157,7 +5157,7 @@ msgstr ""
 msgid "OpenStack Security Guide"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:15(orgname) ./security-guide/bk-openstack-security-guide.xml:20(holder)
+#: ./security-guide/bk-openstack-security-guide.xml:15(orgname) ./security-guide/bk-openstack-security-guide.xml:21(holder)
 msgid "OpenStack Foundation"
 msgstr ""
 
@@ -5165,43 +5165,47 @@ msgstr ""
 msgid "2013"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:22(releaseinfo)
+#: ./security-guide/bk-openstack-security-guide.xml:20(year)
+msgid "2014"
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml:23(releaseinfo)
 msgid "current"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:23(productname)
+#: ./security-guide/bk-openstack-security-guide.xml:24(productname)
 msgid "OpenStack"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:27(remark)
+#: ./security-guide/bk-openstack-security-guide.xml:28(remark)
 msgid "Copyright details are filled in by the template."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:32(para)
+#: ./security-guide/bk-openstack-security-guide.xml:33(para)
 msgid "This book provides best practices and conceptual information about securing an OpenStack cloud."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:39(date)
+#: ./security-guide/bk-openstack-security-guide.xml:40(date)
 msgid "2013-12-02"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:43(para)
+#: ./security-guide/bk-openstack-security-guide.xml:44(para)
 msgid "Chapter on Object Storage added."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:49(date)
+#: ./security-guide/bk-openstack-security-guide.xml:50(date)
 msgid "2013-10-17"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:53(para)
+#: ./security-guide/bk-openstack-security-guide.xml:54(para)
 msgid "Havana release."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:59(date)
+#: ./security-guide/bk-openstack-security-guide.xml:60(date)
 msgid "2013-07-02"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:63(para)
+#: ./security-guide/bk-openstack-security-guide.xml:64(para)
 msgid "Initial creation..."
 msgstr ""
 

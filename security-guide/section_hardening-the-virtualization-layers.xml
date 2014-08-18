@@ -362,6 +362,25 @@ system_u:object_r:svirt_image_t:SystemLow image4</programlisting>
         <programlisting>system_u:object_r:svirt_image_t:s0:c87,c520 image1
 system_u:object_r:svirt_image_t:s0:419,c172 image2</programlisting>
       </section>
+      <section xml:id="hardening-the-virtualization-selinux-users-roles">
+        <title>SELinux users and roles</title>
+        <para>
+          SELinux can also manage user roles. These can be viewed
+          through the <literal>-Z</literal> flag, or with the
+          <command>semanage</command> command. On the hypervisor, only
+          administrators should be able to access the system, and should
+          have an appropriate context around both the administrative
+          users and any other users that are on the system.
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              SELinux users documentation:
+              <link xlink:href="http://selinuxproject.org/page/BasicConcepts#Users">SELinux.org Users and Roles Overview</link>
+            </para>
+          </listitem>
+        </itemizedlist>
+      </section>
       <section xml:id="hardening-the-virtualization-layers-idp527632">
         <title>Booleans</title>
         <para>

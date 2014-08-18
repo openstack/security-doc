@@ -1,30 +1,29 @@
 # 
 # Translators:
-# yfukuda <fukuda.yuko@jp.fujitsu.com>, 2014
-# Tomoyuki KATO <tomo@dream.daynight.jp>, 2013-2014
-# yfukuda <fukuda.yuko@jp.fujitsu.com>, 2014
+# Andreas Jaeger <jaegerandi@gmail.com>, 2014
+# Carsten Duch <cad@teuto.net>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
 "POT-Creation-Date: 2014-08-18 03:50+0000\n"
 "PO-Revision-Date: 2014-08-18 03:51+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
+"Language-Team: German (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ./doc/glossary/openstack-glossary.xml7(title)
 #: ./doc/glossary/openstack-glossary.xml10(title)
 msgid "OpenStack glossary"
-msgstr "OpenStack 用語集"
+msgstr ""
 
 #: ./doc/glossary/openstack-glossary.xml11(para)
 msgid ""
 "Use this glossary to get definitions of OpenStack-related words and phrases."
-msgstr "OpenStack 関連の用語や言い回しの定義を確認するために、この用語集を使用してください。"
+msgstr ""
 
 #: ./doc/glossary/openstack-glossary.xml13(para)
 msgid ""
@@ -35,14 +34,14 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml13(title)
 msgid "Glossary"
-msgstr "用語集"
+msgstr "Glossar"
 
 #: ./doc/glossary/glossary-terms.xml16(para)
 msgid ""
 "Licensed under the Apache License, Version 2.0 (the \"License\"); you may "
 "not use this file except in compliance with the License. You may obtain a "
 "copy of the License at"
-msgstr "Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml23(link)
 msgid "http://www.apache.org/licenses/LICENSE-2.0"
@@ -55,7 +54,7 @@ msgid ""
 "WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the "
 "License for the specific language governing permissions and limitations "
 "under the License."
-msgstr "Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml33(para)
 msgid ""
@@ -105,11 +104,11 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml79(glossterm)
 #: ./doc/glossary/glossary-terms.xml198(see)
 msgid "access control list"
-msgstr "アクセス制御リスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml81(primary)
 msgid "access control list (ACL)"
-msgstr "アクセス制御リスト (ACL)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml85(para)
 msgid ""
@@ -118,20 +117,20 @@ msgid ""
 "can be performed on specified objects. Each entry in a typical ACL specifies"
 " a subject and an operation. For instance, the ACL entry <code>(Alice, "
 "delete)</code> for a file gives Alice permission to delete the file."
-msgstr "オブジェクトに対する権限の一覧。オブジェクトに対して、アクセスできるユーザーやシステムプロセスを特定する。また、特定のオブジェクトに対してどのような操作が行えるかを定義する。アクセス制御リスト（ACL）の一般的な項目では対象項目と操作を指定する。例えば、1つのファイルに対して<code>(Alice, delete)</code>というACL項目が定義されると、Aliceにファイルを削除する権限が与えられる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml95(glossterm)
 #: ./doc/glossary/glossary-terms.xml97(primary)
 msgid "access key"
-msgstr "アクセスキー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml101(para)
 msgid "Alternative term for an Amazon EC2 access key. See EC2 access key."
-msgstr "Amazon EC2 アクセスキーの別名。EC2 アクセスキー参照。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml107(glossterm)
 msgid "account"
-msgstr "アカウント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml109(primary)
 msgid "accounts"
@@ -147,7 +146,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml120(glossterm)
 #: ./doc/glossary/glossary-terms.xml122(primary)
 msgid "account auditor"
-msgstr "account auditor"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml126(para)
 msgid ""
@@ -159,7 +158,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml133(glossterm)
 #: ./doc/glossary/glossary-terms.xml135(primary)
 msgid "account database"
-msgstr "アカウントデータベース"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml139(para)
 msgid ""
@@ -170,7 +169,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml145(glossterm)
 #: ./doc/glossary/glossary-terms.xml147(primary)
 msgid "account reaper"
-msgstr "account reaper"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml151(para)
 msgid ""
@@ -181,7 +180,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml157(glossterm)
 #: ./doc/glossary/glossary-terms.xml159(primary)
 msgid "account server"
-msgstr "account server"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml163(para)
 msgid ""
@@ -192,7 +191,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml169(glossterm)
 #: ./doc/glossary/glossary-terms.xml171(primary)
 msgid "account service"
-msgstr "account service"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml175(para)
 msgid ""
@@ -204,7 +203,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml182(glossterm)
 #: ./doc/glossary/glossary-terms.xml184(primary)
 msgid "accounting"
-msgstr "アカウンティング"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml188(para)
 msgid ""
@@ -219,7 +218,7 @@ msgstr "ACL"
 
 #: ./doc/glossary/glossary-terms.xml202(para)
 msgid "See access control list."
-msgstr "「アクセス制御リスト」参照。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml207(glossterm)
 #: ./doc/glossary/glossary-terms.xml209(primary)
@@ -259,19 +258,19 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml245(glossterm)
 #: ./doc/glossary/glossary-terms.xml247(primary)
 msgid "address pool"
-msgstr "アドレスプール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml251(para)
 msgid ""
 "A group of fixed and/or floating IP addresses that are assigned to a project"
 " and can be used by or assigned to the VM instances in a project."
-msgstr "プロジェクトに割り当てられ、プロジェクトの仮想マシンインスタンスに使用できる、固定 IP アドレスと Floating IP アドレスのグループ。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml258(glossterm)
 #: ./doc/glossary/glossary-terms.xml260(primary)
 #: ./doc/glossary/glossary-terms.xml4871(see)
 msgid "admin API"
-msgstr "管理 API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml264(para)
 msgid ""
@@ -284,39 +283,39 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml272(glossterm)
 #: ./doc/glossary/glossary-terms.xml274(primary)
 msgid "admin server"
-msgstr "管理サーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml278(para)
 msgid ""
 "In the context of the Identity Service, the worker process that provides "
 "access to the admin API."
-msgstr "Identity Service の領域で、管理 API へのアクセスを提供するワーカープロセス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml284(glossterm)
 #: ./doc/glossary/glossary-terms.xml287(primary)
 msgid "Advanced Message Queuing Protocol (AMQP)"
-msgstr "Advanced Message Queuing Protocol (AMQP)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml291(para)
 msgid ""
 "The open standard messaging protocol used by OpenStack components for intra-"
 "service communications, provided by RabbitMQ, Qpid, or ZeroMQ."
-msgstr "インフラサービス通信のために OpenStack コンポーネントにより使用されるオープンな標準メッセージングプロトコル。RabbitMQ、Qpid、ZeroMQ により提供される。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml298(glossterm)
 #: ./doc/glossary/glossary-terms.xml300(primary)
 msgid "Advanced RISC Machine (ARM)"
-msgstr "Advanced RISC Machine (ARM)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml304(para)
 msgid ""
 "Lower power consumption CPU often found in mobile and embedded devices. "
 "Supported by OpenStack."
-msgstr "モバイル機器や組み込みデバイスによく利用される低消費電力 CPU。OpenStack はサポートしている。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml310(glossterm)
 msgid "alert"
-msgstr "アラート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml312(primary)
 msgid "alerts"
@@ -367,7 +366,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml326(glossterm)
 msgid "allocate"
-msgstr "確保"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml328(primary)
 msgid "allocate, definition of"
@@ -382,7 +381,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml339(glossterm)
 #: ./doc/glossary/glossary-terms.xml341(primary)
 msgid "Amazon Kernel Image (AKI)"
-msgstr "Amazon Kernel Image (AKI)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml345(para)
 #: ./doc/glossary/glossary-terms.xml357(para)
@@ -394,17 +393,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml351(glossterm)
 #: ./doc/glossary/glossary-terms.xml353(primary)
 msgid "Amazon Machine Image (AMI)"
-msgstr "Amazon Machine Image (AMI)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml363(glossterm)
 #: ./doc/glossary/glossary-terms.xml365(primary)
 msgid "Amazon Ramdisk Image (ARI)"
-msgstr "Amazon Ramdisk Image (ARI)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml375(glossterm)
 #: ./doc/glossary/glossary-terms.xml377(primary)
 msgid "Anvil"
-msgstr "Anvil"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml381(para)
 msgid ""
@@ -415,7 +414,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml387(glossterm)
 #: ./doc/glossary/glossary-terms.xml389(primary)
 msgid "Apache"
-msgstr "Apache"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml393(para)
 msgid ""
@@ -427,13 +426,13 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml400(glossterm)
 #: ./doc/glossary/glossary-terms.xml402(primary)
 msgid "Apache License 2.0"
-msgstr "Apache License 2.0"
+msgstr "Apache Lizenz 2.0"
 
 #: ./doc/glossary/glossary-terms.xml406(para)
 msgid ""
 "All OpenStack core projects are provided under the terms of the Apache "
 "License 2.0 license."
-msgstr "すべての OpenStack コアプロジェクトは Apache License 2.0 ライセンスの条件で提供されている。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml412(glossterm)
 #: ./doc/glossary/glossary-terms.xml414(primary)
@@ -442,7 +441,7 @@ msgstr "Apache Web Server"
 
 #: ./doc/glossary/glossary-terms.xml418(para)
 msgid "The most common web server software currently used on the Internet."
-msgstr "現在インターネットにおいて使用されている最も一般的な Web サーバーソフトウェア。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml424(glossterm)
 msgid "API"
@@ -450,13 +449,13 @@ msgstr "API"
 
 #: ./doc/glossary/glossary-terms.xml427(para)
 msgid "Application programming interface."
-msgstr "アプリケーションプログラミングインターフェース。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml432(glossterm)
 #: ./doc/glossary/glossary-terms.xml436(secondary)
 #: ./doc/glossary/glossary-terms.xml441(secondary)
 msgid "API endpoint"
-msgstr "API エンドポイント"
+msgstr "API Endpunkt"
 
 #: ./doc/glossary/glossary-terms.xml434(primary)
 #: ./doc/glossary/glossary-terms.xml2857(primary)
@@ -483,90 +482,90 @@ msgid ""
 "API. API endpoints can provide any number of services, such as "
 "authentication, sales data, performance metrics, Compute VM commands, census"
 " data, and so on."
-msgstr "クライアントが API にアクセスするために通信するデーモン、ワーカーまたはサービス。API エンドポイントは、認証、売上データ、パフォーマンス統計、Compute 仮想マシンコマンド、センサスデータなどのような数多くのサービスを提供できます。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml453(glossterm)
 #: ./doc/glossary/glossary-terms.xml457(secondary)
 msgid "API extension"
-msgstr "API 拡張"
+msgstr "API Erweiterung"
 
 #: ./doc/glossary/glossary-terms.xml461(para)
 msgid "Custom modules that extend some OpenStack core APIs."
-msgstr "いくつかの OpenStack コア API を拡張するカスタムモジュール。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml466(glossterm)
 #: ./doc/glossary/glossary-terms.xml470(secondary)
 msgid "API extension plug-in"
-msgstr "API 拡張プラグイン"
+msgstr "API Erweiterung Plug-In"
 
 #: ./doc/glossary/glossary-terms.xml474(para)
 msgid "Alternative term for a Networking plug-in or Networking API extension."
-msgstr "Networking プラグインや Networking API 拡張の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml480(glossterm)
 #: ./doc/glossary/glossary-terms.xml484(secondary)
 msgid "API key"
-msgstr "API キー"
+msgstr "API Schlüssel"
 
 #: ./doc/glossary/glossary-terms.xml488(para)
 msgid "Alternative term for an API token."
-msgstr "API トークンの別名。"
+msgstr "Alternativer Ausdruck für einen API Token."
 
 #: ./doc/glossary/glossary-terms.xml493(glossterm)
 #: ./doc/glossary/glossary-terms.xml497(secondary)
 msgid "API server"
-msgstr "API サーバー"
+msgstr "API Server"
 
 #: ./doc/glossary/glossary-terms.xml501(para)
 msgid "Any node running a daemon or worker that provides an API endpoint."
-msgstr "API エンドポイントを提供するデーモンまたはワーカーを実行するあらゆるノード。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml507(glossterm)
 #: ./doc/glossary/glossary-terms.xml511(secondary)
 msgid "API token"
-msgstr "API トークン"
+msgstr "API Token"
 
 #: ./doc/glossary/glossary-terms.xml515(para)
 msgid ""
 "Passed to API requests and used by OpenStack to verify that the client is "
 "authorized to run the requested operation."
-msgstr "クライアントが要求した操作を実行する権限を持つことを検証するために、API リクエストに渡され、OpenStack により使用される。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml521(glossterm)
 #: ./doc/glossary/glossary-terms.xml525(secondary)
 msgid "API version"
-msgstr "API バージョン"
+msgstr "API Version"
 
 #: ./doc/glossary/glossary-terms.xml529(para)
 msgid ""
 "In OpenStack, the API version for a project is part of the URL. For example,"
 " <filename>example.com/nova/v1/foobar</filename>."
-msgstr "OpenStack では、プロジェクトの API バージョンが URL の一部となる。例: <filename>example.com/nova/v1/foobar</filename>。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml535(glossterm)
 #: ./doc/glossary/glossary-terms.xml537(primary)
 msgid "applet"
-msgstr "アプレット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml541(para)
 msgid "A Java program that can be embedded into a web page."
-msgstr "Web ページの中に組み込める Java プログラム。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml546(glossterm)
 msgid "Application Programming Interface (API)"
-msgstr "Application Programming Interface (API)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml549(para)
 msgid ""
 "A collection of specifications used to access a service, application, or "
 "program. Includes service calls, required parameters for each call, and the "
 "expected return values."
-msgstr "サービス、アプリケーション、プログラムへのアクセスに使用される仕様の集合。サービス呼出、各呼出に必要なパラメーター、想定される戻り値を含む。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml556(glossterm)
 #: ./doc/glossary/glossary-terms.xml563(primary)
 msgid "application server"
-msgstr "アプリケーションサーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml558(primary)
 #: ./doc/glossary/glossary-terms.xml6296(primary)
@@ -585,12 +584,12 @@ msgstr ""
 msgid ""
 "A piece of software that makes available another piece of software over a "
 "network."
-msgstr "他のソフトウェア部品をネットワーク経由で利用可能にするソフトウェア部品。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml573(glossterm)
 #: ./doc/glossary/glossary-terms.xml575(primary)
 msgid "Application Service Provider (ASP)"
-msgstr "Application Service Provider (ASP)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml579(para)
 msgid ""
@@ -612,7 +611,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml602(glossterm)
 #: ./doc/glossary/glossary-terms.xml604(primary)
 msgid "arptables"
-msgstr "arptables"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml608(para)
 msgid ""
@@ -623,7 +622,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml616(glossterm)
 msgid "associate"
-msgstr "割り当て"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml618(primary)
 msgid "associate, definition of"
@@ -633,31 +632,31 @@ msgstr ""
 msgid ""
 "The process associating a Compute floating IP address with a fixed IP "
 "address."
-msgstr "Compute の Floating IP アドレスと固定 IP アドレスを関連づけるプロセス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml628(glossterm)
 #: ./doc/glossary/glossary-terms.xml631(primary)
 msgid "Asynchronous JavaScript and XML (AJAX)"
-msgstr "Asynchronous JavaScript and XML (AJAX)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml635(para)
 msgid ""
 "A group of interrelated web development techniques used on the client-side "
 "to create asynchronous web applications. Used extensively in horizon."
-msgstr "非同期 Web アプリケーションを作成する為にクライアント側で使用される相互関係のある Web 開発技術の集合。Horizon で広く使用されている。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml642(glossterm)
 #: ./doc/glossary/glossary-terms.xml644(primary)
 msgid "ATA over Ethernet (AoE)"
-msgstr "ATA over Ethernet (AoE)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml648(para)
 msgid "A disk storage protocol tunneled within Ethernet."
-msgstr "Ethernet 内をトンネルされるディスクストレージプロトコル。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml653(glossterm)
 msgid "attach"
-msgstr "接続"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml655(primary)
 msgid "attach, definition of"
@@ -673,13 +672,13 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml666(glossterm)
 #: ./doc/glossary/glossary-terms.xml668(primary)
 msgid "attachment (network)"
-msgstr "アタッチ（ネットワーク）"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml672(para)
 msgid ""
 "Association of an interface ID to a logical port. Plugs an interface into a "
 "port."
-msgstr "論理ポートへのインターフェースIDの紐付け。インターフェースをポートに差し込む。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml678(glossterm)
 #: ./doc/glossary/glossary-terms.xml680(primary)
@@ -693,7 +692,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml690(glossterm)
 #: ./doc/glossary/glossary-terms.xml692(primary)
 msgid "auditor"
-msgstr "auditor"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml696(para)
 msgid ""
@@ -705,7 +704,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml704(glossterm)
 #: ./doc/glossary/glossary-terms.xml706(primary)
 msgid "Austin"
-msgstr "Austin"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml710(para)
 msgid ""
@@ -725,18 +724,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml729(glossterm)
 #: ./doc/glossary/glossary-terms.xml731(primary)
 msgid "authentication"
-msgstr "認証"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml735(para)
 msgid ""
 "The process that confirms that the user, process, or client is really who "
 "they say they are through private key, secret token, password, fingerprint, "
 "or similar method."
-msgstr "ユーザー、プロセスまたはクライアントが、秘密鍵、秘密トークン、パスワード、指紋または同様の方式により示されている主体と本当に同じであることを確認するプロセス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml742(glossterm)
 msgid "authentication token"
-msgstr "認証トークン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml744(primary)
 msgid "authentication tokens"
@@ -746,32 +745,32 @@ msgstr ""
 msgid ""
 "A string of text provided to the client after authentication. Must be "
 "provided by the user or process in subsequent requests to the API endpoint."
-msgstr "認証後にクライアントに提供されるテキスト文字列。API エンドポイントに続くリクエストにおいて、ユーザーまたはプロセスにより提供される必要がある。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml755(glossterm)
 #: ./doc/glossary/glossary-terms.xml757(primary)
 msgid "AuthN"
-msgstr "AuthN"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml761(para)
 msgid "The Identity Service component that provides authentication services."
-msgstr "認証サービスを提供する Identity Service のコンポーネント。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml767(glossterm)
 #: ./doc/glossary/glossary-terms.xml769(primary)
 msgid "authorization"
-msgstr "認可"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml773(para)
 msgid ""
 "The act of verifying that a user, process, or client is authorized to "
 "perform an action."
-msgstr "ユーザー、プロセス、クライアントが操作を実行する権限を持つかどうかを確認すること。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml779(glossterm)
 #: ./doc/glossary/glossary-terms.xml781(primary)
 msgid "authorization node"
-msgstr "認可ノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml785(para)
 msgid "An Object Storage node that provides authorization services."
@@ -780,18 +779,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml791(glossterm)
 #: ./doc/glossary/glossary-terms.xml793(primary)
 msgid "AuthZ"
-msgstr "AuthZ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml797(para)
 msgid ""
 "The Identity Service component that provides high-level authorization "
 "services."
-msgstr "高レベルの認可サービスを提供する Identity Service コンポーネント。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml803(glossterm)
 #: ./doc/glossary/glossary-terms.xml805(primary)
 msgid "Auto ACK"
-msgstr "自動 ACK"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml809(para)
 msgid ""
@@ -813,7 +812,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml827(glossterm)
 #: ./doc/glossary/glossary-terms.xml829(primary)
 msgid "availability zone"
-msgstr "アベイラビリティゾーン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml833(para)
 msgid ""
@@ -823,7 +822,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml840(glossterm)
 msgid "AWS"
-msgstr "AWS"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml842(primary)
 msgid "AWS (Amazon Web Services)"
@@ -831,7 +830,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml846(para)
 msgid "Amazon Web Services."
-msgstr "Amazon Web Services。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml854(title)
 msgid "B"
@@ -856,13 +855,13 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml872(glossterm)
 msgid "back-end catalog"
-msgstr "バックエンドカタログ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml876(secondary)
 #: ./doc/glossary/glossary-terms.xml1317(glossterm)
 #: ./doc/glossary/glossary-terms.xml1319(primary)
 msgid "catalog"
-msgstr "カタログ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml880(para)
 msgid ""
@@ -873,7 +872,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml888(glossterm)
 msgid "back-end store"
-msgstr "バックエンドストア"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml892(secondary)
 msgid "store"
@@ -891,7 +890,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml905(glossterm)
 #: ./doc/glossary/glossary-terms.xml907(primary)
 msgid "bandwidth"
-msgstr "帯域"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml913(para)
 msgid ""
@@ -902,7 +901,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml920(glossterm)
 msgid "bare"
-msgstr "bare"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml922(primary)
 msgid "bare, definition of"
@@ -917,11 +916,11 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml932(glossterm)
 #: ./doc/glossary/glossary-terms.xml934(primary)
 msgid "base image"
-msgstr "ベースイメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml938(para)
 msgid "An OpenStack-provided image."
-msgstr "OpenStack が提供するイメージ。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml943(glossterm)
 #: ./doc/glossary/glossary-terms.xml945(primary)
@@ -941,7 +940,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml959(glossterm)
 #: ./doc/glossary/glossary-terms.xml961(primary)
 msgid "Bexar"
-msgstr "Bexar"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml965(para)
 msgid ""
@@ -959,7 +958,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml975(glossterm)
 #: ./doc/glossary/glossary-terms.xml977(primary)
 msgid "binary"
-msgstr "バイナリ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml983(para)
 msgid ""
@@ -969,7 +968,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml989(glossterm)
 msgid "bit"
-msgstr "ビット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml991(primary)
 msgid "bits, definition of"
@@ -995,19 +994,19 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1013(glossterm)
 #: ./doc/glossary/glossary-terms.xml1015(primary)
 msgid "block device"
-msgstr "ブロックデバイス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1019(para)
 msgid ""
 "A device that moves data in the form of blocks. These device nodes interface"
 " the devices, such as hard disks, CD-ROM drives, flash drives, and other "
 "addressable regions of memory."
-msgstr "ブロック状態のデータを移動するデバイス。これらのデバイスノードにはハードディスク、CD-ROM ドライブ、フラッシュドライブ、その他のアドレス可能なメモリの範囲等がある。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1026(glossterm)
 #: ./doc/glossary/glossary-terms.xml1028(primary)
 msgid "block migration"
-msgstr "ブロックマイグレーション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1032(para)
 msgid ""
@@ -1019,7 +1018,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1040(glossterm)
 #: ./doc/glossary/glossary-terms.xml1042(primary)
 msgid "Block Storage"
-msgstr "ブロックストレージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1046(para)
 msgid ""
@@ -1036,11 +1035,11 @@ msgstr ""
 msgid ""
 "An API on a separate endpoint for attaching, detaching, and creating block "
 "storage for compute VMs."
-msgstr "コンピュート VM 用のブロックストレージの作成、接続、接続解除を行うための API で、独立したエンドポイントとして提供される。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1066(glossterm)
 msgid "BMC"
-msgstr "BMC"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1068(primary)
 msgid "BMC (Baseboard Management Controller)"
@@ -1057,23 +1056,23 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1081(glossterm)
 #: ./doc/glossary/glossary-terms.xml1083(primary)
 msgid "bootable disk image"
-msgstr "ブータブルディスクイメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1087(para)
 msgid "A type of VM image that exists as a single, bootable file."
-msgstr "単独の、ブート可能なファイルとして存在する仮想マシンイメージの形式。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1093(glossterm)
 #: ./doc/glossary/glossary-terms.xml1095(primary)
 msgid "Bootstrap Protocol (BOOTP)"
-msgstr "Bootstrap Protocol (BOOTP)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1099(para)
 msgid ""
 "A network protocol used by a network client to obtain an IP address from a "
 "configuration server. Provided in Compute through the dnsmasq daemon when "
 "using either the FlatDHCP manager or VLAN manager network manager."
-msgstr "管理サーバーから IP アドレスを取得するために、ネットワーククライアントにより使用されるネットワークプロトコル。FlatDHCP マネージャーや VLAN マネージャー使用時、dnsmasq デーモン経由で Compute で提供される。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1107(glossterm)
 #: ./doc/glossary/glossary-terms.xml1109(primary)
@@ -1089,7 +1088,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1121(glossterm)
 msgid "browser"
-msgstr "ブラウザー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1123(primary)
 msgid "browsers, definition of"
@@ -1103,7 +1102,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1133(glossterm)
 msgid "builder file"
-msgstr "ビルダーファイル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1135(primary)
 msgid "builder files"
@@ -1143,7 +1142,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1175(glossterm)
 msgid "byte"
-msgstr "バイト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1177(primary)
 msgid "bytes, definition of"
@@ -1161,11 +1160,11 @@ msgstr "C"
 
 #: ./doc/glossary/glossary-terms.xml1193(glossterm)
 msgid "CA"
-msgstr "CA"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1195(primary)
 msgid "CA (Certificate/Certification Authority)"
-msgstr "CA (認証局)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1199(para)
 msgid ""
@@ -1182,7 +1181,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1213(glossterm)
 msgid "cache pruner"
-msgstr "cache pruner"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1215(primary)
 msgid "cache pruners"
@@ -1197,7 +1196,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1225(glossterm)
 #: ./doc/glossary/glossary-terms.xml1227(primary)
 msgid "Cactus"
-msgstr "Cactus"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1231(para)
 msgid ""
@@ -1227,7 +1226,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1253(glossterm)
 #: ./doc/glossary/glossary-terms.xml1255(primary)
 msgid "CALL"
-msgstr "CALL"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1259(para)
 msgid ""
@@ -1238,18 +1237,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1265(glossterm)
 #: ./doc/glossary/glossary-terms.xml1267(primary)
 msgid "capability"
-msgstr "キャパシティ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1273(para)
 msgid ""
 "Defines resources for a cell, including CPU, storage, and networking. Can "
 "apply to the specific services within a cell or a whole cell."
-msgstr "CPU、ストレージ、ネットワークを含むセルのリソースを定義する。１セルやセル全体に含まれる特定のサービスに適用可能。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1280(glossterm)
 #: ./doc/glossary/glossary-terms.xml1282(primary)
 msgid "capacity cache"
-msgstr "capacity cache"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1286(para)
 msgid ""
@@ -1261,17 +1260,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1293(glossterm)
 #: ./doc/glossary/glossary-terms.xml1295(primary)
 msgid "capacity updater"
-msgstr "capacity updater"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1299(para)
 msgid ""
 "A notification driver that monitors VM instances and updates the capacity "
 "cache as needed."
-msgstr "VM インスタンスを監視し、必要に応じて容量キャッシュを更新する通知ドライバ。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1305(glossterm)
 msgid "CAST"
-msgstr "CAST"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1307(primary)
 msgid "CAST (RPC primitive)"
@@ -1292,7 +1291,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1329(glossterm)
 #: ./doc/glossary/glossary-terms.xml1331(primary)
 msgid "catalog service"
-msgstr "カタログサービス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1335(para)
 msgid ""
@@ -1313,7 +1312,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1354(glossterm)
 msgid "cell"
-msgstr "セル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1356(primary)
 #: ./doc/glossary/glossary-terms.xml1372(primary)
@@ -1333,7 +1332,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1370(glossterm)
 #: ./doc/glossary/glossary-terms.xml1374(secondary)
 msgid "cell forwarding"
-msgstr "セルフォワーディング"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1378(para)
 msgid ""
@@ -1343,7 +1342,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1385(glossterm)
 msgid "cell manager"
-msgstr "セルマネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1389(secondary)
 msgid "cell managers"
@@ -1358,7 +1357,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1400(glossterm)
 #: ./doc/glossary/glossary-terms.xml1402(primary)
 msgid "CentOS"
-msgstr "CentOS"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1406(para)
 #: ./doc/glossary/glossary-terms.xml2251(para)
@@ -1366,19 +1365,19 @@ msgstr "CentOS"
 #: ./doc/glossary/glossary-terms.xml6684(para)
 #: ./doc/glossary/glossary-terms.xml7714(para)
 msgid "A Linux distribution that is compatible with OpenStack."
-msgstr "OpenStack と互換性のある Linux ディストリビューション。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1411(glossterm)
 #: ./doc/glossary/glossary-terms.xml1413(primary)
 msgid "Ceph"
-msgstr "Ceph"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1417(para)
 msgid ""
 "Massively scalable distributed storage system that consists of an object "
 "store, block store, and POSIX-compatible distributed file system. Compatible"
 " with OpenStack."
-msgstr "オブジェクトストア、ブロックストア、および POSIX 互換分散ファイルシステムから構成される大規模スケール可能分散ストレージシステム。OpenStack 互換。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1424(glossterm)
 #: ./doc/glossary/glossary-terms.xml1426(primary)
@@ -1387,11 +1386,11 @@ msgstr "CephFS"
 
 #: ./doc/glossary/glossary-terms.xml1430(para)
 msgid "The POSIX-compliant file system provided by Ceph."
-msgstr "Ceph により提供される POSIX 互換ファイルシステム。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1435(glossterm)
 msgid "certificate authority"
-msgstr "認証局"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1437(primary)
 msgid "certificate authority (Compute)"
@@ -1406,7 +1405,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1447(glossterm)
 #: ./doc/glossary/glossary-terms.xml1450(primary)
 msgid "Challenge-Handshake Authentication Protocol (CHAP)"
-msgstr "Challenge-Handshake Authentication Protocol (CHAP)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1455(para)
 msgid "An iSCSI authentication method supported by Compute."
@@ -1415,7 +1414,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1460(glossterm)
 #: ./doc/glossary/glossary-terms.xml1462(primary)
 msgid "chance scheduler"
-msgstr "チャンススケジューラー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1466(para)
 msgid ""
@@ -1448,12 +1447,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1497(glossterm)
 msgid "child cell"
-msgstr "子セル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1501(secondary)
 #: ./doc/glossary/glossary-terms.xml1504(primary)
 msgid "child cells"
-msgstr "子セル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1508(para)
 msgid ""
@@ -1461,7 +1460,7 @@ msgid ""
 "available in the parent cell, the request is forwarded to its associated "
 "child cells. If the child cell can fulfill the request, it does. Otherwise, "
 "it attempts to pass the request to any of its children."
-msgstr "CPU 時間、ディスクストレージ、メモリ等の要求されたリソースが親セルで利用不可の場合、リクエストは親セルに紐付けられた子セルに転送される。子セルがリクエストに対応可能な場合、子セルはそのリクエストを処理する。対応不可の場合、そのリクエストを自分の子セルに渡そうとする。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1517(glossterm)
 #: ./doc/glossary/glossary-terms.xml1519(primary)
@@ -1470,45 +1469,45 @@ msgstr "cinder"
 
 #: ./doc/glossary/glossary-terms.xml1523(para)
 msgid "A core OpenStack project that provides block storage services for VMs."
-msgstr "ブロックストレージサービスを仮想マシンに提供する、OpenStack のコアプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1529(glossterm)
 #: ./doc/glossary/glossary-terms.xml1531(primary)
 msgid "CirrOS"
-msgstr "CirrOS"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1535(para)
 msgid ""
 "A minimal Linux distribution designed for use as a test image on clouds such"
 " as OpenStack."
-msgstr "OpenStack などのクラウドでテストイメージとして使用するために設計された最小の Linux ディストリビューション。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1541(glossterm)
 #: ./doc/glossary/glossary-terms.xml1543(primary)
 msgid "Cisco neutron plug-in"
-msgstr "Cisco neutron プラグイン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1547(para)
 msgid ""
 "A Networking plug-in for Cisco devices and technologies, including UCS and "
 "Nexus."
-msgstr "UCS や Nexus などの Cisco デバイスや技術の Networking プラグイン。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1553(glossterm)
 #: ./doc/glossary/glossary-terms.xml1555(primary)
 msgid "cloud architect"
-msgstr "クラウドアーキテクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1559(para)
 msgid "A person who plans, designs, and oversees the creation of clouds."
-msgstr "クラウドの作成を計画、設計および監督する人。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1565(glossterm)
 #: ./doc/glossary/glossary-terms.xml1567(primary)
 #: ./doc/glossary/glossary-terms.xml1583(primary)
 #: ./doc/glossary/glossary-terms.xml1599(primary)
 msgid "cloud computing"
-msgstr "クラウドコンピューティング"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1573(para)
 msgid ""
@@ -1520,7 +1519,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1581(glossterm)
 msgid "cloud controller"
-msgstr "クラウドコントローラー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1585(secondary)
 msgid "cloud controllers"
@@ -1535,7 +1534,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1597(glossterm)
 msgid "cloud controller node"
-msgstr "クラウドコントローラーノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1601(secondary)
 msgid "cloud controller nodes"
@@ -1551,7 +1550,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1612(glossterm)
 #: ./doc/glossary/glossary-terms.xml1615(primary)
 msgid "Cloud Data Management Interface (CDMI)"
-msgstr "クラウドデータ管理インターフェース (CDMI:Cloud Data Management Interface)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1619(para)
 msgid ""
@@ -1573,7 +1572,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1638(glossterm)
 #: ./doc/glossary/glossary-terms.xml1640(primary)
 msgid "cloud-init"
-msgstr "cloud-init"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1644(para)
 msgid ""
@@ -1585,7 +1584,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1652(glossterm)
 #: ./doc/glossary/glossary-terms.xml1654(primary)
 msgid "cloudadmin"
-msgstr "cloudadmin"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1658(para)
 msgid ""
@@ -1597,7 +1596,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1666(primary)
 #: ./doc/glossary/glossary-terms.xml1680(primary)
 msgid "cloudpipe"
-msgstr "cloudpipe"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1672(para)
 msgid "A compute service that creates VPNs on a per-project basis."
@@ -1606,17 +1605,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1678(glossterm)
 #: ./doc/glossary/glossary-terms.xml1682(secondary)
 msgid "cloudpipe image"
-msgstr "cloudpipe イメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1686(para)
 msgid ""
 "A pre-made VM image that serves as a cloudpipe server. Essentially, OpenVPN "
 "running on Linux."
-msgstr "cloudpipe サーバとしてサービスを行う為の、予め用意された VM イメージ。本質的には Linux 上で実行される OpenVPN。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1692(glossterm)
 msgid "CMDB"
-msgstr "CMDB"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1694(primary)
 msgid "CMDB (Configuration Management Database)"
@@ -1624,11 +1623,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1698(para)
 msgid "Configuration Management Database."
-msgstr "構成管理データベース。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1703(glossterm)
 msgid "command filter"
-msgstr "コマンドフィルタ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1705(primary)
 msgid "command filters"
@@ -1640,7 +1639,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1715(glossterm)
 msgid "community project"
-msgstr "コミュニティプロジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1717(primary)
 msgid "community projects"
@@ -1652,12 +1651,12 @@ msgid ""
 "the project is successful enough, it might be elevated to an incubated "
 "project and then to a core project, or it might be merged with the main code"
 " trunk."
-msgstr "OpenStack Foundation で公認されていないプロジェクト。プロジェクトが充分成功した場合、育成プロジェクトに昇格し、その後コアプロジェクトに昇格する事がある。あるいはメインの code trunk にマージされる事もある。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1729(glossterm)
 #: ./doc/glossary/glossary-terms.xml1731(primary)
 msgid "compression"
-msgstr "圧縮"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1735(para)
 msgid ""
@@ -1675,7 +1674,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1818(primary)
 #: ./doc/glossary/glossary-terms.xml1831(primary)
 msgid "Compute"
-msgstr "コンピュート"
+msgstr "Compute"
 
 #: ./doc/glossary/glossary-terms.xml1752(para)
 msgid ""
@@ -1699,7 +1698,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1773(glossterm)
 #: ./doc/glossary/glossary-terms.xml1777(secondary)
 msgid "compute controller"
-msgstr "コンピュートコントローラー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1781(para)
 msgid ""
@@ -1710,15 +1709,15 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1787(glossterm)
 #: ./doc/glossary/glossary-terms.xml1791(secondary)
 msgid "compute host"
-msgstr "コンピュートホスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1795(para)
 msgid "Physical host dedicated to running compute nodes."
-msgstr "コンピュートノード実行専用の物理ホスト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1800(glossterm)
 msgid "compute node"
-msgstr "コンピュートノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1802(primary)
 msgid "compute nodes"
@@ -1735,7 +1734,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1816(glossterm)
 #: ./doc/glossary/glossary-terms.xml1820(secondary)
 msgid "Compute service"
-msgstr "Compute Service"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1824(para)
 msgid "Name for the Compute component that manages VMs."
@@ -1744,7 +1743,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1829(glossterm)
 #: ./doc/glossary/glossary-terms.xml1833(secondary)
 msgid "compute worker"
-msgstr "コンピュートワーカー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1837(para)
 msgid ""
@@ -1756,7 +1755,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1845(glossterm)
 msgid "concatenated object"
-msgstr "連結オブジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1847(primary)
 #: ./doc/glossary/glossary-terms.xml4920(primary)
@@ -1801,7 +1800,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1876(glossterm)
 #: ./doc/glossary/glossary-terms.xml1878(primary)
 msgid "consistency window"
-msgstr "一貫性ウインドウ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1882(para)
 msgid ""
@@ -1811,7 +1810,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1888(glossterm)
 msgid "console log"
-msgstr "コンソールログ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1890(primary)
 msgid "console logs"
@@ -1823,7 +1822,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1899(glossterm)
 msgid "container"
-msgstr "コンテナ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1901(primary)
 #: ./doc/glossary/glossary-terms.xml1916(primary)
@@ -1843,7 +1842,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1914(glossterm)
 msgid "container auditor"
-msgstr "コンテナオーディタ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1918(secondary)
 msgid "container auditors"
@@ -1857,7 +1856,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1929(glossterm)
 msgid "container database"
-msgstr "コンテナデータベース"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1933(secondary)
 msgid "container databases"
@@ -1872,7 +1871,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1944(glossterm)
 #: ./doc/glossary/glossary-terms.xml1948(secondary)
 msgid "container format"
-msgstr "コンテナフォーマット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1952(para)
 msgid ""
@@ -1882,7 +1881,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1959(glossterm)
 msgid "container server"
-msgstr "コンテナサーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1963(secondary)
 msgid "container servers"
@@ -1895,7 +1894,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml1972(glossterm)
 #: ./doc/glossary/glossary-terms.xml1976(secondary)
 msgid "container service"
-msgstr "コンテナサービス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml1980(para)
 msgid ""
@@ -1917,7 +1916,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2002(glossterm)
 msgid "controller node"
-msgstr "コントローラーノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2004(primary)
 msgid "controller nodes"
@@ -1929,12 +1928,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2010(para)
 msgid "Alternative term for a cloud controller node."
-msgstr "クラウドコントローラーノードの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2015(glossterm)
 #: ./doc/glossary/glossary-terms.xml2017(primary)
 msgid "core API"
-msgstr "コアAPI"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2021(para)
 msgid ""
@@ -1946,7 +1945,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2028(glossterm)
 #: ./doc/glossary/glossary-terms.xml2030(primary)
 msgid "core project"
-msgstr "コアプロジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2034(para)
 msgid ""
@@ -1956,12 +1955,12 @@ msgid ""
 "module (ceilometer) and Orchestration module (heat) are integrated projects "
 "as of the Havana release. In the Icehouse release, the Database module "
 "(trove) gains integrated project status."
-msgstr "OpenStack の公式プロジェクト。現在、 Compute (nova)、Object Storage (swift)、Image Service (glance)、Identity (keystone)、Dashboard (horizon)、Networking (neutron)、Block Storage (cinder) がある。Telemetry モジュール (ceilometer) と Orchestration モジュール (heat) が Havana リリースの一部として統合されています。Icehouse リリースでは、Database モジュール (trove) が統合されます。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2045(glossterm)
 #: ./doc/glossary/glossary-terms.xml2047(primary)
 msgid "cost"
-msgstr "コスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2051(para)
 msgid ""
@@ -1973,7 +1972,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2058(glossterm)
 #: ./doc/glossary/glossary-terms.xml2060(primary)
 msgid "credentials"
-msgstr "クレデンシャル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2064(para)
 msgid ""
@@ -1992,12 +1991,12 @@ msgstr "Crowbar"
 msgid ""
 "An open source community project by Dell that aims to provide all necessary "
 "services to quickly deploy clouds."
-msgstr "クラウドの迅速なデプロイ用に全ての必要なサービスを提供する用途の、Dell によるオープンソースコミュニティプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2084(glossterm)
 #: ./doc/glossary/glossary-terms.xml2086(primary)
 msgid "current workload"
-msgstr "カレントワークロード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2090(para)
 msgid ""
@@ -2008,7 +2007,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2097(glossterm)
 msgid "customer"
-msgstr "カスタマー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2099(primary)
 msgid "customers"
@@ -2020,18 +2019,18 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2105(para)
 msgid "Alternative term for tenant."
-msgstr "テナントの別名。"
+msgstr "Alternativer Ausdruck für Mandant."
 
 #: ./doc/glossary/glossary-terms.xml2110(glossterm)
 #: ./doc/glossary/glossary-terms.xml2112(primary)
 msgid "customization module"
-msgstr "カスタムモジュール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2116(para)
 msgid ""
 "A user-created Python module that is loaded by horizon to change the look "
 "and feel of the dashboard."
-msgstr "ダッシュボードのルックアンドフィールを変更する為に Horizon がロードする、ユーザが作成した Python モジュール。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2125(title)
 msgid "D"
@@ -2039,7 +2038,7 @@ msgstr "D"
 
 #: ./doc/glossary/glossary-terms.xml2128(glossterm)
 msgid "daemon"
-msgstr "デーモン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2130(primary)
 msgid "daemons"
@@ -2049,11 +2048,11 @@ msgstr ""
 msgid ""
 "A process that runs in the background and waits for requests. May or may not"
 " listen on a TCP or UDP port. Do not confuse with a worker."
-msgstr "バックグラウンドで動作し、リクエストを待機するプロセス。TCP ポートや UDP ポートをリッスンする可能性がある。ワーカーとは異なる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2143(glossterm)
 msgid "DAC"
-msgstr "DAC"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2145(primary)
 msgid "DAC (discretionary access control)"
@@ -2070,18 +2069,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2158(glossterm)
 #: ./doc/glossary/glossary-terms.xml2160(primary)
 msgid "dashboard"
-msgstr "ダッシュボード"
+msgstr "Dashboard"
 
 #: ./doc/glossary/glossary-terms.xml2164(para)
 msgid ""
 "The web-based management interface for OpenStack. An alternative name for "
 "horizon."
-msgstr "OpenStack 用 Web ベース管理インターフェース。Horizon の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2170(glossterm)
 #: ./doc/glossary/glossary-terms.xml2174(secondary)
 msgid "data encryption"
-msgstr "データ暗号化"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2172(primary)
 msgid "data"
@@ -2099,7 +2098,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2188(glossterm)
 #: ./doc/glossary/glossary-terms.xml2192(secondary)
 msgid "database ID"
-msgstr "データベース ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2190(primary)
 #: ./doc/glossary/glossary-terms.xml2204(primary)
@@ -2108,11 +2107,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2196(para)
 msgid "A unique ID given to each replica of an Object Storage database."
-msgstr "Object Storage データベースの各レプリカに与えられる一意な ID。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2202(glossterm)
 msgid "database replicator"
-msgstr "データベースレプリケータ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2206(secondary)
 msgid "database replicators"
@@ -2127,14 +2126,14 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2216(glossterm)
 #: ./doc/glossary/glossary-terms.xml2218(primary)
 msgid "Database Service"
-msgstr "Database"
+msgstr "Datenbank"
 
 #: ./doc/glossary/glossary-terms.xml2222(para)
 msgid ""
 "An integrated project that provide scalable and reliable Cloud Database-"
 "as-a-Service functionality for both relational and non-relational database "
 "engines. The project name of Database Service is trove."
-msgstr "リレーショナルデータベースと非リレーショナルデータベースの両エンジンに対して、スケール可能かつ信頼できるクラウド Database-as-a-Service を提供する統合プロジェクト。この Database の名前は trove。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2232(glossterm)
 msgid "deallocate"
@@ -2159,7 +2158,7 @@ msgstr "Debian"
 #: ./doc/glossary/glossary-terms.xml2256(glossterm)
 #: ./doc/glossary/glossary-terms.xml2258(primary)
 msgid "deduplication"
-msgstr "重複排除"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2262(para)
 msgid ""
@@ -2169,7 +2168,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2269(glossterm)
 msgid "default panel"
-msgstr "デフォルトパネル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2271(primary)
 msgid "default panels"
@@ -2183,7 +2182,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2281(glossterm)
 msgid "default tenant"
-msgstr "デフォルトテナント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2283(primary)
 msgid "default tenants"
@@ -2197,7 +2196,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2293(glossterm)
 msgid "default token"
-msgstr "デフォルトトークン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2295(primary)
 msgid "default tokens"
@@ -2212,7 +2211,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2305(glossterm)
 #: ./doc/glossary/glossary-terms.xml2307(primary)
 msgid "delayed delete"
-msgstr "遅延削除"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2311(para)
 msgid ""
@@ -2223,7 +2222,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2317(glossterm)
 #: ./doc/glossary/glossary-terms.xml2319(primary)
 msgid "delivery mode"
-msgstr "デリバリモード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2323(para)
 msgid ""
@@ -2269,7 +2268,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2372(glossterm)
 #: ./doc/glossary/glossary-terms.xml2374(primary)
 msgid "developer"
-msgstr "developer"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2378(para)
 msgid ""
@@ -2280,16 +2279,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2384(glossterm)
 #: ./doc/glossary/glossary-terms.xml2386(primary)
 msgid "device ID"
-msgstr "デバイス ID"
+msgstr "Geräte ID"
 
 #: ./doc/glossary/glossary-terms.xml2390(para)
 msgid "Maps Object Storage partitions to physical storage devices."
-msgstr "Object Storage パーティションの物理ストレージデバイスへの対応付け"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2396(glossterm)
 #: ./doc/glossary/glossary-terms.xml2398(primary)
 msgid "device weight"
-msgstr "デバイスウェイト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2402(para)
 msgid ""
@@ -2310,7 +2309,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2422(glossterm)
 msgid "DHCP"
-msgstr "DHCP"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2424(primary)
 msgid "DHCP (Dynamic Host Configuration Protocol)"
@@ -2323,7 +2322,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5814(secondary)
 #: ./doc/glossary/glossary-terms.xml6649(secondary)
 msgid "basics of"
-msgstr "basics of"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2430(para)
 msgid ""
@@ -2338,7 +2337,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2440(glossterm)
 #: ./doc/glossary/glossary-terms.xml2442(primary)
 msgid "DHCP agent"
-msgstr "DHCP エージェント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2446(para)
 msgid ""
@@ -2420,18 +2419,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2521(glossterm)
 #: ./doc/glossary/glossary-terms.xml2523(primary)
 msgid "disk encryption"
-msgstr "ディスク暗号化"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2527(para)
 msgid ""
 "The ability to encrypt data at the file system, disk partition, or whole-"
 "disk level. Supported within Compute VMs."
-msgstr "ファイルシステム、ディスクパーティション、ディスク全体を暗号化する機能。Compute の仮想マシン内でサポートされる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2533(glossterm)
 #: ./doc/glossary/glossary-terms.xml2535(primary)
 msgid "disk format"
-msgstr "ディスクフォーマット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2539(para)
 msgid ""
@@ -2442,7 +2441,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2546(glossterm)
 #: ./doc/glossary/glossary-terms.xml2548(primary)
 msgid "dispersion"
-msgstr "dispersion"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2552(para)
 msgid ""
@@ -2453,7 +2452,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2558(glossterm)
 #: ./doc/glossary/glossary-terms.xml2560(primary)
 msgid "Django"
-msgstr "Django"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2564(para)
 msgid ""
@@ -2463,7 +2462,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2570(glossterm)
 msgid "DNS"
-msgstr "DNS"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2572(primary)
 #: ./doc/glossary/glossary-terms.xml2588(primary)
@@ -2479,11 +2478,11 @@ msgid ""
 "Domain Name Server. A hierarchical and distributed naming system for "
 "computers, services, and resources connected to the Internet or a private "
 "network. Associates a human-friendly names to IP addresses."
-msgstr "ドメインネームサーバー。インターネットやプライベートネットワークに接続されるコンピューター、サービス、リソースの名前を管理する階層化分散システム。人間が理解しやすい名前を IP アドレスに関連づけます。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2586(glossterm)
 msgid "DNS record"
-msgstr "DNS レコード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2590(secondary)
 msgid "DNS records"
@@ -2493,7 +2492,7 @@ msgstr ""
 msgid ""
 "A record that specifies information about a particular domain and belongs to"
 " the domain."
-msgstr "特定のドメインに関する情報を指定し、ドメインに所属するレコード。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2600(glossterm)
 #: ./doc/glossary/glossary-terms.xml2602(primary)
@@ -2508,7 +2507,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2612(glossterm)
 msgid "domain"
-msgstr "ドメイン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2614(primary)
 msgid "domain, definition of"
@@ -2566,7 +2565,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2658(glossterm)
 msgid "download"
-msgstr "ダウンロード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2660(primary)
 msgid "download, definition of"
@@ -2576,15 +2575,15 @@ msgstr ""
 msgid ""
 "The transfer of data, usually in the form of files, from one computer to "
 "another."
-msgstr "あるコンピューターから他のコンピューターへのデータの転送。通常はファイルの形式。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2670(glossterm)
 msgid "DRTM"
-msgstr "DRTM"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2672(primary)
 msgid "DRTM (dynamic root of trust measurement)"
-msgstr "DRTM (dynamic root of trust measurement)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2676(para)
 msgid "Dynamic root of trust measurement."
@@ -2614,7 +2613,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2705(glossterm)
 msgid "Dynamic Host Configuration Protocol (DHCP)"
-msgstr "動的ホスト設定プロトコル（DHCP）"
+msgstr "Dynamic Host Configuration Protocol (DHCP)"
 
 #: ./doc/glossary/glossary-terms.xml2708(para)
 msgid ""
@@ -2624,7 +2623,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2714(glossterm)
 msgid "Dynamic HyperText Markup Language (DHTML)"
-msgstr "Dynamic HyperText Markup Language (DHTML)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2717(primary)
 msgid "DHTML (Dynamic HyperText Markup Language)"
@@ -2643,20 +2642,20 @@ msgstr "E"
 #: ./doc/glossary/glossary-terms.xml2734(glossterm)
 #: ./doc/glossary/glossary-terms.xml2736(primary)
 msgid "EBS boot volume"
-msgstr "EBS ブートボリューム"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2740(para)
 msgid ""
 "An Amazon EBS storage volume that contains a bootable VM image, currently "
 "unsupported in OpenStack."
-msgstr "ブート可能な仮想マシンイメージを含む Amazon EBS ストレージボリューム。現在 OpenStack では未サポート。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2746(glossterm)
 #: ./doc/glossary/glossary-terms.xml2748(primary)
 #: ./doc/glossary/glossary-terms.xml2976(glossterm)
 #: ./doc/glossary/glossary-terms.xml2978(primary)
 msgid "ebtables"
-msgstr "ebtables"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2752(para)
 msgid ""
@@ -2679,7 +2678,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2768(glossterm)
 #: ./doc/glossary/glossary-terms.xml2772(secondary)
 msgid "EC2 access key"
-msgstr "EC2 アクセスキー"
+msgstr "EC2 Zugriffsschlüssel"
 
 #: ./doc/glossary/glossary-terms.xml2776(para)
 msgid "Used along with an EC2 secret key to access the Compute EC2 API."
@@ -2696,11 +2695,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2796(glossterm)
 msgid "EC2 Compatibility API"
-msgstr "EC2 互換API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2800(secondary)
 msgid "EC2 compatibility API"
-msgstr "EC2 互換 API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2804(para)
 msgid ""
@@ -2710,7 +2709,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2810(glossterm)
 #: ./doc/glossary/glossary-terms.xml2814(secondary)
 msgid "EC2 secret key"
-msgstr "EC2 シークレットキー"
+msgstr "EC2 Geheimschlüssel"
 
 #: ./doc/glossary/glossary-terms.xml2818(para)
 msgid ""
@@ -2725,11 +2724,11 @@ msgstr "Elastic Block Storage (EBS)"
 
 #: ./doc/glossary/glossary-terms.xml2830(para)
 msgid "The Amazon commercial block storage product."
-msgstr "Amazon のブロックストレージの商用製品。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2835(glossterm)
 msgid "encryption"
-msgstr "暗号化"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2837(primary)
 msgid "encryption, definition of"
@@ -2739,24 +2738,24 @@ msgstr ""
 msgid ""
 "OpenStack supports encryption technologies such as HTTPS, SSH, SSL, TLS, "
 "digital certificates, and data encryption."
-msgstr "OpenStack は、HTTPS、SSH、SSL、TLS、電子証明書、データ暗号化などの暗号化技術をサポートします。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2847(glossterm)
 msgid "endpoint"
-msgstr "エンドポイント"
+msgstr "Endpunkt"
 
 #: ./doc/glossary/glossary-terms.xml2850(para)
 msgid "See API endpoint."
-msgstr "API エンドポイントを参照。"
+msgstr "Siehe API Endpunkt."
 
 #: ./doc/glossary/glossary-terms.xml2855(glossterm)
 #: ./doc/glossary/glossary-terms.xml2859(secondary)
 msgid "endpoint registry"
-msgstr "エンドポイントレジストリ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2863(para)
 msgid "Alternative term for an Identity Service catalog."
-msgstr "Identity サービスカタログの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2868(glossterm)
 #: ./doc/glossary/glossary-terms.xml2870(primary)
@@ -2771,7 +2770,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2883(glossterm)
 msgid "endpoint template"
-msgstr "エンドポイントテンプレート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2887(secondary)
 msgid "endpoint templates"
@@ -2785,7 +2784,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2898(glossterm)
 msgid "entity"
-msgstr "エンティティ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2900(primary)
 msgid "entity, definition of"
@@ -2800,11 +2799,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2912(glossterm)
 msgid "ephemeral image"
-msgstr "一時イメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2914(primary)
 msgid "ephemeral images"
-msgstr "一時イメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2918(para)
 msgid ""
@@ -2816,7 +2815,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2927(primary)
 #: ./doc/glossary/glossary-terms.xml5527(see)
 msgid "ephemeral volume"
-msgstr "一時ボリューム"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2931(para)
 msgid ""
@@ -2827,7 +2826,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2937(glossterm)
 #: ./doc/glossary/glossary-terms.xml2939(primary)
 msgid "Essex"
-msgstr "Essex"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2943(para)
 msgid ""
@@ -2835,7 +2834,7 @@ msgid ""
 "2012, the fifth release of OpenStack. It included Compute (nova 2012.1), "
 "Object Storage (swift 1.4.8), Image (glance), Identity (keystone), and "
 "Dashboard (horizon)."
-msgstr "2012年４月に登場した OpenStack 関連プロジェクトのリリース。Compute (nova 2012.1), Object Storage (swift 1.4.8), Image (glance), Identity (keystone), Dashboard (horizon) が含まれる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2947(para)
 msgid ""
@@ -2845,11 +2844,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2954(glossterm)
 msgid "ESX"
-msgstr "ESX"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2956(primary)
 msgid "ESX hypervisor"
-msgstr "ESX ハイパーバイザー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2960(para)
 #: ./doc/glossary/glossary-terms.xml2971(para)
@@ -2860,15 +2859,15 @@ msgstr "ESX ハイパーバイザー"
 #: ./doc/glossary/glossary-terms.xml8757(para)
 #: ./doc/glossary/glossary-terms.xml8784(para)
 msgid "An OpenStack-supported hypervisor."
-msgstr "OpenStack がサポートするハイパーバイザーの１つ。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2965(glossterm)
 msgid "ESXi"
-msgstr "ESXi"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2967(primary)
 msgid "ESXi hypervisor"
-msgstr "ESXi ハイパーバイザー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2982(para)
 msgid ""
@@ -2881,7 +2880,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml2990(glossterm)
 #: ./doc/glossary/glossary-terms.xml2992(primary)
 msgid "ETag"
-msgstr "ETag"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml2996(para)
 msgid ""
@@ -2891,7 +2890,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3002(glossterm)
 #: ./doc/glossary/glossary-terms.xml3004(primary)
 msgid "euca2ools"
-msgstr "euca2ools"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3008(para)
 msgid ""
@@ -2906,7 +2905,7 @@ msgstr "Eucalyptus Kernel Image (EKI)"
 
 #: ./doc/glossary/glossary-terms.xml3020(para)
 msgid "Used along with an ERI to create an EMI."
-msgstr "EMI を作成するために、ERI と一緒に使用する。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3025(glossterm)
 #: ./doc/glossary/glossary-terms.xml3027(primary)
@@ -2924,11 +2923,11 @@ msgstr "Eucalyptus Ramdisk Image (ERI)"
 
 #: ./doc/glossary/glossary-terms.xml3042(para)
 msgid "Used along with an EKI to create an EMI."
-msgstr "EMI を作成するために、EKI と一緒に使用する。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3047(glossterm)
 msgid "evacuate"
-msgstr "evacuate"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3049(primary)
 msgid "evacuation, definition of"
@@ -2939,16 +2938,16 @@ msgid ""
 "The process of migrating one or all virtual machine (VM) instances from one "
 "host to another, compatible with both shared storage live migration and "
 "block migration."
-msgstr "１つまたは全ての仮想マシン（VM）インスタンスをあるホストから別のホストにマイグレーションする処理。共有ストレージのライブマイグレーションとブロックマイグレーション両方と互換がある。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3060(glossterm)
 #: ./doc/glossary/glossary-terms.xml3062(primary)
 msgid "exchange"
-msgstr "交換"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3066(para)
 msgid "Alternative term for a RabbitMQ message exchange."
-msgstr "RabbitMQ メッセージ交換の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3071(glossterm)
 msgid "exchange type"
@@ -2985,7 +2984,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3099(glossterm)
 #: ./doc/glossary/glossary-terms.xml3101(primary)
 msgid "extended attributes (xattrs)"
-msgstr "拡張属性 (xattrs)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3105(para)
 msgid ""
@@ -2996,7 +2995,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3113(glossterm)
 msgid "extension"
-msgstr "エクステンション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3115(primary)
 msgid "extensions"
@@ -3023,7 +3022,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3140(glossterm)
 msgid "extra specs"
-msgstr "拡張仕様"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3142(primary)
 msgid "extra specs, definition of"
@@ -3043,7 +3042,7 @@ msgstr "F"
 #: ./doc/glossary/glossary-terms.xml3159(glossterm)
 #: ./doc/glossary/glossary-terms.xml3161(primary)
 msgid "FakeLDAP"
-msgstr "FakeLDAP"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3165(para)
 msgid ""
@@ -3070,12 +3069,12 @@ msgstr "Fedora"
 
 #: ./doc/glossary/glossary-terms.xml3190(para)
 msgid "A Linux distribution compatible with OpenStack."
-msgstr "OpenStack と互換性のある Linux ディストリビューション。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3195(glossterm)
 #: ./doc/glossary/glossary-terms.xml3197(primary)
 msgid "Fibre Channel"
-msgstr "ファイバーチャネル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3201(para)
 msgid ""
@@ -3086,16 +3085,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3207(glossterm)
 #: ./doc/glossary/glossary-terms.xml3209(primary)
 msgid "Fibre Channel over Ethernet (FCoE)"
-msgstr "Fibre Channel over Ethernet (FCoE)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3213(para)
 msgid "The fibre channel protocol tunneled within Ethernet."
-msgstr "イーサネットでトンネルされるファイバーチャネルプロトコル。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3218(glossterm)
 #: ./doc/glossary/glossary-terms.xml3220(primary)
 msgid "fill-first scheduler"
-msgstr "充填優先スケジューラー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3224(para)
 msgid ""
@@ -3105,7 +3104,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3230(glossterm)
 msgid "filter"
-msgstr "フィルター"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3232(primary)
 #: ./doc/glossary/glossary-terms.xml4207(primary)
@@ -3120,11 +3119,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3244(glossterm)
 msgid "firewall"
-msgstr "ファイアウォール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3246(primary)
 msgid "firewalls"
-msgstr "ファイアウォール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3250(para)
 msgid ""
@@ -3135,7 +3134,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3257(glossterm)
 #: ./doc/glossary/glossary-terms.xml3259(primary)
 msgid "Firewall-as-a-Service (FWaaS)"
-msgstr "Firewall-as-a-Service (FWaaS)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3263(para)
 msgid "A Networking extension that provides perimeter firewall functionality."
@@ -3143,7 +3142,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3269(glossterm)
 msgid "fixed IP address"
-msgstr "fixed IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3271(primary)
 #: ./doc/glossary/glossary-terms.xml3367(primary)
@@ -3153,15 +3152,15 @@ msgstr "fixed IP アドレス"
 #: ./doc/glossary/glossary-terms.xml7345(primary)
 #: ./doc/glossary/glossary-terms.xml7572(primary)
 msgid "IP addresses"
-msgstr "IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3273(secondary)
 msgid "fixed"
-msgstr "固定"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3276(primary)
 msgid "fixed IP addresses"
-msgstr "固定 IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3280(para)
 msgid ""
@@ -3173,7 +3172,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3288(glossterm)
 #: ./doc/glossary/glossary-terms.xml3290(primary)
 msgid "Flat Manager"
-msgstr "Flat マネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3294(para)
 msgid ""
@@ -3185,7 +3184,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3301(glossterm)
 #: ./doc/glossary/glossary-terms.xml3303(primary)
 msgid "flat mode injection"
-msgstr "フラットモードインジェクション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3307(para)
 msgid ""
@@ -3196,7 +3195,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3314(glossterm)
 #: ./doc/glossary/glossary-terms.xml3316(primary)
 msgid "flat network"
-msgstr "フラットネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3320(para)
 msgid ""
@@ -3210,7 +3209,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3330(glossterm)
 #: ./doc/glossary/glossary-terms.xml3332(primary)
 msgid "FlatDHCP Manager"
-msgstr "FlatDHCP マネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3336(para)
 msgid ""
@@ -3221,16 +3220,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3342(glossterm)
 #: ./doc/glossary/glossary-terms.xml3344(primary)
 msgid "flavor"
-msgstr "フレーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3348(para)
 msgid "Alternative term for a VM instance type."
-msgstr "VM インスタンスタイプの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3353(glossterm)
 #: ./doc/glossary/glossary-terms.xml3355(primary)
 msgid "flavor ID"
-msgstr "フレーバー ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3359(para)
 msgid "UUID for each Compute or Image Service VM flavor or instance type."
@@ -3239,7 +3238,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3365(glossterm)
 #: ./doc/glossary/glossary-terms.xml3372(primary)
 msgid "floating IP address"
-msgstr "Floating IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3369(secondary)
 msgid "floating"
@@ -3276,7 +3275,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3404(glossterm)
 #: ./doc/glossary/glossary-terms.xml3406(primary)
 msgid "FormPost"
-msgstr "FormPost"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3410(para)
 msgid ""
@@ -3305,7 +3304,7 @@ msgstr "G"
 #: ./doc/glossary/glossary-terms.xml3434(glossterm)
 #: ./doc/glossary/glossary-terms.xml3436(primary)
 msgid "gateway"
-msgstr "ゲートウェイ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3440(para)
 msgid ""
@@ -3316,7 +3315,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3446(glossterm)
 #: ./doc/glossary/glossary-terms.xml3448(primary)
 msgid "Generic Receive Offload (GRO)"
-msgstr "Generic Receive Offload (GRO)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3451(para)
 msgid ""
@@ -3365,12 +3364,12 @@ msgstr "glance"
 
 #: ./doc/glossary/glossary-terms.xml3473(para)
 msgid "A core project that provides the OpenStack Image Service."
-msgstr "OpenStack イメージサービスを提供するコアプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3478(glossterm)
 #: ./doc/glossary/glossary-terms.xml3482(secondary)
 msgid "glance API server"
-msgstr "glance API サーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3486(para)
 msgid ""
@@ -3382,17 +3381,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3493(glossterm)
 #: ./doc/glossary/glossary-terms.xml3497(secondary)
 msgid "glance registry"
-msgstr "Glance レジストリ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3501(para)
 msgid "Alternative term for the Image Service image registry."
-msgstr "Image Service イメージレジストリの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3506(glossterm)
 #: ./doc/glossary/glossary-terms.xml3510(secondary)
 #: ./doc/glossary/glossary-terms.xml3513(primary)
 msgid "global endpoint template"
-msgstr "グローバルエンドポイントテンプレート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3517(para)
 msgid ""
@@ -3408,18 +3407,18 @@ msgstr "GlusterFS"
 #: ./doc/glossary/glossary-terms.xml3529(para)
 msgid ""
 "A file system designed to aggregate NAS hosts, compatible with OpenStack."
-msgstr "NAS ホストを集約するために設計されたファイルシステム。OpenStack と互換性がある。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3535(glossterm)
 #: ./doc/glossary/glossary-terms.xml3537(primary)
 msgid "golden image"
-msgstr "ゴールデンイメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3541(para)
 msgid ""
 "A method of operating system installation where a finalized disk image is "
 "created and then used by all nodes without modification."
-msgstr "最終的なディスクイメージが作成され、すべてのノードで変更することなく使用される、オペレーティングシステムのインストール方法。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3548(glossterm)
 #: ./doc/glossary/glossary-terms.xml3550(primary)
@@ -3445,7 +3444,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3572(glossterm)
 #: ./doc/glossary/glossary-terms.xml3574(primary)
 msgid "Green Threads"
-msgstr "Green Threads"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3578(para)
 msgid ""
@@ -3469,16 +3468,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3599(glossterm)
 #: ./doc/glossary/glossary-terms.xml3601(primary)
 msgid "guest OS"
-msgstr "ゲスト OS"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3605(para)
 msgid ""
 "An operating system instance running under the control of a hypervisor."
-msgstr "ハイパーバイザーの管理下で実行しているオペレーティングシステムのインスタンス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3614(title)
 msgid "H"
-msgstr "H"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3617(glossterm)
 #: ./doc/glossary/glossary-terms.xml3619(primary)
@@ -3494,7 +3493,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3629(glossterm)
 #: ./doc/glossary/glossary-terms.xml3631(primary)
 msgid "handover"
-msgstr "handover"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3635(para)
 msgid ""
@@ -3505,13 +3504,13 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3641(glossterm)
 #: ./doc/glossary/glossary-terms.xml3643(primary)
 msgid "hard reboot"
-msgstr "ハードリブート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3647(para)
 msgid ""
 "A type of reboot where a physical or virtual power button is pressed as "
 "opposed to a graceful, proper shutdown of the operating system."
-msgstr "きちんとした正常なOSのシャットダウンを行わず、物理又は仮想電源ボタンを押すタイプの再起動。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3654(glossterm)
 #: ./doc/glossary/glossary-terms.xml3656(primary)
@@ -3528,18 +3527,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3667(glossterm)
 #: ./doc/glossary/glossary-terms.xml3669(primary)
 msgid "heat"
-msgstr "heat"
+msgstr "Heat"
 
 #: ./doc/glossary/glossary-terms.xml3673(para)
 msgid ""
 "An integrated project that aims to orchestrate multiple cloud applications "
 "for OpenStack."
-msgstr "OpenStack に複数のクラウドアプリケーションをオーケストレーションする為に開発されたプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3679(glossterm)
 #: ./doc/glossary/glossary-terms.xml3681(primary)
 msgid "Heat Orchestration Template (HOT)"
-msgstr "Heat Orchestration Template (HOT)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3685(para)
 msgid "Heat input in the format native to OpenStack."
@@ -3574,7 +3573,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3723(glossterm)
 msgid "horizon"
-msgstr "Horizon"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3726(para)
 msgid "OpenStack project that provides a dashboard, which is a web interface."
@@ -3582,7 +3581,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3732(glossterm)
 msgid "horizon plug-in"
-msgstr "horizon プラグイン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3734(primary)
 msgid "horizon plug-ins"
@@ -3590,11 +3589,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3738(para)
 msgid "A plug-in for the OpenStack dashboard (horizon)."
-msgstr "OpenStack dashboard (horizon) のプラグイン。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3743(glossterm)
 msgid "host"
-msgstr "ホスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3745(primary)
 msgid "hosts, definition of"
@@ -3607,7 +3606,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3754(glossterm)
 #: ./doc/glossary/glossary-terms.xml3756(primary)
 msgid "host aggregate"
-msgstr "ホストアグリゲート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3760(para)
 msgid ""
@@ -3618,7 +3617,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3766(glossterm)
 #: ./doc/glossary/glossary-terms.xml3768(primary)
 msgid "Host Bus Adapter (HBA)"
-msgstr "Host Bus Adapter (HBA)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3772(para)
 msgid ""
@@ -3686,7 +3685,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3842(glossterm)
 #: ./doc/glossary/glossary-terms.xml3844(primary)
 msgid "hyperlink"
-msgstr "ハイパーリンク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3848(para)
 msgid ""
@@ -3704,7 +3703,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3864(glossterm)
 msgid "Hypertext Transfer Protocol Secure (HTTPS)"
-msgstr "Hypertext Transfer Protocol Secure (HTTPS)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3867(para)
 msgid ""
@@ -3714,7 +3713,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3874(glossterm)
 msgid "hypervisor"
-msgstr "ハイパーバイザー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3876(primary)
 #: ./doc/glossary/glossary-terms.xml3890(primary)
@@ -3725,11 +3724,11 @@ msgstr ""
 msgid ""
 "Software that arbitrates and controls VM access to the actual underlying "
 "hardware."
-msgstr "VM のアクセスを実際の下位ハードウェアに仲介して制御するソフトウェア。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3888(glossterm)
 msgid "hypervisor pool"
-msgstr "ハイパーバイザープール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3892(secondary)
 msgid "hypervisor pools"
@@ -3737,7 +3736,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3896(para)
 msgid "A collection of hypervisors grouped together through host aggregates."
-msgstr "ホストアグリゲートにより一緒にグループ化されたハイパーバイザーの集合。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3905(title)
 msgid "I"
@@ -3745,7 +3744,7 @@ msgstr "I"
 
 #: ./doc/glossary/glossary-terms.xml3908(glossterm)
 msgid "IaaS"
-msgstr "IaaS"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3910(primary)
 msgid "IaaS (Infrastructure-as-a-Service)"
@@ -3778,7 +3777,7 @@ msgstr "ICMP"
 
 #: ./doc/glossary/glossary-terms.xml3943(primary)
 msgid "Internet Control Message Protocol (ICMP)"
-msgstr "Internet Control Message Protocol (ICMP)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3947(para)
 msgid ""
@@ -3789,7 +3788,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml3955(glossterm)
 #: ./doc/glossary/glossary-terms.xml3957(primary)
 msgid "ID number"
-msgstr "ID 番号"
+msgstr "ID Nummer"
 
 #: ./doc/glossary/glossary-terms.xml3961(para)
 msgid ""
@@ -3799,11 +3798,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml3967(glossterm)
 msgid "Identity API"
-msgstr "Identity API"
+msgstr "Identität API"
 
 #: ./doc/glossary/glossary-terms.xml3970(para)
 msgid "Alternative term for the Identity Service API."
-msgstr "Identity サービス API の別名。"
+msgstr "Alternativer Ausdruck für die Identität Dienst API."
 
 #: ./doc/glossary/glossary-terms.xml3975(glossterm)
 #: ./doc/glossary/glossary-terms.xml3979(secondary)
@@ -3816,7 +3815,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4008(primary)
 #: ./doc/glossary/glossary-terms.xml4079(primary)
 msgid "Identity Service"
-msgstr "Identity サービス"
+msgstr "Identität Dienst"
 
 #: ./doc/glossary/glossary-terms.xml3983(para)
 msgid ""
@@ -3835,17 +3834,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4006(glossterm)
 #: ./doc/glossary/glossary-terms.xml4010(secondary)
 msgid "Identity Service API"
-msgstr "Identity サービス API"
+msgstr "Identität Dienst API"
 
 #: ./doc/glossary/glossary-terms.xml4014(para)
 msgid ""
 "The API used to access the OpenStack Identity Service provided through "
 "keystone."
-msgstr "Keystone が提供する OpenStack Identity サービスアクセスに使用される API。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4020(glossterm)
 msgid "IDS"
-msgstr "IDS"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4022(primary)
 msgid "IDS (Intrusion Detection System)"
@@ -3857,11 +3856,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4031(glossterm)
 msgid "image"
-msgstr "イメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4033(primary)
 msgid "images"
-msgstr "イメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4039(para)
 msgid ""
@@ -3874,7 +3873,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4048(glossterm)
 msgid "Image API"
-msgstr "Image API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4050(primary)
 #: ./doc/glossary/glossary-terms.xml4064(primary)
@@ -3887,21 +3886,21 @@ msgstr "Image API"
 #: ./doc/glossary/glossary-terms.xml4181(primary)
 #: ./doc/glossary/glossary-terms.xml6331(primary)
 msgid "Image Service"
-msgstr "Image Service"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4052(secondary)
 #: ./doc/glossary/glossary-terms.xml4143(glossterm)
 msgid "Image Service API"
-msgstr "Image Service API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4056(para)
 msgid "The Image Service API endpoint for management of VM images."
-msgstr "仮想マシンイメージの管理用の Image Service API エンドポイント。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4062(glossterm)
 #: ./doc/glossary/glossary-terms.xml4066(secondary)
 msgid "image cache"
-msgstr "イメージキャッシュ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4070(para)
 msgid ""
@@ -3912,7 +3911,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4077(glossterm)
 #: ./doc/glossary/glossary-terms.xml4081(secondary)
 msgid "image ID"
-msgstr "イメージ ID"
+msgstr "Image ID"
 
 #: ./doc/glossary/glossary-terms.xml4085(para)
 msgid ""
@@ -3923,7 +3922,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4091(glossterm)
 #: ./doc/glossary/glossary-terms.xml4095(secondary)
 msgid "image membership"
-msgstr "イメージメンバーシップ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4099(para)
 #: ./doc/glossary/glossary-terms.xml4991(para)
@@ -3934,7 +3933,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4105(glossterm)
 #: ./doc/glossary/glossary-terms.xml4109(secondary)
 msgid "image owner"
-msgstr "イメージ所有者"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4113(para)
 msgid "The tenant who owns an Image Service virtual machine image."
@@ -3943,7 +3942,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4119(glossterm)
 #: ./doc/glossary/glossary-terms.xml4123(secondary)
 msgid "image registry"
-msgstr "イメージレジストリ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4127(para)
 msgid "A list of VM images that are available through Image Service."
@@ -3958,12 +3957,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4146(para)
 msgid "Alternative name for the glance image API."
-msgstr "Glance イメージ API の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4151(glossterm)
 #: ./doc/glossary/glossary-terms.xml4155(secondary)
 msgid "image status"
-msgstr "イメージ状態"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4159(para)
 msgid ""
@@ -3974,7 +3973,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4165(glossterm)
 #: ./doc/glossary/glossary-terms.xml4169(secondary)
 msgid "image store"
-msgstr "イメージストア"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4173(para)
 msgid ""
@@ -3985,7 +3984,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4179(glossterm)
 #: ./doc/glossary/glossary-terms.xml4183(secondary)
 msgid "image UUID"
-msgstr "イメージ UUID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4187(para)
 msgid "UUID used by Image Service to uniquely identify each VM image."
@@ -3993,23 +3992,23 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4193(glossterm)
 msgid "incubated project"
-msgstr "インキュベートプロジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4195(primary)
 msgid "incubated projects"
-msgstr "育成プロジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4199(para)
 msgid ""
 "A community project may be elevated to this status and is then promoted to a"
 " core project."
-msgstr "コミュニティプロジェクトがこの状態に昇格する事があり、その後コアプロジェクトに昇格する。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4205(glossterm)
 #: ./doc/glossary/glossary-terms.xml4209(secondary)
 #: ./doc/glossary/glossary-terms.xml4212(primary)
 msgid "ingress filtering"
-msgstr "イングレスフィルタリング"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4216(para)
 msgid ""
@@ -4019,7 +4018,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4222(glossterm)
 #: ./doc/glossary/glossary-terms.xml4224(primary)
 msgid "INI"
-msgstr "INI"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4227(para)
 msgid ""
@@ -4030,17 +4029,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4236(glossterm)
 #: ./doc/glossary/glossary-terms.xml4238(primary)
 msgid "injection"
-msgstr "インジェクション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4242(para)
 msgid ""
 "The process of putting a file into a virtual machine image before the "
 "instance is started."
-msgstr "インスタンスが起動する前に、仮想マシンイメージ中にファイルを配置する処理。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4248(glossterm)
 msgid "instance"
-msgstr "インスタンス"
+msgstr "Instanz"
 
 #: ./doc/glossary/glossary-terms.xml4250(primary)
 #: ./doc/glossary/glossary-terms.xml4264(primary)
@@ -4049,7 +4048,7 @@ msgstr "インスタンス"
 #: ./doc/glossary/glossary-terms.xml4316(primary)
 #: ./doc/glossary/glossary-terms.xml4329(primary)
 msgid "instances"
-msgstr "インスタンス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4256(para)
 msgid ""
@@ -4060,16 +4059,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4262(glossterm)
 #: ./doc/glossary/glossary-terms.xml4266(secondary)
 msgid "instance ID"
-msgstr "インスタンス ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4270(para)
 msgid "Alternative term for instance UUID."
-msgstr "インスタンス UUID の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4275(glossterm)
 #: ./doc/glossary/glossary-terms.xml4279(secondary)
 msgid "instance state"
-msgstr "インスタンス状態"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4283(para)
 msgid "The current state of a guest VM image."
@@ -4089,7 +4088,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4299(glossterm)
 #: ./doc/glossary/glossary-terms.xml4303(secondary)
 msgid "instance type"
-msgstr "インスタンスタイプ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4307(para)
 msgid ""
@@ -4101,16 +4100,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4314(glossterm)
 #: ./doc/glossary/glossary-terms.xml4318(secondary)
 msgid "instance type ID"
-msgstr "インスタンスタイプ ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4322(para)
 msgid "Alternative term for a flavor ID."
-msgstr "フレーバー ID の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4327(glossterm)
 #: ./doc/glossary/glossary-terms.xml4331(secondary)
 msgid "instance UUID"
-msgstr "インスタンス UUID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4335(para)
 #: ./doc/glossary/glossary-terms.xml7220(para)
@@ -4122,22 +4121,22 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4341(glossterm)
 #: ./doc/glossary/glossary-terms.xml4343(primary)
 msgid "interface"
-msgstr "インターフェース"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4347(para)
 msgid ""
 "A physical or virtual device that provides connectivity to another device or"
 " medium."
-msgstr "他のデバイスやメディアに接続する物理デバイスまたは仮想デバイス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4353(glossterm)
 #: ./doc/glossary/glossary-terms.xml4355(primary)
 msgid "interface ID"
-msgstr "インターフェース ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4359(para)
 msgid "Unique ID for a Networking VIF or vNIC in the form of a UUID."
-msgstr "Networking 仮想インターフェースや vNIC 用の一意な UUID 形式の ID。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4365(glossterm)
 msgid "internet protocol (IP)"
@@ -4157,18 +4156,18 @@ msgstr "Internet Service Provider (ISP)"
 #: ./doc/glossary/glossary-terms.xml4383(para)
 msgid ""
 "Any business that provides Internet access to individuals or businesses."
-msgstr "個人や組織にインターネットアクセスを提供する何らかのビジネス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4389(glossterm)
 #: ./doc/glossary/glossary-terms.xml4391(primary)
 msgid "ironic"
-msgstr "ironic"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4395(para)
 msgid ""
 "OpenStack project that provisions bare metal, as opposed to virtual, "
 "machines."
-msgstr "マシンを仮想とみなして、ベアメタルに展開する OpenStack のプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4401(glossterm)
 #: ./doc/glossary/glossary-terms.xml4403(primary)
@@ -4184,7 +4183,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4419(glossterm)
 msgid "IP address"
-msgstr "IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4427(para)
 msgid ""
@@ -4195,7 +4194,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4434(glossterm)
 #: ./doc/glossary/glossary-terms.xml4436(primary)
 msgid "IP Address Management (IPAM)"
-msgstr "IP Address Management (IPAM)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4440(para)
 msgid ""
@@ -4205,23 +4204,23 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4447(glossterm)
 msgid "IPL"
-msgstr "IPL"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4449(primary)
 msgid "IPL (Initial Program Loader)"
-msgstr "IPL (Initial Program Loader)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4453(para)
 msgid "Initial Program Loader."
-msgstr "Initial Program Loader。初期プログラムローダー。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4458(glossterm)
 msgid "IPMI"
-msgstr "IPMI"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4460(primary)
 msgid "IPMI (Intelligent Platform Management Interface)"
-msgstr "IPMI (Intelligent Platform Management Interface)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4464(para)
 msgid ""
@@ -4236,7 +4235,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4475(glossterm)
 #: ./doc/glossary/glossary-terms.xml4477(primary)
 msgid "ip6tables"
-msgstr "ip6tables"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4481(para)
 msgid ""
@@ -4264,11 +4263,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4506(glossterm)
 msgid "iSCSI"
-msgstr "iSCSI"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4508(primary)
 msgid "iSCSI protocol"
-msgstr "iSCSI プロトコル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4512(para)
 msgid ""
@@ -4278,11 +4277,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4518(glossterm)
 msgid "ISO9960"
-msgstr "ISO9960"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4520(primary)
 msgid "ISO9960 format"
-msgstr "ISO9960 形式"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4524(para)
 #: ./doc/glossary/glossary-terms.xml6429(para)
@@ -4295,7 +4294,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4530(glossterm)
 #: ./doc/glossary/glossary-terms.xml4532(primary)
 msgid "itsec"
-msgstr "itsec"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4536(para)
 msgid ""
@@ -4373,11 +4372,11 @@ msgstr "K"
 
 #: ./doc/glossary/glossary-terms.xml4625(glossterm)
 msgid "kernel-based VM (KVM)"
-msgstr "kernel-based VM (KVM)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4627(primary)
 msgid "kernel-based VM (KVM) hypervisor"
-msgstr "kernel-based VM (KVM) ハイパーバイザー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4631(para)
 msgid ""
@@ -4391,16 +4390,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4643(glossterm)
 #: ./doc/glossary/glossary-terms.xml4645(primary)
 msgid "keystone"
-msgstr "keystone"
+msgstr "Keystone"
 
 #: ./doc/glossary/glossary-terms.xml4649(para)
 msgid "The project that provides OpenStack Identity services."
-msgstr "OpenStack Identity サービスを提供するプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4654(glossterm)
 #: ./doc/glossary/glossary-terms.xml4656(primary)
 msgid "Kickstart"
-msgstr "Kickstart"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4660(para)
 msgid ""
@@ -4429,7 +4428,7 @@ msgstr "L"
 #: ./doc/glossary/glossary-terms.xml4688(glossterm)
 #: ./doc/glossary/glossary-terms.xml4690(primary)
 msgid "large object"
-msgstr "ラージオブジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4694(para)
 msgid "An object within Object Storage that is larger than 5GB."
@@ -4442,12 +4441,12 @@ msgstr "Launchpad"
 
 #: ./doc/glossary/glossary-terms.xml4705(para)
 msgid "The collaboration site for OpenStack."
-msgstr "OpenStack 用コラボレーションサイト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4710(glossterm)
 #: ./doc/glossary/glossary-terms.xml4712(primary)
 msgid "Layer-2 network"
-msgstr "Layer-2 ネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4716(para)
 msgid ""
@@ -4472,7 +4471,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4741(glossterm)
 #: ./doc/glossary/glossary-terms.xml4743(primary)
 msgid "Layer-3 (L3) agent"
-msgstr "Layer-3 (L3) エージェント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4747(para)
 msgid ""
@@ -4493,7 +4492,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4765(glossterm)
 msgid "Linux bridge"
-msgstr "Linux ブリッジ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4768(para)
 msgid ""
@@ -4507,7 +4506,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4776(primary)
 msgid "Linux Bridge"
-msgstr "Linux ブリッジ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4778(secondary)
 #: ./doc/glossary/glossary-terms.xml5789(secondary)
@@ -4523,12 +4522,12 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4788(glossterm)
 #: ./doc/glossary/glossary-terms.xml4790(primary)
 msgid "Linux containers (LXC)"
-msgstr "Linux コンテナー （LXC）"
+msgstr "Linux containers (LXC)"
 
 #: ./doc/glossary/glossary-terms.xml4799(glossterm)
 #: ./doc/glossary/glossary-terms.xml4801(primary)
 msgid "live migration"
-msgstr "ライブマイグレーション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4805(para)
 msgid ""
@@ -4539,7 +4538,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4812(glossterm)
 msgid "load balancer"
-msgstr "負荷分散装置"
+msgstr "Load Balancer"
 
 #: ./doc/glossary/glossary-terms.xml4815(para)
 msgid ""
@@ -4551,7 +4550,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4823(glossterm)
 #: ./doc/glossary/glossary-terms.xml4825(primary)
 msgid "load balancing"
-msgstr "負荷分散"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4829(para)
 msgid ""
@@ -4573,7 +4572,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4848(glossterm)
 #: ./doc/glossary/glossary-terms.xml4850(primary)
 msgid "Logical Volume Manager (LVM)"
-msgstr "論理ボリュームマネージャー (LVM)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4854(para)
 msgid ""
@@ -4588,16 +4587,16 @@ msgstr "M"
 #: ./doc/glossary/glossary-terms.xml4867(glossterm)
 #: ./doc/glossary/glossary-terms.xml4869(primary)
 msgid "management API"
-msgstr "マネジメント API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4875(para)
 msgid "Alternative term for an admin API."
-msgstr "管理 API（admin API）の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4880(glossterm)
 #: ./doc/glossary/glossary-terms.xml4882(primary)
 msgid "management network"
-msgstr "管理ネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4886(para)
 msgid ""
@@ -4608,7 +4607,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4892(glossterm)
 #: ./doc/glossary/glossary-terms.xml4894(primary)
 msgid "manager"
-msgstr "マネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4898(para)
 msgid ""
@@ -4618,12 +4617,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4904(glossterm)
 msgid "manifest"
-msgstr "マニフェスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4906(primary)
 #: ./doc/glossary/glossary-terms.xml4925(primary)
 msgid "manifests"
-msgstr "マニフェスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4912(para)
 msgid "Used to track segments of a large object within Object Storage."
@@ -4631,7 +4630,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4918(glossterm)
 msgid "manifest object"
-msgstr "マニフェストオブジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4922(secondary)
 #: ./doc/glossary/glossary-terms.xml4927(secondary)
@@ -4647,11 +4646,11 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4937(glossterm)
 #: ./doc/glossary/glossary-terms.xml4939(primary)
 msgid "marconi"
-msgstr "marconi"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4943(para)
 msgid "OpenStack project that provides a queue service to applications."
-msgstr "キューサービスをアプリケーションに提供する OpenStack のプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4949(glossterm)
 msgid "maximum transmission unit (MTU)"
@@ -4666,18 +4665,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml4961(glossterm)
 #: ./doc/glossary/glossary-terms.xml4963(primary)
 msgid "melange"
-msgstr "melange"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4967(para)
 msgid ""
 "Project name for OpenStack Network Information Service. To be merged with "
 "Networking."
-msgstr "OpenStack Network Information Service のプロジェクト名。Networking と統合予定。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4973(glossterm)
 #: ./doc/glossary/glossary-terms.xml4975(primary)
 msgid "membership"
-msgstr "メンバーシップ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4979(para)
 msgid ""
@@ -4687,7 +4686,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4985(glossterm)
 msgid "membership list"
-msgstr "メンバーシップリスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml4987(primary)
 msgid "membership lists"
@@ -4707,22 +4706,22 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5009(glossterm)
 #: ./doc/glossary/glossary-terms.xml5011(primary)
 msgid "memory overcommit"
-msgstr "メモリーオーバーコミット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5015(para)
 msgid ""
 "The ability to start new VM instances based on the actual memory usage of a "
 "host, as opposed to basing the decision on the amount of RAM each running "
 "instance thinks it has available. Also known as RAM overcommit."
-msgstr "実行中の各インスタンスが利用可能と考えている RAM 量に基づく判断をベースにする代わりに、ホスト上の実際のメモリ使用量をベースにした、新しい VM インスタンスを起動する機能。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5023(glossterm)
 msgid "message broker"
-msgstr "メッセージブローカー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5025(primary)
 msgid "message brokers"
-msgstr "メッセージブローカー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5029(para)
 msgid ""
@@ -4733,7 +4732,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5035(glossterm)
 #: ./doc/glossary/glossary-terms.xml5037(primary)
 msgid "message bus"
-msgstr "メッセージバス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5041(para)
 msgid ""
@@ -4744,7 +4743,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5047(glossterm)
 #: ./doc/glossary/glossary-terms.xml5049(primary)
 msgid "message queue"
-msgstr "メッセージキュー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5053(para)
 msgid ""
@@ -4769,16 +4768,16 @@ msgstr "Meta-Data Server (MDS)"
 
 #: ./doc/glossary/glossary-terms.xml5077(para)
 msgid "Stores CephFS metadata."
-msgstr "CephFS メタデータを格納する。"
+msgstr "Speichert CephFS Metadaten."
 
 #: ./doc/glossary/glossary-terms.xml5082(glossterm)
 #: ./doc/glossary/glossary-terms.xml5084(primary)
 msgid "migration"
-msgstr "マイグレーション"
+msgstr "Migration"
 
 #: ./doc/glossary/glossary-terms.xml5088(para)
 msgid "The process of moving a VM instance from one host to another."
-msgstr "VM インスタンスをあるホストから別のホストに移動させる処理。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5094(glossterm)
 #: ./doc/glossary/glossary-terms.xml5096(primary)
@@ -4795,7 +4794,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5108(glossterm)
 msgid "multinic"
-msgstr "マルチ NIC"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5111(para)
 msgid ""
@@ -4806,7 +4805,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5117(glossterm)
 #: ./doc/glossary/glossary-terms.xml5120(primary)
 msgid "Modular Layer 2 (ML2) neutron plug-in"
-msgstr ""
+msgstr "Modular Layer 2 (ML2) neutron Plug-In"
 
 #: ./doc/glossary/glossary-terms.xml5124(para)
 msgid ""
@@ -4828,7 +4827,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5142(glossterm)
 #: ./doc/glossary/glossary-terms.xml5144(primary)
 msgid "Monitor (Mon)"
-msgstr ""
+msgstr "Monitor (Mon)"
 
 #: ./doc/glossary/glossary-terms.xml5148(para)
 msgid ""
@@ -4839,7 +4838,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5154(glossterm)
 #: ./doc/glossary/glossary-terms.xml5156(primary)
 msgid "multi-factor authentication"
-msgstr ""
+msgstr "Multi-Faktoren Authentifizierung"
 
 #: ./doc/glossary/glossary-terms.xml5160(para)
 msgid ""
@@ -4850,7 +4849,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5167(glossterm)
 #: ./doc/glossary/glossary-terms.xml5169(primary)
 msgid "MultiNic"
-msgstr "MultiNic"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5173(para)
 msgid ""
@@ -4874,7 +4873,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5197(glossterm)
 #: ./doc/glossary/glossary-terms.xml5199(primary)
 msgid "netadmin"
-msgstr "netadmin"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5203(para)
 msgid ""
@@ -4886,7 +4885,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5210(glossterm)
 #: ./doc/glossary/glossary-terms.xml5212(primary)
 msgid "NetApp volume driver"
-msgstr "NetApp ボリュームドライバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5216(para)
 msgid ""
@@ -4897,7 +4896,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5223(glossterm)
 msgid "network"
-msgstr "Network"
+msgstr "Netzwerk"
 
 #: ./doc/glossary/glossary-terms.xml5231(para)
 msgid ""
@@ -4909,7 +4908,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5239(glossterm)
 #: ./doc/glossary/glossary-terms.xml5243(secondary)
 msgid "Network Address Translation (NAT)"
-msgstr ""
+msgstr "Network Address Translation (NAT)"
 
 #: ./doc/glossary/glossary-terms.xml5247(para)
 msgid ""
@@ -4945,7 +4944,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5282(glossterm)
 msgid "network ID"
-msgstr "ネットワーク ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5286(secondary)
 msgid "network IDs"
@@ -4959,7 +4958,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5296(glossterm)
 msgid "network manager"
-msgstr "ネットワークマネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5300(secondary)
 msgid "network managers"
@@ -4973,7 +4972,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5310(glossterm)
 msgid "network node"
-msgstr "ネットワークノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5314(secondary)
 msgid "network nodes"
@@ -4985,7 +4984,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5323(glossterm)
 msgid "network segment"
-msgstr "ネットワークセグメント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5327(secondary)
 msgid "network segments"
@@ -4998,7 +4997,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5337(glossterm)
 #: ./doc/glossary/glossary-terms.xml5341(secondary)
 msgid "Network Time Protocol (NTP)"
-msgstr "Network Time Protocol (NTP)"
+msgstr "Network Time Protokoll (NTP)"
 
 #: ./doc/glossary/glossary-terms.xml5345(para)
 msgid ""
@@ -5009,7 +5008,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5351(glossterm)
 #: ./doc/glossary/glossary-terms.xml5355(secondary)
 msgid "network UUID"
-msgstr "ネットワーク UUID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5359(para)
 msgid ""
@@ -5019,7 +5018,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5365(glossterm)
 msgid "network worker"
-msgstr "ネットワークワーカー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5369(secondary)
 msgid "network workers"
@@ -5033,7 +5032,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5380(glossterm)
 msgid "Networking"
-msgstr "ネットワーク"
+msgstr "Netzwerk"
 
 #: ./doc/glossary/glossary-terms.xml5383(para)
 msgid ""
@@ -5045,39 +5044,39 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5392(primary)
 #: ./doc/glossary/glossary-terms.xml5415(secondary)
 msgid "Networking API"
-msgstr "Networking API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5396(para)
 msgid ""
 "API used to access OpenStack Networking. Provides an extensible architecture"
 " to enable custom plug-in creation."
-msgstr "OpenStack Networking にアクセスするために利用する API。独自プラグインを作成できる拡張性を持ったアーキテクチャーになっている。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5402(glossterm)
 #: ./doc/glossary/glossary-terms.xml5413(primary)
 #: ./doc/glossary/glossary-terms.xml5426(primary)
 #: ./doc/glossary/glossary-terms.xml5440(primary)
 msgid "neutron"
-msgstr "neutron"
+msgstr "Neutron"
 
 #: ./doc/glossary/glossary-terms.xml5405(para)
 msgid ""
 "A core OpenStack project that provides a network connectivity abstraction "
 "layer to OpenStack Compute."
-msgstr "OpenStack のコアプロジェクトで、OpenStack Compute に対してネットワーク接続の抽象化レイヤーを提供する。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5411(glossterm)
 msgid "neutron API"
-msgstr "neutron API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5419(para)
 msgid "An alternative name for Networking API."
-msgstr "Networking API の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5424(glossterm)
 #: ./doc/glossary/glossary-terms.xml5428(secondary)
 msgid "neutron manager"
-msgstr "neutron マネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5432(para)
 msgid ""
@@ -5088,7 +5087,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5438(glossterm)
 #: ./doc/glossary/glossary-terms.xml5442(secondary)
 msgid "neutron plug-in"
-msgstr "neutron プラグイン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5446(para)
 msgid ""
@@ -5099,7 +5098,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5453(glossterm)
 #: ./doc/glossary/glossary-terms.xml5455(primary)
 msgid "Nexenta volume driver"
-msgstr "Nexenta ボリュームドライバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5459(para)
 msgid "Provides support for NexentaStor devices in Compute."
@@ -5118,18 +5117,18 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5476(glossterm)
 msgid "node"
-msgstr "node"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5478(primary)
 #: ./doc/glossary/glossary-terms.xml6280(primary)
 #: ./doc/glossary/glossary-terms.xml7612(primary)
 #: ./doc/glossary/glossary-terms.xml7812(primary)
 msgid "nodes"
-msgstr "ノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5484(para)
 msgid "A VM instance that runs on a host."
-msgstr "ホストで動作する仮想マシンインスタンス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5489(glossterm)
 msgid "non-durable exchange"
@@ -5140,7 +5139,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6002(primary)
 #: ./doc/glossary/glossary-terms.xml8075(primary)
 msgid "messages"
-msgstr "メッセージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5493(secondary)
 #: ./doc/glossary/glossary-terms.xml5496(primary)
@@ -5172,17 +5171,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5523(glossterm)
 #: ./doc/glossary/glossary-terms.xml5525(primary)
 msgid "non-persistent volume"
-msgstr "非永続ボリューム"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5531(para)
 msgid "Alternative term for an ephemeral volume."
-msgstr "エフェメラルボリュームの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5536(glossterm)
 #: ./doc/glossary/glossary-terms.xml5546(primary)
 #: ./doc/glossary/glossary-terms.xml5559(primary)
 msgid "nova"
-msgstr "nova"
+msgstr "Nova"
 
 #: ./doc/glossary/glossary-terms.xml5539(para)
 msgid "OpenStack project that provides compute services."
@@ -5194,12 +5193,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5552(para)
 msgid "Alternative term for the Compute API."
-msgstr "Compute API の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5557(glossterm)
 #: ./doc/glossary/glossary-terms.xml5561(secondary)
 msgid "nova-network"
-msgstr "nova-network"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5565(para)
 msgid ""
@@ -5214,7 +5213,7 @@ msgstr "O"
 
 #: ./doc/glossary/glossary-terms.xml5578(glossterm)
 msgid "object"
-msgstr "オブジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5586(para)
 msgid "A BLOB of data held by Object Storage; can be in any format."
@@ -5222,7 +5221,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5592(glossterm)
 msgid "object auditor"
-msgstr "オブジェクトオーディター"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5596(secondary)
 msgid "object auditors"
@@ -5232,12 +5231,12 @@ msgstr ""
 msgid ""
 "Opens all objects for an object server and verifies the MD5 hash, size, and "
 "metadata for each object."
-msgstr "あるオブジェクトサーバー用の全オブジェクトを開き、各オブジェクトの MD5 ハッシュ、サイズ、メタデータを検証する。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5606(glossterm)
 #: ./doc/glossary/glossary-terms.xml5610(secondary)
 msgid "object expiration"
-msgstr "オブジェクト有効期限"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5614(para)
 msgid ""
@@ -5248,7 +5247,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5621(glossterm)
 #: ./doc/glossary/glossary-terms.xml5625(secondary)
 msgid "object hash"
-msgstr "オブジェクトハッシュ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5629(para)
 msgid "Uniquely ID for an Object Storage object."
@@ -5257,7 +5256,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5634(glossterm)
 #: ./doc/glossary/glossary-terms.xml5638(secondary)
 msgid "object path hash"
-msgstr "オブジェクトパスハッシュ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5642(para)
 msgid ""
@@ -5267,7 +5266,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5648(glossterm)
 msgid "object replicator"
-msgstr "オブジェクトレプリケーター"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5652(secondary)
 msgid "object replicators"
@@ -5281,7 +5280,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5662(glossterm)
 msgid "object server"
-msgstr "オブジェクトサーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5666(secondary)
 msgid "object servers"
@@ -5295,7 +5294,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5693(primary)
 #: ./doc/glossary/glossary-terms.xml5706(primary)
 msgid "Object Storage"
-msgstr "オブジェクトストレージ"
+msgstr "Objekt Speicher"
 
 #: ./doc/glossary/glossary-terms.xml5679(para)
 msgid ""
@@ -5308,7 +5307,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5690(secondary)
 #: ./doc/glossary/glossary-terms.xml5695(secondary)
 msgid "Object Storage API"
-msgstr "Object Storage API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5688(primary)
 #: ./doc/glossary/glossary-terms.xml7756(glossterm)
@@ -5316,16 +5315,16 @@ msgstr "Object Storage API"
 #: ./doc/glossary/glossary-terms.xml7793(primary)
 #: ./doc/glossary/glossary-terms.xml7817(primary)
 msgid "swift"
-msgstr "swift"
+msgstr "Swift"
 
 #: ./doc/glossary/glossary-terms.xml5699(para)
 msgid "API used to access OpenStack Object Storage."
-msgstr "OpenStack Object Storage にアクセスするために使用する API。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5704(glossterm)
 #: ./doc/glossary/glossary-terms.xml5708(secondary)
 msgid "Object Storage Device (OSD)"
-msgstr "Object Storage Device (OSD)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5712(para)
 msgid "The Ceph storage daemon."
@@ -5334,7 +5333,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5717(glossterm)
 #: ./doc/glossary/glossary-terms.xml5721(secondary)
 msgid "object versioning"
-msgstr "オブジェクトバージョニング"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5725(para)
 msgid ""
@@ -5345,7 +5344,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5731(glossterm)
 #: ./doc/glossary/glossary-terms.xml5733(primary)
 msgid "Oldie"
-msgstr "Oldie"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5737(para)
 msgid ""
@@ -5371,13 +5370,13 @@ msgstr "Open Virtualization Format (OVF)"
 
 #: ./doc/glossary/glossary-terms.xml5762(para)
 msgid "Standard for packaging VM images. Supported in OpenStack."
-msgstr "仮想マシンイメージのパッケージ化の標準。OpenStack でサポートされる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5767(glossterm)
 #: ./doc/glossary/glossary-terms.xml5769(primary)
 #: ./doc/glossary/glossary-terms.xml5787(primary)
 msgid "Open vSwitch"
-msgstr "Open vSwitch"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5773(para)
 msgid ""
@@ -5427,7 +5426,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5831(secondary)
 msgid "code name"
-msgstr "コード名"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5835(para)
 msgid ""
@@ -5447,18 +5446,18 @@ msgstr "openSUSE"
 #: ./doc/glossary/glossary-terms.xml5860(glossterm)
 #: ./doc/glossary/glossary-terms.xml5862(primary)
 msgid "operator"
-msgstr "運用者"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5866(para)
 msgid ""
 "The person responsible for planning and maintaining an OpenStack "
 "installation."
-msgstr "OpenStack インストールを計画し、管理する責任者。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5872(glossterm)
 #: ./doc/glossary/glossary-terms.xml5874(primary)
 msgid "Orchestration"
-msgstr "Orchestration"
+msgstr "Orchestrierung"
 
 #: ./doc/glossary/glossary-terms.xml5878(para)
 msgid ""
@@ -5468,7 +5467,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5885(glossterm)
 msgid "orphan"
-msgstr "orphan"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5887(primary)
 msgid "orphans"
@@ -5486,29 +5485,29 @@ msgstr "P"
 
 #: ./doc/glossary/glossary-terms.xml5903(glossterm)
 msgid "parent cell"
-msgstr "親セル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5907(secondary)
 #: ./doc/glossary/glossary-terms.xml5910(primary)
 msgid "parent cells"
-msgstr "親セル"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5914(para)
 msgid ""
 "If a requested resource, such as CPU time, disk storage, or memory, is not "
 "available in the parent cell, the request is forwarded to associated child "
 "cells."
-msgstr "要求されたリソース（CPU時間、ディスクストレージ、メモリ）が親セルで利用不可の場合、そのリクエストは紐付けられた子セルに転送される。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5921(glossterm)
 msgid "partition"
-msgstr "パーティション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5923(primary)
 #: ./doc/glossary/glossary-terms.xml5938(primary)
 #: ./doc/glossary/glossary-terms.xml5952(primary)
 msgid "partitions"
-msgstr "パーティション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5929(para)
 msgid ""
@@ -5519,7 +5518,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5936(glossterm)
 #: ./doc/glossary/glossary-terms.xml5940(secondary)
 msgid "partition index"
-msgstr "パーティションインデックス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5944(para)
 msgid ""
@@ -5528,7 +5527,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5950(glossterm)
 msgid "partition shift value"
-msgstr "パーティションシフト値"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5954(secondary)
 msgid "partition index value"
@@ -5552,7 +5551,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5976(glossterm)
 #: ./doc/glossary/glossary-terms.xml5978(primary)
 msgid "pause"
-msgstr "ポーズ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5982(para)
 msgid ""
@@ -5563,7 +5562,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml5988(glossterm)
 #: ./doc/glossary/glossary-terms.xml5990(primary)
 msgid "PCI passthrough"
-msgstr "PCI パススルー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml5994(para)
 msgid ""
@@ -5589,7 +5588,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6017(glossterm)
 #: ./doc/glossary/glossary-terms.xml6019(primary)
 msgid "persistent volume"
-msgstr "永続ボリューム"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6023(para)
 msgid "Changes to these types of disk volumes are saved."
@@ -5636,7 +5635,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6067(glossterm)
 #: ./doc/glossary/glossary-terms.xml6069(primary)
 msgid "policy service"
-msgstr "ポリシーサービス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6073(para)
 msgid ""
@@ -5647,7 +5646,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6079(glossterm)
 #: ./doc/glossary/glossary-terms.xml6081(primary)
 msgid "pool"
-msgstr "プール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6085(para)
 msgid ""
@@ -5669,13 +5668,13 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6106(glossterm)
 msgid "port"
-msgstr "ポート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6108(primary)
 #: ./doc/glossary/glossary-terms.xml6122(primary)
 #: ./doc/glossary/glossary-terms.xml8353(primary)
 msgid "ports"
-msgstr "ポート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6114(para)
 msgid ""
@@ -5686,15 +5685,15 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6120(glossterm)
 #: ./doc/glossary/glossary-terms.xml6124(secondary)
 msgid "port UUID"
-msgstr "ポート UUID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6128(para)
 msgid "Unique ID for a Networking port."
-msgstr "Networking ポートのユニーク ID。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6133(glossterm)
 msgid "preseed"
-msgstr "preseed"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6135(primary)
 msgid "preseed, definition of"
@@ -5709,7 +5708,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6145(glossterm)
 #: ./doc/glossary/glossary-terms.xml6147(primary)
 msgid "private image"
-msgstr "プライベートイメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6151(para)
 msgid "An Image Service VM image that is only available to specified tenants."
@@ -5718,11 +5717,11 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6157(glossterm)
 #: ./doc/glossary/glossary-terms.xml6164(primary)
 msgid "private IP address"
-msgstr "プライベート IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6161(secondary)
 msgid "private"
-msgstr "プライベート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6168(para)
 msgid ""
@@ -5732,12 +5731,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6174(glossterm)
 msgid "private network"
-msgstr "プライベートネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6178(secondary)
 #: ./doc/glossary/glossary-terms.xml6181(primary)
 msgid "private networks"
-msgstr "プライベートネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6185(para)
 msgid ""
@@ -5752,13 +5751,13 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6197(glossterm)
 msgid "project"
-msgstr "プロジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6199(primary)
 #: ./doc/glossary/glossary-terms.xml6213(primary)
 #: ./doc/glossary/glossary-terms.xml6227(primary)
 msgid "projects"
-msgstr "プロジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6205(para)
 msgid ""
@@ -5769,7 +5768,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6211(glossterm)
 #: ./doc/glossary/glossary-terms.xml6215(secondary)
 msgid "project ID"
-msgstr "プロジェクト ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6219(para)
 msgid "User-defined alphanumeric string in Compute; the name of a project."
@@ -5778,16 +5777,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6225(glossterm)
 #: ./doc/glossary/glossary-terms.xml6229(secondary)
 msgid "project VPN"
-msgstr "プロジェクト VPN"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6233(para)
 msgid "Alternative term for a cloudpipe."
-msgstr "cloudpipe の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6238(glossterm)
 #: ./doc/glossary/glossary-terms.xml6240(primary)
 msgid "promiscuous mode"
-msgstr "プロミスキャスモード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6244(para)
 msgid ""
@@ -5811,15 +5810,15 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6266(glossterm)
 #: ./doc/glossary/glossary-terms.xml6268(primary)
 msgid "provider"
-msgstr "プロバイダー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6272(para)
 msgid "An administrator who has access to all hosts and instances."
-msgstr "すべてのホストやインスタンスへアクセス権を持つ管理者。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6278(glossterm)
 msgid "proxy node"
-msgstr "プロキシノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6282(secondary)
 #: ./doc/glossary/glossary-terms.xml6285(primary)
@@ -5832,7 +5831,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6294(glossterm)
 msgid "proxy server"
-msgstr "プロキシサーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6298(secondary)
 #: ./doc/glossary/glossary-terms.xml6301(primary)
@@ -5849,11 +5848,11 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6312(glossterm)
 #: ./doc/glossary/glossary-terms.xml6319(primary)
 msgid "public API"
-msgstr "パブリック API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6316(secondary)
 msgid "public APIs"
-msgstr "パブリック API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6323(para)
 msgid ""
@@ -5864,7 +5863,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6329(glossterm)
 #: ./doc/glossary/glossary-terms.xml6336(primary)
 msgid "public image"
-msgstr "パブリックイメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6333(secondary)
 msgid "public images"
@@ -5877,7 +5876,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6346(glossterm)
 #: ./doc/glossary/glossary-terms.xml6353(primary)
 msgid "public IP address"
-msgstr "パブリック IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6350(secondary)
 #: ./doc/glossary/glossary-terms.xml6378(secondary)
@@ -5886,21 +5885,21 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6357(para)
 msgid "An IP address that is accessible to end-users."
-msgstr "エンドユーザがアクセス可能な IP アドレス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6362(glossterm)
 #: ./doc/glossary/glossary-terms.xml6364(primary)
 msgid "public key authentication"
-msgstr "公開鍵認証"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6368(para)
 msgid "Authentication method that uses keys rather than passwords."
-msgstr "パスワードの代わりに鍵を使用する認証方式。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6374(glossterm)
 #: ./doc/glossary/glossary-terms.xml6381(primary)
 msgid "public network"
-msgstr "パブリックネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6385(para)
 msgid ""
@@ -5918,7 +5917,7 @@ msgstr "Puppet"
 #: ./doc/glossary/glossary-terms.xml6400(para)
 msgid ""
 "An operating system configuration-management tool supported by OpenStack."
-msgstr "OpenStackがサポートするオペレーティングシステム構成管理ツール。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6406(glossterm)
 #: ./doc/glossary/glossary-terms.xml6408(primary)
@@ -5927,7 +5926,7 @@ msgstr "Python"
 
 #: ./doc/glossary/glossary-terms.xml6412(para)
 msgid "Programming language used extensively in OpenStack."
-msgstr "OpenStack において幅広く使用されるプログラミング言語。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6420(title)
 msgid "Q"
@@ -5936,7 +5935,7 @@ msgstr "Q"
 #: ./doc/glossary/glossary-terms.xml6423(glossterm)
 #: ./doc/glossary/glossary-terms.xml6425(primary)
 msgid "QEMU Copy On Write 2 (QCOW2)"
-msgstr "QEMU Copy On Write 2 (QCOW2)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6435(glossterm)
 #: ./doc/glossary/glossary-terms.xml6437(primary)
@@ -5946,12 +5945,12 @@ msgstr "Qpid"
 #: ./doc/glossary/glossary-terms.xml6441(para)
 msgid ""
 "Message queue software supported by OpenStack; an alternative to RabbitMQ."
-msgstr "OpenStack によりサポートされるメッセージキューソフトウェア。RabbitMQ の代替。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6447(glossterm)
 #: ./doc/glossary/glossary-terms.xml6449(primary)
 msgid "quarantine"
-msgstr "隔離"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6453(para)
 msgid ""
@@ -5967,21 +5966,21 @@ msgstr "Quick EMUlator (QEMU)"
 
 #: ./doc/glossary/glossary-terms.xml6466(para)
 msgid "QEMU is a generic and open source machine emulator and virtualizer."
-msgstr "QEMUはオープンソースのマシンエミュレーターと仮想化ツールである。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6469(para)
 msgid ""
 "One of the hypervisors supported by OpenStack, generally used for "
 "development purposes."
-msgstr "OpenStack がサポートするハイパーバイザーの一つ。一般に、開発目的で使用される。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6475(glossterm)
 msgid "quota"
-msgstr "クォータ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6477(primary)
 msgid "quotas"
-msgstr "クォータ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6481(para)
 msgid ""
@@ -6000,12 +5999,12 @@ msgstr "RabbitMQ"
 
 #: ./doc/glossary/glossary-terms.xml6499(para)
 msgid "The default message queue software used by OpenStack."
-msgstr "OpenStackでデフォルトで採用されているメッセージキューのソフトウェア。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6504(glossterm)
 #: ./doc/glossary/glossary-terms.xml6506(primary)
 msgid "Rackspace Cloud Files"
-msgstr "Rackspace Cloud Files"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6510(para)
 msgid ""
@@ -6026,7 +6025,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6528(glossterm)
 #: ./doc/glossary/glossary-terms.xml6530(primary)
 msgid "radvd"
-msgstr "radvd"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6534(para)
 msgid ""
@@ -6037,7 +6036,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6541(glossterm)
 #: ./doc/glossary/glossary-terms.xml6543(primary)
 msgid "RAM filter"
-msgstr "RAM フィルター"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6547(para)
 msgid "The Compute setting that enables or disables RAM overcommitment."
@@ -6046,18 +6045,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6553(glossterm)
 #: ./doc/glossary/glossary-terms.xml6555(primary)
 msgid "RAM overcommit"
-msgstr "RAM オーバーコミット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6559(para)
 msgid ""
 "The ability to start new VM instances based on the actual memory usage of a "
 "host, as opposed to basing the decision on the amount of RAM each running "
 "instance thinks it has available. Also known as memory overcommit."
-msgstr "実行中の各インスタンスが利用可能と考えている RAM 量に基づく判断をベースにする代わりに、ホスト上の実際のメモリ使用量をベースにした、新しい VM インスタンスを起動する機能。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6567(glossterm)
 msgid "rate limit"
-msgstr "レートリミット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6569(primary)
 msgid "rate limits"
@@ -6071,7 +6070,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6579(glossterm)
 msgid "raw"
-msgstr "raw"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6581(primary)
 msgid "raw format"
@@ -6085,7 +6084,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6591(glossterm)
 msgid "rebalance"
-msgstr "リバランス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6593(primary)
 msgid "rebalancing"
@@ -6101,7 +6100,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6606(primary)
 #: ./doc/glossary/glossary-terms.xml7463(primary)
 msgid "reboot"
-msgstr "リブート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6608(secondary)
 #: ./doc/glossary/glossary-terms.xml7465(secondary)
@@ -6120,7 +6119,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6622(glossterm)
 msgid "rebuild"
-msgstr "リビルド"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6624(primary)
 msgid "rebuilding"
@@ -6130,12 +6129,12 @@ msgstr ""
 msgid ""
 "Removes all data on the server and replaces it with the specified image. "
 "Server ID and IP addresses remain the same."
-msgstr "サーバからすべてのデータを消去し、特定のイメージで置き換える。サーバのIDとIPアドレスは変更されない。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6634(glossterm)
 #: ./doc/glossary/glossary-terms.xml6636(primary)
 msgid "Recon"
-msgstr "recon"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6640(para)
 msgid "An Object Storage component that collects metrics."
@@ -6163,7 +6162,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6664(glossterm)
 msgid "record ID"
-msgstr "レコード ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6668(secondary)
 msgid "record IDs"
@@ -6183,16 +6182,16 @@ msgstr "Red Hat Enterprise Linux (RHEL)"
 #: ./doc/glossary/glossary-terms.xml6689(glossterm)
 #: ./doc/glossary/glossary-terms.xml6691(primary)
 msgid "reference architecture"
-msgstr "リファレンスアーキテクチャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6695(para)
 msgid "A recommended architecture for an OpenStack cloud."
-msgstr "OpenStack クラウドの推奨アーキテクチャー。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6700(glossterm)
 #: ./doc/glossary/glossary-terms.xml6702(primary)
 msgid "region"
-msgstr "リージョン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6706(para)
 msgid ""
@@ -6203,7 +6202,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6713(glossterm)
 #: ./doc/glossary/glossary-terms.xml6715(primary)
 msgid "registry"
-msgstr "レジストリ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6717(see)
 msgid "under Image Service"
@@ -6211,11 +6210,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6721(para)
 msgid "Alternative term for the Image Service registry."
-msgstr "Image Service レジストリの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6726(glossterm)
 msgid "registry server"
-msgstr "レジストリサーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6730(secondary)
 #: ./doc/glossary/glossary-terms.xml6733(primary)
@@ -6230,7 +6229,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6743(glossterm)
 #: ./doc/glossary/glossary-terms.xml6746(primary)
 msgid "Reliable, Autonomic Distributed Object Store (RADOS)"
-msgstr "Reliable, Autonomic Distributed Object Store (RADOS)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6751(para)
 msgid ""
@@ -6241,7 +6240,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6757(glossterm)
 #: ./doc/glossary/glossary-terms.xml6759(primary)
 msgid "Remote Procedure Call (RPC)"
-msgstr "Remote Procedure Call (RPC)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6763(para)
 msgid ""
@@ -6250,14 +6249,14 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6769(glossterm)
 msgid "replica"
-msgstr "レプリカ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6771(primary)
 #: ./doc/glossary/glossary-terms.xml6786(primary)
 #: ./doc/glossary/glossary-terms.xml6798(glossterm)
 #: ./doc/glossary/glossary-terms.xml6809(primary)
 msgid "replication"
-msgstr "レプリケーション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6777(para)
 msgid ""
@@ -6269,7 +6268,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6784(glossterm)
 #: ./doc/glossary/glossary-terms.xml6788(secondary)
 msgid "replica count"
-msgstr "レプリカ数"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6792(para)
 msgid "The number of replicas of the data in an Object Storage ring."
@@ -6279,11 +6278,11 @@ msgstr ""
 msgid ""
 "The process of copying data to a separate physical device for fault "
 "tolerance and performance."
-msgstr "別の物理デバイスにデータをコピーする処理。耐障害性や性能のために行われる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6807(glossterm)
 msgid "replicator"
-msgstr "レプリケーター"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6811(secondary)
 msgid "replicators"
@@ -6297,7 +6296,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6821(glossterm)
 msgid "request ID"
-msgstr "リクエスト ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6823(primary)
 msgid "request IDs"
@@ -6340,11 +6339,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6859(glossterm)
 msgid "RESTful"
-msgstr "RESTful"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6861(primary)
 msgid "RESTful web services"
-msgstr "RESTful Web サービス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6865(para)
 msgid ""
@@ -6355,7 +6354,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6872(glossterm)
 msgid "ring"
-msgstr "リング"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6874(primary)
 #: ./doc/glossary/glossary-terms.xml6889(primary)
@@ -6370,7 +6369,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6887(glossterm)
 msgid "ring builder"
-msgstr "リングビルダー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6891(secondary)
 msgid "ring builders"
@@ -6385,7 +6384,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6902(glossterm)
 #: ./doc/glossary/glossary-terms.xml6904(primary)
 msgid "Role Based Access Control (RBAC)"
-msgstr "Role Based Access Control (RBAC)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6908(para)
 msgid ""
@@ -6396,12 +6395,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6916(glossterm)
 msgid "role"
-msgstr "ロール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6918(primary)
 #: ./doc/glossary/glossary-terms.xml6933(primary)
 msgid "roles"
-msgstr "ロール"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6924(para)
 msgid ""
@@ -6413,7 +6412,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6931(glossterm)
 #: ./doc/glossary/glossary-terms.xml6935(secondary)
 msgid "role ID"
-msgstr "ロール ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6939(para)
 msgid "Alphanumeric ID assigned to each Identity Service role."
@@ -6422,7 +6421,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6944(glossterm)
 #: ./doc/glossary/glossary-terms.xml6946(primary)
 msgid "rootwrap"
-msgstr "rootwrap"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6950(para)
 msgid ""
@@ -6433,7 +6432,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6956(glossterm)
 #: ./doc/glossary/glossary-terms.xml6963(primary)
 msgid "round-robin scheduler"
-msgstr "ラウンドロビンスケジューラー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6958(primary)
 #: ./doc/glossary/glossary-terms.xml7506(primary)
@@ -6442,7 +6441,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6960(secondary)
 msgid "round-robin"
-msgstr "ラウンドロビン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6967(para)
 msgid ""
@@ -6453,13 +6452,13 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml6973(glossterm)
 #: ./doc/glossary/glossary-terms.xml6975(primary)
 msgid "router"
-msgstr "ルーター"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6979(para)
 msgid ""
 "A physical or virtual network device that passes network traffic between "
 "different networks."
-msgstr "異なるネットワーク間でネットワーク通信を転送する、物理または仮想のネットワークデバイス。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6985(glossterm)
 msgid "routing key"
@@ -6478,16 +6477,16 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml6998(glossterm)
 msgid "RPC driver"
-msgstr "RPC ドライバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7000(primary)
 msgid "drivers"
-msgstr "ドライバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7002(secondary)
 #: ./doc/glossary/glossary-terms.xml7005(primary)
 msgid "RPC drivers"
-msgstr "RPC ドライバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7009(para)
 msgid ""
@@ -6498,7 +6497,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7016(glossterm)
 #: ./doc/glossary/glossary-terms.xml7018(primary)
 msgid "rsync"
-msgstr "rsync"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7022(para)
 msgid "Used by Object Storage to push object replicas."
@@ -6545,7 +6544,7 @@ msgstr "S"
 
 #: ./doc/glossary/glossary-terms.xml7066(glossterm)
 msgid "S3"
-msgstr "S3"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7068(primary)
 msgid "S3 storage service"
@@ -6572,7 +6571,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7091(glossterm)
 #: ./doc/glossary/glossary-terms.xml7093(primary)
 msgid "scheduler manager"
-msgstr "スケジューラーマネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7097(para)
 msgid ""
@@ -6582,7 +6581,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7104(glossterm)
 msgid "scoped token"
-msgstr "スコープ付きトークン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7106(primary)
 msgid "scoped tokens"
@@ -6610,7 +6609,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7128(glossterm)
 msgid "secret key"
-msgstr "シークレットキー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7130(primary)
 msgid "secret keys"
@@ -6625,7 +6624,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7140(glossterm)
 #: ./doc/glossary/glossary-terms.xml7142(primary)
 msgid "secure shell (SSH)"
-msgstr "secure shell (SSH)"
+msgstr "Secure Shell (SSH)"
 
 #: ./doc/glossary/glossary-terms.xml7146(para)
 msgid ""
@@ -6635,7 +6634,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7153(glossterm)
 msgid "security group"
-msgstr "セキュリティグループ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7155(primary)
 msgid "security groups"
@@ -6645,11 +6644,11 @@ msgstr ""
 msgid ""
 "A set of network traffic filtering rules that are applied to a Compute "
 "instance."
-msgstr "Compute のインスタンスに適用される、ネットワーク通信のフィルタリングルールの集合。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7165(glossterm)
 msgid "segmented object"
-msgstr "分割オブジェクト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7169(secondary)
 #: ./doc/glossary/glossary-terms.xml7172(primary)
@@ -6664,7 +6663,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7183(glossterm)
 msgid "server"
-msgstr "サーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7191(para)
 msgid ""
@@ -6681,20 +6680,20 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7201(glossterm)
 #: ./doc/glossary/glossary-terms.xml7203(primary)
 msgid "server image"
-msgstr "サーバーイメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7207(para)
 msgid "Alternative term for a VM image."
-msgstr "VM イメージの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7212(glossterm)
 #: ./doc/glossary/glossary-terms.xml7216(secondary)
 msgid "server UUID"
-msgstr "サーバー UUID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7226(glossterm)
 msgid "service"
-msgstr "service"
+msgstr "Dienst"
 
 #: ./doc/glossary/glossary-terms.xml7228(primary)
 msgid "services"
@@ -6710,16 +6709,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7241(glossterm)
 #: ./doc/glossary/glossary-terms.xml7243(primary)
 msgid "service catalog"
-msgstr "サービスカタログ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7247(para)
 msgid "Alternative term for the Identity Service catalog."
-msgstr "Identity サービスカタログの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7252(glossterm)
 #: ./doc/glossary/glossary-terms.xml7254(primary)
 msgid "service ID"
-msgstr "サービス ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7258(para)
 msgid ""
@@ -6730,7 +6729,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7264(glossterm)
 #: ./doc/glossary/glossary-terms.xml7266(primary)
 msgid "service registration"
-msgstr "サービス登録"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7270(para)
 msgid ""
@@ -6741,7 +6740,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7276(glossterm)
 #: ./doc/glossary/glossary-terms.xml7278(primary)
 msgid "service tenant"
-msgstr "サービステナント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7282(para)
 msgid ""
@@ -6751,7 +6750,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7288(glossterm)
 #: ./doc/glossary/glossary-terms.xml7290(primary)
 msgid "service token"
-msgstr "サービストークン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7294(para)
 msgid ""
@@ -6762,13 +6761,13 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7300(glossterm)
 #: ./doc/glossary/glossary-terms.xml7304(secondary)
 msgid "session back end"
-msgstr "セッションバックエンド"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7302(primary)
 #: ./doc/glossary/glossary-terms.xml7316(primary)
 #: ./doc/glossary/glossary-terms.xml7331(primary)
 msgid "sessions"
-msgstr "セッション"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7308(para)
 msgid ""
@@ -6779,7 +6778,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7314(glossterm)
 #: ./doc/glossary/glossary-terms.xml7318(secondary)
 msgid "session persistence"
-msgstr "セッション持続性"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7322(para)
 msgid ""
@@ -6791,22 +6790,22 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7329(glossterm)
 #: ./doc/glossary/glossary-terms.xml7333(secondary)
 msgid "session storage"
-msgstr "セッションストレージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7337(para)
 msgid ""
 "A horizon component that stores and tracks client session information. "
 "Implemented through the Django sessions framework."
-msgstr "クライアントセッションの保持と追跡を行う Horizon のコンポーネント。 Django のセッションフレームワークを用いて実装されている。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7343(glossterm)
 #: ./doc/glossary/glossary-terms.xml7350(primary)
 msgid "shared IP address"
-msgstr "共有 IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7347(secondary)
 msgid "shared"
-msgstr "shared"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7354(para)
 msgid ""
@@ -6822,7 +6821,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7367(glossterm)
 msgid "shared IP group"
-msgstr "共有 IP グループ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7369(primary)
 msgid "shared IP groups"
@@ -6840,7 +6839,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7382(glossterm)
 #: ./doc/glossary/glossary-terms.xml7384(primary)
 msgid "shared storage"
-msgstr "共有ストレージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7388(para)
 msgid ""
@@ -6851,16 +6850,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7394(glossterm)
 #: ./doc/glossary/glossary-terms.xml7396(primary)
 msgid "Sheepdog"
-msgstr "Sheepdog"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7400(para)
 msgid "Distributed block storage system for QEMU, supported by OpenStack."
-msgstr "OpenStack によりサポートされる、QEMU 用の分散ブロックストレージシステム。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7406(glossterm)
 #: ./doc/glossary/glossary-terms.xml7409(primary)
 msgid "Simple Cloud Identity Management (SCIM)"
-msgstr "Simple Cloud Identity Management (SCIM)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7413(para)
 msgid ""
@@ -6871,7 +6870,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7419(glossterm)
 #: ./doc/glossary/glossary-terms.xml7422(primary)
 msgid "Single-root I/O Virtualization (SR-IOV)"
-msgstr "Single-root I/O Virtualization (SR-IOV)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7426(para)
 msgid ""
@@ -6886,7 +6885,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7436(glossterm)
 #: ./doc/glossary/glossary-terms.xml7438(primary)
 msgid "SmokeStack"
-msgstr "SmokeStack"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7442(para)
 msgid "Runs automated tests against the core OpenStack API; written in Rails."
@@ -6895,14 +6894,14 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7448(glossterm)
 #: ./doc/glossary/glossary-terms.xml7450(primary)
 msgid "snapshot"
-msgstr "スナップショット"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7454(para)
 msgid ""
 "A point-in-time copy of an OpenStack storage volume or image. Use storage "
 "volume snapshots to back up volumes. Use image snapshots to back up data, or"
 " as \"gold\" images for additional servers."
-msgstr "OpenStack ストレージボリュームやイメージの、ある時点でのコピー。ストレージのボリュームスナップショットは、ボリュームをバックアップするために使用する。イメージスナップショットは、データのバックアップを行ったり、新しいサーバー用の「ゴールド」イメージ（設定済みイメージ）としてバックアップしたりするのに使用する。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7461(glossterm)
 #: ./doc/glossary/glossary-terms.xml7468(primary)
@@ -6937,12 +6936,12 @@ msgid ""
 "The Simple Protocol for Independent Computing Environments (SPICE) provides "
 "remote desktop access to guest virtual machines. It is an alternative to "
 "VNC. SPICE is supported by OpenStack."
-msgstr "Simple Protocol for Independent Computing Environments (SPICE) は、ゲスト仮想マシンに対するリモートデスクトップアクセスを提供する。VNC の代替品。SPICE は OpenStack によりサポートされる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7504(glossterm)
 #: ./doc/glossary/glossary-terms.xml7511(primary)
 msgid "spread-first scheduler"
-msgstr "分散優先スケジューラー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7508(secondary)
 msgid "spread-first"
@@ -6957,22 +6956,22 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7521(glossterm)
 #: ./doc/glossary/glossary-terms.xml7523(primary)
 msgid "SQL-Alchemy"
-msgstr "SQL-Alchemy"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7527(para)
 msgid "An open source SQL toolkit for Python, used in OpenStack."
-msgstr "OpenStack で使われている、オープンソースの Python 用 SQL ツールキット。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7532(glossterm)
 #: ./doc/glossary/glossary-terms.xml7534(primary)
 msgid "SQLite"
-msgstr "SQLite"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7538(para)
 msgid ""
 "A lightweight SQL database, used as the default persistent storage method in"
 " many OpenStack services."
-msgstr "軽量 SQL データベース。多くの OpenStack サービスでデフォルトの永続ストレージとして使用されている。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7544(glossterm)
 #: ./doc/glossary/glossary-terms.xml7546(primary)
@@ -6989,7 +6988,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7558(glossterm)
 #: ./doc/glossary/glossary-terms.xml7560(primary)
 msgid "StackTach"
-msgstr "StackTach"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7564(para)
 msgid ""
@@ -6999,7 +6998,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7570(glossterm)
 msgid "static IP address"
-msgstr "静的 IP アドレス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7574(secondary)
 msgid "static"
@@ -7011,12 +7010,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7581(para)
 msgid "Alternative term for a fixed IP address."
-msgstr "固定 IP アドレスの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7586(glossterm)
 #: ./doc/glossary/glossary-terms.xml7588(primary)
 msgid "StaticWeb"
-msgstr "StaticWeb"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7592(para)
 msgid ""
@@ -7038,7 +7037,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7610(glossterm)
 #: ./doc/glossary/glossary-terms.xml7617(primary)
 msgid "storage node"
-msgstr "ストレージノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7614(secondary)
 msgid "storage nodes"
@@ -7054,7 +7053,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7628(glossterm)
 #: ./doc/glossary/glossary-terms.xml7632(secondary)
 msgid "storage manager"
-msgstr "ストレージマネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7630(primary)
 #: ./doc/glossary/glossary-terms.xml7644(primary)
@@ -7081,7 +7080,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7656(glossterm)
 #: ./doc/glossary/glossary-terms.xml7660(secondary)
 msgid "storage services"
-msgstr "ストレージサービス"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7664(para)
 msgid ""
@@ -7102,7 +7101,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7682(glossterm)
 msgid "subdomain"
-msgstr "サブドメイン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7684(primary)
 msgid "subdomains"
@@ -7146,7 +7145,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7731(glossterm)
 msgid "swap"
-msgstr "スワップ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7733(primary)
 msgid "swap, definition of"
@@ -7172,12 +7171,12 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7759(para)
 msgid "An OpenStack core project that provides object storage services."
-msgstr "オブジェクトストレージサービスを提供する OpenStack コアプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7765(glossterm)
 #: ./doc/glossary/glossary-terms.xml7767(primary)
 msgid "swift All in One (SAIO)"
-msgstr "swift All in One (SAIO)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7771(para)
 msgid ""
@@ -7187,7 +7186,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7777(glossterm)
 #: ./doc/glossary/glossary-terms.xml7781(secondary)
 msgid "swift middleware"
-msgstr "swift ミドルウェア"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7785(para)
 msgid ""
@@ -7198,7 +7197,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7791(glossterm)
 #: ./doc/glossary/glossary-terms.xml7795(secondary)
 msgid "swift proxy server"
-msgstr "swift プロキシサーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7799(para)
 msgid ""
@@ -7208,7 +7207,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7805(glossterm)
 msgid "swift storage node"
-msgstr "swift ストレージノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7809(secondary)
 #: ./doc/glossary/glossary-terms.xml7814(secondary)
@@ -7224,7 +7223,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7829(glossterm)
 #: ./doc/glossary/glossary-terms.xml7831(primary)
 msgid "sync point"
-msgstr "同期ポイント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7835(para)
 msgid ""
@@ -7262,7 +7261,7 @@ msgstr "T"
 #: ./doc/glossary/glossary-terms.xml7873(glossterm)
 #: ./doc/glossary/glossary-terms.xml7875(primary)
 msgid "Telemetry"
-msgstr "Telemetry"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7879(para)
 msgid ""
@@ -7273,7 +7272,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7886(glossterm)
 #: ./doc/glossary/glossary-terms.xml7888(primary)
 msgid "TempAuth"
-msgstr "TempAuth"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7892(para)
 msgid ""
@@ -7285,18 +7284,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7899(glossterm)
 #: ./doc/glossary/glossary-terms.xml7901(primary)
 msgid "Tempest"
-msgstr "Tempest"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7905(para)
 msgid ""
 "Automated software test suite designed to run against the trunk of the "
 "OpenStack core project."
-msgstr "OpenStack コアプロジェクトの trunk ブランチに対してテストを実行するために設計された自動ソフトウェアテストスイート。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7911(glossterm)
 #: ./doc/glossary/glossary-terms.xml7913(primary)
 msgid "TempURL"
-msgstr "TempURL"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7917(para)
 msgid ""
@@ -7309,7 +7308,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7952(primary)
 #: ./doc/glossary/glossary-terms.xml7966(primary)
 msgid "tenant"
-msgstr "テナント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7926(para)
 msgid ""
@@ -7320,17 +7319,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7932(glossterm)
 #: ./doc/glossary/glossary-terms.xml7936(secondary)
 msgid "Tenant API"
-msgstr "テナント API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7940(para)
 msgid "An API that is accessible to tenants."
-msgstr "テナントにアクセス可能な API。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7945(glossterm)
 #: ./doc/glossary/glossary-terms.xml7949(secondary)
 #: ./doc/glossary/glossary-terms.xml7954(secondary)
 msgid "tenant endpoint"
-msgstr "テナントエンドポイント"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7958(para)
 msgid ""
@@ -7341,7 +7340,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml7964(glossterm)
 #: ./doc/glossary/glossary-terms.xml7968(secondary)
 msgid "tenant ID"
-msgstr "テナント ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7972(para)
 msgid ""
@@ -7351,16 +7350,16 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7978(glossterm)
 msgid "token"
-msgstr "トークン"
+msgstr "Token"
 
 #: ./doc/glossary/glossary-terms.xml7980(primary)
 msgid "tokens"
-msgstr "トークン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7984(para)
 msgid ""
 "An alpha-numeric string of text used to access OpenStack APIs and resources."
-msgstr "OpenStack API やリソースへのアクセスに使用される英数字文字列。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml7990(glossterm)
 #: ./doc/glossary/glossary-terms.xml7992(primary)
@@ -7376,7 +7375,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8002(glossterm)
 #: ./doc/glossary/glossary-terms.xml8004(primary)
 msgid "tombstone"
-msgstr "tombstone"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8007(para)
 msgid ""
@@ -7398,7 +7397,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8027(glossterm)
 #: ./doc/glossary/glossary-terms.xml8029(primary)
 msgid "Torpedo"
-msgstr "Torpedo"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8033(para)
 msgid ""
@@ -7407,7 +7406,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8039(glossterm)
 msgid "transaction ID"
-msgstr "トランザクション ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8041(primary)
 msgid "transaction IDs"
@@ -7472,11 +7471,11 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8106(glossterm)
 #: ./doc/glossary/glossary-terms.xml8108(primary)
 msgid "trove"
-msgstr "trove"
+msgstr "Trove"
 
 #: ./doc/glossary/glossary-terms.xml8112(para)
 msgid "OpenStack project that provides database services to applications."
-msgstr "データベースサービスをアプリケーションに提供する OpenStack のプロジェクト。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8121(title)
 msgid "U"
@@ -7489,20 +7488,20 @@ msgstr "Ubuntu"
 
 #: ./doc/glossary/glossary-terms.xml8130(para)
 msgid "A Debian-based Linux distribution."
-msgstr "Debian ベースの Linux ディストリビューション。"
+msgstr "Eine Debian-basierte Linux Distribution."
 
 #: ./doc/glossary/glossary-terms.xml8135(glossterm)
 #: ./doc/glossary/glossary-terms.xml8137(primary)
 msgid "unscoped token"
-msgstr "スコープなしトークン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8141(para)
 msgid "Alternative term for an Identity Service default token."
-msgstr "Identity Service デフォルトトークンの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8146(glossterm)
 msgid "updater"
-msgstr "アップデーター"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8148(primary)
 msgid "updaters"
@@ -7516,7 +7515,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8158(glossterm)
 msgid "user"
-msgstr "ユーザー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8160(primary)
 msgid "users, definition of"
@@ -7531,7 +7530,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8171(glossterm)
 #: ./doc/glossary/glossary-terms.xml8173(primary)
 msgid "user data"
-msgstr "ユーザーデータ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8177(para)
 msgid ""
@@ -7548,12 +7547,12 @@ msgstr "User Mode Linux (UML)"
 
 #: ./doc/glossary/glossary-terms.xml8201(title)
 msgid "V"
-msgstr "V"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8204(glossterm)
 #: ./doc/glossary/glossary-terms.xml8206(primary)
 msgid "VIF UUID"
-msgstr "VIF UUID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8210(para)
 msgid "Unique ID assigned to each Networking VIF."
@@ -7562,7 +7561,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8215(glossterm)
 #: ./doc/glossary/glossary-terms.xml8217(primary)
 msgid "VIP"
-msgstr "仮想 IP"
+msgstr "VIP"
 
 #: ./doc/glossary/glossary-terms.xml8221(para)
 msgid ""
@@ -7576,7 +7575,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8231(glossterm)
 #: ./doc/glossary/glossary-terms.xml8234(primary)
 msgid "Virtual Central Processing Unit (vCPU)"
-msgstr "仮想CPU (vCPU)"
+msgstr "Virtual Central Processing Unit (vCPU)"
 
 #: ./doc/glossary/glossary-terms.xml8238(para)
 msgid "Subdivides physical CPUs. Instances can then use those divisions."
@@ -7585,17 +7584,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8244(glossterm)
 #: ./doc/glossary/glossary-terms.xml8246(primary)
 msgid "Virtual Disk Image (VDI)"
-msgstr "Virtual Disk Image (VDI)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8256(glossterm)
 #: ./doc/glossary/glossary-terms.xml8258(primary)
 msgid "Virtual Hard Disk (VHD)"
-msgstr "Virtual Hard Disk (VHD)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8268(glossterm)
 #: ./doc/glossary/glossary-terms.xml8270(primary)
 msgid "virtual IP"
-msgstr "仮想 IP"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8274(para)
 msgid ""
@@ -7608,24 +7607,24 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8282(glossterm)
 #: ./doc/glossary/glossary-terms.xml8284(primary)
 msgid "virtual machine (VM)"
-msgstr "仮想マシン (VM)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8288(para)
 msgid ""
 "An operating system instance that runs on top of a hypervisor. Multiple VMs "
 "can run at the same time on the same physical host."
-msgstr "ハイパーバイザー上で動作するオペレーティングシステムインスタンス。一台の物理ホストで同時に複数の VM を実行できる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8295(glossterm)
 #: ./doc/glossary/glossary-terms.xml8302(primary)
 msgid "virtual network"
-msgstr "仮想ネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8299(secondary)
 #: ./doc/glossary/glossary-terms.xml8355(secondary)
 #: ./doc/glossary/glossary-terms.xml8385(secondary)
 msgid "virtual"
-msgstr "仮想"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8306(para)
 msgid "An L2 network segment within Networking."
@@ -7646,18 +7645,18 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8326(glossterm)
 #: ./doc/glossary/glossary-terms.xml8328(primary)
 msgid "Virtual Network Computing (VNC)"
-msgstr "Virtual Network Computing (VNC)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8332(para)
 msgid ""
 "Open source GUI and CLI tools used for remote console access to VMs. "
 "Supported by Compute."
-msgstr "仮想マシンへのリモートコンソールアクセスに使用される、オープンソースの GUI / CUI ツール。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8338(glossterm)
 #: ./doc/glossary/glossary-terms.xml8340(primary)
 msgid "Virtual Network InterFace (VIF)"
-msgstr "仮想ネットワークインタフェース (VIF)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8344(para)
 msgid ""
@@ -7668,17 +7667,17 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8351(glossterm)
 #: ./doc/glossary/glossary-terms.xml8358(primary)
 msgid "virtual port"
-msgstr "仮想ポート"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8362(para)
 msgid ""
 "Attachment point where a virtual interface connects to a virtual network."
-msgstr "仮想ネットワークへの仮想インタフェースの接続ポイント。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8368(glossterm)
 #: ./doc/glossary/glossary-terms.xml8370(primary)
 msgid "virtual private network (VPN)"
-msgstr "仮想プライベートネットワーク (VPN)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8374(para)
 msgid ""
@@ -7689,20 +7688,20 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8381(glossterm)
 msgid "virtual server"
-msgstr "仮想サーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8388(primary)
 msgid "virtual servers"
-msgstr "仮想サーバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8392(para)
 msgid "Alternative term for a VM or guest."
-msgstr "仮想マシンやゲストの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8397(glossterm)
 #: ./doc/glossary/glossary-terms.xml8399(primary)
 msgid "virtual switch (vSwitch)"
-msgstr "仮想スイッチ (vSwitch)"
+msgstr "virtual switch (vSwitch)"
 
 #: ./doc/glossary/glossary-terms.xml8403(para)
 msgid ""
@@ -7713,21 +7712,21 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8409(glossterm)
 #: ./doc/glossary/glossary-terms.xml8411(primary)
 msgid "virtual VLAN"
-msgstr "仮想 VLAN"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8415(para)
 msgid "Alternative term for a virtual network."
-msgstr "仮想ネットワークの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8420(glossterm)
 #: ./doc/glossary/glossary-terms.xml8422(primary)
 msgid "VirtualBox"
-msgstr "VirtualBox"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8431(glossterm)
 #: ./doc/glossary/glossary-terms.xml8433(primary)
 msgid "VLAN manager"
-msgstr "VLAN マネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8437(para)
 msgid ""
@@ -7738,7 +7737,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8443(glossterm)
 #: ./doc/glossary/glossary-terms.xml8450(primary)
 msgid "VLAN network"
-msgstr "VLAN ネットワーク"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8447(secondary)
 msgid "VLAN"
@@ -7756,21 +7755,21 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8464(glossterm)
 #: ./doc/glossary/glossary-terms.xml8466(primary)
 msgid "VM disk (VMDK)"
-msgstr "VM disk (VMDK)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8476(glossterm)
 #: ./doc/glossary/glossary-terms.xml8478(primary)
 msgid "VM image"
-msgstr "仮想マシンイメージ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8482(para)
 msgid "Alternative term for an image."
-msgstr "イメージの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8487(glossterm)
 #: ./doc/glossary/glossary-terms.xml8489(primary)
 msgid "VM Remote Control (VMRC)"
-msgstr "VM Remote Control (VMRC)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8493(para)
 msgid ""
@@ -7781,7 +7780,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8499(glossterm)
 #: ./doc/glossary/glossary-terms.xml8501(primary)
 msgid "VMware API"
-msgstr "VMware API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8505(para)
 msgid "Supports interaction with VMware products in Compute."
@@ -7789,7 +7788,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8510(glossterm)
 msgid "VMware NSX Neutron plug-in"
-msgstr "VMware NSX Neutron プラグイン"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8513(para)
 msgid "Provides support for VMware NSX in Neutron."
@@ -7798,7 +7797,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8518(glossterm)
 #: ./doc/glossary/glossary-terms.xml8520(primary)
 msgid "VNC proxy"
-msgstr "VNC プロキシ"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8524(para)
 msgid ""
@@ -7815,7 +7814,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8610(primary)
 #: ./doc/glossary/glossary-terms.xml8624(primary)
 msgid "volume"
-msgstr "ボリューム"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8533(para)
 msgid ""
@@ -7826,16 +7825,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8540(glossterm)
 #: ./doc/glossary/glossary-terms.xml8544(secondary)
 msgid "Volume API"
-msgstr "Volume API"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8548(para)
 msgid "Alternative name for the Block Storage API."
-msgstr "Block Storage API の別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8553(glossterm)
 #: ./doc/glossary/glossary-terms.xml8557(secondary)
 msgid "volume controller"
-msgstr "ボリュームコントローラー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8561(para)
 msgid ""
@@ -7846,16 +7845,16 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8567(glossterm)
 #: ./doc/glossary/glossary-terms.xml8571(secondary)
 msgid "volume driver"
-msgstr "ボリュームドライバー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8575(para)
 msgid "Alternative term for a volume plug-in."
-msgstr "ボリュームプラグインの別名。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8580(glossterm)
 #: ./doc/glossary/glossary-terms.xml8584(secondary)
 msgid "volume ID"
-msgstr "ボリューム ID"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8588(para)
 msgid ""
@@ -7865,7 +7864,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8594(glossterm)
 #: ./doc/glossary/glossary-terms.xml8598(secondary)
 msgid "volume manager"
-msgstr "ボリュームマネージャー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8602(para)
 msgid ""
@@ -7876,7 +7875,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8608(glossterm)
 #: ./doc/glossary/glossary-terms.xml8612(secondary)
 msgid "volume node"
-msgstr "ボリュームノード"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8616(para)
 msgid ""
@@ -7897,7 +7896,7 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8636(glossterm)
 msgid "volume worker"
-msgstr "ボリュームワーカー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8638(primary)
 msgid "volume workers"
@@ -7935,7 +7934,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8680(glossterm)
 #: ./doc/glossary/glossary-terms.xml8682(primary)
 msgid "weight"
-msgstr "ウェイト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8686(para)
 msgid ""
@@ -7946,7 +7945,7 @@ msgstr ""
 #: ./doc/glossary/glossary-terms.xml8692(glossterm)
 #: ./doc/glossary/glossary-terms.xml8694(primary)
 msgid "weighted cost"
-msgstr "重み付けコスト"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8698(para)
 msgid ""
@@ -7956,11 +7955,11 @@ msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8704(glossterm)
 msgid "worker"
-msgstr "ワーカー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8706(primary)
 msgid "workers"
-msgstr "ワーカー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8710(para)
 msgid ""
@@ -7977,7 +7976,7 @@ msgstr "X"
 #: ./doc/glossary/glossary-terms.xml8724(glossterm)
 #: ./doc/glossary/glossary-terms.xml8726(primary)
 msgid "Xen"
-msgstr "Xen"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8730(para)
 msgid ""
@@ -7995,23 +7994,23 @@ msgstr "Xen API"
 
 #: ./doc/glossary/glossary-terms.xml8743(para)
 msgid "The Xen administrative API, which is supported by Compute."
-msgstr "Xen 管理 API。Compute によりサポートされる。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8749(glossterm)
 #: ./doc/glossary/glossary-terms.xml8753(secondary)
 msgid "Xen Cloud Platform (XCP)"
-msgstr "Xen Cloud Platform (XCP)"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8762(glossterm)
 #: ./doc/glossary/glossary-terms.xml8766(secondary)
 msgid "Xen Storage Manager Volume Driver"
-msgstr "Xen Storage Manager Volume Driver"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8770(para)
 msgid ""
 "A Block Storage volume plug-in that enables communication with the Xen "
 "Storage Manager API."
-msgstr "Xen Storage Manager API と通信できる Block Storage ボリュームプラグイン。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8776(glossterm)
 msgid "XenServer"
@@ -8019,15 +8018,15 @@ msgstr "XenServer"
 
 #: ./doc/glossary/glossary-terms.xml8780(secondary)
 msgid "XenServer hypervisor"
-msgstr "XenServer ハイパーバイザー"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8792(title)
 msgid "Y"
-msgstr "Y"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8806(title)
 msgid "Z"
-msgstr "Z"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8809(glossterm)
 #: ./doc/glossary/glossary-terms.xml8811(primary)
@@ -8038,7 +8037,7 @@ msgstr "ZeroMQ"
 msgid ""
 "Message queue software supported by OpenStack. An alternative to RabbitMQ. "
 "Also spelled 0MQ."
-msgstr "OpenStack によりサポートされるメッセージキューソフトウェア。RabbitMQ の代替。0MQ とも表記。"
+msgstr ""
 
 #: ./doc/glossary/glossary-terms.xml8821(glossterm)
 #: ./doc/glossary/glossary-terms.xml8823(primary)
@@ -8049,9 +8048,9 @@ msgstr "Zuul"
 msgid ""
 "Tool used in OpenStack development to ensure correctly ordered testing of "
 "changes in parallel."
-msgstr "OpenStack 開発で使用されているツールで、変更のテストを正しい順番を保証しながら並列に実行する。"
+msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ./doc/glossary/glossary-terms.xml0(None)
 msgid "translator-credits"
-msgstr "Tomoyuki KATO <tomo@dream.daynight.jp>, 2013-2014"
+msgstr "Danksagungen an die Übersetzer"

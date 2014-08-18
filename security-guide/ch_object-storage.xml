@@ -64,13 +64,12 @@
     </note>
     <section xml:id="object-storage-idpA">
         <title>First thing to secure: the network</title>
-        <para>The first aspect of a secure architecture design for
-            Object Storage is in the networking component. The proxy servers
-            communicate with both the public side of the cluster
-            and the private side.  On the public side, the proxy servers
-            communicate with applications (control and data) while
-            on the private side they communicate with the storage nodes
-            for both data transfer and inter-node communication.</para>
+        <para>Securing Object Storage service begins with securing the
+            networking component. The rsync protocol is used between storage
+            service nodes to replicate data for high availability. In addition,
+            the proxy service communicates with the storage service when
+            relaying data back and forth between the client end-point and the
+            cloud environment.</para>
         <caution>
             <para>Object Storage does not employ encryption or authentication
             with inter-node communications. This is why you see a

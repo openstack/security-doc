@@ -72,7 +72,14 @@
       </section>
       <section xml:id="security-services-for-instances-idp142048">
         <title>AggregateMultiTenancyIsolation</title>
-        <para>Isolates tenants to specific host aggregates. If a host is in an aggregate that has the metadata key <literal>filter_tenant_id</literal> it will only create instances from that tenant (or list of tenants). A host can be in multiple aggregates. If a host does not belong to an aggregate with the metadata key, it can create instances from all tenants.</para>
+        <para>This filter will isolate a
+        tenant or group of tenants to specific host aggregates. If a
+        host is assigned to an aggregate that has the metadata key
+          <literal>filter_tenant_id</literal>, it will only create instances from that
+        tenant or list of tenants. A host can be assigned to multiple
+        aggregates, however if a host does not belong to an aggregate
+        with the metadata key, it can create instances from all
+        tenants.</para>
       </section>
       <section xml:id="security-services-for-instances-idp143968">
         <title>DifferentHostFilter</title>

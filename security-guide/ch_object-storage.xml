@@ -7,15 +7,17 @@
     <?dbhtml stop-chunking?>
     <title>Object Storage</title>
     <para>OpenStack Object Storage (swift) is a service that provides
-        storage and retrieval of data over HTTP. Objects (blobs of
-        data) are stored in an organizational hierarchy that offers
-        anonymous read-only access or ACL defined access based on the
-        authentication mechanism.</para>
-    <para>A consumer can store objects, modify them, or access them
-        using the HTTP protocol and REST APIs. Backend components of
-        Object Storage use different protocols for keeping the
-        information synchronized in a redundant cluster of services.
-        For more details on the API and the back-end components see the
+        software that stores and retrieves data over HTTP. Objects
+        (blobs of data) are stored in an organizational hierarchy
+        that offers anonymous read-only access, ACL defined access,
+        or even temporary access.  Object Store supports multiple
+        token-based authentication mechanisms implemented via
+        middleware.</para>
+    <para>Applications store and retrieve data in Object Store via an
+        industry-standard HTTP RESTful API.  Back-end components of
+        Object Storage follow the same RESTful model however some of the APIs
+        for managing durability, for example, are kept private to the
+        cluster. For more details on the API see the
             <link
             xlink:href="http://docs.openstack.org/api/openstack-object-storage/1.0/content/"
             >OpenStack Storage documentation</link>.</para>
@@ -55,7 +57,7 @@
         </mediaobject>
     </figure>
     <note>
-        <para>An Object Storage environment does not have to
+        <para>An Object Storage installation does not have to
             necessarily be on the Internet and could also be a private
             cloud with the "Public Switch" being part of the
             organization's internal network infrastructure.</para>
@@ -63,29 +65,28 @@
     <section xml:id="object-storage-idpA">
         <title>First thing to secure: the network</title>
         <para>The first aspect of a secure architecture design for
-            Object Storage is in the networking component. The Storage
-            service nodes use rsync between each other for copying
-            data to provide replication and high availability. In
-            addition, the proxy service communicates with the Storage
-            service when relaying data back and forth between the
-            end-point client and the cloud environment.</para>
+            Object Storage is in the networking component. The proxy servers
+            communicate with both the public side of the cluster
+            and the private side.  On the public side, the proxy servers
+            communicate with applications (control and data) while
+            on the private side they communicate with the storage nodes
+            for both data transfer and inter-node communication.</para>
         <caution>
-            <para>None of these use any type of encryption or
-                authentication at this layer/tier.</para>
-        </caution>
-        <para>This is why you see a "Private Switch" or private
-            network ([V]LAN) in architecture diagrams. This data
-            domain should be separate from other OpenStack data
-            networks as well. For further discussion on security
-            domains please see <xref
-                linkend="security-boundaries-and-threats"
+            <para>Object Storage does not employ encryption or authentication
+            with inter-node communications. This is why you see a
+            "Private Switch" or private network ([V]LAN) in architecture
+            diagrams. This data domain should be separate from other
+            OpenStack data networks as well. For further discussion on
+            security domains please see <xref
+            linkend="security-boundaries-and-threats"
             />.</para>
+        </caution>
         <tip>
             <para><emphasis>Rule:</emphasis> Use a private (V)LAN
-                network segment for your Storage services in the data
+                network segment for your storage nodes in the data
                 domain.</para>
         </tip>
-        <para>This necessitates that the Proxy service nodes have dual
+        <para>This necessitates that the proxy nodes have dual
             interfaces (physical or virtual):</para>
         <orderedlist>
             <listitem>
@@ -121,10 +122,20 @@
         <title>Securing services: general</title>
         <section xml:id="object-storage-idpC12">
             <title>Service runas user</title>
-            <para>It is recommended that you configure each service to
-                run under a non-root (UID 0) service account. One
+            <para>It is recommended that you configure each Object Storage service
+
+                to run under a non-root (UID 0) service account. One
                 recommendation is the user name "swift" with primary
-                group "swift."</para>
+                group "swift."  Object Storage services include, for
+                example, 'proxy-server', 'container-server',
+                'account-server'.  Detailed steps for setup and
+                configuration can be found in the <link
+                xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/ch_swift.html">Add
+                Object Storage chapter</link> of the
+                <citetitle>Installation Guide</citetitle> in the <link
+                xlink:href="http://docs.openstack.org" >OpenStack
+                Documentation index</link>. (The link defaults to the
+                Ubuntu version.)</para>
         </section>
         <section xml:id="object-storage-idpC123">
             <title>File permissions</title>
@@ -138,7 +149,7 @@
             <para>This restricts only root to be able to modify
                 configuration files while allowing the services to
                 read them through their group membership in
-                the swift group.</para>
+                the 'swift' group.</para>
         </section>
     </section>
     <!-- Securing Services - General -->
@@ -171,48 +182,50 @@
                     <td>TCP</td>
                 </tr>
                 <tr>
-                    <td>Rsync</td>
+                    <td>Rsync<footnote><para>If ssync is used
+                    instead of rsync, the Object service port is used
+                    for maintaining durability.</para></footnote>
+                    </td>
                     <td>873</td>
                     <td>TCP</td>
                 </tr>
             </tbody>
         </informaltable>
-        <para>Authentication does not happen at this level in Object
-            Storage. If someone was able to connect to a Storage
-            service node on one of these ports they could access or
+        <para>Authentication does not take place at the storage
+            nodes. If someone was able to connect to a storage
+            node on one of these ports they could access or
             modify data without authentication. In order to secure
             against this issue you should follow the recommendations
             given previously about using a private storage
             network.</para>
         <section xml:id="object-storage-idpD12">
-            <title>Object storage "account" terminology</title>
-            <para>An Object Storage "Account" is not a user account or
+            <title>Object Storage "account" terminology</title>
+            <para>An Object Storage "account" is not a user account or
                 credential. The following explains the
                 relations:</para>
             <informaltable>
                 <tbody>
                     <tr>
-                        <td>OpenStack Object Storage Account</td>
+                        <td>OpenStack Object Storage account</td>
                         <td>Collection of containers; not user
                             accounts or authentication. Which users
                             are associated with the account and how
                             they may access it depends on the
                             authentication system used. See
-                            authentication systems later. Referred to
-                            in this document as OSSAccount.</td>
+                            authentication systems later.</td>
                     </tr>
                     <tr>
-                        <td>OpenStack Object Storage Containers</td>
+                        <td>OpenStack Object Storage containers</td>
                         <td>Collection of objects. Metadata on the
                             container is available for ACLs. The
                             meaning of ACLs is dependent on the
                             authentication system used.</td>
                     </tr>
                     <tr>
-                        <td>OpenStack Object Storage Objects</td>
+                        <td>OpenStack Object Storage objects</td>
                         <td>The actual data objects. ACLs at the
                             object level are also possible with
-                            metadata. It is dependent on the
+                            metadata and are dependent on the
                             authentication system used.</td>
                     </tr>
                 </tbody>
@@ -221,18 +234,17 @@
                 <para>
                     <?dbhtml bgcolor="#DDFADE" ?><?dbfo bgcolor="#DDFADE" ?>
                     Another way of thinking about the above would be:
-                    A single shelf (Account) holds zero or more ->
-                    buckets (Containers) which each hold zero or more
-                    -> objects. A garage (Object Storage cloud
-                    environment) may have multiple shelves (Accounts)
-                    with each shelf belonging to zero or more
-                    users.</para>
+                    A single shelf (account) holds zero or more ->
+                    buckets (containers) which each hold zero or more
+                    -> objects. A garage (Object Storage cluster) may have
+                    multiple shelves (accounts) with each shelf
+                    belonging to zero or more users.</para>
             </tip>
             <para>At each level you may have ACLs that dictate who has
                 what type of access. ACLs are interpreted based on
                 what authentication system is in use. The two most
                 common types of authentication providers used are
-                keystone and SWAuth. Custom authentication providers
+                Identity service (keystone) and TempAuth. Custom authentication providers
                 are also possible. Please see the Object Storage
                 Authentication section for more information.</para>
         </section>
@@ -240,7 +252,7 @@
     <!-- Securing Storage Services -->
     <section xml:id="object-storage-idpE1">
         <title>Securing proxy services</title>
-        <para>A Proxy service node should have at least two interfaces
+        <para>A proxy node should have at least two interfaces
             (physical or virtual): one public and one
             private. Firewalls or service binding might protect the
             public interface. The public facing service is an HTTP web
@@ -248,7 +260,7 @@
             authenticates them, and performs the appropriate
             action. The private interface does not require any
             listening services but is instead used to establish
-            outgoing connections to storage service nodes on the
+            outgoing connections to storage nodes on the
             private storage network.</para>
         <section xml:id="object-storage-idpE12">
             <title>Use SSL/TLS</title>
@@ -289,7 +301,7 @@ Group swift</programlisting>
         </section>
         <section xml:id="object-storage-idpF1">
             <title>HTTP listening port</title>
-            <para>You should run your Proxy service web server as a
+            <para>You should configure your web service as a
                 non-root (no UID 0) user such as "swift" mentioned
                 before. The use of a port greater than 1024 is
                 required to make this easy and avoid running any part
@@ -329,22 +341,35 @@ Group swift</programlisting>
                 end-point client or cloud administrator credentials
                 and access the cloud data.</para>
             <para>The authentication service you use, such as
-                keystone or SWAuth, will determine how you configure a
+                Identity service (keystone) or TempAuth, will determine how you configure a
                 different URL in the responses to end-clients so they
-                use your load balancer instead of an individual Proxy
-                service node.</para>
+                use your load balancer instead of an individual proxy
+                node.</para>
         </section>
     </section>
     <!-- Securing Proxy Services -->
     <section xml:id="object-storage-idpH1">
         <title>Object storage authentication</title>
-        <para>Object Storage uses wsgi to provide a middleware for
-            authentication of end-point clients. The authentication
-            provider defines what roles and user types exist. Some use
-            traditional user name and password credentials while others
-            may leverage API key tokens or even client-side x.509 SSL
-            certificates. Custom providers can be integrated in using
-            the wsgi model.</para>
+        <para>Object Storage uses a WSGI model to provide for a middleware
+            capability that not only provides general extensibility but
+            is also used for authentication of end-point clients. The
+            authentication provider defines what roles and user types
+            exist. Some use traditional user name and password
+            credentials while others may leverage API key tokens or
+            even client-side x.509 SSL certificates. Custom providers
+            can be integrated in using custom middleware.</para>
+        <para>Object Storage comes with two authentication middleware modules
+            by default, either of which can be used as sample code for
+            developing a custom authentication middleware.</para>
+        <section xml:id="object-storage-idpH123">
+            <title>TempAuth</title>
+            <para>TempAuth is the default authentication for
+                Object Storage. In contrast to Identity it stores the user
+                accounts, credentials, and metadata in object storage
+                itself. More information can be found in the section
+                    <link xlink:href="http://docs.openstack.org/developer/swift/overview_auth.html"
+                    >The Auth System</link> of the Object Storage (swift) documentation.</para>
+        </section>
         <section xml:id="object-storage-idpH12">
             <title>Keystone</title>
             <para>Keystone is the commonly used Identity provider in
@@ -353,28 +378,20 @@ Group swift</programlisting>
                 already provided in <xref
                     linkend="identity"/>.</para>
         </section>
-        <section xml:id="object-storage-idpH123">
-            <title>SWAuth</title>
-            <para>SWAuth is another alternative to keystone. In
-                contrast to keystone it stores the user accounts,
-                credentials, and metadata in object storage itself.
-                More information can be found on the SWAuth website at
-                    <link xlink:href="http://gholt.github.io/swauth/"
-                    >http://gholt.github.io/swauth/</link>.</para>
-        </section>
     </section>
     <!-- Object Storage Authentication -->
     <section xml:id="object-storage-idpI1">
         <title>Other notable items</title>
         <para>In <filename>/etc/swift/swift.conf</filename> on every
-        service node there is a
-        <option>swift_hash_path_suffix</option> setting. This is
+        node there is a
+        <option>swift_hash_path_prefix</option> setting and a
+        <option>swift_hash_path_suffix</option> setting. These are
         provided to reduce the chance of hash collisions for objects
         being stored and avert one user overwriting the data of
         another user.</para>
         <para>This value should be initially set with a
             cryptographically secure random number generator and
-            consistent across all service nodes. Ensure that it is
+            consistent across all nodes. Ensure that it is
             protected with proper ACLs and that you have a backup copy
             to avoid data loss.</para>
     </section>

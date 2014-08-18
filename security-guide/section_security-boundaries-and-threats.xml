@@ -114,8 +114,8 @@
       </inlinemediaobject></para>
     <para>The diagram above shows a compute node bridging the data and management domains, as such
       the compute node should be configured to meet the security requirements of the management
-      domain. Similarly the API Endpoint in this diagram is bridging the untrusted public domain and
-      the management domain, and should be configured to protect against attacks from the public
+      domain. Similarly, the API Endpoint in this diagram is bridging the untrusted public domain and
+      the management domain, which should be configured to protect against attacks from the public
       domain propagating through to the management domain.</para>
     <para><inlinemediaobject>
         <imageobject role="html">

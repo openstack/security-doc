@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-17 06:04+0000\n"
+"POT-Creation-Date: 2014-08-19 06:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ./security-guide/ch_management.xml:7(title) ./security-guide/section_security-boundaries-and-threats.xml:31(para) ./security-guide/section_security-boundaries-and-threats.xml:74(title)
+#: ./security-guide/ch_management.xml:7(title) ./security-guide/section_security-boundaries-and-threats.xml:31(para) ./security-guide/section_security-boundaries-and-threats.xml:73(title)
 msgid "Management"
 msgstr ""
 
@@ -266,7 +266,7 @@ msgid "Logs are not only valuable for proactive security and continuous complian
 msgstr ""
 
 #: ./security-guide/section_forensics-and-incident-response.xml:13(para)
-msgid "For instance, analyzing the access logs of Identity Service or its replacement authentication system would alert us to failed logins, their frequency, origin IP, whether the events are restricted to select accounts etc. Log analysis supports detection."
+msgid "For instance, analyzing the access logs of Identity Service or its replacement authentication system would alert us to failed logins, frequency, origin IP, whether the events are restricted to select accounts and other pertinent information. Log analysis supports detection."
 msgstr ""
 
 #: ./security-guide/section_forensics-and-incident-response.xml:14(para)
@@ -692,11 +692,11 @@ msgid "In this case study we discuss how Alice and Bob would address monitoring 
 msgstr ""
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml:12(para)
-msgid "In the private cloud, Alice has a better understanding of the tenants requirements and accordingly can add appropriate oversight and compliance on monitoring and logging. Alice should identify critical services and data and ensure that logging is turned at least on those services and is being aggregated to a central log server. She should start with simple and known use cases and implement correlation and alerting to limit the number of false positives. To implement correlation and alerting, she sends the log data to her organization's existing SIEM tool. Security monitoring should be an ongoing process and she should continue to define use cases and alerts as she has better understanding of the network traffic activity and usage over time."
+msgid "In the private cloud, Alice has a better understanding of the tenants’ requirements thus she has the ability to add appropriate oversight, actively enforcing compliance for monitoring and logging activities. Alice should identify critical services and data to verify that logging is turned on for each of the services while ensuring the information is being aggregated to a central log server. She should start with simple, known use cases then implement correlation and alerting to limit the number of false positives. To implement correlation and alerting, she sends the log data to her organization's existing SIEM tool. Security monitoring should be an ongoing process therefore she should continue to define use cases and alerts in order to have a better understanding of the network traffic activity and usage over time."
 msgstr ""
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml:16(para)
-msgid "When it comes to logging, as a public cloud provider, Bob is interested in logging both for situational awareness as well as compliance. That is, compliance that Bob as a provider is subject to as well as his ability to provide timely and relevant logs or reports on the behalf of his customers for their compliance audits. With that in mind, Bob configures all of his instances, nodes, and infrastructure devices to perform time synchronization with an external, known good time device. Additionally, Bob's team has built a Django based web applications for his customers to perform self-service log retrieval from Bob's SIEM tool. Bob also uses this SIEM tool along with a robust set of alerts and integration with his CMDB to provide operational awareness to both customers and cloud administrators."
+msgid "When it comes to logging, as a public cloud provider, Bob is interested in the activities for situational awareness as well as compliance. In the aspect of compliance, as a provider, Bob is subject to adherence to various rules and regulations to include activities such as providing timely, relevant logs or reports to customers to meet the requirements of their compliance programs. With that in mind, Bob configures all of his instances, nodes, and infrastructure devices to perform time synchronization with an external, validated time device. Additionally, Bob's team has built a Django based web application for his customers to perform self-service log retrieval from the SIEM tool. Bob also uses this SIEM tool along with a robust set of alerts and integration with his CMDB to provide operational awareness to both customers and cloud administrators."
 msgstr ""
 
 #: ./security-guide/section_case-studies-database.xml:9(para)
@@ -978,86 +978,98 @@ msgid "This example shows the sVirt category identifier:"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:366(title)
-msgid "Booleans"
+msgid "SELinux users and roles"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:367(para)
-msgid "To ease the administrative burden of managing SELinux, many enterprise Linux platforms utilize SELinux Booleans to quickly change the security posture of sVirt."
+msgid "SELinux can also manage user roles. These can be viewed through the <literal>-Z</literal> flag, or with the <placeholder-1/> command. On the hypervisor, only administrators should be able to access the system, and should have an appropriate context around both the administrative users and any other users that are on the system."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:371(para)
-msgid "Red Hat Enterprise Linux-based KVM deployments utilize the following sVirt booleans:"
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:377(para)
+msgid "SELinux users documentation: <link href=\"http://selinuxproject.org/page/BasicConcepts#Users\">SELinux.org Users and Roles Overview</link>"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:379(emphasis)
-msgid "sVirt SELinux Boolean"
-msgstr ""
-
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:380(emphasis) ./security-guide/section_hypervisor-selection.xml:486(td)
-msgid "Description"
-msgstr ""
-
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:385(para)
-msgid "virt_use_common"
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:385(title)
+msgid "Booleans"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:386(para)
-msgid "Allow virt to use serial/parallel communication ports."
-msgstr ""
-
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:389(para)
-msgid "virt_use_fusefs"
+msgid "To ease the administrative burden of managing SELinux, many enterprise Linux platforms utilize SELinux Booleans to quickly change the security posture of sVirt."
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:390(para)
-msgid "Allow virt to read FUSE mounted files."
+msgid "Red Hat Enterprise Linux-based KVM deployments utilize the following sVirt booleans:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:393(para)
-msgid "virt_use_nfs"
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:398(emphasis)
+msgid "sVirt SELinux Boolean"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:394(para)
-msgid "Allow virt to manage NFS mounted files."
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:399(emphasis) ./security-guide/section_hypervisor-selection.xml:486(td)
+msgid "Description"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:397(para)
-msgid "virt_use_samba"
-msgstr ""
-
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:398(para)
-msgid "Allow virt to manage CIFS mounted files."
-msgstr ""
-
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:401(para)
-msgid "virt_use_sanlock"
-msgstr ""
-
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:402(para)
-msgid "Allow confined virtual guests to interact with the sanlock."
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:404(para)
+msgid "virt_use_common"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:405(para)
-msgid "virt_use_sysfs"
+msgid "Allow virt to use serial/parallel communication ports."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:406(para)
-msgid "Allow virt to manage device configuration (PCI)."
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:408(para)
+msgid "virt_use_fusefs"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:409(para)
-msgid "virt_use_usb"
+msgid "Allow virt to read FUSE mounted files."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:410(para)
-msgid "Allow virt to use USB devices."
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:412(para)
+msgid "virt_use_nfs"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:413(para)
+msgid "Allow virt to manage NFS mounted files."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:416(para)
+msgid "virt_use_samba"
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:417(para)
+msgid "Allow virt to manage CIFS mounted files."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:420(para)
+msgid "virt_use_sanlock"
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:421(para)
+msgid "Allow confined virtual guests to interact with the sanlock."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:424(para)
+msgid "virt_use_sysfs"
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:425(para)
+msgid "Allow virt to manage device configuration (PCI)."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:428(para)
+msgid "virt_use_usb"
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:429(para)
+msgid "Allow virt to use USB devices."
+msgstr ""
+
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:432(para)
 msgid "virt_use_xserver"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:414(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:433(para)
 msgid "Allow virtual machine to interact with the X Window System."
 msgstr ""
 
@@ -1667,13 +1679,13 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/ch_object-storage.xml:53(None)
+#: ./security-guide/ch_object-storage.xml:55(None)
 msgid "@@image: 'static/swift_network_diagram-1.png'; md5=83c094bb051cbe5e6161d3f7442f6136"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/ch_object-storage.xml:109(None) ./security-guide/ch_object-storage.xml:114(None)
+#: ./security-guide/ch_object-storage.xml:110(None) ./security-guide/ch_object-storage.xml:115(None)
 msgid "@@image: 'static/swift_network_diagram-2.png'; md5=69f8effe3f5d0f3cbccfb8c5a5dd299e"
 msgstr ""
 
@@ -1682,295 +1694,299 @@ msgid "Object Storage"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:9(para)
-msgid "OpenStack Object Storage (swift) is a service that provides storage and retrieval of data over HTTP. Objects (blobs of data) are stored in an organizational hierarchy that offers anonymous read-only access or ACL defined access based on the authentication mechanism."
+msgid "OpenStack Object Storage (swift) is a service that provides software that stores and retrieves data over HTTP. Objects (blobs of data) are stored in an organizational hierarchy that offers anonymous read-only access, ACL defined access, or even temporary access. Object Store supports multiple token-based authentication mechanisms implemented via middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:14(para)
-msgid "A consumer can store objects, modify them, or access them using the HTTP protocol and REST APIs. Backend components of Object Storage use different protocols for keeping the information synchronized in a redundant cluster of services. For more details on the API and the back-end components see the <link href=\"http://docs.openstack.org/api/openstack-object-storage/1.0/content/\">OpenStack Storage documentation</link>."
+#: ./security-guide/ch_object-storage.xml:16(para)
+msgid "Applications store and retrieve data in Object Store via an industry-standard HTTP RESTful API. Back-end components of Object Storage follow the same RESTful model however some of the APIs for managing durability, for example, are kept private to the cluster. For more details on the API see the <link href=\"http://docs.openstack.org/api/openstack-object-storage/1.0/content/\">OpenStack Storage documentation</link>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:22(para)
+#: ./security-guide/ch_object-storage.xml:24(para)
 msgid "For this document the components will be grouped into the following primary groups:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:26(para)
+#: ./security-guide/ch_object-storage.xml:28(para)
 msgid "Proxy services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:29(para)
+#: ./security-guide/ch_object-storage.xml:31(para)
 msgid "Auth services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:32(para)
+#: ./security-guide/ch_object-storage.xml:34(para)
 msgid "Storage services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:35(para) ./security-guide/ch_object-storage.xml:159(td)
+#: ./security-guide/ch_object-storage.xml:37(para) ./security-guide/ch_object-storage.xml:170(td)
 msgid "Account service"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:38(para) ./security-guide/ch_object-storage.xml:164(td)
+#: ./security-guide/ch_object-storage.xml:40(para) ./security-guide/ch_object-storage.xml:175(td)
 msgid "Container service"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:41(para) ./security-guide/ch_object-storage.xml:169(td)
+#: ./security-guide/ch_object-storage.xml:43(para) ./security-guide/ch_object-storage.xml:180(td)
 msgid "Object service"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:47(title)
+#: ./security-guide/ch_object-storage.xml:49(title)
 msgid "An example diagram from the OpenStack Object Storage Administration Guide (2013)"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:58(para)
-msgid "An Object Storage environment does not have to necessarily be on the Internet and could also be a private cloud with the \"Public Switch\" being part of the organization's internal network infrastructure."
+#: ./security-guide/ch_object-storage.xml:60(para)
+msgid "An Object Storage installation does not have to necessarily be on the Internet and could also be a private cloud with the \"Public Switch\" being part of the organization's internal network infrastructure."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:64(title)
+#: ./security-guide/ch_object-storage.xml:66(title)
 msgid "First thing to secure: the network"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:65(para)
-msgid "The first aspect of a secure architecture design for Object Storage is in the networking component. The Storage service nodes use rsync between each other for copying data to provide replication and high availability. In addition, the proxy service communicates with the Storage service when relaying data back and forth between the end-point client and the cloud environment."
+#: ./security-guide/ch_object-storage.xml:67(para)
+msgid "The first aspect of a secure architecture design for Object Storage is in the networking component. The proxy servers communicate with both the public side of the cluster and the private side. On the public side, the proxy servers communicate with applications (control and data) while on the private side they communicate with the storage nodes for both data transfer and inter-node communication."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:73(para)
-msgid "None of these use any type of encryption or authentication at this layer/tier."
+#: ./security-guide/ch_object-storage.xml:75(para)
+msgid "Object Storage does not employ encryption or authentication with inter-node communications. This is why you see a \"Private Switch\" or private network ([V]LAN) in architecture diagrams. This data domain should be separate from other OpenStack data networks as well. For further discussion on security domains please see <xref linkend=\"security-boundaries-and-threats\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:76(para)
-msgid "This is why you see a \"Private Switch\" or private network ([V]LAN) in architecture diagrams. This data domain should be separate from other OpenStack data networks as well. For further discussion on security domains please see <xref linkend=\"security-boundaries-and-threats\"/>."
+#: ./security-guide/ch_object-storage.xml:85(para)
+msgid "<emphasis>Rule:</emphasis> Use a private (V)LAN network segment for your storage nodes in the data domain."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:84(para)
-msgid "<emphasis>Rule:</emphasis> Use a private (V)LAN network segment for your Storage services in the data domain."
+#: ./security-guide/ch_object-storage.xml:89(para)
+msgid "This necessitates that the proxy nodes have dual interfaces (physical or virtual):"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:88(para)
-msgid "This necessitates that the Proxy service nodes have dual interfaces (physical or virtual):"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:92(para)
+#: ./security-guide/ch_object-storage.xml:93(para)
 msgid "One as a \"public\" interface for consumers to reach"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:96(para)
+#: ./security-guide/ch_object-storage.xml:97(para)
 msgid "Another as a \"private\" interface with access to the storage nodes"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:100(para)
+#: ./security-guide/ch_object-storage.xml:101(para)
 msgid "The following figure demonstrates one possible network architecture."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:103(title)
+#: ./security-guide/ch_object-storage.xml:104(title)
 msgid "Object Storage network architecture with a management node (OSAM)"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:121(title)
+#: ./security-guide/ch_object-storage.xml:122(title)
 msgid "Securing services: general"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:123(title)
+#: ./security-guide/ch_object-storage.xml:124(title)
 msgid "Service runas user"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:124(para)
-msgid "It is recommended that you configure each service to run under a non-root (UID 0) service account. One recommendation is the user name \"swift\" with primary group \"swift.\""
+#: ./security-guide/ch_object-storage.xml:125(para)
+msgid "It is recommended that you configure each Object Storage service to run under a non-root (UID 0) service account. One recommendation is the user name \"swift\" with primary group \"swift.\" Object Storage services include, for example, 'proxy-server', 'container-server', 'account-server'. Detailed steps for setup and configuration can be found in the <link href=\"http://docs.openstack.org/icehouse/install-guide/install/apt/content/ch_swift.html\">Add Object Storage chapter</link> of the <citetitle>Installation Guide</citetitle> in the <link href=\"http://docs.openstack.org\">OpenStack Documentation index</link>. (The link defaults to the Ubuntu version.)"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:130(title)
+#: ./security-guide/ch_object-storage.xml:141(title)
 msgid "File permissions"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:131(para)
+#: ./security-guide/ch_object-storage.xml:142(para)
 msgid "The <filename>/etc/swift</filename> directory contains information about the ring topology and environment configuration. The following permissions are recommended:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:138(para)
-msgid "This restricts only root to be able to modify configuration files while allowing the services to read them through their group membership in the swift group."
+#: ./security-guide/ch_object-storage.xml:149(para)
+msgid "This restricts only root to be able to modify configuration files while allowing the services to read them through their group membership in the 'swift' group."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:146(title)
+#: ./security-guide/ch_object-storage.xml:157(title)
 msgid "Securing storage services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:147(para)
+#: ./security-guide/ch_object-storage.xml:158(para)
 msgid "The following are the default listening ports for the various storage services:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:152(td)
+#: ./security-guide/ch_object-storage.xml:163(td)
 msgid "Service name"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:153(td)
+#: ./security-guide/ch_object-storage.xml:164(td)
 msgid "Port"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:154(td)
+#: ./security-guide/ch_object-storage.xml:165(td)
 msgid "Type"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:160(td)
+#: ./security-guide/ch_object-storage.xml:171(td)
 msgid "6002"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:161(td) ./security-guide/ch_object-storage.xml:166(td) ./security-guide/ch_object-storage.xml:171(td) ./security-guide/ch_object-storage.xml:176(td)
+#: ./security-guide/ch_object-storage.xml:172(td) ./security-guide/ch_object-storage.xml:177(td) ./security-guide/ch_object-storage.xml:182(td) ./security-guide/ch_object-storage.xml:190(td)
 msgid "TCP"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:165(td)
+#: ./security-guide/ch_object-storage.xml:176(td)
 msgid "6001"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:170(td)
+#: ./security-guide/ch_object-storage.xml:181(td)
 msgid "6000"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:174(td)
-msgid "Rsync"
+#: ./security-guide/ch_object-storage.xml:185(para)
+msgid "If ssync is used instead of rsync, the Object service port is used for maintaining durability."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:175(td)
+#: ./security-guide/ch_object-storage.xml:185(td)
+msgid "Rsync<placeholder-1/>"
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:189(td)
 msgid "873"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:180(para)
-msgid "Authentication does not happen at this level in Object Storage. If someone was able to connect to a Storage service node on one of these ports they could access or modify data without authentication. In order to secure against this issue you should follow the recommendations given previously about using a private storage network."
+#: ./security-guide/ch_object-storage.xml:194(para)
+msgid "Authentication does not take place at the storage nodes. If someone was able to connect to a storage node on one of these ports they could access or modify data without authentication. In order to secure against this issue you should follow the recommendations given previously about using a private storage network."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:188(title)
-msgid "Object storage \"account\" terminology"
+#: ./security-guide/ch_object-storage.xml:202(title)
+msgid "Object Storage \"account\" terminology"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:189(para)
-msgid "An Object Storage \"Account\" is not a user account or credential. The following explains the relations:"
+#: ./security-guide/ch_object-storage.xml:203(para)
+msgid "An Object Storage \"account\" is not a user account or credential. The following explains the relations:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:195(td)
-msgid "OpenStack Object Storage Account"
+#: ./security-guide/ch_object-storage.xml:209(td)
+msgid "OpenStack Object Storage account"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:196(td)
-msgid "Collection of containers; not user accounts or authentication. Which users are associated with the account and how they may access it depends on the authentication system used. See authentication systems later. Referred to in this document as OSSAccount."
+#: ./security-guide/ch_object-storage.xml:210(td)
+msgid "Collection of containers; not user accounts or authentication. Which users are associated with the account and how they may access it depends on the authentication system used. See authentication systems later."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:205(td)
-msgid "OpenStack Object Storage Containers"
+#: ./security-guide/ch_object-storage.xml:218(td)
+msgid "OpenStack Object Storage containers"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:206(td)
+#: ./security-guide/ch_object-storage.xml:219(td)
 msgid "Collection of objects. Metadata on the container is available for ACLs. The meaning of ACLs is dependent on the authentication system used."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:212(td)
-msgid "OpenStack Object Storage Objects"
+#: ./security-guide/ch_object-storage.xml:225(td)
+msgid "OpenStack Object Storage objects"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:213(td)
-msgid "The actual data objects. ACLs at the object level are also possible with metadata. It is dependent on the authentication system used."
+#: ./security-guide/ch_object-storage.xml:226(td)
+msgid "The actual data objects. ACLs at the object level are also possible with metadata and are dependent on the authentication system used."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:221(para)
-msgid "<?dbhtml bgcolor=\"#DDFADE\" ?><?dbfo bgcolor=\"#DDFADE\" ?> Another way of thinking about the above would be: A single shelf (Account) holds zero or more -&gt; buckets (Containers) which each hold zero or more -&gt; objects. A garage (Object Storage cloud environment) may have multiple shelves (Accounts) with each shelf belonging to zero or more users."
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:231(para)
-msgid "At each level you may have ACLs that dictate who has what type of access. ACLs are interpreted based on what authentication system is in use. The two most common types of authentication providers used are keystone and SWAuth. Custom authentication providers are also possible. Please see the Object Storage Authentication section for more information."
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:242(title)
-msgid "Securing proxy services"
+#: ./security-guide/ch_object-storage.xml:234(para)
+msgid "<?dbhtml bgcolor=\"#DDFADE\" ?><?dbfo bgcolor=\"#DDFADE\" ?> Another way of thinking about the above would be: A single shelf (account) holds zero or more -&gt; buckets (containers) which each hold zero or more -&gt; objects. A garage (Object Storage cluster) may have multiple shelves (accounts) with each shelf belonging to zero or more users."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:243(para)
-msgid "A Proxy service node should have at least two interfaces (physical or virtual): one public and one private. Firewalls or service binding might protect the public interface. The public facing service is an HTTP web server that processes end-point client requests, authenticates them, and performs the appropriate action. The private interface does not require any listening services but is instead used to establish outgoing connections to storage service nodes on the private storage network."
+msgid "At each level you may have ACLs that dictate who has what type of access. ACLs are interpreted based on what authentication system is in use. The two most common types of authentication providers used are Identity service (keystone) and TempAuth. Custom authentication providers are also possible. Please see the Object Storage Authentication section for more information."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:254(title)
-msgid "Use SSL/TLS"
+msgid "Securing proxy services"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:255(para)
+msgid "A proxy node should have at least two interfaces (physical or virtual): one public and one private. Firewalls or service binding might protect the public interface. The public facing service is an HTTP web server that processes end-point client requests, authenticates them, and performs the appropriate action. The private interface does not require any listening services but is instead used to establish outgoing connections to storage nodes on the private storage network."
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:266(title)
+msgid "Use SSL/TLS"
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:267(para)
 msgid "The built-in or included web server that comes with OpenStack Object Storage supports SSL, but it does not support transmission of the entire SSL certificate chain. This causes issues when you use a third party trusted and signed certificate, such as Verisign, for your cloud. The current work around is to not use the built-in web server but an alternative web server instead that supports sending both the public server certificate as well as the CA signing authorities intermediate certificate(s). This allows for end-point clients that have the CA root certificate in their trust store to be able to successfully validate your cloud environment's SSL certificate and chain. An example of how to do this with mod_wsgi and Apache is given below. Also consult the <link href=\"http://docs.openstack.org/developer/swift/apache_deployment_guide.html\">Apache Deployment Guide</link>"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:273(para)
+#: ./security-guide/ch_object-storage.xml:285(para)
 msgid "Modify file <filename>/etc/apache2/envvars</filename> with"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:278(para)
+#: ./security-guide/ch_object-storage.xml:290(para)
 msgid "An alternative is to modify your Apache conf file with"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:282(para)
+#: ./security-guide/ch_object-storage.xml:294(para)
 msgid "Create a <filename>swift</filename> directory in your Apache document root:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:285(para)
+#: ./security-guide/ch_object-storage.xml:297(para)
 msgid "Create the file <filename>$YOUR_APACHE_DOC_ROOT/swift/proxy-server.wsgi</filename>:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:291(title)
+#: ./security-guide/ch_object-storage.xml:303(title)
 msgid "HTTP listening port"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:292(para)
-msgid "You should run your Proxy service web server as a non-root (no UID 0) user such as \"swift\" mentioned before. The use of a port greater than 1024 is required to make this easy and avoid running any part of the web container as root. Doing so is not a burden as end-point clients are not typically going to type in the URL manually into a web browser to browse around in the object storage. Additionally, for clients using the HTTP REST API and performing authentication they will normally automatically grab the full REST API URL they are to use as provided by the authentication response. OpenStack's REST API allows for a client to authenticate to one URL and then be told to use a completely different URL for the actual service. Example: Client authenticates to <uri>https://identity.cloud.example.org:55443/v1/auth</uri> and gets a response with their authentication key and Storage URL (the URL of the proxy nodes or load balancer) of <uri>https://swift.cloud.example.org:44443/v1/AUTH_8980</uri>."
+#: ./security-guide/ch_object-storage.xml:304(para)
+msgid "You should configure your web service as a non-root (no UID 0) user such as \"swift\" mentioned before. The use of a port greater than 1024 is required to make this easy and avoid running any part of the web container as root. Doing so is not a burden as end-point clients are not typically going to type in the URL manually into a web browser to browse around in the object storage. Additionally, for clients using the HTTP REST API and performing authentication they will normally automatically grab the full REST API URL they are to use as provided by the authentication response. OpenStack's REST API allows for a client to authenticate to one URL and then be told to use a completely different URL for the actual service. Example: Client authenticates to <uri>https://identity.cloud.example.org:55443/v1/auth</uri> and gets a response with their authentication key and Storage URL (the URL of the proxy nodes or load balancer) of <uri>https://swift.cloud.example.org:44443/v1/AUTH_8980</uri>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:312(para)
+#: ./security-guide/ch_object-storage.xml:324(para)
 msgid "The method for configuring your web server to start and run as a non-root user varies by web server and OS."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:317(title)
+#: ./security-guide/ch_object-storage.xml:329(title)
 msgid "Load balancer"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:318(para)
+#: ./security-guide/ch_object-storage.xml:330(para)
 msgid "If the option of using Apache is not feasible or for performance you wish to offload your SSL work you may employ a dedicated network device load balancer. This is also the common way to provide redundancy and load balancing when using multiple proxy nodes."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:323(para)
+#: ./security-guide/ch_object-storage.xml:335(para)
 msgid "If you choose to offload your SSL ensure that the network link between the load balancer and your proxy nodes is on a private (V)LAN segment such that other nodes on the network (possibly compromised) cannot wiretap (sniff) the unencrypted traffic. If such a breach were to occur the attacker could gain access to end-point client or cloud administrator credentials and access the cloud data."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:331(para)
-msgid "The authentication service you use, such as keystone or SWAuth, will determine how you configure a different URL in the responses to end-clients so they use your load balancer instead of an individual Proxy service node."
+#: ./security-guide/ch_object-storage.xml:343(para)
+msgid "The authentication service you use, such as Identity service (keystone) or TempAuth, will determine how you configure a different URL in the responses to end-clients so they use your load balancer instead of an individual proxy node."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:340(title)
+#: ./security-guide/ch_object-storage.xml:352(title)
 msgid "Object storage authentication"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:341(para)
-msgid "Object Storage uses wsgi to provide a middleware for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 SSL certificates. Custom providers can be integrated in using the wsgi model."
+#: ./security-guide/ch_object-storage.xml:353(para)
+msgid "Object Storage uses a WSGI model to provide for a middleware capability that not only provides general extensibility but is also used for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 SSL certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:349(title)
+#: ./security-guide/ch_object-storage.xml:361(para)
+msgid "Object Storage comes with two authentication middleware modules by default, either of which can be used as sample code for developing a custom authentication middleware."
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:365(title)
+msgid "TempAuth"
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:366(para)
+msgid "TempAuth is the default authentication for Object Storage. In contrast to Identity it stores the user accounts, credentials, and metadata in object storage itself. More information can be found in the section <link href=\"http://docs.openstack.org/developer/swift/overview_auth.html\">The Auth System</link> of the Object Storage (swift) documentation."
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:374(title)
 msgid "Keystone"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:350(para)
+#: ./security-guide/ch_object-storage.xml:375(para)
 msgid "Keystone is the commonly used Identity provider in OpenStack. It may also be used for authentication in Object Storage. Coverage of securing keystone is already provided in <xref linkend=\"identity\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:357(title)
-msgid "SWAuth"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:358(para)
-msgid "SWAuth is another alternative to keystone. In contrast to keystone it stores the user accounts, credentials, and metadata in object storage itself. More information can be found on the SWAuth website at <link href=\"http://gholt.github.io/swauth/\">http://gholt.github.io/swauth/</link>."
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:368(title)
+#: ./security-guide/ch_object-storage.xml:384(title)
 msgid "Other notable items"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:369(para)
-msgid "In <filename>/etc/swift/swift.conf</filename> on every service node there is a <option>swift_hash_path_suffix</option> setting. This is provided to reduce the chance of hash collisions for objects being stored and avert one user overwriting the data of another user."
+#: ./security-guide/ch_object-storage.xml:385(para)
+msgid "In <filename>/etc/swift/swift.conf</filename> on every node there is a <option>swift_hash_path_prefix</option> setting and a <option>swift_hash_path_suffix</option> setting. These are provided to reduce the chance of hash collisions for objects being stored and avert one user overwriting the data of another user."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:375(para)
-msgid "This value should be initially set with a cryptographically secure random number generator and consistent across all service nodes. Ensure that it is protected with proper ACLs and that you have a backup copy to avoid data loss."
+#: ./security-guide/ch_object-storage.xml:392(para)
+msgid "This value should be initially set with a cryptographically secure random number generator and consistent across all nodes. Ensure that it is protected with proper ACLs and that you have a backup copy to avoid data loss."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:8(title)
@@ -4019,25 +4035,25 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_security-boundaries-and-threats.xml:108(None) ./security-guide/section_security-boundaries-and-threats.xml:112(None)
+#: ./security-guide/section_security-boundaries-and-threats.xml:107(None) ./security-guide/section_security-boundaries-and-threats.xml:111(None)
 msgid "@@image: 'static/bridging_security_domains_1.png'; md5=0d5ca26c51882ce3253405e91a597715"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_security-boundaries-and-threats.xml:123(None) ./security-guide/section_security-boundaries-and-threats.xml:127(None)
+#: ./security-guide/section_security-boundaries-and-threats.xml:122(None) ./security-guide/section_security-boundaries-and-threats.xml:126(None)
 msgid "@@image: 'static/bridging_domains_clouduser.png'; md5=17c8a233ee7de17d2f600c7f6f6afe24"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_security-boundaries-and-threats.xml:185(None) ./security-guide/section_security-boundaries-and-threats.xml:189(None)
+#: ./security-guide/section_security-boundaries-and-threats.xml:184(None) ./security-guide/section_security-boundaries-and-threats.xml:188(None)
 msgid "@@image: 'static/threat_actors.png'; md5=114c2f9bd9d0319bdd83f9e229d44649"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_security-boundaries-and-threats.xml:237(None) ./security-guide/section_security-boundaries-and-threats.xml:241(None)
+#: ./security-guide/section_security-boundaries-and-threats.xml:236(None) ./security-guide/section_security-boundaries-and-threats.xml:240(None)
 msgid "@@image: 'static/high-capability.png'; md5=b7ab599c8b40558a52c0ca86aad89741"
 msgstr ""
 
@@ -4069,7 +4085,7 @@ msgstr ""
 msgid "Guest"
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:34(para) ./security-guide/section_security-boundaries-and-threats.xml:87(title)
+#: ./security-guide/section_security-boundaries-and-threats.xml:34(para) ./security-guide/section_security-boundaries-and-threats.xml:86(title)
 msgid "Data"
 msgstr ""
 
@@ -4090,114 +4106,114 @@ msgid "Typically used for compute instance-to-instance traffic, the guest securi
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:67(para)
-msgid "Public cloud providers and private cloud providers who do not have stringent controls on instance use or who allow unrestricted internet access to VMs should consider this domain to be <emphasis>untrusted</emphasis>. Private cloud providers may want to consider this network as internal and therefore <emphasis>trusted</emphasis> only if they have controls in place to assert that they trust instances and all their tenants."
+msgid "Public and private cloud providers that do not have stringent controls on instance use or allow unrestricted internet access to VMs should consider this domain to be <emphasis>untrusted</emphasis>. Private cloud providers may want to consider this network as internal and <emphasis>trusted</emphasis>, only if the proper controls are implemented to assert that the instances and all associated tenants are to be trusted."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:75(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:74(para)
 msgid "The management security domain is where services interact. Sometimes referred to as the \"control plane\", the networks in this domain transport confidential data such as configuration parameters, user names, and passwords. Command and Control traffic typically resides in this domain, which necessitates strong integrity requirements. Access to this domain should be highly restricted and monitored. At the same time, this domain should still employ all of the security best practices described in this guide."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:81(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:80(para)
 msgid "In most deployments this domain is considered <emphasis>trusted</emphasis>. However, when considering an OpenStack deployment, there are many systems that bridge this domain with others, potentially reducing the level of trust you can place on this domain. See <xref linkend=\"security-boundaries-and-threats-idp61360\"/> for more information."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:88(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:87(para)
 msgid "The data security domain is concerned primarily with information pertaining to the storage services within OpenStack. Much of the data that crosses this network has high integrity and confidentiality requirements and depending on the type of deployment there may also be strong availability requirements."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:92(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:91(para)
 msgid "The trust level of this network is heavily dependent on deployment decisions and as such we do not assign this any default level of trust."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:97(title)
+#: ./security-guide/section_security-boundaries-and-threats.xml:96(title)
 msgid "Bridging security domains"
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:98(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:97(para)
 msgid "A <emphasis>bridge</emphasis> is a component that exists inside more than one security domain. Any component that bridges security domains with different trust levels or authentication requirements must be carefully configured. These bridges are often the weak points in network architecture. A bridge should always be configured to meet the security requirements of the highest trust level of any of the domains it is bridging. In many cases the security controls for bridges should be a primary concern due to the likelihood of attack."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:115(para)
-msgid "The diagram above shows a compute node bridging the data and management domains, as such the compute node should be configured to meet the security requirements of the management domain. Similarly the API Endpoint in this diagram is bridging the untrusted public domain and the management domain, and should be configured to protect against attacks from the public domain propagating through to the management domain."
+#: ./security-guide/section_security-boundaries-and-threats.xml:114(para)
+msgid "The diagram above shows a compute node bridging the data and management domains, as such the compute node should be configured to meet the security requirements of the management domain. Similarly, the API Endpoint in this diagram is bridging the untrusted public domain and the management domain, which should be configured to protect against attacks from the public domain propagating through to the management domain."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:130(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:129(para)
 msgid "In some cases deployers may want to consider securing a bridge to a higher standard than any of the domains in which it resides. Given the above example of an API endpoint, an adversary could potentially target the API endpoint from the public domain, leveraging it in the hopes of compromising or gaining access to the management domain."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:134(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:133(para)
 msgid "The design of OpenStack is such that separation of security domains is difficult - as core services will usually bridge at least two domains, special consideration must be given when applying security controls to them."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:139(title)
+#: ./security-guide/section_security-boundaries-and-threats.xml:138(title)
 msgid "Threat classification, actors and attack vectors"
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:140(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:139(para)
 msgid "Most types of cloud deployment, public or private, are exposed to some form of attack. In this chapter we categorize attackers and summarize potential types of attacks in each security domain."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:144(title)
+#: ./security-guide/section_security-boundaries-and-threats.xml:143(title)
 msgid "Threat actors"
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:145(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:144(para)
 msgid "A threat actor is an abstract way to refer to a class of adversary that you may attempt to defend against. The more capable the actor, the more expensive the security controls that are required for successful attack mitigation and prevention. Security is a tradeoff between cost, usability and defense. In some cases it will not be possible to secure a cloud deployment against all of the threat actors we describe here. Those deploying an OpenStack cloud will have to decide where the balance lies for their deployment / usage."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:153(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:152(para)
 msgid "<emphasis role=\"bold\">Intelligence services</emphasis> — Considered by this guide as the most capable adversary. Intelligence Services and other state actors can bring tremendous resources to bear on a target. They have capabilities beyond that of any other actor. It is very difficult to defend against these actors without incredibly stringent controls in place, both human and technical."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:160(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:159(para)
 msgid "<emphasis role=\"bold\">Serious organized crime</emphasis> — Highly capable and financially driven groups of attackers. Able to fund in-house exploit development and target research. In recent years the rise of organizations such as the Russian Business Network, a massive cyber-criminal enterprise has demonstrated how cyber attacks have become a commodity. Industrial espionage falls within the SOC group."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:167(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:166(para)
 msgid "<emphasis role=\"bold\">Highly capable groups</emphasis> — This refers to 'Hacktivist' type organizations who are not typically commercially funded but can pose a serious threat to service providers and cloud operators."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:172(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:171(para)
 msgid "<emphasis role=\"bold\">Motivated individuals</emphasis> — Acting alone, these attackers come in many guises, such as rogue or malicious employees, disaffected customers, or small-scale industrial espionage."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:177(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:176(para)
 msgid "<emphasis role=\"bold\">Script kiddies</emphasis> — Automated vulnerability scanning/exploitation. Non-targeted attacks. Often only a nuisance, compromise by one of these actors presents a major risk to an organization's reputation."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:194(title)
+#: ./security-guide/section_security-boundaries-and-threats.xml:193(title)
 msgid "Public and private cloud considerations"
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:195(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:194(para)
 msgid "Private clouds are typically deployed by enterprises or institutions inside their networks and behind their firewalls. Enterprises will have strict policies on what data is allowed to exit their network and may even have different clouds for specific purposes. Users of a private cloud are typically employees of the organization that owns the cloud and are able to be held accountable for their actions. Employees often attend training sessions before accessing the cloud and will likely take part in regular scheduled security awareness training. Public clouds by contrast cannot make any assertions about their users, cloud use-cases or user motivations. This immediately pushes the guest security domain into a completely <emphasis>untrusted</emphasis> state for public cloud providers."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:204(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:203(para)
 msgid "A notable difference in the attack surface of public clouds is that they must provide internet access to their services. Instance connectivity, access to files over the internet and the ability to interact with the cloud controlling fabric such as the API endpoints and dashboard are must-haves for the public cloud."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:208(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:207(para)
 msgid "Privacy concerns for public and private cloud users are typically diametrically opposed. The data generated and stored in private clouds is normally owned by the operator of the cloud, who is able to deploy technologies such as data loss prevention (DLP) protection, file inspection, deep packet inspection and prescriptive firewalling. In contrast, privacy is one of the primary barriers for the adoption of public cloud infrastructures, as many of the previously mentioned controls do not exist."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:216(title)
+#: ./security-guide/section_security-boundaries-and-threats.xml:215(title)
 msgid "Outbound attacks and reputational risk"
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:217(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:216(para)
 msgid "Careful consideration should be given to potential outbound abuse from a cloud deployment. Whether public or private, clouds tend to have lots of resource available. An attacker who has established a point of presence within the cloud, either through hacking or entitled access, such as rogue employee, can bring these resources to bear against the internet at large. Clouds with Compute services make for ideal DDoS and brute force engines. The issue is more pressing for public clouds as their users are largely unaccountable, and can quickly spin up numerous disposable instances for outbound attacks. Major damage can be inflicted upon a company's reputation if it becomes known for hosting malicious software or launching attacks on other networks. Methods of prevention include egress security groups, outbound traffic inspection, customer education and awareness, and fraud and abuse mitigation strategies."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:230(title)
+#: ./security-guide/section_security-boundaries-and-threats.xml:229(title)
 msgid "Attack types"
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:231(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:230(para)
 msgid "The diagram shows the types of attacks that may be expected from the actors described in the previous section. Note that there will always be exceptions to this diagram but in general, this describes the sorts of attack that could be typical for each actor."
 msgstr ""
 
-#: ./security-guide/section_security-boundaries-and-threats.xml:244(para)
+#: ./security-guide/section_security-boundaries-and-threats.xml:243(para)
 msgid "The prescriptive defense for each form of attack is beyond the scope of this document. The above diagram can assist you in making an informed decision about which types of threats, and threat actors, should be protected against. For commercial public cloud deployments this might include prevention against serious crime. For those deploying private clouds for government use, more stringent protective mechanisms should be in place, including carefully protected facilities and supply chains. In contrast those standing up basic development or test environments will likely require less restrictive controls (middle of the spectrum)."
 msgstr ""
 
@@ -4618,11 +4634,11 @@ msgid "Bob is aware that entropy will be a concern for some of his customers, su
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:19(para)
-msgid "Bob is interested in ensuring that customers receive a high quality of service. He is concerned that providing too much explicit user control over instance scheduling could negatively impact the quality of service. So he disables this feature. Bob provides images in the cloud from a known trusted source for users to use. Additionally, he also allows users to upload their own images. However, users cannot generally share their images. This helps prevent a user from sharing a malicious image, which could negatively impact the security of other users in the cloud."
+msgid "Bob is interested in ensuring that customers receive a high quality of service. He is concerned that providing excess explicit user control over instance scheduling could negatively impact the quality of service. As a result, he disables this feature. Bob provides images in the cloud from a known trusted source for users to use. Additionally, he allows users to upload their own images. However, users generally cannot share their images. This helps prevent a user from sharing a malicious image, which could negatively impact the security of other users in the cloud."
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:20(para)
-msgid "For migrations, Bob wants to enable secure instance migrations in order to support rolling upgrades with minimal user downtime. Bob ensures that all migrations occur on an isolated VLAN. He plans to defer implementing encrypted migrations until this is better supported in <placeholder-1/> client tools. However, he makes a note to track this carefully and switch to encrypted migrations as soon as possible."
+msgid "For migrations, Bob wants to enable secure instance migrations in order to support rolling upgrades with minimal user downtime. Bob ensures that all migrations occur on an isolated VLAN. He plans to defer implementing encrypted migrations until this is better supported in <placeholder-1/> client tools. As a result, he makes a note to track this carefully and switch to encrypted migrations as soon as possible."
 msgstr ""
 
 #: ./security-guide/section_privacy.xml:8(title)
@@ -5769,11 +5785,11 @@ msgstr ""
 msgid "Scheduling instances to nodes"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:19(para) ./security-guide/section_security-services-for-instances.xml:89(title)
+#: ./security-guide/section_security-services-for-instances.xml:19(para) ./security-guide/section_security-services-for-instances.xml:99(title)
 msgid "Trusted images"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:22(para) ./security-guide/section_security-services-for-instances.xml:157(title)
+#: ./security-guide/section_security-services-for-instances.xml:22(para) ./security-guide/section_security-services-for-instances.xml:167(title)
 msgid "Instance migrations"
 msgstr ""
 
@@ -5814,190 +5830,190 @@ msgid "Host aggregates"
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:60(para)
-msgid "While not a filter in themselves, host aggregates allow administrators to assign key-value pairs to groups of machines. This allows cloud administrators, not users, to partition up their compute host resources. Each node can have multiple aggregates (see the <link href=\"http://docs.openstack.org/trunk/config-reference/content/host-aggregates.html\">Host aggregates</link> section of the <citetitle>OpenStack Configuration Reference</citetitle> for more information on creating and managing aggregates)."
+msgid "While not a filter, host aggregates allow administrators to assign key-value pairs to groups of machines. This allows cloud administrators to segregate their compute host resources within an availability zone invisible to users. The assigned key-value pairs and the host aggregates itself can be used for advanced filtering and scheduling. The key-value pairs can be applied to multiple aggregates, or have several applied to a single aggregate (see the <link href=\"http://docs.openstack.org/trunk/config-reference/content/host-aggregates.html\">Host aggregates</link> section of the <citetitle>OpenStack Configuration Reference</citetitle> for more information on creating and managing aggregates)."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:71(title)
+#: ./security-guide/section_security-services-for-instances.xml:74(title)
 msgid "AggregateMultiTenancyIsolation"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:72(para)
-msgid "Isolates tenants to specific host aggregates. If a host is in an aggregate that has the metadata key <literal>filter_tenant_id</literal> it will only create instances from that tenant (or list of tenants). A host can be in multiple aggregates. If a host does not belong to an aggregate with the metadata key, it can create instances from all tenants."
+#: ./security-guide/section_security-services-for-instances.xml:75(para)
+msgid "This filter will isolate a tenant or group of tenants to specific host aggregates. If a host is assigned to an aggregate that has the metadata key <literal>filter_tenant_id</literal>, it will only create instances from that tenant or list of tenants. A host can be assigned to multiple aggregates, however if a host does not belong to an aggregate with the metadata key, it can create instances from all tenants."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:75(title)
+#: ./security-guide/section_security-services-for-instances.xml:85(title)
 msgid "DifferentHostFilter"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:76(para)
+#: ./security-guide/section_security-services-for-instances.xml:86(para)
 msgid "Schedule the instance on a different host from a set of instances. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>different_host</literal> as the key and a list of instance uuids as the value. This filter is the opposite of the <literal>SameHostFilter</literal>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:79(title)
+#: ./security-guide/section_security-services-for-instances.xml:89(title)
 msgid "GroupAntiAffinityFilter"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:80(para)
+#: ./security-guide/section_security-services-for-instances.xml:90(para)
 msgid "The GroupAntiAffinityFilter ensures that each instance in a group is on a different host. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>group</literal> as the key and a list of instance uuids as the value."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:83(title)
+#: ./security-guide/section_security-services-for-instances.xml:93(title)
 msgid "Trusted compute pools"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:84(para)
+#: ./security-guide/section_security-services-for-instances.xml:94(para)
 msgid "There exists a scheduler filter which integrates with the <link href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation Project</link> (OATS) to define scheduler behavior according to the attestation of PCRs received from a system using Intel TXT."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:85(para)
+#: ./security-guide/section_security-services-for-instances.xml:95(para)
 msgid "It is unclear if this feature is compatible with AMD's similar SEM, although the OpenAttestation agent relies on the vendor-agnostic <link href=\"http://trousers.sourceforge.net/\">TrouSerS library</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:90(para)
+#: ./security-guide/section_security-services-for-instances.xml:100(para)
 msgid "With regards to images, users will be working with pre-installed images or images that they upload themselves. In both cases, users will want to ensure that the image they are ultimately running has not been tampered with. This requires some source of truth such as a checksum for the known good version of an image as well as verification of the running image. This section describes the current best practices around image handling, while also calling out some of the existing gaps in this space."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:92(title)
+#: ./security-guide/section_security-services-for-instances.xml:102(title)
 msgid "Image creation process"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:93(para)
+#: ./security-guide/section_security-services-for-instances.xml:103(para)
 msgid "The OpenStack Documentation provides guidance on how to create and upload an image to the Image Service. Additionally it is assumed that you have a process by which you install and harden operating systems. Thus, the following items will provide additional guidance on how to ensure your images are transferred securely into OpenStack. There are a variety of options for obtaining images. Each has specific steps that help validate the image's provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:101(para)
+#: ./security-guide/section_security-services-for-instances.xml:111(para)
 msgid "The first option is to obtain boot media from a trusted source."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:108(para)
+#: ./security-guide/section_security-services-for-instances.xml:118(para)
 msgid "The second option is to use the <link href=\"http://docs.openstack.org/image-guide/content/\"><citetitle>OpenStack Virtual Machine Image Guide</citetitle></link>. In this case, you will want to follow your organizations OS hardening guidelines or those provided by a trusted third-party such as the <link href=\"http://iase.disa.mil/stigs/os/unix/red_hat.html\">RHEL6 STIG</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:109(para)
+#: ./security-guide/section_security-services-for-instances.xml:119(para)
 msgid "The final option is to use an automated image builder. The following example uses the Oz image builder. The OpenStack community has recently created a newer tool worth investigating: disk-image-builder. We have not evaluated this tool from a security perspective."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:110(para)
+#: ./security-guide/section_security-services-for-instances.xml:120(para)
 msgid "Example of RHEL 6 CCE-26976-1 which will help implement NIST 800-53 Section<emphasis>AC-19(d) in</emphasis> Oz."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:146(para)
+#: ./security-guide/section_security-services-for-instances.xml:156(para)
 msgid "It is recommended to avoid the manual image building process as it is complex and prone to error. Additionally, using an automated system like Oz for image building or a configuration management utility like Chef or Puppet for post-boot image hardening gives you the ability to produce a consistent image as well as track compliance of your base image to its respective hardening guidelines over time."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:147(para)
+#: ./security-guide/section_security-services-for-instances.xml:157(para)
 msgid "If subscribing to a public cloud service, you should check with the cloud provider for an outline of the process used to produce their default images. If the provider allows you to upload your own images, you will want to ensure that you are able to verify that your image was not modified before using it to create an instance. To do this, refer to the following section on Image Provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:150(title)
+#: ./security-guide/section_security-services-for-instances.xml:160(title)
 msgid "Image provenance and validation"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:151(para)
+#: ./security-guide/section_security-services-for-instances.xml:161(para)
 msgid "Unfortunately, it is not currently possible to force Compute to validate an image hash immediately prior to starting an instance. To understand the situation, we begin with a brief overview of how images are handled around the time of image launch."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:152(para)
+#: ./security-guide/section_security-services-for-instances.xml:162(para)
 msgid "Images come from the glance service to the nova service on a node. This transfer should be protected by running over SSL. Once the image is on the node, it is verified with a basic checksum and then it's disk is expanded based on the size of the instance being launched. If, at a later time, the same image is launched with the same instance size on this node, it will be launched from the same expanded image. Since this expanded image is not re-verified before launching, it could be tampered with and the user would not have any way of knowing, beyond a manual inspection of the files in the resulting image."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:153(para)
+#: ./security-guide/section_security-services-for-instances.xml:163(para)
 msgid "We hope that future versions of Compute and/or the Image Service will offer support for validating the image hash before each instance launch. An alternative option that would be even more powerful would be allow users to sign an image and then have the signature validated when the instance is launched."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:158(para)
+#: ./security-guide/section_security-services-for-instances.xml:168(para)
 msgid "OpenStack and the underlying virtualization layers provide for the live migration of images between OpenStack nodes, allowing you to seamlessly perform rolling upgrades of your OpenStack compute nodes without instance downtime. However, live migrations also carry significant risk. To understand the risks involved, the following are the high-level steps performed during a live migration:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:168(para)
+#: ./security-guide/section_security-services-for-instances.xml:178(para)
 msgid "Start instance on destination host"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:169(para)
+#: ./security-guide/section_security-services-for-instances.xml:179(para)
 msgid "Transfer memory"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:170(para)
+#: ./security-guide/section_security-services-for-instances.xml:180(para)
 msgid "Stop the guest &amp; sync disks"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:171(para)
+#: ./security-guide/section_security-services-for-instances.xml:181(para)
 msgid "Transfer state"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:172(para)
+#: ./security-guide/section_security-services-for-instances.xml:182(para)
 msgid "Start the guest"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:175(title)
+#: ./security-guide/section_security-services-for-instances.xml:185(title)
 msgid "Live migration risks"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:176(para)
+#: ./security-guide/section_security-services-for-instances.xml:186(para)
 msgid "At various stages of the live migration process the contents of an instances run time memory and disk are transmitted over the network in plain text. Thus there are several risks that need to be addressed when using live migration. The following in-exhaustive list details some of these risks:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:178(para)
+#: ./security-guide/section_security-services-for-instances.xml:188(para)
 msgid "<emphasis>Denial of Service (DoS)</emphasis>: If something fails during the migration process, the instance could be lost."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:181(para)
+#: ./security-guide/section_security-services-for-instances.xml:191(para)
 msgid "<emphasis>Data exposure</emphasis>: Memory or disk transfers must be handled securely."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:184(para)
+#: ./security-guide/section_security-services-for-instances.xml:194(para)
 msgid "<emphasis>Data manipulation</emphasis>: If memory or disk transfers are not handled securely, then an attacker could manipulate user data during the migration."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:187(para)
+#: ./security-guide/section_security-services-for-instances.xml:197(para)
 msgid "<emphasis>Code injection</emphasis>: If memory or disk transfers are not handled securely, then an attacker could manipulate executables, either on disk or in memory, during the migration."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:192(title)
+#: ./security-guide/section_security-services-for-instances.xml:202(title)
 msgid "Live migration mitigations"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:193(para)
+#: ./security-guide/section_security-services-for-instances.xml:203(para)
 msgid "There are several methods to mitigate some of the risk associated with live migrations, the following list details some of these:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:195(para) ./security-guide/section_security-services-for-instances.xml:205(title)
+#: ./security-guide/section_security-services-for-instances.xml:205(para) ./security-guide/section_security-services-for-instances.xml:215(title)
 msgid "Disable live migration"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:198(para)
+#: ./security-guide/section_security-services-for-instances.xml:208(para)
 msgid "Isolated migration network"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:201(para) ./security-guide/section_security-services-for-instances.xml:218(title)
+#: ./security-guide/section_security-services-for-instances.xml:211(para) ./security-guide/section_security-services-for-instances.xml:228(title)
 msgid "Encrypted live migration"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:206(para)
+#: ./security-guide/section_security-services-for-instances.xml:216(para)
 msgid "At this time, live migration is enabled in OpenStack by default. Live migrations can be disabled by adding the following lines to the nova <filename>policy.json</filename> file:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:214(title)
+#: ./security-guide/section_security-services-for-instances.xml:224(title)
 msgid "Migration network"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:215(para)
+#: ./security-guide/section_security-services-for-instances.xml:225(para)
 msgid "As a general practice, live migration traffic should be restricted to the management security domain, see <xref linkend=\"security-boundaries-and-threats-idp55632\"/>. With live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:219(para)
+#: ./security-guide/section_security-services-for-instances.xml:229(para)
 msgid "If there is a sufficient business case for keeping live migration enabled, then libvirtd can provide encrypted tunnels for the live migrations. However, this feature is not currently exposed in either the OpenStack Dashboard or nova-client commands, and can only be accessed through manual configuration of libvirtd. The live migration process then changes to the following high-level steps:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:221(para)
+#: ./security-guide/section_security-services-for-instances.xml:231(para)
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:222(para)
+#: ./security-guide/section_security-services-for-instances.xml:232(para)
 msgid "An encrypted tunnel is created between libvirtd processes on both source and destination hosts."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml:223(para)
+#: ./security-guide/section_security-services-for-instances.xml:233(para)
 msgid "Destination libvirtd host copies the instances back to an underlying hypervisor."
 msgstr ""
 

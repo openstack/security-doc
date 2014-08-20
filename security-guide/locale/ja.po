@@ -12,9 +12,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-08-18 21:05+0000\n"
-"PO-Revision-Date: 2014-08-19 05:12+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
+"POT-Creation-Date: 2014-08-19 10:40+0000\n"
+"PO-Revision-Date: 2014-08-19 16:51+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -348,13 +348,13 @@ msgid ""
 "The ISO 27001 Information Security standard and certification has been used "
 "for many years to evaluate and distinguish an organizations alignment with "
 "information Security best practices. The standard is comprised of two parts:"
-" Mandatory Clauses that define the Information Security Managment System "
+" Mandatory Clauses that define the Information Security Management System "
 "(ISMS) and Annex A which contains a list of controls organized by domain."
 msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml131(para)
 msgid ""
-"The information security managemnet system preserves the confidentiality, "
+"The information security management system preserves the confidentiality, "
 "integrity, and availability of information by applying a risk management "
 "process and gives confidence to interested parties that risks are adequately"
 " managed."
@@ -1189,13 +1189,13 @@ msgstr "今回のケーススタディでは、アリスとボブがシステム
 
 #: ./security-guide/section_case-studies-system-documentation.xml12(para)
 msgid ""
-"Alice needs detailed documentation to satisfy FedRamp requirements. She sets"
+"Alice needs detailed documentation to satisfy FedRAMP requirements. She sets"
 " up a configuration management database (CMDB) to store information "
 "regarding all of the hardware, firmware, and software versions used "
 "throughout the cloud. She also creates a network diagram detailing the cloud"
 " architecture, paying careful attention to the security domains and the "
 "services that span multiple security domains."
-msgstr "アリスは、FedRam 要件を満たす詳細文書が必要です。構成管理データベース (CMDB) を設定して、クラウド全体で使用されるハードウェア、ファームウェア、ソフトウェアバージョンの情報を格納していきます。また、セキュリティドメインや、複数のセキュリティドメインにまたがるサービスに細心の注意を払い、クラウドアーキテクチャーの詳細を示したネットワーク図も作成します。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml13(para)
 msgid ""
@@ -2000,10 +2000,10 @@ msgstr "Havana リリース向けの１機能が、ディスクに書き込ま�
 
 #: ./security-guide/section_data-encryption.xml39(para)
 msgid ""
-"Tenant data for compute could be encrypted over IPSec or other tunnels. This"
+"Tenant data for compute could be encrypted over IPsec or other tunnels. This"
 " is not functionality common or standard in OpenStack, but is an option "
 "available to motivated and interested implementors."
-msgstr "compute のテナントデータは IPSec 又は他のトンネルで暗号化できます。OpenStack での共通または標準の機能ではありませんが、やる気と興味がある実装者に１つの選択肢が利用できます。"
+msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -2329,13 +2329,13 @@ msgstr "Paste と ミドルウェア"
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml71(para)
 msgid ""
 "Most API endpoints and other HTTP services in OpenStack use the Python Paste"
-" Deploy library. From a securtiy perspective, this library enables "
+" Deploy library. From a security perspective, this library enables "
 "manipulation of the request filter pipeline through the application's "
 "configuration. Each element in this chain is referred to as "
 "<emphasis>middleware</emphasis>. Changing the order of filters in the "
 "pipeline or adding additional middleware might have unpredictable security "
 "impact."
-msgstr "OpenStack内のほぼ全てのAPIエンドポイントと他のHTTPサービスはPythonのPaste Deployライブラリを利用しています。このライブラリにより、アプリケーションの設定によってはリクエストフィルターのパイプラインが操作が可能だと理解することがセキュリティの観点から重要になります。このパイプライン連鎖の中のそれぞれの要素は<emphasis>ミドルウェア</emphasis>として呼ばれています。パイプラインの中でフィルター順序を変更したり、ミドルウェアを追加すると予期しないセキュリティ上の影響が発生する可能性があります。"
+msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml80(para)
 msgid ""
@@ -3550,8 +3550,8 @@ msgid ""
 "for internal systems easier. Advanced configurations may use separate PKI "
 "deployments for different security domains. This allows deployers to "
 "maintain cryptographic separation of environments, ensuring that "
-"certificates issued to one are not recognised by another."
-msgstr "OpenStackクラウドアーキテクトには、内部のシステムと顧客が接するサービス用に、分断されたPKIデプロイの使用を検討する事をお勧めします。これは、クラウドをデプロイする人が他の物が内部のシステム用に証明書を要求・署名・デプロイする事を容易にするPKIインフラを制御できるようにします。異なる設定は異なるセキュリティドメイン用にPKIデプロイを分割使用しても構いません。これは、デプロイする人が環境の暗号の分断を管理できるようにし、一方で発行された証明書が他方で認証されない事を保証します。"
+"certificates issued to one are not recognized by another."
+msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml61(para)
 msgid ""
@@ -3727,11 +3727,11 @@ msgstr ""
 msgid ""
 "When using nginx, we recommend <link "
 "href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as "
-"the wsgi host with an appropriate number of synchronous workers. We strongly"
-" advise against deployments using fastcgi, scgi, or uWSGI. We strongly "
+"the WSGI host with an appropriate number of synchronous workers. We strongly"
+" advise against deployments using FastCGI, SCGI, or uWSGI. We strongly "
 "advise against the use of synthetic performance benchmarks when choosing a "
-"wsgi server."
-msgstr "nginx を使用している場合、適切な数の同期ワーカーを持つ WSGI ホストとして <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> を推奨します。fastcgi、scgi、uWSGI 等の使用を強く推奨します。WSGI サーバーを選択するとき、統合パフォーマンスベンチマークの使用を強く推奨します。"
+"WSGI server."
+msgstr ""
 
 #: ./security-guide/ch_dashboard.xml39(para)
 msgid ""
@@ -3863,14 +3863,14 @@ msgstr "Django のメディア設定は <link href=\"https://docs.djangoproject.
 msgid ""
 "Dashboard's default configuration uses <link href=\"http://django-"
 "compressor.readthedocs.org/\">django_compressor</link> to compress and "
-"minify css and JavaScript content before serving it. This process should be "
+"minify CSS and JavaScript content before serving it. This process should be "
 "statically done before deploying dashboard, rather than using the default "
 "in-request dynamic compression and copying the resulting files along with "
 "deployed code or to the CDN server. Compression should be done in a non-"
 "production build environment. If this is not practical, we recommend "
 "disabling resource compression entirely. Online compression dependencies "
-"(less, nodejs) should not be installed on production machines."
-msgstr "ダッシュボードのデフォルトの設定は、CSS と JavaScript のコンテンツを処理する前に圧縮して最小化するために <link href=\"http://django-compressor.readthedocs.org/\">django_compressor</link> を使用します。このプロセスは、デフォルトのリクエストごとに動的な圧縮を使用する代わりに、ダッシュボードを導入して、導入されたコードと一緒に結果のファイルを CDN サーバーにコピーする前に静的に実行されるべきです。圧縮は本番環境以外で実行すべきです。これが実践的でなければ、すべてのリソースの圧縮を無効化することを推奨します。オンライン圧縮の依存物 (less や nodejs) は本番環境にインストールするべきではありません。"
+"(less, Node.js) should not be installed on production machines."
+msgstr ""
 
 #: ./security-guide/ch_dashboard.xml138(title)
 msgid "Secret key"
@@ -3956,7 +3956,7 @@ msgstr "Django は<link href=\"https://docs.djangoproject.com/en/1.5/ref/contrib
 msgid ""
 "Dashboard is designed to discourage developers from introducing cross-site "
 "scripting vulnerabilities with custom dashboards. However, it is important "
-"to audit custom dashboards, especially ones that are javascript-heavy for "
+"to audit custom dashboards, especially ones that are JavaScript-heavy for "
 "inappropriate use of the <literal>@csrf_exempt</literal> decorator. "
 "Dashboards which do not follow these recommended security settings should be"
 " carefully evaluated before restrictions are relaxed."
@@ -4102,7 +4102,7 @@ msgid ""
 "which creates a solid foundation of security controls and practices for "
 "achieving more stringent compliance certifications. This standard was "
 "updated in 2013 to reflect the growing use of cloud services and places more"
-" emphasis on measuring and evaluating how well an organisation's ISMS is "
+" emphasis on measuring and evaluating how well an organization's ISMS is "
 "performing."
 msgstr ""
 
@@ -4155,12 +4155,12 @@ msgstr "セキュリティトレーニング"
 #: ./security-guide/section_compliance-activities.xml35(para)
 msgid ""
 "Annual, role-specific, security training is a mandatory requirement for "
-"almost all compliance certifications and attestations. To optimise the "
+"almost all compliance certifications and attestations. To optimize the "
 "effectiveness of security training, a common method is to provide role "
 "specific training, for example to developers, operational personnel, and "
 "non-technical employees. Additional cloud security or OpenStack security "
 "training based on this hardening guide would be ideal."
-msgstr "年次でのロール別セキュリティトレーニングは、ほぼすべてのコンプライアンス認証、認定で必須の要件です。セキュリティトレーニングの効果を最適化するため、一般的にはロール別に実施します。例えば開発者、運用担当者、非技術者別、などです。加えて、このガイドにもとづくクラウド、OpenStackセキュリティに関するトレーニングの実施が理想的でしょう。"
+msgstr ""
 
 #: ./security-guide/section_compliance-activities.xml38(title)
 msgid "Security reviews"
@@ -4547,10 +4547,10 @@ msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml226(para)
 msgid ""
-"As most management commands flow through the message queueing system, it is "
-"a primary security concern for any OpenStack deployment. Message queueing "
+"As most management commands flow through the message queuing system, it is a"
+" primary security concern for any OpenStack deployment. Message queuing "
 "security is discussed in detail later in this guide."
-msgstr "メッセージキューシステムは、大半の管理コマンドが通過するので、OpenStack のデプロイメントにおける重要なセキュリティ課題です。メッセージキューのセキュリティについては、本ガイドの後半で詳述します。"
+msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml230(para)
 msgid ""
@@ -4792,10 +4792,10 @@ msgstr "Vibha Fauver"
 msgid ""
 "Vibha Fauver, GWEB, CISSP, PMP, has over fifteen years of experience in "
 "Information Technology. Her areas of specialization include software "
-"engineering, project management and informationsecurity. She has a B.S. in "
+"engineering, project management and information security. She has a B.S. in "
 "Computer &amp; Information Science and a M.S. in Engineering Management with"
 " specialization and a certificate in Systems Engineering."
-msgstr ""
+msgstr "Vibha Fauver (GWEB, CISSP, PMP) は情報技術に関する 15 年以上の経験があります。専門分野はソフトウェアエンジニアリング、プロジェクト管理と情報セキュリティです。Computer &amp; Information Science の B.S. と Engineering Management の M.S. を保持しています。Systems Engineering の資格を保持しています。"
 
 #: ./security-guide/section_why-and-how-we-wrote-this-book.xml175(para)
 msgid "<emphasis role=\"bold\">Eric Windisch</emphasis>, Cloudscaling"
@@ -5061,8 +5061,8 @@ msgstr "OpenStack Compute は、旧式の nova-network サービスでデプロ�
 #: ./security-guide/section_networking-services.xml35(para)
 msgid ""
 "Note, legacy nova-network security groups are applied to all virtual "
-"interface ports on an instance using IPTables."
-msgstr "注：旧式の nova-network セキュリティグループは、Iptables を使用してインスタンス上の全ての仮想インターフェースポートに適用されます。"
+"interface ports on an instance using iptables."
+msgstr ""
 
 #: ./security-guide/section_networking-services.xml36(para)
 msgid ""
@@ -6498,13 +6498,13 @@ msgstr "ハイパーバイザーにおけるネットワーク I/O の性能を�
 
 #: ./security-guide/section_hypervisor-selection.xml523(para)
 msgid ""
-"It is important to recognise the difference between using LXC (Linux "
-"Containers) or Baremetal systems vs using a hypervisor like KVM. "
+"It is important to recognize the difference between using LXC (Linux "
+"Containers) or baremetal systems vs using a hypervisor like KVM. "
 "Specifically, the focus of this security guide is largely based on having a "
 "hypervisor and virtualization platform. However, should your implementation "
 "require the use of a baremetal or LXC environment, you must pay attention to"
 " the particular differences in regard to deployment of that environment."
-msgstr "LXC (Linux コンテナー) やベアメタルシステムの利用と KVM のようなハイパーバイザーの利用の違いを思い起こすことが重要です。具体的には、このセキュリティガイドの焦点は、大規模にハイパーバイザーと仮想化のプラットフォームを持つことを前提にしています。しかしながら、お使いの環境がベアメタルや LXC 環境を使用する必要があれば、その環境に関する特有の違いに注意を払いたいでしょう。"
+msgstr ""
 
 #: ./security-guide/section_hypervisor-selection.xml531(para)
 msgid ""
@@ -7849,9 +7849,9 @@ msgid ""
 "Alice has a need for lots of high quality entropy in the instances. For this"
 " reason, she decides to purchase hardware with Intel Ivy Bridge chip sets "
 "that support the RdRand instruction on each compute node. Using the entropy "
-"gathering daemon (EGD) and LibVirt's EGD support, Alice ensures that this "
+"gathering daemon (EGD) and libvirt's EGD support, Alice ensures that this "
 "entropy pool is distributed to the instances on each compute node."
-msgstr "アリスはインスタンス群に高い品質の多くのエントロピーに対するニーズがあります。このため、彼女は各 compute ノード上で RdRand 命令をサポートする Intel Ivy Bridge チップセットを持つハードウェアの購入を決めました。エントロピー収集デーモン (EGD) と LibVirt の EGD サポートを使用して、Alice はこのエントロピープールが各 compute ノード上のインスタンスに配信されるようにします。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml13(para)
 msgid ""
@@ -8397,9 +8397,9 @@ msgstr "プロトコル"
 #: ./security-guide/section_ssl-proxies-and-http-services.xml106(para)
 msgid ""
 "Protocols are enabled/disabled through SSL_CTX_set_options. We recommend "
-"disabling SSLv2 and enabling TLS or SSLv3 (which was standardised as TLS "
+"disabling SSLv2 and enabling TLS or SSLv3 (which was standardized as TLS "
 "with a few changes)."
-msgstr "プロトコルは SSL_CTX_set_options により有効化、無効化できます。SSLv2 を無効化し、TLS や SSLv3 (いくつか変更をして TLS として標準化されました) を有効化することを推奨します。"
+msgstr ""
 
 #: ./security-guide/section_ssl-proxies-and-http-services.xml112(para)
 msgid ""
@@ -8887,8 +8887,8 @@ msgstr "メッセージ通信路のセキュリティ"
 msgid ""
 "AMQP based solutions (Qpid and RabbitMQ) support transport-level security "
 "using SSL. ZeroMQ messaging does not natively support SSL, but transport-"
-"level security is possible using labelled IPSec or CIPSO network labels."
-msgstr "AMQP ベースの製品 (Qpid, RabbitMQ) は SSL を用いた通信路レベルのセキュリティに対応しています。ZeroMQ はSSL をネイティブでサポートしていませんが、Labeled-IPSec や CIPSO ネットワークラベルを用いた通信路レベルのセキュア化に対応しています。"
+"level security is possible using labelled IPsec or CIPSO network labels."
+msgstr ""
 
 #: ./security-guide/section_messaging-security.xml22(para)
 msgid ""
@@ -9599,10 +9599,10 @@ msgstr "通常、SSH デーモンがインストールされると、ホスト�
 #: ./security-guide/section_management-interfaces.xml138(para)
 msgid ""
 "Once the SSH host key is generated, the host key fingerprint should be "
-"stored in a secure and queriable location. One particularly convenient "
+"stored in a secure and queryable location. One particularly convenient "
 "solution is DNS using SSHFP resource records as defined in RFC-4255. For "
 "this to be secure, it is necessary that DNSSEC be deployed."
-msgstr "SSH ホストキーが生成されると、ホストキーのフィンガープリントはセキュアでクエリ可能な場所に保存されるはずです。特に有用なソリューションは、RFC-4255 で定義されているように SSHFP リソースレコードを使用した DNS です。これをセキュアにするには、DNSSEC のデプロイメントが必要になります。"
+msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml142(title)
 msgid "Management utilities"
@@ -9674,12 +9674,12 @@ msgstr "ネットワークインターフェースはプライベート  (管理
 #: ./security-guide/section_management-interfaces.xml185(para)
 msgid ""
 "If you use a web interface to interact with the "
-"<glossterm>BMC</glossterm>/IPMI, always use the SSL interface, such as https"
+"<glossterm>BMC</glossterm>/IPMI, always use the SSL interface, such as HTTPS"
 " or port 443. This SSL interface should <emphasis "
 "role=\"bold\">NOT</emphasis> use self-signed certificates, as is often "
 "default, but should have trusted certificates using the correctly defined "
 "fully qualified domain names (FQDNs)."
-msgstr "Web インターフェースを使用して <glossterm>BMC</glossterm>/IPMI と対話する場合、常に SSL インターフェースを使用するようにしてください (例: https またはポート 443)。この SSL インターフェースは自己署名証明書を使用<emphasis role=\"bold\">しない</emphasis>ようにしてください。通常、これがデフォルトとなっていますが、正しく定義された完全修飾ドメイン名 (FQDN) を使用して信頼済みの証明書を使用するようにしてください。"
+msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml194(para)
 msgid ""
@@ -9795,8 +9795,8 @@ msgid ""
 "entropy into the instances. Tools such as the entropy gathering daemon "
 "(<link href=\"http://egd.sourceforge.net/\">EGD</link>) provide a way to "
 "fairly and securely distribute entropy through a distributed system. Support"
-" exists for using the EGD as an entropy source for LibVirt."
-msgstr "クラウド上でエントロピーが利用可能となったら、次はインスタンスからエントロピーを供給できるようにします。エントロピー収集デーモン(Entropy Gathering Daemon <link href=\"http://egd.sourceforge.net/\">EGD</link>)では、分散システム上でエントロピーを平等かつ安全な配布を実現しています。libvirtのエントロピー元としてEGDを使用するためのサポートも提供されています。"
+" exists for using the EGD as an entropy source for libvirt."
+msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml30(para)
 msgid ""
@@ -9889,10 +9889,10 @@ msgstr "DifferentHostFilter"
 msgid ""
 "Schedule the instance on a different host from a set of instances. To take "
 "advantage of this filter, the requester must pass a scheduler hint, using "
-"<literal>different_host</literal> as the key and a list of instance uuids as"
+"<literal>different_host</literal> as the key and a list of instance UUIDs as"
 " the value. This filter is the opposite of the "
 "<literal>SameHostFilter</literal>."
-msgstr "特定のインスタンスのグループとは異なるホスト上にインスタンスをスケジュールします。このフィルタを利用するには、要求時にスケジュール情報としてキーに<literal>different_host</literal>を指定し、値にはインスタンスuuidのリストを渡す必要があります。<literal>SameHostFilter</literal>とは反対の働きを持つフィルターです。"
+msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml89(title)
 msgid "GroupAntiAffinityFilter"
@@ -9903,8 +9903,8 @@ msgid ""
 "The GroupAntiAffinityFilter ensures that each instance in a group is on a "
 "different host. To take advantage of this filter, the requester must pass a "
 "scheduler hint, using <literal>group</literal> as the key and a list of "
-"instance uuids as the value."
-msgstr "GroupAntiAffinityFilterはグループに含まれるすべてのインスタンスは異なるホストで稼働していることを保証します。このフィルタを利用するには、要求時にスケジュール情報としてキーに<literal>group</literal>を指定し、値にはインスタンスuuidのリストを渡す必要があります。"
+"instance UUIDs as the value."
+msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml93(title)
 msgid "Trusted compute pools"

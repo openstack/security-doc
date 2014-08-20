@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-19 06:18+0000\n"
+"POT-Creation-Date: 2014-08-20 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,11 +218,11 @@ msgid "ISO 27001/2:2013"
 msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml:126(para)
-msgid "The ISO 27001 Information Security standard and certification has been used for many years to evaluate and distinguish an organizations alignment with information Security best practices. The standard is comprised of two parts: Mandatory Clauses that define the Information Security Managment System (ISMS) and Annex A which contains a list of controls organized by domain."
+msgid "The ISO 27001 Information Security standard and certification has been used for many years to evaluate and distinguish an organizations alignment with information Security best practices. The standard is comprised of two parts: Mandatory Clauses that define the Information Security Management System (ISMS) and Annex A which contains a list of controls organized by domain."
 msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml:131(para)
-msgid "The information security managemnet system preserves the confidentiality, integrity, and availability of information by applying a risk management process and gives confidence to interested parties that risks are adequately managed."
+msgid "The information security management system preserves the confidentiality, integrity, and availability of information by applying a risk management process and gives confidence to interested parties that risks are adequately managed."
 msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml:139(link)
@@ -676,7 +676,7 @@ msgid "In this case study we discuss how Alice and Bob would address their syste
 msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml:12(para)
-msgid "Alice needs detailed documentation to satisfy FedRamp requirements. She sets up a configuration management database (CMDB) to store information regarding all of the hardware, firmware, and software versions used throughout the cloud. She also creates a network diagram detailing the cloud architecture, paying careful attention to the security domains and the services that span multiple security domains."
+msgid "Alice needs detailed documentation to satisfy FedRAMP requirements. She sets up a configuration management database (CMDB) to store information regarding all of the hardware, firmware, and software versions used throughout the cloud. She also creates a network diagram detailing the cloud architecture, paying careful attention to the security domains and the services that span multiple security domains."
 msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml:13(para)
@@ -1156,7 +1156,7 @@ msgid "A feature aimed for the Havana release provides encryption of the VM's da
 msgstr ""
 
 #: ./security-guide/section_data-encryption.xml:39(para)
-msgid "Tenant data for compute could be encrypted over IPSec or other tunnels. This is not functionality common or standard in OpenStack, but is an option available to motivated and interested implementors."
+msgid "Tenant data for compute could be encrypted over IPsec or other tunnels. This is not functionality common or standard in OpenStack, but is an option available to motivated and interested implementors."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
@@ -1350,7 +1350,7 @@ msgid "Paste and middleware"
 msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml:71(para)
-msgid "Most API endpoints and other HTTP services in OpenStack use the Python Paste Deploy library. From a securtiy perspective, this library enables manipulation of the request filter pipeline through the application's configuration. Each element in this chain is referred to as <emphasis>middleware</emphasis>. Changing the order of filters in the pipeline or adding additional middleware might have unpredictable security impact."
+msgid "Most API endpoints and other HTTP services in OpenStack use the Python Paste Deploy library. From a security perspective, this library enables manipulation of the request filter pipeline through the application's configuration. Each element in this chain is referred to as <emphasis>middleware</emphasis>. Changing the order of filters in the pipeline or adding additional middleware might have unpredictable security impact."
 msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml:80(para)
@@ -2058,7 +2058,7 @@ msgid "Many organizations have an established Public Key Infrastructure with the
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:60(para)
-msgid "It is recommended that the OpenStack cloud architect consider using separate PKI deployments for internal systems and customer facing services. This allows the cloud deployer to maintain control of their PKI infrastructure and among other things makes requesting, signing and deploying certificates for internal systems easier. Advanced configurations may use separate PKI deployments for different security domains. This allows deployers to maintain cryptographic separation of environments, ensuring that certificates issued to one are not recognised by another."
+msgid "It is recommended that the OpenStack cloud architect consider using separate PKI deployments for internal systems and customer facing services. This allows the cloud deployer to maintain control of their PKI infrastructure and among other things makes requesting, signing and deploying certificates for internal systems easier. Advanced configurations may use separate PKI deployments for different security domains. This allows deployers to maintain cryptographic separation of environments, ensuring that certificates issued to one are not recognized by another."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:61(para)
@@ -2174,7 +2174,7 @@ msgid "The dashboard should be deployed as a Web Services Gateway Interface (WSG
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:32(para)
-msgid "When using nginx, we recommend <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as the wsgi host with an appropriate number of synchronous workers. We strongly advise against deployments using fastcgi, scgi, or uWSGI. We strongly advise against the use of synthetic performance benchmarks when choosing a wsgi server."
+msgid "When using nginx, we recommend <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as the WSGI host with an appropriate number of synchronous workers. We strongly advise against deployments using FastCGI, SCGI, or uWSGI. We strongly advise against the use of synthetic performance benchmarks when choosing a WSGI server."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:39(para)
@@ -2250,7 +2250,7 @@ msgid "Django media settings are documented at <link href=\"https://docs.djangop
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:124(para)
-msgid "Dashboard's default configuration uses <link href=\"http://django-compressor.readthedocs.org/\">django_compressor</link> to compress and minify css and JavaScript content before serving it. This process should be statically done before deploying dashboard, rather than using the default in-request dynamic compression and copying the resulting files along with deployed code or to the CDN server. Compression should be done in a non-production build environment. If this is not practical, we recommend disabling resource compression entirely. Online compression dependencies (less, nodejs) should not be installed on production machines."
+msgid "Dashboard's default configuration uses <link href=\"http://django-compressor.readthedocs.org/\">django_compressor</link> to compress and minify CSS and JavaScript content before serving it. This process should be statically done before deploying dashboard, rather than using the default in-request dynamic compression and copying the resulting files along with deployed code or to the CDN server. Compression should be done in a non-production build environment. If this is not practical, we recommend disabling resource compression entirely. Online compression dependencies (less, Node.js) should not be installed on production machines."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:138(title)
@@ -2298,7 +2298,7 @@ msgid "Django has a dedicated middleware for <link href=\"https://docs.djangopro
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:188(para)
-msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are javascript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
+msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are JavaScript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:197(title)
@@ -2394,7 +2394,7 @@ msgid "Information Security Management system (ISMS)"
 msgstr ""
 
 #: ./security-guide/section_compliance-activities.xml:12(para)
-msgid "An Information Security Management System (ISMS) is a comprehensive set of policies and processes that an organization creates and maintains to manage risk to information assets. The most common ISMS for cloud deployments is <link href=\"http://www.27000.org/iso-27001.htm\">ISO/IEC 27001/2</link>, which creates a solid foundation of security controls and practices for achieving more stringent compliance certifications. This standard was updated in 2013 to reflect the growing use of cloud services and places more emphasis on measuring and evaluating how well an organisation's ISMS is performing."
+msgid "An Information Security Management System (ISMS) is a comprehensive set of policies and processes that an organization creates and maintains to manage risk to information assets. The most common ISMS for cloud deployments is <link href=\"http://www.27000.org/iso-27001.htm\">ISO/IEC 27001/2</link>, which creates a solid foundation of security controls and practices for achieving more stringent compliance certifications. This standard was updated in 2013 to reflect the growing use of cloud services and places more emphasis on measuring and evaluating how well an organization's ISMS is performing."
 msgstr ""
 
 #: ./security-guide/section_compliance-activities.xml:22(title)
@@ -2426,7 +2426,7 @@ msgid "Security training"
 msgstr ""
 
 #: ./security-guide/section_compliance-activities.xml:35(para)
-msgid "Annual, role-specific, security training is a mandatory requirement for almost all compliance certifications and attestations. To optimise the effectiveness of security training, a common method is to provide role specific training, for example to developers, operational personnel, and non-technical employees. Additional cloud security or OpenStack security training based on this hardening guide would be ideal."
+msgid "Annual, role-specific, security training is a mandatory requirement for almost all compliance certifications and attestations. To optimize the effectiveness of security training, a common method is to provide role specific training, for example to developers, operational personnel, and non-technical employees. Additional cloud security or OpenStack security training based on this hardening guide would be ideal."
 msgstr ""
 
 #: ./security-guide/section_compliance-activities.xml:38(title)
@@ -2632,7 +2632,7 @@ msgid "OpenStack relies on messaging for internal communication between several 
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:226(para)
-msgid "As most management commands flow through the message queueing system, it is a primary security concern for any OpenStack deployment. Message queueing security is discussed in detail later in this guide."
+msgid "As most management commands flow through the message queuing system, it is a primary security concern for any OpenStack deployment. Message queuing security is discussed in detail later in this guide."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:230(para)
@@ -2782,7 +2782,7 @@ msgid "Vibha Fauver"
 msgstr ""
 
 #: ./security-guide/section_why-and-how-we-wrote-this-book.xml:167(para)
-msgid "Vibha Fauver, GWEB, CISSP, PMP, has over fifteen years of experience in Information Technology. Her areas of specialization include software engineering, project management and informationsecurity. She has a B.S. in Computer &amp; Information Science and a M.S. in Engineering Management with specialization and a certificate in Systems Engineering."
+msgid "Vibha Fauver, GWEB, CISSP, PMP, has over fifteen years of experience in Information Technology. Her areas of specialization include software engineering, project management and information security. She has a B.S. in Computer &amp; Information Science and a M.S. in Engineering Management with specialization and a certificate in Systems Engineering."
 msgstr ""
 
 #: ./security-guide/section_why-and-how-we-wrote-this-book.xml:175(para)
@@ -2934,7 +2934,7 @@ msgid "OpenStack Compute supports tenant network traffic access controls directl
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:35(para)
-msgid "Note, legacy nova-network security groups are applied to all virtual interface ports on an instance using IPTables."
+msgid "Note, legacy nova-network security groups are applied to all virtual interface ports on an instance using iptables."
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:36(para)
@@ -3840,7 +3840,7 @@ msgid "Improves performance of network I/O on hypervisors"
 msgstr ""
 
 #: ./security-guide/section_hypervisor-selection.xml:523(para)
-msgid "It is important to recognise the difference between using LXC (Linux Containers) or Baremetal systems vs using a hypervisor like KVM. Specifically, the focus of this security guide is largely based on having a hypervisor and virtualization platform. However, should your implementation require the use of a baremetal or LXC environment, you must pay attention to the particular differences in regard to deployment of that environment."
+msgid "It is important to recognize the difference between using LXC (Linux Containers) or baremetal systems vs using a hypervisor like KVM. Specifically, the focus of this security guide is largely based on having a hypervisor and virtualization platform. However, should your implementation require the use of a baremetal or LXC environment, you must pay attention to the particular differences in regard to deployment of that environment."
 msgstr ""
 
 #: ./security-guide/section_hypervisor-selection.xml:531(para)
@@ -4618,7 +4618,7 @@ msgid "In this case study we discuss how Alice and Bob would architect their clo
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:12(para)
-msgid "Alice has a need for lots of high quality entropy in the instances. For this reason, she decides to purchase hardware with Intel Ivy Bridge chip sets that support the RdRand instruction on each compute node. Using the entropy gathering daemon (EGD) and LibVirt's EGD support, Alice ensures that this entropy pool is distributed to the instances on each compute node."
+msgid "Alice has a need for lots of high quality entropy in the instances. For this reason, she decides to purchase hardware with Intel Ivy Bridge chip sets that support the RdRand instruction on each compute node. Using the entropy gathering daemon (EGD) and libvirt's EGD support, Alice ensures that this entropy pool is distributed to the instances on each compute node."
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:13(para)
@@ -4906,7 +4906,7 @@ msgid "Protocols"
 msgstr ""
 
 #: ./security-guide/section_ssl-proxies-and-http-services.xml:106(para)
-msgid "Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2 and enabling TLS or SSLv3 (which was standardised as TLS with a few changes)."
+msgid "Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2 and enabling TLS or SSLv3 (which was standardized as TLS with a few changes)."
 msgstr ""
 
 #: ./security-guide/section_ssl-proxies-and-http-services.xml:112(para)
@@ -5238,7 +5238,7 @@ msgid "Messaging transport security"
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:16(para)
-msgid "AMQP based solutions (Qpid and RabbitMQ) support transport-level security using SSL. ZeroMQ messaging does not natively support SSL, but transport-level security is possible using labelled IPSec or CIPSO network labels."
+msgid "AMQP based solutions (Qpid and RabbitMQ) support transport-level security using SSL. ZeroMQ messaging does not natively support SSL, but transport-level security is possible using labelled IPsec or CIPSO network labels."
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:22(para)
@@ -5696,7 +5696,7 @@ msgid "Typically, when an SSH daemon is installed, host keys will be generated. 
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:138(para)
-msgid "Once the SSH host key is generated, the host key fingerprint should be stored in a secure and queriable location. One particularly convenient solution is DNS using SSHFP resource records as defined in RFC-4255. For this to be secure, it is necessary that DNSSEC be deployed."
+msgid "Once the SSH host key is generated, the host key fingerprint should be stored in a secure and queryable location. One particularly convenient solution is DNS using SSHFP resource records as defined in RFC-4255. For this to be secure, it is necessary that DNSSEC be deployed."
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:142(title)
@@ -5740,7 +5740,7 @@ msgid "Ensure that the network interfaces are on their own private(management or
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:185(para)
-msgid "If you use a web interface to interact with the <glossterm>BMC</glossterm>/IPMI, always use the SSL interface, such as https or port 443. This SSL interface should <emphasis role=\"bold\">NOT</emphasis> use self-signed certificates, as is often default, but should have trusted certificates using the correctly defined fully qualified domain names (FQDNs)."
+msgid "If you use a web interface to interact with the <glossterm>BMC</glossterm>/IPMI, always use the SSL interface, such as HTTPS or port 443. This SSL interface should <emphasis role=\"bold\">NOT</emphasis> use self-signed certificates, as is often default, but should have trusted certificates using the correctly defined fully qualified domain names (FQDNs)."
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:194(para)
@@ -5802,7 +5802,7 @@ msgid "Fortunately, a cloud architect may address these issues by providing a hi
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:29(para)
-msgid "Once the entropy is available in the cloud, the next step is getting that entropy into the instances. Tools such as the entropy gathering daemon (<link href=\"http://egd.sourceforge.net/\">EGD</link>) provide a way to fairly and securely distribute entropy through a distributed system. Support exists for using the EGD as an entropy source for LibVirt."
+msgid "Once the entropy is available in the cloud, the next step is getting that entropy into the instances. Tools such as the entropy gathering daemon (<link href=\"http://egd.sourceforge.net/\">EGD</link>) provide a way to fairly and securely distribute entropy through a distributed system. Support exists for using the EGD as an entropy source for libvirt."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:30(para)
@@ -5846,7 +5846,7 @@ msgid "DifferentHostFilter"
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:86(para)
-msgid "Schedule the instance on a different host from a set of instances. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>different_host</literal> as the key and a list of instance uuids as the value. This filter is the opposite of the <literal>SameHostFilter</literal>."
+msgid "Schedule the instance on a different host from a set of instances. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>different_host</literal> as the key and a list of instance UUIDs as the value. This filter is the opposite of the <literal>SameHostFilter</literal>."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:89(title)
@@ -5854,7 +5854,7 @@ msgid "GroupAntiAffinityFilter"
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:90(para)
-msgid "The GroupAntiAffinityFilter ensures that each instance in a group is on a different host. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>group</literal> as the key and a list of instance uuids as the value."
+msgid "The GroupAntiAffinityFilter ensures that each instance in a group is on a different host. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>group</literal> as the key and a list of instance UUIDs as the value."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:93(title)

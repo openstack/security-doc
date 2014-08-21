@@ -85,8 +85,8 @@
     <section xml:id="security-boundaries-and-threats-idp59216">
       <title>Data</title>
       <para>The data security domain is concerned primarily with information pertaining to the
-        storage services within OpenStack. Much of the data that crosses this network has high
-        integrity and confidentiality requirements and depending on the type of deployment there may
+        storage services within OpenStack. Most of the data transmitted across this network requires high
+        levels of integrity and confidentiality. In some cases, depending on the type of deployment there may
         also be strong availability requirements.</para>
       <para>The trust level of this network is heavily dependent on deployment decisions and as such
         we do not assign this any default level of trust.</para>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-20 06:06+0000\n"
+"POT-Creation-Date: 2014-08-22 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4118,7 +4118,7 @@ msgid "In most deployments this domain is considered <emphasis>trusted</emphasis
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:87(para)
-msgid "The data security domain is concerned primarily with information pertaining to the storage services within OpenStack. Much of the data that crosses this network has high integrity and confidentiality requirements and depending on the type of deployment there may also be strong availability requirements."
+msgid "The data security domain is concerned primarily with information pertaining to the storage services within OpenStack. Most of the data transmitted across this network requires high levels of integrity and confidentiality. In some cases, depending on the type of deployment there may also be strong availability requirements."
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:91(para)
@@ -5142,7 +5142,7 @@ msgid "Key management"
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:9(para)
-msgid "To address the often mentioned concern of tenant data privacy and limiting cloud provider liability, there is greater interest within the OpenStack community to make data encryption more ubiquitous. It is relatively easy for an end-user to encrypt their data prior to saving it to the cloud, and this is a viable path for tenant objects such as media files, database archives among others. However, when client side encryption is used for virtual machine images, block storage etc, client intervention is necessary in the form of presenting keys to unlock the data for further use. To seamlessly secure the data and yet have it accessible without burdening the client with having to manage their keys and interactively provide them calls for a key management service within OpenStack. Providing encryption and key management services as part of OpenStack eases data-at-rest security adoption and addresses customer concerns about privacy or misuse of data, while also limiting cloud provider liability. This can help reduce a provider's liability when handling tenant data during an incident investigation in multi-tenant public clouds."
+msgid "To address the often mentioned concern of tenant data privacy and limiting cloud provider liability, there is greater interest within the OpenStack community to make data encryption more ubiquitous. It is relatively easy for an end-user to encrypt their data prior to saving it to the cloud, and this is a viable path for tenant objects such as media files, database archives among others. In some instances, client-side encryption is utilized to encrypt data held by the virtualization technologies which requires client interaction, such as presenting keys, to decrypt data for future use. To seamlessly secure the data and have it accessible without burdening the client with having to manage their keys and interactively provide them calls for a key management service within OpenStack. Providing encryption and key management services as part of OpenStack eases data-at-rest security adoption and addresses customer concerns about privacy or misuse of data, while also limiting cloud provider liability. This can help reduce a provider's liability when handling tenant data during an incident investigation in multi-tenant public clouds."
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:10(para)

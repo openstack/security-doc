@@ -396,4 +396,39 @@
       </itemizedlist>
     </section>
   </section>
+  <section xml:id="integrity-life-cycle-server-hardening">
+    <title>Server hardening</title>
+    <para>
+      Servers in the cloud, including undercloud and overcloud
+      infrastructure, should implement hardening best practices. As
+      OS and server hardening is common, applicable best practices
+      including but not limited to logging, user account restrictions,
+      and regular updates will not be covered here, but should be
+      applied to all infrastructure.
+    </para>
+    <section xml:id="integrity-life-cycle-file-integrity-management">
+      <title>File integrity management (FIM)</title>
+      <para>
+        File integrity management (FIM) is the method of ensuring that
+        files such as sensitive system or application configuration
+        files are not corrupted or changed to allow unauthorized access
+        or malicious behavior. This can be done through a utility such
+        as Samhain that will create a checksum hash of the specified
+        resource and then validate that hash at regular intervals, or
+        through a tool such as DMVerity that can take a hash of block
+        devices and will validate those hashes as they are accessed by
+        the system before they are presented to the user.
+      </para>
+      <para>
+        These should be put in place to monitor and report on changes
+        to system, hypervisor, and application configuration files such
+        as <filename>/etc/pam.d/system-auth</filename> and <filename>
+        /etc/keystone.conf</filename>, as well as kernel modules (such
+        as virtio). Best practice is to use the <command>lsmod</command>
+        command to show what is regularly being loaded on a system to
+        help determine what should or should not be included in FIM
+        checks.
+      </para>
+    </section>
+  </section>
 </section>

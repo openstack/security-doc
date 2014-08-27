@@ -369,14 +369,18 @@
             <td>Encryption / decryption</td>
             <td>Protected data transfer, protection for data at
                 rest</td>
-            <td>RFC 4253</td>
+            <td><link
+                  xlink:href="http://www.ietf.org/rfc/rfc4253.txt"
+                  >RFC 4253</link></td>
           </tr>
           <tr>
             <td>TDES</td>
             <td>168 bits</td>
             <td>Encryption / decryption</td>
             <td>Protected data transfer</td>
-            <td>RFC 4253</td>
+            <td><link
+                  xlink:href="http://www.ietf.org/rfc/rfc4253.txt"
+                  >RFC 4253</link></td>
           </tr>
           <tr>
             <td>RSA</td>
@@ -384,7 +388,9 @@
             <td>Authentication, key exchange</td>
             <td>Identification and authentication, protected
                 data transfer</td>
-            <td>U.S. NIST FIPS PUB 186-3</td>
+            <td><link
+                  xlink:href="http://csrc.nist.gov/publications/fips/fips186-3/fips_186-3.pdf"
+                  >U.S. NIST FIPS PUB 186-3</link></td>
           </tr>
           <tr>
             <td>DSA</td>
@@ -392,7 +398,9 @@
             <td>Authentication, key exchange</td>
             <td>Identification and authentication, protected
                 data transfer</td>
-            <td>U.S. NIST FIPS PUB 186-3</td>
+            <td><link
+                  xlink:href="http://csrc.nist.gov/publications/fips/fips186-3/fips_186-3.pdf"
+                  >U.S. NIST FIPS PUB 186-3</link></td>
           </tr>
           <tr>
             <td>Serpent</td>
@@ -418,7 +426,9 @@
             <td>Message Digest</td>
             <td>Protection of data at rest, protected data
                 transfer</td>
-            <td>U.S. NIST FIPS 180-3</td>
+            <td><link
+                  xlink:href="http://csrc.nist.gov/publications/fips/fips180-3/fips180-3_final.pdf"
+                  >U.S. NIST FIPS PUB 180-3</link></td>
           </tr>
           <tr>
             <td>SHA-2 (224, 256, 384, or 512 bits)</td>
@@ -426,7 +436,9 @@
             <td>Message Digest</td>
             <td>Protection for data at rest, identification and
                 authentication</td>
-            <td>U.S. NIST FIPS 180-3</td>
+            <td><link
+                  xlink:href="http://csrc.nist.gov/publications/fips/fips180-3/fips180-3_final.pdf"
+                  >U.S. NIST FIPS PUB 180-3</link></td>
           </tr>
         </tbody>
       </informaltable>

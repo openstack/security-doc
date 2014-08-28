@@ -30,15 +30,11 @@
       nginx since it is lightweight and easier to configure
       correctly.</para>
     <para>When using nginx, we recommend <link
-        xlink:href="http://docs.gunicorn.org/en/latest/deploy.html"
-        >gunicorn</link> as the WSGI host with an appropriate number
-      of synchronous workers. We strongly advise against deployments
-      using FastCGI, SCGI, or uWSGI. We strongly advise against the
-      use of synthetic performance benchmarks when choosing a WSGI
-      server.</para>
-    <para>When using Apache, we recommend <link
-        xlink:href="https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/"
-        >mod_wsgi</link> to host dashboard.</para>
+      xlink:href="http://docs.gunicorn.org/en/latest/deploy.html"
+      >gunicorn</link> as the WSGI host with an appropriate number
+      of synchronous workers. When using Apache, we recommend <link
+      xlink:href="https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/"
+      >mod_wsgi</link> to host the dashboard.</para>
   </section>
   <section xml:id="dashboard-idp240704">
     <title>HTTPS</title>

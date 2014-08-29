@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-08-26 06:40+0000\n"
-"PO-Revision-Date: 2014-08-26 06:40+0000\n"
+"POT-Creation-Date: 2014-08-29 05:10+0000\n"
+"PO-Revision-Date: 2014-08-29 05:10+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -3726,24 +3726,17 @@ msgstr ""
 msgid ""
 "When using nginx, we recommend <link "
 "href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as "
-"the WSGI host with an appropriate number of synchronous workers. We strongly"
-" advise against deployments using FastCGI, SCGI, or uWSGI. We strongly "
-"advise against the use of synthetic performance benchmarks when choosing a "
-"WSGI server."
+"the WSGI host with an appropriate number of synchronous workers. When using "
+"Apache, we recommend <link "
+"href=\"https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/\">mod_wsgi</link>"
+" to host the dashboard."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml39(para)
-msgid ""
-"When using Apache, we recommend <link "
-"href=\"https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/\">mod_wsgi</link>"
-" to host dashboard."
-msgstr "Apache を使用しているとき、ダッシュボードをホストするために <link href=\"https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/\">mod_wsgi</link> を推奨します。"
-
-#: ./security-guide/ch_dashboard.xml44(title)
+#: ./security-guide/ch_dashboard.xml40(title)
 msgid "HTTPS"
 msgstr "HTTPS"
 
-#: ./security-guide/ch_dashboard.xml45(para)
+#: ./security-guide/ch_dashboard.xml41(para)
 msgid ""
 "Deploy the dashboard behind a secure <glossterm>HTTPS</glossterm> server by "
 "using a valid, trusted certificate from a recognized certificate authority "
@@ -3751,21 +3744,21 @@ msgid ""
 " root of trust is pre-installed in all user browsers."
 msgstr "ダッシュボードは、認知されている認証局 (CA) から発行された有効かつ信頼できる証明書を使用しているセキュアな <glossterm>HTTPS</glossterm> サーバーの後ろに導入します。プライベートな組織で発行された証明書は、ルート証明機関がお使いのすべてのブラウザーに事前インストールされているときのみ、適切に動作します。"
 
-#: ./security-guide/ch_dashboard.xml52(para)
+#: ./security-guide/ch_dashboard.xml48(para)
 msgid ""
 "Configure HTTP requests to the dashboard domain to redirect to the fully "
 "qualified HTTPS URL."
 msgstr "ダッシュボードのドメインに対する HTTP リクエストは、完全修飾された HTTPS URL にリダイレクトされるよう設定します。"
 
-#: ./security-guide/ch_dashboard.xml56(title)
+#: ./security-guide/ch_dashboard.xml52(title)
 msgid "HTTP Strict Transport Security (HSTS)"
 msgstr "HTTP Strict Transport Security (HSTS)"
 
-#: ./security-guide/ch_dashboard.xml57(para)
+#: ./security-guide/ch_dashboard.xml53(para)
 msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
 msgstr "HTTP Strict Transport Security (HSTS) の使用が強く推奨されます。"
 
-#: ./security-guide/ch_dashboard.xml60(para)
+#: ./security-guide/ch_dashboard.xml56(para)
 msgid ""
 "If you are using an HTTPS proxy in front of your web server, rather than "
 "using an HTTP server with HTTPS functionality, follow the <link "
@@ -3774,18 +3767,18 @@ msgid ""
 "<literal>SECURE_PROXY_SSL_HEADER</literal> variable</link>."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml67(para)
+#: ./security-guide/ch_dashboard.xml63(para)
 msgid ""
 "See the chapter on PKI/SSL Everywhere for more specific recommendations and "
 "server configurations for HTTPS configurations, including the configuration "
 "of HSTS."
 msgstr "HSTS の設定を含め、HTTPS の設定に関するより具体的な推奨事項とサーバー設定は、PKI/SSL の章全体を参照してください。"
 
-#: ./security-guide/ch_dashboard.xml72(title)
+#: ./security-guide/ch_dashboard.xml68(title)
 msgid "Front end caching"
 msgstr "フロントエンドキャッシュ"
 
-#: ./security-guide/ch_dashboard.xml73(para)
+#: ./security-guide/ch_dashboard.xml69(para)
 msgid ""
 "Since dashboard is rendering dynamic content passed directly from OpenStack "
 "API requests, we do not recommend front end caching layers such as varnish. "
@@ -3793,11 +3786,11 @@ msgid ""
 "benefits from web host caching."
 msgstr "ダッシュボードは OpenStack API リクエストから渡された動的コンテンツをそのまま描画するため、varnish のようなフロントエンドキャッシュ層を推奨しません。Django では、静的なメディアは直接 Apache や nginx から処理され、すでに Web ホストのキャッシュの恩恵を受けています。"
 
-#: ./security-guide/ch_dashboard.xml80(title)
+#: ./security-guide/ch_dashboard.xml76(title)
 msgid "Domain names"
 msgstr "ドメイン名"
 
-#: ./security-guide/ch_dashboard.xml81(para)
+#: ./security-guide/ch_dashboard.xml77(para)
 msgid ""
 "Many organizations typically deploy web applications at subdomains of an "
 "overarching organization domain. It is natural for users to expect a domain "
@@ -3807,7 +3800,7 @@ msgid ""
 " simplifies name server maintenance."
 msgstr "多くの組織は一般的に、組織全体のドメインのサブドメインに Web アプリケーションを配備します。ユーザーが <uri>openstack.example.org</uri> 形式のドメインを期待することは自然です。これに関連して、しばしば同じセカンドレベルの名前空間に配備された、ユーザーが管理できるコンテンツを取り扱う他の多くのアプリケーションがあります。この名前の構造は便利であり、ネームサーバーのメンテナンスを簡単にします。"
 
-#: ./security-guide/ch_dashboard.xml89(para)
+#: ./security-guide/ch_dashboard.xml85(para)
 msgid ""
 "We strongly recommend deploying horizon to a <emphasis>second-level "
 "domain</emphasis>, such as <uri>https://example.com</uri>, and advise "
@@ -3818,7 +3811,7 @@ msgid ""
 "recommendations are based on the limitations of browser same-origin-policy."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml98(para)
+#: ./security-guide/ch_dashboard.xml94(para)
 msgid ""
 "The recommendations in this guide cannot effectively protect users against "
 "known attacks if dashboard is deployed on a domain which also hosts user-"
@@ -3829,7 +3822,7 @@ msgid ""
 "separate from cookies and security tokens."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml107(para)
+#: ./security-guide/ch_dashboard.xml103(para)
 msgid ""
 "Additionally, if you decline to follow this recommendation above about "
 "second-level domains, it is vital that you avoid the cookie backed session "
@@ -3838,11 +3831,11 @@ msgid ""
 " deployed on the same second-level domain."
 msgstr "さらに、セカンドレベルドメインに関する上の推奨事項に従わない場合、クッキーによるバックエンドセッションを避け、HTTP Strict Transport Security (HSTS) を採用することがきわめて重要です。サブドメインに導入するとき、ダッシュボードのセキュリティは同じレベルのドメインに導入されているアプリケーションの中で最も弱いレベルと同じ強度になります。"
 
-#: ./security-guide/ch_dashboard.xml115(title)
+#: ./security-guide/ch_dashboard.xml111(title)
 msgid "Static media"
 msgstr "静的メディア"
 
-#: ./security-guide/ch_dashboard.xml116(para)
+#: ./security-guide/ch_dashboard.xml112(para)
 msgid ""
 "Dashboard's static media should be deployed to a subdomain of the dashboard "
 "domain and served by the web server. The use of an external content delivery"
@@ -3850,7 +3843,7 @@ msgid ""
 "serve user-provided content. The media should also be served with HTTPS."
 msgstr "ダッシュボードの静的メディアは、ダッシュボードのドメインのサブドメインに導入し、Web サーバーにより処理されるべきです。外部の CDN (content delivery network) の使用も問題ありません。このサブドメインは、クッキーを設定すべきではなく、ユーザーが提供したコンテンツを処理すべきではありません。メディアも HTTPS で提供されるべきです。"
 
-#: ./security-guide/ch_dashboard.xml121(para)
+#: ./security-guide/ch_dashboard.xml117(para)
 msgid ""
 "Django media settings are documented at <link "
 "href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#static-"
@@ -3858,7 +3851,7 @@ msgid ""
 "root</link>."
 msgstr "Django のメディア設定は <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#static-root\">https://docs.djangoproject.com/en/1.5/ref/settings/#static-root</link> にドキュメント化されています。"
 
-#: ./security-guide/ch_dashboard.xml124(para)
+#: ./security-guide/ch_dashboard.xml120(para)
 msgid ""
 "Dashboard's default configuration uses <link href=\"http://django-"
 "compressor.readthedocs.org/\">django_compressor</link> to compress and "
@@ -3871,11 +3864,11 @@ msgid ""
 "(less, Node.js) should not be installed on production machines."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml138(title)
+#: ./security-guide/ch_dashboard.xml134(title)
 msgid "Secret key"
 msgstr "シークレットキー"
 
-#: ./security-guide/ch_dashboard.xml139(para)
+#: ./security-guide/ch_dashboard.xml135(para)
 msgid ""
 "Dashboard depends on a shared <option>SECRET_KEY</option> setting for some "
 "security functions. It should be a randomly generated string at least 64 "
@@ -3885,11 +3878,11 @@ msgid ""
 "not commit this key to public repositories."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml148(title)
+#: ./security-guide/ch_dashboard.xml144(title)
 msgid "Session back end"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml149(para)
+#: ./security-guide/ch_dashboard.xml145(para)
 msgid ""
 "Horizon's default session back end "
 "(<literal>django.contrib.sessions.backends.signed_cookies</literal>) stores "
@@ -3902,7 +3895,7 @@ msgid ""
 "itself is not encrypted other than the encryption provided by HTTPS."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml160(para)
+#: ./security-guide/ch_dashboard.xml156(para)
 msgid ""
 "If your architecture allows it, we recommend using "
 "<literal>django.contrib.sessions.backends.cache</literal> as your session "
@@ -3912,7 +3905,7 @@ msgid ""
 "the security trade-offs."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml167(para)
+#: ./security-guide/ch_dashboard.xml163(para)
 msgid ""
 "For further details, consult the <link "
 "href=\"https://docs.djangoproject.com/en/1.5/topics/http/sessions"
@@ -3920,11 +3913,11 @@ msgid ""
 "documentation</link>."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml172(title)
+#: ./security-guide/ch_dashboard.xml168(title)
 msgid "Allowed hosts"
 msgstr "許可されたホスト"
 
-#: ./security-guide/ch_dashboard.xml173(para)
+#: ./security-guide/ch_dashboard.xml169(para)
 msgid ""
 "Configure the <option>ALLOWED_HOSTS</option> setting with the domain or "
 "domains where the dashboard is available. Failure to configure this setting "
@@ -3933,25 +3926,25 @@ msgid ""
 "domains should be avoided."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml179(para)
+#: ./security-guide/ch_dashboard.xml175(para)
 msgid ""
 "For further details, see the <link "
 "href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-"
 "hosts\">Django documentation on settings</link>."
 msgstr "さらなる詳細は <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts\">Django documentation on settings</link> を参照してください。"
 
-#: ./security-guide/ch_dashboard.xml184(title)
+#: ./security-guide/ch_dashboard.xml180(title)
 msgid "Cross Site Request Forgery (CSRF)"
 msgstr "クロスサイトリクエストフォージェリ (CSRF)"
 
-#: ./security-guide/ch_dashboard.xml185(para)
+#: ./security-guide/ch_dashboard.xml181(para)
 msgid ""
 "Django has a dedicated middleware for <link "
 "href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works"
 "\">cross-site request forgery</link> (CSRF)."
 msgstr "Django は<link href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works\">cross-site request forgery</link> (CSRF) 用の専用ミドルウェアを持ちます。"
 
-#: ./security-guide/ch_dashboard.xml188(para)
+#: ./security-guide/ch_dashboard.xml184(para)
 msgid ""
 "Dashboard is designed to discourage developers from introducing cross-site "
 "scripting vulnerabilities with custom dashboards. However, it is important "
@@ -3961,26 +3954,26 @@ msgid ""
 " carefully evaluated before restrictions are relaxed."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml197(title)
+#: ./security-guide/ch_dashboard.xml193(title)
 msgid "Cookies"
 msgstr "クッキー"
 
-#: ./security-guide/ch_dashboard.xml198(para)
+#: ./security-guide/ch_dashboard.xml194(para)
 msgid "Session Cookies should be set to HTTPONLY:"
 msgstr "セッションクッキーは HTTPONLY に設定すべきです。"
 
-#: ./security-guide/ch_dashboard.xml200(para)
+#: ./security-guide/ch_dashboard.xml196(para)
 msgid ""
 "Never configure CSRF or session cookies to have a wild card domain with a "
 "leading dot. Horizon's session and CSRF cookie should be secured when "
 "deployed with HTTPS:"
 msgstr "ドットから始まるワイルドカードドメインを持つよう、CSRF やセッションクッキーを設定してはいけません。Horizon のセッションクッキーと CSRF クッキーは HTTPS を使用した環境のときにセキュア化すべきです。"
 
-#: ./security-guide/ch_dashboard.xml207(title)
+#: ./security-guide/ch_dashboard.xml203(title)
 msgid "Password auto complete"
 msgstr "パスワード自動補完"
 
-#: ./security-guide/ch_dashboard.xml208(para)
+#: ./security-guide/ch_dashboard.xml204(para)
 msgid ""
 "We recommend that implementers do not change the default password auto "
 "complete behavior. Users choose stronger passwords in environments that "
@@ -3989,11 +3982,11 @@ msgid ""
 "desktop level."
 msgstr "実装者は標準のパスワードオートコンプリート機能を変更しないことを推奨します。ユーザーはセキュアなブラウザのパスワードマネージャーを使用できる環境で、より強力なパスワードを選択します。ブラウザのパスワードマネージャーを禁止している組織は、デスクトップレベルでこのポリシーを強制すべきです。"
 
-#: ./security-guide/ch_dashboard.xml216(title)
+#: ./security-guide/ch_dashboard.xml212(title)
 msgid "Cross Site Scripting (XSS)"
 msgstr "クロスサイトスクリプティング (XSS)"
 
-#: ./security-guide/ch_dashboard.xml217(para)
+#: ./security-guide/ch_dashboard.xml213(para)
 msgid ""
 "Unlike many similar systems, OpenStack dashboard allows the entire Unicode "
 "character set in most fields. This means developers have less latitude to "
@@ -4001,7 +3994,7 @@ msgid ""
 "(XSS)."
 msgstr "多くの似たようなシステムと異なり、OpenStack のダッシュボードは多くの項目にすべての Unicode 文字を許可します。このことは、開発者が XSS 攻撃の余地を残すエスケープミスをする範囲が少なくなることを意味します。"
 
-#: ./security-guide/ch_dashboard.xml221(para)
+#: ./security-guide/ch_dashboard.xml217(para)
 msgid ""
 "Dashboard provides tools for developers to avoid creating XSS "
 "vulnerabilities, but they only work if developers use them correctly. Audit "
@@ -4012,25 +4005,25 @@ msgid ""
 "improperly escaped data."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml232(title)
+#: ./security-guide/ch_dashboard.xml228(title)
 msgid "Cross Origin Resource Sharing (CORS)"
 msgstr "クロスオリジンリソースシェアリング (CORS)"
 
-#: ./security-guide/ch_dashboard.xml233(para)
+#: ./security-guide/ch_dashboard.xml229(para)
 msgid ""
 "Configure your web server to send a restrictive CORS header with each "
 "response, allowing only the dashboard domain and protocol:"
 msgstr "ウェブブラウザが各レスポンスに限定的な CORS ヘッダーを付けて送信するよう設定します。ダッシュボードのドメインとプロトコルのみを許可します。"
 
-#: ./security-guide/ch_dashboard.xml237(para)
+#: ./security-guide/ch_dashboard.xml233(para)
 msgid "Never allow the wild card origin."
 msgstr "ワイルドカードオリジンを許可してはいけません。"
 
-#: ./security-guide/ch_dashboard.xml240(title)
+#: ./security-guide/ch_dashboard.xml236(title)
 msgid "Horizon image upload"
 msgstr "Horizon のイメージのアップロード"
 
-#: ./security-guide/ch_dashboard.xml241(para)
+#: ./security-guide/ch_dashboard.xml237(para)
 msgid ""
 "We recommend that implementers <link "
 "href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html"
@@ -4038,11 +4031,11 @@ msgid ""
 "implemented a plan to prevent resource exhaustion and denial of service."
 msgstr "導入者はリソース枯渇とサービス妨害を防ぐ計画を実装していなければ、<link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads\">HORIZON_IMAGES_ALLOW_UPLOAD を無効化</link> することを強く推奨します。"
 
-#: ./security-guide/ch_dashboard.xml248(title)
+#: ./security-guide/ch_dashboard.xml244(title)
 msgid "Upgrading"
 msgstr "アップグレード"
 
-#: ./security-guide/ch_dashboard.xml249(para)
+#: ./security-guide/ch_dashboard.xml245(para)
 msgid ""
 "Django security releases are generally well tested and aggressively "
 "backwards compatible. In almost all cases, new major releases of Django are "
@@ -4051,11 +4044,11 @@ msgid ""
 "Django with up-to-date security releases."
 msgstr "Django セキュリティリリースは、一般的に十分にテストされ、積極的に後方互換性を確保しています。ほぼすべての場合、Django の新しいメジャーリリースも前のリリースと後方互換性があります。ダッシュボードの実装者は、最新のセキュリティリリースを持つ最新の安定リリースの Django を実行することを強く推奨されます。"
 
-#: ./security-guide/ch_dashboard.xml257(title)
+#: ./security-guide/ch_dashboard.xml253(title)
 msgid "Debug"
 msgstr "デバッグ"
 
-#: ./security-guide/ch_dashboard.xml259(para)
+#: ./security-guide/ch_dashboard.xml255(para)
 msgid ""
 "Make sure <option>DEBUG</option> is set to <literal>False</literal> in "
 "production. In Django, <option>DEBUG</option> displays stack traces and "

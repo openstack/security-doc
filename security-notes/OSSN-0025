@@ -1,0 +1,68 @@
+Possible Glance image exposure via Swift
+---
+
+### Summary ###
+Glance is able to use Swift as a back end for storing virtual machine
+images. When Glance is configured this way (in multi-tenant mode only),
+it is possible for unauthenticated users to access "public" virtual
+machine images directly from Swift, even though Glance restricts access
+to those images to authenticated users.
+
+### Affected Services / Software ###
+Glance, Swift, Havana, Icehouse
+
+### Discussion ###
+The 'delay_auth_decision' Swift variable modifies the ACL's to either
+require authentication via Keystone or allow unauthenticated access.
+When 'delay_auth_decision' is set to '1' the Swift ACL uses a wildcard
+(*) to accept all incoming responses.
+
+When Glance is configured for multi-tenant mode, this will allow all
+tenants as well as unauthenticated users to have access to the Swift
+'public' images.
+
+This can happen when Swift and Glance are configured in the following
+fashion:
+
+---- begin example Swift proxy-server.conf snippet ----
+  delay_auth_decision = 1
+---- end example Swift proxy-server.conf snippet ----
+
+---- begin example glance-api.conf snippet ----
+  default_store = swift
+  swift_store_multi_tenant = True
+  swift_store_create_container_on_put = True
+---- end example glance-api.conf snippet ----
+
+One way to discover the URL is to take a snapshot of a public image. The
+URL for the snapshot combined with the owner ID of the public image will
+allow for the Swift URL of the public image to be inferred. This URL
+can then be utilized anonymously to download the image.
+
+### Recommended Actions ###
+If your Swift and Glance services are configured in such a way that they
+are vulnerable, it is recommended that Swift image requests are audited
+to determine if an unauthorized image request was made. By default when
+images are accessed a message is logged to the Swift log file.
+
+Setting the Swift 'delay_auth_decision' value to '0' (False) will
+require Keystone authentication to access the Swift containers, and is
+only recommended for environments using Keystone for authentication.
+
+Modifying the Glance configuration to not use Swift in multi-tenant
+mode will mitigate the issue, but may introduce other issues depending
+on what configuration is used.
+
+Implementing an alternative back end (such as Ceph) will also remove
+the issue, however will require additional knowledge on how to securely
+install and configure the new object storage service.
+
+The Swift and Glance configuration items are specific to a given
+environment, so test configurations before deploying them in a
+production environment.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0025
+Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1354512
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -261,13 +261,15 @@
     <para>Once a user is authenticated, a token is generated and used
       internally in OpenStack for authorization and access. The
       default token <emphasis role="bold">lifespan</emphasis>
-        is<emphasis role="bold"> 24 hours</emphasis>. It is
-      recommended that this value be set lower but caution needs to be
-      taken as some internal services will need sufficient time to
-      complete their work. The cloud may not provide services if
-      tokens expire too early. An example of this would be the time
-      needed by the Compute service to transfer a disk image onto the
-      hypervisor for local caching.</para>
+      is <emphasis role="bold">one hour</emphasis>. Note that
+      the default changed from 24 hours to 1 hour with the OpenStack
+      Icehouse release. It is recommended that this
+      value be set lower but caution needs to be taken as some
+      internal services will need sufficient time to complete their
+      work. The cloud may not provide services if tokens expire too
+      early. An example of this would be the time needed by the
+      Compute service to transfer a disk image onto the hypervisor
+      for local caching.</para>
     <para>The following example shows a PKI token. Note that, in
       practice, the token id value is about 3500 bytes. We shorten it
       in this example.</para>

@@ -1,4 +1,5 @@
-Session-fixation vulnerability in Horizon when using the default signed cookie sessions
+Session-fixation vulnerability in Horizon when using the default signed
+cookie sessions
 ---
 
 ### Summary ###
@@ -92,5 +93,3 @@ Further discussion of the issue:
 Django docs:
         https://docs.djangoproject.com/en/1.6/ref/settings/
         https://docs.djangoproject.com/en/1.6/topics/http/sessions/#configuring-sessions
-
-

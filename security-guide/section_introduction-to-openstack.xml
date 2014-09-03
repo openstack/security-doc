@@ -6,7 +6,7 @@
   xml:id="introduction-to-openstack">
   <?dbhtml stop-chunking?>
   <title>Introduction to OpenStack</title>
-  <para>This guide provides security insight into OpenStack
+  <para>This guide provides security insight into <glossterm>OpenStack</glossterm>
     deployments. The intended audience is cloud architects, deployers,
     and administrators. In addition, cloud users will find the guide
     both educational and helpful in provider selection, while auditors
@@ -120,7 +120,8 @@
       </inlinemediaobject></para>
     <section xml:id="introduction-to-openstack-idp134736">
       <title>Compute</title>
-      <para>OpenStack Compute service (nova) provides services to
+      <para>OpenStack <glossterm>Compute</glossterm> service
+        (<glossterm>nova</glossterm>) provides services to
         support the management of virtual machine instances at scale,
         instances that host multi-tiered applications, dev/test
         environments, "Big Data" crunching Hadoop clusters, and/or
@@ -142,7 +143,8 @@
     </section>
     <section xml:id="introduction-to-openstack-idp138800">
       <title>Object Storage</title>
-      <para>The OpenStack Object Storage service (swift) provides
+      <para>The OpenStack <glossterm>Object Storage</glossterm>
+        service (<glossterm>swift</glossterm>) provides
         support for storing and retrieving arbitrary data in the
         cloud. The Object Storage service provides both a native API
         and an Amazon Web Services S3 compatible API. The service
@@ -159,7 +161,8 @@
     </section>
     <section xml:id="introduction-to-openstack-idp141536">
       <title>Block Storage</title>
-      <para>The OpenStack Block Storage service (cinder) provides
+      <para>The OpenStack <glossterm>Block Storage</glossterm>
+        service (<glossterm>cinder</glossterm>) provides
         persistent block storage for compute instances. The Block
         Storage service is responsible for managing the life-cycle of
         block devices, from the creation and attachment of volumes to
@@ -169,7 +172,8 @@
     </section>
     <section xml:id="introduction-to-openstack-idp143424">
       <title>Networking</title>
-      <para>The OpenStack Networking service (neutron, previously
+      <para>The OpenStack <glossterm>Networking</glossterm> service
+        (<glossterm>neutron</glossterm>, previously
         called quantum) provides various networking services to cloud
         users (tenants) such as IP address management,
           <glossterm>DNS</glossterm>, <glossterm>DHCP</glossterm>,
@@ -184,7 +188,8 @@
     </section>
     <section xml:id="introduction-to-openstack-idp145600">
       <title>Dashboard</title>
-      <para>The OpenStack dashboard (horizon) provides a
+      <para>The OpenStack <glossterm>dashboard</glossterm>
+        (<glossterm>horizon</glossterm>) provides a
         web-based interface for both cloud administrators and cloud
         tenants. Through this interface administrators and tenants can
         provision, manage, and monitor cloud resources. Horizon is
@@ -193,7 +198,8 @@
     </section>
     <section xml:id="introduction-to-openstack-idp147104">
       <title>Identity service</title>
-      <para>The OpenStack Identity service (keystone) is a <emphasis
+      <para>The OpenStack <glossterm baseform="Identity Service">Identity</glossterm>
+        service (<glossterm>keystone</glossterm>) is a <emphasis
           role="bold">shared service</emphasis> that provides
         authentication and authorization services throughout the
         entire cloud infrastructure. The Identity service has
@@ -204,7 +210,8 @@
     </section>
     <section xml:id="introduction-to-openstack-idp149712">
       <title>Image Service</title>
-      <para>The OpenStack Image Service (glance) provides disk image
+      <para>The OpenStack <glossterm>Image Service</glossterm>
+        (<glossterm>glance</glossterm>) provides disk image
         management services. The Image Service provides image
         discovery, registration, and delivery services to the
         Compute service, as needed.</para>

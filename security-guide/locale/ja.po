@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-02 17:40+0000\n"
-"PO-Revision-Date: 2014-09-02 17:41+0000\n"
+"POT-Creation-Date: 2014-09-03 09:43+0000\n"
+"PO-Revision-Date: 2014-09-03 09:39+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2968,7 +2968,7 @@ msgid ""
 msgstr "@@image: 'static/swift_network_diagram-2.png'; md5=69f8effe3f5d0f3cbccfb8c5a5dd299e"
 
 #: ./security-guide/ch_object-storage.xml8(title)
-#: ./security-guide/section_introduction-to-openstack.xml144(title)
+#: ./security-guide/section_introduction-to-openstack.xml145(title)
 msgid "Object Storage"
 msgstr "Object Storage"
 
@@ -3668,7 +3668,7 @@ msgstr "データベースサーバー"
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml120(para)
 #: ./security-guide/ch_dashboard.xml8(title)
-#: ./security-guide/section_introduction-to-openstack.xml186(title)
+#: ./security-guide/section_introduction-to-openstack.xml190(title)
 #: ./security-guide/section_management-interfaces.xml33(title)
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -4243,13 +4243,14 @@ msgstr "OpenStack の概要"
 
 #: ./security-guide/section_introduction-to-openstack.xml9(para)
 msgid ""
-"This guide provides security insight into OpenStack deployments. The "
-"intended audience is cloud architects, deployers, and administrators. In "
-"addition, cloud users will find the guide both educational and helpful in "
-"provider selection, while auditors will find it useful as a reference "
-"document to support their compliance certification efforts. This guide is "
-"also recommended for anyone interested in cloud security."
-msgstr "本ガイドは、OpenStack のデプロイメントにおけるセキュリティに関する知見を提供します。クラウドアーキテクト、デプロイ担当者、管理者などを対象読者としています。また、クラウドユーザーには、プロバイダー選択にあたって参照することのできる有用な情報を記載している一方、監査担当者には、コンプライアンス認証に伴う作業を支援する参考資料としてご利用いただくことができます。本ガイドは、クラウドのセキュリティに関心を持つ読者全般にもお奨めします。"
+"This guide provides security insight into <glossterm>OpenStack</glossterm> "
+"deployments. The intended audience is cloud architects, deployers, and "
+"administrators. In addition, cloud users will find the guide both "
+"educational and helpful in provider selection, while auditors will find it "
+"useful as a reference document to support their compliance certification "
+"efforts. This guide is also recommended for anyone interested in cloud "
+"security."
+msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml16(para)
 msgid ""
@@ -4381,33 +4382,34 @@ msgstr "Compute"
 
 #: ./security-guide/section_introduction-to-openstack.xml123(para)
 msgid ""
-"OpenStack Compute service (nova) provides services to support the management"
-" of virtual machine instances at scale, instances that host multi-tiered "
+"OpenStack <glossterm>Compute</glossterm> service "
+"(<glossterm>nova</glossterm>) provides services to support the management of"
+" virtual machine instances at scale, instances that host multi-tiered "
 "applications, dev/test environments, \"Big Data\" crunching Hadoop clusters,"
 " and/or high performance computing."
-msgstr "OpenStack Compute サービス (Nova) は、多層アプリケーション、開発/テスト環境、「ビッグデータ」を処理する Hadoop のクラスター、ハイパフォーマンスコンピューティングなどをホストする、大規模な仮想マシンインスタンスの管理をサポートするサービスを提供します。"
+msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml128(para)
+#: ./security-guide/section_introduction-to-openstack.xml129(para)
 msgid ""
 "The Compute service facilitates this management through an abstraction layer"
 " that interfaces with supported hypervisors, which we address later on in "
 "more detail."
 msgstr "Compute は、サポート対象のハイパーバイザーと連動する抽象化レイヤーを介してこのような管理を行います。ハイパーバイザーについては、後半で詳しく説明します。"
 
-#: ./security-guide/section_introduction-to-openstack.xml131(para)
+#: ./security-guide/section_introduction-to-openstack.xml132(para)
 msgid ""
 "Later in the guide, we focus generically on the virtualization stack as it "
 "relates to hypervisors."
 msgstr "本ガイドの後半では、ハイパーバイザーと関連する仮想化スタックに焦点をあてて、包括的に解説します。"
 
-#: ./security-guide/section_introduction-to-openstack.xml133(para)
+#: ./security-guide/section_introduction-to-openstack.xml134(para)
 msgid ""
 "For information about the current state of feature support, see <link "
 "href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">OpenStack "
 "Hypervisor Support Matrix</link>."
 msgstr "機能サポートの現在の状況に関する情報は、 <link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">OpenStack Hypervisor Support Matrix</link> を参照してください。"
 
-#: ./security-guide/section_introduction-to-openstack.xml137(para)
+#: ./security-guide/section_introduction-to-openstack.xml138(para)
 msgid ""
 "The security of Compute is critical for an OpenStack deployment. Hardening "
 "techniques should include support for strong instance isolation, secure "
@@ -4415,118 +4417,124 @@ msgid ""
 "facing <glossterm>API</glossterm> endpoints."
 msgstr "OpenStack のデプロイメントでは、Compute のセキュリティが極めて重要となります。セキュリティ強化のテクニックには、頑強なインスタンスの隔離、Compute のサブコンポーネント間におけるセキュアな通信、一般向けの  <glossterm>API</glossterm> エンドポイントの弾力性などがあげられます。"
 
-#: ./security-guide/section_introduction-to-openstack.xml145(para)
+#: ./security-guide/section_introduction-to-openstack.xml146(para)
 msgid ""
-"The OpenStack Object Storage service (swift) provides support for storing "
-"and retrieving arbitrary data in the cloud. The Object Storage service "
-"provides both a native API and an Amazon Web Services S3 compatible API. The"
-" service provides a high degree of resiliency through data replication and "
-"can handle petabytes of data."
-msgstr "OpenStack Object Storage Service (swift) は、クラウド内の任意データの保管/取得機能のサポートを提供します。Object Storage Service  はネイティブ API および Amazon Web Services S3 互換の API の両方を提供します。このサービスは、データレプリケーションにより高度な回復性を提供し、ペタバイト規模のデータの処理が可能です。"
+"The OpenStack <glossterm>Object Storage</glossterm> service "
+"(<glossterm>swift</glossterm>) provides support for storing and retrieving "
+"arbitrary data in the cloud. The Object Storage service provides both a "
+"native API and an Amazon Web Services S3 compatible API. The service "
+"provides a high degree of resiliency through data replication and can handle"
+" petabytes of data."
+msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml151(para)
+#: ./security-guide/section_introduction-to-openstack.xml153(para)
 msgid ""
 "It is important to understand that object storage differs from traditional "
 "file system storage. It is best used for static data such as media files "
 "(MP3s, images, videos), virtual machine images, and backup files."
 msgstr "オブジェクトストレージは、従来のファイルシステムストレージと異なる点を理解しておくことが重要です。メディアファイル (MP3、画像、ビデオ) や仮想マシンイメージ、バックアップファイルなどの静的データに使用するのに最適です。"
 
-#: ./security-guide/section_introduction-to-openstack.xml155(para)
+#: ./security-guide/section_introduction-to-openstack.xml157(para)
 msgid ""
 "Object security should focus on access control and encryption of data in "
 "transit and at rest. Other concerns may relate to system abuse, illegal or "
 "malicious content storage, and cross authentication attack vectors."
 msgstr "オブジェクトのセキュリティは、アクセス制御と、伝送中および静止中のデータの暗号化に重点を置くべきです。その他の懸念事項には、システムの悪用、不法または悪意のあるコンテンツの保管、クロス認証の攻撃ベクトルなどに関する問題があげられます。"
 
-#: ./security-guide/section_introduction-to-openstack.xml161(title)
+#: ./security-guide/section_introduction-to-openstack.xml163(title)
 msgid "Block Storage"
 msgstr "Block Storage"
 
-#: ./security-guide/section_introduction-to-openstack.xml162(para)
+#: ./security-guide/section_introduction-to-openstack.xml164(para)
 msgid ""
-"The OpenStack Block Storage service (cinder) provides persistent block "
-"storage for compute instances. The Block Storage service is responsible for "
-"managing the life-cycle of block devices, from the creation and attachment "
-"of volumes to instances, to their release."
-msgstr "OpenStack Block Storage Service (cinder) は、Compute インスタンス用に永続的なブロックストレージを提供します。Block Storage Service はブロックデバイスの作成からインスタンスへのボリュームの接続、それらの解放にいたるまでのライフサイクルを管理する役割を果たします。"
+"The OpenStack <glossterm>Block Storage</glossterm> service "
+"(<glossterm>cinder</glossterm>) provides persistent block storage for "
+"compute instances. The Block Storage service is responsible for managing the"
+" life-cycle of block devices, from the creation and attachment of volumes to"
+" instances, to their release."
+msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml167(para)
+#: ./security-guide/section_introduction-to-openstack.xml170(para)
 msgid ""
 "Security considerations for block storage are similar to that of object "
 "storage."
 msgstr "Block Storage のセキュリティ課題は、Object Storage の場合と同様です。"
 
-#: ./security-guide/section_introduction-to-openstack.xml171(title)
+#: ./security-guide/section_introduction-to-openstack.xml174(title)
 #: ./security-guide/ch_networking.xml7(title)
 msgid "Networking"
 msgstr "ネットワーク"
 
-#: ./security-guide/section_introduction-to-openstack.xml172(para)
+#: ./security-guide/section_introduction-to-openstack.xml175(para)
 msgid ""
-"The OpenStack Networking service (neutron, previously called quantum) "
-"provides various networking services to cloud users (tenants) such as IP "
-"address management, <glossterm>DNS</glossterm>, <glossterm>DHCP</glossterm>,"
-" load balancing, and security groups (network access rules, like firewall "
-"policies). It provides a framework for software defined networking (SDN) "
-"that allows for pluggable integration with various networking solutions."
-msgstr "OpenStack Networking (neutron、旧称 quantum) はIP アドレス管理、<glossterm>DNS</glossterm>、<glossterm>DHCP</glossterm>、負荷分散、セキュリティグループ (ファイアウォールのポリシーなど、ネットワークのアクセスルール) など、さまざまなネットワークサービスをクラウドユーザー (テナント) に提供します。また、各種ネットワークソリューションとのプラグ可能な統合を可能にするソフトウェア定義ネットワーク(SDN) のフレームワークを提供します。"
+"The OpenStack <glossterm>Networking</glossterm> service "
+"(<glossterm>neutron</glossterm>, previously called quantum) provides various"
+" networking services to cloud users (tenants) such as IP address management,"
+" <glossterm>DNS</glossterm>, <glossterm>DHCP</glossterm>, load balancing, "
+"and security groups (network access rules, like firewall policies). It "
+"provides a framework for software defined networking (SDN) that allows for "
+"pluggable integration with various networking solutions."
+msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml180(para)
+#: ./security-guide/section_introduction-to-openstack.xml184(para)
 msgid ""
 "OpenStack Networking allows cloud tenants to manage their guest network "
 "configurations. Security concerns with the networking service include "
 "network traffic isolation, availability, integrity and confidentiality."
 msgstr "OpenStack Networking により、クラウドテナントはゲストのネットワーク設定を管理することができます。ネットワークサービスに伴うセキュリティ上の問題には、 ネットワークトラフィックの隔離、可用性、完全性、機密性などがあげられます。"
 
-#: ./security-guide/section_introduction-to-openstack.xml187(para)
+#: ./security-guide/section_introduction-to-openstack.xml191(para)
 msgid ""
-"The OpenStack dashboard (horizon) provides a web-based interface for both "
+"The OpenStack <glossterm>dashboard</glossterm> "
+"(<glossterm>horizon</glossterm>) provides a web-based interface for both "
 "cloud administrators and cloud tenants. Through this interface "
 "administrators and tenants can provision, manage, and monitor cloud "
 "resources. Horizon is commonly deployed in a public facing manner with all "
 "the usual security concerns of public web portals."
-msgstr "OpenStack ダッシュボードサービス (Horizon) は、クラウド管理者とクラウドテナントの両方に向けた Web ベースのインターフェースを提供します。このインターフェースにより、管理者およびテナントは、クラウドリソースのプロビジョニング、管理、監視を行うことができます。Horizon は通常、一般i向けにデプロイされ、パブリック Web ポータルの一般的なセキュリティ問題が伴います。"
+msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml195(title)
+#: ./security-guide/section_introduction-to-openstack.xml200(title)
 msgid "Identity service"
 msgstr "Identity"
 
-#: ./security-guide/section_introduction-to-openstack.xml196(para)
+#: ./security-guide/section_introduction-to-openstack.xml201(para)
 msgid ""
-"The OpenStack Identity service (keystone) is a <emphasis "
+"The OpenStack <glossterm baseform=\"Identity Service\">Identity</glossterm> "
+"service (<glossterm>keystone</glossterm>) is a <emphasis "
 "role=\"bold\">shared service</emphasis> that provides authentication and "
 "authorization services throughout the entire cloud infrastructure. The "
 "Identity service has pluggable support for multiple forms of authentication."
-msgstr "OpenStack Identity (keystone) は、クラウドインフラストラクチャー全体にわたる認証および承認サービスを提供する<emphasis role=\"bold\">共有サービス</emphasis>です。Identity には、複数形式の認証に対するプラグ可能なサポートを採用しています。"
+msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml201(para)
+#: ./security-guide/section_introduction-to-openstack.xml207(para)
 msgid ""
 "Security concerns here pertain to trust in authentication, management of "
 "authorization tokens, and secure communication."
 msgstr "ここでのセキュリティ課題には、認証の信頼、承認トークンの管理、セキュリティ保護された通信などがあげられます。"
 
-#: ./security-guide/section_introduction-to-openstack.xml206(title)
+#: ./security-guide/section_introduction-to-openstack.xml212(title)
 msgid "Image Service"
 msgstr "Image Service"
 
-#: ./security-guide/section_introduction-to-openstack.xml207(para)
+#: ./security-guide/section_introduction-to-openstack.xml213(para)
 msgid ""
-"The OpenStack Image Service (glance) provides disk image management "
-"services. The Image Service provides image discovery, registration, and "
-"delivery services to the Compute service, as needed."
-msgstr "OpenStack Image Service (glance) は、ディスクイメージ管理サービスを提供します。Image Service は、必要に応じて、イメージの検索、登録、デリバリサービスを Compute サービスに提供します。"
+"The OpenStack <glossterm>Image Service</glossterm> "
+"(<glossterm>glance</glossterm>) provides disk image management services. The"
+" Image Service provides image discovery, registration, and delivery services"
+" to the Compute service, as needed."
+msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml211(para)
+#: ./security-guide/section_introduction-to-openstack.xml218(para)
 msgid ""
 "Trusted processes for managing the life cycle of disk images are required, "
 "as are all the previously mentioned issues with respect to data security."
 msgstr "前述したデータセキュリティに関する問題と同様に、ディスクイメージのライフサイクル管理には信頼されたプロセスが必要です。"
 
-#: ./security-guide/section_introduction-to-openstack.xml216(title)
+#: ./security-guide/section_introduction-to-openstack.xml223(title)
 msgid "Other supporting technology"
 msgstr "その他の支援技術"
 
-#: ./security-guide/section_introduction-to-openstack.xml217(para)
+#: ./security-guide/section_introduction-to-openstack.xml224(para)
 msgid ""
 "OpenStack relies on messaging for internal communication between several of "
 "its services. By default, OpenStack uses message queues based on the "
@@ -4537,14 +4545,14 @@ msgid ""
 "or <glossterm>ZeroMQ</glossterm>."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml226(para)
+#: ./security-guide/section_introduction-to-openstack.xml233(para)
 msgid ""
 "As most management commands flow through the message queuing system, it is a"
 " primary security concern for any OpenStack deployment. Message queuing "
 "security is discussed in detail later in this guide."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml230(para)
+#: ./security-guide/section_introduction-to-openstack.xml237(para)
 msgid ""
 "Several of the components use databases though it is not explicitly called "
 "out. Securing the access to the databases and their contents is yet another "

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-03 06:01+0000\n"
+"POT-Creation-Date: 2014-09-04 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1689,7 +1689,7 @@ msgstr ""
 msgid "@@image: 'static/swift_network_diagram-2.png'; md5=69f8effe3f5d0f3cbccfb8c5a5dd299e"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:144(title)
+#: ./security-guide/ch_object-storage.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:145(title)
 msgid "Object Storage"
 msgstr ""
 
@@ -2141,7 +2141,7 @@ msgstr ""
 msgid "Database server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:120(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:186(title) ./security-guide/section_management-interfaces.xml:33(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:120(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
 msgid "Dashboard"
 msgstr ""
 
@@ -2468,7 +2468,7 @@ msgid "Introduction to OpenStack"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:9(para)
-msgid "This guide provides security insight into OpenStack deployments. The intended audience is cloud architects, deployers, and administrators. In addition, cloud users will find the guide both educational and helpful in provider selection, while auditors will find it useful as a reference document to support their compliance certification efforts. This guide is also recommended for anyone interested in cloud security."
+msgid "This guide provides security insight into <glossterm>OpenStack</glossterm> deployments. The intended audience is cloud architects, deployers, and administrators. In addition, cloud users will find the guide both educational and helpful in provider selection, while auditors will find it useful as a reference document to support their compliance certification efforts. This guide is also recommended for anyone interested in cloud security."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:16(para)
@@ -2536,102 +2536,102 @@ msgid "Compute"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:123(para)
-msgid "OpenStack Compute service (nova) provides services to support the management of virtual machine instances at scale, instances that host multi-tiered applications, dev/test environments, \"Big Data\" crunching Hadoop clusters, and/or high performance computing."
+msgid "OpenStack <glossterm>Compute</glossterm> service (<glossterm>nova</glossterm>) provides services to support the management of virtual machine instances at scale, instances that host multi-tiered applications, dev/test environments, \"Big Data\" crunching Hadoop clusters, and/or high performance computing."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:128(para)
+#: ./security-guide/section_introduction-to-openstack.xml:129(para)
 msgid "The Compute service facilitates this management through an abstraction layer that interfaces with supported hypervisors, which we address later on in more detail."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:131(para)
+#: ./security-guide/section_introduction-to-openstack.xml:132(para)
 msgid "Later in the guide, we focus generically on the virtualization stack as it relates to hypervisors."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:133(para)
+#: ./security-guide/section_introduction-to-openstack.xml:134(para)
 msgid "For information about the current state of feature support, see <link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">OpenStack Hypervisor Support Matrix</link>."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:137(para)
+#: ./security-guide/section_introduction-to-openstack.xml:138(para)
 msgid "The security of Compute is critical for an OpenStack deployment. Hardening techniques should include support for strong instance isolation, secure communication between Compute sub-components, and resiliency of public-facing <glossterm>API</glossterm> endpoints."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:145(para)
-msgid "The OpenStack Object Storage service (swift) provides support for storing and retrieving arbitrary data in the cloud. The Object Storage service provides both a native API and an Amazon Web Services S3 compatible API. The service provides a high degree of resiliency through data replication and can handle petabytes of data."
+#: ./security-guide/section_introduction-to-openstack.xml:146(para)
+msgid "The OpenStack <glossterm>Object Storage</glossterm> service (<glossterm>swift</glossterm>) provides support for storing and retrieving arbitrary data in the cloud. The Object Storage service provides both a native API and an Amazon Web Services S3 compatible API. The service provides a high degree of resiliency through data replication and can handle petabytes of data."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:151(para)
+#: ./security-guide/section_introduction-to-openstack.xml:153(para)
 msgid "It is important to understand that object storage differs from traditional file system storage. It is best used for static data such as media files (MP3s, images, videos), virtual machine images, and backup files."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:155(para)
+#: ./security-guide/section_introduction-to-openstack.xml:157(para)
 msgid "Object security should focus on access control and encryption of data in transit and at rest. Other concerns may relate to system abuse, illegal or malicious content storage, and cross authentication attack vectors."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:161(title)
+#: ./security-guide/section_introduction-to-openstack.xml:163(title)
 msgid "Block Storage"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:162(para)
-msgid "The OpenStack Block Storage service (cinder) provides persistent block storage for compute instances. The Block Storage service is responsible for managing the life-cycle of block devices, from the creation and attachment of volumes to instances, to their release."
+#: ./security-guide/section_introduction-to-openstack.xml:164(para)
+msgid "The OpenStack <glossterm>Block Storage</glossterm> service (<glossterm>cinder</glossterm>) provides persistent block storage for compute instances. The Block Storage service is responsible for managing the life-cycle of block devices, from the creation and attachment of volumes to instances, to their release."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:167(para)
+#: ./security-guide/section_introduction-to-openstack.xml:170(para)
 msgid "Security considerations for block storage are similar to that of object storage."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:171(title) ./security-guide/ch_networking.xml:7(title)
+#: ./security-guide/section_introduction-to-openstack.xml:174(title) ./security-guide/ch_networking.xml:7(title)
 msgid "Networking"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:172(para)
-msgid "The OpenStack Networking service (neutron, previously called quantum) provides various networking services to cloud users (tenants) such as IP address management, <glossterm>DNS</glossterm>, <glossterm>DHCP</glossterm>, load balancing, and security groups (network access rules, like firewall policies). It provides a framework for software defined networking (SDN) that allows for pluggable integration with various networking solutions."
+#: ./security-guide/section_introduction-to-openstack.xml:175(para)
+msgid "The OpenStack <glossterm>Networking</glossterm> service (<glossterm>neutron</glossterm>, previously called quantum) provides various networking services to cloud users (tenants) such as IP address management, <glossterm>DNS</glossterm>, <glossterm>DHCP</glossterm>, load balancing, and security groups (network access rules, like firewall policies). It provides a framework for software defined networking (SDN) that allows for pluggable integration with various networking solutions."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:180(para)
+#: ./security-guide/section_introduction-to-openstack.xml:184(para)
 msgid "OpenStack Networking allows cloud tenants to manage their guest network configurations. Security concerns with the networking service include network traffic isolation, availability, integrity and confidentiality."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:187(para)
-msgid "The OpenStack dashboard (horizon) provides a web-based interface for both cloud administrators and cloud tenants. Through this interface administrators and tenants can provision, manage, and monitor cloud resources. Horizon is commonly deployed in a public facing manner with all the usual security concerns of public web portals."
+#: ./security-guide/section_introduction-to-openstack.xml:191(para)
+msgid "The OpenStack <glossterm>dashboard</glossterm> (<glossterm>horizon</glossterm>) provides a web-based interface for both cloud administrators and cloud tenants. Through this interface administrators and tenants can provision, manage, and monitor cloud resources. Horizon is commonly deployed in a public facing manner with all the usual security concerns of public web portals."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:195(title)
+#: ./security-guide/section_introduction-to-openstack.xml:200(title)
 msgid "Identity service"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:196(para)
-msgid "The OpenStack Identity service (keystone) is a <emphasis role=\"bold\">shared service</emphasis> that provides authentication and authorization services throughout the entire cloud infrastructure. The Identity service has pluggable support for multiple forms of authentication."
-msgstr ""
-
 #: ./security-guide/section_introduction-to-openstack.xml:201(para)
-msgid "Security concerns here pertain to trust in authentication, management of authorization tokens, and secure communication."
-msgstr ""
-
-#: ./security-guide/section_introduction-to-openstack.xml:206(title)
-msgid "Image Service"
+msgid "The OpenStack <glossterm baseform=\"Identity Service\">Identity</glossterm> service (<glossterm>keystone</glossterm>) is a <emphasis role=\"bold\">shared service</emphasis> that provides authentication and authorization services throughout the entire cloud infrastructure. The Identity service has pluggable support for multiple forms of authentication."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:207(para)
-msgid "The OpenStack Image Service (glance) provides disk image management services. The Image Service provides image discovery, registration, and delivery services to the Compute service, as needed."
+msgid "Security concerns here pertain to trust in authentication, management of authorization tokens, and secure communication."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:211(para)
+#: ./security-guide/section_introduction-to-openstack.xml:212(title)
+msgid "Image Service"
+msgstr ""
+
+#: ./security-guide/section_introduction-to-openstack.xml:213(para)
+msgid "The OpenStack <glossterm>Image Service</glossterm> (<glossterm>glance</glossterm>) provides disk image management services. The Image Service provides image discovery, registration, and delivery services to the Compute service, as needed."
+msgstr ""
+
+#: ./security-guide/section_introduction-to-openstack.xml:218(para)
 msgid "Trusted processes for managing the life cycle of disk images are required, as are all the previously mentioned issues with respect to data security."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:216(title)
+#: ./security-guide/section_introduction-to-openstack.xml:223(title)
 msgid "Other supporting technology"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:217(para)
+#: ./security-guide/section_introduction-to-openstack.xml:224(para)
 msgid "OpenStack relies on messaging for internal communication between several of its services. By default, OpenStack uses message queues based on the Advanced Message Queue Protocol (<glossterm baseform=\"Advanced Message Queuing Protocol (AMQP)\">AMQP </glossterm>). Similar to most OpenStack services, it supports pluggable components. Today the implementation back end could be <glossterm>RabbitMQ</glossterm>, <glossterm>Qpid</glossterm>, or <glossterm>ZeroMQ</glossterm>."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:226(para)
+#: ./security-guide/section_introduction-to-openstack.xml:233(para)
 msgid "As most management commands flow through the message queuing system, it is a primary security concern for any OpenStack deployment. Message queuing security is discussed in detail later in this guide."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:230(para)
+#: ./security-guide/section_introduction-to-openstack.xml:237(para)
 msgid "Several of the components use databases though it is not explicitly called out. Securing the access to the databases and their contents is yet another security concern, and consequently discussed in more detail later in this guide."
 msgstr ""
 

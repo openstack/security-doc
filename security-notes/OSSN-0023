@@ -1,0 +1,68 @@
+Keystone logs auth tokens in URLs at the INFO log level
+---
+
+### Summary ###
+When a client accesses Keystone using the Identity API version 2, the
+tokens will be logged as part of some request URLs. Specifically all
+requests to the tokens resource will be logged at the INFO level.
+
+### Affected Services / Software ###
+Keystone, Grizzly, Havana, Icehouse, Juno
+
+### Discussion ###
+Tokens are used to authorize users when making API requests against
+OpenStack services. This allows previously authenticated users to make
+API requests without providing their authentication information again,
+such as their username and password.  This makes them very sensitive
+when stored and transmitted on the wire. Ideally tokens should never be
+stored on the disk to avoid the possibility of an attacker obtaining
+local storage access and reusing them in the system.
+
+Keystone logs the request URLs at the INFO level in order to make the
+system operations and support easier. Unfortunately when the tokens
+resource is accessed, the URLs include the user's secret token, like
+in this case: (single line, wrapped)
+
+---- begin example keystone.log snippet ----
+INFO eventlet.wsgi.server [-] 10.0.0.66 - - [22/Aug/2014 12:39:01]
+  "GET /v2.0/tokens/<plaintext_token> HTTP/1.1" 403 325 0.006539
+---- end example keystone.log snippet ----
+
+Large systems often use remote logging mechanisms, which may use
+unencrypted protocols such as syslog/udp. This could lead to
+distributing the logfile entries containing tokens in plaintext over
+untrusted networks. The target log collection systems may also use
+different authorization rules than the local log files, which could
+enable access to the tokens by support staff, or to third parties
+storing the logs.
+
+Additionally any load balancers and proxies processing the same request
+may be logging the URL on their own. Their configuration and solution to
+this problem is out of scope of this note and they should be checked
+separately.
+
+Version 3 of the Identity API does not pass the tokens in the URLs
+anymore. This information is sent using the request headers or POST data
+instead.
+
+### Recommended Actions ###
+Where possible, users and services interacting with the Keystone service
+should be using the Identity API v3 endpoint. If that's not possible,
+restricting the Keystone's logging level to WARN will fix the immediate
+problem at the cost of removing potentially useful log information. Due
+to various ways Keystone may be deployed and configured, interaction of
+the 'debug', 'verbose', 'default_log_levels' and any wsgi server options
+should be considered for this change. Keystone deployed via servers
+other than eventlet will need their own solution.
+
+If logging of all requests is required, this may be achieved by using a
+third-party proxy, like Apache or Nginx with a configuration that does
+not write the complete URL into the logs. For example Nginx can be
+configured to switch to a customised log format using directive
+'access_log' only for requests matching location '/v2.0/tokens/...'.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0023
+Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1348844
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

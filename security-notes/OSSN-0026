@@ -1,0 +1,58 @@
+Unrestricted write permission to config files can allow code execution
+---
+
+### Summary ###
+In numerous places throughout OpenStack projects, variables are read directly
+from configuration files and used to construct statements which are executed
+with the privileges of the OpenStack service.  Since configuration files are
+trusted, the input is not checked or sanitized.  If a malicious user is able to
+write to these files, they may be able to execute arbitrary code as the
+OpenStack service.
+
+### Affected Services / Software ###
+Nova / All versions, Trove / Juno, possibly others
+
+### Discussion ###
+Some OpenStack services rely on operating system commands to perform certain
+actions.  In some cases these commands are created by appending input from
+configuration files to a specified command, and passing the complete command
+directly to the operating system shell to execute.  For example:
+
+--- begin example example.py snippet ---
+  command='ls -al ' + config.DIRECTORY
+  subprocess.Popen(command, shell=True)
+--- end example example.py snippet ---
+
+In this case, if config.DIRECTORY is set to something benign like '/opt' the
+code behaves as expected.  If, on the other hand, an attacker is able to set
+config.DIRECTORY to something malicious such as '/opt ; rm -rf /etc', the
+shell will execute both 'ls -al /opt' and 'rm -rf /etc'.  When called with
+shell=True, the shell will blindly execute anything passed to it.  Code with
+the potential for shell injection vulnerabilities has been identified in the
+above mentioned services and versions, but vulnerabilities are possible in
+other services as well.
+
+Please see the links at the bottom for a couple of examples in Nova and Trove.
+
+### Recommended Actions ###
+Ensure permissions for configuration files across all OpenStack services are
+set so that only the owner user can read/write to them.  In cases where other
+processes or users may have write access to configuration files, ensure that
+all settings are sanitized and validated.
+
+Additionally the principle of least privilege should always be observed - files
+should be protected with the most restrictive permissions possible.  Other
+serious security issues, such as the exposure of plaintext credentials, can
+result from permissions which allow malicious users to view sensitive data
+(read access).
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0026
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1343657
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Shell Injection:
+    https://docs.python.org/2/library/subprocess.html#frequently-used-arguments
+Additional LaunchPad Bugs:
+    https://bugs.launchpad.net/trove/+bug/1349939
+    https://bugs.launchpad.net/nova/+bug/1192971

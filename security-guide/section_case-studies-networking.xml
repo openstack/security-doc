@@ -7,7 +7,7 @@
   <?dbhtml stop-chunking?>
     <title>Case studies</title>
     <para>In this case study we discuss how Alice and Bob would address providing networking services to the user.</para>
-    <section xml:id="case-studies-networking-idp37440">
+    <section xml:id="case-studies-networking-alice-private-cloud">
       <title>Alice's private cloud</title>
       <para>A key objective of Alice's cloud is to integrate with the
       existing auth services and security resources. The key design
@@ -25,7 +25,7 @@
       great visibility of tenant traffic by leveraging existing
       features and tools of the physical infrastructure.</para>
     </section>
-    <section xml:id="case-studies-networking-idp40064">
+    <section xml:id="case-studies-networking-bob-public-cloud">
       <title>Bob's public cloud</title>
       <para>A major business driver for Bob is to provide an advanced
       networking services to his customers. Bob's customers would like

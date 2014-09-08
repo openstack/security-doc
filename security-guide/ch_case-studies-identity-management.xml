@@ -14,7 +14,7 @@
       directory services, while Bob will need to provide access to the
       public.
     </para>
-    <section xml:id="case-studies-identity-management-idp87424">
+    <section xml:id="case-studies-identity-management-alice-private-cloud">
       <title>Alice's private cloud</title>
       <para>
         Alice's enterprise has a well-established directory service
@@ -39,7 +39,7 @@
         capabilities in SPICE.
       </para>
     </section>
-    <section xml:id="case-studies-identity-management-idp131936">
+    <section xml:id="case-studies-identity-management-bob-public-cloud">
       <title>Bob's public cloud</title>
       <para>
         Because Bob must support authentication for the general

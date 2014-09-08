@@ -7,7 +7,7 @@
   <?dbhtml stop-chunking?>
     <title>Case studies</title>
     <para>In this case study we discuss how Alice and Bob would address endpoint configuration to secure their private and public clouds. Alice's cloud is not publicly accessible, but she is still concerned about securing the endpoints against improper use. Bob's cloud, being public, must take measures to reduce the risk of attacks by external adversaries.</para>
-    <section xml:id="case-studies-api-endpoints-idp3824">
+    <section xml:id="case-studies-api-endpoints-alice-private-cloud">
       <title>Alice's private cloud</title>
       <para>
         Alice's organization requires that the security architecture
@@ -29,7 +29,7 @@
         detection on all of the API endpoints.
       </para>
     </section>
-    <section xml:id="case-studies-api-endpoints-idp6592">
+    <section xml:id="case-studies-api-endpoints-bob-public-cloud">
       <title>Bob's public cloud</title>
       <para>
         Bob must also protect the access to the public and private

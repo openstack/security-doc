@@ -353,11 +353,10 @@ system_u:object_r:svirt_image_t:SystemLow image4</programlisting>
           The <literal>svirt_image_t</literal> label uniquely
           identifies image files on disk, allowing for the SELinux
           policy to restrict access. When a KVM-based Compute image is
-          powered on, sVirt appends a random numerical identifier to
-          the image. sVirt is technically capable of assigning
-          numerical identifiers to 524,288 virtual machines per
-          hypervisor node, however OpenStack deployments are highly
-          unlikely to encounter this limitation.</para>
+          powered on, sVirt appends a random numerical identifier to the image.
+          sVirt is capable of assigning numeric identifiers to a maximum of
+          524,288 virtual machines per hypervisor node, however most OpenStack
+          deployments are highly unlikely to encounter this limitation.</para>
         <para>This example shows the sVirt category identifier:</para>
         <programlisting>system_u:object_r:svirt_image_t:s0:c87,c520 image1
 system_u:object_r:svirt_image_t:s0:419,c172 image2</programlisting>

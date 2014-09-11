@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-04 06:07+0000\n"
+"POT-Creation-Date: 2014-09-11 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4250,7 +4250,7 @@ msgid "To meet these strict government regulations Alice undertakes a number of 
 msgstr ""
 
 #: ./security-guide/section_case-studies-compliance.xml:14(para)
-msgid "All technology within her private cloud must be FIPS certified technology, as mandated within NIST 800-53 and FedRAMP. As the U.S. Department of Defense is involved, Security Technical Implementation Guides (STIGs) will come into play, which are the configuration standards for DOD IA and IA-enabled devices / systems. Alice notices a number of complications here as there is no STIG for OpenStack, so she must address several underlying requirements for each OpenStack service; for example, the networking SRG and Application SRG will both be applicable (<link href=\"http://iase.disa.mil/srgs/index.html\">list of SRGs</link>). Other critical controls include ensuring that all identities in the cloud use PKI, that SELinux is enabled, that encryption exists for all wire-level communications, and that continuous monitoring is in place and clearly documented. Alice is not concerned with object encryption, as this will be the tenants responsibility rather than the provider."
+msgid "All technology within her private cloud must be FIPS certified technology, as mandated within NIST 800-53 and FedRAMP. As the U.S. Department of Defense is involved, Security Technical Implementation Guides (STIGs) will come into play, which are the configuration standards for DOD IA and IA-enabled devices / systems. Alice notices a number of complications here as there is no STIG for OpenStack, so she must address several underlying requirements for each OpenStack service; for example, the networking SRG and Application SRG will both be applicable (<link href=\"http://iase.disa.mil/stigs/srgs/Pages/index.aspx\">list of SRGs</link>). Other critical controls include ensuring that all identities in the cloud use PKI, that SELinux is enabled, that encryption exists for all wire-level communications, and that continuous monitoring is in place and clearly documented. Alice is not concerned with object encryption, as this will be the tenants responsibility rather than the provider."
 msgstr ""
 
 #: ./security-guide/section_case-studies-compliance.xml:15(para)

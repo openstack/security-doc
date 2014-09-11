@@ -729,6 +729,16 @@
           >cgroups: Linux kernel feature to control resource
           usage</link></para>
       </listitem>
+      <listitem>
+        <para><link
+          xlink:href="http://csrc.nist.gov/publications/nistpubs/800-125/SP800-125-final.pdf"
+          >Guide to Security for Full Virtualization Technologies</link></para>
+      </listitem>
+      <listitem>
+        <para><link
+          xlink:href="http://www.niap-ccevs.org/cc-scheme/nstissp_11_revised_factsheet.pdf"
+          >National Security Telecommunications and Information Systems Security Policy No. 11</link></para>
+      </listitem>
     </itemizedlist>
   </section>
 </section>

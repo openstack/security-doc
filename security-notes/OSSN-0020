@@ -1,0 +1,59 @@
+Disassociating floating IPs does not terminate NAT connections with
+Neutron L3 agent
+---
+
+### Summary ###
+Every virtual instance is automatically assigned a private IP address.
+You may optionally assign public IP addresses to instances. OpenStack
+uses the term "floating IP" to refer to an IP address (typically
+public) that can be dynamically added to a running virtual instance.
+The Neutron L3 agent uses Network Address Translation (NAT) to assign
+floating IPs to virtual instances. Floating IPs can be dynamically
+released from a running virtual instance but any active connections are
+not terminated with this release as expected when using the Neutron L3
+agent.
+
+### Affected Services / Software ###
+Neutron, Icehouse, Havana, Grizzly, Folsom
+
+### Discussion ###
+When creating a virtual instance, a floating IP address is not
+allocated by default. After a virtual instance is created, a user can
+explicitly associate a floating IP address to that instance. Users can
+create connections to the virtual instance using this floating IP
+address. Also, this floating IP address can be disassociated from any
+running instance without shutting that instance down.
+
+If a user initiates a connection using the floating IP address, this
+connection remains alive and accessible even after the floating IP
+address is released from that instance. This potentially violates
+restrictive policies which are only being applied to new connections.
+These policies are ignored for pre-existing connections and the virtual
+instance remains accessible from the public network.
+
+This issue is only known to affect Neutron when using the L3 agent.
+Nova networking is not affected.
+
+### Recommended Actions ###
+There is unfortunately no easy way to detect which connections were
+made over a floating IP address from a virtual instance, as the NAT is
+performed at the Neutron router. The only safe way of terminating all
+connections made over a floating IP address is to terminate the virtual
+instance itself.
+
+The following recommendations should be followed when using the Neutron
+L3 agent:
+
+- Only attach a floating IP address to a virtual instance when that
+instance should be accessible from networks outside the cloud.
+- Terminate or stop the instance along with disassociating the floating
+IP address to ensure that all connections are closed.
+
+The Neutron development team plans to address this issue in a future
+version of Neutron.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0020
+Original LaunchPad Bug : https://bugs.launchpad.net/neutron/+bug/1334926
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

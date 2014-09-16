@@ -123,13 +123,14 @@
       <section xml:id="hardening-the-virtualization-layers-idp490976">
         <title>Minimizing the QEMU code base</title>
         <para>
-          One classic security principle is to remove any unused
-          components from your system. QEMU provides support for many
-          different virtual hardware devices. However, only a small
-          number of devices are needed for a given instance. Most
-          instances will use the virtio devices. However, some legacy
-          instances will need access to specific hardware, which can
-          be specified using glance metadata:</para>
+          The first recommendation is to minimize the QEMU code base
+          by removing unused components from the system. QEMU provides
+          support for many different virtual hardware devices, however
+          only a small number of devices are needed for a given
+          instance. The most common hardware devices are the virtio
+          devices. Some legacy instances will need access to specific
+          hardware, which can be specified using glance metadata:
+        </para>
         <screen><prompt>$</prompt> <userinput>glance image-update \
     --property hw_disk_bus=ide \
     --property hw_cdrom_bus=ide \

@@ -29,7 +29,7 @@
         of failed login attempts. The account then may only be
         unlocked with further side-channel intervention.</para>
       <para>If prevention is not an option, detection can be used to
-        mitigate damage.Detection involves frequent review of access
+        mitigate damage. Detection involves frequent review of access
         control logs to identify unauthorized attempts to access
         accounts. Possible remediation would include reviewing the
         strength of the user password, or blocking the network source
@@ -87,7 +87,7 @@
       <para>Note that if the LDAP system has attributes defined for
         the user such as admin, finance, HR etc, these must be mapped
         into roles and groups within Identity for use by the various
-        OpenStack services. The <filename>/etc/keystone.conf</filename>
+        OpenStack services. The <filename>/etc/keystone/keystone.conf</filename>
         file maps LDAP attributes to Identity attributes.</para>
       <para>The Identity Service <emphasis role="bold">MUST
           NOT</emphasis> be allowed to write to LDAP services used for
@@ -199,7 +199,7 @@
       <para>The cloud administrator should protect sensitive
         configuration files from unauthorized modification. This can be
         achieved with mandatory access control frameworks such as
-        SELinux, including <filename>/etc/keystone.conf</filename> and
+        SELinux, including <filename>/etc/keystone/keystone.conf</filename> and
         X.509 certificates.</para>
 
       <para>Client authentication with SSL requires certificates be issued
@@ -208,7 +208,7 @@
         of certificate signatures against trusted CAs by default and
         connections will fail if the signature is not valid or the CA is not
         trusted. Cloud deployers may use self-signed certificates. In this case,
-        the validity check must disabled or the certificate marked as trusted.
+        the validity check must be disabled or the certificate should be marked as trusted.
         To disable validation of self-signed certificates, set
           <code>insecure=False</code> in the
           <code>[filter:authtoken]</code> section in the

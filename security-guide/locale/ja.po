@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-11 06:59+0000\n"
-"PO-Revision-Date: 2014-09-14 00:31+0000\n"
+"POT-Creation-Date: 2014-09-16 19:34+0000\n"
+"PO-Revision-Date: 2014-09-16 20:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -717,14 +717,14 @@ msgstr "ログイン試行を指定した回数だけ失敗すると、アカウ
 
 #: ./security-guide/ch_identity.xml31(para)
 msgid ""
-"If prevention is not an option, detection can be used to mitigate "
-"damage.Detection involves frequent review of access control logs to identify"
-" unauthorized attempts to access accounts. Possible remediation would "
-"include reviewing the strength of the user password, or blocking the network"
-" source of the attack through firewall rules. Firewall rules on the keystone"
-" server that restrict the number of connections could be used to reduce the "
-"attack effectiveness, and thus dissuade the attacker."
-msgstr "もし防止することが選択肢になければ、被害を減らすために、検知することができます。検知は、アカウントへの権限のないアクセスを特定するために、アクセス制御ログを頻繁にレビューすることを意味します。その他の改善法としては、ユーザーパスワードの強度のレビュー、ファイアウォールルールで攻撃のネットワーク送信元のブロックなどがあります。接続数を制限するという、Keystone サーバのファイアウォールルールは、攻撃の効率を悪くし、攻撃者をあきらめさせるために使用できます。"
+"If prevention is not an option, detection can be used to mitigate damage. "
+"Detection involves frequent review of access control logs to identify "
+"unauthorized attempts to access accounts. Possible remediation would include"
+" reviewing the strength of the user password, or blocking the network source"
+" of the attack through firewall rules. Firewall rules on the keystone server"
+" that restrict the number of connections could be used to reduce the attack "
+"effectiveness, and thus dissuade the attacker."
+msgstr ""
 
 #: ./security-guide/ch_identity.xml40(para)
 msgid ""
@@ -801,9 +801,9 @@ msgid ""
 "Note that if the LDAP system has attributes defined for the user such as "
 "admin, finance, HR etc, these must be mapped into roles and groups within "
 "Identity for use by the various OpenStack services. The "
-"<filename>/etc/keystone.conf</filename> file maps LDAP attributes to "
-"Identity attributes."
-msgstr "LDAP システムがユーザーに対して定義された、幹部社員、経理、人事などのような属性を持っている場合、これらはさまざまな OpenStack サービスにより使用するために Identity の中でロールとグループにマッピングされる必要があります。<filename>/etc/keystone.conf</filename> ファイルは、LDAP の属性をIdentity の属性にマッピングします。"
+"<filename>/etc/keystone/keystone.conf</filename> file maps LDAP attributes "
+"to Identity attributes."
+msgstr ""
 
 #: ./security-guide/ch_identity.xml92(para)
 msgid ""
@@ -950,7 +950,7 @@ msgid ""
 "The cloud administrator should protect sensitive configuration files from "
 "unauthorized modification. This can be achieved with mandatory access "
 "control frameworks such as SELinux, including "
-"<filename>/etc/keystone.conf</filename> and X.509 certificates."
+"<filename>/etc/keystone/keystone.conf</filename> and X.509 certificates."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml205(para)
@@ -960,9 +960,9 @@ msgid ""
 "authority. OpenStack services check the validity of certificate signatures "
 "against trusted CAs by default and connections will fail if the signature is"
 " not valid or the CA is not trusted. Cloud deployers may use self-signed "
-"certificates. In this case, the validity check must disabled or the "
-"certificate marked as trusted. To disable validation of self-signed "
-"certificates, set <code>insecure=False</code> in the "
+"certificates. In this case, the validity check must be disabled or the "
+"certificate should be marked as trusted. To disable validation of self-"
+"signed certificates, set <code>insecure=False</code> in the "
 "<code>[filter:authtoken]</code> section in the "
 "<filename>/etc/nova/api.paste.ini</filename> file. This setting also "
 "disables certificates for other components."
@@ -1036,21 +1036,23 @@ msgstr "トークン"
 msgid ""
 "Once a user is authenticated, a token is generated and used internally in "
 "OpenStack for authorization and access. The default token <emphasis "
-"role=\"bold\">lifespan</emphasis> is<emphasis role=\"bold\"> 24 "
-"hours</emphasis>. It is recommended that this value be set lower but caution"
-" needs to be taken as some internal services will need sufficient time to "
-"complete their work. The cloud may not provide services if tokens expire too"
-" early. An example of this would be the time needed by the Compute service "
-"to transfer a disk image onto the hypervisor for local caching."
-msgstr "ユーザーが認証されると、トークンが生成され、認可とアクセスのために OpenStack で内部的に使用されます。デフォルトのトークンの<emphasis role=\"bold\">有効期間</emphasis>は <emphasis role=\"bold\">24 時間</emphasis>です。この値はより短く設定することが推奨されますが、いくつかの内部サービスが処理を完了するために十分な時間が必要であるので注意する必要があります。トークンがすぐに失効すると、クラウドがサービスを提供できないかもしれません。これの例は、Compute Service がディスクイメージをハイパーバイザーのローカルキャッシュに転送するために必要な時間です。"
+"role=\"bold\">lifespan</emphasis> is <emphasis role=\"bold\">one "
+"hour</emphasis>. Note that the default changed from 24 hours to 1 hour with "
+"the OpenStack Icehouse release. It is recommended that this value be set "
+"lower but caution needs to be taken as some internal services will need "
+"sufficient time to complete their work. The cloud may not provide services "
+"if tokens expire too early. An example of this would be the time needed by "
+"the Compute service to transfer a disk image onto the hypervisor for local "
+"caching."
+msgstr ""
 
-#: ./security-guide/ch_identity.xml271(para)
+#: ./security-guide/ch_identity.xml273(para)
 msgid ""
 "The following example shows a PKI token. Note that, in practice, the token "
 "id value is about 3500 bytes. We shorten it in this example."
 msgstr "以下は PKI トークンの例です。実際は token id の値が約3500バイトであることに注意してください。この例では短くしています。"
 
-#: ./security-guide/ch_identity.xml275(para)
+#: ./security-guide/ch_identity.xml277(para)
 msgid ""
 "Note that the token is often passed within the structure of a larger context"
 " of an Identity Service response. These responses also provide a catalog of "
@@ -1058,7 +1060,7 @@ msgid ""
 " endpoints for internal, admin, and public access."
 msgstr "トークンは Identity の応答のより大きなコンテキスト構造の中で渡されることに注意してください。これらの応答はさまざまな OpenStack サービスのカタログも提供しています。各サービスはその名前と、内部、管理、パブリックなアクセス用のエンドポイントを一覧にします。"
 
-#: ./security-guide/ch_identity.xml280(para)
+#: ./security-guide/ch_identity.xml282(para)
 msgid ""
 "The Identity Service supports token revocation. This manifests as an API to "
 "revoke a token, to list revoked tokens and individual OpenStack services "
@@ -1066,11 +1068,11 @@ msgid ""
 " cache and append the same to their list of cached revoked tokens."
 msgstr "Identity はトークン失効をサポートします。これは、トークンを失効するため、失効済みトークンを一覧表示するために API として宣言されます。また、トークンをキャッシュしている各 OpenStack サービスが失効済みトークンを問い合わせるため、それらのキャッシュから失効済みトークンを削除するため、キャッシュした失効済みトークンの一覧に追加するためにもあります。"
 
-#: ./security-guide/ch_identity.xml287(title)
+#: ./security-guide/ch_identity.xml289(title)
 msgid "Future"
 msgstr "将来"
 
-#: ./security-guide/ch_identity.xml288(para)
+#: ./security-guide/ch_identity.xml290(para)
 msgid ""
 "Domains are high-level containers for projects, users and groups. As such, "
 "they can be used to centrally manage all keystone-based identity components."
@@ -1081,7 +1083,7 @@ msgid ""
 "domain and assigned roles that vary for each project."
 msgstr "ドメインはプロジェクト、ユーザー、グループの高いレベルでのコンテナーです。そのように、すべての keystone ベースの識別コンポーネントを一元的に管理するために使用されます。アカウントドメインを導入すると、サーバー、ストレージ、他のリソースは複数のプロジェクト (以前はテナントと呼ばれていました) の中で論理的にグループ化できます。これは、アカウントのようなマスターコンテナーの下でグループ化できます。さらに、複数のユーザーがアカウントドメインの中で管理でき、各プロジェクトで変化するロールを割り当てられます。"
 
-#: ./security-guide/ch_identity.xml297(para)
+#: ./security-guide/ch_identity.xml299(para)
 msgid ""
 "The Identity V3 API supports multiple domains. Users of different domains "
 "may be represented in different authentication back ends and even have "
@@ -1090,7 +1092,7 @@ msgid ""
 "service resources."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml303(para)
+#: ./security-guide/ch_identity.xml305(para)
 msgid ""
 "Where a rule may specify access to only admin users and users belonging to "
 "the tenant, the mapping may be trivial. In other scenarios the cloud "
@@ -1365,8 +1367,8 @@ msgstr "監視とログ採取"
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_hardening-the-virtualization-layers.xml323(None)
-#: ./security-guide/section_hardening-the-virtualization-layers.xml327(None)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml324(None)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml328(None)
 msgid ""
 "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
 msgstr "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
@@ -1501,15 +1503,15 @@ msgstr "QEMU コードベースの最小化"
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml125(para)
 msgid ""
-"One classic security principle is to remove any unused components from your "
-"system. QEMU provides support for many different virtual hardware devices. "
-"However, only a small number of devices are needed for a given instance. "
-"Most instances will use the virtio devices. However, some legacy instances "
-"will need access to specific hardware, which can be specified using glance "
-"metadata:"
-msgstr "古くからある 1 つのセキュリティ原則は、システムから未使用のコンポーネントを削除することです。QEMU はさまざまな種類の仮想ハードウェアデバイスをサポートします。しかしながら、少しのデバイスだけが指定されたインスタンスに必要になります。多くのインスタンスは virtio デバイスを使用します。しかし、いくつかのレガシーなインスタンスは、glance メタデータを使用して指定できる、特定のハードウェアにアクセスする必要があります。"
+"The first recommendation is to minimize the QEMU code base by removing "
+"unused components from the system. QEMU provides support for many different "
+"virtual hardware devices, however only a small number of devices are needed "
+"for a given instance. The most common hardware devices are the virtio "
+"devices. Some legacy instances will need access to specific hardware, which "
+"can be specified using glance metadata:"
+msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml138(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml139(para)
 msgid ""
 "A cloud architect should decide what devices to make available to cloud "
 "users. Anything that is not needed should be removed from QEMU. This step "
@@ -1519,11 +1521,11 @@ msgid ""
 "needed for your deployment, and disable the remaining options."
 msgstr "クラウドアーキテクトは、どのデバイスがクラウドユーザーに利用可能であるかを判断すべきです。必要ないすべてのデバイスは QEMU から削除すべきです。この手順は、QEMU 設定スクリプトに渡されるオプションを変更した後で、QEMU を再コンパイルする必要があります。最新の完全なオプション一覧は、QEMU ソースディレクトリの中で <placeholder-1/> を単に実行します。お使いの環境に必要なものを判断し、残りのオプションを無効化します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml149(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml150(title)
 msgid "Compiler hardening"
 msgstr "コンパイラーのセキュリティ強化機能"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml150(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml151(para)
 msgid ""
 "The next step is to harden QEMU using compiler hardening options. Modern "
 "compilers provide a variety of compile time options to improve the security "
@@ -1533,7 +1535,7 @@ msgid ""
 "layout randomization (ASLR)."
 msgstr "次の手順は、コンパイラーのセキュリティ強化オプションを使用して QEMU をセキュリティ強化することです。最近のコンパイラーは、出力バイナリのセキュリティを改善するために、さまざまなコンパイル時オプションを提供します。これらの機能には、より詳細を以下で説明しますが、relocation read-only (RELRO)、Stack Canaries、never execute (NX)、position independent executable (PIE)、address space layout randomization (ASLR) があります。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml159(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml160(para)
 msgid ""
 "Many modern Linux distributions already build QEMU with compiler hardening "
 "enabled, so you may want to verify your existing executable before "
@@ -1542,11 +1544,11 @@ msgid ""
 "href=\"http://www.trapkit.de/tools/checksec.html\"><literal>checksec.sh</literal></link>."
 msgstr "ほとんどの最近の Linux ディストリビューションは、すでにコンパイラーのセキュリティ強化を有効化して QEMU をビルドしています。そのため、以下の情報を続ける前に、既存のバイナリを確認したいでしょう。この確認を手助けできるツールの 1 つは <link href=\"http://www.trapkit.de/tools/checksec.html\"><literal>checksec.sh</literal></link> と呼ばれます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml168(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml169(term)
 msgid "RELocation Read-Only (RELRO)"
 msgstr "RELocation Read-Only (RELRO)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml170(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml171(para)
 msgid ""
 "Hardens the data sections of an executable. Both full and partial RELRO "
 "modes are supported by gcc. For QEMU full RELRO is your best choice. This "
@@ -1554,58 +1556,58 @@ msgid ""
 "sections before the program data section in the resulting executable."
 msgstr "実行ファイルのデータ部分をセキュリティ強化します。全体 RELRO モードと部分 RELRO モードが gcc によりサポートされます。QEMU 完全 RELRO が最善の選択肢です。これにより、グローバルオフセットテーブルが読み込み専用になり、出力実行ファイルのプログラムデータセクションの前にさまざまな内部データ部分が置かれます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml180(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml181(term)
 msgid "Stack canaries"
 msgstr "スタックカナリア"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml182(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml183(para)
 msgid ""
 "Places values on the stack and verifies their presence to help prevent "
 "buffer overflow attacks."
 msgstr "バッファーオーバーフロー攻撃を防ぐ役に立てるために、スタックに値を置き、それらの存在を検証します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml188(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml189(term)
 msgid "Never eXecute (NX)"
 msgstr "Never eXecute (NX)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml190(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml191(para)
 msgid ""
 "Also known as Data Execution Prevention (DEP), ensures that data sections of"
 " the executable can not be executed."
 msgstr "Data Execution Prevention (DEP) としても知られています。実行ファイルのデータ部分を必ず実行できなくします。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml197(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml198(term)
 msgid "Position Independent Executable (PIE)"
 msgstr "Position Independent Executable (PIE)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml199(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml200(para)
 msgid ""
 "Produces a position independent executable, which is necessary for ASLR."
 msgstr "位置に依存しない実行ファイルを生成します。ASLR のために必要です。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml205(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml206(term)
 msgid "Address Space Layout Randomization (ASLR)"
 msgstr "Address Space Layout Randomization (ASLR)"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml207(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml208(para)
 msgid ""
 "This ensures that placement of both code and data regions will be "
 "randomized. Enabled by the kernel (all modern Linux kernels support ASLR), "
 "when the executable is built with PIE."
 msgstr "コード領域とデータ領域の配置を確実にランダム化します。実行ファイルが PIE を用いてビルドされるとき、カーネルにより有効化されます (最近の Linux カーネルはすべて ASLR をサポートします)。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml215(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml216(para)
 msgid ""
 "The following compiler options are recommend for GCC when compiling QEMU:"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml222(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml223(para)
 msgid ""
 "We recommend testing your QEMU executable file after it is compiled to "
 "ensure that the compiler hardening worked properly."
 msgstr "コンパイラーが確実に適切なセキュリティ強化を動作させるようコンパイルした後で、お使いの QEMU 実行ファイルをテストすることを推奨します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml226(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml227(para)
 msgid ""
 "Most cloud deployments will not want to build software such as QEMU by hand."
 " It is better to use packaging to ensure that the process is repeatable and "
@@ -1614,27 +1616,27 @@ msgid ""
 "hardening options to existing packages."
 msgstr "ほとんどのクラウド環境は QEMU のようなソフトウェアを手動でビルドしたくないでしょう。プロセスが確実に繰り返し可能であり、最終結果を簡単にクラウドにデプロイできるようにするために、パッケージを使用するほうが良いでしょう。以下の参考情報は、既存のパッケージにコンパイラーのセキュリティ強化オプションを適用することの詳細を提供します。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml235(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml236(para)
 msgid ""
 "DEB packages: <link "
 "href=\"http://wiki.debian.org/HardeningWalkthrough\">Hardening "
 "Walkthrough</link>"
 msgstr "DEB パッケージ: <link href=\"http://wiki.debian.org/HardeningWalkthrough\">Hardening Walkthrough</link>"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml238(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml239(para)
 msgid ""
 "RPM packages: <link "
 "href=\"http://fedoraproject.org/wiki/How_to_create_an_RPM_package\">How to "
 "create an RPM package</link>"
 msgstr "RPM パッケージ: <link href=\"http://fedoraproject.org/wiki/How_to_create_an_RPM_package\">How to create an RPM package</link>"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml243(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml244(title)
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml126(title)
 #: ./security-guide/section_messaging-security.xml227(title)
 msgid "Mandatory access controls"
 msgstr "強制アクセス制御"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml244(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml245(para)
 msgid ""
 "Compiler hardening makes it more difficult to attack the QEMU process. "
 "However, if an attacker does succeed, we would like to limit the impact of "
@@ -1647,11 +1649,11 @@ msgid ""
 "virtualization-layers-idp510512\">section below</link>."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml260(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml261(title)
 msgid "sVirt: SELinux and virtualization"
 msgstr "sVirt: SELinux と 仮想化"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml261(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml262(para)
 msgid ""
 "With unique kernel-level architecture and National Security Agency (NSA) "
 "developed security mechanisms, KVM provides foundational isolation "
@@ -1663,17 +1665,17 @@ msgid ""
 "processes acting upon their behalf."
 msgstr "KVM は複数のテナントを分離する基本技術を提供します。カーネルレベルの独特のアーキテクチャーを用いて、National Security Agency (NSA) により開発されたセキュリティ機構です。開発の起源は 2002 年までさかのぼり、Secure Virtualization (sVirt) 技術は最近の仮想化向けの SELinux の応用技術です。SELinux は、ラベルに基づいた分離制御を適用するために設計され、仮想マシンのプロセス、デバイス、データファイル、それらの上で動作するシステムプロセス間の分離を提供するために拡張されました。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml272(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml273(para)
 msgid ""
 "OpenStack's sVirt implementation aspires to protect hypervisor hosts and "
 "virtual machines against two primary threat vectors:"
 msgstr "OpenStack の sVirt 実装は、2 種類の主要な脅威ベクターに対して、ハイパーバイザーホストと仮想マシンを保護することを目指しています。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml279(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml280(term)
 msgid "Hypervisor threats"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml281(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml282(para)
 msgid ""
 "A compromised application running within a virtual machine attacks the "
 "hypervisor to access underlying resources. For example, when a virtual "
@@ -1683,11 +1685,11 @@ msgid ""
 "exposing other virtual machines and network segments."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml294(term)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml295(term)
 msgid "Virtual Machine (multi-tenant) threats"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml296(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml297(para)
 msgid ""
 "A compromised application running within a VM attacks the hypervisor to "
 "access or control another virtual machine and its resources. This is a "
@@ -1698,7 +1700,7 @@ msgid ""
 "do not directly apply to the virtual environment."
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml311(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml312(para)
 msgid ""
 "Each KVM-based virtual machine is a process which is labeled by SELinux, "
 "effectively establishing a security boundary around each virtual machine. "
@@ -1707,7 +1709,7 @@ msgid ""
 "boundary such as host machine data files or other VMs."
 msgstr "各 KVM ベースの仮想マシンは SELinux によりラベル付けされているプロセスです。これは各仮想マシンのセキュリティ境界を効率的に確立します。このセキュリティ境界は、Linux カーネルにより監視され、強制されます。ホストマシンのデータファイルや他の仮想マシンのような、仮想マシンの境界外のリソースへのアクセスは制限されます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml331(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml332(para)
 msgid ""
 "As shown above, sVirt isolation is provided regardless of the guest "
 "Operating System running inside the virtual machineLinux or Windows VMs can "
@@ -1716,11 +1718,11 @@ msgid ""
 "resources from threats."
 msgstr "上に示したとおり、sVirt による分離は仮想マシン内で動作しているゲストオペレーティングシステムに関わらず提供されます。Linux や Windows の仮想マシンを使用できます。さらに、多くの Linux ディストリビューションはオペレーティングシステム内の SELinux を提供しています。仮想マシンが内部の仮想リソースを脅威から保護できます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml340(title)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml341(title)
 msgid "Labels and categories"
 msgstr "ラベルとカテゴリ"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml341(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml342(para)
 msgid ""
 "KVM-based virtual machine instances are labelled with their own SELinux data"
 " type, known as svirt_image_t. Kernel level protections prevent unauthorized"
@@ -1729,15 +1731,15 @@ msgid ""
 "stored as svirt_image_t as shown below:"
 msgstr "KVM ベースの仮想マシンインスタンスは、svirt_image_t として知られる、独自の SELinux データタイプでラベル付けされています。カーネルレベルの保護により、悪意のあるソフトウェアのような権限のないシステムプロセスが、ディスクにある仮想マシンのイメージファイルを操作することを防ぎます。仮想マシンが電源オフのとき、イメージは以下のように svirt_image_t として保存されます。"
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml352(para)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml353(para)
 msgid ""
 "The <literal>svirt_image_t</literal> label uniquely identifies image files "
 "on disk, allowing for the SELinux policy to restrict access. When a KVM-"
 "based Compute image is powered on, sVirt appends a random numerical "
-"identifier to the image. sVirt is technically capable of assigning numerical"
-" identifiers to 524,288 virtual machines per hypervisor node, however "
+"identifier to the image. sVirt is capable of assigning numeric identifiers "
+"to a maximum of 524,288 virtual machines per hypervisor node, however most "
 "OpenStack deployments are highly unlikely to encounter this limitation."
-msgstr "<literal>svirt_image_t</literal> ラベルは独自にディスク上のイメージファイルを識別し、SELinux ポリシーがアクセス制限できるようにします。KVM ベースの Compute イメージが電源投入された際、sVirt はイメージに乱数のIDを付与します。sVirt は技術的には１ハイパーバイザーノードあたり 524,288 個の仮想マシンに数字IDを付与する事ができますが、OpenStack デプロイでこの制限に遭遇する事はまずないでしょう。"
+msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml361(para)
 msgid "This example shows the sVirt category identifier:"
@@ -7655,15 +7657,18 @@ msgid ""
 "enterprise-level-backups_515"
 msgstr "http://www.sans.org/reading_room/whitepapers/backup/security-considerations-enterprise-level-backups_515"
 
-#: ./security-guide/section_continuous-systems-management.xml292(link)
-msgid "OpenStack Security Primer"
-msgstr "OpenStack セキュリティ入門"
+#: ./security-guide/section_continuous-systems-management.xml291(para)
+msgid ""
+"<link href=\"http://www.music-piracy.com/?p=494\">OpenStack Security "
+"Primer</link>, an entry in the music piracy blog by a former member of the "
+"original NASA project team that created nova"
+msgstr ""
 
-#: ./security-guide/section_continuous-systems-management.xml298(title)
+#: ./security-guide/section_continuous-systems-management.xml300(title)
 msgid "Security auditing tools"
 msgstr "セキュリティ監査ツール"
 
-#: ./security-guide/section_continuous-systems-management.xml299(para)
+#: ./security-guide/section_continuous-systems-management.xml301(para)
 msgid ""
 "Security auditing tools can complement the configuration management tools. "
 "Security auditing tools automate the process of verifying that a large "
@@ -7676,7 +7681,7 @@ msgid ""
 "satisfied, which ones failed, and which ones were not checked."
 msgstr "セキュリティ監査ツールは、構成管理ツールを補完することができます。セキュリティ監査ツールは、セキュリティ制御の多くが指定のシステム設定を満たしていることを確認するプロセスを自動化します。これらのツールは、セキュリティ設定方針文書 (例: STIG  および NSA ガイド) から個別のシステムインストール環境のギャップを埋めるサポートをします。例えば、<link href=\"https://fedorahosted.org/scap-security-guide/\">SCAP</link> は実行中のシステムと事前定義済みのプロファイルを比較することができます。SCAP はプロファイル内のどの制御に対応しているか、問題があるものはどれか、確認されていないものはどれかを詳細にまとめたレポートを出力します。"
 
-#: ./security-guide/section_continuous-systems-management.xml311(para)
+#: ./security-guide/section_continuous-systems-management.xml313(para)
 msgid ""
 "Combining configuration management and security auditing tools creates a "
 "powerful combination. The auditing tools will highlight deployment concerns."
@@ -7686,7 +7691,7 @@ msgid ""
 "ranging from basic hardening to compliance validation."
 msgstr "構成管理とセキュリティ監査ツールを組み合わせることで強力になります。監査ツールはデプロイメントの課題をハイライトし、構成管理ツールは各システムの変更プロセスを簡素化して監査の課題に対応していきます。このような方法で組み合わせて使用することで、これらのツールは、基本的なセキュリティの強化からコンプライアンスのバリデーションに至るまで、このようなセキュリティ要件を満たすクラウドを維持できるようにします。"
 
-#: ./security-guide/section_continuous-systems-management.xml318(para)
+#: ./security-guide/section_continuous-systems-management.xml320(para)
 msgid ""
 "Configuration management and security auditing tools will introduce another "
 "layer of complexity into the cloud. This complexity brings additional "

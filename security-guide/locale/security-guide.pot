@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-17 06:10+0000\n"
+"POT-Creation-Date: 2014-09-18 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -253,91 +253,91 @@ msgstr ""
 msgid "A lot of activity goes on within a cloud environment. It is a mix of hardware, operating systems, virtual machine managers, the OpenStack services, cloud-user activity such as creating instances and attaching storage, the network underlying the whole, and finally end-users using the applications running on the various instances."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:10(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:17(para)
 msgid "The generation and collection of logs is an important component of securely monitoring an OpenStack infrastructure. Logs provide visibility into the day-to-day actions of administrators, tenants, and guests, in addition to the activity in the compute, networking, and storage and other components that comprise your OpenStack deployment."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:11(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:25(para)
 msgid "The basics of logging: configuration, setting log level, location of the log files, and how to use and customize logs, as well as how to do centralized collections of logs is well covered in the <link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link>."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:12(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:33(para)
 msgid "Logs are not only valuable for proactive security and continuous compliance activities, but they are also a valuable information source for investigating and responding to incidents."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:13(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:38(para)
 msgid "For instance, analyzing the access logs of Identity Service or its replacement authentication system would alert us to failed logins, frequency, origin IP, whether the events are restricted to select accounts and other pertinent information. Log analysis supports detection."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:14(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:45(para)
 msgid "Actions may be taken to mitigate potential malicious activity such as blacklisting an IP address, recommending the strengthening of user passwords, or de-activating a user account if it is deemed dormant."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:16(title)
+#: ./security-guide/section_forensics-and-incident-response.xml:52(title)
 msgid "Monitoring use cases"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:17(para)
-msgid "Monitoring events is more pro-active and provides real-time detection and response. There are several tools to aid in monitoring."
+#: ./security-guide/section_forensics-and-incident-response.xml:53(para)
+msgid "Event monitoring is a more pro-active approach to securing an environment, providing real-time detection and response. Several tools exist which can aid in monitoring."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:18(para)
-msgid "In the case of an OpenStack cloud instance, we need to monitor the hardware, the OpenStack services, and the cloud resource usage. The last stems from wanting to be elastic, to scale to the dynamic needs of the users."
+#: ./security-guide/section_forensics-and-incident-response.xml:58(para)
+msgid "In the case of an OpenStack cloud instance, we need to monitor the hardware, the OpenStack services, and the cloud resource usage. The latter stems from wanting to be elastic, to scale to the dynamic needs of the users."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:19(para)
-msgid "Here are a few important use cases to consider when implementing log aggregation, analysis and monitoring. These use cases can be implemented and monitored through various commercial and open source tools, homegrown scripts, etc. These tools and scripts can generate events that can then be sent to the administrators through email or integrated dashboard. It is important to consider additional use cases that may apply to your specific network and what you may consider anomalous behavior."
+#: ./security-guide/section_forensics-and-incident-response.xml:64(para)
+msgid "Here are a few important use cases to consider when implementing log aggregation, analysis and monitoring. These use cases can be implemented and monitored through various applications, tools or scripts. There are open source and commercial solutions and some operators develop their own in-house solutions. These tools and scripts can generate events that can be sent to administrators through email or viewed in the integrated dashboard. It is important to consider additional use cases that may apply to your specific network and what you may consider anomalous behavior."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:21(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:78(para)
 msgid "Detecting the absence of log generation is an event of high value. Such an event would indicate a service failure or even an intruder who has temporarily switched off logging or modified the log level to hide their tracks."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:25(para)
-msgid "Application events such as start and/or stop that were unscheduled would also be events to monitor and examine for possible security implications."
+#: ./security-guide/section_forensics-and-incident-response.xml:86(para)
+msgid "Application events such as start or stop events that were unscheduled would also be events to monitor and examine for possible security implications."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:29(para)
-msgid "OS events on the OpenStack service machines such as user logins, restarts also provide valuable insight into use/misuse"
+#: ./security-guide/section_forensics-and-incident-response.xml:93(para)
+msgid "Operating system events on the OpenStack service machines such as user logins or restarts also provide valuable insight into proper and improper usage of systems."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:33(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:100(para)
 msgid "Being able to detect the load on the OpenStack servers also enables responding by way of introducing additional servers for load balancing to ensure high availability."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:37(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:107(para)
 msgid "Other events that are actionable are networking bridges going down, ip tables being flushed on compute nodes and consequential loss of access to instances resulting in unhappy customers."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:41(para)
-msgid "To reduce security risks from orphan instances on a user/tenant/domain deletion in the Identity service there is discussion to generate notifications in the system and have OpenStack components respond to these events as appropriate such as terminating instances, disconnecting attached volumes, reclaiming CPU and storage resources etc."
+#: ./security-guide/section_forensics-and-incident-response.xml:115(para)
+msgid "To reduce security risks from orphan instances on a user, tenant, or domain deletion in the Identity service there is discussion to generate notifications in the system and have OpenStack components respond to these events as appropriate such as terminating instances, disconnecting attached volumes, reclaiming CPU and storage resources and so on."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:44(para)
+#: ./security-guide/section_forensics-and-incident-response.xml:125(para)
 msgid "A cloud will host many virtual instances, and monitoring these instances goes beyond hardware monitoring and log files which may just contain CRUD events."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:45(para)
-msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud may also want to run such tools on their instances."
+#: ./security-guide/section_forensics-and-incident-response.xml:130(para)
+msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud, may also want to run such tools on their instances."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:48(title) ./security-guide/section_continuous-systems-management.xml:277(title) ./security-guide/section_management-interfaces.xml:93(title) ./security-guide/section_management-interfaces.xml:163(title) ./security-guide/section_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:107(title)
+#: ./security-guide/section_forensics-and-incident-response.xml:141(title) ./security-guide/section_continuous-systems-management.xml:277(title) ./security-guide/section_management-interfaces.xml:93(title) ./security-guide/section_management-interfaces.xml:163(title) ./security-guide/section_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:107(title)
 msgid "References"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:49(link)
+#: ./security-guide/section_forensics-and-incident-response.xml:143(link)
 msgid "http://www.mirantis.com/blog/openstack-monitoring/"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:50(link)
+#: ./security-guide/section_forensics-and-incident-response.xml:146(link)
 msgid "http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:51(link)
+#: ./security-guide/section_forensics-and-incident-response.xml:149(link)
 msgid "http://blog.sflow.com/2009/09/lan-and-wan.html"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:52(link)
+#: ./security-guide/section_forensics-and-incident-response.xml:152(link)
 msgid "http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html"
 msgstr ""
 

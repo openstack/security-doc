@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-16 19:34+0000\n"
-"PO-Revision-Date: 2014-09-16 20:01+0000\n"
+"POT-Creation-Date: 2014-09-17 08:35+0000\n"
+"PO-Revision-Date: 2014-09-17 08:35+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -413,7 +413,7 @@ msgid ""
 "applications running on the various instances."
 msgstr "多数の活動がクラウド環境内で行われます。これはハードウェア、オペレーティングシステム、仮想マシンマネージャ、OpenStackサービス群、インスタンス作成やストレージアタッチのようなクラウド⇔ユーザ活動、全体の土台であるネットワーク、最後に様々なインスタンス上で実行されるアプリケーションを使用するエンドユーザのミックスです。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml10(para)
+#: ./security-guide/section_forensics-and-incident-response.xml17(para)
 msgid ""
 "The generation and collection of logs is an important component of securely "
 "monitoring an OpenStack infrastructure. Logs provide visibility into the "
@@ -422,7 +422,7 @@ msgid ""
 "that comprise your OpenStack deployment."
 msgstr "ログの生成と収集は OpenStack インフラのセキュリティ監視の重要なコンポーネントです。ログは日々の管理者・テナント・ゲストの行動に加え、あなたの OpenStack デプロイを構成する Compute、Networking、ストレージ、他のコンポーネントの活動の可視性を提供します。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml11(para)
+#: ./security-guide/section_forensics-and-incident-response.xml25(para)
 msgid ""
 "The basics of logging: configuration, setting log level, location of the log"
 " files, and how to use and customize logs, as well as how to do centralized "
@@ -431,14 +431,14 @@ msgid ""
 "Guide</citetitle></link>."
 msgstr "ロギングの基本: ログを集中収集する方法と同様、設定、ログレベル設定、ログファイルの位置、ログの使用とカスタマイズ方法は、<link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link> で充分にカバーされています。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml12(para)
+#: ./security-guide/section_forensics-and-incident-response.xml33(para)
 msgid ""
 "Logs are not only valuable for proactive security and continuous compliance "
 "activities, but they are also a valuable information source for "
 "investigating and responding to incidents."
 msgstr "ログは率先したセキュリティや継続的なコンプライアンス活動に有用であるのみならず、インシデントの調査と対応の為の情報源としても有用です。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml13(para)
+#: ./security-guide/section_forensics-and-incident-response.xml38(para)
 msgid ""
 "For instance, analyzing the access logs of Identity Service or its "
 "replacement authentication system would alert us to failed logins, "
@@ -446,42 +446,44 @@ msgid ""
 "and other pertinent information. Log analysis supports detection."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml14(para)
+#: ./security-guide/section_forensics-and-incident-response.xml45(para)
 msgid ""
 "Actions may be taken to mitigate potential malicious activity such as "
 "blacklisting an IP address, recommending the strengthening of user "
 "passwords, or de-activating a user account if it is deemed dormant."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml16(title)
+#: ./security-guide/section_forensics-and-incident-response.xml52(title)
 msgid "Monitoring use cases"
 msgstr "監視ユースケース"
 
-#: ./security-guide/section_forensics-and-incident-response.xml17(para)
+#: ./security-guide/section_forensics-and-incident-response.xml53(para)
 msgid ""
-"Monitoring events is more pro-active and provides real-time detection and "
-"response. There are several tools to aid in monitoring."
-msgstr "イベントの監視はより率先的で、リアルタイムの検知と対応を提供します。監視の助けとなるいくつかのツールがあります。"
+"Event monitoring is a more pro-active approach to securing an environment, "
+"providing real-time detection and response. Several tools exist which can "
+"aid in monitoring."
+msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml18(para)
+#: ./security-guide/section_forensics-and-incident-response.xml58(para)
 msgid ""
 "In the case of an OpenStack cloud instance, we need to monitor the hardware,"
-" the OpenStack services, and the cloud resource usage. The last stems from "
-"wanting to be elastic, to scale to the dynamic needs of the users."
-msgstr "OpenStack クラウドインスタンスの場合、ハードウェア、OpenStack サービス、クラウドリソース使用量を監視する必要があります。最後は、柔軟性、ユーザの変化するニーズへのスケール性への要求から生じるものです。"
+" the OpenStack services, and the cloud resource usage. The latter stems from"
+" wanting to be elastic, to scale to the dynamic needs of the users."
+msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml19(para)
+#: ./security-guide/section_forensics-and-incident-response.xml64(para)
 msgid ""
 "Here are a few important use cases to consider when implementing log "
 "aggregation, analysis and monitoring. These use cases can be implemented and"
-" monitored through various commercial and open source tools, homegrown "
-"scripts, etc. These tools and scripts can generate events that can then be "
-"sent to the administrators through email or integrated dashboard. It is "
-"important to consider additional use cases that may apply to your specific "
-"network and what you may consider anomalous behavior."
-msgstr "ここで、ログ収集、解析、監視を実装する際に考慮すべき重要なユースケースがいくつかあります。これらのユースケースは、様々な商用やオープンソースのツール、自作のスクリプト等を通じて実装・監視できます。これらのツールとスクリプトは、電子メールや組み込まれたダッシュボードで管理者に送信されるイベントを生成できます。あなたの場合のネットワークに適用できる追加のユースケースや、変則的な挙動を考慮できるようにするものを考慮する事は重要です。"
+" monitored through various applications, tools or scripts. There are open "
+"source and commercial solutions and some operators develop their own in-"
+"house solutions. These tools and scripts can generate events that can be "
+"sent to administrators through email or viewed in the integrated dashboard. "
+"It is important to consider additional use cases that may apply to your "
+"specific network and what you may consider anomalous behavior."
+msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml21(para)
+#: ./security-guide/section_forensics-and-incident-response.xml78(para)
 msgid ""
 "Detecting the absence of log generation is an event of high value. Such an "
 "event would indicate a service failure or even an intruder who has "
@@ -489,59 +491,60 @@ msgid ""
 "tracks."
 msgstr "ログ生成無しの検知は価値の高いイベントです。このようなイベントはサービス障害、または一時的にログをオフにしたり、監視者から隠れるためにログレベルを変更した侵入者を示している可能性があります。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml25(para)
+#: ./security-guide/section_forensics-and-incident-response.xml86(para)
 msgid ""
-"Application events such as start and/or stop that were unscheduled would "
+"Application events such as start or stop events that were unscheduled would "
 "also be events to monitor and examine for possible security implications."
-msgstr "スケジュール外の start/stop のようなアプリケーションイベントは、潜在的なセキュリティ的なウラについての監視と確認作業を行うイベントでもあるでしょう。"
+msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml29(para)
+#: ./security-guide/section_forensics-and-incident-response.xml93(para)
 msgid ""
-"OS events on the OpenStack service machines such as user logins, restarts "
-"also provide valuable insight into use/misuse"
-msgstr "ユーザログイン、再起動のような OpenStack サービスマシン上の OS イベントもまた、使用／誤用への価値ある洞察を与えます。"
+"Operating system events on the OpenStack service machines such as user "
+"logins or restarts also provide valuable insight into proper and improper "
+"usage of systems."
+msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml33(para)
+#: ./security-guide/section_forensics-and-incident-response.xml100(para)
 msgid ""
 "Being able to detect the load on the OpenStack servers also enables "
 "responding by way of introducing additional servers for load balancing to "
 "ensure high availability."
 msgstr "OpenStack サーバ群の負荷を検知可能にする事はまた、高可用化対応の為に負荷分散用追加サーバを導入する為の対応を可能にする事でもあります。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml37(para)
+#: ./security-guide/section_forensics-and-incident-response.xml107(para)
 msgid ""
 "Other events that are actionable are networking bridges going down, ip "
 "tables being flushed on compute nodes and consequential loss of access to "
 "instances resulting in unhappy customers."
 msgstr "行動可能な他のイベントはネットワークブリッジがダウンした事です。compute ノード上で設定がクリアされた iptables や、インスタンスへのアクセスの重大なロスはユーザを不幸にします。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml41(para)
+#: ./security-guide/section_forensics-and-incident-response.xml115(para)
 msgid ""
-"To reduce security risks from orphan instances on a user/tenant/domain "
+"To reduce security risks from orphan instances on a user, tenant, or domain "
 "deletion in the Identity service there is discussion to generate "
 "notifications in the system and have OpenStack components respond to these "
 "events as appropriate such as terminating instances, disconnecting attached "
-"volumes, reclaiming CPU and storage resources etc."
-msgstr "identity サービス中のユーザ／テナント／ドメイン削除に伴う見捨てられたインスタンスかあのセキュリティリスクを低減する為、システム中で通知を生成する事と、インスタンス削除、アタッチしたボリュームの切断、CPU やストレージリソースの回収等のイベントに適切に対応する OpenStack コンポーネントを用意する事について議論があります。"
+"volumes, reclaiming CPU and storage resources and so on."
+msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml44(para)
+#: ./security-guide/section_forensics-and-incident-response.xml125(para)
 msgid ""
 "A cloud will host many virtual instances, and monitoring these instances "
 "goes beyond hardware monitoring and log files which may just contain CRUD "
 "events."
 msgstr "クラウドには多数の仮想インスタンスがあり、これらのインスタンスの監視はハードウェア監視と CRUD イベントのみ含むログファイルの背後にあります。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml45(para)
+#: ./security-guide/section_forensics-and-incident-response.xml130(para)
 msgid ""
 "Security monitoring controls such as intrusion detection software, antivirus"
 " software, and spyware detection and removal utilities can generate logs "
 "that show when and how an attack or intrusion took place. Deploying these "
 "tools on the cloud machines provides value and protection. Cloud users, "
-"those running instances on the cloud may also want to run such tools on "
+"those running instances on the cloud, may also want to run such tools on "
 "their instances."
-msgstr "侵入検知ソフトウェア、アンチウイルスソフトウェア、スパイウェア検知・削除ユーティリティのようなセキュリティ監視制御は、攻撃や侵入が発生した時と方法を示すログを生成できます。クラウドマシン上にこれらのツールをデプロイする事は、価値と保護を提供します。（クラウド上でインスタンスを実行する）クラウドユーザも自身のインスタンス上でこのようなツールを実行したいかも知れません。"
+msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml48(title)
+#: ./security-guide/section_forensics-and-incident-response.xml141(title)
 #: ./security-guide/section_continuous-systems-management.xml277(title)
 #: ./security-guide/section_management-interfaces.xml93(title)
 #: ./security-guide/section_management-interfaces.xml163(title)
@@ -551,19 +554,19 @@ msgstr "侵入検知ソフトウェア、アンチウイルスソフトウェア
 msgid "References"
 msgstr "参考資料"
 
-#: ./security-guide/section_forensics-and-incident-response.xml49(link)
+#: ./security-guide/section_forensics-and-incident-response.xml143(link)
 msgid "http://www.mirantis.com/blog/openstack-monitoring/"
 msgstr "http://www.mirantis.com/blog/openstack-monitoring/"
 
-#: ./security-guide/section_forensics-and-incident-response.xml50(link)
+#: ./security-guide/section_forensics-and-incident-response.xml146(link)
 msgid "http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html"
 msgstr "http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html"
 
-#: ./security-guide/section_forensics-and-incident-response.xml51(link)
+#: ./security-guide/section_forensics-and-incident-response.xml149(link)
 msgid "http://blog.sflow.com/2009/09/lan-and-wan.html"
 msgstr "http://blog.sflow.com/2009/09/lan-and-wan.html"
 
-#: ./security-guide/section_forensics-and-incident-response.xml52(link)
+#: ./security-guide/section_forensics-and-incident-response.xml152(link)
 msgid ""
 "http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html"
 msgstr "http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html"

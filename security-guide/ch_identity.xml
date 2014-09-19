@@ -248,7 +248,7 @@
       policies.</para>
     <para>Below is a snippet of the Block Storage service
       <filename>policy.json</filename> file.</para>
-    <programlisting language="json"><xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/samples/authentication.json" parse="text"/></programlisting>
+    <programlisting language="json"><xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/samples/policy.json" parse="text"/></programlisting>
     <para>Note the <emphasis role="bold">default</emphasis> rule
       specifies that the user must be either an admin or the owner of
       the volume. It essentially says only the owner of a volume or

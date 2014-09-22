@@ -7,17 +7,17 @@
   <?dbhtml stop-chunking?>
     <title>Compute</title>
     <para>The Compute service (nova) is one of the more complex OpenStack services. It runs in many locations throughout the cloud and interacts with a variety of internal services. For this reason, most of our recommendations regarding best practices for Compute service configuration are distributed throughout this book. We provide specific details in the sections on Management, API Endpoints, Messaging, and Database.</para>
-    <section xml:id="compute-idp45072">
+    <section xml:id="compute-how-to-select-virtual-consoles">
       <title>How to select virtual consoles</title>
       <para>One decision a cloud architect will need to make regarding
       Compute service configuration is whether to use <glossterm
       baseform="Virtual Network Computing (VNC)">VNC</glossterm> or
       <glossterm>SPICE</glossterm>. Below we provide some details on
       the differences between these options.</para>
-      <section xml:id="compute-idp46336">
+      <section xml:id="compute-how-to-select-virtual-consoles-virtual-network-computer-vnc">
         <title>Virtual Network Computer (VNC)</title>
         <para>OpenStack can be configured to provide remote desktop console access to instances for tenants and/or administrators using the Virtual Network Computer (VNC) protocol.</para>
-        <section xml:id="compute-idp48352">
+        <section xml:id="compute-how-to-select-virtual-consoles-virtual-network-computer-vnc-capabilites">
           <title>Capabilities</title>
           <itemizedlist><listitem>
             <para>
@@ -40,7 +40,7 @@
           </listitem>
           </itemizedlist>
         </section>
-        <section xml:id="compute-idp51760">
+        <section xml:id="compute-how-to-select-virtual-consoles-virtual-network-computer-vnc-security-considerations">
           <title>Security considerations</title>
           <itemizedlist><listitem>
             <para>The <systemitem
@@ -55,16 +55,16 @@
           </listitem>
           </itemizedlist>
         </section>
-        <section xml:id="compute-idp54592">
+        <section xml:id="compute-how-to-select-virtual-consoles-virtual-network-computer-vnc-references">
           <title>References</title>
           <para><link xlink:href="http://blog.malchuk.ru/2013/05/21/47">Secure Connections to VNC ports</link></para>
           <para><link xlink:href="http://www.iamlinux.com/2014/06/using-ssl-encryption-with-openstack-nova-novncproxy/">Using SSL encryption with nova novncproxy</link></para>
         </section>
       </section>
-      <section xml:id="compute-idp55824">
+      <section xml:id="compute-how-to-select-virtual-consoles-simple-protocol-for-independent-computing-environments-spice">
         <title>Simple Protocol for Independent Computing Environments (SPICE)</title>
         <para>As an alternative to VNC, OpenStack provides remote desktop access to guest virtual machines using the Simple Protocol for Independent Computing Environments (SPICE) protocol.</para>
-        <section xml:id="compute-idp57120">
+        <section xml:id="compute-how-to-select-virtual-consoles-simple-protocol-for-independent-computing-environments-spice-capabilities">
           <title>Capabilities</title>
           <itemizedlist><listitem>
               <para>
@@ -80,14 +80,14 @@
             </listitem>
 </itemizedlist>
         </section>
-        <section xml:id="compute-idm4576">
+        <section xml:id="compute-how-to-select-virtual-consoles-simple-protocol-for-independent-computing-environments-spice-limitations">
           <title>Limitations</title>
           <itemizedlist><listitem>
               <para>Although SPICE has many advantages over VNC, the spice-html5 browser integration currently doesn't really allow admins to take advantage of any of the benefits. To take advantage of SPICE features like multi-monitor, USB pass through, etc. admins are recommended to use a standalone SPICE client within the Management Network.</para>
             </listitem>
 </itemizedlist>
         </section>
-        <section xml:id="compute-idp83168">
+        <section xml:id="compute-how-to-select-virtual-consoles-simple-protocol-for-independent-computing-environments-spice-security-considerations">
           <title>Security considerations</title>
           <itemizedlist><listitem>
               <para>The <systemitem
@@ -103,7 +103,7 @@
             </listitem>
 </itemizedlist>
         </section>
-        <section xml:id="compute-idp86912">
+        <section xml:id="compute-how-to-select-virtual-consoles-simple-protocol-for-independent-computing-environments-spice-references">
           <title>References</title>
           <para><link xlink:href="http://docs.openstack.org/trunk/config-reference/content/spice-console.html">SPICE Console</link></para>
           <para><link xlink:href="https://bugzilla.redhat.com/show_bug.cgi?id=913607">Red Hat bug 913607</link></para>

@@ -22,7 +22,7 @@
     and has good <link
       xlink:href="http://docs.openstack.org/developer/horizon/topics/deployment.html"
       >deployment and configuration documentation</link>.</para>
-  <section xml:id="dashboard-idp237648">
+  <section xml:id="dashboard-basic-web-server-configuration">
     <title>Basic web server configuration</title>
     <para>The dashboard should be deployed as a Web Services Gateway
       Interface (WSGI) application behind an HTTPS proxy such as
@@ -36,7 +36,7 @@
       xlink:href="https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/"
       >mod_wsgi</link> to host the dashboard.</para>
   </section>
-  <section xml:id="dashboard-idp240704">
+  <section xml:id="dashboard-https">
     <title>HTTPS</title>
     <para>
       Deploy the dashboard behind a secure
@@ -48,7 +48,7 @@
     <para>Configure HTTP requests to the dashboard domain to redirect
       to the fully qualified HTTPS URL.</para>
   </section>
-  <section xml:id="dashboard-idp242624">
+  <section xml:id="dashboard-http-strict-transport-security-hsts">
     <title>HTTP Strict Transport Security (HSTS)</title>
     <para>It is highly recommended to use HTTP Strict Transport
     Security (HSTS).</para>
@@ -64,7 +64,7 @@
       recommendations and server configurations for HTTPS
       configurations, including the configuration of HSTS.</para>
   </section>
-  <section xml:id="dashboard-idp245456">
+  <section xml:id="dashboard-front-end-caching">
     <title>Front end caching</title>
     <para>Since dashboard is rendering dynamic content passed directly
       from OpenStack API requests, we do not recommend front end
@@ -72,7 +72,7 @@
       directly served from Apache or nginx and already benefits from
       web host caching.</para>
   </section>
-  <section xml:id="dashboard-idp246880">
+  <section xml:id="dashboard-domain-names">
     <title>Domain names</title>
     <para>Many organizations typically deploy web applications at
       subdomains of an overarching organization domain. It is natural
@@ -107,7 +107,7 @@
       security is only as strong as the weakest application deployed
       on the same second-level domain.</para>
   </section>
-  <section xml:id="dashboard-idp251760">
+  <section xml:id="dashboard-static-media">
     <title>Static media</title>
     <para>Dashboard's static media should be deployed to a subdomain
       of the dashboard domain and served by the web server. The use of
@@ -130,7 +130,7 @@
       (less, Node.js) should not be installed on production
       machines.</para>
   </section>
-  <section xml:id="dashboard-idp255696">
+  <section xml:id="dashboard-secret-key">
     <title>Secret key</title>
     <para>Dashboard depends on a shared <option>SECRET_KEY</option>
       setting for some security functions. It should be a randomly
@@ -140,7 +140,7 @@
       this key invalidates existing user sessions and caching. Do not
       commit this key to public repositories.</para>
   </section>
-  <section xml:id="dashboard-idp257248">
+  <section xml:id="dashboard-session-back-end">
     <title>Session back end</title>
     <para>Horizon's default session back end
         (<literal>django.contrib.sessions.backends.signed_cookies</literal>)
@@ -164,7 +164,7 @@
         xlink:href="https://docs.djangoproject.com/en/1.5/topics/http/sessions/#configuring-the-session-engine"
         >Django session back end documentation</link>.</para>
   </section>
-  <section xml:id="dashboard-idp262288">
+  <section xml:id="dashboard-allowed-hosts">
     <title>Allowed hosts</title>
     <para>Configure the <option>ALLOWED_HOSTS</option> setting with
       the domain or domains where the dashboard is available. Failure
@@ -176,7 +176,7 @@
         xlink:href="https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts"
         >Django documentation on settings</link>.</para>
   </section>
-  <section xml:id="dashboard-idp268448">
+  <section xml:id="dashboard-cross-site-request-forgery-csrf">
     <title>Cross Site Request Forgery (CSRF)</title>
     <para>Django has a dedicated middleware for <link
         xlink:href="https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works"
@@ -189,7 +189,7 @@
       which do not follow these recommended security settings should
       be carefully evaluated before restrictions are relaxed.</para>
   </section>
-  <section xml:id="dashboard-idp264272">
+  <section xml:id="dashboard-cookies">
     <title>Cookies</title>
     <para>Session Cookies should be set to HTTPONLY:</para>
     <programlisting>SESSION_COOKIE_HTTPONLY = True</programlisting>
@@ -199,7 +199,7 @@
     <programlisting>CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True</programlisting>
   </section>
-  <section xml:id="dashboard-idp266976">
+  <section xml:id="dashboard-password-auto-complete">
     <title>Password auto complete</title>
     <para>We recommend that implementers do not change the default
       password auto complete behavior. Users choose stronger passwords
@@ -208,7 +208,7 @@ SESSION_COOKIE_SECURE = True</programlisting>
       password manager should enforce this policy at the desktop
       level.</para>
   </section>
-  <section xml:id="dashboard-idp270608">
+  <section xml:id="dashboard-cross-site-scripting-xss">
     <title>Cross Site Scripting (XSS)</title>
     <para>Unlike many similar systems, OpenStack dashboard allows the
       entire Unicode character set in most fields. This means
@@ -224,7 +224,7 @@ SESSION_COOKIE_SECURE = True</programlisting>
       is turned off, and any JavaScript which might evaluate
       improperly escaped data.</para>
   </section>
-  <section xml:id="dashboard-idp272832">
+  <section xml:id="dashboard-cross-origin-resource-sharing-cors">
     <title>Cross Origin Resource Sharing (CORS)</title>
     <para>Configure your web server to send a restrictive CORS header
       with each response, allowing only the dashboard domain and
@@ -232,7 +232,7 @@ SESSION_COOKIE_SECURE = True</programlisting>
     <programlisting>Access-Control-Allow-Origin: https://example.com/</programlisting>
     <para>Never allow the wild card origin.</para>
   </section>
-  <section xml:id="dashboard-idp275056">
+  <section xml:id="dashboard-horizon-image-upload">
     <title>Horizon image upload</title>
     <para>We recommend that implementers <link
         xlink:href="http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads"
@@ -240,7 +240,7 @@ SESSION_COOKIE_SECURE = True</programlisting>
       implemented a plan to prevent resource exhaustion and denial of
       service.</para>
   </section>
-  <section xml:id="dashboard-idp276864">
+  <section xml:id="dashboard-upgrading">
     <title>Upgrading</title>
     <para>Django security releases are generally well tested and
       aggressively backwards compatible. In almost all cases, new
@@ -249,7 +249,7 @@ SESSION_COOKIE_SECURE = True</programlisting>
       encouraged to run the latest stable release of Django with
       up-to-date security releases.</para>
   </section>
-  <section xml:id="dashboard-idp278672">
+  <section xml:id="dashboard-debug">
     <title>Debug</title>
 
     <para>Make sure <option>DEBUG</option> is set to <literal>False</literal>

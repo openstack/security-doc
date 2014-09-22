@@ -13,7 +13,7 @@
     guidance to achieve compliance against commercial and government
     certifications and standards.</para>
   <section
-    xml:id="certification-and-compliance-statements-idp44896">
+    xml:id="certification-and-compliance-statements-commerical-standards">
     <title>Commercial standards</title>
     <para>For commercial deployments of OpenStack, it is recommended
       that SOC 1/2 combined with ISO 2700 1/2 be considered as a
@@ -30,7 +30,7 @@
       the federal government may require FedRAMP/FISMA, and ITAR,
       certifications.</para>
     <section
-      xml:id="certification-and-compliance-statements-idp47472">
+        xml:id="certification-and-compliance-statements-commerical-standards-soc-1-ssae-16-isae-3402">
       <title>SOC 1 (SSAE 16) / ISAE 3402</title>
       <para>Service Organization Controls (SOC) criteria are defined
         by the <link xlink:href="http://www.aicpa.org/">American
@@ -66,7 +66,7 @@
           Reporting</link>.</para>
     </section>
     <section
-      xml:id="certification-and-compliance-statements-idp53632">
+      xml:id="certification-and-compliance-statements-commerical-standards-soc-2">
       <title>SOC 2</title>
       <para>Service Organization Controls (SOC) 2 is a self
         attestation of controls that affect the security,
@@ -104,7 +104,7 @@
     </section>
   </section>
   <section
-    xml:id="certification-and-compliance-statements-idp60416">
+    xml:id="certification-and-compliance-statements-soc-3">
     <title>SOC 3</title>
     <para>Service Organization Controls (SOC) 3 is a trust services
       report for service organizations. These reports are designed to
@@ -124,7 +124,7 @@
       Organizations</link>.</para>
   </section>
   <section
-    xml:id="certification-and-compliance-statements-idp62832">
+    xml:id="certification-and-compliance-statements-iso-27001-2">
     <title>ISO 27001/2</title>
     <para>The ISO/IEC 27001/2 standards replace BS7799-2, and are
       specifications for an Information Security Management System
@@ -139,7 +139,7 @@
         27001</link>.</para>
   </section>
   <section
-    xml:id="certification-and-compliance-statements-idp65296">
+    xml:id="certification-and-compliance-statements-hipaa-hitech">
     <title>HIPAA / HITECH</title>
     <para>The Health Insurance Portability and Accountability Act
       (HIPAA) is a United States congressional act that governs the
@@ -183,7 +183,7 @@
         >Health Insurance Portability And Accountability
       Act</link>.</para>
     <section
-      xml:id="certification-and-compliance-statements-idp4736">
+      xml:id="certification-and-compliance-statements-hipaa-hitech-pci-dss">
       <title>PCI-DSS</title>
       <para>The Payment Card Industry Data Security Standard (PCI DSS)
         is defined by the Payment Card Industry Standards Council, and
@@ -205,10 +205,10 @@
           >PCI security standards</link>.</para>
     </section>
   </section>
-  <section xml:id="certification-and-compliance-statements-idp8448">
+  <section xml:id="certification-and-compliance-statements-government-standards">
     <title>Government standards</title>
     <section
-      xml:id="certification-and-compliance-statements-idp9088">
+      xml:id="certification-and-compliance-statements-government-standards-fedramp">
       <title>FedRAMP</title>
       <para>"The <link xlink:href="http://www.fedramp.gov">Federal
           Risk and Authorization Management Program</link> (FedRAMP)
@@ -225,7 +225,7 @@
           >http://www.gsa.gov/portal/category/102371</link>.</para>
     </section>
     <section
-      xml:id="certification-and-compliance-statements-idp10768">
+      xml:id="certification-and-compliance-statements-government-standards-itar">
       <title>ITAR</title>
       <para>The International Traffic in Arms Regulations (ITAR) is a
         set of United States government regulations that control the
@@ -243,7 +243,7 @@
           >https://www.pmddtc.state.gov/regulations_laws/itar.html</link>.</para>
     </section>
     <section
-      xml:id="certification-and-compliance-statements-idp89888">
+      xml:id="certification-and-compliance-statements-government-standards-fisma">
       <title>FISMA</title>
       <para>The Federal Information Security Management Act requires
         that government agencies create a comprehensive plan to

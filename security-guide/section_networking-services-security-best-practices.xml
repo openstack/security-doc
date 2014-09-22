@@ -11,11 +11,11 @@
   <?dbhtml stop-chunking?>
     <title>Networking services security best practices</title>
     <para>This section discusses OpenStack Networking configuration best practices as they apply to tenant network security within your OpenStack deployment.</para>
-    <section xml:id="networking-services-security-best-practices-idp44592">
+    <section xml:id="networking-services-security-best-practices-tenant-network-services-workflow">
       <title>Tenant network services workflow</title>
       <para>OpenStack Networking provides users real self services of network resources and configurations. It is important that cloud architects and operators evaluate their design use cases in providing users the ability to create, update, and destroy available network resources.</para>
     </section>
-    <section xml:id="networking-services-security-best-practices-idp46080">
+    <section xml:id="networking-services-security-best-practices-networking-resource-policy-engine">
       <title>Networking resource policy engine</title>
       <para>A policy engine and its configuration file,
       <filename>policy.json</filename>, within OpenStack Networking
@@ -44,7 +44,7 @@
       through splitting the tenant VMs into multiple tenant projects
       with different virtual network configurations.</para>
     </section>
-    <section xml:id="networking-services-security-best-practices-idp51440">
+    <section xml:id="networking-services-security-best-practices-security-groups">
       <title>Security groups</title>
       <para>
         The OpenStack Networking Service provides security group
@@ -73,7 +73,7 @@
       <para>Security groups and security group rules allow administrators and tenants the ability to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a virtual interface port. A security group is a container for security group rules. When a virtual interface port is created in OpenStack Networking it is associated with a security group. If a security group is not specified, the port will be associated with a 'default' security group. By default this group will drop all ingress traffic and allow all egress. Rules can be added to this group in order to change the behaviour.</para>
       <para>When using the security group API through OpenStack Compute, security groups are applied to all virtual interface ports on an instance. The reason for this is that OpenStack Compute security group APIs are instance based and not virtual interface port based as OpenStack Networking.</para>
     </section>
-    <section xml:id="networking-services-security-best-practices-idp58016">
+    <section xml:id="networking-services-security-best-practices-quotas">
       <title>Quotas</title>
 
       <para>Quotas provide the ability to limit the number of network

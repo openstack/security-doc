@@ -62,7 +62,7 @@
             cloud with the "Public Switch" being part of the
             organization's internal network infrastructure.</para>
     </note>
-    <section xml:id="object-storage-idpA">
+    <section xml:id="object-storage-first-thing-to-secure-the-network">
         <title>First thing to secure: the network</title>
         <para>Securing Object Storage service begins with securing the
             networking component. The rsync protocol is used between storage
@@ -117,9 +117,9 @@
         </figure>
     </section>
     <!-- First thing to secure - The Network -->
-    <section xml:id="object-storage-idpC1">
+    <section xml:id="object-storage-securing-services-general">
         <title>Securing services: general</title>
-        <section xml:id="object-storage-idpC12">
+        <section xml:id="object-storage-securing-services-general-service-runas-user">
             <title>Service runas user</title>
             <para>It is recommended that you configure each Object Storage service
 
@@ -136,7 +136,7 @@
                 Documentation index</link>. (The link defaults to the
                 Ubuntu version.)</para>
         </section>
-        <section xml:id="object-storage-idpC123">
+        <section xml:id="object-storage-securing-services-general-file-permissions">
             <title>File permissions</title>
             <para>The <filename>/etc/swift</filename> directory
                contains information about the ring topology and
@@ -152,7 +152,7 @@
         </section>
     </section>
     <!-- Securing Services - General -->
-    <section xml:id="object-storage-idpD1">
+    <section xml:id="object-storage-securing-storage-services">
         <title>Securing storage services</title>
         <para>The following are the default listening ports for the
             various storage services:</para>
@@ -197,7 +197,7 @@
             against this issue you should follow the recommendations
             given previously about using a private storage
             network.</para>
-        <section xml:id="object-storage-idpD12">
+        <section xml:id="object-storage-securing-storage-services-object-storage-account-terminology">
             <title>Object Storage "account" terminology</title>
             <para>An Object Storage "account" is not a user account or
                 credential. The following explains the
@@ -249,7 +249,7 @@
         </section>
     </section>
     <!-- Securing Storage Services -->
-    <section xml:id="object-storage-idpE1">
+    <section xml:id="object-storage-securing-proxy-services">
         <title>Securing proxy services</title>
         <para>A proxy node should have at least two interfaces
             (physical or virtual): one public and one
@@ -261,7 +261,7 @@
             listening services but is instead used to establish
             outgoing connections to storage nodes on the
             private storage network.</para>
-        <section xml:id="object-storage-idpE12">
+        <section xml:id="object-storage-securing-proxy-services-use-ssl-tls">
             <title>Use SSL/TLS</title>
             <para>The built-in or included web server that comes with
                 OpenStack Object Storage supports SSL, but it does not support
@@ -298,7 +298,7 @@ Group swift</programlisting>
             <programlisting>from swift.common.wsgi import init_request_processor application, conf, logger, log_name = \
   init_request_processor('/etc/swift/proxy-server.conf','proxy-server')</programlisting>
         </section>
-        <section xml:id="object-storage-idpF1">
+        <section xml:id="object-storage-securing-proxy-services-HTTP-listening-port">
             <title>HTTP listening port</title>
             <para>You should configure your web service as a
                 non-root (no UID 0) user such as "swift" mentioned
@@ -324,7 +324,7 @@ Group swift</programlisting>
                 and run as a non-root user varies by web server and
                 OS.</para>
         </section>
-        <section xml:id="object-storage-idpG1">
+        <section xml:id="object-storage-securing-proxy-services-load-balancer">
             <title>Load balancer</title>
             <para>If the option of using Apache is not feasible or for
                 performance you wish to offload your SSL work you may
@@ -347,7 +347,7 @@ Group swift</programlisting>
         </section>
     </section>
     <!-- Securing Proxy Services -->
-    <section xml:id="object-storage-idpH1">
+    <section xml:id="object-storage-object-storage-authentication">
         <title>Object storage authentication</title>
         <para>Object Storage uses a WSGI model to provide for a middleware
             capability that not only provides general extensibility but
@@ -360,7 +360,7 @@ Group swift</programlisting>
         <para>Object Storage comes with two authentication middleware modules
             by default, either of which can be used as sample code for
             developing a custom authentication middleware.</para>
-        <section xml:id="object-storage-idpH123">
+        <section xml:id="object-storage-object-storage-authentication-tempauth">
             <title>TempAuth</title>
             <para>TempAuth is the default authentication for
                 Object Storage. In contrast to Identity it stores the user
@@ -369,7 +369,7 @@ Group swift</programlisting>
                     <link xlink:href="http://docs.openstack.org/developer/swift/overview_auth.html"
                     >The Auth System</link> of the Object Storage (swift) documentation.</para>
         </section>
-        <section xml:id="object-storage-idpH12">
+        <section xml:id="object-storage-object-storage-authentication-keystone">
             <title>Keystone</title>
             <para>Keystone is the commonly used Identity provider in
                 OpenStack. It may also be used for authentication in
@@ -379,7 +379,7 @@ Group swift</programlisting>
         </section>
     </section>
     <!-- Object Storage Authentication -->
-    <section xml:id="object-storage-idpI1">
+    <section xml:id="object-storage-other-notable-items">
         <title>Other notable items</title>
         <para>In <filename>/etc/swift/swift.conf</filename> on every
         node there is a

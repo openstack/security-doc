@@ -28,7 +28,7 @@
     <para>In cases where software termination offers insufficient performance, hardware accelerators
     may be worth exploring as an alternative option. It is important to be mindful of the size of
     requests that will be processed by any chosen SSL proxy.</para>
-    <section xml:id="ssl-proxies-and-http-services-idp44384">
+    <section xml:id="ssl-proxies-and-http-services-examples">
       <title>Examples</title>
       <para>Below we provide sample recommended configuration settings for enabling SSL in some of
       the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of
@@ -107,7 +107,7 @@ ciphers = "kEECDH:kEDH:kRSA:HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
     </listitem>
    </varlistentry>
  </variablelist>
-      <section xml:id="ssl-proxies-and-http-services-idp45712">
+      <section xml:id="ssl-proxies-and-http-services-examples-pound">
         <title>Pound</title>
         <para>This Pound example enables <literal>AES-NI</literal> acceleration, which helps to
         improve performance on systems with processors that support this feature.</para>
@@ -161,7 +161,7 @@ ListenHTTPS
     End
 End</programlisting>
       </section>
-      <section xml:id="ssl-proxies-and-http-services-idp50320">
+      <section xml:id="ssl-proxies-and-http-services-examples-stud">
         <title>Stud</title>
         <para>This stud example enables SSL v3 for client compatibility. The <emphasis role="italic"
           >ciphers</emphasis> line can be tweaked based on your needs, however this is a reasonable
@@ -200,7 +200,7 @@ daemon = off
 # Disabling this until we upgrade to HAProxy 1.5
 write-proxy = off</programlisting>
     </section>
-    <section xml:id="ssl-proxies-and-http-services-idp53424">
+    <section xml:id="ssl-proxies-and-http-services-examples-nginx">
       <title>nginx</title>
       <para>This nginx example requires TLS v1.1 or v1.2 for maximum security. The <option>ssl_ciphers</option> line can be tweaked based on your needs, however this
       is a reasonable starting place.</para>
@@ -219,7 +219,7 @@ write-proxy = off</programlisting>
     }
 }</programlisting>
     </section>
-      <section xml:id="ssl-proxies-and-http-services-idp55264">
+      <section xml:id="ssl-proxies-and-http-services-examples-apache">
         <title>Apache</title>
         <programlisting>&lt;VirtualHost &lt;ip address&gt;:80&gt;
   ServerName &lt;site FQDN&gt;
@@ -268,7 +268,7 @@ write-proxy = off</programlisting>
 &lt;/VirtualHost&gt;</programlisting>
       </section>
     </section>
-    <section xml:id="ssl-proxies-and-http-services-idp59152">
+    <section xml:id="ssl-proxies-and-http-services-HTTP-strict-transport-security">
       <title>HTTP strict transport security</title>
       <para>We recommend that all production deployments use HTTP strict transport security (HSTS).
       This header prevents browsers from making insecure connections after they have made a single

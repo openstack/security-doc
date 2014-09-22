@@ -93,7 +93,7 @@
         </imageobject>
       </inlinemediaobject>
     </para>
-    <section xml:id="networking-architecture-idp61360">
+    <section xml:id="networking-architecture-openstack-networking-service-placement-on-physical-servers">
       <title>OpenStack Networking service placement on physical servers</title>
       <para>
         This guide focuses on a standard architecture
@@ -101,7 +101,7 @@
         <emphasis>network</emphasis> host, and a set of
         <emphasis>compute</emphasis> hypervisors for running
         VMs.</para>
-      <section xml:id="networking-architecture-idp63888">
+      <section xml:id="networking-architecture-openstack-networking-service-placement-on-physical-servers-network-connectivity-of-physical-servers">
         <title>Network connectivity of physical servers</title>
         <para><inlinemediaobject><imageobject role="html">
               <imagedata contentdepth="364" contentwidth="536"

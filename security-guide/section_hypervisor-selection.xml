@@ -26,7 +26,7 @@
   <para>This chapter discusses the hypervisor selection process. The
     chapters that follow provide foundational information needed for
     securing a virtualization stack.</para>
-  <section xml:id="hypervisor-selection-idp236592">
+  <section xml:id="hypervisor-selection-hypervisors-in-openstack">
     <title>Hypervisors in OpenStack</title>
     <para>Whether OpenStack is deployed within private data centers or
       as a public cloud service, the underlying virtualization
@@ -53,7 +53,7 @@
       800-125, "<emphasis>Guide to Security for Full Virtualization
         Technologies</emphasis>".</para>
   </section>
-  <section xml:id="hypervisor-selection-idp242144">
+  <section xml:id="hypervisor-selection-selection-criteria">
     <title>Selection criteria</title>
     <para>As part of your hypervisor selection process, you must
       consider a number of important factors to help increase your
@@ -108,7 +108,7 @@
         problems in the event that a team member is
         unavailable.</para>
     </section>
-    <section xml:id="hypervisor-selection-idp252752">
+    <section xml:id="hypervisor-selection-selection-criteria-product-or-project-maturity">
       <title>Product or project maturity</title>
       <para>The maturity of a given hypervisor product or project is
         critical to your security posture as well. Product maturity
@@ -148,7 +148,7 @@
           >OpenStack Hypervisor Support Matrix</link> for OpenStack
         compute feature support by hypervisor.</para>
     </section>
-    <section xml:id="hypervisor-selection-idp260720">
+    <section xml:id="hypervisor-selection-selection-criteria-certifications-and-attestations">
       <title>Certifications and attestations</title>
       <para>One additional consideration when selecting a hypervisor
         is the availability of various formal certifications and
@@ -158,7 +158,7 @@
         of the testing a particular hypervisor platform has been
         subjected to.</para>
     </section>
-    <section xml:id="hypervisor-selection-idp262672">
+    <section xml:id="hypervisor-selection-selection-criteria-common-criteria">
       <title>Common criteria</title>
       <para>Common Criteria is an internationally standardized
         software evaluation process, used by governments and
@@ -338,7 +338,7 @@
         </tbody>
       </informaltable>
     </section>
-    <section xml:id="hypervisor-selection-idp324896">
+    <section xml:id="hypervisor-selection-selection-criteria-cryptography-standards">
       <title>Cryptography standards</title>
       <para>Several cryptography algorithms are available within
         OpenStack for identification and authorization, data transfer
@@ -442,7 +442,7 @@
           </tr>
         </tbody>
       </informaltable>
-      <section xml:id="hypervisor-selection-idp362768">
+      <section xml:id="hypervisor-selection-selection-criteria-cryptography-standards-fips-140-2">
         <title>FIPS 140-2</title>
         <para>In the United States the National Institute of Science
           and Technology (NIST) certifies cryptographic algorithms
@@ -475,7 +475,7 @@
           other attacks.</para>
       </section>
     </section>
-    <section xml:id="hypervisor-selection-idp367552">
+    <section xml:id="hypervisor-selection-selection-criteria-hardware-concerns">
       <title>Hardware concerns</title>
       <para>Further, when you evaluate a hypervisor platform, consider
         the supportability of the hardware on which the hypervisor
@@ -530,7 +530,7 @@
         </tbody>
       </informaltable>
     </section>
-    <section xml:id="hypervisor-selection-idp396976">
+    <section xml:id="hypervisor-selection-selection-criteria-hypervisor-vs-baremetal">
       <title>Hypervisor vs. baremetal</title>
       <para>It is important to recognize the difference between using
         LXC (Linux Containers) or baremetal systems vs using a
@@ -560,7 +560,7 @@
             >use of LXC in Compute</link>.</para>
       </note>
     </section>
-    <section xml:id="hypervisor-selection-idpKMSTPS">
+    <section xml:id="hypervisor-selection-selection-criteria-hypervisor-memory-optimization">
       <title>Hypervisor memory optimization</title>
       <para>Many hypervisors use memory optimization techniques to
         overcommit memory to guest virtual machines. This is a useful
@@ -576,7 +576,7 @@
         multi-tenant environments where not all tenants are trusted or
         share the same levels of trust.</para>
     </section>
-    <section xml:id="hypervisor-selection-idpKMS">
+    <section xml:id="hypervisor-selection-selection-criteria-kvm-kernel-samepage-merging">
       <title>KVM Kernel Samepage Merging</title>
       <para>Introduced into the Linux kernel in version 2.6.32, Kernel
         Samepage Merging (KSM) consolidates identical memory pages
@@ -584,7 +584,7 @@
         hypervisor runs in its own process, KSM can be used to
         optimize memory use between VMs.</para>
     </section>
-    <section xml:id="hypervisor-selection-idpTPS">
+    <section xml:id="hypervisor-selection-selection-criteria-xen-transparent-page-sharing">
       <title>XEN transparent page sharing</title>
       <para>XenServer 5.6 includes a memory overcommitment feature
         named Transparent Page Sharing (TPS). TPS scans memory in 4 KB
@@ -592,7 +592,7 @@
         Monitor (VMM) discards one of the duplicates and records the
         reference of the second one.</para>
     </section>
-    <section xml:id="hypervisor-selection-idpKMSTPSCons">
+    <section xml:id="hypervisor-selection-selection-criteria-security-considerations-for-memory-optimization">
       <title>Security considerations for memory optimization</title>
       <para>Traditionally, memory de-duplication systems are
         vulnerable to side channel attacks. Both KSM and TPS have
@@ -616,7 +616,7 @@
         private clouds, deployers should consider disabling TPS and
         KSM memory optimizations.</para>
     </section>
-    <section xml:id="hypervisor-selection-idp401408">
+    <section xml:id="hypervisor-selection-selection-criteria-additional-security-features">
       <title>Additional security features</title>
       <para>Another thing to look into when selecting a hypervisor
         platform is the availability of specific security features. In

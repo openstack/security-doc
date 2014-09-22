@@ -48,7 +48,7 @@
       strengthening of user passwords, or de-activating a user account
       if it is deemed dormant.
     </para>
-    <section xml:id="forensics-and-incident-response-idp60511">
+    <section xml:id="forensics-and-incident-response-monitoring-use-cases">
         <title>Monitoring use cases</title>
     <para>
       Event monitoring is a more pro-active approach to securing an
@@ -137,7 +137,7 @@
       on their instances.
     </para>
     </section>
-    <section xml:id="forensics-and-incident-response-idp60512">
+    <section xml:id="forensics-and-incident-response-references">
       <title>References</title>
       <para>
         <link xlink:href="http://www.mirantis.com/blog/openstack-monitoring/">http://www.mirantis.com/blog/openstack-monitoring/</link>

@@ -17,7 +17,7 @@
       risks. We conclude the chapter with a discussion of sVirt, an
       open source project for integrating SELinux mandatory access
       controls with the virtualization components.</para>
-    <section xml:id="hardening-the-virtualization-layers-idp479920">
+    <section xml:id="hardening-the-virtualization-layers-physical-hardware-pci-passthrough">
       <title>Physical hardware (PCI passthrough)</title>
       <para>
         Many hypervisors offer a functionality known as PCI
@@ -75,7 +75,7 @@
         firmware after use. Clearly there is a need to balance
         hardware longevity with security as some firmwares will fail
         after a large number of writes. TPM technology, described in
-        <xref linkend="integrity-life-cycle-idp44768"/>, provides
+        <xref linkend="integrity-life-cycle-secure-bootstrapping"/>, provides
         a solution for detecting unauthorized firmware
         changes. Regardless of the strategy selected, it is important
         to understand the risks associated with this kind of hardware
@@ -89,7 +89,7 @@
         processes in place to ensure the hardware is clean before
         re-issue.</para>
     </section>
-    <section xml:id="hardening-the-virtualization-layers-idp488320">
+    <section xml:id="hardening-the-virtualization-layers-virtual-hardware-qemu">
       <title>Virtual hardware (QEMU)</title>
       <para>
         When running a virtual machine, virtual hardware is a software
@@ -120,7 +120,7 @@
         network traffic, and consider examining the existing rule set
         to understand each rule and determine if the policy needs to be
         expanded upon.</para>
-      <section xml:id="hardening-the-virtualization-layers-idp490976">
+      <section xml:id="hardening-the-virtualization-layers-virtual-hardware-qemu-minimizing-the-qemu-code-base">
         <title>Minimizing the QEMU code base</title>
         <para>
           The first recommendation is to minimize the QEMU code base
@@ -146,7 +146,7 @@
           source directory. Decide what is needed for your deployment,
           and disable the remaining options.</para>
       </section>
-      <section xml:id="hardening-the-virtualization-layers-idp494336">
+      <section xml:id="hardening-the-virtualization-layers-virtual-hardware-qemu-compiler-hardening">
         <title>Compiler hardening</title>
         <para>
           The next step is to harden QEMU using compiler hardening
@@ -240,7 +240,7 @@
           </listitem>
         </itemizedlist>
       </section>
-      <section xml:id="hardening-the-virtualization-layers-idp508032">
+      <section xml:id="hardening-the-virtualization-layers-virtual-hardware-qemu-mandatory-access-controls">
         <title>Mandatory access controls</title>
         <para>
           Compiler hardening makes it more difficult to attack the
@@ -253,11 +253,11 @@
           a separate security context. AppArmor can be configured to
           provide similar functionality. We provide more details on
           sVirt and instance isolation in the <link
-          linkend="hardening-the-virtualization-layers-idp510512">section
-          below</link>.</para>
+          linkend="hardening-the-virtualization-layers-svirt-selinux-and-virtualization">
+          section below</link>.</para>
       </section>
     </section>
-    <section xml:id="hardening-the-virtualization-layers-idp510512">
+    <section xml:id="hardening-the-virtualization-layers-svirt-selinux-and-virtualization">
       <title>sVirt: SELinux and virtualization</title>
       <para>
         With unique kernel-level architecture and National Security
@@ -337,7 +337,7 @@
         system, allowing the virtual machine to protect internal
         virtual resources from threats.
       </para>
-      <section xml:id="hardening-the-virtualization-layers-idp523744">
+      <section xml:id="hardening-the-virtualization-layers-svirt-selinux-and-virtualization-labels-and-categories">
         <title>Labels and categories</title>
         <para>
           KVM-based virtual machine instances are labelled with their
@@ -381,7 +381,7 @@ system_u:object_r:svirt_image_t:s0:419,c172 image2</programlisting>
           </listitem>
         </itemizedlist>
       </section>
-      <section xml:id="hardening-the-virtualization-layers-idp527632">
+      <section xml:id="hardening-the-virtualization-layers-svirt-selinux-and-virtualization-booleans">
         <title>Booleans</title>
         <para>
           To ease the administrative burden of managing SELinux, many

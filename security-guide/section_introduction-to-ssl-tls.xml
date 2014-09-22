@@ -54,18 +54,18 @@
     </variablelist>
 
     <para>PKI builds the framework on which to provide encryption algorithms, cipher modes, and protocols for securing data and authentication. We strongly recommend securing all services with Public Key Infrastructure (PKI), including the use of SSL/TLS for API endpoints. It is impossible for the encryption or signing of transports or messages alone to solve all these problems. Hosts themselves must be secure and implement policy, namespaces, and other controls to protect their private credentials and keys. However, the challenges of key management and protection do not reduce the necessity of these controls, or lessen their importance.</para>
-    <section xml:id="introduction-to-ssl-tls-idp51264">
+    <section xml:id="introduction-to-ssl-tls-certificate-authorities">
       <title>Certification authorities</title>
       <para>Many organizations have an established Public Key Infrastructure with their own certification authority (CA), certificate policies, and management for which they should use to issue certificates for internal OpenStack users or services. Organizations in which the public security domain is Internet facing will additionally need certificates signed by a widely recognized public CA. For cryptographic communications over the management network, it is recommended one not use a public CA. Instead, we expect and recommend most deployments deploy their own internal CA.</para>
       <para>It is recommended that the OpenStack cloud architect consider using separate PKI deployments for internal systems and customer facing services. This allows the cloud deployer to maintain control of their PKI infrastructure and among other things makes requesting, signing and deploying certificates for internal systems easier. Advanced configurations may use separate PKI deployments for different security domains. This allows deployers to maintain cryptographic separation of environments, ensuring that certificates issued to one are not recognized by another.</para>
       <para>Certificates used to support SSL/TLS on internet facing cloud endpoints (or customer interfaces where the customer is not expected to have installed anything other than standard operating system provided certificate bundles) should be provisioned using Certificate Authorities that are installed in the operating system certificate bundle. Typical well known vendors include Verisign and Thawte but many others exist.</para>
       <para>There are many management, policy, and technical challenges around creating and signing certificates. This is an area where cloud architects or operators may wish to seek the advice of industry leaders and vendors in addition to the guidance recommended here.</para>
     </section>
-    <section xml:id="introduction-to-ssl-tls-idp55136">
+    <section xml:id="introduction-to-ssl-tls-ssl-tls-libraries">
       <title>SSL/TLS libraries</title>
       <para>Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use SSL/TLS libraries. The SSL/TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has been proven to be fairly secure and has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries.</para>
     </section>
-    <section xml:id="introduction-to-ssl-tls-idp56784">
+    <section xml:id="introduction-to-ssl-tls-cryptographic-algorithms-cipher-modes-and-protocols">
       <title>Cryptographic algorithms, cipher modes, and protocols</title>
       <para>We recommend only using TLS v1.1 or v1.2. SSLv3 and TLSv1.0 may be used for compatibility but we recommend using caution and only enabling these protocols if you have a strong requirement to do so. Other SSL/TLS versions, explicitly older versions, should not be used. These older versions include SSLv1 and SSLv2. As this book does not intend to be a thorough reference on cryptography we do not wish to be prescriptive about what specific algorithms or cipher modes you should enable or disable in your OpenStack services. However, there are some authoritative references we would like to recommend for further information:</para>
       <itemizedlist><listitem>
@@ -88,7 +88,7 @@
         </listitem>
 </itemizedlist>
     </section>
-    <section xml:id="introduction-to-ssl-tls-idp64128">
+    <section xml:id="introduction-to-ssl-tls-summary">
       <title>Summary</title>
       <para>
         Given the complexity of the OpenStack components and the

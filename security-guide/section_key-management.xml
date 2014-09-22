@@ -10,7 +10,7 @@
     <para>A key management service is in the early stages of being developed and has a way to go before becoming an official component of OpenStack. Refer to <link xlink:href="http://docs.openstack.org/developer/barbican/">http://docs.openstack.org/developer/barbican/</link> for details.</para>
     <para>It shall support the creation of keys, and their secure saving (with a service master-key). Some of the design questions still being debated are how much of the Key Management Interchange Protocol (KMIP) to support, key formats, and certificate management. The key manager will be pluggable to facilitate deployments that need a third-party Hardware Security Module (HSM).</para>
     <para>OpenStack Block Storage, cinder, is the first service looking to integrate with the key manager to provide volume encryption.</para>
-    <section xml:id="key-management-idp47776">
+    <section xml:id="key-management-references">
       <title>References:</title>
       <itemizedlist><listitem>
           <para><link xlink:href="http://docs.openstack.org/developer/barbican">Barbican developer documentation</link></para>

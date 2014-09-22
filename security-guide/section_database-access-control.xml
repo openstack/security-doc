@@ -7,11 +7,11 @@
   <?dbhtml stop-chunking?>
     <title>Database access control</title>
     <para>Each of the core OpenStack services (Compute, Identity, Networking, Block Storage) store state and configuration information in databases. In this chapter, we discuss how databases are used currently in OpenStack. We also explore security concerns, and the security ramifications of database back end choices.</para>
-    <section xml:id="database-access-control-idp44624">
+    <section xml:id="database-access-control-openstack-database-access-model">
       <title>OpenStack database access model</title>
       <para>All of the services within an OpenStack project access a single database. There are presently no reference policies for creating table or row based access restrictions to the database.</para>
       <para>There are no general provisions for granular control of database operations in OpenStack. Access and privileges are granted simply based on whether a node has access to the database or not. In this scenario, nodes with access to the database may have full privileges to DROP, INSERT, or UPDATE functions.</para>
-      <section xml:id="database-access-control-idp46912">
+      <section xml:id="database-access-control-openstack-database-access-model-granular-access-control">
         <title>Granular access control</title>
         <para>By default, each of the OpenStack services and their processes access the database using a shared set of credentials. This makes auditing database operations and revoking access privileges from a service and its processes to the database particularly difficult.</para>
         <para><inlinemediaobject><imageobject role="html">
@@ -22,7 +22,7 @@
             </imageobject>
 </inlinemediaobject></para>
       </section>
-      <section xml:id="database-access-control-idp53264">
+      <section xml:id="database-access-control-openstack-database-access-model-nova-conductor">
         <title>Nova-conductor</title>
         <para>The compute nodes are the least trusted of the services in OpenStack because they host tenant instances. The <systemitem class="service">nova-conductor</systemitem> service has been introduced to serve as a database proxy, acting as an intermediary between the compute nodes and the database. We discuss its ramifications later in this chapter.</para>
         <para>We strongly recommend:</para>
@@ -48,22 +48,22 @@
         </informalfigure>
       </section>
     </section>
-    <section xml:id="database-access-control-idp83456">
+    <section xml:id="database-access-control-database-authentication-and-access-control">
       <title>Database authentication and access control</title>
       <para>Given the risks around access to the database, we strongly recommend that unique database user accounts be created per node needing access to the database. Doing this facilitates better analysis and auditing for ensuring compliance or in the event of a compromise of a node allows you to isolate the compromised host by removing access for that node to the database upon detection. When creating these per service endpoint database user accounts, care should be taken to ensure that they are configured to require SSL. Alternatively, for increased security it is recommended that the database accounts be configured using X.509 certificate authentication in addition to user names and passwords.</para>
-      <section xml:id="database-access-control-idp85888">
+      <section xml:id="database-access-control-database-authentication-and-access-control-privileges">
         <title>Privileges</title>
         <para>A separate database administrator (DBA) account should be created and protected that has full privileges to create/drop databases, create user accounts, and update user privileges. This simple means of separation of responsibility helps prevent accidental misconfiguration, lowers risk and lowers scope of compromise.</para>
         <para>The database user accounts created for the OpenStack services and for each node should have privileges limited to just the database relevant to the service where the node is a member.</para>
       </section>
     </section>
-    <section xml:id="database-access-control-idp88080">
+    <section xml:id="database-access-control-require-user-accounts-to-require-ssl-transport">
       <title>Require user accounts to require SSL transport</title>
-      <section xml:id="database-access-control-idp88784">
+      <section xml:id="database-access-control-require-user-accounts-to-require-ssl-transport-configuration-example-1-mysql">
         <title>Configuration example #1: (MySQL)</title>
         <programlisting>GRANT ALL ON dbname.* to 'compute01'@'hostname' IDENTIFIED BY '<replaceable>NOVA_DBPASS</replaceable>' REQUIRE SSL;</programlisting>
       </section>
-      <section xml:id="database-access-control-idp90096">
+      <section xml:id="database-access-control-require-user-accounts-to-require-ssl-transport-configuration-example-2-postgresql">
         <title>Configuration example #2: (PostgreSQL)</title>
         <para>In file <filename>pg_hba.conf</filename>:</para>
         <programlisting>hostssl dbname compute01 hostname md5</programlisting>
@@ -74,21 +74,21 @@
           secure authentication example in the section below.</para>
       </section>
     </section>
-    <section xml:id="database-access-control-idp93120">
+    <section xml:id="database-access-control-authentication-with-x509-certificates">
       <title>Authentication with X.509 certificates</title>
       <para>Security may be enhanced by requiring X.509 client certificates for authentication. Authenticating to the database in this manner provides greater identity assurance of the client making the connection to the database and ensures that the communications are encrypted.</para>
-      <section xml:id="database-access-control-idp94704">
+      <section xml:id="database-access-control-authentication-with-x509-certificates-configuration-example-1-mysql">
         <title>Configuration example #1: (MySQL)</title>
         <programlisting>GRANT ALL on dbname.* to 'compute01'@'hostname' IDENTIFIED BY '<replaceable>NOVA_DBPASS</replaceable>' REQUIRE SUBJECT
 '/C=XX/ST=YYY/L=ZZZZ/O=cloudycloud/CN=compute01' AND ISSUER
 '/C=XX/ST=YYY/L=ZZZZ/O=cloudycloud/CN=cloud-ca';</programlisting>
       </section>
-      <section xml:id="database-access-control-idp96192">
+      <section xml:id="database-access-control-authentication-with-x509-certificates-configuration-example-2-postgresql">
         <title>Configuration example #2: (PostgreSQL)</title>
         <programlisting>hostssl dbname compute01 hostname cert</programlisting>
       </section>
     </section>
-    <section xml:id="database-access-control-idp97536">
+    <section xml:id="database-access-control-openstack-service-database-configuration">
       <title>OpenStack service database configuration</title>
       <para>If your database server is configured to require X.509
       certificates for authentication you will need to specify the
@@ -100,7 +100,7 @@
       <programlisting language="ini">sql_connection = mysql://compute01:<replaceable>NOVA_DBPASS</replaceable>@localhost/nova?
 charset=utf8&amp;ssl_ca=/etc/mysql/cacert.pem&amp;ssl_cert=/etc/mysql/server-cert.pem&amp;ssl_key=/etc/mysql/server-key.pem</programlisting>
     </section>
-    <section xml:id="database-access-control-idp100688">
+    <section xml:id="database-access-control-nova-conductor">
       <title>Nova-conductor</title>
       <para>OpenStack Compute offers a sub-service called <systemitem class="service">nova-conductor</systemitem> which proxies database connections, with the primary purpose of having the nova compute nodes interfacing with <systemitem class="service">nova-conductor</systemitem> to meet data persistence needs as opposed to directly communicating with the database.</para>
       <para>Nova-conductor receives requests over RPC and performs actions on behalf of the calling service without granting granular access to the database, its tables, or data within. Nova-conductor essentially abstracts direct database access away from compute nodes.</para>

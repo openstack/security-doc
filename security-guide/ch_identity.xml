@@ -15,9 +15,9 @@
     between services and persons using X.509 certificates. Although
     the default mode for SSL is server-side only authentication,
     certificates may also be used for client authentication.</para>
-  <section xml:id="identity-idp195568">
+  <section xml:id="identity-authentication">
     <title>Authentication</title>
-    <section xml:id="identity-idp196256">
+    <section xml:id="identity-authentication-invalid-login-attempts">
       <title>Invalid login attempts</title>
       <para>The Identity Service does not provide a method to limit
         access to accounts after repeated unsuccessful login attempts.
@@ -43,7 +43,7 @@
         is taken by credit card providers for fraud detection and alert.
       </para>
     </section>
-    <section xml:id="identity-idp241008">
+    <section xml:id="identity-multi-factor-authentication">
       <title>Multi-factor authentication</title>
       <para>Employ multi-factor authentication for network access to
         privileged user accounts. The Identity Service supports
@@ -55,9 +55,9 @@
         that may compromise administrator passwords.</para>
     </section>
   </section>
-  <section xml:id="identity-idp243184">
+  <section xml:id="identity-authentication-methods">
     <title>Authentication methods</title>
-    <section xml:id="identity-idp243824">
+    <section xml:id="identity-authentication-methods-internally-implemented-authentication-methods">
       <title>Internally implemented authentication methods</title>
       <para>The Identity Service can store user credentials in an SQL
         Database, or may use an LDAP-compliant directory server. The
@@ -109,7 +109,7 @@
             attacks</link>.</para>
       </note>
     </section>
-    <section xml:id="identity-idp251520">
+    <section xml:id="identity-authentication-methods-external-authentication-methods">
       <title>External authentication methods</title>
       <para>Organizations may desire to implement external
         authentication for compatibility with existing authentication
@@ -140,7 +140,7 @@
       </itemizedlist>
     </section>
   </section>
-  <section xml:id="identity-idp256832">
+  <section xml:id="identity-authorization">
     <title>Authorization</title>
     <para>The Identity Service supports the notion of groups and
       roles. Users belong to groups. A group has a list of roles.
@@ -154,7 +154,7 @@
       provision new users and have access to various management
       functionality. The cloud tenant would be able to only spin up
       instances, attach volumes, etc.</para>
-    <section xml:id="identity-idp259168">
+    <section xml:id="identity-authorization-establish-formal-access-control-policies">
       <title>Establish formal access control policies</title>
       <para>Prior to configuring roles, groups, and users, document
         your required access control policies for the OpenStack
@@ -168,7 +168,7 @@
         that configuration is in compliance with approved
         policies.</para>
     </section>
-    <section xml:id="identity-idp261600">
+    <section xml:id="identity-authorization-service-authorization">
       <title>Service authorization</title>
       <para>As described in the <link
           xlink:href="http://docs.openstack.org/admin-guide-cloud/content/index.html"
@@ -216,7 +216,7 @@
         setting also disables certificates for other
         components.</para>
     </section>
-    <section xml:id="identity-idp267040">
+    <section xml:id="identity-authorization-administrative-users">
       <title>Administrative users</title>
       <para>We recommend that admin users authenticate using Identity
         Service and an external authentication service that supports
@@ -226,7 +226,7 @@
         guidance in the use of multi factor authentication for network
         access to privileged accounts.</para>
     </section>
-    <section xml:id="identity-idp268960">
+    <section xml:id="identity-authorization-end-users">
       <title>End users</title>
       <para>The Identity Service can directly provide end-user
         authentication, or can be configured to use external
@@ -234,7 +234,7 @@
         security policies and requirements.</para>
     </section>
   </section>
-  <section xml:id="identity-idp270544">
+  <section xml:id="identity-policies">
     <title>Policies</title>
     <para>Each OpenStack service has a policy file in JSON format,
       called <filename>policy.json</filename>. The policy
@@ -256,7 +256,7 @@
       operations such as managing volume types are accessible only to
       admin users.</para>
   </section>
-  <section xml:id="identity-idp276176">
+  <section xml:id="identity-tokens">
     <title>Tokens</title>
     <para>Once a user is authenticated, a token is generated and used
       internally in OpenStack for authorization and access. The
@@ -285,7 +285,7 @@
       the revoked tokens and remove them from their cache and append
       the same to their list of cached revoked tokens.</para>
   </section>
-  <section xml:id="identity-idp287584">
+  <section xml:id="identity-future">
     <title>Future</title>
     <para>Domains are high-level containers for projects, users and
       groups. As such, they can be used to centrally manage all

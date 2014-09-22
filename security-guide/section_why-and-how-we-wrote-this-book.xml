@@ -23,7 +23,7 @@
     <citetitle>OpenStack Operations Guide</citetitle></link> and can be
     referenced to harden existing OpenStack deployments or to evaluate the
     security controls of OpenStack cloud providers.</para>
-  <section xml:id="why-and-how-we-wrote-this-book-idp117696">
+  <section xml:id="why-and-how-we-wrote-this-book-objectives">
     <title>Objectives</title>
     <itemizedlist>
       <listitem>
@@ -45,7 +45,7 @@
       </listitem>
     </itemizedlist>
   </section>
-  <section xml:id="why-and-how-we-wrote-this-book-idp123024">
+  <section xml:id="why-and-how-we-wrote-this-book-how">
     <title>How</title>
     <para>As with the OpenStack Operations Guide, we followed the book sprint
       methodology. The book sprint process allows for rapid development and
@@ -219,7 +219,7 @@
       </listitem>
     </itemizedlist>
   </section>
-  <section xml:id="why-and-how-we-wrote-this-book-idp150816">
+  <section xml:id="why-and-how-we-wrote-this-book-how-to-contribute-to-this-book">
     <title>How to contribute to this book</title>
     <para>The initial work on this book was conducted in an overly
       air-conditioned room that served as our group office for the

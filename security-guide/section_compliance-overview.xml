@@ -29,7 +29,7 @@
       <para>Introduce privacy considerations specific to OpenStack and cloud environments.</para>
     </listitem>
   </itemizedlist>
-  <section xml:id="compliance-overview-idp48672">
+  <section xml:id="compliance-overview-security-principles">
     <title>Security principles</title>
     <para>Industry standard security principles provide a baseline for compliance certifications and
       attestations. If these principles are considered and referenced throughout an OpenStack

@@ -11,7 +11,7 @@
       three most common message queuing solutions used in OpenStack:
       RabbitMQ, Qpid, and ZeroMQ.
     </para>
-    <section xml:id="messaging-security-idp37712">
+    <section xml:id="messaging-security-messaging-transport-security">
       <title>Messaging transport security</title>
       <para>
         AMQP based solutions (Qpid and RabbitMQ) support
@@ -40,7 +40,7 @@
         unauthorized access by other processes and users on the
         messaging server.
       </para>
-      <section xml:id="messaging-security-idp40512">
+      <section xml:id="messaging-security-messaging-transport-security-rabbitmq-server-ssl-configuration">
         <title>RabbitMQ server SSL configuration</title>
         <para>The following lines should be added to the system-wide
         RabbitMQ configuration file, typically
@@ -73,7 +73,7 @@
           </listitem>
 </itemizedlist>
       </section>
-      <section xml:id="messaging-security-idp46320">
+      <section xml:id="messaging-security-messaging-transport-security-qpid-server-ssl-configuration">
         <title>Qpid server SSL configuration</title>
         <para>The Apache Foundation has a messaging security guide for Qpid. See:</para>
         <itemizedlist><listitem>
@@ -82,7 +82,7 @@
         </itemizedlist>
       </section>
     </section>
-    <section xml:id="messaging-security-idp48960">
+    <section xml:id="messaging-security-queue-authentication-and-access-control">
       <title>Queue authentication and access control</title>
       <para>
         RabbitMQ and Qpid offer authentication and access control
@@ -116,7 +116,7 @@
         Before deployment, consider the SSL libraries that the queuing
         servers use. Qpid uses Mozilla's NSS library, whereas RabbitMQ
         uses Erlang's SSL module which uses OpenSSL.</para>
-      <section xml:id="messaging-security-idp52640">
+      <section xml:id="messaging-security-queue-authentication-and-access-control-authentication-configuration-example-rabbitmq">
         <title>Authentication configuration example: RabbitMQ</title>
         <para>On the RabbitMQ server, delete the default
         <literal>guest</literal> user:</para>
@@ -142,7 +142,7 @@
           </listitem>
 </itemizedlist>
       </section>
-      <section xml:id="messaging-security-idp59648">
+      <section xml:id="messaging-security-queue-authentication-and-access-control-openstack-service-configuration-rabbitmq">
         <title>OpenStack service configuration: RabbitMQ</title>
         <programlisting language="ini">[DEFAULT]
 rpc_backend=nova.openstack.common.rpc.impl_kombu
@@ -155,7 +155,7 @@ kombu_ssl_keyfile=/etc/ssl/node-key.pem
 kombu_ssl_certfile=/etc/ssl/node-cert.pem
 kombu_ssl_ca_certs=/etc/ssl/cacert.pem</programlisting>
       </section>
-      <section xml:id="messaging-security-idp62112">
+      <section xml:id="messaging-security-queue-authentication-and-access-control-authentication-configuration-example-qpid">
         <title>Authentication configuration example: Qpid</title>
         <para>For configuration information see:</para>
         <itemizedlist><listitem>
@@ -166,7 +166,7 @@ kombu_ssl_ca_certs=/etc/ssl/cacert.pem</programlisting>
           </listitem>
 </itemizedlist>
       </section>
-      <section xml:id="messaging-security-idp65584">
+      <section xml:id="messaging-security-queue-authentication-and-access-control-openstack-service-configuration-qpid">
         <title>OpenStack service configuration: Qpid</title>
         <programlisting language="ini">
 [DEFAULT]
@@ -180,7 +180,7 @@ qpid_password=<replaceable>QPID_PASS</replaceable></programlisting>
         <programlisting language="ini">qpid_sasl_mechanisms=&lt;space separated list of SASL mechanisms to use for auth&gt;</programlisting>
       </section>
     </section>
-    <section xml:id="messaging-security-idp68512">
+    <section xml:id="messaging-security-message-queue-process-isolation-and-policy">
       <title>Message queue process isolation and policy</title>
       <para>
         Each project provides a number of services which send and
@@ -191,7 +191,7 @@ qpid_password=<replaceable>QPID_PASS</replaceable></programlisting>
         Message queue service processes should be isolated from each
         other and other processes on a machine.
       </para>
-      <section xml:id="messaging-security-idp70304">
+      <section xml:id="messaging-security-message-queue-process-isolation-and-policy-namespaces">
         <title>Namespaces</title>
         <para>
           Network namespaces are highly recommended for all services
@@ -207,7 +207,7 @@ qpid_password=<replaceable>QPID_PASS</replaceable></programlisting>
           receiver per project within an IPC namespace, along with
           other services within the same project.</para>
       </section>
-      <section xml:id="messaging-security-idp72736">
+      <section xml:id="messaging-security-message-queue-process-isolation-and-policy-network-policy">
         <title>Network policy</title>
         <para>
           Queue servers should only accept connections from the
@@ -223,7 +223,7 @@ qpid_password=<replaceable>QPID_PASS</replaceable></programlisting>
           the AMQP concept of control exchanges.
         </para>
       </section>
-      <section xml:id="messaging-security-idp74736">
+      <section xml:id="messaging-security-message-queue-process-isolation-and-policy-mandatory-access-controls">
         <title>Mandatory access controls</title>
         <para>
           Use both mandatory access controls (MACs) and discretionary

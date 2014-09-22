@@ -6,7 +6,7 @@
   xml:id="api-endpoint-configuration-recommendations">
   <?dbhtml stop-chunking?>
     <title>API endpoint configuration recommendations</title>
-    <section xml:id="api-endpoint-configuration-recommendations-idp38176">
+    <section xml:id="api-endpoint-configuration-recommendations-internal-api-communications">
       <title>Internal API communications</title>
       <para>
         OpenStack provides both public facing and private API
@@ -20,7 +20,7 @@
         obey the listed public or internal API end point
         values. This can lead to internal management traffic being
         routed to external API endpoints.</para>
-      <section xml:id="api-endpoint-configuration-recommendations-idp40496">
+      <section xml:id="api-endpoint-configuration-recommendations-internal-api-communications-configure-internal-urls-in-identity-service-catalog">
         <title>Configure internal URLs in Identity service catalog</title>
         <para>
           The Identity service catalog should be aware of your
@@ -37,7 +37,7 @@
  --internalurl='https://management-ip:8776/v1/%(tenant_id)s' \
  --adminurl='https://management-ip:8776/v1/%(tenant_id)s'</userinput></screen>
       </section>
-      <section xml:id="api-endpoint-configuration-recommendations-idp43360">
+      <section xml:id="api-endpoint-configuration-recommendations-internal-api-communications-configure-applications-for-internal-urls">
         <title>Configure applications for internal URLs</title>
         <para>
           You can force some services to use specific API
@@ -50,7 +50,7 @@
           target API endpoints. Future releases of OpenStack seek to
           resolve these inconsistencies through consistent use of the
           Identity Service catalog.</para>
-        <section xml:id="api-endpoint-configuration-recommendations-idp45520">
+        <section xml:id="api-endpoint-configuration-recommendations-internal-api-communications-configure-applications-for-internal-urls-configuration-example-1">
           <title>Configuration example #1: nova</title>
           <programlisting language="ini">[DEFAULT]
 cinder_catalog_info='volume:cinder:internalURL'
@@ -60,14 +60,14 @@ neutron_admin_auth_url='https://neutron-host:9696'
 s3_host='s3-host'
 s3_use_ssl=True</programlisting>
         </section>
-        <section xml:id="api-endpoint-configuration-recommendations-idp47184">
+        <section xml:id="api-endpoint-configuration-recommendations-internal-api-communications-configure-applications-for-internal-urls-configuration-example-2">
           <title>Configuration example #2: cinder</title>
           <programlisting language="ini">glance_host='https://glance-server'</programlisting>
         </section>
       </section>
     </section>
-    <section xml:id="api-endpoint-configuration-recommendations-idp48768">
-      <title>Paste and middleware</title>
+    <section xml:id="api-endpoint-configuration-recommendations-paste-and-middleware">
+          <title>Paste and middleware</title>
       <para>
         Most API endpoints and other HTTP services in OpenStack use
         the Python Paste Deploy library. From a security perspective,
@@ -87,7 +87,7 @@ s3_use_ssl=True</programlisting>
         <link xlink:href="http://pythonpaste.org/deploy/">http://pythonpaste.org/deploy/</link>.
       </para>
     </section>
-    <section xml:id="api-endpoint-configuration-recommendations-idp52496">
+    <section xml:id="api-endpoint-configuration-recommendations-api-endpoint-process-isolation-and-policy">
       <title>API endpoint process isolation and policy</title>
       <para>
         As much as possible, you should isolate API endpoint
@@ -95,7 +95,7 @@ s3_use_ssl=True</programlisting>
         security domain should be isolated as much as possible. Where
         deployments allow, API endpoints should be deployed on
         separate hosts for increased isolation.</para>
-      <section xml:id="api-endpoint-configuration-recommendations-idp53840">
+      <section xml:id="api-endpoint-configuration-recommendations-api-endpoint-process-isolation-and-policy-namespaces">
         <title>Namespaces</title>
         <para>
           Many operating systems now provide compartmentalization
@@ -103,14 +103,14 @@ s3_use_ssl=True</programlisting>
           independent domains. Other parts of this guide cover system
           compartmentalization in more detail.</para>
       </section>
-      <section xml:id="api-endpoint-configuration-recommendations-idp55232">
+      <section xml:id="api-endpoint-configuration-recommendations-api-endpoint-process-isolation-and-policy-network-policy">
         <title>Network policy</title>
         <para>
           Because API endpoints typically bridge multiple security
           domains, you must pay particular attention to the
           compartmentalization of the API processes. See <xref
-          linkend="security-boundaries-and-threats-idp61360"/> for additional
-          information in this area.</para>
+          linkend="security-boundaries-and-threats-bridging-security-domains"/>
+          for additional information in this area.</para>
         <para>
           With careful modeling, you can use network ACLs and IDS
           technologies to enforce explicit point to point
@@ -122,7 +122,7 @@ s3_use_ssl=True</programlisting>
           firewalls (such as iptables), local policy (SELinux or
           AppArmor), and optionally global network policy.</para>
       </section>
-      <section xml:id="api-endpoint-configuration-recommendations-idp58704">
+      <section xml:id="api-endpoint-configuration-recommendations-api-endpoint-process-isolation-and-policy-mandatory-access-controls">
         <title>Mandatory access controls</title>
         <para>
           You should isolate API endpoint processes from each other

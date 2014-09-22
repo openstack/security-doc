@@ -50,9 +50,9 @@
         OpenStack Networking services and other OpenStack core
         services, configure these communication channels to only allow
         communication over an isolated management network.</para>
-    <section xml:id="securing-openstack-networking-services-idp55312">
+    <section xml:id="securing-openstack-networking-services-openstack-networking-service-configuration">
       <title>OpenStack Networking service configuration</title>
-      <section xml:id="securing-openstack-networking-services-idp56016">
+      <section xml:id="securing-openstack-networking-services-openstack-networking-service-configuration-restrict-bind-address-of-the-api-server-neutron-server">
         <title>Restrict bind address of the API server: neutron-server</title>
         <para>
           To restrict the interface or IP address on which the
@@ -66,7 +66,7 @@ bind_host = <replaceable>IP ADDRESS OF SERVER</replaceable>
 # Port the bind the API server to
 bind_port = 9696</programlisting>
       </section>
-      <section xml:id="securing-openstack-networking-services-idp58320">
+      <section xml:id="securing-openstack-networking-services-openstack-networking-service-configuration-restrict-db-and-rpc-communication-of-the-openstack">
         <title>Restrict DB and RPC communication of the OpenStack
         Networking services</title>
         <para>

@@ -8,7 +8,7 @@
   <title>Introduction to case studies</title>
   <para>This guide refers to two running case studies, which are
     introduced here and referred to at the end of each chapter.</para>
-  <section xml:id="introduction-to-case-studies-idp44496">
+  <section xml:id="introduction-to-case-studies-case-study-alice-the-private-cloud-builder">
     <title>Case study: Alice, the private cloud builder</title>
     <para>Alice deploys a private cloud for use by a government
       department in the US. The cloud must comply with relevant
@@ -21,7 +21,7 @@
       the organization's intranet such as the authentication and
       logging services.</para>
   </section>
-  <section xml:id="introduction-to-case-studies-idp46720">
+  <section xml:id="introduction-to-case-studies-case-study-bob-the-public-cloud-provider">
     <title>Case study: Bob, the public cloud provider</title>
     <para>Bob is a lead architect for a company that deploys a large
       greenfield public cloud. This cloud provides IaaS for the masses

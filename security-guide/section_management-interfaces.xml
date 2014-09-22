@@ -29,7 +29,7 @@
         <para>Out-of-band management interfaces, such as IPMI</para>
       </listitem>
     </itemizedlist>
-    <section xml:id="management-interfaces-idp49280">
+    <section xml:id="management-interfaces-dashboard">
       <title>Dashboard</title>
       <para>
         The OpenStack dashboard (horizon) provides administrators and
@@ -37,7 +37,7 @@
         access cloud-based resources. The dashboard communicates with
         the back-end services through calls to the OpenStack API.
       </para>
-      <section xml:id="management-interfaces-idp50608">
+      <section xml:id="management-interfaces-dashboard-capabilities">
         <title>Capabilities</title>
         <itemizedlist><listitem>
             <para>As a cloud administrator, the dashboard provides an overall view of the size and state of your cloud. You can create users and tenants/projects, assign users to tenant/projects and set limits on the resources available for them.</para>
@@ -56,7 +56,7 @@
           </listitem>
 </itemizedlist>
       </section>
-      <section xml:id="management-interfaces-idp56400">
+      <section xml:id="management-interfaces-dashboard-security-considerations">
         <title>Security considerations</title>
         <itemizedlist><listitem>
             <para>The dashboard requires cookies and JavaScript to be enabled in the web browser.</para>
@@ -89,12 +89,12 @@
           </listitem>
         </itemizedlist>
       </section>
-      <section xml:id="management-interfaces-idp62384">
+      <section xml:id="management-interfaces-dashboard-references">
         <title>References</title>
         <para><link xlink:href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse"><citetitle>Icehouse Release Notes</citetitle></link></para>
       </section>
     </section>
-    <section xml:id="management-interfaces-idp63760">
+    <section xml:id="management-interfaces-openstack-api">
       <title>OpenStack API</title>
       <para>The OpenStack API is a RESTful web service endpoint to
       access, provision and automate cloud-based resources. Operators
@@ -102,7 +102,7 @@
       utilities (for example, <command>nova</command> or
       <command>glance</command>), language-specific libraries, or
       third-party tools.</para>
-      <section xml:id="management-interfaces-idp65328">
+      <section xml:id="management-interfaces-openstack-api-capabilities">
         <title>Capabilities</title>
         <itemizedlist><listitem>
             <para>To the cloud administrator, the API provides an
@@ -116,7 +116,7 @@
           </listitem>
 </itemizedlist>
       </section>
-      <section xml:id="management-interfaces-idp68272">
+      <section xml:id="management-interfaces-openstack-api-security-considerations">
         <title>Security considerations</title>
         <itemizedlist><listitem>
             <para>The API service should be configured for SSL to ensure data is encrypted.</para>
@@ -127,10 +127,10 @@
 </itemizedlist>
       </section>
     </section>
-    <section xml:id="management-interfaces-idp71184">
+    <section xml:id="management-interfaces-secure-shell-ssh">
       <title>Secure shell (SSH)</title>
       <para>It has become industry practice to use secure shell (SSH) access for the management of Linux and Unix systems. SSH uses secure cryptographic primitives for communication. With the scope and importance of SSH in typical OpenStack deployments, it is important to understand best practices for deploying SSH.</para>
-      <section xml:id="management-interfaces-idp72528">
+      <section xml:id="management-interfaces-secure-shell-ssh-host-key-fingerprints">
         <title>Host key fingerprints</title>
         <para>Often overlooked is the need for key management for SSH hosts. As most or all hosts in an OpenStack deployment will provide an SSH service, it is important to have confidence in connections to these hosts. It cannot be understated that failing to provide a reasonably secure and accessible method to verify SSH host key fingerprints is ripe for abuse and exploitation.</para>
         <para>All SSH daemons have private host keys and, upon connection, offer a host key fingerprint. This host key fingerprint is the hash of an unsigned public key. It is important these host key fingerprints are known in advance of making SSH connections to those hosts. Verification of host key fingerprints is instrumental in detecting man-in-the-middle attacks.</para>
@@ -138,7 +138,7 @@
         <para>Once the SSH host key is generated, the host key fingerprint should be stored in a secure and queryable location. One particularly convenient solution is DNS using SSHFP resource records as defined in RFC-4255. For this to be secure, it is necessary that DNSSEC be deployed.</para>
       </section>
     </section>
-    <section xml:id="management-interfaces-idp76272">
+    <section xml:id="management-interfaces-management-utilities">
       <title>Management utilities</title>
       <para>The OpenStack Management Utilities are open-source Python
       command-line clients that make API calls. There is a client for
@@ -149,7 +149,7 @@
       command-line utility which makes direct calls to the database. These
       dedicated management utilities are slowly being
       deprecated.</para>
-      <section xml:id="management-interfaces-idp77728">
+      <section xml:id="management-interfaces-management-utilities-security-considerations">
         <title>Security considerations</title>
         <itemizedlist><listitem>
             <para>The dedicated management utilities (*-manage) in some cases use the direct database connection.</para>
@@ -159,13 +159,13 @@
           </listitem>
 </itemizedlist>
       </section>
-      <section xml:id="management-interfaces-idp80496">
+      <section xml:id="management-interfaces-management-utilities-references">
         <title>References</title>
         <para><citetitle>OpenStack End User Guide</citetitle> section <link xlink:href="http://docs.openstack.org/user-guide/content/section_cli_overview.html">command-line clients overview</link></para>
         <para><citetitle>OpenStack End User Guide</citetitle> section <link xlink:href="http://docs.openstack.org/user-guide/content/cli_openrc.html">Download and source the OpenStack RC file</link></para>
       </section>
     </section>
-    <section xml:id="management-interfaces-idp82336">
+    <section xml:id="management-interfaces-out-of-band-management-interface">
       <title>Out-of-band management interface</title>
       <para>OpenStack management relies on out-of-band management
       interfaces such as the IPMI protocol to access into nodes
@@ -173,7 +173,7 @@
       specification to remotely manage, diagnose, and reboot servers
       whether the operating system is running or the system has
       crashed.</para>
-      <section xml:id="management-interfaces-idp83712">
+      <section xml:id="management-interfaces-out-of-band-management-interface-security-consideration">
         <title>Security considerations</title>
         <itemizedlist><listitem>
             <para>Use strong passwords and safeguard them, or use client-side SSL authentication.</para>
@@ -198,7 +198,7 @@
 </itemizedlist>
         <para>Out of band management interfaces also often include graphical machine console access. It is often possible, although not necessarily default, that these interfaces are encrypted. Consult with your system software documentation for encrypting these interfaces.</para>
       </section>
-      <section xml:id="management-interfaces-idp89920">
+      <section xml:id="management-interfaces-out-of-band-management-interface-references">
         <title>References</title>
         <para><link xlink:href="https://isc.sans.edu/diary/IPMI%3A+Hacking+servers+that+are+turned+%22off%22/13399">Hacking servers that are turned off</link></para>
       </section>

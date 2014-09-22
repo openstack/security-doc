@@ -32,7 +32,7 @@
           monitoring practice.</para>
       </listitem>
 </orderedlist>
-    <section xml:id="understanding-the-audit-process-idp48608">
+    <section xml:id="understanding-the-audit-process-determining-audit-scope">
       <title>Determining audit scope</title>
       <para>Determining audit scope, specifically what controls are needed and how to design or modify an OpenStack deployment to satisfy them, should be the initial planning step.</para>
       <para>When scoping OpenStack deployments for compliance purposes, consider prioritizing controls around sensitive services, such as command and control functions and the base virtualization technology. Compromises of these facilities may impact an OpenStack environment in its entirety.</para>
@@ -42,12 +42,12 @@
       <para>The <link xlink:href="https://fedorahosted.org/scap-security-guide/">SCAP Security Guide</link> is another useful reference. This is still an emerging source, but we anticipate that this will grow into a tool with controls mappings that are more focused on the US federal government certifications and recommendations. For example, the SCAP Security Guide currently has some mappings for security technical implementation guides (STIGs) and NIST-800-53.</para>
       <para>These control mappings will help identify common control criteria across certifications, and provide visibility to both auditors and auditees on problem areas within control sets for particular compliance certifications and attestations.</para>
     </section>
-    <section xml:id="understanding-the-audit-process-idp55568">
+    <section xml:id="understanding-the-audit-process-internal-audit">
       <title>Internal audit</title>
       <para>Once a cloud is deployed, it is time for an internal audit. This is the time compare the controls you identified above with the design, features, and deployment strategies utilized in your cloud. The goal is to understand how each control is handled and where gaps exist. Document all of the findings for future reference.</para>
       <para>When auditing an OpenStack cloud it is important to appreciate the multi-tenant environment inherent in the OpenStack architecture. Some critical areas for concern include data disposal, hypervisor security, node hardening, and authentication mechanisms.</para>
     </section>
-    <section xml:id="understanding-the-audit-process-idp57712">
+    <section xml:id="understanding-the-audit-process-prepare-for-external-audit">
       <title>Prepare for external audit</title>
       <para>Once the internal audit results look good, it is time to prepare for an external audit. There are several key actions to take at this stage, these are outlined below:</para>
       <itemizedlist><listitem>
@@ -62,11 +62,11 @@
 </itemizedlist>
       <para>Selecting an auditor can be challenging. Ideally, you are looking for someone with experience in cloud compliance audits. OpenStack experience is another big plus. Often it is best to consult with people who have been through this process for referrals. Cost can vary greatly depending on the scope of the engagement and the audit firm considered.</para>
     </section>
-    <section xml:id="understanding-the-audit-process-idp62672">
+    <section xml:id="understanding-the-audit-process-external-audit">
       <title>External audit</title>
       <para>This is the formal audit process. Auditors will test security controls in scope for a specific certification, and demand evidentiary requirements to prove that these controls were also in place for the audit window (for example SOC 2 audits generally evaluate security controls over a 6-12 months period). Any control failures are logged, and will be documented in the external auditors final report. Dependent on the type of OpenStack deployment, these reports may be viewed by customers, so it is important to avoid control failures. This is why audit preparation is so important.</para>
     </section>
-    <section xml:id="understanding-the-audit-process-idp65008">
+    <section xml:id="understanding-the-audit-process-compliance-maintenance">
       <title>Compliance maintenance</title>
       <para>The process doesn't end with a single external audit. Most certifications require continual compliance activities which means repeating the audit process periodically. We recommend integrating automated compliance verification tools into a cloud to ensure that it is compliant at all times. This should be in done in addition to other security monitoring tools. Remember that the goal is both security <emphasis>and</emphasis> compliance. Failing on either of these fronts will significantly complicate future audits.</para>
     </section>

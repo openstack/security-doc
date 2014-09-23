@@ -119,8 +119,8 @@
     <!-- First thing to secure - The Network -->
     <section xml:id="object-storage-securing-services-general">
         <title>Securing services: general</title>
-        <section xml:id="object-storage-securing-services-general-service-runas-user">
-            <title>Service runas user</title>
+        <section xml:id="object-storage-securing-services-general-run-service-as-nonroot-user">
+            <title>Run services as non-root user</title>
             <para>It is recommended that you configure each Object Storage service
 
                 to run under a non-root (UID 0) service account. One
@@ -211,7 +211,8 @@
                             are associated with the account and how
                             they may access it depends on the
                             authentication system used. See
-                            authentication systems later.</td>
+                            <xref linkend="object-storage-object-storage-authentication"
+                            />.</td>
                     </tr>
                     <tr>
                         <td>OpenStack Object Storage containers</td>
@@ -233,9 +234,9 @@
                 <para>
                     <?dbhtml bgcolor="#DDFADE" ?><?dbfo bgcolor="#DDFADE" ?>
                     Another way of thinking about the above would be:
-                    A single shelf (account) holds zero or more ->
+                    A single shelf (account) holds zero or more
                     buckets (containers) which each hold zero or more
-                    -> objects. A garage (Object Storage cluster) may have
+                    objects. A garage (Object Storage cluster) may have
                     multiple shelves (accounts) with each shelf
                     belonging to zero or more users.</para>
             </tip>
@@ -244,8 +245,9 @@
                 what authentication system is in use. The two most
                 common types of authentication providers used are
                 Identity service (keystone) and TempAuth. Custom authentication providers
-                are also possible. Please see the Object Storage
-                Authentication section for more information.</para>
+                are also possible. Please see
+                <xref linkend="object-storage-object-storage-authentication"/>
+                for more information.</para>
         </section>
     </section>
     <!-- Securing Storage Services -->
@@ -348,7 +350,7 @@ Group swift</programlisting>
     </section>
     <!-- Securing Proxy Services -->
     <section xml:id="object-storage-object-storage-authentication">
-        <title>Object storage authentication</title>
+        <title>Object Storage authentication</title>
         <para>Object Storage uses a WSGI model to provide for a middleware
             capability that not only provides general extensibility but
             is also used for authentication of end-point clients. The

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-18 06:07+0000\n"
+"POT-Creation-Date: 2014-09-23 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -810,7 +810,7 @@ msgid "A hardware infection occurs when an instance makes a malicious modificati
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:69(para)
-msgid "Solutions to the hardware infection problem are domain specific. The strategy is to identify how an instance can modify hardware state then determine how to reset any modifications when the instance is done using the hardware. For example, one option could be to re-flash the firmware after use. Clearly there is a need to balance hardware longevity with security as some firmwares will fail after a large number of writes. TPM technology, described in <xref linkend=\"integrity-life-cycle-idp44768\"/>, provides a solution for detecting unauthorized firmware changes. Regardless of the strategy selected, it is important to understand the risks associated with this kind of hardware sharing so that they can be properly mitigated for a given deployment scenario."
+msgid "Solutions to the hardware infection problem are domain specific. The strategy is to identify how an instance can modify hardware state then determine how to reset any modifications when the instance is done using the hardware. For example, one option could be to re-flash the firmware after use. Clearly there is a need to balance hardware longevity with security as some firmwares will fail after a large number of writes. TPM technology, described in <xref linkend=\"integrity-life-cycle-secure-bootstrapping\"/>, provides a solution for detecting unauthorized firmware changes. Regardless of the strategy selected, it is important to understand the risks associated with this kind of hardware sharing so that they can be properly mitigated for a given deployment scenario."
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:85(para)
@@ -922,7 +922,7 @@ msgid "Mandatory access controls"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:245(para)
-msgid "Compiler hardening makes it more difficult to attack the QEMU process. However, if an attacker does succeed, we would like to limit the impact of the attack. Mandatory access controls accomplish this by restricting the privileges on QEMU process to only what is needed. This can be accomplished using sVirt / SELinux or AppArmor. When using sVirt, SELinux is configured to run each QEMU process under a separate security context. AppArmor can be configured to provide similar functionality. We provide more details on sVirt and instance isolation in the <link linkend=\"hardening-the-virtualization-layers-idp510512\">section below</link>."
+msgid "Compiler hardening makes it more difficult to attack the QEMU process. However, if an attacker does succeed, we would like to limit the impact of the attack. Mandatory access controls accomplish this by restricting the privileges on QEMU process to only what is needed. This can be accomplished using sVirt / SELinux or AppArmor. When using sVirt, SELinux is configured to run each QEMU process under a separate security context. AppArmor can be configured to provide similar functionality. We provide more details on sVirt and instance isolation in the <link linkend=\"hardening-the-virtualization-layers-svirt-selinux-and-virtualization\"> section below</link>."
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:261(title)
@@ -1382,7 +1382,7 @@ msgid "Network policy"
 msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml:108(para)
-msgid "Because API endpoints typically bridge multiple security domains, you must pay particular attention to the compartmentalization of the API processes. See <xref linkend=\"security-boundaries-and-threats-idp61360\"/> for additional information in this area."
+msgid "Because API endpoints typically bridge multiple security domains, you must pay particular attention to the compartmentalization of the API processes. See <xref linkend=\"security-boundaries-and-threats-bridging-security-domains\"/> for additional information in this area."
 msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml:114(para)
@@ -4130,7 +4130,7 @@ msgid "The management security domain is where services interact. Sometimes refe
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:80(para)
-msgid "In most deployments this domain is considered <emphasis>trusted</emphasis>. However, when considering an OpenStack deployment, there are many systems that bridge this domain with others, potentially reducing the level of trust you can place on this domain. See <xref linkend=\"security-boundaries-and-threats-idp61360\"/> for more information."
+msgid "In most deployments this domain is considered <emphasis>trusted</emphasis>. However, when considering an OpenStack deployment, there are many systems that bridge this domain with others, potentially reducing the level of trust you can place on this domain. See <xref linkend=\"security-boundaries-and-threats-bridging-security-domains\"/> for more information."
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:87(para)
@@ -5150,7 +5150,7 @@ msgid "A bare metal server driver for Compute was under development and has sinc
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:155(para)
-msgid "Additionally, it is possible for tenants of a bare metal system to modify system firmware. TPM technology, described in <xref linkend=\"integrity-life-cycle-idp44768\"/>, provides a solution for detecting unauthorized firmware changes."
+msgid "Additionally, it is possible for tenants of a bare metal system to modify system firmware. TPM technology, described in <xref linkend=\"integrity-life-cycle-secure-bootstrapping\"/>, provides a solution for detecting unauthorized firmware changes."
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:8(title)
@@ -6014,7 +6014,7 @@ msgid "Migration network"
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:225(para)
-msgid "As a general practice, live migration traffic should be restricted to the management security domain, see <xref linkend=\"security-boundaries-and-threats-idp55632\"/>. With live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure."
+msgid "As a general practice, live migration traffic should be restricted to the management security domain, see <xref linkend=\"security-boundaries-and-threats-security-domains-management\"/>. With live migration traffic, due to its plain text nature and the fact that you are transferring the contents of disk and memory of a running instance, it is recommended you further separate live migration traffic onto a dedicated network. Isolating the traffic to a dedicated network can reduce the risk of exposure."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:229(para)

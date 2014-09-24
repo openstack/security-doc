@@ -8,7 +8,7 @@ restrictions. This behaviour is triggered when a protocol other than
 'udp' or 'tcp' is specified, e.g. 'any'.
 
 The scope of this bug is limited to Neutron FWaaS and systems built upon
-it. Security Groups are not effected.
+it. Security Groups are not affected.
 
 ### Affected Services / Software ###
 Neutron FWaaS, Grizzly, Havana, Icehouse

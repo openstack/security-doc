@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-23 06:01+0000\n"
+"POT-Creation-Date: 2014-09-24 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1778,7 +1778,7 @@ msgid "Securing services: general"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:123(title)
-msgid "Service runas user"
+msgid "Run services as non-root user"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:124(para)
@@ -1862,130 +1862,130 @@ msgid "OpenStack Object Storage account"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:209(td)
-msgid "Collection of containers; not user accounts or authentication. Which users are associated with the account and how they may access it depends on the authentication system used. See authentication systems later."
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:217(td)
-msgid "OpenStack Object Storage containers"
+msgid "Collection of containers; not user accounts or authentication. Which users are associated with the account and how they may access it depends on the authentication system used. See <xref linkend=\"object-storage-object-storage-authentication\"/>."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:218(td)
+msgid "OpenStack Object Storage containers"
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:219(td)
 msgid "Collection of objects. Metadata on the container is available for ACLs. The meaning of ACLs is dependent on the authentication system used."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:224(td)
+#: ./security-guide/ch_object-storage.xml:225(td)
 msgid "OpenStack Object Storage objects"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:225(td)
+#: ./security-guide/ch_object-storage.xml:226(td)
 msgid "The actual data objects. ACLs at the object level are also possible with metadata and are dependent on the authentication system used."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:233(para)
-msgid "<?dbhtml bgcolor=\"#DDFADE\" ?><?dbfo bgcolor=\"#DDFADE\" ?> Another way of thinking about the above would be: A single shelf (account) holds zero or more -&gt; buckets (containers) which each hold zero or more -&gt; objects. A garage (Object Storage cluster) may have multiple shelves (accounts) with each shelf belonging to zero or more users."
+#: ./security-guide/ch_object-storage.xml:234(para)
+msgid "<?dbhtml bgcolor=\"#DDFADE\" ?><?dbfo bgcolor=\"#DDFADE\" ?> Another way of thinking about the above would be: A single shelf (account) holds zero or more buckets (containers) which each hold zero or more objects. A garage (Object Storage cluster) may have multiple shelves (accounts) with each shelf belonging to zero or more users."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:242(para)
-msgid "At each level you may have ACLs that dictate who has what type of access. ACLs are interpreted based on what authentication system is in use. The two most common types of authentication providers used are Identity service (keystone) and TempAuth. Custom authentication providers are also possible. Please see the Object Storage Authentication section for more information."
+#: ./security-guide/ch_object-storage.xml:243(para)
+msgid "At each level you may have ACLs that dictate who has what type of access. ACLs are interpreted based on what authentication system is in use. The two most common types of authentication providers used are Identity service (keystone) and TempAuth. Custom authentication providers are also possible. Please see <xref linkend=\"object-storage-object-storage-authentication\"/> for more information."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:253(title)
+#: ./security-guide/ch_object-storage.xml:255(title)
 msgid "Securing proxy services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:254(para)
+#: ./security-guide/ch_object-storage.xml:256(para)
 msgid "A proxy node should have at least two interfaces (physical or virtual): one public and one private. Firewalls or service binding might protect the public interface. The public facing service is an HTTP web server that processes end-point client requests, authenticates them, and performs the appropriate action. The private interface does not require any listening services but is instead used to establish outgoing connections to storage nodes on the private storage network."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:265(title)
+#: ./security-guide/ch_object-storage.xml:267(title)
 msgid "Use SSL/TLS"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:266(para)
+#: ./security-guide/ch_object-storage.xml:268(para)
 msgid "The built-in or included web server that comes with OpenStack Object Storage supports SSL, but it does not support transmission of the entire SSL certificate chain. This causes issues when you use a third party trusted and signed certificate, such as Verisign, for your cloud. The current work around is to not use the built-in web server but an alternative web server instead that supports sending both the public server certificate as well as the CA signing authorities intermediate certificate(s). This allows for end-point clients that have the CA root certificate in their trust store to be able to successfully validate your cloud environment's SSL certificate and chain. An example of how to do this with mod_wsgi and Apache is given below. Also consult the <link href=\"http://docs.openstack.org/developer/swift/apache_deployment_guide.html\">Apache Deployment Guide</link>"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:284(para)
+#: ./security-guide/ch_object-storage.xml:286(para)
 msgid "Modify file <filename>/etc/apache2/envvars</filename> with"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:289(para)
+#: ./security-guide/ch_object-storage.xml:291(para)
 msgid "An alternative is to modify your Apache conf file with"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:293(para)
+#: ./security-guide/ch_object-storage.xml:295(para)
 msgid "Create a <filename>swift</filename> directory in your Apache document root:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:296(para)
+#: ./security-guide/ch_object-storage.xml:298(para)
 msgid "Create the file <filename>$YOUR_APACHE_DOC_ROOT/swift/proxy-server.wsgi</filename>:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:302(title)
+#: ./security-guide/ch_object-storage.xml:304(title)
 msgid "HTTP listening port"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:303(para)
+#: ./security-guide/ch_object-storage.xml:305(para)
 msgid "You should configure your web service as a non-root (no UID 0) user such as \"swift\" mentioned before. The use of a port greater than 1024 is required to make this easy and avoid running any part of the web container as root. Doing so is not a burden as end-point clients are not typically going to type in the URL manually into a web browser to browse around in the object storage. Additionally, for clients using the HTTP REST API and performing authentication they will normally automatically grab the full REST API URL they are to use as provided by the authentication response. OpenStack's REST API allows for a client to authenticate to one URL and then be told to use a completely different URL for the actual service. Example: Client authenticates to <uri>https://identity.cloud.example.org:55443/v1/auth</uri> and gets a response with their authentication key and Storage URL (the URL of the proxy nodes or load balancer) of <uri>https://swift.cloud.example.org:44443/v1/AUTH_8980</uri>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:323(para)
+#: ./security-guide/ch_object-storage.xml:325(para)
 msgid "The method for configuring your web server to start and run as a non-root user varies by web server and OS."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:328(title)
+#: ./security-guide/ch_object-storage.xml:330(title)
 msgid "Load balancer"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:329(para)
+#: ./security-guide/ch_object-storage.xml:331(para)
 msgid "If the option of using Apache is not feasible or for performance you wish to offload your SSL work you may employ a dedicated network device load balancer. This is also the common way to provide redundancy and load balancing when using multiple proxy nodes."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:334(para)
+#: ./security-guide/ch_object-storage.xml:336(para)
 msgid "If you choose to offload your SSL ensure that the network link between the load balancer and your proxy nodes is on a private (V)LAN segment such that other nodes on the network (possibly compromised) cannot wiretap (sniff) the unencrypted traffic. If such a breach were to occur the attacker could gain access to end-point client or cloud administrator credentials and access the cloud data."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:342(para)
+#: ./security-guide/ch_object-storage.xml:344(para)
 msgid "The authentication service you use, such as Identity service (keystone) or TempAuth, will determine how you configure a different URL in the responses to end-clients so they use your load balancer instead of an individual proxy node."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:351(title)
-msgid "Object storage authentication"
+#: ./security-guide/ch_object-storage.xml:353(title)
+msgid "Object Storage authentication"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:352(para)
+#: ./security-guide/ch_object-storage.xml:354(para)
 msgid "Object Storage uses a WSGI model to provide for a middleware capability that not only provides general extensibility but is also used for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 SSL certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:360(para)
+#: ./security-guide/ch_object-storage.xml:362(para)
 msgid "Object Storage comes with two authentication middleware modules by default, either of which can be used as sample code for developing a custom authentication middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:364(title)
+#: ./security-guide/ch_object-storage.xml:366(title)
 msgid "TempAuth"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:365(para)
+#: ./security-guide/ch_object-storage.xml:367(para)
 msgid "TempAuth is the default authentication for Object Storage. In contrast to Identity it stores the user accounts, credentials, and metadata in object storage itself. More information can be found in the section <link href=\"http://docs.openstack.org/developer/swift/overview_auth.html\">The Auth System</link> of the Object Storage (swift) documentation."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:373(title)
+#: ./security-guide/ch_object-storage.xml:375(title)
 msgid "Keystone"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:374(para)
+#: ./security-guide/ch_object-storage.xml:376(para)
 msgid "Keystone is the commonly used Identity provider in OpenStack. It may also be used for authentication in Object Storage. Coverage of securing keystone is already provided in <xref linkend=\"identity\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:383(title)
+#: ./security-guide/ch_object-storage.xml:385(title)
 msgid "Other notable items"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:384(para)
+#: ./security-guide/ch_object-storage.xml:386(para)
 msgid "In <filename>/etc/swift/swift.conf</filename> on every node there is a <option>swift_hash_path_prefix</option> setting and a <option>swift_hash_path_suffix</option> setting. These are provided to reduce the chance of hash collisions for objects being stored and avert one user overwriting the data of another user."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:391(para)
+#: ./security-guide/ch_object-storage.xml:393(para)
 msgid "This value should be initially set with a cryptographically secure random number generator and consistent across all nodes. Ensure that it is protected with proper ACLs and that you have a backup copy to avoid data loss."
 msgstr ""
 

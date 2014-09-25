@@ -1,0 +1,78 @@
+Sensitive data is exposed in log statements by python-keystoneclient
+---
+
+### Summary ###
+Python-keystoneclient is a client tool for the OpenStack Identity API,
+which is implemented by the Keystone project. Various OpenStack services
+including the OpenStack Dashboard depend on python-keystoneclient to
+consume the OpenStack Identity API service. A particular log level
+setting in python-keystoneclient can lead to exposure of user sensitive
+data (e.g., passwords or tokens) in log statements.
+
+### Affected Services / Software ###
+Python-keystoneclient=<0.10.0
+
+### Discussion ###
+Python-keystoneclient provides an interface for making Identity API
+requests to the OpenStack Identity Service, Keystone.
+Python-keystoneclient handles user sensitive data such as user passwords
+and tokens when sending requests or receiving responses from a Keystone
+server. Like all OpenStack projects, python-keystoneclient uses a python
+logger to log request/response activities. When python-keystoneclient
+runs with the DEBUG log level enabled, sensitive data such as user
+passwords and tokens associated with requests/responses will be exposed
+in log statements. For example:
+
+---- begin example ----
+$ keystone --debug user-list
+DEBUG:keystoneclient.session:REQ: curl -i -X POST
+    http://10.0.0.15:5000/v2.0/tokens -H "Content-Type:application/json"
+    -H "User-Agent: python-keystoneclient"
+DEBUG:keystoneclient.session:REQ BODY: {"auth": {"tenantName": "admin",
+    "passwordCredentials": {"username": "admin", "password": "stack"
+    }}}
+---- end example ----
+
+This sensitive data can potentially be exploited by an attacker with
+access to the log statements.
+
+Python-keystoneclient is used by Horizon and other Identity consuming
+services to authenticate a user against the Identity API service,
+Keystone. A user providing password or token for authentication to these
+services could result in the capture of this sensitive data in the
+respective services log statements.
+
+### Recommended Actions ###
+Version 0.10.1 of python-keystoneclient has addressed this issue by not
+exposing user password and token information in log statements. Any
+service using version 0.10.1 or later of python-keystoneclient is not
+affected by this issue. Other services using old versions, should
+upgrade to a fixed version of python-keystoneclient.
+
+For a fresh installation of a service which depends on
+pythone-keystoneclient, make sure it uses at least version 0.10.1 of
+python-keystoneclient. One way to do this is to set a specific version
+in the requirments.txt file. For example, in Horizon, update
+horizon/requirements.txt file:
+
+---- begin example ----
+python-keystoneclient>=0.10.1
+---- end example ----
+
+For existing installations, upgrade python-keystoneclient to the
+latest version. For example, python package manager (PIP) can be used
+to upgrade the existing installations.
+
+---- begin example ----
+$ pip install python-keystoneclient --upgrade
+---- end example ----
+
+An alternate approach is to never run a production system with the log
+level in DEBUG mode.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0024
+Original Launchpad Bug: https://bugs.launchpad.net/python-keystoneclient/+bug/1004114
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1004114
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -1,0 +1,63 @@
+Nova leaks compute host SMBIOS serial number to guests
+---
+
+### Summary ###
+When Nova is using the libvirt virtualization driver, the SMBIOS
+serial number supplied by libvirt is provided to the guest instances
+that are running on a compute node. This serial number may expose
+sensitive information about the underlying compute node hardware.
+
+### Affected Services / Software ###
+Nova, Icehouse, Havana
+
+### Discussion ###
+The 'serial' field in guest SMBIOS tables gets populated based on the
+libvirt reported UUID of the host hardware. The rationale is to allow
+correlation of guests running on the same host.
+
+Unfortunately some hardware vendors use a subset of the host UUID as a
+key for retrieving hardware support contract information without
+requiring any authentication. In these cases, exposing the host UUID to
+the guest is an information leak for those vendors.
+
+The exposed host UUID could theoretically be leveraged by a cloud user
+to get an approximate count of the number of unique hosts available to
+them in the cloud by launching many short lived VMs.
+
+### Recommended Actions ###
+It is possible to override the use of the compute node's SMBIOS data by
+libvirt in /etc/libvirt/libvirtd.conf by setting the 'host_uuid'
+parameter. This allows setting an arbitrary UUID for identification
+purposes that doesn't leak any information about the real underlying
+hardware.  It is advised to make use of this override ability to prevent
+potential exposure of information about the underlying compute node
+hardware.
+
+In the Juno release of OpenStack, Nova's libvirt driver allows the
+source of the host UUID to be controlled via a new 'sysinfo_serial'
+config parameter. This new parameter allows the following values:
+
+  - 'auto' - try /etc/machine-id, fallback to libvirt reported
+             host UUID (new default)
+  - 'hardware' - always use libvirt host UUID (old default)
+  - 'os' - always use /etc/machine-id, error if missing
+  - 'none' - do not report any value to the guest
+
+In general, it is preferrable to use the /etc/machine-id UUID instead
+of the host hardware UUID. The former is a recent standard for Linux
+distros introduced by systemd to provide a UUID that is unique per
+operating system install. This means that even containers will see a
+separate /etc/machine-id value. This /etc/machine-id can be expected to
+be widely available in current and future distros. If this file is
+missing, it is still possible to fallback to the libvirt reported host
+UUID.
+
+Administrators concerned about exposing the ability to identity an
+underlying compute node by it's serial number may wish to disable
+reporting of any sysinfo serial field at all by using the 'none' value.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0028
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1337349
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -1,0 +1,80 @@
+Bash 'shellshock' bug can lead to code injection vulnerability.
+---
+
+### Summary ###
+A bug in the GNU Bash shell (4.3 and lower) exposes a code injection
+vulnerability via crafted environment variables (Shellshock,
+CVE-2014-6271, CVE-2014-7169). Through network utilities such as SSH and
+CGI enabled web servers, this vulnerability can become remotely
+exploitable. Bash is universal to nearly all Linux distributions as well
+as Apple OS X.
+
+### Affected Services / Software ###
+GNU Bash, Grizzly, Havana, Icehouse
+
+### Discussion ###
+The GNU Bash shell (4.3 and lower) is vulnerable to a code injection
+attack via the setting of environment variables. This stems from a bug
+in the way bash processes function definitions present in the
+environment, an example might look like the following:
+
+  env x='() { :;}; echo vulnerable' bash -c 'echo hello'
+
+when executed, this command line will print:
+
+  vulnerable
+  hello
+
+This behaviour occurs because bash continues to process the rest of the
+variable string after the function definition, the name of the variable
+is also unimportant.
+
+Many programs on a Linux installation will 'shell out' to launch helper
+commands. If a malicious user can set an environment variable in the
+spawned shell they can execute arbitrary commands with the same user
+permissions as the legitimate command. If these programs are network
+connected then this vulnerability becomes remotely exploitable. To
+illustrate how this might be accomplished, consider the OpenSSH forced
+command mechanism. This mechanism allows commands run via SSH to be
+restricted to a specific invocation, however OpenSSH will set an
+environment variable 'SSH_ORIGINAL_COMMAND' to the command that was
+requested by the user before executing the forced command. If
+'SSH_ORIGINAL_COMMAND' contains a function definition of the form given
+above, then this will be executed by bash regardless of the forced
+command specified.
+
+Note that there are many remotely accessible programs that may set one
+or more environment variables before spawning a bash sub-processes,
+known examples include but are not limited to:
+
+- CGI Enabled web servers (Apache mod_cgi, nginx, etc)
+- SSH (OpenSSH mechanisms as above)
+- DHCP (dhcpcd)
+
+OpenStack software itself is not currently understood to be
+directly affected, however deployments of OpenStack will very likely
+be using GNU Bash in many places. While employed mechanisms such as
+rootwrap filter environment variables, any variable that can be set via
+user provided input becomes a potential security issue.
+
+### Recommended Actions ###
+Owing to the ubiquitous nature of the bash shell and its indirect use
+via other programs it is highly recommended that all systems, guests and
+virtual machine images update to a patched version of bash immediately.
+Refer to guidance from the provider of your specific Linux distribution
+for additional details.
+
+Additionally, network filtering and IDS systems should be configured to
+detect incoming requests containing bash function-like definitions.
+System logs should also be interrogated for any such strings as an
+indication of possible attacks.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0030
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1374055
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Initial CVE:
+  http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271
+Secondary CVE:
+  http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169

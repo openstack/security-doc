@@ -597,17 +597,7 @@
       <para>Traditionally, memory de-duplication systems are
         vulnerable to side channel attacks. Both KSM and TPS have
         demonstrated to be vulnerable to some form of attack. In
-        academic studies<footnote>
-          <para>Fine grain Cross-VM Attacks on Xen and VMware are
-            possible - Apecechea and others. <link
-              xlink:href="https://eprint.iacr.org/2014/248.pdf"
-              >https://eprint.iacr.org/2014/248.pdf</link></para>
-        </footnote><footnote>
-          <para>Memory Deduplication as a Threat to the Guest OS -
-            Suzaki and others. <link
-              xlink:href="https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf"
-              >https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link></para>
-        </footnote>attackers were able to identify software packages
+        academic studies attackers were able to identify software packages
         and versions running on neighboring virtual machines as well
         as software downloads and other sensitive information through
         analyzing memory access times on the attacker VM.</para>
@@ -684,28 +674,61 @@
           </tr>
         </tbody>
       </informaltable>
-      <para><link xlink:href="http://www.linux-kvm.org/page/KSM">KVM:
-          Kernel Samepage Merging</link></para>
-      <para><link
-          xlink:href="http://wiki.xen.org/wiki/Xen_Security_Modules_:_XSM-FLASK"
-          >XSM: Xen Security Modules</link></para>
-      <para><link xlink:href="http://selinuxproject.org/page/SVirt"
-          >xVirt: Mandatory Access Control for Linux-based
-          virtualization</link></para>
-      <para><link xlink:href="http://www.intel.com/txt">TXT: Intel
-          Trusted Execution Technology</link></para>
-      <para><link
-          xlink:href="http://wiki.apparmor.net/index.php/Main_Page"
-          >AppArmor: Linux security module implementing
-        MAC</link></para>
-      <para><link
-          xlink:href="https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt"
-          >cgroups: Linux kernel feature to control resource
-          usage</link></para>
       <para>MAC Policy: Mandatory Access Control; may be implemented
         with SELinux or other operating systems</para>
       <para>* Features in this table might not be applicable to all
         hypervisors or directly mappable between hypervisors.</para>
     </section>
+  </section>
+  <section xml:id="hypversisor-selection-references">
+    <title>References</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Fine grain Cross-VM Attacks on Xen and VMware are possible -
+          Apecechea and others. <link
+          xlink:href="https://eprint.iacr.org/2014/248.pdf"
+          >https://eprint.iacr.org/2014/248.pdf</link>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Memory Deduplication as a Threat to the Guest OS - Suzaki
+          and others. <link
+          xlink:href="https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf"
+          >https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>
+        </para>
+      </listitem>
+      <listitem>
+        <para><link xlink:href="http://www.linux-kvm.org/page/KSM">KVM:
+        Kernel Samepage Merging</link></para>
+      </listitem>
+      <listitem>
+        <para><link
+          xlink:href="http://wiki.xen.org/wiki/Xen_Security_Modules_:_XSM-FLASK"
+          >XSM: Xen Security Modules</link></para>
+      </listitem>
+      <listitem>
+        <para><link xlink:href="http://selinuxproject.org/page/SVirt"
+          >xVirt: Mandatory Access Control for Linux-based
+          virtualization</link></para>
+      </listitem>
+      <listitem>
+        <para><link xlink:href="http://www.intel.com/txt">TXT: Intel
+          Trusted Execution Technology</link></para>
+      </listitem>
+      <listitem>
+        <para><link
+          xlink:href="http://wiki.apparmor.net/index.php/Main_Page"
+          >AppArmor: Linux security module implementing
+        MAC</link></para>
+      </listitem>
+      <listitem>
+        <para><link
+          xlink:href="https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt"
+          >cgroups: Linux kernel feature to control resource
+          usage</link></para>
+      </listitem>
+    </itemizedlist>
   </section>
 </section>

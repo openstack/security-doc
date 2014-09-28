@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-09-24 06:01+0000\n"
+"POT-Creation-Date: 2014-09-28 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -321,7 +321,7 @@ msgstr ""
 msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud, may also want to run such tools on their instances."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:141(title) ./security-guide/section_continuous-systems-management.xml:277(title) ./security-guide/section_management-interfaces.xml:93(title) ./security-guide/section_management-interfaces.xml:163(title) ./security-guide/section_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:107(title)
+#: ./security-guide/section_forensics-and-incident-response.xml:141(title) ./security-guide/section_hypervisor-selection.xml:684(title) ./security-guide/section_continuous-systems-management.xml:277(title) ./security-guide/section_management-interfaces.xml:93(title) ./security-guide/section_management-interfaces.xml:163(title) ./security-guide/section_management-interfaces.xml:202(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:107(title)
 msgid "References"
 msgstr ""
 
@@ -3443,7 +3443,7 @@ msgstr ""
 msgid "Hypervisor vs. baremetal"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:82(para) ./security-guide/section_hypervisor-selection.xml:620(title)
+#: ./security-guide/section_hypervisor-selection.xml:82(para) ./security-guide/section_hypervisor-selection.xml:610(title)
 msgid "Additional security features"
 msgstr ""
 
@@ -3907,100 +3907,100 @@ msgstr ""
 msgid "Security considerations for memory optimization"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:601(para)
-msgid "Fine grain Cross-VM Attacks on Xen and VMware are possible - Apecechea and others. <link href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml:606(para)
-msgid "Memory Deduplication as a Threat to the Guest OS - Suzaki and others. <link href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
-msgstr ""
-
 #: ./security-guide/section_hypervisor-selection.xml:597(para)
-msgid "Traditionally, memory de-duplication systems are vulnerable to side channel attacks. Both KSM and TPS have demonstrated to be vulnerable to some form of attack. In academic studies<placeholder-1/><placeholder-2/>attackers were able to identify software packages and versions running on neighboring virtual machines as well as software downloads and other sensitive information through analyzing memory access times on the attacker VM."
+msgid "Traditionally, memory de-duplication systems are vulnerable to side channel attacks. Both KSM and TPS have demonstrated to be vulnerable to some form of attack. In academic studies attackers were able to identify software packages and versions running on neighboring virtual machines as well as software downloads and other sensitive information through analyzing memory access times on the attacker VM."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:614(para)
+#: ./security-guide/section_hypervisor-selection.xml:604(para)
 msgid "If a cloud deployment requires strong separation of tenants, as is the situation with public clouds and some private clouds, deployers should consider disabling TPS and KSM memory optimizations."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:621(para)
+#: ./security-guide/section_hypervisor-selection.xml:611(para)
 msgid "Another thing to look into when selecting a hypervisor platform is the availability of specific security features. In particular, we are referring to features like Xen Server's XSM or Xen Security Modules, sVirt, Intel TXT, and AppArmor. The presence of these features increase your security profile as well as provide a good foundation."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:627(para)
+#: ./security-guide/section_hypervisor-selection.xml:617(para)
 msgid "The following table calls out these features by common hypervisor platforms."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:642(para)
+#: ./security-guide/section_hypervisor-selection.xml:632(para)
 msgid "XSM"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:643(para)
+#: ./security-guide/section_hypervisor-selection.xml:633(para)
 msgid "sVirt"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:644(para)
+#: ./security-guide/section_hypervisor-selection.xml:634(para)
 msgid "TXT"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:645(para)
+#: ./security-guide/section_hypervisor-selection.xml:635(para)
 msgid "AppArmor"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:646(para)
+#: ./security-guide/section_hypervisor-selection.xml:636(para)
 msgid "cgroups"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:647(para)
+#: ./security-guide/section_hypervisor-selection.xml:637(para)
 msgid "MAC Policy"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:650(para)
+#: ./security-guide/section_hypervisor-selection.xml:640(para)
 msgid "KVM"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:659(para)
+#: ./security-guide/section_hypervisor-selection.xml:649(para)
 msgid "Xen"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:668(para)
+#: ./security-guide/section_hypervisor-selection.xml:658(para)
 msgid "ESXi"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:677(para)
+#: ./security-guide/section_hypervisor-selection.xml:667(para)
 msgid "Hyper-V"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:687(link)
-msgid "KVM: Kernel Samepage Merging"
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml:691(link)
-msgid "XSM: Xen Security Modules"
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml:693(link)
-msgid "xVirt: Mandatory Access Control for Linux-based virtualization"
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml:695(link)
-msgid "TXT: Intel Trusted Execution Technology"
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml:699(link)
-msgid "AppArmor: Linux security module implementing MAC"
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml:703(link)
-msgid "cgroups: Linux kernel feature to control resource usage"
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml:705(para)
+#: ./security-guide/section_hypervisor-selection.xml:677(para)
 msgid "MAC Policy: Mandatory Access Control; may be implemented with SELinux or other operating systems"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:707(para)
+#: ./security-guide/section_hypervisor-selection.xml:679(para)
 msgid "* Features in this table might not be applicable to all hypervisors or directly mappable between hypervisors."
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:687(para)
+msgid "Fine grain Cross-VM Attacks on Xen and VMware are possible - Apecechea and others. <link href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:695(para)
+msgid "Memory Deduplication as a Threat to the Guest OS - Suzaki and others. <link href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:703(link)
+msgid "KVM: Kernel Samepage Merging"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:709(link)
+msgid "XSM: Xen Security Modules"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:713(link)
+msgid "xVirt: Mandatory Access Control for Linux-based virtualization"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:717(link)
+msgid "TXT: Intel Trusted Execution Technology"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:723(link)
+msgid "AppArmor: Linux security module implementing MAC"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml:729(link)
+msgid "cgroups: Linux kernel feature to control resource usage"
 msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml:9(para)

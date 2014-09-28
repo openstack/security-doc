@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-23 21:32+0000\n"
-"PO-Revision-Date: 2014-09-23 21:32+0000\n"
+"POT-Creation-Date: 2014-09-27 10:54+0000\n"
+"PO-Revision-Date: 2014-09-27 10:54+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -545,6 +545,7 @@ msgid ""
 msgstr ""
 
 #: ./security-guide/section_forensics-and-incident-response.xml141(title)
+#: ./security-guide/section_hypervisor-selection.xml684(title)
 #: ./security-guide/section_continuous-systems-management.xml277(title)
 #: ./security-guide/section_management-interfaces.xml93(title)
 #: ./security-guide/section_management-interfaces.xml163(title)
@@ -5962,7 +5963,7 @@ msgid "Hypervisor vs. baremetal"
 msgstr "ハードウェア対ベアメタル"
 
 #: ./security-guide/section_hypervisor-selection.xml82(para)
-#: ./security-guide/section_hypervisor-selection.xml620(title)
+#: ./security-guide/section_hypervisor-selection.xml610(title)
 msgid "Additional security features"
 msgstr "追加のセキュリティ機能"
 
@@ -6631,37 +6632,24 @@ msgstr "XenServer 5.6 は、Transparent Page Sharing (TPS) という名前のメ
 msgid "Security considerations for memory optimization"
 msgstr "メモリ最適化に関するセキュリティの課題"
 
-#: ./security-guide/section_hypervisor-selection.xml601(para)
-msgid ""
-"Fine grain Cross-VM Attacks on Xen and VMware are possible - Apecechea and "
-"others. <link "
-"href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
-msgstr "Fine grain Cross-VM Attacks on Xen and VMware are possible - Apecechea and others. <link href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
-
-#: ./security-guide/section_hypervisor-selection.xml606(para)
-msgid ""
-"Memory Deduplication as a Threat to the Guest OS - Suzaki and others. <link "
-"href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
-msgstr "Memory Deduplication as a Threat to the Guest OS - Suzaki and others. <link href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
-
 #: ./security-guide/section_hypervisor-selection.xml597(para)
 msgid ""
 "Traditionally, memory de-duplication systems are vulnerable to side channel "
 "attacks. Both KSM and TPS have demonstrated to be vulnerable to some form of"
-" attack. In academic studies<placeholder-1/><placeholder-2/>attackers were "
-"able to identify software packages and versions running on neighboring "
-"virtual machines as well as software downloads and other sensitive "
-"information through analyzing memory access times on the attacker VM."
-msgstr "慣習的に、メモリ重複排除システムは、サイドチャネル攻撃に脆弱です。KSM も TPS も、いくつかの種類の攻撃に脆弱性を示します。学術研究<placeholder-1/><placeholder-2/>によると、攻撃者は、近くで動作している仮想マシンにある、いくつかの実行中のパッケージとバージョンを特定できました。また、攻撃者の仮想マシンでメモリアクセス時間を解析することにより、ソフトウェアダウンロードや他の秘密情報も特定できました。"
+" attack. In academic studies attackers were able to identify software "
+"packages and versions running on neighboring virtual machines as well as "
+"software downloads and other sensitive information through analyzing memory "
+"access times on the attacker VM."
+msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml614(para)
+#: ./security-guide/section_hypervisor-selection.xml604(para)
 msgid ""
 "If a cloud deployment requires strong separation of tenants, as is the "
 "situation with public clouds and some private clouds, deployers should "
 "consider disabling TPS and KSM memory optimizations."
 msgstr "テナントを強く分離する必要があるクラウド環境の場合、つまりパブリッククラウドや特定のプライベートクラウドの場合、導入者は TPS や KSM メモリ最適化を無効化することを検討すべきです。"
 
-#: ./security-guide/section_hypervisor-selection.xml621(para)
+#: ./security-guide/section_hypervisor-selection.xml611(para)
 msgid ""
 "Another thing to look into when selecting a hypervisor platform is the "
 "availability of specific security features. In particular, we are referring "
@@ -6670,86 +6658,99 @@ msgid ""
 " as well as provide a good foundation."
 msgstr "ハイパーバイザー選択時に検討すべき他の事項は、特定のセキュリティ機能の利用可否です。とくに、Xen Server の XSM (Xen Security Modules)、sVirt、Intel TXT、AppArmor のような機能を利用しています。これらの機能の存在は、セキュリティプロファイルを向上するだけでなく、良い基盤を提供します。"
 
-#: ./security-guide/section_hypervisor-selection.xml627(para)
+#: ./security-guide/section_hypervisor-selection.xml617(para)
 msgid ""
 "The following table calls out these features by common hypervisor platforms."
 msgstr "以下の表は一般的なハイパーバイザーにおけるこれらの機能の対応状況を示します。"
 
-#: ./security-guide/section_hypervisor-selection.xml642(para)
+#: ./security-guide/section_hypervisor-selection.xml632(para)
 msgid "XSM"
 msgstr "XSM"
 
-#: ./security-guide/section_hypervisor-selection.xml643(para)
+#: ./security-guide/section_hypervisor-selection.xml633(para)
 msgid "sVirt"
 msgstr "sVirt"
 
-#: ./security-guide/section_hypervisor-selection.xml644(para)
+#: ./security-guide/section_hypervisor-selection.xml634(para)
 msgid "TXT"
 msgstr "TXT"
 
-#: ./security-guide/section_hypervisor-selection.xml645(para)
+#: ./security-guide/section_hypervisor-selection.xml635(para)
 msgid "AppArmor"
 msgstr "AppArmor"
 
-#: ./security-guide/section_hypervisor-selection.xml646(para)
+#: ./security-guide/section_hypervisor-selection.xml636(para)
 msgid "cgroups"
 msgstr "cgroups"
 
-#: ./security-guide/section_hypervisor-selection.xml647(para)
+#: ./security-guide/section_hypervisor-selection.xml637(para)
 msgid "MAC Policy"
 msgstr "MAC ポリシー"
 
-#: ./security-guide/section_hypervisor-selection.xml650(para)
+#: ./security-guide/section_hypervisor-selection.xml640(para)
 msgid "KVM"
 msgstr "KVM"
 
-#: ./security-guide/section_hypervisor-selection.xml659(para)
+#: ./security-guide/section_hypervisor-selection.xml649(para)
 msgid "Xen"
 msgstr "Xen"
 
-#: ./security-guide/section_hypervisor-selection.xml668(para)
+#: ./security-guide/section_hypervisor-selection.xml658(para)
 msgid "ESXi"
 msgstr "ESXi"
 
-#: ./security-guide/section_hypervisor-selection.xml677(para)
+#: ./security-guide/section_hypervisor-selection.xml667(para)
 msgid "Hyper-V"
 msgstr "Hyper-V"
 
-#: ./security-guide/section_hypervisor-selection.xml687(link)
-msgid "KVM: Kernel Samepage Merging"
-msgstr "KVM: Kernel Samepage Merging"
-
-#: ./security-guide/section_hypervisor-selection.xml691(link)
-msgid "XSM: Xen Security Modules"
-msgstr "XSM: Xen セキュリティモジュール"
-
-#: ./security-guide/section_hypervisor-selection.xml693(link)
-msgid "xVirt: Mandatory Access Control for Linux-based virtualization"
-msgstr "xVirt: Linux ベースの仮想化向けの強制アクセス制御"
-
-#: ./security-guide/section_hypervisor-selection.xml695(link)
-msgid "TXT: Intel Trusted Execution Technology"
-msgstr "TXT: Intel Trusted Execution Technology"
-
-#: ./security-guide/section_hypervisor-selection.xml699(link)
-msgid "AppArmor: Linux security module implementing MAC"
-msgstr "AppArmor: MAC を実装している Linux セキュリティモジュール"
-
-#: ./security-guide/section_hypervisor-selection.xml703(link)
-msgid "cgroups: Linux kernel feature to control resource usage"
-msgstr "cgroups: リソース使用量を制御するための Linux カーネル機能"
-
-#: ./security-guide/section_hypervisor-selection.xml705(para)
+#: ./security-guide/section_hypervisor-selection.xml677(para)
 msgid ""
 "MAC Policy: Mandatory Access Control; may be implemented with SELinux or "
 "other operating systems"
 msgstr "MAC ポリシー: 強制アクセス制御は SELinux または他のオペレーティングシステムを用いて実装されます"
 
-#: ./security-guide/section_hypervisor-selection.xml707(para)
+#: ./security-guide/section_hypervisor-selection.xml679(para)
 msgid ""
 "* Features in this table might not be applicable to all hypervisors or "
 "directly mappable between hypervisors."
 msgstr "* この表にある機能はすべてのハイパーバイザーに適用できないかもしれません。また、ハイパーバイザー間で直接対応付けできないかもしれません。"
+
+#: ./security-guide/section_hypervisor-selection.xml687(para)
+msgid ""
+"Fine grain Cross-VM Attacks on Xen and VMware are possible - Apecechea and "
+"others. <link "
+"href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
+msgstr "Fine grain Cross-VM Attacks on Xen and VMware are possible - Apecechea and others. <link href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
+
+#: ./security-guide/section_hypervisor-selection.xml695(para)
+msgid ""
+"Memory Deduplication as a Threat to the Guest OS - Suzaki and others. <link "
+"href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
+msgstr "Memory Deduplication as a Threat to the Guest OS - Suzaki and others. <link href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
+
+#: ./security-guide/section_hypervisor-selection.xml703(link)
+msgid "KVM: Kernel Samepage Merging"
+msgstr "KVM: Kernel Samepage Merging"
+
+#: ./security-guide/section_hypervisor-selection.xml709(link)
+msgid "XSM: Xen Security Modules"
+msgstr "XSM: Xen セキュリティモジュール"
+
+#: ./security-guide/section_hypervisor-selection.xml713(link)
+msgid "xVirt: Mandatory Access Control for Linux-based virtualization"
+msgstr "xVirt: Linux ベースの仮想化向けの強制アクセス制御"
+
+#: ./security-guide/section_hypervisor-selection.xml717(link)
+msgid "TXT: Intel Trusted Execution Technology"
+msgstr "TXT: Intel Trusted Execution Technology"
+
+#: ./security-guide/section_hypervisor-selection.xml723(link)
+msgid "AppArmor: Linux security module implementing MAC"
+msgstr "AppArmor: MAC を実装している Linux セキュリティモジュール"
+
+#: ./security-guide/section_hypervisor-selection.xml729(link)
+msgid "cgroups: Linux kernel feature to control resource usage"
+msgstr "cgroups: リソース使用量を制御するための Linux カーネル機能"
 
 #: ./security-guide/section_case-studies-management-interfaces.xml9(para)
 msgid ""

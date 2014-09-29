@@ -2,13 +2,14 @@ Neutron FWaaS rules lack port restrictions when using protocol 'any'
 ---
 
 ### Summary ###
-A bug in the Neutron FWaaS (Firewall as a Service) code results in
-iptables rules being generated that do not reflect desired port
-restrictions. This behaviour is triggered when a protocol other than
-'udp' or 'tcp' is specified, e.g. 'any'.
+A bug in the experimental Neutron FWaaS (Firewall as a Service)
+extension results in iptables rules being generated that do not reflect
+desired port restrictions. This behaviour is triggered when a protocol
+other than 'udp' or 'tcp' is specified, e.g. 'any'.
 
-The scope of this bug is limited to Neutron FWaaS and systems built upon
-it. Security Groups are not affected.
+The scope of this bug is limited to the experimental Neutron FWaaS
+extension and systems built upon it. It does not affect the supported
+core Neutron functionality. Security Groups are not affected.
 
 ### Affected Services / Software ###
 Neutron FWaaS, Grizzly, Havana, Icehouse
@@ -47,11 +48,13 @@ This bug is triggered when any protocol other than 'tcp' or 'udp' is
 specified in conjunction with a source or destination port number.
 
 ### Recommended Actions ###
-Avoid the use of 'any' when specifying the protocol for Neutron FWaaS
-rules. Instead, create multiple rules for both 'tcp' and 'udp' protocols
+The Neutron FWaaS extension is currently experimental, and should not be
+used in production at this point. If you are using it, you should avoid
+the use of 'any' when specifying the protocol for Neutron FWaaS rules.
+Instead, create multiple rules for both 'tcp' and 'udp' protocols
 independently.
 
-A fix has been submitted to Juno.
+This issue has been fixed in the Juno release of OpenStack.
 
 ### Contacts / References ###
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0029

@@ -307,4 +307,5 @@
       other scenarios the cloud administrator may need to approve the
       mapping routines per tenant.</para>
   </section>
+  <xi:include href="section_identity-federated-keystone.xml"/>
 </chapter>

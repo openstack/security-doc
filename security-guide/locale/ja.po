@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-09-27 10:54+0000\n"
-"PO-Revision-Date: 2014-09-27 10:54+0000\n"
+"POT-Creation-Date: 2014-10-03 18:54+0000\n"
+"PO-Revision-Date: 2014-10-04 04:44+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1073,6 +1073,7 @@ msgid ""
 msgstr "Identity はトークン失効をサポートします。これは、トークンを失効するため、失効済みトークンを一覧表示するために API として宣言されます。また、トークンをキャッシュしている各 OpenStack サービスが失効済みトークンを問い合わせるため、それらのキャッシュから失効済みトークンを削除するため、キャッシュした失効済みトークンの一覧に追加するためにもあります。"
 
 #: ./security-guide/ch_identity.xml289(title)
+#: ./security-guide/section_identity-federated-keystone.xml459(title)
 msgid "Future"
 msgstr "将来"
 
@@ -2420,6 +2421,691 @@ msgid ""
 " breaches. With mandatory access controls, such breaches severely limit "
 "access to resources and provide earlier alerting on such events."
 msgstr "APIエンドポイントのプロセスはマシン上の他のプロセスと分離すべきです。これらのプロセスの構成は任意のアクセス制御方法ではなく、強制アクセス制御によって制限されるべきです。これらのアクセス制御の目的はAPIエンドポイントのセキュリティ侵害の抑制と、特権侵害の防止です。強制アクセス制御を利用する事で、禁止されたリソースへのアクセスが厳しく制限され、早期の警告が得られるようになります。"
+
+#: ./security-guide/section_identity-federated-keystone.xml8(title)
+msgid "Federated Identity"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml9(para)
+msgid ""
+"Federated Identity is a mechanism to establish trusts between Identity "
+"Providers and Service Providers (SP), in this case, between Identity "
+"Providers and the services provided by an OpenStack Cloud."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml12(para)
+msgid ""
+"Federated Identity provides a way to securely use existing credentials to "
+"access cloud resources such as servers, volumes, and databases, across "
+"multiple endpoints provided in multiple authorized clouds using a single set"
+" of credentials, without having to provision additional identities or log in"
+" multiple times. The credential is maintained by the user's Identity "
+"Provider."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml18(para)
+msgid "Some important definitions:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml21(term)
+msgid "Service Provider (SP)"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml22(para)
+msgid ""
+"A system entity that provides services to principals or other system "
+"entities, in this case, OpenStack Identity is the Service Provider."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml27(term)
+msgid "Identity Provider (IdP)"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml28(para)
+msgid ""
+"A directory service, such as LDAP, RADIUS and Active Directory, which allows"
+" users to login with a user name and password, is a typical source of "
+"authentication tokens (e.g. passwords) at an identity provider."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml34(term)
+msgid "SAML assertion"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml35(para)
+msgid ""
+"Contains information about a user as provided by an IdP. It is an indication"
+" that a user has been authenticated."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml40(term)
+msgid "Mapping"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml41(para)
+msgid ""
+"Adds a set of rules to map Federation protocol attributes to Identity API "
+"objects. An Identity Provider has exactly one mapping specified per "
+"protocol."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml46(term)
+msgid "Protocol"
+msgstr "プロトコル"
+
+#: ./security-guide/section_identity-federated-keystone.xml47(para)
+msgid ""
+"Contains information that dictates which Mapping rules to use for an "
+"incoming request made by an IdP. An IdP may support multiple protocols. "
+"There are three major protocols for federated identity: OpenID, SAML, and "
+"OAuth."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml53(term)
+msgid "Unscoped token"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml54(para)
+msgid ""
+"Allows a user to authenticate with the Identity service to exchange the "
+"unscoped token for a scoped token, by providing a project ID or a domain ID."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml59(term)
+msgid "Scoped token"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml60(para)
+msgid ""
+"Allows a user to use all OpenStack services apart from the Identity service."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml65(title)
+msgid "Why use Federated Identity?"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml67(para)
+msgid ""
+"Provisioning new identities often incurs some security risk. It is difficult"
+" to secure credential storage and to deploy it with proper policies. A "
+"common identity store is useful as it can be set up properly once and used "
+"in multiple places. With Federated Identity, there is no longer a need to "
+"provision user entries in Identity service, since the user entries already "
+"exist in the IdP's databases."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml73(para)
+msgid ""
+"This does introduce new challenges around protecting that identity. However,"
+" this is a worthwhile tradeoff given the greater control, and fewer "
+"credential databases that come with a centralized common identity store."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml78(para)
+msgid ""
+"It is a burden on the clients to deal with multiple tokens across multiple "
+"cloud service providers. Federated Identity provides single sign on to the "
+"user, who can use the credentials provided and maintained by the user's IdP "
+"to access many different services on the Internet."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml83(para)
+msgid ""
+"Users spend too much time logging in or going through 'Forget Password' "
+"workflows. Federated identity allows for single sign on, which is easier and"
+" faster for users and requires fewer password resets. The IdPs manage user "
+"identities and passwords so OpenStack does not have to."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml88(para)
+msgid ""
+"Too much time is spent administering identities in various service "
+"providers."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml90(para)
+msgid ""
+"The best test of interoperability in the cloud is the ability to enable a "
+"user with one set of credentials in an IdP to access multiple cloud "
+"services. Organizations, each using its own IdP can easily allow their users"
+" to collaborate and quickly share the same cloud services."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml95(para)
+msgid ""
+"Removes a blocker to cloud brokering and multi-cloud workload management. "
+"There is no need to build additional authentication mechanisms ito "
+"authenticate users, since the IdPs take care of authenticating their own "
+"users using whichever technologies they deem to be appropriate. In most "
+"organizations, multiple authentication technologies are already in use."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml103(title)
+msgid "Configuring Identity service for Federation"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml104(para)
+msgid ""
+"Federated users are not mirrored in the Identity service back end (for "
+"example, using the SQL driver). The external IdP is responsible for "
+"authenticating users, and communicates the result of the authentication to "
+"Identity service using SAML assertions. Identity service maps the SAML "
+"assertions to Keystone user groups and assignments created in Identity "
+"service."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml111(title)
+msgid "Enabling Federation"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml112(para)
+msgid "To enable Federation, perform the following steps:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml114(para)
+msgid ""
+"Run the Identity service under Apache, instead of using <placeholder-1/>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml117(para)
+msgid ""
+"Enable SSL support. Install <literal>mod_nss</literal> according to your "
+"distribution, then apply the following patch and restart HTTPD:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml142(para)
+msgid ""
+"If you have a firewall in place, configure it to allow SSL traffic. For "
+"example:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml145(para)
+msgid ""
+"Note this needs to be added before your reject all rule which might be:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml148(para)
+msgid ""
+"Copy the <filename>httpd/wsgi-keystone.conf</filename> file to the "
+"appropriate location for your Apache server, for example, "
+"<filename>/etc/httpd/conf.d/wsgi-keystone.conf </filename> file."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml153(para)
+msgid ""
+"Create the directory <literal>/var/www/cgi-bin/keystone/</literal>. Then "
+"link the files <literal>main</literal> and <literal>admin</literal> to the "
+"<filename>keystone.py</filename> file in this directory."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml156(para)
+msgid ""
+"For a distribution appropriate place, it should probably be copied to "
+"<literal>/usr/share/openstack/keystone/httpd/keystone.py</literal>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml158(para)
+msgid ""
+"This path is Ubuntu-specific. For other distributions, replace with "
+"appropriate path."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml161(para)
+msgid ""
+"If you are running with SELinux enabled ensure that the file has the "
+"appropriate SELinux context to access the linked file. For example, if you "
+"have the file in <literal>/var/www/cgi-bin</literal> location, you can do "
+"this by running:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml167(para)
+msgid ""
+"Adding it in a different location requires you set up your SELinux policy "
+"accordingly."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml170(para)
+msgid ""
+"Make sure you use either the SQL or the <literal>memcached</literal> driver "
+"for tokens, otherwise the tokens will not be shared between the processes of"
+" the Apache HTTPD server."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml173(para)
+msgid "For SQL, in <filename>/etc/keystone/keystone.conf</filename> , set:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml177(para)
+msgid ""
+"For <literal>memcached</literal>, in "
+"<filename>/etc/keystone/keystone.conf</filename>, set:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml181(para)
+msgid ""
+"In both cases, all servers that are storing tokens need a shared back end. "
+"This means either that both point to the same database server, or both point"
+" to a common memcached instance."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml186(para)
+msgid "Install Shibboleth:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml188(para)
+msgid ""
+"The <literal>apt-get</literal> command is Ubuntu specific. For other "
+"distributions, replace with appropriate command."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml191(para)
+msgid ""
+"Configure the Identity service virtual host and adjust the config to "
+"properly handle SAML2 workflow."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml193(para)
+msgid ""
+"Add <literal>WSGIScriptAlias</literal> directive to your vhost "
+"configuration:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml196(para)
+msgid ""
+"Add two <literal>&lt;Location&gt;</literal> directives to the <filename"
+">wsgi-keystone.conf</filename> file:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml210(para)
+msgid ""
+"The option <literal>saml2</literal> may be different in your deployment, but"
+" do not use a wildcard value. Otherwise every Federated protocol will be "
+"handled by Shibboleth."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml213(para)
+msgid ""
+"The <literal>ShibRequireSession</literal> rule is invalid in Apache 2.4 or "
+"newer and should be dropped in that specific setup."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml216(para)
+msgid "Enable the Identity service virtual host:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml219(para)
+msgid ""
+"Enable the <literal>ssl</literal> and <literal>shib2</literal> modules:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml224(para)
+msgid "Restart Apache:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml226(para)
+msgid ""
+"The <literal>service apache2 restart</literal> command is Ubuntu-specific. "
+"For other distributions, replace with appropriate command."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml232(para)
+msgid "Configure Apache to use a Federation capable authentication method."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml235(para)
+msgid ""
+"Once you have your Identity service virtual host ready, configure Shibboleth"
+" and upload your metadata to the Identity Provider."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml237(para)
+msgid ""
+"If new certificates are required, they can be easily created by executing:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml238(replaceable)
+msgid "NUMBER_OF_YEARS"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml239(para)
+msgid ""
+"The newly created file will be stored under <filename>/etc/shibboleth/sp-"
+"key.pem</filename>"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml242(para)
+msgid ""
+"Upload your Service Provider’s metadata file to your Identity Provider."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml245(para)
+msgid ""
+"Configure your Service Provider by editing "
+"<filename>/etc/shibboleth/shibboleth2.xml</filename>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml247(para)
+msgid ""
+"For more information, see <link "
+"href=\"https://wiki.shibboleth.net/confluence/display/SHIB2/Configuration\"><citetitle>Shibboleth"
+" Service Provider Configuration</citetitle></link>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml250(para)
+msgid ""
+"Identity service enforces <literal>external</literal> authentication when "
+"environment variable <literal>REMOTE_USER</literal> is present so make sure "
+"Shibboleth does not set the <literal>REMOTE_USER</literal> environment "
+"variable. To do so, scan through the "
+"<filename>/etc/shibboleth/shibboleth2.xml</filename> configuration file and "
+"remove the <literal>REMOTE_USER</literal> directives."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml258(para)
+msgid ""
+"Examine your attributes map in the <filename>/etc/shibboleth/attributes-"
+"map.xml</filename> file and adjust your requirements if needed. For more "
+"information see <link "
+"href=\"https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAddAttribute\"><citetitle>Shibboleth"
+" Attributes</citetitle></link>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml264(para)
+msgid "Restart the Shibboleth daemon:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml270(para)
+msgid "Enable <literal>OS-FEDERATION</literal> extension:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml272(para)
+msgid ""
+"Add the Federation extension driver to the <literal>[federation]</literal> "
+"section in the <filename>keystone.conf</filename> file. For example:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml278(para)
+msgid ""
+"Add the saml2 authentication method to the <literal>[auth]</literal> section"
+" in <filename>keystone.conf</filename> file:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml284(para)
+msgid ""
+"The <literal>external</literal> method should be dropped to avoid any "
+"interference with some Apache and Shibboleth SP setups, where a "
+"<literal>REMOTE_USER</literal> environment variable is always set, even as "
+"an empty value."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml289(para)
+msgid ""
+"Add the <literal>federation_extension</literal> middleware to the "
+"<literal>api_v3</literal> pipeline in the <filename>keystone-"
+"paste.ini</filename> file. For example:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml297(para)
+msgid ""
+"Create the Federation extension tables if using the provided SQL back end. "
+"For example:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml303(para)
+msgid ""
+"Ideally, to test that the Identity Provider and the Identity service are "
+"communicating, navigate to the protected URL and attempt to sign in. If you "
+"get a response back from <literal>keystone</literal>, even if it is a wrong "
+"response, indicates the communication."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml309(title)
+msgid "Configuring Federation"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml310(para)
+msgid ""
+"Now that the Identity Provider and Identity service are communicating, you "
+"can start to configure the <literal>OS-FEDERATION</literal> extension."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml313(para)
+msgid "Create Identity groups and assign roles."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml314(para)
+msgid ""
+"No new users will be added to the Identity back end, but the Identity "
+"service requires group-based role assignments to authorize federated users. "
+"The Federation mapping function will map the user into local Identity "
+"service groups objects, and hence to local role assignments."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml319(para)
+msgid ""
+"Thus, it is required to create the necessary Identity service groups that "
+"correspond to the Identity Provider’s groups; additionally, these groups "
+"should be assigned roles on one or more projects or domains. For example, "
+"groups here refers to the Identity service groups that should be created so "
+"that when mapping from the SAML attribute <literal>Employees</literal>, you "
+"can map it to a Identity service group <literal>devs</literal>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml326(para)
+msgid ""
+"The Identity service administator can create as many groups as there are "
+"SAML attributes, whatever the mapping calls for."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml328(para)
+msgid "Add Identity Providers, Mappings and Protocols."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml329(para)
+msgid ""
+"To utilize Federation, create the following in the Identity service: "
+"Identity Provider, Mapping, Protocol."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml334(title)
+msgid "Performing Federation authentication"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml336(para)
+msgid ""
+"Authenticate externally and generate an unscoped token in Identity service."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml338(para)
+msgid ""
+"To start Federated authentication a user must access the dedicated URL with "
+"Identity Provider’s and Protocol’s identifiers stored within a protected "
+"URL. The URL has a format of: <literal>/v3/OS-"
+"FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/auth</literal>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml342(para)
+msgid ""
+"This instance follows a standard SAML2 authentication procedure, that is, "
+"the user will be redirected to the Identity Provider’s authentication "
+"webpage and be prompted for credentials. After successfully authenticating "
+"the user will be redirected to the Service Provider’s endpoint. If using a "
+"web browser, a token will be returned in XML format. As an alternative to "
+"using a web browser, you can use Enhanced Client or Proxy (ECP), which is "
+"available in the <literal>keystoneclient</literal> in the Identity service "
+"API."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml350(para)
+msgid ""
+"In the returned unscoped token, a list of Identity service groups the user "
+"belongs to will be included."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml352(para)
+msgid ""
+"For example, the following URL would be considered protected by "
+"<literal>mod_shib</literal> and Apache, as such a request made to the URL "
+"would be redirected to the Identity Provider, to start the SAML "
+"authentication procedure."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml358(para)
+msgid ""
+"It is assumed that the <literal>keystone</literal> service is running on "
+"port <literal>5000</literal>."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml361(para)
+msgid "Determine accessible resources."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml362(para)
+msgid ""
+"By using the previously returned token, the user can issue requests to the "
+"list projects and domains that are accessible."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml365(para)
+msgid ""
+"List projects a federated user can access: <literal>GET /OS-"
+"FEDERATION/projects</literal>"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml368(para)
+msgid ""
+"List domains a federated user can access: <literal>GET /OS-"
+"FEDERATION/domains</literal>"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml371(para)
+msgid "For example,"
+msgstr "たとえば、"
+
+#: ./security-guide/section_identity-federated-keystone.xml374(para)
+#: ./security-guide/section_ssl-proxies-and-http-services.xml40(para)
+msgid "or"
+msgstr "または"
+
+#: ./security-guide/section_identity-federated-keystone.xml377(para)
+msgid "Get a scoped token."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml378(para)
+msgid ""
+"A federated user may request a scoped token, by using the unscoped token. A "
+"project or domain may be specified by either ID or name. An ID is sufficient"
+" to uniquely identify a project or domain. For example,"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml390(title)
+msgid "Setting Identity service as Identity Provider"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml392(title)
+msgid "Configuration options"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml393(para)
+msgid ""
+"Before attempting to federate multiple Identity service deployments, you "
+"must setup certain configuration options in the "
+"<filename>keystone.conf</filename> file."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml396(para)
+msgid ""
+"Within the <filename>keystone.conf</filename> assign values to the "
+"<literal>[saml]</literal> related fields, for example:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml404(para)
+msgid ""
+"It is recommended that the following <literal>Organization</literal> "
+"configuration options be setup."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml410(para)
+msgid ""
+"It is also recommended the following <literal>Contact</literal> options are "
+"set."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml421(title)
+msgid "Generate metadata"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml422(para)
+msgid ""
+"In order to create a trust between the Identity Provider and the Service "
+"Provider, metadata must be exchanged. To create metadata for your Identity "
+"service, run the <placeholder-1/> command and pipe the output to a file. For"
+" example:"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml427(para)
+msgid ""
+"The file location should match the value of the configuration option "
+"<option>idp_metadata_path</option> that was assigned in the list of "
+"<literal>[saml]</literal> updates."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml432(title)
+msgid "Create a region for the Service Provider"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml433(para)
+msgid ""
+"Create a new region for the service provider, for example, create a new "
+"region with an <literal>ID</literal> of <replaceable>BETA</replaceable>, and"
+" <literal>URL</literal> of "
+"<replaceable>https://beta.com/Shibboleth.sso/SAML2/POST</replaceable>. This "
+"URL will be used when creating a SAML assertion for "
+"<replaceable>BETA</replaceable>, and signed by the current Keystone Identity"
+" Provider."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml441(replaceable)
+msgid "http://beta.com/Shibboleth.sso/SAML2/POST"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml442(replaceable)
+#: ./security-guide/section_identity-federated-keystone.xml451(replaceable)
+msgid "BETA"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml445(title)
+msgid "Testing it all out"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml446(para)
+msgid ""
+"Lastly, if a scoped token and a Service Provider region are presented to "
+"Keystone, the result will be a full SAML Assertion, signed by the IdP "
+"Keystone, specifically intended for the Service Provider Keystone."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml451(replaceable)
+msgid "d793d935b9c343f783955cf39ee7dc3c"
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml453(para)
+msgid ""
+"At this point the SAML Assertion can be sent to the Service Provider "
+"Keystone, and a valid OpenStack token, issued by a Service Provider "
+"Keystone, will be returned."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml460(para)
+msgid ""
+"Currently, the CLI supports the Enhanced Client or Proxy (ECP), (the non-"
+"browser) support for <literal>keystoneclient</literal> from an API "
+"perspective. So, if you are using the <literal>keystoneclient</literal>, you"
+" can create a client instance and use the SAML authorization plugin. There "
+"is no support for dashboard available presently. With the upcoming OpenStack"
+" releases, Federated Identity should be supported with both CLI and the "
+"dashboard."
+msgstr ""
 
 #: ./security-guide/section_understanding-the-audit-process.xml8(title)
 msgid "Understanding the audit process"
@@ -6752,6 +7438,16 @@ msgstr "AppArmor: MAC を実装している Linux セキュリティモジュー
 msgid "cgroups: Linux kernel feature to control resource usage"
 msgstr "cgroups: リソース使用量を制御するための Linux カーネル機能"
 
+#: ./security-guide/section_hypervisor-selection.xml735(link)
+msgid "Guide to Security for Full Virtualization Technologies"
+msgstr ""
+
+#: ./security-guide/section_hypervisor-selection.xml740(link)
+msgid ""
+"National Security Telecommunications and Information Systems Security Policy"
+" No. 11"
+msgstr ""
+
 #: ./security-guide/section_case-studies-management-interfaces.xml9(para)
 msgid ""
 "Previously we discussed typical OpenStack management interfaces and "
@@ -8318,10 +9014,6 @@ msgid ""
 "available ciphers and the OpenSSL cipher list format can be found at: <link "
 "href=\"https://www.openssl.org/docs/apps/ciphers.html\">ciphers</link>."
 msgstr "設定を掘り下げる前に、暗号の設定要素とその形式について簡単に議論します。利用可能な暗号におけるより包括的な使い方、および OpenSSL 暗号一覧形式が <link href=\"https://www.openssl.org/docs/apps/ciphers.html\">ciphers</link> にあります。"
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml40(para)
-msgid "or"
-msgstr "または"
 
 #: ./security-guide/section_ssl-proxies-and-http-services.xml44(para)
 msgid ""

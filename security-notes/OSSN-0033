@@ -1,0 +1,43 @@
+Some SSL-Enabled connections fail to perform basic certificate checks
+---
+
+### Summary ###
+In many places, OpenStack components use Python 2.x HTTPSConnection to
+establish an SSL connection between endpoints. This does not provide
+many of the assurances one would expect when using SSL and leaves
+connections open to potential man-in-the-middle attacks.
+
+### Affected Services / Software ###
+All OpenStack services, Havana, Icehouse, Juno
+
+### Discussion ###
+A secure SSL session relies on validation of a X.509 certificate. Basic
+checks include:
+
+  - Certificate Authority trust verification
+  - Certificate revocation status
+  - Certificate expiration
+  - Certificate subject name matching
+
+The HTTPSConnection class is used in a large number of locations and
+fails to check that certificates are signed by a valid authority.
+Without that check in place, the subsequent checks (some highlighted
+above) are largely invalid.
+
+The result is that an attacker who has access to the network traffic
+between two endpoints relying on HTTPSConnection can trivially create a
+certificate that will be accepted by HTTPSConnection as valid - allowing
+the attacker to intercept, read and modify traffic that should be
+encrypted by SSL.
+
+### Recommended Actions ###
+Some projects have updated their code to be more secure, others have
+not. The OSSG suggest cloud deployers check the status of the bug
+mentioned in the 'References' section of this note to see if the
+projects they require have updated.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0033
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1188189
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

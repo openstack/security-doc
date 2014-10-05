@@ -1,0 +1,33 @@
+Nova Baremetal is insecure for use in multi-tenant environments
+---
+
+### Summary ###
+Data of previous tenants may be exposed to new ones when using Nova
+Baremetal.
+
+### Affected Services / Software ###
+Nova Baremetal, All Releases
+
+### Discussion ###
+Nova Baremetal is intended for testing and development only, it is not
+intended to be production ready. Experience has shown that despite that
+warning the OpenStack community is keen to embrace new technologies and
+deploy at-risk. This OSSN serves to signpost some of the risks.
+
+Without secure boot, and without full openflow hardware networking
+during the boot process, it is impossible to trust multiple tenants on
+baremetal at all - because the vectors for attack are so low level that
+instances may be running in a virtual environment and unaware of it,
+with the virtual environment capturing secrets, forcing entropy pools to
+be predictable and other such hostile behaviour.
+
+### Recommended Actions ###
+Do not use Nova Baremetal where secure separation of tenants on hardware
+is a requirement without a full verifiable boot chain and network
+hardware.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0031
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1174153
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -33,8 +33,8 @@ LXC security pivots on a system known as DAC (discretionary access control)
 which is not currently capable of providing strong isolation of guests. Work is
 underway to improve DAC but it’s not ready for production use at this time.
 
-The OSSG recommends against using LXC for enforcing secure separation of guests.
-Even with appropriate AppArmour policies applied.
+The OSSG recommends against using LXC for enforcing secure separation of
+guests. Even with appropriate AppArmour policies applied.
 
 ### Contacts / References ###
 Nova : http://docs.openstack.org/developer/nova/

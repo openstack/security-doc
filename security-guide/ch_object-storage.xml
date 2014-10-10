@@ -269,16 +269,18 @@
                 OpenStack Object Storage supports SSL, but it does not support
                 transmission of the entire SSL certificate chain. This
                 causes issues when you use a third party trusted and
-                signed certificate, such as Verisign, for your cloud. The
-                current work around is to not use the built-in web
-                server but an alternative web server instead that
-                supports sending both the public server certificate as
-                well as the CA signing authorities intermediate
-                certificate(s). This allows for end-point clients that
-                have the CA root certificate in their trust store to
-                be able to successfully validate your cloud
-                environment's SSL certificate and chain. An example of
-                how to do this with mod_wsgi and Apache is given
+                signed certificate, such as Verisign, for your cloud.
+                A recommended work around is to use an SSL-terminaton
+                proxy such as stud, HAproxy or NGINX.</para>
+            <para>Although not extensively tested, another work around
+                is to use an alternative webserver instead of the
+                built-in web server, which supports sending both the
+                public server certificate as well as the CA signing
+                authorities intermediate certificate(s). This allows
+                for end-point clients that have the CA root certificate
+                in their trust store to be able to successfully validate
+                your cloud environment's SSL certificate and chain. An
+                example of how to do this with mod_wsgi and Apache is given
                 below. Also consult the <link
                     xlink:href="http://docs.openstack.org/developer/swift/apache_deployment_guide.html"
                     >Apache Deployment Guide</link></para>

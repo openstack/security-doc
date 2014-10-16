@@ -6,9 +6,10 @@
          xml:id="section_identity-federated-keystone">
   <?dbhtml stop-chunking?>
     <title>Federated Identity</title>
-    <para>Federated Identity is a mechanism to establish trusts between Identity
-     Providers and Service Providers (SP), in this case, between Identity
-     Providers and the services provided by an OpenStack Cloud.</para>
+    <para><glossterm  baseform="federated identity">Federated Identity</glossterm>
+      is a mechanism to establish trusts between Identity Providers and
+      Service Providers (SP), in this case, between Identity Providers and
+      the services provided by an OpenStack Cloud.</para>
     <para>Federated Identity provides a way to securely use existing credentials
       to access cloud resources such as servers, volumes, and databases,
       across multiple endpoints provided in multiple authorized clouds using a
@@ -18,20 +19,20 @@
     <para>Some important definitions:</para>
     <variablelist>
       <varlistentry>
-        <term>Service Provider (SP)</term>
+        <term><glossterm  baseform="service provider">Service Provider</glossterm> (SP)</term>
         <listitem><para>A system entity that provides services to principals or
             other system entities, in this case, OpenStack Identity is the
             Service Provider.</para></listitem>
       </varlistentry>
       <varlistentry>
-        <term>Identity Provider (IdP)</term>
+        <term><glossterm  baseform="identity provider">Identity Provider</glossterm> (IdP)</term>
         <listitem><para>A directory service, such as LDAP, RADIUS and Active
          Directory, which allows users to login with a user name and password,
          is a typical source of authentication tokens (e.g. passwords) at an
          identity provider.</para></listitem>
       </varlistentry>
       <varlistentry>
-        <term>SAML assertion</term>
+        <term><glossterm>SAML assertion</glossterm></term>
         <listitem><para>Contains information about a user as provided
             by an IdP. It is an indication that a user has been authenticated.
           </para></listitem>
@@ -50,13 +51,13 @@
             identity: OpenID, SAML, and OAuth.</para></listitem>
       </varlistentry>
       <varlistentry>
-        <term>Unscoped token</term>
+        <term><glossterm baseform="unscoped token">Unscoped token</glossterm></term>
         <listitem><para>Allows a user to authenticate with the Identity
             service to exchange the unscoped token for a scoped token, by providing
             a project ID or a domain ID.</para></listitem>
       </varlistentry>
       <varlistentry>
-        <term>Scoped token</term>
+        <term><glossterm baseform="scoped token">Scoped token</glossterm></term>
         <listitem><para>Allows a user to use all OpenStack services
             apart from the Identity service.</para></listitem>
       </varlistentry>

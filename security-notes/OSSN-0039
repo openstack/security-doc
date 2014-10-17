@@ -1,0 +1,147 @@
+Configuring OpenStack deployments to prevent POODLE attacks
+---
+
+### Summary ###
+POODLE (CVE-2014-3566) is a new attack on SSLv3 that allows an active
+network-based attacker to recover the plaintext from a secure connection
+using a CBC-mode cipher. Unfortunately, all other cipher modes in SSLv3
+are also insecure. Therefore, the recommended solution is to disable
+SSLv3. We also discuss an alternative option below. Proper mitigation
+requires addressing this issue on SSLv3 clients and servers.
+
+
+### Affected Services / Software ###
+Any service using SSLv3. Depending on the backend SSL library, this
+can include many components of an OpenStack cloud:
+
+- OpenStack services
+- OpenStack clients
+- Web servers (Apache, Nginx, etc)
+- SSL/TLS terminators (Stud, Pound, etc)
+- Proxy services (HAProxy, etc)
+- Miscellaneous services (eventlet, syslog, ldap, smtp, etc)
+
+
+### Discussion ###
+The POODLE attack was first announced on 14 Oct 2014 [1]. For a deeper
+technical discussion on POODLE, we refer you to the security advisory
+at openssl.org [2] and Daniel Franke's write-up [3]. POODLE affects any
+SSL/TLS connection that can be downgraded to SSLv3. This requires both
+the client and the server to support SSLv3. Due to the way the protocol
+negotiations work, an attacker positioned on the network between the
+client and the server can force a downgrade to SSLv3 by selectively
+dropping network packets.
+
+The best remediation for POODLE is to disable SSLv3 on all clients and
+servers that you control. This will protect you regardless of the
+mitigation status on the other end of the connection. An alternative
+option is to deploy TLS_FALLBACK_SCSV, which will prevent the downgrade
+attack, but could still allow SSLv3 connections if that is the only
+supported protocol between the client and server. Any connection that
+happens over SSLv3 using a CBC-mode cipher would still be vulnerable.
+
+You can use the OpenSSL s_client tool to test if a server allows SSLv3
+connections:
+
+    openssl s_client -connect <domain name>:<port> -ssl3
+
+If the server does not support SSLv3, you will see a handshake failure
+message. This indicates that the server does not accept SSLv3
+connections. Assuming this server also has SSLv2 disabled, which is a
+common default today, then no further configuration is needed. If
+the handshake from s_client completes, then the server requires some
+configuration. Note that you can perform this step for any service
+that has SSL/TLS enabled including OpenStack API endpoints.
+
+Testing clients is slightly more cumbersome because there are likely
+many more clients than servers throughout the cloud. However, this
+test follows a similar pattern. Using the OpenSSL s_server tool, you
+can create an endpoint that only accepts SSLv3:
+
+    openssl s_server -cert <filename> -key <filename> -state \
+                     -ssl3 -no_ssl2 -no_tls1 -no_tls1_1 -no_tls1_2 \
+                     -tlsextdebug
+
+If the client can connect to this endpoint, the client needs to update
+their configuration as described below.
+
+
+### Recommended Actions ###
+We recommend disabling SSLv3 altogether and will provide additional
+guidance on how to do this below.
+
+If SSLv3 is still required on your system due to client compatibility
+concerns, then TLS_FALLBACK_SCSV is your only choice. In this case you
+will need an underlying library that supports TLS_FALLBACK_SCSV (such
+as OpenSSL 1.0.1j). Applications using OpenSSL will automatically start
+using TLS_FALLBACK_SCSV once OpenSSL is updated. You should perform an
+audit in your cloud to verify that all SSL/TLS services do use this
+new library:
+
+    ldd <path to binary that uses OpenSSL> | grep ssl
+
+Review the output and ensure that it is linked to the new version of
+OpenSSL that includes TLS_FALLBACK_SCSV support.
+
+Disabling SSLv3 can be done at either the application level or the
+library level. Doing it at the library level ensures consistency
+throughout the cloud. However, if you are not already compiling
+OpenSSL then this may not fit into your deployment workflow. In this
+case, you must consider each application in turn.
+
+If you are able to recompile your SSL/TLS library, then this is likely
+the best option. Disabling SSLv3 at the library level ensures
+consistency across the system. For OpenSSL, you can use the "no-ssl3"
+build option. Then deploy that library to your cloud and verify that
+all SSL/TLS services are using the library using the ldd command
+discussed above.
+
+If you are unable to recompile your SSL/TLS library, then you should
+reconfigure each application that uses SSL/TLS. Each application has
+a different way to handle this configuration. We provide the
+configuration option for some of the more common applications below:
+
+Apache:
+SSLProtocol All -SSLv2 -SSLv3
+
+Nginx:
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+Stud:
+Requires code change, see [4].
+After code change use --tls option.
+
+Pound:
+Requires code change, see [5].
+After code change use DisableSSLv3 option.
+
+HAProxy (only version 1.5+ supports SSL/TLS):
+Depends on config, see [6].
+
+Postfix SMTP:
+smtpd_tls_mandatory_protocols=!SSLv2,!SSLv3
+
+The OpenStack services and python clients do not currently have a
+configuration option for the SSL/TLS protocol version. Therefore, the
+best way to avoid SSLv3 with OpenStack code today is to ensure that the
+underlying SSL/TLS library (OpenSSL in this case) is compiled without
+SSLv3 support, as described above.
+
+Once you have updated all of the necessary software in your cloud, we
+recommend using the s_client and s_server test procedures described
+above to verify that each service is configured as expected.
+
+
+### Contacts / References ###
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0039
+Original Launchpad Bug: https://bugs.launchpad.net/ossn/+bug/1382270
+OpenStack Security ML: openstack-security@lists.openstack.org
+OpenStack Security Group: https://launchpad.net/~openstack-ossg
+CVE: CVE-2014-3566
+
+[1]: http://googleonlinesecurity.blogspot.com/2014/10/this-poodle-bites-exploiting-ssl-30.html
+[2]: https://www.openssl.org/~bodo/ssl-poodle.pdf
+[3]: https://www.dfranke.us/posts/2014-10-14-how-poodle-happened.html
+[4]: https://github.com/bumptech/stud/pull/138
+[5]: http://www.apsis.ch/pound/pound_list/archive/2014/2014-10/1413471803000
+[6]: http://blog.haproxy.com/2014/10/15/haproxy-and-sslv3-poodle-vulnerability/

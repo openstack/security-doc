@@ -1,0 +1,45 @@
+Configure Horizon to mitigate BREACH/CRIME attacks
+---
+
+### Summary ###
+Horizon is vulnerable to BREACH/CRIME style chosen plaintext attacks in
+it's default configuration.
+
+### Affected Services / Software ###
+Horizon, Django, Apache, Nginx, SSL, TLS
+
+### Discussion ###
+The BREACH attack may be used to compromise Django's cross-site request
+forgery (CSRF) protection. OpenStack's Horizon web dashboard is built on
+the Django framework, and is consequently affected. There is no fix
+available in Horizon itself, but there are protection options.
+
+BREACH takes advantage of vulnerabilities when serving compressed data
+over SSL/TLS.
+
+### Recommended Actions ###
+Since BREACH is related to serving compressed data, disabling
+compression of web responses can be used to mitigate these type of
+attacks. Some methods for this include:
+
+Disable Django's GZIP Middleware:
+
+  https://docs.djangoproject.com/en/dev/ref/middleware/#module-django.middleware.gzip
+
+Disable GZip compression in your web server's config.  For Apache httpd,
+you can do this by disabling mod_deflate:
+
+  http://httpd.apache.org/docs/2.2/mod/mod_deflate.html
+
+For Nginx, you can do this by disabling the gzip module:
+
+  http://wiki.nginx.org/HttpGzipModule
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0037
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1209250
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Django advice on BREACH :
+  https://www.djangoproject.com/weblog/2013/aug/06/breach-and-django/
+More info on BREACH : http://breachattack.com/

@@ -1,0 +1,59 @@
+HTTP Strict Transport Security not enabled on Horizon Dashboard
+---
+
+### Summary ###
+Deployers using Horizon for production or internet facing operations
+should strongly consider configuring HTTP Strict Transport Security
+(HSTS) for their deployment.
+
+### Affected Services / Software ###
+Horizon, SSL, TLS, Apache, Nginx
+
+### Discussion ###
+HTTP Strict Transport Security (HSTS) enforces that all communications
+with a server go over SSL. This mitigates the threat from attacks such
+as SSL-Strip which replaces links on the wire, stripping away https
+prefixes and potentially allowing an attacker to view confidential
+information on the wire.
+
+HSTS can be enabled in Apache and Nginx, the two primary ways of serving
+Horizon at scale.
+
+### Recommended Actions ###
+If using Apache httpd to host Horizon, add the following to the relevant
+'VirtualHost' entry in your Apache httpd configuration file:
+
+  --- begin example httpd configuration snippet ---
+  Header add Strict-Transport-Security "max-age=15768000"
+  --- end example httpd configuration snippet ---
+
+We suggest also using mod_rewrite to ensure all visitors to Horizon land
+on a secure page. To accomplish this, add the following into your Apache
+httpd configuration file:
+
+  --- begin example httpd configuration snippet ---
+  <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+  </IfModule>
+  --- end example httpd configuration snippet ---
+
+If using Nginx to host Horizon, add the following to your Nginx
+configuration file:
+
+  --- begin example Nginx configuration snippet ---
+  add_header Strict-Transport-Security max-age=15768000;
+  --- end example Nginx configuration snippet ---
+
+As always, test these configuration settings before deploying them to
+production in order to catch any bugs or errors.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0035
+SSL Strip : http://www.thoughtcrime.org/software/sslstrip
+Original LaunchPad Bug : https://bugs.launchpad.net/horizon/+bug/1191050
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+HTTP Strict Transport Security:
+  https://www.owasp.org/index.php/HTTP_Strict_Transport_Security

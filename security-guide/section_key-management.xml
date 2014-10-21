@@ -11,12 +11,13 @@
     <para>It shall support the creation of keys, and their secure saving (with a service master-key). Some of the design questions still being debated are how much of the Key Management Interchange Protocol (KMIP) to support, key formats, and certificate management. The key manager will be pluggable to facilitate deployments that need a third-party Hardware Security Module (HSM).</para>
     <para>OpenStack Block Storage, cinder, is the first service looking to integrate with the key manager to provide volume encryption.</para>
     <section xml:id="key-management-references">
-      <title>References:</title>
-      <itemizedlist><listitem>
-          <para><link xlink:href="http://docs.openstack.org/developer/barbican">Barbican developer documentation</link></para>
+      <title>Bibliography:</title>
+      <itemizedlist>
+        <listitem>
+          <para>OpenStack.org, Welcome to Barbican's Developer Documentation!. 2014. <link xlink:href="http://docs.openstack.org/developer/barbican">Barbican developer documentation</link></para>
         </listitem>
-<listitem>
-          <para><link xlink:href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=kmip">KMIP</link></para>
+        <listitem>
+          <para>oasis-open.org, OASIS Key Management Interoperability Protocol (KMIP). 2014. <link xlink:href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=kmip">KMIP</link></para>
         </listitem>
 </itemizedlist>
     </section>

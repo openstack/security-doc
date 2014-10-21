@@ -19,7 +19,7 @@ files etc. There are many other abuse-cases.
 
 ### Recommended Actions ###
 This issue has been fixed in the OpenStack Havana release. The fix has
-also been backported to OpenStack Grizzle as a part of the 2013.1.4
+also been backported to OpenStack Grizzly as a part of the 2013.1.4
 Keystone release.
 
 How the tokens are stored depends on your cloud deployment. If you

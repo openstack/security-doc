@@ -64,7 +64,7 @@
     </note>
     <section xml:id="object-storage-first-thing-to-secure-the-network">
         <title>First thing to secure: the network</title>
-        <para>Securing Object Storage service begins with securing the
+        <para>Securing the Object Storage service begins with securing the
             networking component. The rsync protocol is used between storage
             service nodes to replicate data for high availability. In addition,
             the proxy service communicates with the storage service when
@@ -73,7 +73,7 @@
         <caution>
             <para>Object Storage does not employ encryption or authentication
             with inter-node communications. This is why you see a
-            "Private Switch" or private network ([V]LAN) in architecture
+            "Private Switch" or private network ([V]LAN) in the architecture
             diagrams. This data domain should be separate from other
             OpenStack data networks as well. For further discussion on
             security domains please see <xref
@@ -124,7 +124,7 @@
             <para>It is recommended that you configure each Object Storage service
 
                 to run under a non-root (UID 0) service account. One
-                recommendation is the user name "swift" with primary
+                recommendation is the user name "swift" with the primary
                 group "swift."  Object Storage services include, for
                 example, 'proxy-server', 'container-server',
                 'account-server'.  Detailed steps for setup and
@@ -335,9 +335,9 @@ Group swift</programlisting>
                 employ a dedicated network device load balancer. This
                 is also the common way to provide redundancy and load
                 balancing when using multiple proxy nodes.</para>
-            <para>If you choose to offload your SSL ensure that the
+            <para>If you choose to offload your SSL, ensure that the
                 network link between the load balancer and your proxy
-                nodes is on a private (V)LAN segment such that other
+                nodes are on a private (V)LAN segment such that other
                 nodes on the network (possibly compromised) cannot
                 wiretap (sniff) the unencrypted traffic. If such a
                 breach were to occur the attacker could gain access to

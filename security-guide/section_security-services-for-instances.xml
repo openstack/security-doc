@@ -21,6 +21,9 @@
       <listitem>
         <para>Instance migrations</para>
       </listitem>
+      <listitem>
+        <para>Monitoring, alerting, and reporting</para>
+      </listitem>
 </itemizedlist>
     <section xml:id="security-services-for-instances-entropy-to-instances">
       <title>Entropy to instances</title>
@@ -234,5 +237,34 @@
 </orderedlist>
         </section>
       </section>
+    </section>
+    <section xml:id="security-services-for-instances-monitoring-reporting">
+      <title>Monitoring, alerting, and reporting</title>
+      <para>As an OpenStack virtual machine is a server image able to
+        be replicated across hosts, best practice in logging applies
+        similarly between physical and virtual hosts. Operating
+        system-level and application-level events should be logged,
+        including access events to hosts and data, user additions and
+        removals, changes in privilege, and others as dictated by the
+        environment. Ideally, you can configure these logs to export to
+        a log aggregator that collects log events, correlates them for
+        analysis, and stores them for reference or further action. One
+        common tool to do this is an
+        <link xlink:href="http://www.elasticsearch.com"><citetitle> ELK
+        stack, or Elasticsearch, Logstash, and Kibana</citetitle>
+        </link>.</para>
+      <para>These logs should be reviewed at a regular cadence such as
+        a live view by a network operations center (NOC), or if the
+        environment is not large enough to necessitate a NOC, then logs
+        should undergo a regular log review process.</para>
+      <para>Many times interesting events trigger an alert which is
+        sent to a responder for action. Frequently this alert takes the
+        form of an email with the messages of interest. An interesting
+        event could be a significant failure, or known health indicator
+        of a pending failure. Two common utilities for managing alerts
+        are <link xlink:href="http://www.nagios.org">
+        <citetitle>Nagios</citetitle></link> and
+        <link xlink:href="http://www.zabbix.com"><citetitle>Zabbix
+        </citetitle></link>.</para>
     </section>
 </section>

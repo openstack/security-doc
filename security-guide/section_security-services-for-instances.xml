@@ -24,10 +24,39 @@
 </itemizedlist>
     <section xml:id="security-services-for-instances-entropy-to-instances">
       <title>Entropy to instances</title>
-      <para>We consider entropy to refer to the quality and source of random data that is available to an instance. Cryptographic technologies typically rely heavily on randomness, requiring a high quality pool of entropy to draw from. It is typically hard for a virtual machine to get enough entropy to support these operations, which is referred to as entropy starvation. Entropy starvation can manifest in instances as something seemingly unrelated. For example, slow boot time may be caused by the instance waiting for ssh key generation. Entropy starvation may also motivate users to employ poor quality entropy sources from within the instance, making applications running in the cloud less secure overall.</para>
-      <para>Fortunately, a cloud architect may address these issues by providing a high quality source of entropy to the cloud instances. This can be done by having enough hardware random number generators (HRNG) in the cloud to support the instances. In this case, "enough" is somewhat domain specific. For everyday operations, a modern HRNG is likely to produce enough entropy to support 50-100 compute nodes. High bandwidth HRNGs, such as the RdRand instruction available with Intel Ivy Bridge and newer processors could potentially handle more nodes. For a given cloud, an architect needs to understand the application requirements to ensure that sufficient entropy is available.</para>
-      <para>Once the entropy is available in the cloud, the next step is getting that entropy into the instances. Tools such as the entropy gathering daemon (<link xlink:href="http://egd.sourceforge.net/">EGD</link>) provide a way to fairly and securely distribute entropy through a distributed system. Support exists for using the EGD as an entropy source for libvirt.</para>
-      <para>Compute support for these features is not generally available, but it would only require a moderate amount of work for implementors to integrate this functionality.</para>
+      <para>We consider entropy to refer to the quality and source of
+        random data that is available to an instance. Cryptographic
+        technologies typically rely heavily on randomness, requiring a
+        high quality pool of entropy to draw from. It is typically hard
+        for a virtual machine to get enough entropy to support these
+        operations, which is referred to as entropy starvation. Entropy
+        starvation can manifest in instances as something seemingly
+        unrelated. For example, slow boot time may be caused by the
+        instance waiting for ssh key generation. Entropy starvation
+        may also motivate users to employ poor quality entropy sources
+        from within the instance, making applications running in the
+        cloud less secure overall.</para>
+      <para>Fortunately, a cloud architect may address these issues by
+        providing a high quality source of entropy to the cloud
+        instances. This can be done by having enough hardware random
+        number generators (HRNG) in the cloud to support the instances.
+        In this case, "enough" is somewhat domain specific. For
+        everyday operations, a modern HRNG is likely to produce enough
+        entropy to support 50-100 compute nodes. High bandwidth HRNGs,
+        such as the RdRand instruction available with Intel Ivy Bridge
+        and newer processors could potentially handle more nodes. For a
+        given cloud, an architect needs to understand the application
+        requirements to ensure that sufficient entropy is available.
+      </para>
+      <para>The Virtio RNG is a random number generator that uses
+        <filename>/dev/random</filename> as the source of entropy by
+        default, however can be configured to use a hardware RNG or a
+        tool such as the entropy gathering daemon (<link
+        xlink:href="http://egd.sourceforge.net/">EGD</link>) to provide
+        a way to fairly and securely distribute entropy through a
+        distributed system. The Virtio RNG is enabled using the
+        <literal>hw_rng</literal> property of the metadata used to
+        create the instance.</para>
     </section>
     <section xml:id="security-services-for-instances-scheduling-instances-to-nodes">
       <title>Scheduling instances to nodes</title>

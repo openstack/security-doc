@@ -97,7 +97,7 @@
     </section>
     <section xml:id="security-services-for-instances-trusted-images">
       <title>Trusted images</title>
-      <para>With regards to images, users will be working with pre-installed images or images that they upload themselves. In both cases, users will want to ensure that the image they are ultimately running has not been tampered with. This requires some source of truth such as a checksum for the known good version of an image as well as verification of the running image. This section describes the current best practices around image handling, while also calling out some of the existing gaps in this space.</para>
+      <para>In a cloud environment, users work with either pre-installed images or images they upload themselves. In both cases, users should be able to ensure the image they are utilizing has not been tampered with. This requires a method of validation, such as a checksum for the known good image as well as verification of a running instance. While there are current best practices around these actions there are also several gaps in the process.</para>
       <section xml:id="security-services-for-instances-trusted-images-image-creation-process">
         <title>Image creation process</title>
         <para>The OpenStack Documentation provides guidance on how to

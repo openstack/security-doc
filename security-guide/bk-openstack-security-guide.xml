@@ -37,6 +37,19 @@
             <!-- ... continue adding more revisions here as you change this document using the markup shown below... -->
 
             <revision>
+                <date>2014-10-16</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>This book has been extensively
+                            reviewed and updated. Chapters have been
+                            rearranged and a glossary has been
+                            added.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2013-12-02</date>
                 <revdescription>
                     <itemizedlist>

@@ -21,7 +21,7 @@
         values. This can lead to internal management traffic being
         routed to external API endpoints.</para>
       <section xml:id="api-endpoint-configuration-recommendations-internal-api-communications-configure-internal-urls-in-identity-service-catalog">
-        <title>Configure internal URLs in Identity service catalog</title>
+        <title>Configure internal URLs in the Identity service catalog</title>
         <para>
           The Identity service catalog should be aware of your
           internal URLs. While this feature is not utilized by
@@ -90,7 +90,7 @@ s3_use_ssl=True</programlisting>
     <section xml:id="api-endpoint-configuration-recommendations-api-endpoint-process-isolation-and-policy">
       <title>API endpoint process isolation and policy</title>
       <para>
-        As much as possible, you should isolate API endpoint
+        You should isolate API endpoint
         processes, especially those that reside within the public
         security domain should be isolated as much as possible. Where
         deployments allow, API endpoints should be deployed on
@@ -114,7 +114,7 @@ s3_use_ssl=True</programlisting>
         <para>
           With careful modeling, you can use network ACLs and IDS
           technologies to enforce explicit point to point
-          communication between network services. As critical cross
+          communication between network services. As a critical cross
           domain service, this type of explicit enforcement works well
           for OpenStack's message queue service.</para>
         <para>
@@ -129,7 +129,7 @@ s3_use_ssl=True</programlisting>
           and other processes on a machine. The configuration for
           those processes should be restricted to those processes not
           only by Discretionary Access Controls, but through Mandatory
-          Access Controls. The goal of these enhanced access control
+          Access Controls. The goal of these enhanced access controls
           is to aid in the containment and escalation of API endpoint
           security breaches. With mandatory access controls, such
           breaches severely limit access to resources and provide

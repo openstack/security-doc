@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-22 10:31+0000\n"
-"PO-Revision-Date: 2014-10-27 01:51+0000\n"
+"POT-Creation-Date: 2014-10-29 08:00+0000\n"
+"PO-Revision-Date: 2014-10-29 12:41+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -9594,26 +9594,36 @@ msgid ""
 msgstr "本書は OpenStack クラウドを安全にするためのベストプラクティスと基本的な考え方について書かれています。"
 
 #: ./security-guide/bk-openstack-security-guide.xml40(date)
+msgid "2014-10-16"
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml44(para)
+msgid ""
+"This book has been extensively reviewed and updated. Chapters have been "
+"rearranged and a glossary has been added."
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml53(date)
 msgid "2013-12-02"
 msgstr "2013-12-02"
 
-#: ./security-guide/bk-openstack-security-guide.xml44(para)
+#: ./security-guide/bk-openstack-security-guide.xml57(para)
 msgid "Chapter on Object Storage added."
 msgstr "Object Storage に関する章を追加しました。"
 
-#: ./security-guide/bk-openstack-security-guide.xml50(date)
+#: ./security-guide/bk-openstack-security-guide.xml63(date)
 msgid "2013-10-17"
 msgstr "2013-10-17"
 
-#: ./security-guide/bk-openstack-security-guide.xml54(para)
+#: ./security-guide/bk-openstack-security-guide.xml67(para)
 msgid "Havana release."
 msgstr "Havana リリース。"
 
-#: ./security-guide/bk-openstack-security-guide.xml60(date)
+#: ./security-guide/bk-openstack-security-guide.xml73(date)
 msgid "2013-07-02"
 msgstr "2013-07-02"
 
-#: ./security-guide/bk-openstack-security-guide.xml64(para)
+#: ./security-guide/bk-openstack-security-guide.xml77(para)
 msgid "Initial creation..."
 msgstr "初版作成..."
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-17 06:02+0000\n"
+"POT-Creation-Date: 2014-10-30 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5682,26 +5682,34 @@ msgid "This book provides best practices and conceptual information about securi
 msgstr ""
 
 #: ./security-guide/bk-openstack-security-guide.xml:40(date)
-msgid "2013-12-02"
+msgid "2014-10-16"
 msgstr ""
 
 #: ./security-guide/bk-openstack-security-guide.xml:44(para)
+msgid "This book has been extensively reviewed and updated. Chapters have been rearranged and a glossary has been added."
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml:53(date)
+msgid "2013-12-02"
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml:57(para)
 msgid "Chapter on Object Storage added."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:50(date)
+#: ./security-guide/bk-openstack-security-guide.xml:63(date)
 msgid "2013-10-17"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:54(para)
+#: ./security-guide/bk-openstack-security-guide.xml:67(para)
 msgid "Havana release."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:60(date)
+#: ./security-guide/bk-openstack-security-guide.xml:73(date)
 msgid "2013-07-02"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:64(para)
+#: ./security-guide/bk-openstack-security-guide.xml:77(para)
 msgid "Initial creation..."
 msgstr ""
 

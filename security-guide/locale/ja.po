@@ -2,6 +2,7 @@
 # Translators:
 # Akira Yoshiyama <akirayoshiyama@gmail.com>, 2013-2014
 # yfukuda <fukuda.yuko@jp.fujitsu.com>, 2014
+# Kuo(Kyohei MORIYAMA) <>, 2014
 # Mitsuhiro Tanino <mittjp1129@gmail.com>, 2014
 # myamamot <myamamot@redhat.com>, 2013-2014
 # Tomoaki Nakajima <>, 2013-2014
@@ -12,9 +13,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-10-29 08:00+0000\n"
-"PO-Revision-Date: 2014-10-29 12:41+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2014-10-30 15:38+0000\n"
+"PO-Revision-Date: 2014-10-31 04:30+0000\n"
+"Last-Translator: Kuo(Kyohei MORIYAMA) <>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -376,7 +377,7 @@ msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml152(title)
 msgid "Audit reference"
-msgstr ""
+msgstr "監査参照"
 
 #: ./security-guide/section_compliance-overview.xml153(para)
 msgid ""
@@ -1073,7 +1074,7 @@ msgid ""
 msgstr "Identity はトークン失効をサポートします。これは、トークンを失効するため、失効済みトークンを一覧表示するために API として宣言されます。また、トークンをキャッシュしている各 OpenStack サービスが失効済みトークンを問い合わせるため、それらのキャッシュから失効済みトークンを削除するため、キャッシュした失効済みトークンの一覧に追加するためにもあります。"
 
 #: ./security-guide/ch_identity.xml289(title)
-#: ./security-guide/section_identity-federated-keystone.xml459(title)
+#: ./security-guide/section_identity-federated-keystone.xml460(title)
 msgid "Future"
 msgstr "将来"
 
@@ -1117,7 +1118,7 @@ msgstr "ルールにより管理ユーザーとテナントに所属するユー
 #: ./security-guide/section_case-studies-api-endpoints.xml8(title)
 #: ./security-guide/section_case-studies-networking.xml8(title)
 msgid "Case studies"
-msgstr ""
+msgstr "ケーススタディ"
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml9(para)
 msgid ""
@@ -2288,8 +2289,8 @@ msgid ""
 msgstr "サービスはOpenStackサービスカタログに基づいて、それぞれのAPIエンドポイントを選択します。これらのサービスは、リストされた外部もしくは内部APIエンドポイントの値に従わないことがあります。これは内部管理トラフィックが外部APIエンドポイントへルーティングされる可能性があります。"
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml24(title)
-msgid "Configure internal URLs in Identity service catalog"
-msgstr "認証サービスのカタログ内の内部URL構成"
+msgid "Configure internal URLs in the Identity service catalog"
+msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml25(para)
 msgid ""
@@ -2365,11 +2366,11 @@ msgstr "APIエンドポイントのプロセス分離とポリシー"
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml92(para)
 msgid ""
-"As much as possible, you should isolate API endpoint processes, especially "
-"those that reside within the public security domain should be isolated as "
-"much as possible. Where deployments allow, API endpoints should be deployed "
-"on separate hosts for increased isolation."
-msgstr "特にパブリックなセキュリティドメインに属するAPIエンドポイントプロセスは可能な限り分離すべきです。ディプロイメント可能であれば、APIエンドポイントは分離のために増設されたホスト上に構成すべきです。"
+"You should isolate API endpoint processes, especially those that reside "
+"within the public security domain should be isolated as much as possible. "
+"Where deployments allow, API endpoints should be deployed on separate hosts "
+"for increased isolation."
+msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml99(title)
 #: ./security-guide/section_messaging-security.xml195(title)
@@ -2399,10 +2400,10 @@ msgstr ""
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml114(para)
 msgid ""
 "With careful modeling, you can use network ACLs and IDS technologies to "
-"enforce explicit point to point communication between network services. As "
-"critical cross domain service, this type of explicit enforcement works well "
-"for OpenStack's message queue service."
-msgstr "慎重なデザインを行えば、ネットワークACLとIDS技術をネットワークサービス間の特定の通信に摘要する事が出来ます。重要なドメインをまたがるサービスとして、OpenStackのメッセージキューにこの手の明示的な強制は適しています。"
+"enforce explicit point to point communication between network services. As a"
+" critical cross domain service, this type of explicit enforcement works well"
+" for OpenStack's message queue service."
+msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml120(para)
 msgid ""
@@ -2417,10 +2418,10 @@ msgid ""
 "processes on a machine. The configuration for those processes should be "
 "restricted to those processes not only by Discretionary Access Controls, but"
 " through Mandatory Access Controls. The goal of these enhanced access "
-"control is to aid in the containment and escalation of API endpoint security"
-" breaches. With mandatory access controls, such breaches severely limit "
-"access to resources and provide earlier alerting on such events."
-msgstr "APIエンドポイントのプロセスはマシン上の他のプロセスと分離すべきです。これらのプロセスの構成は任意のアクセス制御方法ではなく、強制アクセス制御によって制限されるべきです。これらのアクセス制御の目的はAPIエンドポイントのセキュリティ侵害の抑制と、特権侵害の防止です。強制アクセス制御を利用する事で、禁止されたリソースへのアクセスが厳しく制限され、早期の警告が得られるようになります。"
+"controls is to aid in the containment and escalation of API endpoint "
+"security breaches. With mandatory access controls, such breaches severely "
+"limit access to resources and provide earlier alerting on such events."
+msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml8(title)
 msgid "Federated Identity"
@@ -2428,12 +2429,13 @@ msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml9(para)
 msgid ""
-"Federated Identity is a mechanism to establish trusts between Identity "
-"Providers and Service Providers (SP), in this case, between Identity "
-"Providers and the services provided by an OpenStack Cloud."
+"<glossterm baseform=\"federated identity\">Federated Identity</glossterm> is"
+" a mechanism to establish trusts between Identity Providers and Service "
+"Providers (SP), in this case, between Identity Providers and the services "
+"provided by an OpenStack Cloud."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml12(para)
+#: ./security-guide/section_identity-federated-keystone.xml13(para)
 msgid ""
 "Federated Identity provides a way to securely use existing credentials to "
 "access cloud resources such as servers, volumes, and databases, across "
@@ -2443,57 +2445,59 @@ msgid ""
 "Provider."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml18(para)
+#: ./security-guide/section_identity-federated-keystone.xml19(para)
 msgid "Some important definitions:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml21(term)
-msgid "Service Provider (SP)"
+#: ./security-guide/section_identity-federated-keystone.xml22(term)
+msgid "<glossterm baseform=\"service provider\">Service Provider</glossterm> (SP)"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml22(para)
+#: ./security-guide/section_identity-federated-keystone.xml23(para)
 msgid ""
 "A system entity that provides services to principals or other system "
 "entities, in this case, OpenStack Identity is the Service Provider."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml27(term)
-msgid "Identity Provider (IdP)"
+#: ./security-guide/section_identity-federated-keystone.xml28(term)
+msgid ""
+"<glossterm baseform=\"identity provider\">Identity Provider</glossterm> "
+"(IdP)"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml28(para)
+#: ./security-guide/section_identity-federated-keystone.xml29(para)
 msgid ""
 "A directory service, such as LDAP, RADIUS and Active Directory, which allows"
 " users to login with a user name and password, is a typical source of "
 "authentication tokens (e.g. passwords) at an identity provider."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml34(term)
+#: ./security-guide/section_identity-federated-keystone.xml35(glossterm)
 msgid "SAML assertion"
 msgstr "SAML アサーション"
 
-#: ./security-guide/section_identity-federated-keystone.xml35(para)
+#: ./security-guide/section_identity-federated-keystone.xml36(para)
 msgid ""
 "Contains information about a user as provided by an IdP. It is an indication"
 " that a user has been authenticated."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml40(term)
+#: ./security-guide/section_identity-federated-keystone.xml41(term)
 msgid "Mapping"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml41(para)
+#: ./security-guide/section_identity-federated-keystone.xml42(para)
 msgid ""
 "Adds a set of rules to map Federation protocol attributes to Identity API "
 "objects. An Identity Provider has exactly one mapping specified per "
 "protocol."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml46(term)
+#: ./security-guide/section_identity-federated-keystone.xml47(term)
 msgid "Protocol"
 msgstr "プロトコル"
 
-#: ./security-guide/section_identity-federated-keystone.xml47(para)
+#: ./security-guide/section_identity-federated-keystone.xml48(para)
 msgid ""
 "Contains information that dictates which Mapping rules to use for an "
 "incoming request made by an IdP. An IdP may support multiple protocols. "
@@ -2501,30 +2505,30 @@ msgid ""
 "OAuth."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml53(term)
+#: ./security-guide/section_identity-federated-keystone.xml54(glossterm)
 msgid "Unscoped token"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml54(para)
+#: ./security-guide/section_identity-federated-keystone.xml55(para)
 msgid ""
 "Allows a user to authenticate with the Identity service to exchange the "
 "unscoped token for a scoped token, by providing a project ID or a domain ID."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml59(term)
+#: ./security-guide/section_identity-federated-keystone.xml60(glossterm)
 msgid "Scoped token"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml60(para)
+#: ./security-guide/section_identity-federated-keystone.xml61(para)
 msgid ""
 "Allows a user to use all OpenStack services apart from the Identity service."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml65(title)
+#: ./security-guide/section_identity-federated-keystone.xml66(title)
 msgid "Why use Federated Identity?"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml67(para)
+#: ./security-guide/section_identity-federated-keystone.xml68(para)
 msgid ""
 "Provisioning new identities often incurs some security risk. It is difficult"
 " to secure credential storage and to deploy it with proper policies. A "
@@ -2534,14 +2538,14 @@ msgid ""
 "exist in the IdP's databases."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml73(para)
+#: ./security-guide/section_identity-federated-keystone.xml74(para)
 msgid ""
 "This does introduce new challenges around protecting that identity. However,"
 " this is a worthwhile tradeoff given the greater control, and fewer "
 "credential databases that come with a centralized common identity store."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml78(para)
+#: ./security-guide/section_identity-federated-keystone.xml79(para)
 msgid ""
 "It is a burden on the clients to deal with multiple tokens across multiple "
 "cloud service providers. Federated Identity provides single sign on to the "
@@ -2549,7 +2553,7 @@ msgid ""
 "to access many different services on the Internet."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml83(para)
+#: ./security-guide/section_identity-federated-keystone.xml84(para)
 msgid ""
 "Users spend too much time logging in or going through 'Forget Password' "
 "workflows. Federated identity allows for single sign on, which is easier and"
@@ -2557,13 +2561,13 @@ msgid ""
 "identities and passwords so OpenStack does not have to."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml88(para)
+#: ./security-guide/section_identity-federated-keystone.xml89(para)
 msgid ""
 "Too much time is spent administering identities in various service "
 "providers."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml90(para)
+#: ./security-guide/section_identity-federated-keystone.xml91(para)
 msgid ""
 "The best test of interoperability in the cloud is the ability to enable a "
 "user with one set of credentials in an IdP to access multiple cloud "
@@ -2571,7 +2575,7 @@ msgid ""
 " to collaborate and quickly share the same cloud services."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml95(para)
+#: ./security-guide/section_identity-federated-keystone.xml96(para)
 msgid ""
 "Removes a blocker to cloud brokering and multi-cloud workload management. "
 "There is no need to build additional authentication mechanisms ito "
@@ -2580,11 +2584,11 @@ msgid ""
 "organizations, multiple authentication technologies are already in use."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml103(title)
+#: ./security-guide/section_identity-federated-keystone.xml104(title)
 msgid "Configuring Identity service for Federation"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml104(para)
+#: ./security-guide/section_identity-federated-keystone.xml105(para)
 msgid ""
 "Federated users are not mirrored in the Identity service back end (for "
 "example, using the SQL driver). The external IdP is responsible for "
@@ -2594,63 +2598,63 @@ msgid ""
 "service."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml111(title)
+#: ./security-guide/section_identity-federated-keystone.xml112(title)
 msgid "Enabling Federation"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml112(para)
+#: ./security-guide/section_identity-federated-keystone.xml113(para)
 msgid "To enable Federation, perform the following steps:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml114(para)
+#: ./security-guide/section_identity-federated-keystone.xml115(para)
 msgid ""
 "Run the Identity service under Apache, instead of using <placeholder-1/>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml117(para)
+#: ./security-guide/section_identity-federated-keystone.xml118(para)
 msgid ""
 "Enable SSL support. Install <literal>mod_nss</literal> according to your "
 "distribution, then apply the following patch and restart HTTPD:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml142(para)
+#: ./security-guide/section_identity-federated-keystone.xml143(para)
 msgid ""
 "If you have a firewall in place, configure it to allow SSL traffic. For "
 "example:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml145(para)
+#: ./security-guide/section_identity-federated-keystone.xml146(para)
 msgid ""
 "Note this needs to be added before your reject all rule which might be:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml148(para)
+#: ./security-guide/section_identity-federated-keystone.xml149(para)
 msgid ""
 "Copy the <filename>httpd/wsgi-keystone.conf</filename> file to the "
 "appropriate location for your Apache server, for example, "
 "<filename>/etc/httpd/conf.d/wsgi-keystone.conf </filename> file."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml153(para)
+#: ./security-guide/section_identity-federated-keystone.xml154(para)
 msgid ""
 "Create the directory <literal>/var/www/cgi-bin/keystone/</literal>. Then "
 "link the files <literal>main</literal> and <literal>admin</literal> to the "
 "<filename>keystone.py</filename> file in this directory."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml156(para)
+#: ./security-guide/section_identity-federated-keystone.xml157(para)
 msgid ""
 "For a distribution appropriate place, it should probably be copied to "
 "<literal>/usr/share/openstack/keystone/httpd/keystone.py</literal>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml158(para)
+#: ./security-guide/section_identity-federated-keystone.xml159(para)
 msgid ""
 "This path is Ubuntu-specific. For other distributions, replace with "
 "appropriate path."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml161(para)
+#: ./security-guide/section_identity-federated-keystone.xml162(para)
 msgid ""
 "If you are running with SELinux enabled ensure that the file has the "
 "appropriate SELinux context to access the linked file. For example, if you "
@@ -2658,140 +2662,140 @@ msgid ""
 "this by running:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml167(para)
+#: ./security-guide/section_identity-federated-keystone.xml168(para)
 msgid ""
 "Adding it in a different location requires you set up your SELinux policy "
 "accordingly."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml170(para)
+#: ./security-guide/section_identity-federated-keystone.xml171(para)
 msgid ""
 "Make sure you use either the SQL or the <literal>memcached</literal> driver "
 "for tokens, otherwise the tokens will not be shared between the processes of"
 " the Apache HTTPD server."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml173(para)
+#: ./security-guide/section_identity-federated-keystone.xml174(para)
 msgid "For SQL, in <filename>/etc/keystone/keystone.conf</filename> , set:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml177(para)
+#: ./security-guide/section_identity-federated-keystone.xml178(para)
 msgid ""
 "For <literal>memcached</literal>, in "
 "<filename>/etc/keystone/keystone.conf</filename>, set:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml181(para)
+#: ./security-guide/section_identity-federated-keystone.xml182(para)
 msgid ""
 "In both cases, all servers that are storing tokens need a shared back end. "
 "This means either that both point to the same database server, or both point"
 " to a common memcached instance."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml186(para)
+#: ./security-guide/section_identity-federated-keystone.xml187(para)
 msgid "Install Shibboleth:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml188(para)
+#: ./security-guide/section_identity-federated-keystone.xml189(para)
 msgid ""
 "The <literal>apt-get</literal> command is Ubuntu specific. For other "
 "distributions, replace with appropriate command."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml191(para)
+#: ./security-guide/section_identity-federated-keystone.xml192(para)
 msgid ""
 "Configure the Identity service virtual host and adjust the config to "
 "properly handle SAML2 workflow."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml193(para)
+#: ./security-guide/section_identity-federated-keystone.xml194(para)
 msgid ""
 "Add <literal>WSGIScriptAlias</literal> directive to your vhost "
 "configuration:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml196(para)
+#: ./security-guide/section_identity-federated-keystone.xml197(para)
 msgid ""
 "Add two <literal>&lt;Location&gt;</literal> directives to the <filename"
 ">wsgi-keystone.conf</filename> file:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml210(para)
+#: ./security-guide/section_identity-federated-keystone.xml211(para)
 msgid ""
 "The option <literal>saml2</literal> may be different in your deployment, but"
 " do not use a wildcard value. Otherwise every Federated protocol will be "
 "handled by Shibboleth."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml213(para)
+#: ./security-guide/section_identity-federated-keystone.xml214(para)
 msgid ""
 "The <literal>ShibRequireSession</literal> rule is invalid in Apache 2.4 or "
 "newer and should be dropped in that specific setup."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml216(para)
+#: ./security-guide/section_identity-federated-keystone.xml217(para)
 msgid "Enable the Identity service virtual host:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml219(para)
+#: ./security-guide/section_identity-federated-keystone.xml220(para)
 msgid ""
 "Enable the <literal>ssl</literal> and <literal>shib2</literal> modules:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml224(para)
+#: ./security-guide/section_identity-federated-keystone.xml225(para)
 msgid "Restart Apache:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml226(para)
+#: ./security-guide/section_identity-federated-keystone.xml227(para)
 msgid ""
 "The <literal>service apache2 restart</literal> command is Ubuntu-specific. "
 "For other distributions, replace with appropriate command."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml232(para)
+#: ./security-guide/section_identity-federated-keystone.xml233(para)
 msgid "Configure Apache to use a Federation capable authentication method."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml235(para)
+#: ./security-guide/section_identity-federated-keystone.xml236(para)
 msgid ""
 "Once you have your Identity service virtual host ready, configure Shibboleth"
 " and upload your metadata to the Identity Provider."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml237(para)
+#: ./security-guide/section_identity-federated-keystone.xml238(para)
 msgid ""
 "If new certificates are required, they can be easily created by executing:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml238(replaceable)
+#: ./security-guide/section_identity-federated-keystone.xml239(replaceable)
 msgid "NUMBER_OF_YEARS"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml239(para)
+#: ./security-guide/section_identity-federated-keystone.xml240(para)
 msgid ""
 "The newly created file will be stored under <filename>/etc/shibboleth/sp-"
 "key.pem</filename>"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml242(para)
+#: ./security-guide/section_identity-federated-keystone.xml243(para)
 msgid ""
 "Upload your Service Provider’s metadata file to your Identity Provider."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml245(para)
+#: ./security-guide/section_identity-federated-keystone.xml246(para)
 msgid ""
 "Configure your Service Provider by editing "
 "<filename>/etc/shibboleth/shibboleth2.xml</filename>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml247(para)
+#: ./security-guide/section_identity-federated-keystone.xml248(para)
 msgid ""
 "For more information, see <link "
 "href=\"https://wiki.shibboleth.net/confluence/display/SHIB2/Configuration\"><citetitle>Shibboleth"
 " Service Provider Configuration</citetitle></link>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml250(para)
+#: ./security-guide/section_identity-federated-keystone.xml251(para)
 msgid ""
 "Identity service enforces <literal>external</literal> authentication when "
 "environment variable <literal>REMOTE_USER</literal> is present so make sure "
@@ -2801,7 +2805,7 @@ msgid ""
 "remove the <literal>REMOTE_USER</literal> directives."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml258(para)
+#: ./security-guide/section_identity-federated-keystone.xml259(para)
 msgid ""
 "Examine your attributes map in the <filename>/etc/shibboleth/attributes-"
 "map.xml</filename> file and adjust your requirements if needed. For more "
@@ -2810,27 +2814,27 @@ msgid ""
 " Attributes</citetitle></link>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml264(para)
+#: ./security-guide/section_identity-federated-keystone.xml265(para)
 msgid "Restart the Shibboleth daemon:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml270(para)
+#: ./security-guide/section_identity-federated-keystone.xml271(para)
 msgid "Enable <literal>OS-FEDERATION</literal> extension:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml272(para)
+#: ./security-guide/section_identity-federated-keystone.xml273(para)
 msgid ""
 "Add the Federation extension driver to the <literal>[federation]</literal> "
 "section in the <filename>keystone.conf</filename> file. For example:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml278(para)
+#: ./security-guide/section_identity-federated-keystone.xml279(para)
 msgid ""
 "Add the saml2 authentication method to the <literal>[auth]</literal> section"
 " in <filename>keystone.conf</filename> file:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml284(para)
+#: ./security-guide/section_identity-federated-keystone.xml285(para)
 msgid ""
 "The <literal>external</literal> method should be dropped to avoid any "
 "interference with some Apache and Shibboleth SP setups, where a "
@@ -2838,20 +2842,20 @@ msgid ""
 "an empty value."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml289(para)
+#: ./security-guide/section_identity-federated-keystone.xml290(para)
 msgid ""
 "Add the <literal>federation_extension</literal> middleware to the "
 "<literal>api_v3</literal> pipeline in the <filename>keystone-"
 "paste.ini</filename> file. For example:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml297(para)
+#: ./security-guide/section_identity-federated-keystone.xml298(para)
 msgid ""
 "Create the Federation extension tables if using the provided SQL back end. "
 "For example:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml303(para)
+#: ./security-guide/section_identity-federated-keystone.xml304(para)
 msgid ""
 "Ideally, to test that the Identity Provider and the Identity service are "
 "communicating, navigate to the protected URL and attempt to sign in. If you "
@@ -2859,21 +2863,21 @@ msgid ""
 "response, indicates the communication."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml309(title)
+#: ./security-guide/section_identity-federated-keystone.xml310(title)
 msgid "Configuring Federation"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml310(para)
+#: ./security-guide/section_identity-federated-keystone.xml311(para)
 msgid ""
 "Now that the Identity Provider and Identity service are communicating, you "
 "can start to configure the <literal>OS-FEDERATION</literal> extension."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml313(para)
+#: ./security-guide/section_identity-federated-keystone.xml314(para)
 msgid "Create Identity groups and assign roles."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml314(para)
+#: ./security-guide/section_identity-federated-keystone.xml315(para)
 msgid ""
 "No new users will be added to the Identity back end, but the Identity "
 "service requires group-based role assignments to authorize federated users. "
@@ -2881,7 +2885,7 @@ msgid ""
 "service groups objects, and hence to local role assignments."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml319(para)
+#: ./security-guide/section_identity-federated-keystone.xml320(para)
 msgid ""
 "Thus, it is required to create the necessary Identity service groups that "
 "correspond to the Identity Provider’s groups; additionally, these groups "
@@ -2891,32 +2895,32 @@ msgid ""
 "can map it to a Identity service group <literal>devs</literal>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml326(para)
+#: ./security-guide/section_identity-federated-keystone.xml327(para)
 msgid ""
 "The Identity service administator can create as many groups as there are "
 "SAML attributes, whatever the mapping calls for."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml328(para)
+#: ./security-guide/section_identity-federated-keystone.xml329(para)
 msgid "Add Identity Providers, Mappings and Protocols."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml329(para)
+#: ./security-guide/section_identity-federated-keystone.xml330(para)
 msgid ""
 "To utilize Federation, create the following in the Identity service: "
 "Identity Provider, Mapping, Protocol."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml334(title)
+#: ./security-guide/section_identity-federated-keystone.xml335(title)
 msgid "Performing Federation authentication"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml336(para)
+#: ./security-guide/section_identity-federated-keystone.xml337(para)
 msgid ""
 "Authenticate externally and generate an unscoped token in Identity service."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml338(para)
+#: ./security-guide/section_identity-federated-keystone.xml339(para)
 msgid ""
 "To start Federated authentication a user must access the dedicated URL with "
 "Identity Provider’s and Protocol’s identifiers stored within a protected "
@@ -2924,7 +2928,7 @@ msgid ""
 "FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/auth</literal>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml342(para)
+#: ./security-guide/section_identity-federated-keystone.xml343(para)
 msgid ""
 "This instance follows a standard SAML2 authentication procedure, that is, "
 "the user will be redirected to the Identity Provider’s authentication "
@@ -2936,13 +2940,13 @@ msgid ""
 "API."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml350(para)
+#: ./security-guide/section_identity-federated-keystone.xml351(para)
 msgid ""
 "In the returned unscoped token, a list of Identity service groups the user "
 "belongs to will be included."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml352(para)
+#: ./security-guide/section_identity-federated-keystone.xml353(para)
 msgid ""
 "For example, the following URL would be considered protected by "
 "<literal>mod_shib</literal> and Apache, as such a request made to the URL "
@@ -2950,92 +2954,92 @@ msgid ""
 "authentication procedure."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml358(para)
+#: ./security-guide/section_identity-federated-keystone.xml359(para)
 msgid ""
 "It is assumed that the <literal>keystone</literal> service is running on "
 "port <literal>5000</literal>."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml361(para)
+#: ./security-guide/section_identity-federated-keystone.xml362(para)
 msgid "Determine accessible resources."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml362(para)
+#: ./security-guide/section_identity-federated-keystone.xml363(para)
 msgid ""
 "By using the previously returned token, the user can issue requests to the "
 "list projects and domains that are accessible."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml365(para)
+#: ./security-guide/section_identity-federated-keystone.xml366(para)
 msgid ""
 "List projects a federated user can access: <literal>GET /OS-"
 "FEDERATION/projects</literal>"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml368(para)
+#: ./security-guide/section_identity-federated-keystone.xml369(para)
 msgid ""
 "List domains a federated user can access: <literal>GET /OS-"
 "FEDERATION/domains</literal>"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml371(para)
+#: ./security-guide/section_identity-federated-keystone.xml372(para)
 msgid "For example,"
 msgstr "たとえば、"
 
-#: ./security-guide/section_identity-federated-keystone.xml374(para)
+#: ./security-guide/section_identity-federated-keystone.xml375(para)
 #: ./security-guide/section_ssl-proxies-and-http-services.xml40(para)
 msgid "or"
 msgstr "または"
 
-#: ./security-guide/section_identity-federated-keystone.xml377(para)
+#: ./security-guide/section_identity-federated-keystone.xml378(para)
 msgid "Get a scoped token."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml378(para)
+#: ./security-guide/section_identity-federated-keystone.xml379(para)
 msgid ""
 "A federated user may request a scoped token, by using the unscoped token. A "
 "project or domain may be specified by either ID or name. An ID is sufficient"
 " to uniquely identify a project or domain. For example,"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml390(title)
+#: ./security-guide/section_identity-federated-keystone.xml391(title)
 msgid "Setting Identity service as Identity Provider"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml392(title)
+#: ./security-guide/section_identity-federated-keystone.xml393(title)
 msgid "Configuration options"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml393(para)
+#: ./security-guide/section_identity-federated-keystone.xml394(para)
 msgid ""
 "Before attempting to federate multiple Identity service deployments, you "
 "must setup certain configuration options in the "
 "<filename>keystone.conf</filename> file."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml396(para)
+#: ./security-guide/section_identity-federated-keystone.xml397(para)
 msgid ""
 "Within the <filename>keystone.conf</filename> assign values to the "
 "<literal>[saml]</literal> related fields, for example:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml404(para)
+#: ./security-guide/section_identity-federated-keystone.xml405(para)
 msgid ""
 "It is recommended that the following <literal>Organization</literal> "
 "configuration options be setup."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml410(para)
+#: ./security-guide/section_identity-federated-keystone.xml411(para)
 msgid ""
 "It is also recommended the following <literal>Contact</literal> options are "
 "set."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml421(title)
+#: ./security-guide/section_identity-federated-keystone.xml422(title)
 msgid "Generate metadata"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml422(para)
+#: ./security-guide/section_identity-federated-keystone.xml423(para)
 msgid ""
 "In order to create a trust between the Identity Provider and the Service "
 "Provider, metadata must be exchanged. To create metadata for your Identity "
@@ -3043,18 +3047,18 @@ msgid ""
 " example:"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml427(para)
+#: ./security-guide/section_identity-federated-keystone.xml428(para)
 msgid ""
 "The file location should match the value of the configuration option "
 "<option>idp_metadata_path</option> that was assigned in the list of "
 "<literal>[saml]</literal> updates."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml432(title)
+#: ./security-guide/section_identity-federated-keystone.xml433(title)
 msgid "Create a region for the Service Provider"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml433(para)
+#: ./security-guide/section_identity-federated-keystone.xml434(para)
 msgid ""
 "Create a new region for the service provider, for example, create a new "
 "region with an <literal>ID</literal> of <replaceable>BETA</replaceable>, and"
@@ -3065,38 +3069,38 @@ msgid ""
 " Provider."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml441(replaceable)
+#: ./security-guide/section_identity-federated-keystone.xml442(replaceable)
 msgid "http://beta.com/Shibboleth.sso/SAML2/POST"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml442(replaceable)
-#: ./security-guide/section_identity-federated-keystone.xml451(replaceable)
+#: ./security-guide/section_identity-federated-keystone.xml443(replaceable)
+#: ./security-guide/section_identity-federated-keystone.xml452(replaceable)
 msgid "BETA"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml445(title)
+#: ./security-guide/section_identity-federated-keystone.xml446(title)
 msgid "Testing it all out"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml446(para)
+#: ./security-guide/section_identity-federated-keystone.xml447(para)
 msgid ""
 "Lastly, if a scoped token and a Service Provider region are presented to "
 "Keystone, the result will be a full SAML Assertion, signed by the IdP "
 "Keystone, specifically intended for the Service Provider Keystone."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml451(replaceable)
+#: ./security-guide/section_identity-federated-keystone.xml452(replaceable)
 msgid "d793d935b9c343f783955cf39ee7dc3c"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml453(para)
+#: ./security-guide/section_identity-federated-keystone.xml454(para)
 msgid ""
 "At this point the SAML Assertion can be sent to the Service Provider "
 "Keystone, and a valid OpenStack token, issued by a Service Provider "
 "Keystone, will be returned."
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml460(para)
+#: ./security-guide/section_identity-federated-keystone.xml461(para)
 msgid ""
 "Currently, the CLI supports the Enhanced Client or Proxy (ECP), (the non-"
 "browser) support for <literal>keystoneclient</literal> from an API "
@@ -3736,7 +3740,7 @@ msgstr "最初にセキュア化するもの: ネットワーク"
 
 #: ./security-guide/ch_object-storage.xml67(para)
 msgid ""
-"Securing Object Storage service begins with securing the networking "
+"Securing the Object Storage service begins with securing the networking "
 "component. The rsync protocol is used between storage service nodes to "
 "replicate data for high availability. In addition, the proxy service "
 "communicates with the storage service when relaying data back and forth "
@@ -3747,9 +3751,10 @@ msgstr ""
 msgid ""
 "Object Storage does not employ encryption or authentication with inter-node "
 "communications. This is why you see a \"Private Switch\" or private network "
-"([V]LAN) in architecture diagrams. This data domain should be separate from "
-"other OpenStack data networks as well. For further discussion on security "
-"domains please see <xref linkend=\"security-boundaries-and-threats\"/>."
+"([V]LAN) in the architecture diagrams. This data domain should be separate "
+"from other OpenStack data networks as well. For further discussion on "
+"security domains please see <xref linkend=\"security-boundaries-and-"
+"threats\"/>."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml84(para)
@@ -3792,7 +3797,7 @@ msgstr ""
 msgid ""
 "It is recommended that you configure each Object Storage service to run "
 "under a non-root (UID 0) service account. One recommendation is the user "
-"name \"swift\" with primary group \"swift.\" Object Storage services "
+"name \"swift\" with the primary group \"swift.\" Object Storage services "
 "include, for example, 'proxy-server', 'container-server', 'account-server'. "
 "Detailed steps for setup and configuration can be found in the <link "
 "href=\"http://docs.openstack.org/icehouse/install-"
@@ -4048,13 +4053,13 @@ msgstr "Apache を使用するという選択肢が実現できない場合、�
 
 #: ./security-guide/ch_object-storage.xml338(para)
 msgid ""
-"If you choose to offload your SSL ensure that the network link between the "
-"load balancer and your proxy nodes is on a private (V)LAN segment such that "
-"other nodes on the network (possibly compromised) cannot wiretap (sniff) the"
-" unencrypted traffic. If such a breach were to occur the attacker could gain"
-" access to end-point client or cloud administrator credentials and access "
-"the cloud data."
-msgstr "SSL をオフロードすることにした場合、ネットワーク上の他のノード (侵入されているかもしれない) が暗号化されていない通信を盗聴できないように、負荷分散装置とプロキシノード間のネットワークリンクは必ずプライベート (V)LAN セグメントに置くべきです。そのようなセキュリティ侵害が発生した場合、攻撃者はエンドポイントクライアントやクラウド管理者のクレデンシャルのアクセス権を取得し、クラウドのデータにアクセスできます。"
+"If you choose to offload your SSL, ensure that the network link between the "
+"load balancer and your proxy nodes are on a private (V)LAN segment such that"
+" other nodes on the network (possibly compromised) cannot wiretap (sniff) "
+"the unencrypted traffic. If such a breach were to occur the attacker could "
+"gain access to end-point client or cloud administrator credentials and "
+"access the cloud data."
+msgstr ""
 
 #: ./security-guide/ch_object-storage.xml346(para)
 msgid ""
@@ -10461,8 +10466,8 @@ msgstr "オフ状態のサーバーのハッキング"
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_security-services-for-instances.xml49(None)
-#: ./security-guide/section_security-services-for-instances.xml52(None)
+#: ./security-guide/section_security-services-for-instances.xml78(None)
+#: ./security-guide/section_security-services-for-instances.xml81(None)
 msgid ""
 "@@image: 'static/filteringWorkflow1.png'; "
 "md5=c144af5cbdee1bd17a7bde0bea5b5fe7"
@@ -10506,17 +10511,17 @@ msgid "Entropy to instances"
 msgstr "インスタンスへのエントロピー"
 
 #: ./security-guide/section_security-services-for-instances.xml16(para)
-#: ./security-guide/section_security-services-for-instances.xml33(title)
+#: ./security-guide/section_security-services-for-instances.xml62(title)
 msgid "Scheduling instances to nodes"
 msgstr "ノードへのインスタンスのスケジューリング"
 
 #: ./security-guide/section_security-services-for-instances.xml19(para)
-#: ./security-guide/section_security-services-for-instances.xml99(title)
+#: ./security-guide/section_security-services-for-instances.xml128(title)
 msgid "Trusted images"
 msgstr "信頼されたイメージ"
 
 #: ./security-guide/section_security-services-for-instances.xml22(para)
-#: ./security-guide/section_security-services-for-instances.xml167(title)
+#: ./security-guide/section_security-services-for-instances.xml203(title)
 msgid "Instance migrations"
 msgstr "インスタンスのマイグレーション"
 
@@ -10534,7 +10539,7 @@ msgid ""
 "applications running in the cloud less secure overall."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml28(para)
+#: ./security-guide/section_security-services-for-instances.xml39(para)
 msgid ""
 "Fortunately, a cloud architect may address these issues by providing a high "
 "quality source of entropy to the cloud instances. This can be done by having"
@@ -10548,23 +10553,19 @@ msgid ""
 " available."
 msgstr "これらの課題は、クラウドアーキテクトが高品質のエントロピーをクラウドインスタンスに提供することで対応できます。例えば、クラウド内にインスタンス用に適量なハードウェア乱数生成器(HRNG)があれば解決できます（適量はドメインによって異なる）。一般的なハードウェア乱数生成器なら通常運用されている50-100台のコンピュートノード分のエントロピーを生成することが可能です。高帯域ハードウェア乱数生成器（Intel Ivy Bridgeや最新プロセッサなどと提供されるRdRand instructionなど）はさらに多くのノードに対応できます。エントロピーの量が十分かどうかを判断するためには、クラウド上で運用するアプリケーションの要求を理解している必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml29(para)
+#: ./security-guide/section_security-services-for-instances.xml51(para)
 msgid ""
-"Once the entropy is available in the cloud, the next step is getting that "
-"entropy into the instances. Tools such as the entropy gathering daemon "
-"(<link href=\"http://egd.sourceforge.net/\">EGD</link>) provide a way to "
-"fairly and securely distribute entropy through a distributed system. Support"
-" exists for using the EGD as an entropy source for libvirt."
+"The Virtio RNG is a random number generator that uses "
+"<filename>/dev/random</filename> as the source of entropy by default, "
+"however can be configured to use a hardware RNG or a tool such as the "
+"entropy gathering daemon (<link "
+"href=\"http://egd.sourceforge.net/\">EGD</link>) to provide a way to fairly "
+"and securely distribute entropy through a distributed system. The Virtio RNG"
+" is enabled using the <literal>hw_rng</literal> property of the metadata "
+"used to create the instance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml30(para)
-msgid ""
-"Compute support for these features is not generally available, but it would "
-"only require a moderate amount of work for implementors to integrate this "
-"functionality."
-msgstr "これらの機能に対して、コンピュートは未対応です。これらの機能との連携のため、開発者による実装の作業はあまり多く発生しないと思われます。"
-
-#: ./security-guide/section_security-services-for-instances.xml34(para)
+#: ./security-guide/section_security-services-for-instances.xml63(para)
 msgid ""
 "Before an instance is created, a host for the image instantiation must be "
 "selected. This selection is performed by the <systemitem class=\"service"
@@ -10572,7 +10573,7 @@ msgid ""
 "volume requests."
 msgstr "インスタンスを生成する前に、イメージのインスタンス化のためのホストを選択する必要があります。この選択は<systemitem class=\"service\">nova-scheduler</systemitem>によって行われ、さらにコンピュートとボリューム要求の伝達方法も決定します。"
 
-#: ./security-guide/section_security-services-for-instances.xml35(para)
+#: ./security-guide/section_security-services-for-instances.xml64(para)
 msgid ""
 "The filter scheduler is the default scheduler for OpenStack Compute, "
 "although other schedulers exist (see the section <link "
@@ -10589,7 +10590,7 @@ msgid ""
 "reasons. The following diagram demonstrates how the filter scheduler works:"
 msgstr "filter スケジュラ―は OpenStack Compute のデフォルトのスケジューラーです。他にもスケジューラーは存在します(詳細は<citetitle>OpenStack Configuration Reference</citetitle>の<link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html\">Scheduling</link>を参照)。フィルタースケジューラーはフィルターと連携し、インスタンスの起動場所を決めます。このホスト選択作業があることによって、管理者は様々なセキュリティ要件を満たすことができます。クラウド配備種別によっては、次のような構成が組めます。例えばデータ分離が大きな懸念事項の場合、テナントのインスタンスは必ず同一のホスト上に配置するように設定できます。または、耐障害性のためにテナントのインスタンスをできるだけ異なるホスト上に配置するように設定できます。下の図は、フィルタースケジュラ―の働きを表しています。"
 
-#: ./security-guide/section_security-services-for-instances.xml55(para)
+#: ./security-guide/section_security-services-for-instances.xml84(para)
 msgid ""
 "The use of scheduler filters may be used to segregate customers, data, or "
 "even discard machines of the cloud that cannot be attested as secure. This "
@@ -10598,7 +10599,7 @@ msgid ""
 "variety of security-related purposes."
 msgstr "スケジューラーを提供しているすべてのOpenStackプロジェクトにおいて、スケジュールフィルタを使用することによってお客様やデータを分離できます。さらに安全ではないと判断されたクラウド上のマシンの破棄も行えます。クラウドを構築する際には、あらゆるセキュリティ目的のためにスケジュールフィルターの実装を選択できます。"
 
-#: ./security-guide/section_security-services-for-instances.xml56(para)
+#: ./security-guide/section_security-services-for-instances.xml85(para)
 msgid ""
 "Below we highlight a few of the filters that may be useful in a security "
 "context, depending on your requirements, the full set of filter "
@@ -10608,11 +10609,11 @@ msgid ""
 " Configuration Reference</citetitle>."
 msgstr "下記ではセキュリティコンテキストにおいて役に立つ幾つかのフィルターを紹介します。<citetitle>OpenStack Configuration Reference</citetitle>の<link href=\"http://docs.openstack.org/trunk/config-reference/content/filter-scheduler.html\">Filter Scheduler</link>セクションにすべてのフィルター関連ドキュメントが掲載されています。要件に合わせてご参照ください。"
 
-#: ./security-guide/section_security-services-for-instances.xml59(title)
+#: ./security-guide/section_security-services-for-instances.xml88(title)
 msgid "Host aggregates"
 msgstr "ホスト・アグリゲート"
 
-#: ./security-guide/section_security-services-for-instances.xml60(para)
+#: ./security-guide/section_security-services-for-instances.xml89(para)
 msgid ""
 "While not a filter, host aggregates allow administrators to assign key-value"
 " pairs to groups of machines. This allows cloud administrators to segregate "
@@ -10626,11 +10627,11 @@ msgid ""
 "managing aggregates)."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml74(title)
+#: ./security-guide/section_security-services-for-instances.xml103(title)
 msgid "AggregateMultiTenancyIsolation"
 msgstr "AggregateMultiTenancyIsolation"
 
-#: ./security-guide/section_security-services-for-instances.xml75(para)
+#: ./security-guide/section_security-services-for-instances.xml104(para)
 msgid ""
 "This filter will isolate a tenant or group of tenants to specific host "
 "aggregates. If a host is assigned to an aggregate that has the metadata key "
@@ -10640,11 +10641,11 @@ msgid ""
 "can create instances from all tenants."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml85(title)
+#: ./security-guide/section_security-services-for-instances.xml114(title)
 msgid "DifferentHostFilter"
 msgstr "DifferentHostFilter"
 
-#: ./security-guide/section_security-services-for-instances.xml86(para)
+#: ./security-guide/section_security-services-for-instances.xml115(para)
 msgid ""
 "Schedule the instance on a different host from a set of instances. To take "
 "advantage of this filter, the requester must pass a scheduler hint, using "
@@ -10653,11 +10654,11 @@ msgid ""
 "<literal>SameHostFilter</literal>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml89(title)
+#: ./security-guide/section_security-services-for-instances.xml118(title)
 msgid "GroupAntiAffinityFilter"
 msgstr "GroupAntiAffinityFilter"
 
-#: ./security-guide/section_security-services-for-instances.xml90(para)
+#: ./security-guide/section_security-services-for-instances.xml119(para)
 msgid ""
 "The GroupAntiAffinityFilter ensures that each instance in a group is on a "
 "different host. To take advantage of this filter, the requester must pass a "
@@ -10665,11 +10666,11 @@ msgid ""
 "instance UUIDs as the value."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml93(title)
+#: ./security-guide/section_security-services-for-instances.xml122(title)
 msgid "Trusted compute pools"
 msgstr "信頼済コンピュートプール"
 
-#: ./security-guide/section_security-services-for-instances.xml94(para)
+#: ./security-guide/section_security-services-for-instances.xml123(para)
 msgid ""
 "There exists a scheduler filter which integrates with the <link "
 "href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation"
@@ -10677,29 +10678,28 @@ msgid ""
 "attestation of PCRs received from a system using Intel TXT."
 msgstr "Intel TXTを使用したシステムから送られたPCRの認証によってスケジューラーの対応を定義するために<link href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation Project</link> (OATS)と連携するスケジューラーフィルターがあります。"
 
-#: ./security-guide/section_security-services-for-instances.xml95(para)
+#: ./security-guide/section_security-services-for-instances.xml124(para)
 msgid ""
 "It is unclear if this feature is compatible with AMD's similar SEM, although"
 " the OpenAttestation agent relies on the vendor-agnostic <link "
 "href=\"http://trousers.sourceforge.net/\">TrouSerS library</link>."
 msgstr "OpenAttestationエージェントはベンダー依存ではない<link href=\"http://trousers.sourceforge.net/\">TrouSerSライブラリ</link>を採用していますが、本機能は類似したAMD社のSEMと互換性があるかは不明です。"
 
-#: ./security-guide/section_security-services-for-instances.xml100(para)
+#: ./security-guide/section_security-services-for-instances.xml129(para)
 msgid ""
-"With regards to images, users will be working with pre-installed images or "
-"images that they upload themselves. In both cases, users will want to ensure"
-" that the image they are ultimately running has not been tampered with. This"
-" requires some source of truth such as a checksum for the known good version"
-" of an image as well as verification of the running image. This section "
-"describes the current best practices around image handling, while also "
-"calling out some of the existing gaps in this space."
-msgstr "ユーザーはインストール済イメージあるいは自身がアップロードしたイメージを使用します。どちらの場合においても、採用したイメージは改ざんされていないことを確認したいでしょう。確認のためには、正式版のチェックサムなどの検証用情報と稼働しているイメージの証明情報が必要です。このセクションでは、イメージの扱いに関するベストプラクティスと関連する既知の課題について説明します。"
+"In a cloud environment, users work with either pre-installed images or "
+"images they upload themselves. In both cases, users should be able to ensure"
+" the image they are utilizing has not been tampered with. This requires a "
+"method of validation, such as a checksum for the known good image as well as"
+" verification of a running instance. While there are current best practices "
+"around these actions there are also several gaps in the process."
+msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml102(title)
+#: ./security-guide/section_security-services-for-instances.xml131(title)
 msgid "Image creation process"
 msgstr "イメージ作成プロセス"
 
-#: ./security-guide/section_security-services-for-instances.xml103(para)
+#: ./security-guide/section_security-services-for-instances.xml132(para)
 msgid ""
 "The OpenStack Documentation provides guidance on how to create and upload an"
 " image to the Image Service. Additionally it is assumed that you have a "
@@ -10710,21 +10710,21 @@ msgid ""
 " image's provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml111(para)
+#: ./security-guide/section_security-services-for-instances.xml140(para)
 msgid "The first option is to obtain boot media from a trusted source."
 msgstr "最初の選択肢は、信頼された提供元からブートメディアを入手することです。"
 
-#: ./security-guide/section_security-services-for-instances.xml118(para)
+#: ./security-guide/section_security-services-for-instances.xml147(para)
 msgid ""
 "The second option is to use the <link href=\"http://docs.openstack.org"
 "/image-guide/content/\"><citetitle>OpenStack Virtual Machine Image "
 "Guide</citetitle></link>. In this case, you will want to follow your "
 "organizations OS hardening guidelines or those provided by a trusted third-"
-"party such as the <link "
-"href=\"http://iase.disa.mil/stigs/os/unix/red_hat.html\">RHEL6 STIG</link>."
+"party such as the <link href=\"http://iase.disa.mil/stigs/os/unix-"
+"linux/Pages/index.aspx\">Linux STIGs</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml119(para)
+#: ./security-guide/section_security-services-for-instances.xml155(para)
 msgid ""
 "The final option is to use an automated image builder. The following example"
 " uses the Oz image builder. The OpenStack community has recently created a "
@@ -10732,13 +10732,13 @@ msgid ""
 "this tool from a security perspective."
 msgstr "最後の手段として説明するのはイメージの自動生成機構の使用です。次の例では、Oz image builderを採用しています。OpenStackコミュニティでは、disk-image-builderというさらに新しいツールが公開されています。本ツールはセキュリティ観点において未検証です。"
 
-#: ./security-guide/section_security-services-for-instances.xml120(para)
+#: ./security-guide/section_security-services-for-instances.xml156(para)
 msgid ""
 "Example of RHEL 6 CCE-26976-1 which will help implement NIST 800-53 "
 "Section<emphasis>AC-19(d) in</emphasis> Oz."
 msgstr "OzでNIST 800-53 セクション<emphasis>AC-19(d)</emphasis> の実装を手助けするRHEL 6 CCE-26976-1の例"
 
-#: ./security-guide/section_security-services-for-instances.xml156(para)
+#: ./security-guide/section_security-services-for-instances.xml192(para)
 msgid ""
 "It is recommended to avoid the manual image building process as it is "
 "complex and prone to error. Additionally, using an automated system like Oz "
@@ -10748,7 +10748,7 @@ msgid ""
 "hardening guidelines over time."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml157(para)
+#: ./security-guide/section_security-services-for-instances.xml193(para)
 msgid ""
 "If subscribing to a public cloud service, you should check with the cloud "
 "provider for an outline of the process used to produce their default images."
@@ -10758,11 +10758,11 @@ msgid ""
 "on Image Provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml160(title)
+#: ./security-guide/section_security-services-for-instances.xml196(title)
 msgid "Image provenance and validation"
 msgstr "イメージの出所と妥当性確認"
 
-#: ./security-guide/section_security-services-for-instances.xml161(para)
+#: ./security-guide/section_security-services-for-instances.xml197(para)
 msgid ""
 "Unfortunately, it is not currently possible to force Compute to validate an "
 "image hash immediately prior to starting an instance. To understand the "
@@ -10770,7 +10770,7 @@ msgid ""
 "the time of image launch."
 msgstr "残念ながら、現在はインスタンス起動直前にコンピュートにイメージのハッシュを検証を強制する方法がありません。状況を理解するために、イメージ起動の際にイメージがどのように扱われるのかを簡単に説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml162(para)
+#: ./security-guide/section_security-services-for-instances.xml198(para)
 msgid ""
 "Images come from the glance service to the nova service on a node. This "
 "transfer should be protected by running over SSL. Once the image is on the "
@@ -10783,7 +10783,7 @@ msgid ""
 "resulting image."
 msgstr "イメージはGlanceサービスからノードのNovaサービスへ供給されます。この転送はSSLによって保護されている必要があります。イメージがノードに転送されたら、一般的なchecksumで検証され、起動するインスタンスのサイズに合わせてディスクが拡張します。以降、このノードで同じサイズの同一イメージを起動する場合はこの拡張されたイメージから起動されます。拡張されたイメージは起動前に再検証されないため、改ざんの可能性があります。これでは作成されたイメージのファイルの手動確認以外に確認方法がありません。"
 
-#: ./security-guide/section_security-services-for-instances.xml163(para)
+#: ./security-guide/section_security-services-for-instances.xml199(para)
 msgid ""
 "We hope that future versions of Compute and/or the Image Service will offer "
 "support for validating the image hash before each instance launch. An "
@@ -10792,7 +10792,7 @@ msgid ""
 "launched."
 msgstr "将来的にコンピュートまたはイメージサービスでインスタンス起動の前にイメージのハッシュを検証する機構を提供することが期待されています。さらに考えられる強力な代替手段はユーザーにイメージを署名させ、インスタンスの起動前に署名の検証を実行させることです。"
 
-#: ./security-guide/section_security-services-for-instances.xml168(para)
+#: ./security-guide/section_security-services-for-instances.xml204(para)
 msgid ""
 "OpenStack and the underlying virtualization layers provide for the live "
 "migration of images between OpenStack nodes, allowing you to seamlessly "
@@ -10802,31 +10802,31 @@ msgid ""
 "performed during a live migration:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml178(para)
+#: ./security-guide/section_security-services-for-instances.xml214(para)
 msgid "Start instance on destination host"
 msgstr "目的先ホストでインスタンスを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml179(para)
+#: ./security-guide/section_security-services-for-instances.xml215(para)
 msgid "Transfer memory"
 msgstr "メモリを転送"
 
-#: ./security-guide/section_security-services-for-instances.xml180(para)
+#: ./security-guide/section_security-services-for-instances.xml216(para)
 msgid "Stop the guest &amp; sync disks"
 msgstr "ゲスト&amp;syncディスクを停止"
 
-#: ./security-guide/section_security-services-for-instances.xml181(para)
+#: ./security-guide/section_security-services-for-instances.xml217(para)
 msgid "Transfer state"
 msgstr "転送状態となる"
 
-#: ./security-guide/section_security-services-for-instances.xml182(para)
+#: ./security-guide/section_security-services-for-instances.xml218(para)
 msgid "Start the guest"
 msgstr "ゲストを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml185(title)
+#: ./security-guide/section_security-services-for-instances.xml221(title)
 msgid "Live migration risks"
 msgstr "ライブマイグレーションのリスク"
 
-#: ./security-guide/section_security-services-for-instances.xml186(para)
+#: ./security-guide/section_security-services-for-instances.xml222(para)
 msgid ""
 "At various stages of the live migration process the contents of an instances"
 " run time memory and disk are transmitted over the network in plain text. "
@@ -10834,68 +10834,68 @@ msgid ""
 "migration. The following in-exhaustive list details some of these risks:"
 msgstr "ライブマイグレーションのステージによっては、インスタンスのランタイムメモリやディスクの今テンスが平文でネットワーク上転送されます。そのため、ライブマイグレーション中には対処が必要なリスクがあります。次は一部のリスクの詳細を列挙しています。"
 
-#: ./security-guide/section_security-services-for-instances.xml188(para)
+#: ./security-guide/section_security-services-for-instances.xml224(para)
 msgid ""
 "<emphasis>Denial of Service (DoS)</emphasis>: If something fails during the "
 "migration process, the instance could be lost."
 msgstr "<emphasis>Denial of Service (DoS)</emphasis>: マイグレーションプロセス中に何かが失敗した場合、インスタンスを失う可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml191(para)
+#: ./security-guide/section_security-services-for-instances.xml227(para)
 msgid ""
 "<emphasis>Data exposure</emphasis>: Memory or disk transfers must be handled"
 " securely."
 msgstr "<emphasis>データの公開</emphasis>: メモリやディスクの転送は安全に行う必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml194(para)
+#: ./security-guide/section_security-services-for-instances.xml230(para)
 msgid ""
 "<emphasis>Data manipulation</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate user data during the "
 "migration."
 msgstr "<emphasis>データの操作</emphasis>: メモリやディスクの転送がセキュアに処理されなければ、攻撃者がマイグレーション中にユーザーデータを操作できる可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml197(para)
+#: ./security-guide/section_security-services-for-instances.xml233(para)
 msgid ""
 "<emphasis>Code injection</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate executables, either on "
 "disk or in memory, during the migration."
 msgstr "<emphasis>コードの挿入</emphasis>: メモリやディスクの転送が安全ではない場合、マイグレーション中に攻撃者によってディスクやメモリ上の実行ファイルが操作される可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml202(title)
+#: ./security-guide/section_security-services-for-instances.xml238(title)
 msgid "Live migration mitigations"
 msgstr "ライブマイグレーションのリスクの軽減"
 
-#: ./security-guide/section_security-services-for-instances.xml203(para)
+#: ./security-guide/section_security-services-for-instances.xml239(para)
 msgid ""
 "There are several methods to mitigate some of the risk associated with live "
 "migrations, the following list details some of these:"
 msgstr "ライブマイグレーションに関連するリスクを軽減するためには様々な手法があります。次のリストで詳しく説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml205(para)
-#: ./security-guide/section_security-services-for-instances.xml215(title)
+#: ./security-guide/section_security-services-for-instances.xml241(para)
+#: ./security-guide/section_security-services-for-instances.xml251(title)
 msgid "Disable live migration"
 msgstr "ライブマイグレーションの無効化"
 
-#: ./security-guide/section_security-services-for-instances.xml208(para)
+#: ./security-guide/section_security-services-for-instances.xml244(para)
 msgid "Isolated migration network"
 msgstr "マイグレーションネットワークの分離"
 
-#: ./security-guide/section_security-services-for-instances.xml211(para)
-#: ./security-guide/section_security-services-for-instances.xml228(title)
+#: ./security-guide/section_security-services-for-instances.xml247(para)
+#: ./security-guide/section_security-services-for-instances.xml264(title)
 msgid "Encrypted live migration"
 msgstr "ライブマイグレーションの暗号化"
 
-#: ./security-guide/section_security-services-for-instances.xml216(para)
+#: ./security-guide/section_security-services-for-instances.xml252(para)
 msgid ""
 "At this time, live migration is enabled in OpenStack by default. Live "
 "migrations can be disabled by adding the following lines to the nova "
 "<filename>policy.json</filename> file:"
 msgstr "現在、OpenStackではデフォルトでライブマイグレーションを有効にしています。ライブマイグレーションは nova <filename>policy.json</filename> ファイルへ下記の行を追加することによって無効化できます。"
 
-#: ./security-guide/section_security-services-for-instances.xml224(title)
+#: ./security-guide/section_security-services-for-instances.xml260(title)
 msgid "Migration network"
 msgstr "マイグレーションネットワーク"
 
-#: ./security-guide/section_security-services-for-instances.xml225(para)
+#: ./security-guide/section_security-services-for-instances.xml261(para)
 msgid ""
 "As a general practice, live migration traffic should be restricted to the "
 "management security domain, see <xref linkend=\"security-boundaries-and-"
@@ -10906,7 +10906,7 @@ msgid ""
 "traffic to a dedicated network can reduce the risk of exposure."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml229(para)
+#: ./security-guide/section_security-services-for-instances.xml265(para)
 msgid ""
 "If there is a sufficient business case for keeping live migration enabled, "
 "then libvirtd can provide encrypted tunnels for the live migrations. "
@@ -10916,17 +10916,17 @@ msgid ""
 "following high-level steps:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml231(para)
+#: ./security-guide/section_security-services-for-instances.xml267(para)
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml232(para)
+#: ./security-guide/section_security-services-for-instances.xml268(para)
 msgid ""
 "An encrypted tunnel is created between libvirtd processes on both source and"
 " destination hosts."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml233(para)
+#: ./security-guide/section_security-services-for-instances.xml269(para)
 msgid ""
 "Destination libvirtd host copies the instances back to an underlying "
 "hypervisor."

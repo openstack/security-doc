@@ -138,18 +138,10 @@
     </para>
     </section>
     <section xml:id="forensics-and-incident-response-references">
-      <title>References</title>
-      <para>
-        <link xlink:href="http://www.mirantis.com/blog/openstack-monitoring/">http://www.mirantis.com/blog/openstack-monitoring/</link>
-      </para>
-      <para>
-        <link xlink:href="http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html">http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html</link>
-      </para>
-      <para>
-        <link xlink:href="http://blog.sflow.com/2009/09/lan-and-wan.html">http://blog.sflow.com/2009/09/lan-and-wan.html</link>
-      </para>
-      <para>
-        <link xlink:href="http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html">http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html</link>
-      </para>
+      <title>Bibliography</title>
+      <para>Siwczak, Piotr. Some Practical Considerations for Monitoring in the OpenStack Cloud. 2012. <link xlink:href="http://www.mirantis.com/blog/openstack-monitoring/">http://www.mirantis.com/blog/openstack-monitoring</link></para>
+      <para>blog.sflow.com, sflow: Host sFlow distributed agent. 2012. <link xlink:href="http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html">http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html</link></para>
+      <para>blog.sflow.com, sflow: LAN and WAN. 2009. <link xlink:href="http://blog.sflow.com/2009/09/lan-and-wan.html">http://blog.sflow.com/2009/09/lan-and-wan.html</link></para>
+      <para>blog.sflow.com, sflow: Rapidly detecting large flows sFlow vs. NetFlow/IPFIX. 2013. <link xlink:href="http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html">http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html</link></para>
     </section>
 </section>

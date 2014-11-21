@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-17 11:57+0000\n"
-"PO-Revision-Date: 2014-11-17 11:57+0000\n"
+"POT-Creation-Date: 2014-11-20 11:55+0000\n"
+"PO-Revision-Date: 2014-11-21 04:00+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1385,8 +1385,8 @@ msgstr "監視とログ採取"
 #: ./security-guide/section_hardening-the-virtualization-layers.xml324(None)
 #: ./security-guide/section_hardening-the-virtualization-layers.xml328(None)
 msgid ""
-"@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
-msgstr "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
+"@@image: 'static/sVirt Diagram 1.png'; md5=7448da16d0fd1459c2b52a80d74deddd"
+msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml12(title)
 msgid "Hardening the virtualization layers"

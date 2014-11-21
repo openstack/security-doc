@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-18 06:04+0000\n"
+"POT-Creation-Date: 2014-11-21 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -770,7 +770,7 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:324(None) ./security-guide/section_hardening-the-virtualization-layers.xml:328(None)
-msgid "@@image: 'static/sVirt Diagram 1.png'; md5=ffcdbb45d9054670ad4c270a7c7d3925"
+msgid "@@image: 'static/sVirt Diagram 1.png'; md5=7448da16d0fd1459c2b52a80d74deddd"
 msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:12(title)

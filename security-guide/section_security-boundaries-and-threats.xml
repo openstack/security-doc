@@ -230,7 +230,7 @@
       <para>The diagram shows the types of attacks that may be expected from the actors described in
         the previous section. Note that there will always be exceptions to this diagram but in
         general, this describes the sorts of attack that could be typical for each actor.</para>
-      <para><inlinemediaobject>
+      <para><inlinemediaobject xml:id="security-boundaries-and-threats-attack-types">
           <imageobject role="html">
             <imagedata contentdepth="642" contentwidth="616" fileref="static/high-capability.png"
               format="PNG" scalefit="1"/>

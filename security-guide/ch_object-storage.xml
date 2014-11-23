@@ -263,45 +263,6 @@
             listening services but is instead used to establish
             outgoing connections to storage nodes on the
             private storage network.</para>
-        <section xml:id="object-storage-securing-proxy-services-use-ssl-tls">
-            <title>Use SSL/TLS</title>
-            <para>The built-in or included web server that comes with
-                OpenStack Object Storage supports SSL, but it does not support
-                transmission of the entire SSL certificate chain. This
-                causes issues when you use a third party trusted and
-                signed certificate, such as Verisign, for your cloud.
-                A recommended work around is to use an SSL-terminaton
-                proxy such as stud, HAproxy or NGINX.</para>
-            <para>Although not extensively tested, another work around
-                is to use an alternative webserver instead of the
-                built-in web server, which supports sending both the
-                public server certificate as well as the CA signing
-                authorities intermediate certificate(s). This allows
-                for end-point clients that have the CA root certificate
-                in their trust store to be able to successfully validate
-                your cloud environment's SSL certificate and chain. An
-                example of how to do this with mod_wsgi and Apache is given
-                below. Also consult the <link
-                    xlink:href="http://docs.openstack.org/developer/swift/apache_deployment_guide.html"
-                    >Apache Deployment Guide</link></para>
-            <screen><prompt>#</prompt> <userinput>apt-get install libapache2-mod-wsgi</userinput></screen>
-            <para>Modify file
-                    <filename>/etc/apache2/envvars</filename>
-                with</para>
-            <programlisting>export APACHE_RUN_USER=swift
-export APACHE_RUN_GROUP=swift</programlisting>
-            <para>An alternative is to modify your Apache conf file
-                with</para>
-            <programlisting>User swift
-Group swift</programlisting>
-            <para>Create a <filename>swift</filename> directory in
-               your Apache document root:</para>
-            <screen><prompt>#</prompt> <userinput>mkdir /var/www/swift/</userinput></screen>
-            <para>Create the file
-                    <filename>$YOUR_APACHE_DOC_ROOT/swift/proxy-server.wsgi</filename>:</para>
-            <programlisting>from swift.common.wsgi import init_request_processor application, conf, logger, log_name = \
-  init_request_processor('/etc/swift/proxy-server.conf','proxy-server')</programlisting>
-        </section>
         <section xml:id="object-storage-securing-proxy-services-HTTP-listening-port">
             <title>HTTP listening port</title>
             <para>You should configure your web service as a

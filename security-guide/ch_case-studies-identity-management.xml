@@ -22,7 +22,7 @@
         the Identity service to support an external authentication
         service supporting authentication with government-issued
         access cards. She also uses an external LDAP server to provide
-        role information for the users that is integrated with the
+        role information for the roles that are integrated with the
         access control policy. Due to FedRAMP compliance requirements,
         Alice implements two-factor authentication on the management
         network for all administrator access.
@@ -52,7 +52,7 @@
         from his corporate network through ssh. As recommended
         earlier, Bob requires administrators to use two-factor
         authentication on the Management network to reduce the risk
-        from compromised administrator passwords.</para>
+        of compromised administrator passwords.</para>
       <para>Bob also deploys the dashboard to manage many aspects of
       the cloud. He deploys the dashboard with HSTS to ensure that
       only HTTPS is used. He has ensured that the dashboard is

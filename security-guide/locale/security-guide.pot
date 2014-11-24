@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-23 06:04+0000\n"
+"POT-Creation-Date: 2014-11-24 06:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3824,7 +3824,7 @@ msgid "In this case study we discuss how Alice and Bob would address configurati
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:19(para)
-msgid "Alice's enterprise has a well-established directory service with two-factor authentication for all users. She configures the Identity service to support an external authentication service supporting authentication with government-issued access cards. She also uses an external LDAP server to provide role information for the users that is integrated with the access control policy. Due to FedRAMP compliance requirements, Alice implements two-factor authentication on the management network for all administrator access."
+msgid "Alice's enterprise has a well-established directory service with two-factor authentication for all users. She configures the Identity service to support an external authentication service supporting authentication with government-issued access cards. She also uses an external LDAP server to provide role information for the roles that are integrated with the access control policy. Due to FedRAMP compliance requirements, Alice implements two-factor authentication on the management network for all administrator access."
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:30(para)
@@ -3836,7 +3836,7 @@ msgid "Alice decides to use SPICE instead of VNC for the virtual console. She wa
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:44(para)
-msgid "Because Bob must support authentication for the general public, he decides to use authentication based on a user name and password. He has concerns about brute force attacks attempting to crack user passwords, so he also uses an external authentication extension that throttles the number of failed login attempts. Bob's management network is separate from the other networks within his cloud, but can be reached from his corporate network through ssh. As recommended earlier, Bob requires administrators to use two-factor authentication on the Management network to reduce the risk from compromised administrator passwords."
+msgid "Because Bob must support authentication for the general public, he decides to use authentication based on a user name and password. He has concerns about brute force attacks attempting to crack user passwords, so he also uses an external authentication extension that throttles the number of failed login attempts. Bob's management network is separate from the other networks within his cloud, but can be reached from his corporate network through ssh. As recommended earlier, Bob requires administrators to use two-factor authentication on the Management network to reduce the risk of compromised administrator passwords."
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:56(para)

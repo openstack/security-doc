@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-23 09:09+0000\n"
-"PO-Revision-Date: 2014-11-23 09:10+0000\n"
+"POT-Creation-Date: 2014-11-25 07:45+0000\n"
+"PO-Revision-Date: 2014-11-25 13:41+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -4151,28 +4151,27 @@ msgstr "SSL/TLSの導入"
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml9(para)
 msgid ""
-"OpenStack services receive requests on behalf of users on public networks as"
-" well as from other internal services over management networks. Inter-"
-"service communications can also occur over public networks depending on "
-"deployment and architecture choices."
-msgstr "OpenStack のサービスは、管理ネットワーク経由の他の内部サービスからのリクエストと同様、パブリックネットワーク上のユーザによるリクエストを受信します。サービス間通信は、デプロイメントとアーキテクチャ選択によってはパブリックネットワーク経由で行われる事もあります。"
+"While it is commonly accepted that data over public networks should be "
+"secured using cryptographic measures, such as the Transport Layer Security "
+"(TLS) protocol, it is insufficient to rely on security domain separation to "
+"protect internal traffic. Using a security-in-depth approach, we recommend "
+"securing all domains with TLS, including the management domain services. It "
+"is important that should a tenant escape their VM isolation and gain access "
+"to the hypervisor or host resources, compromise an API endpoint, or any "
+"other service, they must not be able to easily inject or capture messages, "
+"commands, or otherwise affect or control management capabilities of the "
+"cloud. TLS provides the mechanisms to ensure authentication, non-"
+"repudiation, confidentiality, and integrity of user communications to the "
+"OpenStack services and between the OpenStack services themselves."
+msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml10(para)
 msgid ""
-"While it is commonly accepted that data over public networks should be "
-"secured using cryptographic measures, such as Secure Sockets Layer or "
-"Transport Layer Security (SSL/TLS) protocols, it is insufficient to rely on "
-"security domain separation to protect internal traffic. Using a security-in-"
-"depth approach, we recommend securing all domains with SSL/TLS, including "
-"the management domain services. It is important that should a tenant escape "
-"their VM isolation and gain access to the hypervisor or host resources, "
-"compromise an API endpoint, or any other service, they must not be able to "
-"easily inject or capture messages, commands, or otherwise affect or control "
-"management capabilities of the cloud. SSL/TLS provides the mechanisms to "
-"ensure authentication, non-repudiation, confidentiality, and integrity of "
-"user communications to the OpenStack services and between the OpenStack "
-"services themselves."
-msgstr "パブリックネット上のデータは Secure Sockets Layer や Transport Layer Security (SSL/TLS)プロトコルのような暗号化方式を使用してセキュリティを確保すべきであるという事は一般に認識されている一方で、内部トラフィックの保護の為セキュリティドメイン分割に依存する事は不十分です。security-in-depth アプローチを用いて、管理ドメインサービスを含め、SSL/TLSを用いて全ドメインをセキュリティ確保する事を推奨します。テナントがVM分割を回避して、ハイパーバイザーやホストリソースへのアクセスを得て、APIエンドポイントやあらゆる他のサービスを妥協させる事は重大です。テナントが容易にインジェクトしたり、メッセージ・コマンド・その他クラウド上の管理機能に影響を与える又は制御する事が出来るようにすべきではありません。SSL/TLS は、OpenStack サービスへのユーザ通信や OpenStack サービス自体の相互間通信の認証、回避不能、秘密性、完全性を確保する仕組みを提供します。"
+"Due to the published vulnerabilities in the Secure Sockets Layer (SSL) "
+"protocols, we strongly recommend that TLS is used in preference to SSL, and "
+"that SSL is disabled in all cases, unless compatibility with obsolete "
+"browsers or libraries is required."
+msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml11(para)
 msgid ""
@@ -4307,50 +4306,60 @@ msgstr "暗号化アルゴリズム、暗号モード、プロトコル"
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml70(para)
 msgid ""
-"We recommend only using TLS v1.1 or v1.2. SSLv3 and TLSv1.0 may be used for "
-"compatibility but we recommend using caution and only enabling these "
+"We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad "
+"client compatibility but we recommend using caution and only enabling these "
 "protocols if you have a strong requirement to do so. Other SSL/TLS versions,"
 " explicitly older versions, should not be used. These older versions include"
-" SSLv1 and SSLv2. As this book does not intend to be a thorough reference on"
-" cryptography we do not wish to be prescriptive about what specific "
+" SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as"
+" POODLE. When using TLS v1.2 and in control of both the clients and the "
+"server, the cipher suite should be limited to <literal>ECDHE-ECDSA-AES256"
+"-GCM-SHA384</literal>. Where you don't control both ends and are using TLS "
+"v1+, the more general <literal>HIGH:!aNULL:!eNULL:!DES:!3DES</literal> is a "
+"reasonable cipher selection."
+msgstr ""
+
+#: ./security-guide/section_introduction-to-ssl-tls.xml71(para)
+msgid ""
+"However, as this book does not intend to be a thorough reference on "
+"cryptography we do not wish to be prescriptive about what specific "
 "algorithms or cipher modes you should enable or disable in your OpenStack "
 "services. However, there are some authoritative references we would like to "
 "recommend for further information:"
-msgstr "我々は TLS v1.1 又は v1.2 の使用のみ推奨します。SSL v3 と TLS v1.0 は互換性目的で使用出来ますが、我々は、注意深く、これらのプロトコルの有効化が強い要望としてある場合にのみ有効にする事をお勧めします。他のSSL/TLSバージョン(はっきり言えば古いバージョン)は使用すべきではありません。これらの古いバージョンには SSL v1 と v2 が含まれます。本書では暗号方式の初めから終わりまでの参考書を目指していない為、我々はあなたのOpenStackサービス中でどの特定アルゴリズムや暗号モードを有効・無効にすべきかについて指図する事を望みません。しかしながら、今後の情報としてお勧めしたい権威ある参考文献があります。"
+msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml72(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml73(link)
 msgid "National Security Agency, Suite B Cryptography"
 msgstr "国家安全保障局、Suite B 暗号化"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml75(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml76(link)
 msgid "OWASP Guide to Cryptography"
 msgstr "OWASP Guide to Cryptography"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml78(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml79(link)
 msgid "OWASP Transport Layer Protection Cheat Sheet"
 msgstr "OWASP Transport Layer Protection Cheat Sheet"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml81(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml82(link)
 msgid ""
 "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate "
 "trust model enhancements"
 msgstr "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml84(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml85(link)
 msgid ""
 "The Most Dangerous Code in the World: Validating SSL Certificates in Non-"
 "Browser Software"
 msgstr "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml87(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml88(link)
 msgid "OpenSSL and FIPS 140-2"
 msgstr "OpenSSL and FIPS 140-2"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml92(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml93(title)
 msgid "Summary"
 msgstr "概要"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml93(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml94(para)
 msgid ""
 "Given the complexity of the OpenStack components and the number of "
 "deployment possibilities, you must take care to ensure that each component "
@@ -4358,38 +4367,38 @@ msgid ""
 "Subsequent sections discuss the following services:"
 msgstr "OpenStack コンポーネントの複雑さとデプロイの発展性を考慮すると、確実に各コンポーネントがSSL証明書・鍵・CAを適切に設定されている事に注意を払う必要があります。以下のサービスは、本書の後の章で議論します。"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml102(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml103(para)
 msgid "Compute API endpoints"
 msgstr "Compute APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml105(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml106(para)
 msgid "Identity API endpoints"
 msgstr "Identity APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml108(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml109(para)
 msgid "Networking API endpoints"
 msgstr "Networking APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml111(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml112(para)
 msgid "Storage API endpoints"
 msgstr "ストレージAPIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml114(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml115(para)
 msgid "Messaging server"
 msgstr "メッセージングサーバー"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml117(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml118(para)
 msgid "Database server"
 msgstr "データベースサーバー"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml120(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml121(para)
 #: ./security-guide/ch_dashboard.xml8(title)
 #: ./security-guide/section_introduction-to-openstack.xml190(title)
 #: ./security-guide/section_management-interfaces.xml33(title)
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml123(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml124(para)
 msgid ""
 "This guide uses the term SSL as a shorthand to refer to these "
 "recommendations for SSL/TLS protocols."

@@ -24,6 +24,9 @@
       <listitem>
         <para>Monitoring, alerting, and reporting</para>
       </listitem>
+      <listitem>
+        <para>Updates and patches</para>
+      </listitem>
 </itemizedlist>
     <section xml:id="security-services-for-instances-entropy-to-instances">
       <title>Entropy to instances</title>
@@ -302,5 +305,23 @@
         <citetitle>Nagios</citetitle></link> and
         <link xlink:href="http://www.zabbix.com"><citetitle>Zabbix
         </citetitle></link>.</para>
+    </section>
+    <section xml:id="security-services-for-instances-updates">
+      <title>Updates and patches</title>
+      <para>A hypervisor runs independent virtual machines. This
+        hypervisor can run in an operating system or directly on the
+        hardware (called baremetal). Updates to the hypervisor are not
+        propogated down to the virtual machines. For example, if a
+        deployment is using XenServer and has a set of Debian virtual
+        machines, an update to XenServer will not update anything
+        running on the Debian virtual machines.</para>
+      <para>Therefore, we recommend that clear ownership of virtual
+        machines be assigned, and that those owners be responsible for
+        the hardening, deployment, and continued functionality of the
+        virtual machines. We also recommend that updates be deployed on
+        a regular schedule. These patches should be tested in an
+        environment as closely resembling production as possible to
+        ensure both stability and resolution of the issue behind the
+        patch.</para>
     </section>
 </section>

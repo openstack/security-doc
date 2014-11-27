@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-26 06:01+0000\n"
+"POT-Creation-Date: 2014-11-27 06:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2354,98 +2354,70 @@ msgid "A proxy node should have at least two interfaces (physical or virtual): o
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:267(title)
-msgid "Use SSL/TLS"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:268(para)
-msgid "The built-in or included web server that comes with OpenStack Object Storage supports SSL, but it does not support transmission of the entire SSL certificate chain. This causes issues when you use a third party trusted and signed certificate, such as Verisign, for your cloud. A recommended work around is to use an SSL-terminaton proxy such as stud, HAproxy or NGINX."
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:275(para)
-msgid "Although not extensively tested, another work around is to use an alternative webserver instead of the built-in web server, which supports sending both the public server certificate as well as the CA signing authorities intermediate certificate(s). This allows for end-point clients that have the CA root certificate in their trust store to be able to successfully validate your cloud environment's SSL certificate and chain. An example of how to do this with mod_wsgi and Apache is given below. Also consult the <link href=\"http://docs.openstack.org/developer/swift/apache_deployment_guide.html\">Apache Deployment Guide</link>"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:288(para)
-msgid "Modify file <filename>/etc/apache2/envvars</filename> with"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:293(para)
-msgid "An alternative is to modify your Apache conf file with"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:297(para)
-msgid "Create a <filename>swift</filename> directory in your Apache document root:"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:300(para)
-msgid "Create the file <filename>$YOUR_APACHE_DOC_ROOT/swift/proxy-server.wsgi</filename>:"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml:306(title)
 msgid "HTTP listening port"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:307(para)
+#: ./security-guide/ch_object-storage.xml:268(para)
 msgid "You should configure your web service as a non-root (no UID 0) user such as \"swift\" mentioned before. The use of a port greater than 1024 is required to make this easy and avoid running any part of the web container as root. Doing so is not a burden as end-point clients are not typically going to type in the URL manually into a web browser to browse around in the object storage. Additionally, for clients using the HTTP REST API and performing authentication they will normally automatically grab the full REST API URL they are to use as provided by the authentication response. OpenStack's REST API allows for a client to authenticate to one URL and then be told to use a completely different URL for the actual service. Example: Client authenticates to <uri>https://identity.cloud.example.org:55443/v1/auth</uri> and gets a response with their authentication key and Storage URL (the URL of the proxy nodes or load balancer) of <uri>https://swift.cloud.example.org:44443/v1/AUTH_8980</uri>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:327(para)
+#: ./security-guide/ch_object-storage.xml:288(para)
 msgid "The method for configuring your web server to start and run as a non-root user varies by web server and OS."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:332(title)
+#: ./security-guide/ch_object-storage.xml:293(title)
 msgid "Load balancer"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:333(para)
+#: ./security-guide/ch_object-storage.xml:294(para)
 msgid "If the option of using Apache is not feasible or for performance you wish to offload your SSL work you may employ a dedicated network device load balancer. This is also the common way to provide redundancy and load balancing when using multiple proxy nodes."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:338(para)
+#: ./security-guide/ch_object-storage.xml:299(para)
 msgid "If you choose to offload your SSL, ensure that the network link between the load balancer and your proxy nodes are on a private (V)LAN segment such that other nodes on the network (possibly compromised) cannot wiretap (sniff) the unencrypted traffic. If such a breach were to occur the attacker could gain access to end-point client or cloud administrator credentials and access the cloud data."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:346(para)
+#: ./security-guide/ch_object-storage.xml:307(para)
 msgid "The authentication service you use, such as Identity service (keystone) or TempAuth, will determine how you configure a different URL in the responses to end-clients so they use your load balancer instead of an individual proxy node."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:355(title)
+#: ./security-guide/ch_object-storage.xml:316(title)
 msgid "Object Storage authentication"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:356(para)
+#: ./security-guide/ch_object-storage.xml:317(para)
 msgid "Object Storage uses a WSGI model to provide for a middleware capability that not only provides general extensibility but is also used for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 SSL certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:364(para)
+#: ./security-guide/ch_object-storage.xml:325(para)
 msgid "Object Storage comes with two authentication middleware modules by default, either of which can be used as sample code for developing a custom authentication middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:368(title)
+#: ./security-guide/ch_object-storage.xml:329(title)
 msgid "TempAuth"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:369(para)
+#: ./security-guide/ch_object-storage.xml:330(para)
 msgid "TempAuth is the default authentication for Object Storage. In contrast to Identity it stores the user accounts, credentials, and metadata in object storage itself. More information can be found in the section <link href=\"http://docs.openstack.org/developer/swift/overview_auth.html\">The Auth System</link> of the Object Storage (swift) documentation."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:377(title)
+#: ./security-guide/ch_object-storage.xml:338(title)
 msgid "Keystone"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:378(para)
+#: ./security-guide/ch_object-storage.xml:339(para)
 msgid "Keystone is the commonly used Identity provider in OpenStack. It may also be used for authentication in Object Storage. Coverage of securing keystone is already provided in <xref linkend=\"identity\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:387(title)
+#: ./security-guide/ch_object-storage.xml:348(title)
 msgid "Other notable items"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:388(para)
+#: ./security-guide/ch_object-storage.xml:349(para)
 msgid "In <filename>/etc/swift/swift.conf</filename> on every node there is a <option>swift_hash_path_prefix</option> setting and a <option>swift_hash_path_suffix</option> setting. These are provided to reduce the chance of hash collisions for objects being stored and avert one user overwriting the data of another user."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:395(para)
+#: ./security-guide/ch_object-storage.xml:356(para)
 msgid "This value should be initially set with a cryptographically secure random number generator and consistent across all nodes. Ensure that it is protected with proper ACLs and that you have a backup copy to avoid data loss."
 msgstr ""
 

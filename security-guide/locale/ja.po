@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-25 07:45+0000\n"
-"PO-Revision-Date: 2014-11-25 13:41+0000\n"
+"POT-Creation-Date: 2014-11-26 17:51+0000\n"
+"PO-Revision-Date: 2014-11-26 17:51+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -3976,56 +3976,10 @@ msgid ""
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml267(title)
-msgid "Use SSL/TLS"
-msgstr "SSL/TLS の使用"
-
-#: ./security-guide/ch_object-storage.xml268(para)
-msgid ""
-"The built-in or included web server that comes with OpenStack Object Storage"
-" supports SSL, but it does not support transmission of the entire SSL "
-"certificate chain. This causes issues when you use a third party trusted and"
-" signed certificate, such as Verisign, for your cloud. A recommended work "
-"around is to use an SSL-terminaton proxy such as stud, HAproxy or NGINX."
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml275(para)
-msgid ""
-"Although not extensively tested, another work around is to use an "
-"alternative webserver instead of the built-in web server, which supports "
-"sending both the public server certificate as well as the CA signing "
-"authorities intermediate certificate(s). This allows for end-point clients "
-"that have the CA root certificate in their trust store to be able to "
-"successfully validate your cloud environment's SSL certificate and chain. An"
-" example of how to do this with mod_wsgi and Apache is given below. Also "
-"consult the <link "
-"href=\"http://docs.openstack.org/developer/swift/apache_deployment_guide.html\">Apache"
-" Deployment Guide</link>"
-msgstr ""
-
-#: ./security-guide/ch_object-storage.xml288(para)
-msgid "Modify file <filename>/etc/apache2/envvars</filename> with"
-msgstr "次のように <filename>/etc/apache2/envvars</filename> ファイルを変更します。"
-
-#: ./security-guide/ch_object-storage.xml293(para)
-msgid "An alternative is to modify your Apache conf file with"
-msgstr "別の方法は Apache の設定ファイルを次のように変更することです。"
-
-#: ./security-guide/ch_object-storage.xml297(para)
-msgid ""
-"Create a <filename>swift</filename> directory in your Apache document root:"
-msgstr "Apache のドキュメントルートに <filename>swift</filename> ディレクトリを作成します。"
-
-#: ./security-guide/ch_object-storage.xml300(para)
-msgid ""
-"Create the file <filename>$YOUR_APACHE_DOC_ROOT/swift/proxy-"
-"server.wsgi</filename>:"
-msgstr "<filename>$YOUR_APACHE_DOC_ROOT/swift/proxy-server.wsgi</filename> ファイルを作成します。"
-
-#: ./security-guide/ch_object-storage.xml306(title)
 msgid "HTTP listening port"
 msgstr "HTTP リッスンポート"
 
-#: ./security-guide/ch_object-storage.xml307(para)
+#: ./security-guide/ch_object-storage.xml268(para)
 msgid ""
 "You should configure your web service as a non-root (no UID 0) user such as "
 "\"swift\" mentioned before. The use of a port greater than 1024 is required "
@@ -4043,17 +3997,17 @@ msgid ""
 "<uri>https://swift.cloud.example.org:44443/v1/AUTH_8980</uri>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml327(para)
+#: ./security-guide/ch_object-storage.xml288(para)
 msgid ""
 "The method for configuring your web server to start and run as a non-root "
 "user varies by web server and OS."
 msgstr "ウェブサーバーを root 以外のユーザーで起動して実行する設定方法はウェブサーバーと OS により異なります。"
 
-#: ./security-guide/ch_object-storage.xml332(title)
+#: ./security-guide/ch_object-storage.xml293(title)
 msgid "Load balancer"
 msgstr "負荷分散装置"
 
-#: ./security-guide/ch_object-storage.xml333(para)
+#: ./security-guide/ch_object-storage.xml294(para)
 msgid ""
 "If the option of using Apache is not feasible or for performance you wish to"
 " offload your SSL work you may employ a dedicated network device load "
@@ -4061,7 +4015,7 @@ msgid ""
 "balancing when using multiple proxy nodes."
 msgstr "Apache を使用するという選択肢が実現できない場合、またはパフォーマンスのために SSL 処理をオフロードしたい場合、専用のネットワークデバイスの負荷分散装置を使用できます。これは、複数のプロキシノードを使用するときに、冗長性と負荷分散を提供するために一般的な方法です。"
 
-#: ./security-guide/ch_object-storage.xml338(para)
+#: ./security-guide/ch_object-storage.xml299(para)
 msgid ""
 "If you choose to offload your SSL, ensure that the network link between the "
 "load balancer and your proxy nodes are on a private (V)LAN segment such that"
@@ -4071,7 +4025,7 @@ msgid ""
 "access the cloud data."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml346(para)
+#: ./security-guide/ch_object-storage.xml307(para)
 msgid ""
 "The authentication service you use, such as Identity service (keystone) or "
 "TempAuth, will determine how you configure a different URL in the responses "
@@ -4079,11 +4033,11 @@ msgid ""
 " node."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml355(title)
+#: ./security-guide/ch_object-storage.xml316(title)
 msgid "Object Storage authentication"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml356(para)
+#: ./security-guide/ch_object-storage.xml317(para)
 msgid ""
 "Object Storage uses a WSGI model to provide for a middleware capability that"
 " not only provides general extensibility but is also used for authentication"
@@ -4093,18 +4047,18 @@ msgid ""
 "certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml364(para)
+#: ./security-guide/ch_object-storage.xml325(para)
 msgid ""
 "Object Storage comes with two authentication middleware modules by default, "
 "either of which can be used as sample code for developing a custom "
 "authentication middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml368(title)
+#: ./security-guide/ch_object-storage.xml329(title)
 msgid "TempAuth"
 msgstr "TempAuth"
 
-#: ./security-guide/ch_object-storage.xml369(para)
+#: ./security-guide/ch_object-storage.xml330(para)
 msgid ""
 "TempAuth is the default authentication for Object Storage. In contrast to "
 "Identity it stores the user accounts, credentials, and metadata in object "
@@ -4113,22 +4067,22 @@ msgid ""
 "Auth System</link> of the Object Storage (swift) documentation."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml377(title)
+#: ./security-guide/ch_object-storage.xml338(title)
 msgid "Keystone"
 msgstr "Keystone"
 
-#: ./security-guide/ch_object-storage.xml378(para)
+#: ./security-guide/ch_object-storage.xml339(para)
 msgid ""
 "Keystone is the commonly used Identity provider in OpenStack. It may also be"
 " used for authentication in Object Storage. Coverage of securing keystone is"
 " already provided in <xref linkend=\"identity\"/>."
 msgstr "Keystone が OpenStack で一般的に使用される認証プロバイダーです。これは Object Storage でも認証のために使用できます。keystone のセキュア化についてはすでに <xref linkend=\"identity\"/> で提供されています。"
 
-#: ./security-guide/ch_object-storage.xml387(title)
+#: ./security-guide/ch_object-storage.xml348(title)
 msgid "Other notable items"
 msgstr "他の重要事項"
 
-#: ./security-guide/ch_object-storage.xml388(para)
+#: ./security-guide/ch_object-storage.xml349(para)
 msgid ""
 "In <filename>/etc/swift/swift.conf</filename> on every node there is a "
 "<option>swift_hash_path_prefix</option> setting and a "
@@ -4137,7 +4091,7 @@ msgid ""
 "user overwriting the data of another user."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml395(para)
+#: ./security-guide/ch_object-storage.xml356(para)
 msgid ""
 "This value should be initially set with a cryptographically secure random "
 "number generator and consistent across all nodes. Ensure that it is "

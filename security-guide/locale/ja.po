@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-11-26 17:51+0000\n"
-"PO-Revision-Date: 2014-11-26 17:51+0000\n"
+"POT-Creation-Date: 2014-11-27 07:56+0000\n"
+"PO-Revision-Date: 2014-11-27 07:56+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -10479,8 +10479,8 @@ msgstr "オフ状態のサーバーのハッキング"
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_security-services-for-instances.xml81(None)
 #: ./security-guide/section_security-services-for-instances.xml84(None)
+#: ./security-guide/section_security-services-for-instances.xml87(None)
 msgid ""
 "@@image: 'static/filteringWorkflow1.png'; "
 "md5=c144af5cbdee1bd17a7bde0bea5b5fe7"
@@ -10519,31 +10519,36 @@ msgid ""
 msgstr "本章では、これらの仕組みの詳細とどのような状況においてインスタンスのセキュリティが向上されるかを説明します。また、プライバシー観点における懸念箇所にも焦点をあてます。データのパススルー、イントロスペクション、またエントロピー元の提供などが該当します。本セクションでは、下記のセキュリティサービスに焦点を当てます:"
 
 #: ./security-guide/section_security-services-for-instances.xml13(para)
-#: ./security-guide/section_security-services-for-instances.xml29(title)
+#: ./security-guide/section_security-services-for-instances.xml32(title)
 msgid "Entropy to instances"
 msgstr "インスタンスへのエントロピー"
 
 #: ./security-guide/section_security-services-for-instances.xml16(para)
-#: ./security-guide/section_security-services-for-instances.xml65(title)
+#: ./security-guide/section_security-services-for-instances.xml68(title)
 msgid "Scheduling instances to nodes"
 msgstr "ノードへのインスタンスのスケジューリング"
 
 #: ./security-guide/section_security-services-for-instances.xml19(para)
-#: ./security-guide/section_security-services-for-instances.xml131(title)
+#: ./security-guide/section_security-services-for-instances.xml134(title)
 msgid "Trusted images"
 msgstr "信頼されたイメージ"
 
 #: ./security-guide/section_security-services-for-instances.xml22(para)
-#: ./security-guide/section_security-services-for-instances.xml206(title)
+#: ./security-guide/section_security-services-for-instances.xml209(title)
 msgid "Instance migrations"
 msgstr "インスタンスのマイグレーション"
 
 #: ./security-guide/section_security-services-for-instances.xml25(para)
-#: ./security-guide/section_security-services-for-instances.xml278(title)
+#: ./security-guide/section_security-services-for-instances.xml281(title)
 msgid "Monitoring, alerting, and reporting"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml30(para)
+#: ./security-guide/section_security-services-for-instances.xml28(para)
+#: ./security-guide/section_security-services-for-instances.xml310(title)
+msgid "Updates and patches"
+msgstr ""
+
+#: ./security-guide/section_security-services-for-instances.xml33(para)
 msgid ""
 "We consider entropy to refer to the quality and source of random data that "
 "is available to an instance. Cryptographic technologies typically rely "
@@ -10557,7 +10562,7 @@ msgid ""
 "applications running in the cloud less secure overall."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml42(para)
+#: ./security-guide/section_security-services-for-instances.xml45(para)
 msgid ""
 "Fortunately, a cloud architect may address these issues by providing a high "
 "quality source of entropy to the cloud instances. This can be done by having"
@@ -10571,7 +10576,7 @@ msgid ""
 " available."
 msgstr "これらの課題は、クラウドアーキテクトが高品質のエントロピーをクラウドインスタンスに提供することで対応できます。例えば、クラウド内にインスタンス用に適量なハードウェア乱数生成器(HRNG)があれば解決できます（適量はドメインによって異なる）。一般的なハードウェア乱数生成器なら通常運用されている50-100台のコンピュートノード分のエントロピーを生成することが可能です。高帯域ハードウェア乱数生成器（Intel Ivy Bridgeや最新プロセッサなどと提供されるRdRand instructionなど）はさらに多くのノードに対応できます。エントロピーの量が十分かどうかを判断するためには、クラウド上で運用するアプリケーションの要求を理解している必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml54(para)
+#: ./security-guide/section_security-services-for-instances.xml57(para)
 msgid ""
 "The Virtio RNG is a random number generator that uses "
 "<filename>/dev/random</filename> as the source of entropy by default, "
@@ -10583,7 +10588,7 @@ msgid ""
 "used to create the instance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml66(para)
+#: ./security-guide/section_security-services-for-instances.xml69(para)
 msgid ""
 "Before an instance is created, a host for the image instantiation must be "
 "selected. This selection is performed by the <systemitem class=\"service"
@@ -10591,7 +10596,7 @@ msgid ""
 "volume requests."
 msgstr "インスタンスを生成する前に、イメージのインスタンス化のためのホストを選択する必要があります。この選択は<systemitem class=\"service\">nova-scheduler</systemitem>によって行われ、さらにコンピュートとボリューム要求の伝達方法も決定します。"
 
-#: ./security-guide/section_security-services-for-instances.xml67(para)
+#: ./security-guide/section_security-services-for-instances.xml70(para)
 msgid ""
 "The filter scheduler is the default scheduler for OpenStack Compute, "
 "although other schedulers exist (see the section <link "
@@ -10608,7 +10613,7 @@ msgid ""
 "reasons. The following diagram demonstrates how the filter scheduler works:"
 msgstr "filter スケジュラ―は OpenStack Compute のデフォルトのスケジューラーです。他にもスケジューラーは存在します(詳細は<citetitle>OpenStack Configuration Reference</citetitle>の<link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html\">Scheduling</link>を参照)。フィルタースケジューラーはフィルターと連携し、インスタンスの起動場所を決めます。このホスト選択作業があることによって、管理者は様々なセキュリティ要件を満たすことができます。クラウド配備種別によっては、次のような構成が組めます。例えばデータ分離が大きな懸念事項の場合、テナントのインスタンスは必ず同一のホスト上に配置するように設定できます。または、耐障害性のためにテナントのインスタンスをできるだけ異なるホスト上に配置するように設定できます。下の図は、フィルタースケジュラ―の働きを表しています。"
 
-#: ./security-guide/section_security-services-for-instances.xml87(para)
+#: ./security-guide/section_security-services-for-instances.xml90(para)
 msgid ""
 "The use of scheduler filters may be used to segregate customers, data, or "
 "even discard machines of the cloud that cannot be attested as secure. This "
@@ -10617,7 +10622,7 @@ msgid ""
 "variety of security-related purposes."
 msgstr "スケジューラーを提供しているすべてのOpenStackプロジェクトにおいて、スケジュールフィルタを使用することによってお客様やデータを分離できます。さらに安全ではないと判断されたクラウド上のマシンの破棄も行えます。クラウドを構築する際には、あらゆるセキュリティ目的のためにスケジュールフィルターの実装を選択できます。"
 
-#: ./security-guide/section_security-services-for-instances.xml88(para)
+#: ./security-guide/section_security-services-for-instances.xml91(para)
 msgid ""
 "Below we highlight a few of the filters that may be useful in a security "
 "context, depending on your requirements, the full set of filter "
@@ -10627,11 +10632,11 @@ msgid ""
 " Configuration Reference</citetitle>."
 msgstr "下記ではセキュリティコンテキストにおいて役に立つ幾つかのフィルターを紹介します。<citetitle>OpenStack Configuration Reference</citetitle>の<link href=\"http://docs.openstack.org/trunk/config-reference/content/filter-scheduler.html\">Filter Scheduler</link>セクションにすべてのフィルター関連ドキュメントが掲載されています。要件に合わせてご参照ください。"
 
-#: ./security-guide/section_security-services-for-instances.xml91(title)
+#: ./security-guide/section_security-services-for-instances.xml94(title)
 msgid "Host aggregates"
 msgstr "ホスト・アグリゲート"
 
-#: ./security-guide/section_security-services-for-instances.xml92(para)
+#: ./security-guide/section_security-services-for-instances.xml95(para)
 msgid ""
 "While not a filter, host aggregates allow administrators to assign key-value"
 " pairs to groups of machines. This allows cloud administrators to segregate "
@@ -10645,11 +10650,11 @@ msgid ""
 "managing aggregates)."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml106(title)
+#: ./security-guide/section_security-services-for-instances.xml109(title)
 msgid "AggregateMultiTenancyIsolation"
 msgstr "AggregateMultiTenancyIsolation"
 
-#: ./security-guide/section_security-services-for-instances.xml107(para)
+#: ./security-guide/section_security-services-for-instances.xml110(para)
 msgid ""
 "This filter will isolate a tenant or group of tenants to specific host "
 "aggregates. If a host is assigned to an aggregate that has the metadata key "
@@ -10659,11 +10664,11 @@ msgid ""
 "can create instances from all tenants."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml117(title)
+#: ./security-guide/section_security-services-for-instances.xml120(title)
 msgid "DifferentHostFilter"
 msgstr "DifferentHostFilter"
 
-#: ./security-guide/section_security-services-for-instances.xml118(para)
+#: ./security-guide/section_security-services-for-instances.xml121(para)
 msgid ""
 "Schedule the instance on a different host from a set of instances. To take "
 "advantage of this filter, the requester must pass a scheduler hint, using "
@@ -10672,11 +10677,11 @@ msgid ""
 "<literal>SameHostFilter</literal>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml121(title)
+#: ./security-guide/section_security-services-for-instances.xml124(title)
 msgid "GroupAntiAffinityFilter"
 msgstr "GroupAntiAffinityFilter"
 
-#: ./security-guide/section_security-services-for-instances.xml122(para)
+#: ./security-guide/section_security-services-for-instances.xml125(para)
 msgid ""
 "The GroupAntiAffinityFilter ensures that each instance in a group is on a "
 "different host. To take advantage of this filter, the requester must pass a "
@@ -10684,11 +10689,11 @@ msgid ""
 "instance UUIDs as the value."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml125(title)
+#: ./security-guide/section_security-services-for-instances.xml128(title)
 msgid "Trusted compute pools"
 msgstr "信頼済コンピュートプール"
 
-#: ./security-guide/section_security-services-for-instances.xml126(para)
+#: ./security-guide/section_security-services-for-instances.xml129(para)
 msgid ""
 "There exists a scheduler filter which integrates with the <link "
 "href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation"
@@ -10696,14 +10701,14 @@ msgid ""
 "attestation of PCRs received from a system using Intel TXT."
 msgstr "Intel TXTを使用したシステムから送られたPCRの認証によってスケジューラーの対応を定義するために<link href=\"https://github.com/OpenAttestation/OpenAttestation\">Open Attestation Project</link> (OATS)と連携するスケジューラーフィルターがあります。"
 
-#: ./security-guide/section_security-services-for-instances.xml127(para)
+#: ./security-guide/section_security-services-for-instances.xml130(para)
 msgid ""
 "It is unclear if this feature is compatible with AMD's similar SEM, although"
 " the OpenAttestation agent relies on the vendor-agnostic <link "
 "href=\"http://trousers.sourceforge.net/\">TrouSerS library</link>."
 msgstr "OpenAttestationエージェントはベンダー依存ではない<link href=\"http://trousers.sourceforge.net/\">TrouSerSライブラリ</link>を採用していますが、本機能は類似したAMD社のSEMと互換性があるかは不明です。"
 
-#: ./security-guide/section_security-services-for-instances.xml132(para)
+#: ./security-guide/section_security-services-for-instances.xml135(para)
 msgid ""
 "In a cloud environment, users work with either pre-installed images or "
 "images they upload themselves. In both cases, users should be able to ensure"
@@ -10713,11 +10718,11 @@ msgid ""
 "around these actions there are also several gaps in the process."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml134(title)
+#: ./security-guide/section_security-services-for-instances.xml137(title)
 msgid "Image creation process"
 msgstr "イメージ作成プロセス"
 
-#: ./security-guide/section_security-services-for-instances.xml135(para)
+#: ./security-guide/section_security-services-for-instances.xml138(para)
 msgid ""
 "The OpenStack Documentation provides guidance on how to create and upload an"
 " image to the Image Service. Additionally it is assumed that you have a "
@@ -10728,11 +10733,11 @@ msgid ""
 " image's provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml143(para)
+#: ./security-guide/section_security-services-for-instances.xml146(para)
 msgid "The first option is to obtain boot media from a trusted source."
 msgstr "最初の選択肢は、信頼された提供元からブートメディアを入手することです。"
 
-#: ./security-guide/section_security-services-for-instances.xml150(para)
+#: ./security-guide/section_security-services-for-instances.xml153(para)
 msgid ""
 "The second option is to use the <link href=\"http://docs.openstack.org"
 "/image-guide/content/\"><citetitle>OpenStack Virtual Machine Image "
@@ -10742,7 +10747,7 @@ msgid ""
 "linux/Pages/index.aspx\">Linux STIGs</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml158(para)
+#: ./security-guide/section_security-services-for-instances.xml161(para)
 msgid ""
 "The final option is to use an automated image builder. The following example"
 " uses the Oz image builder. The OpenStack community has recently created a "
@@ -10750,13 +10755,13 @@ msgid ""
 "this tool from a security perspective."
 msgstr "最後の手段として説明するのはイメージの自動生成機構の使用です。次の例では、Oz image builderを採用しています。OpenStackコミュニティでは、disk-image-builderというさらに新しいツールが公開されています。本ツールはセキュリティ観点において未検証です。"
 
-#: ./security-guide/section_security-services-for-instances.xml159(para)
+#: ./security-guide/section_security-services-for-instances.xml162(para)
 msgid ""
 "Example of RHEL 6 CCE-26976-1 which will help implement NIST 800-53 "
 "Section<emphasis>AC-19(d) in</emphasis> Oz."
 msgstr "OzでNIST 800-53 セクション<emphasis>AC-19(d)</emphasis> の実装を手助けするRHEL 6 CCE-26976-1の例"
 
-#: ./security-guide/section_security-services-for-instances.xml195(para)
+#: ./security-guide/section_security-services-for-instances.xml198(para)
 msgid ""
 "It is recommended to avoid the manual image building process as it is "
 "complex and prone to error. Additionally, using an automated system like Oz "
@@ -10766,7 +10771,7 @@ msgid ""
 "hardening guidelines over time."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml196(para)
+#: ./security-guide/section_security-services-for-instances.xml199(para)
 msgid ""
 "If subscribing to a public cloud service, you should check with the cloud "
 "provider for an outline of the process used to produce their default images."
@@ -10776,11 +10781,11 @@ msgid ""
 "on Image Provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml199(title)
+#: ./security-guide/section_security-services-for-instances.xml202(title)
 msgid "Image provenance and validation"
 msgstr "イメージの出所と妥当性確認"
 
-#: ./security-guide/section_security-services-for-instances.xml200(para)
+#: ./security-guide/section_security-services-for-instances.xml203(para)
 msgid ""
 "Unfortunately, it is not currently possible to force Compute to validate an "
 "image hash immediately prior to starting an instance. To understand the "
@@ -10788,7 +10793,7 @@ msgid ""
 "the time of image launch."
 msgstr "残念ながら、現在はインスタンス起動直前にコンピュートにイメージのハッシュを検証を強制する方法がありません。状況を理解するために、イメージ起動の際にイメージがどのように扱われるのかを簡単に説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml201(para)
+#: ./security-guide/section_security-services-for-instances.xml204(para)
 msgid ""
 "Images come from the glance service to the nova service on a node. This "
 "transfer should be protected by running over SSL. Once the image is on the "
@@ -10801,7 +10806,7 @@ msgid ""
 "resulting image."
 msgstr "イメージはGlanceサービスからノードのNovaサービスへ供給されます。この転送はSSLによって保護されている必要があります。イメージがノードに転送されたら、一般的なchecksumで検証され、起動するインスタンスのサイズに合わせてディスクが拡張します。以降、このノードで同じサイズの同一イメージを起動する場合はこの拡張されたイメージから起動されます。拡張されたイメージは起動前に再検証されないため、改ざんの可能性があります。これでは作成されたイメージのファイルの手動確認以外に確認方法がありません。"
 
-#: ./security-guide/section_security-services-for-instances.xml202(para)
+#: ./security-guide/section_security-services-for-instances.xml205(para)
 msgid ""
 "We hope that future versions of Compute and/or the Image Service will offer "
 "support for validating the image hash before each instance launch. An "
@@ -10810,7 +10815,7 @@ msgid ""
 "launched."
 msgstr "将来的にコンピュートまたはイメージサービスでインスタンス起動の前にイメージのハッシュを検証する機構を提供することが期待されています。さらに考えられる強力な代替手段はユーザーにイメージを署名させ、インスタンスの起動前に署名の検証を実行させることです。"
 
-#: ./security-guide/section_security-services-for-instances.xml207(para)
+#: ./security-guide/section_security-services-for-instances.xml210(para)
 msgid ""
 "OpenStack and the underlying virtualization layers provide for the live "
 "migration of images between OpenStack nodes, allowing you to seamlessly "
@@ -10820,31 +10825,31 @@ msgid ""
 "performed during a live migration:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml217(para)
+#: ./security-guide/section_security-services-for-instances.xml220(para)
 msgid "Start instance on destination host"
 msgstr "目的先ホストでインスタンスを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml218(para)
+#: ./security-guide/section_security-services-for-instances.xml221(para)
 msgid "Transfer memory"
 msgstr "メモリを転送"
 
-#: ./security-guide/section_security-services-for-instances.xml219(para)
+#: ./security-guide/section_security-services-for-instances.xml222(para)
 msgid "Stop the guest &amp; sync disks"
 msgstr "ゲスト&amp;syncディスクを停止"
 
-#: ./security-guide/section_security-services-for-instances.xml220(para)
+#: ./security-guide/section_security-services-for-instances.xml223(para)
 msgid "Transfer state"
 msgstr "転送状態となる"
 
-#: ./security-guide/section_security-services-for-instances.xml221(para)
+#: ./security-guide/section_security-services-for-instances.xml224(para)
 msgid "Start the guest"
 msgstr "ゲストを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml224(title)
+#: ./security-guide/section_security-services-for-instances.xml227(title)
 msgid "Live migration risks"
 msgstr "ライブマイグレーションのリスク"
 
-#: ./security-guide/section_security-services-for-instances.xml225(para)
+#: ./security-guide/section_security-services-for-instances.xml228(para)
 msgid ""
 "At various stages of the live migration process the contents of an instances"
 " run time memory and disk are transmitted over the network in plain text. "
@@ -10852,68 +10857,68 @@ msgid ""
 "migration. The following in-exhaustive list details some of these risks:"
 msgstr "ライブマイグレーションのステージによっては、インスタンスのランタイムメモリやディスクの今テンスが平文でネットワーク上転送されます。そのため、ライブマイグレーション中には対処が必要なリスクがあります。次は一部のリスクの詳細を列挙しています。"
 
-#: ./security-guide/section_security-services-for-instances.xml227(para)
+#: ./security-guide/section_security-services-for-instances.xml230(para)
 msgid ""
 "<emphasis>Denial of Service (DoS)</emphasis>: If something fails during the "
 "migration process, the instance could be lost."
 msgstr "<emphasis>Denial of Service (DoS)</emphasis>: マイグレーションプロセス中に何かが失敗した場合、インスタンスを失う可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml230(para)
+#: ./security-guide/section_security-services-for-instances.xml233(para)
 msgid ""
 "<emphasis>Data exposure</emphasis>: Memory or disk transfers must be handled"
 " securely."
 msgstr "<emphasis>データの公開</emphasis>: メモリやディスクの転送は安全に行う必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml233(para)
+#: ./security-guide/section_security-services-for-instances.xml236(para)
 msgid ""
 "<emphasis>Data manipulation</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate user data during the "
 "migration."
 msgstr "<emphasis>データの操作</emphasis>: メモリやディスクの転送がセキュアに処理されなければ、攻撃者がマイグレーション中にユーザーデータを操作できる可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml236(para)
+#: ./security-guide/section_security-services-for-instances.xml239(para)
 msgid ""
 "<emphasis>Code injection</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate executables, either on "
 "disk or in memory, during the migration."
 msgstr "<emphasis>コードの挿入</emphasis>: メモリやディスクの転送が安全ではない場合、マイグレーション中に攻撃者によってディスクやメモリ上の実行ファイルが操作される可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml241(title)
+#: ./security-guide/section_security-services-for-instances.xml244(title)
 msgid "Live migration mitigations"
 msgstr "ライブマイグレーションのリスクの軽減"
 
-#: ./security-guide/section_security-services-for-instances.xml242(para)
+#: ./security-guide/section_security-services-for-instances.xml245(para)
 msgid ""
 "There are several methods to mitigate some of the risk associated with live "
 "migrations, the following list details some of these:"
 msgstr "ライブマイグレーションに関連するリスクを軽減するためには様々な手法があります。次のリストで詳しく説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml244(para)
-#: ./security-guide/section_security-services-for-instances.xml254(title)
+#: ./security-guide/section_security-services-for-instances.xml247(para)
+#: ./security-guide/section_security-services-for-instances.xml257(title)
 msgid "Disable live migration"
 msgstr "ライブマイグレーションの無効化"
 
-#: ./security-guide/section_security-services-for-instances.xml247(para)
+#: ./security-guide/section_security-services-for-instances.xml250(para)
 msgid "Isolated migration network"
 msgstr "マイグレーションネットワークの分離"
 
-#: ./security-guide/section_security-services-for-instances.xml250(para)
-#: ./security-guide/section_security-services-for-instances.xml267(title)
+#: ./security-guide/section_security-services-for-instances.xml253(para)
+#: ./security-guide/section_security-services-for-instances.xml270(title)
 msgid "Encrypted live migration"
 msgstr "ライブマイグレーションの暗号化"
 
-#: ./security-guide/section_security-services-for-instances.xml255(para)
+#: ./security-guide/section_security-services-for-instances.xml258(para)
 msgid ""
 "At this time, live migration is enabled in OpenStack by default. Live "
 "migrations can be disabled by adding the following lines to the nova "
 "<filename>policy.json</filename> file:"
 msgstr "現在、OpenStackではデフォルトでライブマイグレーションを有効にしています。ライブマイグレーションは nova <filename>policy.json</filename> ファイルへ下記の行を追加することによって無効化できます。"
 
-#: ./security-guide/section_security-services-for-instances.xml263(title)
+#: ./security-guide/section_security-services-for-instances.xml266(title)
 msgid "Migration network"
 msgstr "マイグレーションネットワーク"
 
-#: ./security-guide/section_security-services-for-instances.xml264(para)
+#: ./security-guide/section_security-services-for-instances.xml267(para)
 msgid ""
 "As a general practice, live migration traffic should be restricted to the "
 "management security domain, see <xref linkend=\"security-boundaries-and-"
@@ -10924,7 +10929,7 @@ msgid ""
 "traffic to a dedicated network can reduce the risk of exposure."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml268(para)
+#: ./security-guide/section_security-services-for-instances.xml271(para)
 msgid ""
 "If there is a sufficient business case for keeping live migration enabled, "
 "then libvirtd can provide encrypted tunnels for the live migrations. "
@@ -10934,23 +10939,23 @@ msgid ""
 "following high-level steps:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml270(para)
+#: ./security-guide/section_security-services-for-instances.xml273(para)
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml271(para)
+#: ./security-guide/section_security-services-for-instances.xml274(para)
 msgid ""
 "An encrypted tunnel is created between libvirtd processes on both source and"
 " destination hosts."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml272(para)
+#: ./security-guide/section_security-services-for-instances.xml275(para)
 msgid ""
 "Destination libvirtd host copies the instances back to an underlying "
 "hypervisor."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml279(para)
+#: ./security-guide/section_security-services-for-instances.xml282(para)
 msgid ""
 "As an OpenStack virtual machine is a server image able to be replicated "
 "across hosts, best practice in logging applies similarly between physical "
@@ -10964,14 +10969,14 @@ msgid ""
 "Elasticsearch, Logstash, and Kibana</citetitle></link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml292(para)
+#: ./security-guide/section_security-services-for-instances.xml295(para)
 msgid ""
 "These logs should be reviewed at a regular cadence such as a live view by a "
 "network operations center (NOC), or if the environment is not large enough "
 "to necessitate a NOC, then logs should undergo a regular log review process."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml296(para)
+#: ./security-guide/section_security-services-for-instances.xml299(para)
 msgid ""
 "Many times interesting events trigger an alert which is sent to a responder "
 "for action. Frequently this alert takes the form of an email with the "
@@ -10980,6 +10985,27 @@ msgid ""
 "managing alerts are <link "
 "href=\"http://www.nagios.org\"><citetitle>Nagios</citetitle></link> and "
 "<link href=\"http://www.zabbix.com\"><citetitle>Zabbix </citetitle></link>."
+msgstr ""
+
+#: ./security-guide/section_security-services-for-instances.xml311(para)
+msgid ""
+"A hypervisor runs independent virtual machines. This hypervisor can run in "
+"an operating system or directly on the hardware (called baremetal). Updates "
+"to the hypervisor are not propogated down to the virtual machines. For "
+"example, if a deployment is using XenServer and has a set of Debian virtual "
+"machines, an update to XenServer will not update anything running on the "
+"Debian virtual machines."
+msgstr ""
+
+#: ./security-guide/section_security-services-for-instances.xml318(para)
+msgid ""
+"Therefore, we recommend that clear ownership of virtual machines be "
+"assigned, and that those owners be responsible for the hardening, "
+"deployment, and continued functionality of the virtual machines. We also "
+"recommend that updates be deployed on a regular schedule. These patches "
+"should be tested in an environment as closely resembling production as "
+"possible to ensure both stability and resolution of the issue behind the "
+"patch."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-case-studies.xml8(title)

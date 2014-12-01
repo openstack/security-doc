@@ -11,18 +11,11 @@
   <?dbhtml stop-chunking?>
   <title>Hypervisor selection</title>
   <para>Virtualization provides flexibility and other key benefits
-    that enable cloud building. However, a virtualization stack must
-    also be secured appropriately to reduce the risks associated with
-    hypervisor breakout attacks. That is, while a virtualization stack
+    that enable cloud building.virtualization stack
     can provide isolation between instances, or guest virtual
-    machines, that isolation can be less than perfect in some
-    situations. Making intelligent selections for virtualization stack
-    as well as following the best practices outlined in this chapter
-    can be included in a layered approach to cloud security. Finally,
-    securing your virtualization stack is critical to deliver on the
-    promise of multi-tenant, either between customers in a public
-    cloud, between business units in a private cloud, or some mixture
-    of the two in a hybrid cloud.</para>
+    machines. However, a virtualization stack in a multi-tenant cloud
+    must have appropriate security measures to reduce the
+    risks associated with hypervisor breakout attacks.</para>
   <para>This chapter discusses the hypervisor selection process. The
     chapters that follow provide foundational information needed for
     securing a virtualization stack.</para>

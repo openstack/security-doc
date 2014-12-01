@@ -306,7 +306,7 @@
                 and access the cloud data.</para>
             <para>The authentication service you use, such as
                 Identity service (keystone) or TempAuth, will determine how you configure a
-                different URL in the responses to end-clients so they
+                different URL in the responses to end-point clients so they
                 use your load balancer instead of an individual proxy
                 node.</para>
         </section>

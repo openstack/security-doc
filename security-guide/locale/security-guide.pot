@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-28 06:01+0000\n"
+"POT-Creation-Date: 2014-12-02 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -321,7 +321,7 @@ msgstr ""
 msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud, may also want to run such tools on their instances."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml:141(title) ./security-guide/section_hypervisor-selection.xml:684(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:108(title)
+#: ./security-guide/section_forensics-and-incident-response.xml:141(title) ./security-guide/section_hypervisor-selection.xml:677(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:108(title)
 msgid "Bibliography"
 msgstr ""
 
@@ -1005,7 +1005,7 @@ msgstr ""
 msgid "sVirt SELinux Boolean"
 msgstr ""
 
-#: ./security-guide/section_hardening-the-virtualization-layers.xml:399(emphasis) ./security-guide/section_hypervisor-selection.xml:498(td)
+#: ./security-guide/section_hardening-the-virtualization-layers.xml:399(emphasis) ./security-guide/section_hypervisor-selection.xml:491(td)
 msgid "Description"
 msgstr ""
 
@@ -2378,7 +2378,7 @@ msgid "If you choose to offload your SSL, ensure that the network link between t
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:307(para)
-msgid "The authentication service you use, such as Identity service (keystone) or TempAuth, will determine how you configure a different URL in the responses to end-clients so they use your load balancer instead of an individual proxy node."
+msgid "The authentication service you use, such as Identity service (keystone) or TempAuth, will determine how you configure a different URL in the responses to end-point clients so they use your load balancer instead of an individual proxy node."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:316(title)
@@ -3828,622 +3828,622 @@ msgid "Hypervisor selection"
 msgstr ""
 
 #: ./security-guide/section_hypervisor-selection.xml:13(para)
-msgid "Virtualization provides flexibility and other key benefits that enable cloud building. However, a virtualization stack must also be secured appropriately to reduce the risks associated with hypervisor breakout attacks. That is, while a virtualization stack can provide isolation between instances, or guest virtual machines, that isolation can be less than perfect in some situations. Making intelligent selections for virtualization stack as well as following the best practices outlined in this chapter can be included in a layered approach to cloud security. Finally, securing your virtualization stack is critical to deliver on the promise of multi-tenant, either between customers in a public cloud, between business units in a private cloud, or some mixture of the two in a hybrid cloud."
+msgid "Virtualization provides flexibility and other key benefits that enable cloud building.virtualization stack can provide isolation between instances, or guest virtual machines. However, a virtualization stack in a multi-tenant cloud must have appropriate security measures to reduce the risks associated with hypervisor breakout attacks."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:26(para)
+#: ./security-guide/section_hypervisor-selection.xml:19(para)
 msgid "This chapter discusses the hypervisor selection process. The chapters that follow provide foundational information needed for securing a virtualization stack."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:30(title)
+#: ./security-guide/section_hypervisor-selection.xml:23(title)
 msgid "Hypervisors in OpenStack"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:31(para)
+#: ./security-guide/section_hypervisor-selection.xml:24(para)
 msgid "Whether OpenStack is deployed within private data centers or as a public cloud service, the underlying virtualization technology provides enterprise-level capabilities in the realms of scalability, resource efficiency, and uptime. While such high-level benefits are generally available across many OpenStack-supported hypervisor technologies, there are significant differences in the security architecture and features for each hypervisor, particularly when considering the security threat vectors which are unique to elastic OpenStack environments. As applications consolidate into single Infrastructure-as-a-Service (IaaS) platforms, instance isolation at the hypervisor level becomes paramount. The requirement for secure isolation holds true across commercial, government, and military communities."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:45(para)
+#: ./security-guide/section_hypervisor-selection.xml:38(para)
 msgid "Within the OpenStack framework, you can choose among many hypervisor platforms and corresponding OpenStack plug-ins to optimize your cloud environment. In the context of this guide, hypervisor selection considerations are highlighted as they pertain to feature sets that are critical to security. However, these considerations are not meant to be an exhaustive investigation into the pros and cons of particular hypervisors. NIST provides additional guidance in Special Publication 800-125, \"<emphasis>Guide to Security for Full Virtualization Technologies</emphasis>\"."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:57(title)
+#: ./security-guide/section_hypervisor-selection.xml:50(title)
 msgid "Selection criteria"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:58(para)
+#: ./security-guide/section_hypervisor-selection.xml:51(para)
 msgid "As part of your hypervisor selection process, you must consider a number of important factors to help increase your security posture. Specifically, you must become familiar with these areas:"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:64(para) ./security-guide/section_hypervisor-selection.xml:99(title)
+#: ./security-guide/section_hypervisor-selection.xml:57(para) ./security-guide/section_hypervisor-selection.xml:92(title)
 msgid "Team expertise"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:67(para) ./security-guide/section_hypervisor-selection.xml:112(title)
+#: ./security-guide/section_hypervisor-selection.xml:60(para) ./security-guide/section_hypervisor-selection.xml:105(title)
 msgid "Product or project maturity"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:70(para) ./security-guide/section_hypervisor-selection.xml:162(title)
+#: ./security-guide/section_hypervisor-selection.xml:63(para) ./security-guide/section_hypervisor-selection.xml:155(title)
 msgid "Common criteria"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:73(para) ./security-guide/section_hypervisor-selection.xml:152(title)
+#: ./security-guide/section_hypervisor-selection.xml:66(para) ./security-guide/section_hypervisor-selection.xml:145(title)
 msgid "Certifications and attestations"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:76(para) ./security-guide/section_hypervisor-selection.xml:479(title)
+#: ./security-guide/section_hypervisor-selection.xml:69(para) ./security-guide/section_hypervisor-selection.xml:472(title)
 msgid "Hardware concerns"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:79(para) ./security-guide/section_hypervisor-selection.xml:534(title)
+#: ./security-guide/section_hypervisor-selection.xml:72(para) ./security-guide/section_hypervisor-selection.xml:527(title)
 msgid "Hypervisor vs. baremetal"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:82(para) ./security-guide/section_hypervisor-selection.xml:610(title)
+#: ./security-guide/section_hypervisor-selection.xml:75(para) ./security-guide/section_hypervisor-selection.xml:603(title)
 msgid "Additional security features"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:85(para)
+#: ./security-guide/section_hypervisor-selection.xml:78(para)
 msgid "Additionally, the following security-related criteria are highly encouraged to be evaluated when selecting a hypervisor for OpenStack deployments:"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:90(para)
+#: ./security-guide/section_hypervisor-selection.xml:83(para)
 msgid "Has the hypervisor undergone Common Criteria certification? If so, to what levels?"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:94(para)
+#: ./security-guide/section_hypervisor-selection.xml:87(para)
 msgid "Is the underlying cryptography certified by a third-party?"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:100(para)
+#: ./security-guide/section_hypervisor-selection.xml:93(para)
 msgid "Most likely, the most important aspect in hypervisor selection is the expertise of your staff in managing and maintaining a particular hypervisor platform. The more familiar your team is with a given product, its configuration, and its eccentricities, the fewer the configuration mistakes. Additionally, having staff expertise spread across an organization on a given hypervisor increases availability of your systems, allows segregation of duties, and mitigates problems in the event that a team member is unavailable."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:113(para)
+#: ./security-guide/section_hypervisor-selection.xml:106(para)
 msgid "The maturity of a given hypervisor product or project is critical to your security posture as well. Product maturity has a number of effects once you have deployed your cloud:"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:119(para)
+#: ./security-guide/section_hypervisor-selection.xml:112(para)
 msgid "Availability of expertise"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:122(para)
+#: ./security-guide/section_hypervisor-selection.xml:115(para)
 msgid "Active developer and user communities"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:125(para)
+#: ./security-guide/section_hypervisor-selection.xml:118(para)
 msgid "Timeliness and availability of updates"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:128(para)
+#: ./security-guide/section_hypervisor-selection.xml:121(para)
 msgid "Incidence response"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:131(para)
+#: ./security-guide/section_hypervisor-selection.xml:124(para)
 msgid "One of the biggest indicators of a hypervisor's maturity is the size and vibrancy of the community that surrounds it. As this concerns security, the quality of the community affects the availability of expertise if you need additional cloud operators. It is also a sign of how widely deployed the hypervisor is, in turn leading to the battle readiness of any reference architectures and best practices."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:138(para)
+#: ./security-guide/section_hypervisor-selection.xml:131(para)
 msgid "Further, the quality of community, as it surrounds an open source hypervisor like KVM or Xen, has a direct impact on the timeliness of bug fixes and security updates. When investigating both commercial and open source hypervisors, you must look into their release and support cycles as well as the time delta between the announcement of a bug or security issue and a patch or response. Lastly, the supported capabilities of OpenStack compute vary depending on the hypervisor chosen. See the <link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">OpenStack Hypervisor Support Matrix</link> for OpenStack compute feature support by hypervisor."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:153(para)
+#: ./security-guide/section_hypervisor-selection.xml:146(para)
 msgid "One additional consideration when selecting a hypervisor is the availability of various formal certifications and attestations. While they may not be requirements for your specific organization, these certifications and attestations speak to the maturity, production readiness, and thoroughness of the testing a particular hypervisor platform has been subjected to."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:163(para)
+#: ./security-guide/section_hypervisor-selection.xml:156(para)
 msgid "Common Criteria is an internationally standardized software evaluation process, used by governments and commercial companies to validate software technologies perform as advertised. In the government sector, NSTISSP No. 11 mandates that U.S. Government agencies only procure software which has been Common Criteria certified, a policy which has been in place since July 2002. It should be specifically noted that OpenStack has not undergone Common Criteria certification, however many of the available hypervisors have."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:173(para)
+#: ./security-guide/section_hypervisor-selection.xml:166(para)
 msgid "In addition to validating a technologies capabilities, the Common Criteria process evaluates <emphasis>how</emphasis> technologies are developed."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:178(para)
+#: ./security-guide/section_hypervisor-selection.xml:171(para)
 msgid "How is source code management performed?"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:181(para)
+#: ./security-guide/section_hypervisor-selection.xml:174(para)
 msgid "How are users granted access to build systems?"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:184(para)
+#: ./security-guide/section_hypervisor-selection.xml:177(para)
 msgid "Is the technology cryptographically signed before distribution?"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:188(para)
+#: ./security-guide/section_hypervisor-selection.xml:181(para)
 msgid "The KVM hypervisor has been Common Criteria certified through the U.S. Government and commercial distributions, which have been validated to separate the runtime environment of virtual machines from each other, providing foundational technology to enforce instance isolation. In addition to virtual machine isolation, KVM has been Common Criteria certified to"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:196(para)
+#: ./security-guide/section_hypervisor-selection.xml:189(para)
 msgid "\"<emphasis>provide system-inherent separation mechanisms to the resources of virtual machines. This separation ensures that large software component used for virtualizing and simulating devices executing for each virtual machine cannot interfere with each other. Using the SELinux multi-category mechanism, the virtualization and simulation software instances are isolated. The virtual machine management framework configures SELinux multi-category settings transparently to the administrator</emphasis>\""
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:207(para)
+#: ./security-guide/section_hypervisor-selection.xml:200(para)
 msgid "While many hypervisor vendors, such as Red Hat, Microsoft, and VMware have achieved Common Criteria Certification their underlying certified feature set differs. It is recommended to evaluate vendor claims to ensure they minimally satisfy the following requirements:"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:219(para)
+#: ./security-guide/section_hypervisor-selection.xml:212(para)
 msgid "Identification and Authentication"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:220(para)
+#: ./security-guide/section_hypervisor-selection.xml:213(para)
 msgid "Identification and authentication using pluggable authentication modules (PAM) based upon user passwords. The quality of the passwords used can be enforced through configuration options."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:226(para)
+#: ./security-guide/section_hypervisor-selection.xml:219(para)
 msgid "Audit"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:227(para)
+#: ./security-guide/section_hypervisor-selection.xml:220(para)
 msgid "The system provides the capability to audit a large number of events including individual system calls as well as events generated by trusted processes. Audit data is collected in regular files in ASCII format. The system provides a program for the purpose of searching the audit records."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:233(para)
+#: ./security-guide/section_hypervisor-selection.xml:226(para)
 msgid "The system administrator can define a rule base to restrict auditing to the events they are interested in. This includes the ability to restrict auditing to specific events, specific users, specific objects or a combination of all of this."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:238(para)
+#: ./security-guide/section_hypervisor-selection.xml:231(para)
 msgid "Audit records can be transferred to a remote audit daemon."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:242(para)
+#: ./security-guide/section_hypervisor-selection.xml:235(para)
 msgid "Discretionary Access Control"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:244(para)
+#: ./security-guide/section_hypervisor-selection.xml:237(para)
 msgid "Discretionary Access Control (<glossterm>DAC</glossterm>) restricts access to file system objects based on <glossterm baseform=\"access control list\">Access Control Lists</glossterm> (ACLs) that include the standard UNIX permissions for user, group and others. Access control mechanisms also protect IPC objects from unauthorized access."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:252(para)
+#: ./security-guide/section_hypervisor-selection.xml:245(para)
 msgid "The system includes the ext4 file system, which supports POSIX ACLs. This allows defining access rights to files within this type of file system down to the granularity of a single user."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:259(para)
+#: ./security-guide/section_hypervisor-selection.xml:252(para)
 msgid "Mandatory Access Control"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:260(para)
+#: ./security-guide/section_hypervisor-selection.xml:253(para)
 msgid "Mandatory Access Control (MAC) restricts access to objects based on labels assigned to subjects and objects. Sensitivity labels are automatically attached to processes and objects. The access control policy enforced using these labels is derived from the <glossterm baseform=\"Bell-LaPadula model\">Bell-LaPadula access control model</glossterm>."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:266(para)
+#: ./security-guide/section_hypervisor-selection.xml:259(para)
 msgid "SELinux categories are attached to virtual machines and its resources. The access control policy enforced using these categories grant virtual machines access to resources if the category of the virtual machine is identical to the category of the accessed resource."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:272(para)
+#: ./security-guide/section_hypervisor-selection.xml:265(para)
 msgid "The TOE implements non-hierarchical categories to control access to virtual machines."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:277(para)
+#: ./security-guide/section_hypervisor-selection.xml:270(para)
 msgid "Role-Based Access Control"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:278(para)
+#: ./security-guide/section_hypervisor-selection.xml:271(para)
 msgid "Role-based access control (RBAC) allows separation of roles to eliminate the need for an all-powerful system administrator."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:283(para)
+#: ./security-guide/section_hypervisor-selection.xml:276(para)
 msgid "Object Reuse"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:284(para)
+#: ./security-guide/section_hypervisor-selection.xml:277(para)
 msgid "File system objects and memory and IPC objects are cleared before they can be reused by a process belonging to a different user."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:289(para)
+#: ./security-guide/section_hypervisor-selection.xml:282(para)
 msgid "Security Management"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:290(para)
+#: ./security-guide/section_hypervisor-selection.xml:283(para)
 msgid "The management of the security critical parameters of the system is performed by administrative users. A set of commands that require root privileges (or specific roles when RBAC is used) are used for system management. Security parameters are stored in specific files that are protected by the access control mechanisms of the system against unauthorized access by users that are not administrative users."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:301(para)
+#: ./security-guide/section_hypervisor-selection.xml:294(para)
 msgid "Secure Communication"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:302(para)
+#: ./security-guide/section_hypervisor-selection.xml:295(para)
 msgid "The system supports the definition of trusted channels using SSH. Password based authentication is supported. Only a restricted number of cipher suites are supported for those protocols in the evaluated configuration."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:309(para)
+#: ./security-guide/section_hypervisor-selection.xml:302(para)
 msgid "Storage Encryption"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:310(para)
+#: ./security-guide/section_hypervisor-selection.xml:303(para)
 msgid "The system supports encrypted block devices to provide storage confidentiality via dm_crypt."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:315(para)
+#: ./security-guide/section_hypervisor-selection.xml:308(para)
 msgid "TSF Protection"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:316(para)
+#: ./security-guide/section_hypervisor-selection.xml:309(para)
 msgid "While in operation, the kernel software and data are protected by the hardware memory protection mechanisms. The memory and process management components of the kernel ensure a user process cannot access kernel storage or storage belonging to other processes."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:321(para)
+#: ./security-guide/section_hypervisor-selection.xml:314(para)
 msgid "Non-kernel TSF software and data are protected by DAC and process isolation mechanisms. In the evaluated configuration, the reserved user ID root owns the directories and files that define the TSF configuration. In general, files and directories containing internal TSF data, such as configuration files and batch job queues, are also protected from reading by DAC permissions."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:329(para)
+#: ./security-guide/section_hypervisor-selection.xml:322(para)
 msgid "The system and the hardware and firmware components are required to be physically protected from unauthorized access. The system kernel mediates all access to the hardware mechanisms themselves, other than program visible CPU instruction functions."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:334(para)
+#: ./security-guide/section_hypervisor-selection.xml:327(para)
 msgid "In addition, mechanisms for protection against stack overflow attacks are provided."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:342(title)
+#: ./security-guide/section_hypervisor-selection.xml:335(title)
 msgid "Cryptography standards"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:343(para)
+#: ./security-guide/section_hypervisor-selection.xml:336(para)
 msgid "Several cryptography algorithms are available within OpenStack for identification and authorization, data transfer and protection of data at rest. When selecting a hypervisor, the following are recommended algorithms and implementation standards to ensure the virtualization layer supports:"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:358(th)
+#: ./security-guide/section_hypervisor-selection.xml:351(th)
 msgid "Algorithm"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:359(th)
+#: ./security-guide/section_hypervisor-selection.xml:352(th)
 msgid "Key length"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:360(th)
+#: ./security-guide/section_hypervisor-selection.xml:353(th)
 msgid "Intended purpose"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:361(th)
+#: ./security-guide/section_hypervisor-selection.xml:354(th)
 msgid "Security function"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:362(th)
+#: ./security-guide/section_hypervisor-selection.xml:355(th)
 msgid "Implementation standard"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:367(td)
+#: ./security-guide/section_hypervisor-selection.xml:360(td)
 msgid "AES"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:368(td) ./security-guide/section_hypervisor-selection.xml:407(td)
+#: ./security-guide/section_hypervisor-selection.xml:361(td) ./security-guide/section_hypervisor-selection.xml:400(td)
 msgid "128, 192, or 256 bits"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:369(td) ./security-guide/section_hypervisor-selection.xml:379(td) ./security-guide/section_hypervisor-selection.xml:408(td) ./security-guide/section_hypervisor-selection.xml:417(td)
+#: ./security-guide/section_hypervisor-selection.xml:362(td) ./security-guide/section_hypervisor-selection.xml:372(td) ./security-guide/section_hypervisor-selection.xml:401(td) ./security-guide/section_hypervisor-selection.xml:410(td)
 msgid "Encryption / decryption"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:370(td)
+#: ./security-guide/section_hypervisor-selection.xml:363(td)
 msgid "Protected data transfer, protection for data at rest"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:374(link) ./security-guide/section_hypervisor-selection.xml:383(link)
+#: ./security-guide/section_hypervisor-selection.xml:367(link) ./security-guide/section_hypervisor-selection.xml:376(link)
 msgid "RFC 4253"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:377(td)
+#: ./security-guide/section_hypervisor-selection.xml:370(td)
 msgid "TDES"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:378(td)
+#: ./security-guide/section_hypervisor-selection.xml:371(td)
 msgid "168 bits"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:380(td)
+#: ./security-guide/section_hypervisor-selection.xml:373(td)
 msgid "Protected data transfer"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:386(td)
+#: ./security-guide/section_hypervisor-selection.xml:379(td)
 msgid "RSA"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:387(td)
+#: ./security-guide/section_hypervisor-selection.xml:380(td)
 msgid "1024, 2048, or 3072 bits"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:388(td) ./security-guide/section_hypervisor-selection.xml:398(td)
+#: ./security-guide/section_hypervisor-selection.xml:381(td) ./security-guide/section_hypervisor-selection.xml:391(td)
 msgid "Authentication, key exchange"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:389(td) ./security-guide/section_hypervisor-selection.xml:399(td)
+#: ./security-guide/section_hypervisor-selection.xml:382(td) ./security-guide/section_hypervisor-selection.xml:392(td)
 msgid "Identification and authentication, protected data transfer"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:393(link) ./security-guide/section_hypervisor-selection.xml:403(link)
+#: ./security-guide/section_hypervisor-selection.xml:386(link) ./security-guide/section_hypervisor-selection.xml:396(link)
 msgid "U.S. NIST FIPS PUB 186-3"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:396(td)
+#: ./security-guide/section_hypervisor-selection.xml:389(td)
 msgid "DSA"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:397(td)
+#: ./security-guide/section_hypervisor-selection.xml:390(td)
 msgid "L=1024, N=160 bits"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:406(td)
+#: ./security-guide/section_hypervisor-selection.xml:399(td)
 msgid "Serpent"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:409(td) ./security-guide/section_hypervisor-selection.xml:418(td)
+#: ./security-guide/section_hypervisor-selection.xml:402(td) ./security-guide/section_hypervisor-selection.xml:411(td)
 msgid "Protection of data at rest"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:412(link)
+#: ./security-guide/section_hypervisor-selection.xml:405(link)
 msgid "http://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:415(td)
+#: ./security-guide/section_hypervisor-selection.xml:408(td)
 msgid "Twofish"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:416(td)
+#: ./security-guide/section_hypervisor-selection.xml:409(td)
 msgid "128, 192, or 256 bit"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:421(link)
+#: ./security-guide/section_hypervisor-selection.xml:414(link)
 msgid "http://www.schneier.com/paper-twofish-paper.html"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:424(td)
+#: ./security-guide/section_hypervisor-selection.xml:417(td)
 msgid "SHA-1"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:425(td) ./security-guide/section_hypervisor-selection.xml:435(td)
+#: ./security-guide/section_hypervisor-selection.xml:418(td) ./security-guide/section_hypervisor-selection.xml:428(td)
 msgid "-"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:426(td) ./security-guide/section_hypervisor-selection.xml:436(td)
+#: ./security-guide/section_hypervisor-selection.xml:419(td) ./security-guide/section_hypervisor-selection.xml:429(td)
 msgid "Message Digest"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:427(td)
+#: ./security-guide/section_hypervisor-selection.xml:420(td)
 msgid "Protection of data at rest, protected data transfer"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:431(link) ./security-guide/section_hypervisor-selection.xml:441(link)
+#: ./security-guide/section_hypervisor-selection.xml:424(link) ./security-guide/section_hypervisor-selection.xml:434(link)
 msgid "U.S. NIST FIPS PUB 180-3"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:434(td)
+#: ./security-guide/section_hypervisor-selection.xml:427(td)
 msgid "SHA-2 (224, 256, 384, or 512 bits)"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:437(td)
+#: ./security-guide/section_hypervisor-selection.xml:430(td)
 msgid "Protection for data at rest, identification and authentication"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:446(title)
+#: ./security-guide/section_hypervisor-selection.xml:439(title)
 msgid "FIPS 140-2"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:447(para)
+#: ./security-guide/section_hypervisor-selection.xml:440(para)
 msgid "In the United States the National Institute of Science and Technology (NIST) certifies cryptographic algorithms through a process known the Cryptographic Module Validation Program. NIST certifies algorithms for conformance against Federal Information Processing Standard 140-2 (FIPS 140-2), which ensures:"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:454(emphasis)
+#: ./security-guide/section_hypervisor-selection.xml:447(emphasis)
 msgid "Products validated as conforming to FIPS 140-2 are accepted by the Federal agencies of both countries [United States and Canada] for the protection of sensitive information (United States) or Designated Information (Canada). The goal of the CMVP is to promote the use of validated cryptographic modules and provide Federal agencies with a security metric to use in procuring equipment containing validated cryptographic modules."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:464(para)
+#: ./security-guide/section_hypervisor-selection.xml:457(para)
 msgid "When evaluating base hypervisor technologies, consider if the hypervisor has been certified against FIPS 140-2. Not only is conformance against FIPS 140-2 mandated per U.S. Government policy, formal certification indicates that a given implementation of a cryptographic algorithm has been reviewed for conformance against module specification, cryptographic module ports and interfaces; roles, services, and authentication; finite state model; physical security; operational environment; cryptographic key management; electromagnetic interference/electromagnetic compatibility (EMI/EMC); self-tests; design assurance; and mitigation of other attacks."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:480(para)
+#: ./security-guide/section_hypervisor-selection.xml:473(para)
 msgid "Further, when you evaluate a hypervisor platform, consider the supportability of the hardware on which the hypervisor will run. Additionally, consider the additional features available in the hardware and how those features are supported by the hypervisor you chose as part of the OpenStack deployment. To that end, hypervisors each have their own hardware compatibility lists (HCLs). When selecting compatible hardware it is important to know in advance which hardware-based virtualization technologies are important from a security perspective."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:499(td)
+#: ./security-guide/section_hypervisor-selection.xml:492(td)
 msgid "Technology"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:500(td)
+#: ./security-guide/section_hypervisor-selection.xml:493(td)
 msgid "Explanation"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:505(td)
+#: ./security-guide/section_hypervisor-selection.xml:498(td)
 msgid "I/O MMU"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:506(td)
+#: ./security-guide/section_hypervisor-selection.xml:499(td)
 msgid "VT-d / AMD-Vi"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:507(td)
+#: ./security-guide/section_hypervisor-selection.xml:500(td)
 msgid "Required for protecting PCI-passthrough"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:511(td)
+#: ./security-guide/section_hypervisor-selection.xml:504(td)
 msgid "Intel Trusted Execution Technology"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:512(td)
+#: ./security-guide/section_hypervisor-selection.xml:505(td)
 msgid "Intel TXT / SEM"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:513(td)
+#: ./security-guide/section_hypervisor-selection.xml:506(td)
 msgid "Required for dynamic attestation services"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:517(td)
+#: ./security-guide/section_hypervisor-selection.xml:510(td)
 msgid "<anchor xml:id=\"PCI-SIG_I.2FO_virtualization_.28IOV.29\"/>PCI-SIG I/O virtualization"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:520(td)
+#: ./security-guide/section_hypervisor-selection.xml:513(td)
 msgid "SR-IOV, MR-IOV, ATS"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:521(td)
+#: ./security-guide/section_hypervisor-selection.xml:514(td)
 msgid "Required to allow secure sharing of PCI Express devices"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:525(td)
+#: ./security-guide/section_hypervisor-selection.xml:518(td)
 msgid "Network virtualization"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:526(td)
+#: ./security-guide/section_hypervisor-selection.xml:519(td)
 msgid "VT-c"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:527(td)
+#: ./security-guide/section_hypervisor-selection.xml:520(td)
 msgid "Improves performance of network I/O on hypervisors"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:535(para)
+#: ./security-guide/section_hypervisor-selection.xml:528(para)
 msgid "It is important to recognize the difference between using LXC (Linux Containers) or baremetal systems vs using a hypervisor like KVM. Specifically, the focus of this security guide is largely based on having a hypervisor and virtualization platform. However, should your implementation require the use of a baremetal or LXC environment, you must pay attention to the particular differences in regard to deployment of that environment."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:543(para)
+#: ./security-guide/section_hypervisor-selection.xml:536(para)
 msgid "In particular, you must assure your end users that the node has been properly sanitized of their data prior to re-provisioning. Additionally, prior to reusing a node, you must provide assurances that the hardware has not been tampered or otherwise compromised."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:549(para)
+#: ./security-guide/section_hypervisor-selection.xml:542(para)
 msgid "While OpenStack has a baremetal project, a discussion of the particular security implications of running baremetal is beyond the scope of this book."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:553(para)
+#: ./security-guide/section_hypervisor-selection.xml:546(para)
 msgid "Finally, due to the time constraints around a book sprint, the team chose to use KVM as the hypervisor in our example implementations and architectures."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:557(para)
+#: ./security-guide/section_hypervisor-selection.xml:550(para)
 msgid "There is an OpenStack Security Note pertaining to the <link href=\"https://bugs.launchpad.net/ossn/+bug/1098582\">use of LXC in Compute</link>."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:564(title)
+#: ./security-guide/section_hypervisor-selection.xml:557(title)
 msgid "Hypervisor memory optimization"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:565(para)
+#: ./security-guide/section_hypervisor-selection.xml:558(para)
 msgid "Many hypervisors use memory optimization techniques to overcommit memory to guest virtual machines. This is a useful feature that allows you to deploy very dense compute clusters. One way to achieve this is through de-duplication or \"sharing\" of memory pages. When two virtual machines have identical data in memory, there are advantages to having them reference the same memory."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:572(para)
+#: ./security-guide/section_hypervisor-selection.xml:565(para)
 msgid "Typically this is achieved through Copy-On-Write (COW) mechanisms. These mechanisms have been shown to be vulnerable to side-channel attacks where one VM can infer something about the state of another and might not be appropriate for multi-tenant environments where not all tenants are trusted or share the same levels of trust."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:580(title)
+#: ./security-guide/section_hypervisor-selection.xml:573(title)
 msgid "KVM Kernel Samepage Merging"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:581(para)
+#: ./security-guide/section_hypervisor-selection.xml:574(para)
 msgid "Introduced into the Linux kernel in version 2.6.32, Kernel Samepage Merging (KSM) consolidates identical memory pages between Linux processes. As each guest VM under the KVM hypervisor runs in its own process, KSM can be used to optimize memory use between VMs."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:588(title)
+#: ./security-guide/section_hypervisor-selection.xml:581(title)
 msgid "XEN transparent page sharing"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:589(para)
+#: ./security-guide/section_hypervisor-selection.xml:582(para)
 msgid "XenServer 5.6 includes a memory overcommitment feature named Transparent Page Sharing (TPS). TPS scans memory in 4 KB chunks for any duplicates. When found, the Xen Virtual Machine Monitor (VMM) discards one of the duplicates and records the reference of the second one."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:596(title)
+#: ./security-guide/section_hypervisor-selection.xml:589(title)
 msgid "Security considerations for memory optimization"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:597(para)
+#: ./security-guide/section_hypervisor-selection.xml:590(para)
 msgid "Traditionally, memory de-duplication systems are vulnerable to side channel attacks. Both KSM and TPS have demonstrated to be vulnerable to some form of attack. In academic studies attackers were able to identify software packages and versions running on neighboring virtual machines as well as software downloads and other sensitive information through analyzing memory access times on the attacker VM."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:604(para)
+#: ./security-guide/section_hypervisor-selection.xml:597(para)
 msgid "If a cloud deployment requires strong separation of tenants, as is the situation with public clouds and some private clouds, deployers should consider disabling TPS and KSM memory optimizations."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:611(para)
+#: ./security-guide/section_hypervisor-selection.xml:604(para)
 msgid "Another thing to look into when selecting a hypervisor platform is the availability of specific security features. In particular, we are referring to features like Xen Server's XSM or Xen Security Modules, sVirt, Intel TXT, and AppArmor. The presence of these features increase your security profile as well as provide a good foundation."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:617(para)
+#: ./security-guide/section_hypervisor-selection.xml:610(para)
 msgid "The following table calls out these features by common hypervisor platforms."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:632(para)
+#: ./security-guide/section_hypervisor-selection.xml:625(para)
 msgid "XSM"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:633(para)
+#: ./security-guide/section_hypervisor-selection.xml:626(para)
 msgid "sVirt"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:634(para)
+#: ./security-guide/section_hypervisor-selection.xml:627(para)
 msgid "TXT"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:635(para)
+#: ./security-guide/section_hypervisor-selection.xml:628(para)
 msgid "AppArmor"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:636(para)
+#: ./security-guide/section_hypervisor-selection.xml:629(para)
 msgid "cgroups"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:637(para)
+#: ./security-guide/section_hypervisor-selection.xml:630(para)
 msgid "MAC Policy"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:640(para)
+#: ./security-guide/section_hypervisor-selection.xml:633(para)
 msgid "KVM"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:649(para)
+#: ./security-guide/section_hypervisor-selection.xml:642(para)
 msgid "Xen"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:658(para)
+#: ./security-guide/section_hypervisor-selection.xml:651(para)
 msgid "ESXi"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:667(para)
+#: ./security-guide/section_hypervisor-selection.xml:660(para)
 msgid "Hyper-V"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:677(para)
+#: ./security-guide/section_hypervisor-selection.xml:670(para)
 msgid "MAC Policy: Mandatory Access Control; may be implemented with SELinux or other operating systems"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:679(para)
+#: ./security-guide/section_hypervisor-selection.xml:672(para)
 msgid "* Features in this table might not be applicable to all hypervisors or directly mappable between hypervisors."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:687(para)
+#: ./security-guide/section_hypervisor-selection.xml:680(para)
 msgid "Sunar, Eisenbarth, Inci, Gorka Irazoqui Apecechea. Fine Grain Cross-VM Attacks on Xen and VMware are possible!. 2014. <link href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:694(para)
+#: ./security-guide/section_hypervisor-selection.xml:687(para)
 msgid "Artho, Yagi, Iijima, Kuniyasu Suzaki. Memory Deduplication as a Threat to the Guest OS. 2011. <link href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:701(para)
+#: ./security-guide/section_hypervisor-selection.xml:694(para)
 msgid "KVM: Kernal-based Virtual Machine. Kernal Samepage Merging. 2010. <link href=\"http://www.linux-kvm.org/page/KSM\">KVM: Kernel Samepage Merging</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:705(para)
+#: ./security-guide/section_hypervisor-selection.xml:698(para)
 msgid "Xen Project, Xen Security Modules: XSM-FLASK. 2014. <link href=\"http://wiki.xen.org/wiki/Xen_Security_Modules_:_XSM-FLASK\">XSM: Xen Security Modules</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:710(para)
+#: ./security-guide/section_hypervisor-selection.xml:703(para)
 msgid "SELinux Project, SVirt. 2011. <link href=\"http://selinuxproject.org/page/SVirt\">xVirt: Mandatory Access Control for Linux-based virtualization</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:715(para)
+#: ./security-guide/section_hypervisor-selection.xml:708(para)
 msgid "Intel.com, Trusted Compute Pools with Intel Trusted Execution Technology (Intel TXT). <link href=\"http://www.intel.com/txt\">TXT: Intel Trusted Execution Technology</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:720(para)
+#: ./security-guide/section_hypervisor-selection.xml:713(para)
 msgid "AppArmor.net, AppArmor Main Page. 2011. <link href=\"http://wiki.apparmor.net/index.php/Main_Page\">AppArmor: Linux security module implementing MAC</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:725(para)
+#: ./security-guide/section_hypervisor-selection.xml:718(para)
 msgid "Kernal.org, CGroups. 2004. <link href=\"https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt\">cgroups: Linux kernel feature to control resource usage</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:730(para)
+#: ./security-guide/section_hypervisor-selection.xml:723(para)
 msgid "Computer Security Resource Centre. Guide to Security for Full Virtualization Technologies. 2011. <link href=\"http://csrc.nist.gov/publications/nistpubs/800-125/SP800-125-final.pdf\">Guide to Security for Full Virtualization Technologies</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml:735(para)
+#: ./security-guide/section_hypervisor-selection.xml:728(para)
 msgid "National Information Assurance Partnership, National Security Telecommunications and Information Systems Security Policy. 2003. <link href=\"http://www.niap-ccevs.org/cc-scheme/nstissp_11_revised_factsheet.pdf\">National Security Telecommunications and Information Systems Security Policy No. 11</link>"
 msgstr ""
 

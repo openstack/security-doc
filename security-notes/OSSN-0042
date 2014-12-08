@@ -1,0 +1,49 @@
+Keystone token scoping provide no security benefit
+---
+
+### Summary ###
+Keystone provides "scoped" tokens that are constrained to use by a
+single project. A user may expect that their scoped token can only be
+used to perform operations for the project it is scoped to, which is not
+the case. A service or other party who obtains the scoped token can use
+it to obtain a token for a different authorized scope, which may be
+considered a privilege escalation.
+
+### Affected Services / Software ###
+Keystone, Diablo, Essex, Folsom, Grizzly, Havana, Icehouse, Juno, Kilo
+
+### Discussion ###
+This is not a bug in keystone, it's a design feature that some users may
+expect to bring security enhancement when it does not. The OSSG is
+issuing this security note to highlight the issue.
+
+Many operations in OpenStack will take a token from the user and pass it
+to another service to perform some portion of the intended operation.
+This token is very powerful and can be used to perform many actions for
+the user. Scoped tokens appear to limit their use to the project and
+roles they were granted for but can also be used to request tokens with
+other scopes. It's important to note that this only works with currently
+valid tokens. Once a token expires it cannot be used to gain a new
+token.
+
+Token scoping helps avoid accidental leakage of tokens because using
+tokens with other services requires the extra step of requesting a new
+re-scoped token from keystone. Scoping can help with audit trails and
+promote good code practices. There's currently no way to create a
+tightly scoped token that cannot be used to request a re-scoped token. A
+scoped token cannot be relied upon to restrict actions to only that
+scope.
+
+### Recommended Action ###
+Users and deployers of OpenStack must not rely on the scope of tokens
+to limit what actions can be performed using them.
+
+Concerned users are encouraged to read (OSSG member) Nathan Kinder's
+blog post on this issue and some of the potential future solutions.
+
+### Contacts / References ###
+Nathan Kinder on Token Scoping : https://blog-nkinder.rhcloud.com/?p=101
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0042
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1341816
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

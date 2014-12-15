@@ -27,6 +27,9 @@
       <listitem>
         <para>Updates and patches</para>
       </listitem>
+      <listitem>
+        <para>Firewalls and other host-based security controls</para>
+      </listitem>
 </itemizedlist>
     <section xml:id="security-services-for-instances-entropy-to-instances">
       <title>Entropy to instances</title>
@@ -88,8 +91,12 @@
           </imageobject>
 </inlinemediaobject></para>
       <para>The use of scheduler filters may be used to segregate customers, data, or even discard machines of the cloud that cannot be attested as secure. This generally applies to all OpenStack projects offering a scheduler. When building a cloud, you may choose to implement scheduling filters for a variety of security-related purposes.</para>
-      <para>Below we highlight a few of the filters that may be useful in a security context, depending on your requirements, the full set of filter documentation is documented in the <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/filter-scheduler.html">Filter Scheduler</link> section of the <citetitle>OpenStack Configuration Reference</citetitle>.</para>
-
+      <para>Below we highlight a few of the filters that may be useful
+        in a security context, depending on your requirements, the
+        full set of filter documentation is documented in the <link
+        xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html#filter-figure">
+        Filter Scheduler</link> section of the <citetitle>OpenStack
+        Configuration Reference</citetitle>.</para>
       <section xml:id="security-services-for-instances-scheduling-instances-to-nodes-host-aggregates">
         <title>Host aggregates</title>
         <para>While not a filter, host aggregates allow administrators
@@ -100,8 +107,8 @@
         advanced filtering and scheduling. The key-value pairs can be
         applied to multiple aggregates, or have several
         applied to a single aggregate (see the <link
-        xlink:href="http://docs.openstack.org/trunk/config-reference/content/host-aggregates.html">Host
-        aggregates</link> section of the <citetitle>OpenStack
+        xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html#host-aggregates">
+        Host aggregates</link> section of the <citetitle>OpenStack
         Configuration Reference</citetitle> for more information on
         creating and managing aggregates).</para>
       </section>
@@ -323,5 +330,44 @@
         environment as closely resembling production as possible to
         ensure both stability and resolution of the issue behind the
         patch.</para>
+    </section>
+    <section xml:id="security-services-for-instances-firewalls">
+      <title>Firewalls and other host-based security controls</title>
+      <para>Most common operating systems include host-based firewalls
+        for additional security. While we recommend that virtual
+        machines run as few applications as possible (to the point of
+        being single-purpose instances, if possible), all applications
+        running on a virtual machine should be profiled to determine
+        what system resources the application needs access to, the
+        lowest level of privilege required for it to run, and what the
+        expected network traffic is that will be going into and coming
+        from the virtual machine. This expected traffic should be added
+        to the host-based firewall as allowed traffic (or whitelisted),
+        along with any necessary logging and management communication
+        such as SSH or RDP. All other traffic should be explicitly
+        denied in the firewall configuration.</para>
+      <para>On Linux virtual machines, the application profile above
+        can be used in conjunction with a tool like <link
+        xlink:href="http://wiki.centos.org/HowTos/SELinux#head-faa96b3fdd922004cdb988c1989e56191c257c01">
+        <citetitle>audit2allow</citetitle></link> to build an SELinux
+        policy that will further protect sensitive system information
+        on most Linux distributions. SELinux uses a combination of
+        users, policies and security contexts to compartmentalize the
+        resources needed for an application to run, and segmenting it
+        from other system resources that are not needed.</para>
+      <para>OpenStack provides security groups for both hosts and the
+        network to add defense in depth to the virtual machines in a
+        given project. These are similar to host-based firewalls as
+        they allow or deny incoming traffic based on port, protocol,
+        and address, however security group rules are applied to
+        incoming traffic only, while host-based firewall rules are
+        able to be applied to both incoming and outgoing traffic. It
+        is also possible for host and network security group rules to
+        conflict and deny legitimate traffic. We recommend ensuring
+        that security groups are configured correctly for the
+        networking being used. See <xref
+        linkend="networking-services-security-best-practices-security-groups"
+        /> in this guide for more detail.
+      </para>
     </section>
 </section>

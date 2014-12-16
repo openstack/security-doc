@@ -134,14 +134,49 @@
         assurances your chosen volume back end provides and to see what
         mediations may be available for those assurances not
         provided.</para>
-        <para>Finally, while not a feature of OpenStack, vendors and implementors may choose to add or support encryption of volumes. In this case, destruction of data is as simple as throwing away the key.</para>
+        <para>Finally, while not a feature of OpenStack, vendors and
+          implementors may choose to add or support encryption of volumes.
+          In this case, destruction of data is as simple as throwing
+          away the key.</para>
+      </section>
+      <section xml:id="data-privacy-concerns-data-disposal-glance-delay-delete">
+        <title>Image Service delay delete feature</title>
+        <para>OpenStack Image Service has a delayed delete feature, which will
+          pend the deletion of an image for a defined time period. It
+          is recommended to disable this feature if it is a security
+          concern, by editing the <filename>etc/glance/glance-api.conf</filename>
+          file and setting the <literal>delayed_delete</literal> option
+          as <replaceable>False</replaceable>.</para>
+      </section>
+      <section xml:id="data-privacy-concerns-data-disposal-nova-soft-delete">
+        <title>Compute soft delete feature</title>
+        <para>OpenStack Compute has a soft-delete feature, which enables
+          an instance that is deleted to be in a soft-delete state for
+          a defined time period. The instance can be restored during
+          this time period. To disable the soft-delete feature, edit
+          the <filename>etc/nova/nova.conf</filename> file and leave
+          the <literal>reclaim_instance_interval</literal> option empty.</para>
       </section>
       <section xml:id="data-privacy-concerns-data-disposal-compute-instnace-ephemeral-storage">
         <title>Compute instance ephemeral storage</title>
-        <para>The creation and destruction of ephemeral storage will be somewhat dependent on the chosen hypervisor and the OpenStack Compute plug-in.</para>
-        <para>The libvirt plug-in for compute may maintain ephemeral storage directly on a filesystem, or in LVM. Filesystem storage generally will not overwrite data when it is removed, although there is a guarantee that dirty extents are not provisioned to users.</para>
-        <para>When using LVM backed ephemeral storage, which is block-based, it is necessary that the OpenStack Compute software securely erases blocks to prevent information disclosure. There have in the past been information disclosure vulnerabilities related to improperly erased ephemeral block storage devices.</para>
-        <para>Filesystem storage is a more secure solution for ephemeral block storage devices than LVM as dirty extents cannot be provisioned to users. However, it is important to be mindful that user data is not destroyed, so it is suggested to encrypt the backing filesystem.</para>
+        <para>The creation and destruction of ephemeral storage will be
+          somewhat dependent on the chosen hypervisor and the OpenStack
+          Compute plug-in.</para>
+        <para>The libvirt plug-in for compute may maintain ephemeral
+          storage directly on a filesystem, or in LVM. Filesystem storage
+          generally will not overwrite data when it is removed, although
+          there is a guarantee that dirty extents are not provisioned
+          to users.</para>
+        <para>When using LVM backed ephemeral storage, which is block-based,
+          it is necessary that the OpenStack Compute software securely
+          erases blocks to prevent information disclosure. There have
+          in the past been information disclosure vulnerabilities related
+          to improperly erased ephemeral block storage devices.</para>
+        <para>Filesystem storage is a more secure solution for ephemeral
+          block storage devices than LVM as dirty extents cannot be provisioned
+          to users. However, it is important to be mindful that user
+          data is not destroyed, so it is suggested to encrypt the
+          backing filesystem.</para>
       </section>
       <section xml:id="data-privacy-concerns-data-disposal-bare-metal-server-sanitization">
         <title>Bare metal server sanitization</title>

@@ -1,0 +1,51 @@
+Suds client subject to cache poisoning by local attacker
+---
+
+### Summary ###
+Suds is a Python SOAP client for consuming Web Services. Its default
+cache implementation stores pickled objects to a predictable path in
+/tmp. This can be used by a local attacker to redirect SOAP requests via
+symlinks or run a privilege escalation or code execution attack.
+
+### Affected Services / Software ###
+Cinder, Nova, Grizzly, Havana, Icehouse
+
+### Discussion ###
+The Python 'suds' package is used by oslo.vmware to interface with SOAP
+service APIs and both Cinder and Nova have dependencies on oslo.vmware
+when using VMware drivers. By default suds uses an on-disk cache that
+places pickle files, serialised Python objects, into a known location
+'/tmp/suds'. A local attacker could use symlinks or place crafted files
+into this location that will later be deserialised by suds.
+
+By manipulating the content of the cached pickle files, an attacker can
+redirect or modify SOAP requests. Alternatively, pickle may be used to
+run injected Python code during the deserialisation process. This can
+allow the spawning of a shell to execute arbitrary OS level commands
+with the permissions of the service using suds, thus leading to possible
+privilege escalation.
+
+At the time of writing, the suds package appears largely unmaintained
+upstream. However, vendors have released patched versions that do not
+suffer from the predictable cache path problem. Ubuntu is known to offer
+one such patched version (python-suds_0.4.1-2ubuntu1.1).
+
+### Recommended Actions ###
+The recommended solution to this issue is to disable cache usage in the
+configuration as shown:
+
+  'client.set_options(cache=None)'
+
+A fix has been released to oslo.vmware (0.6.0) that disables the use of
+the disk cache by default. Cinder and Nova have both adjusted their
+requirements to include this fixed version. Deployers wishing to re-enable
+the cache should ascertain whether or not their vendor shipped suds package
+is susceptible and consider the above advice.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0038
+Original Launchpad Bug : https://bugs.launchpad.net/ossn/+bug/1341954
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Suds: https://pypi.python.org/pypi/suds
+CVE: CVE-2013-2217

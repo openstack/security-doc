@@ -8,6 +8,6 @@
 
   <xi:include href="section_introduction-to-ssl-tls.xml"/>
   <xi:include href="section_case-studies-pki-and-certificate-management.xml"/>
-  <xi:include href="section_ssl-proxies-and-http-services.xml"/>
+  <xi:include href="section_tls-proxies-and-http-services.xml"/>
 
 </chapter>

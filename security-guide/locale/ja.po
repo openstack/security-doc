@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-12-15 17:55+0000\n"
-"PO-Revision-Date: 2014-12-15 19:11+0000\n"
+"POT-Creation-Date: 2014-12-16 17:08+0000\n"
+"PO-Revision-Date: 2014-12-16 07:39+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -9372,12 +9372,12 @@ msgid "Instance memory scrubbing"
 msgstr "インスタンスメモリの消去"
 
 #: ./security-guide/section_data-privacy-concerns.xml108(para)
-#: ./security-guide/section_data-privacy-concerns.xml140(title)
+#: ./security-guide/section_data-privacy-concerns.xml161(title)
 msgid "Compute instance ephemeral storage"
 msgstr "Compute インスタンスの一時ストレージ"
 
 #: ./security-guide/section_data-privacy-concerns.xml111(para)
-#: ./security-guide/section_data-privacy-concerns.xml147(title)
+#: ./security-guide/section_data-privacy-concerns.xml182(title)
 msgid "Bare metal server sanitization"
 msgstr "物理サーバのサニタイズ"
 
@@ -9455,13 +9455,40 @@ msgid ""
 " data is as simple as throwing away the key."
 msgstr "最後に、これは OpenStack の機能ではありませんが、ベンダーと開発者がボリュームの暗号化機能をサポートするか、あるいは追加可能であるかも知れません。この場合、データの破壊は単にキーを破棄するだけです。"
 
-#: ./security-guide/section_data-privacy-concerns.xml141(para)
+#: ./security-guide/section_data-privacy-concerns.xml143(title)
+msgid "Image Service delay delete feature"
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml144(para)
+msgid ""
+"OpenStack Image Service has a delayed delete feature, which will pend the "
+"deletion of an image for a defined time period. It is recommended to disable"
+" this feature if it is a security concern, by editing the "
+"<filename>etc/glance/glance-api.conf</filename> file and setting the "
+"<literal>delayed_delete</literal> option as "
+"<replaceable>False</replaceable>."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml152(title)
+msgid "Compute soft delete feature"
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml153(para)
+msgid ""
+"OpenStack Compute has a soft-delete feature, which enables an instance that "
+"is deleted to be in a soft-delete state for a defined time period. The "
+"instance can be restored during this time period. To disable the soft-delete"
+" feature, edit the <filename>etc/nova/nova.conf</filename> file and leave "
+"the <literal>reclaim_instance_interval</literal> option empty."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml162(para)
 msgid ""
 "The creation and destruction of ephemeral storage will be somewhat dependent"
 " on the chosen hypervisor and the OpenStack Compute plug-in."
 msgstr "一時ストレージの作成・削除は選択したハイパーバイザや OpenStack Compute プラグインに依存するでしょう。"
 
-#: ./security-guide/section_data-privacy-concerns.xml142(para)
+#: ./security-guide/section_data-privacy-concerns.xml165(para)
 msgid ""
 "The libvirt plug-in for compute may maintain ephemeral storage directly on a"
 " filesystem, or in LVM. Filesystem storage generally will not overwrite data"
@@ -9469,7 +9496,7 @@ msgid ""
 "not provisioned to users."
 msgstr "compute 用の libvirt プラグインは、ファイルシステム又は LVM 上の一時ストレージを直接管理出来ます。ファイルシステムストレージは一般にデータを削除する際に上書きはしませんが、ユーザに対して汚れたエクステンドが用意されないという保証があります。"
 
-#: ./security-guide/section_data-privacy-concerns.xml143(para)
+#: ./security-guide/section_data-privacy-concerns.xml170(para)
 msgid ""
 "When using LVM backed ephemeral storage, which is block-based, it is "
 "necessary that the OpenStack Compute software securely erases blocks to "
@@ -9478,7 +9505,7 @@ msgid ""
 "storage devices."
 msgstr "ブロックデバイスベースである LVM をバックエンドにした一時ストレージを使用する場合、OpenStack Compute は情報漏えいを防ぐために、安全にブロックを削除する必要があります。これらには、過去において、不適切な一時ブロックストレージデバイスの削除に関連する情報漏洩の脆弱性がありました。"
 
-#: ./security-guide/section_data-privacy-concerns.xml144(para)
+#: ./security-guide/section_data-privacy-concerns.xml175(para)
 msgid ""
 "Filesystem storage is a more secure solution for ephemeral block storage "
 "devices than LVM as dirty extents cannot be provisioned to users. However, "
@@ -9486,7 +9513,7 @@ msgid ""
 "suggested to encrypt the backing filesystem."
 msgstr "データが含まれたエクステンドがユーザに用意されないので、一時ブロックストレージデバイス用としてファイルシステムストレージは LVM より安全なソリューションです。しかしながら、ユーザデータが破壊されない事を覚えておく事は重要であり、このためバックエンドのファイルシステムの暗号化が提案されています。"
 
-#: ./security-guide/section_data-privacy-concerns.xml148(para)
+#: ./security-guide/section_data-privacy-concerns.xml183(para)
 msgid ""
 "A bare metal server driver for Compute was under development and has since "
 "moved into a separate project called <link "
@@ -9495,7 +9522,7 @@ msgid ""
 "data resident the physical hardware."
 msgstr "Compute の物理サーバドライバは開発中だったのですが、<link href=\"https://wiki.openstack.org/wiki/Ironic\">ironic</link>と呼ばれる独立したプロジェクトに移管される事になりました。この文書の執筆時点では、ironic には物理ハードウェア上にあるテナントデータのサニタイズ機能はまだありません。"
 
-#: ./security-guide/section_data-privacy-concerns.xml155(para)
+#: ./security-guide/section_data-privacy-concerns.xml190(para)
 msgid ""
 "Additionally, it is possible for tenants of a bare metal system to modify "
 "system firmware. TPM technology, described in <xref linkend=\"integrity-"

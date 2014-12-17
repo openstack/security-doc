@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-12-16 06:11+0000\n"
+"POT-Creation-Date: 2014-12-17 06:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5525,11 +5525,11 @@ msgstr ""
 msgid "Instance memory scrubbing"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:108(para) ./security-guide/section_data-privacy-concerns.xml:140(title)
+#: ./security-guide/section_data-privacy-concerns.xml:108(para) ./security-guide/section_data-privacy-concerns.xml:161(title)
 msgid "Compute instance ephemeral storage"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:111(para) ./security-guide/section_data-privacy-concerns.xml:147(title)
+#: ./security-guide/section_data-privacy-concerns.xml:111(para) ./security-guide/section_data-privacy-concerns.xml:182(title)
 msgid "Bare metal server sanitization"
 msgstr ""
 
@@ -5573,27 +5573,43 @@ msgstr ""
 msgid "Finally, while not a feature of OpenStack, vendors and implementors may choose to add or support encryption of volumes. In this case, destruction of data is as simple as throwing away the key."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:141(para)
-msgid "The creation and destruction of ephemeral storage will be somewhat dependent on the chosen hypervisor and the OpenStack Compute plug-in."
-msgstr ""
-
-#: ./security-guide/section_data-privacy-concerns.xml:142(para)
-msgid "The libvirt plug-in for compute may maintain ephemeral storage directly on a filesystem, or in LVM. Filesystem storage generally will not overwrite data when it is removed, although there is a guarantee that dirty extents are not provisioned to users."
-msgstr ""
-
-#: ./security-guide/section_data-privacy-concerns.xml:143(para)
-msgid "When using LVM backed ephemeral storage, which is block-based, it is necessary that the OpenStack Compute software securely erases blocks to prevent information disclosure. There have in the past been information disclosure vulnerabilities related to improperly erased ephemeral block storage devices."
+#: ./security-guide/section_data-privacy-concerns.xml:143(title)
+msgid "Image Service delay delete feature"
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:144(para)
+msgid "OpenStack Image Service has a delayed delete feature, which will pend the deletion of an image for a defined time period. It is recommended to disable this feature if it is a security concern, by editing the <filename>etc/glance/glance-api.conf</filename> file and setting the <literal>delayed_delete</literal> option as <replaceable>False</replaceable>."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml:152(title)
+msgid "Compute soft delete feature"
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml:153(para)
+msgid "OpenStack Compute has a soft-delete feature, which enables an instance that is deleted to be in a soft-delete state for a defined time period. The instance can be restored during this time period. To disable the soft-delete feature, edit the <filename>etc/nova/nova.conf</filename> file and leave the <literal>reclaim_instance_interval</literal> option empty."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml:162(para)
+msgid "The creation and destruction of ephemeral storage will be somewhat dependent on the chosen hypervisor and the OpenStack Compute plug-in."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml:165(para)
+msgid "The libvirt plug-in for compute may maintain ephemeral storage directly on a filesystem, or in LVM. Filesystem storage generally will not overwrite data when it is removed, although there is a guarantee that dirty extents are not provisioned to users."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml:170(para)
+msgid "When using LVM backed ephemeral storage, which is block-based, it is necessary that the OpenStack Compute software securely erases blocks to prevent information disclosure. There have in the past been information disclosure vulnerabilities related to improperly erased ephemeral block storage devices."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml:175(para)
 msgid "Filesystem storage is a more secure solution for ephemeral block storage devices than LVM as dirty extents cannot be provisioned to users. However, it is important to be mindful that user data is not destroyed, so it is suggested to encrypt the backing filesystem."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:148(para)
+#: ./security-guide/section_data-privacy-concerns.xml:183(para)
 msgid "A bare metal server driver for Compute was under development and has since moved into a separate project called <link href=\"https://wiki.openstack.org/wiki/Ironic\">ironic</link>. At the time of this writing, ironic does not appear to address sanitization of tenant data resident the physical hardware."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:155(para)
+#: ./security-guide/section_data-privacy-concerns.xml:190(para)
 msgid "Additionally, it is possible for tenants of a bare metal system to modify system firmware. TPM technology, described in <xref linkend=\"integrity-life-cycle-secure-bootstrapping\"/>, provides a solution for detecting unauthorized firmware changes."
 msgstr ""
 

@@ -125,7 +125,7 @@
         node that communicates with the message queue set up user
         accounts and privileges:</para>
         <screen><prompt>#</prompt> <userinput>rabbitmqctl add_user compute01 <replaceable>RABBIT_PASS</replaceable></userinput>
-<prompt>#</prompt> <userinput>rabbitmqctl set_permissions compute01 ".*"".*"".*"</userinput></screen>
+<prompt>#</prompt> <userinput>rabbitmqctl set_permissions compute01 ".*" ".*" ".*"</userinput></screen>
         <para>Replace <replaceable>RABBIT_PASS</replaceable> with a suitable password.</para>
         <para>For additional configuration information see:</para>
         <itemizedlist><listitem>

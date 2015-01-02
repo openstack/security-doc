@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2014-12-16 17:08+0000\n"
-"PO-Revision-Date: 2014-12-16 07:39+0000\n"
+"POT-Creation-Date: 2015-01-01 17:47+0000\n"
+"PO-Revision-Date: 2015-01-01 18:13+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -3060,8 +3060,8 @@ msgstr ""
 #: ./security-guide/section_identity-federated-keystone.xml428(para)
 msgid ""
 "The file location should match the value of the configuration option "
-"<option>idp_metadata_path</option> that was assigned in the list of "
-"<literal>[saml]</literal> updates."
+"<placeholder-1/> that was assigned in the list of <literal>[saml]</literal> "
+"updates."
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml433(title)
@@ -4085,10 +4085,9 @@ msgstr "他の重要事項"
 #: ./security-guide/ch_object-storage.xml349(para)
 msgid ""
 "In <filename>/etc/swift/swift.conf</filename> on every node there is a "
-"<option>swift_hash_path_prefix</option> setting and a "
-"<option>swift_hash_path_suffix</option> setting. These are provided to "
-"reduce the chance of hash collisions for objects being stored and avert one "
-"user overwriting the data of another user."
+"<placeholder-1/> setting and a <placeholder-2/> setting. These are provided "
+"to reduce the chance of hash collisions for objects being stored and avert "
+"one user overwriting the data of another user."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml356(para)
@@ -4550,12 +4549,12 @@ msgstr "シークレットキー"
 
 #: ./security-guide/ch_dashboard.xml135(para)
 msgid ""
-"The dashboard depends on a shared <option>SECRET_KEY</option> setting for "
-"some security functions. It should be a randomly generated string at least "
-"64 characters long. It must be shared across all active dashboard instances."
-" Compromise of this key may allow a remote attacker to execute arbitrary "
-"code. Rotating this key invalidates existing user sessions and caching. Do "
-"not commit this key to public repositories."
+"The dashboard depends on a shared <placeholder-1/> setting for some security"
+" functions. It should be a randomly generated string at least 64 characters "
+"long. It must be shared across all active dashboard instances. Compromise of"
+" this key may allow a remote attacker to execute arbitrary code. Rotating "
+"this key invalidates existing user sessions and caching. Do not commit this "
+"key to public repositories."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml144(title)
@@ -4599,11 +4598,11 @@ msgstr "許可されたホスト"
 
 #: ./security-guide/ch_dashboard.xml169(para)
 msgid ""
-"Configure the <option>ALLOWED_HOSTS</option> setting with the domain or "
-"domains where the dashboard is available. Failure to configure this setting "
-"(especially if not following the recommendation above regarding second level"
-" domains) opens the dashboard to a number of serious attacks. Wild card "
-"domains should be avoided."
+"Configure the <placeholder-1/> setting with the domain or domains where the "
+"dashboard is available. Failure to configure this setting (especially if not"
+" following the recommendation above regarding second level domains) opens "
+"the dashboard to a number of serious attacks. Wild card domains should be "
+"avoided."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml175(para)
@@ -4730,9 +4729,9 @@ msgstr "デバッグ"
 
 #: ./security-guide/ch_dashboard.xml255(para)
 msgid ""
-"Make sure <option>DEBUG</option> is set to <literal>False</literal> in "
-"production. In Django, <option>DEBUG</option> displays stack traces and "
-"sensitive web server state information on any exception."
+"Make sure <placeholder-1/> is set to <literal>False</literal> in production."
+" In Django, <placeholder-2/> displays stack traces and sensitive web server "
+"state information on any exception."
 msgstr ""
 
 #: ./security-guide/ch_api-endpoints.xml7(title)
@@ -6524,9 +6523,9 @@ msgid ""
 "Bob also deploys the dashboard to manage many aspects of the cloud. He "
 "deploys the dashboard with HSTS to ensure that only HTTPS is used. He has "
 "ensured that the dashboard is deployed on a second-level domain due to the "
-"limitations of the same-origin policy. He also disables "
-"<option>HORIZON_IMAGES_ALLOW_UPLOAD</option> to prevent resource exhaustion."
-msgstr "ボブはクラウドのさまざまな観点を管理するために Dashboard も導入します。必ず HTTPS のみを使用するために HSTS と共に Dashboard を導入します。Dashboard が同一オリジンポリシーの制限のため必ず第 2 レベルドメインに導入されるようにしました。また、リソース枯渇を防ぐために <option>HORIZON_IMAGES_ALLOW_UPLOAD</option> を無効化します。"
+"limitations of the same-origin policy. He also disables <placeholder-1/> to "
+"prevent resource exhaustion."
+msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml63(para)
 msgid ""
@@ -8912,18 +8911,17 @@ msgstr "OpenStack Networking サービスは、OpenStack Compute 上に構築さ
 
 #: ./security-guide/section_networking-services-security-best-practices.xml61(para)
 msgid ""
-"<option>firewall_driver</option> must be set to "
+"<placeholder-1/> must be set to "
 "<literal>nova.virt.firewall.NoopFirewallDriver</literal> so that <systemitem"
 " class=\"service\">nova-compute</systemitem> does not perform iptables-based"
 " filtering itself."
-msgstr "<option>firewall_driver</option> は、<systemitem class=\"service\">nova-compute</systemitem> が自身で iptables ベースのフィルタリングを実行しないよう、<literal>nova.virt.firewall.NoopFirewallDriver</literal> に設定しなければなりません。"
+msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml67(para)
 msgid ""
-"<option>security_group_api</option> must be set to "
-"<literal>neutron</literal> so that all security group requests are proxied "
-"to the OpenStack Networking service."
-msgstr "<option>security_group_api</option> は、全てのセキュリティグループ要求が OpenStack Networking サービスを経由するよう、<literal>neutron</literal> に設定しなければなりません。"
+"<placeholder-1/> must be set to <literal>neutron</literal> so that all "
+"security group requests are proxied to the OpenStack Networking service."
+msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml73(para)
 msgid ""
@@ -9173,8 +9171,8 @@ msgstr ""
 #: ./security-guide/section_ssl-proxies-and-http-services.xml205(para)
 msgid ""
 "This nginx example requires TLS v1.1 or v1.2 for maximum security. The "
-"<option>ssl_ciphers</option> line can be tweaked based on your needs, "
-"however this is a reasonable starting place."
+"<placeholder-1/> line can be tweaked based on your needs, however this is a "
+"reasonable starting place."
 msgstr ""
 
 #: ./security-guide/section_ssl-proxies-and-http-services.xml223(title)

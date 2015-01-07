@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-01-02 06:01+0000\n"
+"POT-Creation-Date: 2015-01-07 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2896,7 +2896,7 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./security-guide/section_introduction-to-openstack.xml:113(None) ./security-guide/section_introduction-to-openstack.xml:118(None)
-msgid "@@image: 'static/marketecture-diagram.png'; md5=4ab13a64f80c210be3120abc5c7aee8a"
+msgid "@@image: 'static/marketecture-diagram.png'; md5=330f2abb9c69a0aad725e8572a82ddbf"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:8(title)

@@ -3,13 +3,13 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="ssl-proxies-and-http-services">
+  xml:id="tls-proxies-and-http-services">
   <?dbhtml stop-chunking?>
-    <title>SSL proxies and HTTP services</title>
+    <title>TLS proxies and HTTP services</title>
     <para>OpenStack endpoints are HTTP services providing APIs to both end-users on public networks
     and to other OpenStack services on the management network. It is highly recommended that all of
-    these requests, both internal and external, operate over SSL. To achieve this goal, API services
-    must be deployed behind a SSL proxy that can establish and terminate SSL sessions. The following
+    these requests, both internal and external, operate over TLS. To achieve this goal, API services
+    must be deployed behind a TLS proxy that can establish and terminate TLS sessions. The following
     table offers a non-exhaustive list of open source software that can be used for this
     purpose:</para>
     <itemizedlist><listitem>
@@ -27,12 +27,11 @@
 </itemizedlist>
     <para>In cases where software termination offers insufficient performance, hardware accelerators
     may be worth exploring as an alternative option. It is important to be mindful of the size of
-    requests that will be processed by any chosen SSL proxy.</para>
-    <section xml:id="ssl-proxies-and-http-services-examples">
+    requests that will be processed by any chosen TLS proxy.</para>
+    <section xml:id="tls-proxies-and-http-services-examples">
       <title>Examples</title>
-      <para>Below we provide sample recommended configuration settings for enabling SSL in some of
-      the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of
-      these examples as this will be required in many deployments for client compatibility.</para>
+      <para>Below we provide sample recommended configuration settings for enabling TLS in some of
+      the more popular web servers/TLS terminators.</para>
       <para>Before we delve into the configurations, we briefly discuss the ciphers' configuration element and its format. A more exhaustive treatment on available ciphers and the OpenSSL cipher list format can be found at: <link xlink:href="https://www.openssl.org/docs/apps/ciphers.html">ciphers</link>.</para>
 <programlisting>
 ciphers = "HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
@@ -103,11 +102,11 @@ ciphers = "kEECDH:kEDH:kRSA:HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM"
    <varlistentry>
     <term><code>Protocols</code></term>
     <listitem>
-             <para>Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2 and enabling TLS or SSLv3 (which was standardized as TLS with a few changes).</para>
+             <para>Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2/v3 and enabling TLS.</para>
     </listitem>
    </varlistentry>
  </variablelist>
-      <section xml:id="ssl-proxies-and-http-services-examples-pound">
+      <section xml:id="tls-proxies-and-http-services-examples-pound">
         <title>Pound</title>
         <para>This Pound example enables <literal>AES-NI</literal> acceleration, which helps to
         improve performance on systems with processors that support this feature.</para>
@@ -161,15 +160,15 @@ ListenHTTPS
     End
 End</programlisting>
       </section>
-      <section xml:id="ssl-proxies-and-http-services-examples-stud">
+      <section xml:id="tls-proxies-and-http-services-examples-stud">
         <title>Stud</title>
-        <para>This stud example enables SSL v3 for client compatibility. The <emphasis role="italic"
-          >ciphers</emphasis> line can be tweaked based on your needs, however this is a reasonable
-        starting place.</para>
+        <para>The <emphasis role="italic">ciphers</emphasis> line can be tweaked
+        based on your needs, however this is a reasonable starting place.</para>
         <programlisting># SSL x509 certificate file.
 pem-file = "
 # SSL protocol.
-ssl = on
+tls = on
+ssl = off
 # List of allowed SSL ciphers.
 # OpenSSL's high-strength ciphers which require authentication
 # NOTE: forbids clear text, use of RC4 or MD5 or LOW and MEDIUM strength ciphers
@@ -200,7 +199,7 @@ daemon = off
 # Disabling this until we upgrade to HAProxy 1.5
 write-proxy = off</programlisting>
     </section>
-    <section xml:id="ssl-proxies-and-http-services-examples-nginx">
+    <section xml:id="tls-proxies-and-http-services-examples-nginx">
       <title>nginx</title>
       <para>This nginx example requires TLS v1.1 or v1.2 for maximum security. The <option>ssl_ciphers</option> line can be tweaked based on your needs, however this
       is a reasonable starting place.</para>
@@ -219,7 +218,7 @@ write-proxy = off</programlisting>
     }
 }</programlisting>
     </section>
-      <section xml:id="ssl-proxies-and-http-services-examples-apache">
+      <section xml:id="tls-proxies-and-http-services-examples-apache">
         <title>Apache</title>
         <programlisting>&lt;VirtualHost &lt;ip address&gt;:80&gt;
   ServerName &lt;site FQDN&gt;
@@ -228,7 +227,7 @@ write-proxy = off</programlisting>
 &lt;VirtualHost &lt;ip address&gt;:443&gt;
   ServerName &lt;site FQDN&gt;
   SSLEngine On
-  SSLProtocol +SSLv3 +TLSv1 +TLSv1.1 +TLSv1.2,
+  SSLProtocol +TLSv1 +TLSv1.1 +TLSv1.2,
   SSLCipherSuite HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM
   SSLCertificateFile    /path/&lt;site FQDN&gt;.crt
   SSLCACertificateFile  /path/&lt;site FQDN&gt;.crt
@@ -250,7 +249,7 @@ write-proxy = off</programlisting>
         <programlisting>&lt;VirtualHost &lt;ip address&gt;:8447&gt;
   ServerName &lt;site FQDN&gt;
   SSLEngine On
-  SSLProtocol +SSLv3 +TLSv1 +TLSv1.1 +TLSv1.2,
+  SSLProtocol +TLSv1 +TLSv1.1 +TLSv1.2,
   SSLCipherSuite HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM
   SSLCertificateFile    /path/&lt;site FQDN&gt;.crt
   SSLCACertificateFile  /path/&lt;site FQDN&gt;.crt
@@ -268,7 +267,7 @@ write-proxy = off</programlisting>
 &lt;/VirtualHost&gt;</programlisting>
       </section>
     </section>
-    <section xml:id="ssl-proxies-and-http-services-HTTP-strict-transport-security">
+    <section xml:id="tls-proxies-and-http-services-HTTP-strict-transport-security">
       <title>HTTP strict transport security</title>
       <para>We recommend that all production deployments use HTTP strict transport security (HSTS).
       This header prevents browsers from making insecure connections after they have made a single

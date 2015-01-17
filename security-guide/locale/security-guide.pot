@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-01-07 06:01+0000\n"
+"POT-Creation-Date: 2015-01-17 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1769,7 +1769,7 @@ msgstr ""
 msgid "For example,"
 msgstr ""
 
-#: ./security-guide/section_identity-federated-keystone.xml:375(para) ./security-guide/section_ssl-proxies-and-http-services.xml:40(para)
+#: ./security-guide/section_identity-federated-keystone.xml:375(para) ./security-guide/section_tls-proxies-and-http-services.xml:39(para)
 msgid "or"
 msgstr ""
 
@@ -2799,6 +2799,170 @@ msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:255(para)
 msgid "Make sure <placeholder-1/> is set to <literal>False</literal> in production. In Django, <placeholder-2/> displays stack traces and sensitive web server state information on any exception."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:8(title)
+msgid "TLS proxies and HTTP services"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:9(para)
+msgid "OpenStack endpoints are HTTP services providing APIs to both end-users on public networks and to other OpenStack services on the management network. It is highly recommended that all of these requests, both internal and external, operate over TLS. To achieve this goal, API services must be deployed behind a TLS proxy that can establish and terminate TLS sessions. The following table offers a non-exhaustive list of open source software that can be used for this purpose:"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:16(link) ./security-guide/section_tls-proxies-and-http-services.xml:110(title)
+msgid "Pound"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:19(link) ./security-guide/section_tls-proxies-and-http-services.xml:164(title)
+msgid "Stud"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:22(link) ./security-guide/section_tls-proxies-and-http-services.xml:203(title)
+msgid "nginx"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:25(link)
+msgid "Apache httpd"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:28(para)
+msgid "In cases where software termination offers insufficient performance, hardware accelerators may be worth exploring as an alternative option. It is important to be mindful of the size of requests that will be processed by any chosen TLS proxy."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:32(title)
+msgid "Examples"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:33(para)
+msgid "Below we provide sample recommended configuration settings for enabling TLS in some of the more popular web servers/TLS terminators."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:35(para)
+msgid "Before we delve into the configurations, we briefly discuss the ciphers' configuration element and its format. A more exhaustive treatment on available ciphers and the OpenSSL cipher list format can be found at: <link href=\"https://www.openssl.org/docs/apps/ciphers.html\">ciphers</link>."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:43(para)
+msgid "Cipher string options are separated by \":\", while \"!\" provides negation of the immediately following element. Element order indicates preference unless overridden by qualifiers such as HIGH. Let us take a closer look at the elements in the above sample strings."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:46(code)
+msgid "kEECDH:kEDH"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:48(para)
+msgid "Ephemeral Elliptic Curve Diffie-Hellman (abbreviated as EECDH and ECDHE)."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:49(para)
+msgid "Ephemeral Diffie-Hellman (abbreviated either as EDH or DHE) uses prime field groups."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:50(para)
+msgid "Both approaches provide <link href=\"http://en.wikipedia.org/wiki/Forward_secrecy\">Perfect Forward Secrecy (PFS)</link>."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:51(para)
+msgid "Ephemeral Elliptic Curves require the server to be configured with a named curve, and provide better security than prime field groups and at lower computational cost. However, prime field groups are more widely implemented, and thus typically both are included in list."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:55(code)
+msgid "kRSA"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:57(para)
+msgid "Cipher suites using the <link href=\"http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29\">RSA</link> exchange, authentication or either respectively."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:61(code)
+msgid "HIGH"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:63(para)
+msgid "Selects highest possible security cipher in the negotiation phase. These typically have keys of length 128 bits or longer."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:67(code)
+msgid "!RC4"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:69(para)
+msgid "No RC4. RC4 has flaws in the context of TLS/SSL V3. See <link href=\"http://cr.yp.to/streamciphers/rc4biases-20130708.pdf\"> On the Security of RC4 in TLS and WPA</link>."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:73(code)
+msgid "!MD5"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:75(para)
+msgid "No MD5. MD5 is not collision resistant, and thus not acceptable for Message Authentication Codes (MAC) or signatures."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:79(code)
+msgid "!aNULL:!eNULL"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:81(para)
+msgid "Disallows clear text."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:85(code)
+msgid "!EXP"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:87(para)
+msgid "Disallows export encryption algorithms, which by design tend to be weak, typically using 40 and 56 bit keys."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:89(para)
+msgid "US Export restrictions on cryptography systems have been lifted and no longer need to be supported."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:93(code)
+msgid "!LOW:!MEDIUM"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:95(para)
+msgid "Disallows low (56 or 64 bit long keys) and medium (128 bit long keys) ciphers because of their vulnerability to brute force attacks (example 2-DES). This rule still permits Triple Data Encryption Standard (Triple DES) also known as Triple Data Encryption Algorithm (TDEA) and the Advanced Encryption Standard (AES), each of which has keys greater than equal to 128 bits and thus more secure."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:103(code)
+msgid "Protocols"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:105(para)
+msgid "Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2/v3 and enabling TLS."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:111(para)
+msgid "This Pound example enables <literal>AES-NI</literal> acceleration, which helps to improve performance on systems with processors that support this feature."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:165(para)
+msgid "The <emphasis role=\"italic\">ciphers</emphasis> line can be tweaked based on your needs, however this is a reasonable starting place."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:204(para)
+msgid "This nginx example requires TLS v1.1 or v1.2 for maximum security. The <placeholder-1/> line can be tweaked based on your needs, however this is a reasonable starting place."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:222(title)
+msgid "Apache"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:247(para)
+msgid "Compute API SSL endpoint in Apache, which you must pair with a short WSGI script."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:271(title)
+msgid "HTTP strict transport security"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:272(para)
+msgid "We recommend that all production deployments use HTTP strict transport security (HSTS). This header prevents browsers from making insecure connections after they have made a single secure one. If you have deployed your HTTP services on a public or an untrusted domain, HSTS is especially important. To enable HSTS, configure your web server to send a header like this with all requests:"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:278(para)
+msgid "Start with a short timeout of 1 day during testing, and raise it to one year after testing has shown that you have not introduced problems for users. Note that once this header is set to a large timeout, it is (by design) very difficult to disable."
 msgstr ""
 
 #: ./security-guide/ch_api-endpoints.xml:7(title)
@@ -5235,170 +5399,6 @@ msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:108(para)
 msgid "OpenStack Networking also supports per-tenant quotas limit through a quota extension API. To enable per-tenant quotas, you must set the <literal>quota_driver</literal> option in <filename>neutron.conf</filename>."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:8(title)
-msgid "SSL proxies and HTTP services"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:9(para)
-msgid "OpenStack endpoints are HTTP services providing APIs to both end-users on public networks and to other OpenStack services on the management network. It is highly recommended that all of these requests, both internal and external, operate over SSL. To achieve this goal, API services must be deployed behind a SSL proxy that can establish and terminate SSL sessions. The following table offers a non-exhaustive list of open source software that can be used for this purpose:"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:16(link) ./security-guide/section_ssl-proxies-and-http-services.xml:111(title)
-msgid "Pound"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:19(link) ./security-guide/section_ssl-proxies-and-http-services.xml:165(title)
-msgid "Stud"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:22(link) ./security-guide/section_ssl-proxies-and-http-services.xml:204(title)
-msgid "nginx"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:25(link)
-msgid "Apache httpd"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:28(para)
-msgid "In cases where software termination offers insufficient performance, hardware accelerators may be worth exploring as an alternative option. It is important to be mindful of the size of requests that will be processed by any chosen SSL proxy."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:32(title)
-msgid "Examples"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:33(para)
-msgid "Below we provide sample recommended configuration settings for enabling SSL in some of the more popular web servers/SSL terminators. Note that we have SSL v3 enabled in some of these examples as this will be required in many deployments for client compatibility."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:36(para)
-msgid "Before we delve into the configurations, we briefly discuss the ciphers' configuration element and its format. A more exhaustive treatment on available ciphers and the OpenSSL cipher list format can be found at: <link href=\"https://www.openssl.org/docs/apps/ciphers.html\">ciphers</link>."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:44(para)
-msgid "Cipher string options are separated by \":\", while \"!\" provides negation of the immediately following element. Element order indicates preference unless overridden by qualifiers such as HIGH. Let us take a closer look at the elements in the above sample strings."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:47(code)
-msgid "kEECDH:kEDH"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:49(para)
-msgid "Ephemeral Elliptic Curve Diffie-Hellman (abbreviated as EECDH and ECDHE)."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:50(para)
-msgid "Ephemeral Diffie-Hellman (abbreviated either as EDH or DHE) uses prime field groups."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:51(para)
-msgid "Both approaches provide <link href=\"http://en.wikipedia.org/wiki/Forward_secrecy\">Perfect Forward Secrecy (PFS)</link>."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:52(para)
-msgid "Ephemeral Elliptic Curves require the server to be configured with a named curve, and provide better security than prime field groups and at lower computational cost. However, prime field groups are more widely implemented, and thus typically both are included in list."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:56(code)
-msgid "kRSA"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:58(para)
-msgid "Cipher suites using the <link href=\"http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29\">RSA</link> exchange, authentication or either respectively."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:62(code)
-msgid "HIGH"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:64(para)
-msgid "Selects highest possible security cipher in the negotiation phase. These typically have keys of length 128 bits or longer."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:68(code)
-msgid "!RC4"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:70(para)
-msgid "No RC4. RC4 has flaws in the context of TLS/SSL V3. See <link href=\"http://cr.yp.to/streamciphers/rc4biases-20130708.pdf\"> On the Security of RC4 in TLS and WPA</link>."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:74(code)
-msgid "!MD5"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:76(para)
-msgid "No MD5. MD5 is not collision resistant, and thus not acceptable for Message Authentication Codes (MAC) or signatures."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:80(code)
-msgid "!aNULL:!eNULL"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:82(para)
-msgid "Disallows clear text."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:86(code)
-msgid "!EXP"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:88(para)
-msgid "Disallows export encryption algorithms, which by design tend to be weak, typically using 40 and 56 bit keys."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:90(para)
-msgid "US Export restrictions on cryptography systems have been lifted and no longer need to be supported."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:94(code)
-msgid "!LOW:!MEDIUM"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:96(para)
-msgid "Disallows low (56 or 64 bit long keys) and medium (128 bit long keys) ciphers because of their vulnerability to brute force attacks (example 2-DES). This rule still permits Triple Data Encryption Standard (Triple DES) also known as Triple Data Encryption Algorithm (TDEA) and the Advanced Encryption Standard (AES), each of which has keys greater than equal to 128 bits and thus more secure."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:104(code)
-msgid "Protocols"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:106(para)
-msgid "Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2 and enabling TLS or SSLv3 (which was standardized as TLS with a few changes)."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:112(para)
-msgid "This Pound example enables <literal>AES-NI</literal> acceleration, which helps to improve performance on systems with processors that support this feature."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:166(para)
-msgid "This stud example enables SSL v3 for client compatibility. The <emphasis role=\"italic\">ciphers</emphasis> line can be tweaked based on your needs, however this is a reasonable starting place."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:205(para)
-msgid "This nginx example requires TLS v1.1 or v1.2 for maximum security. The <placeholder-1/> line can be tweaked based on your needs, however this is a reasonable starting place."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:223(title)
-msgid "Apache"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:248(para)
-msgid "Compute API SSL endpoint in Apache, which you must pair with a short WSGI script."
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:272(title)
-msgid "HTTP strict transport security"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:273(para)
-msgid "We recommend that all production deployments use HTTP strict transport security (HSTS). This header prevents browsers from making insecure connections after they have made a single secure one. If you have deployed your HTTP services on a public or an untrusted domain, HSTS is especially important. To enable HSTS, configure your web server to send a header like this with all requests:"
-msgstr ""
-
-#: ./security-guide/section_ssl-proxies-and-http-services.xml:279(para)
-msgid "Start with a short timeout of 1 day during testing, and raise it to one year after testing has shown that you have not introduced problems for users. Note that once this header is set to a large timeout, it is (by design) very difficult to disable."
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:8(title)

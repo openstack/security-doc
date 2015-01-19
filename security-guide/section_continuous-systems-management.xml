@@ -238,7 +238,7 @@
       <para>Whenever a policy or configuration management is changed,
         it is good practice to log the activity, and backup a copy of
         the new set. Often, such policies and configurations are
-        stored in a version controlled repository such as git.</para>
+        stored in a version controlled repository such as Git.</para>
     </section>
   </section>
   <section xml:id="continuous-systems-management-secure-backup-and-recovery">

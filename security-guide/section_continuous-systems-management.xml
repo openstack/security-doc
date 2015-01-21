@@ -44,7 +44,7 @@
             <para>OpenStack Security Notes (OSSN) are created by the
               OpenStack Security Group (OSSG) to support the work of
               the VMT. OSSN address issues in supporting software and
-              common deployment configurations. They're referenced
+              common deployment configurations. They are referenced
               throughout this guide. Security Notes are archived at
                 <link xlink:href="https://launchpad.net/ossn/"
                 >https://launchpad.net/ossn/</link></para>

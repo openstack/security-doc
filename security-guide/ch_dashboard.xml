@@ -16,8 +16,8 @@
     This guide provides a popular set of Django security
     recommendations. Further information can be found by reading the
       <link
-      xlink:href="https://docs.djangoproject.com/en/1.5/#security"
-      >Django deployment and security documentation</link>.</para>
+      xlink:href="https://docs.djangoproject.com/"
+      >Django documentation</link>.</para>
   <para>The dashboard ships with reasonable default security settings,
     and has good <link
       xlink:href="http://docs.openstack.org/developer/horizon/topics/deployment.html"
@@ -32,9 +32,8 @@
     <para>When using nginx, we recommend <link
       xlink:href="http://docs.gunicorn.org/en/latest/deploy.html"
       >gunicorn</link> as the WSGI host with an appropriate number
-      of synchronous workers. When using Apache, we recommend <link
-      xlink:href="https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/"
-      >mod_wsgi</link> to host the dashboard.</para>
+      of synchronous workers. When using Apache, we recommend
+      <literal>mod_wsgi</literal> to host the dashboard.</para>
   </section>
   <section xml:id="dashboard-https">
     <title>HTTPS</title>
@@ -55,10 +54,11 @@
     <note>
       <para>If you are using an HTTPS proxy in front of your web
       server, rather than using an HTTP server with HTTPS
-      functionality, follow the <link
-        xlink:href="https://docs.djangoproject.com/en/1.5/ref/settings/#secure-proxy-ssl-header"
-        >Django documentation on modifying the
-        <literal>SECURE_PROXY_SSL_HEADER</literal> variable</link>.</para>
+      functionality, modify the <literal>SECURE_PROXY_SSL_HEADER</literal>
+      variable. Refer to the <link
+        xlink:href="https://docs.djangoproject.com/"
+        >Django documentation</link> for information about modifying the
+        <literal>SECURE_PROXY_SSL_HEADER</literal> variable.</para>
     </note>
     <para>See the chapter on PKI/SSL Everywhere for more specific
       recommendations and server configurations for HTTPS
@@ -114,9 +114,9 @@
       an external content delivery network (CDN) is also acceptable.
       This subdomain should not set cookies or serve user-provided
       content. The media should also be served with HTTPS.</para>
-    <para>Django media settings are documented at <link
-        xlink:href="https://docs.djangoproject.com/en/1.5/ref/settings/#static-root"
-        >https://docs.djangoproject.com/en/1.5/ref/settings/#static-root</link>.</para>
+    <para>Django media settings are documented in the <link
+        xlink:href="https://docs.djangoproject.com/"
+        >Django documentation</link>.</para>
     <para>Dashboard's default configuration uses <link
         xlink:href="http://django-compressor.readthedocs.org/"
         >django_compressor</link> to compress and minify CSS and
@@ -160,9 +160,9 @@
       private channel. If you choose to use the signed cookies
       back end, refer to the Django documentation understand the
       security trade-offs.</para>
-    <para>For further details, consult the <link
-        xlink:href="https://docs.djangoproject.com/en/1.5/topics/http/sessions/#configuring-the-session-engine"
-        >Django session back end documentation</link>.</para>
+    <para>For further details, see the <link
+        xlink:href="https://docs.djangoproject.com/"
+        >Django documentation</link>.</para>
   </section>
   <section xml:id="dashboard-allowed-hosts">
     <title>Allowed hosts</title>
@@ -173,14 +173,14 @@
       dashboard to a number of serious attacks. Wild card domains
       should be avoided.</para>
     <para>For further details, see the <link
-        xlink:href="https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts"
-        >Django documentation on settings</link>.</para>
+        xlink:href="https://docs.djangoproject.com/"
+        >Django documentation</link>.</para>
   </section>
   <section xml:id="dashboard-cross-site-request-forgery-csrf">
     <title>Cross Site Request Forgery (CSRF)</title>
-    <para>Django has a dedicated middleware for <link
-        xlink:href="https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works"
-        >cross-site request forgery</link> (CSRF).</para>
+    <para>Django has dedicated middleware for cross-site request forgery (CSRF).
+      For further details, see the <link xlink:href="https://docs.djangoproject.com/">
+      Django documentation</link>.</para>
     <para>Dashboard is designed to discourage developers from
       introducing cross-site scripting vulnerabilities with custom
       dashboards. However, it is important to audit custom dashboards,
@@ -210,7 +210,7 @@ SESSION_COOKIE_SECURE = True</programlisting>
   </section>
   <section xml:id="dashboard-cross-site-scripting-xss">
     <title>Cross Site Scripting (XSS)</title>
-    <para>Unlike many similar systems, OpenStack dashboard allows the
+    <para>Unlike many similar systems, the OpenStack dashboard allows the
       entire Unicode character set in most fields. This means
       developers have less latitude to make escaping mistakes that
       open attack vectors for cross-site scripting (XSS).</para>

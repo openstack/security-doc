@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-01-21 06:02+0000\n"
+"POT-Creation-Date: 2015-01-23 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4894,7 +4894,7 @@ msgid "OpenStack Security Advisories (OSSA) are created by the OpenStack Vulnera
 msgstr ""
 
 #: ./security-guide/section_continuous-systems-management.xml:44(para)
-msgid "OpenStack Security Notes (OSSN) are created by the OpenStack Security Group (OSSG) to support the work of the VMT. OSSN address issues in supporting software and common deployment configurations. They're referenced throughout this guide. Security Notes are archived at <link href=\"https://launchpad.net/ossn/\">https://launchpad.net/ossn/</link>"
+msgid "OpenStack Security Notes (OSSN) are created by the OpenStack Security Group (OSSG) to support the work of the VMT. OSSN address issues in supporting software and common deployment configurations. They are referenced throughout this guide. Security Notes are archived at <link href=\"https://launchpad.net/ossn/\">https://launchpad.net/ossn/</link>"
 msgstr ""
 
 #: ./security-guide/section_continuous-systems-management.xml:33(para)

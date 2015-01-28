@@ -223,9 +223,9 @@
       <para>The initial program loader (IPL) code will most likely be
         the PXE firmware, assuming the node deployment strategy
         outlined above. Therefore, the secure boot or boot attestation
-        process can measure all of the early stage boot code, such as,
-        bios, firmware, and the like, the PXE firmware, and the node
-        kernel. Ensuring that each node has the correct versions of
+        process can measure all of the early stage boot code, such as
+        BIOS, firmware, the PXE firmware, and the kernel image.
+        Ensuring that each node has the correct versions of
         these pieces installed provides a solid foundation on which to
         build the rest of the node software stack.</para>
       <para>Depending on the strategy selected, in the event of a

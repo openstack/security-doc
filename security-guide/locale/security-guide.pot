@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-01-23 06:01+0000\n"
+"POT-Creation-Date: 2015-01-29 06:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2594,7 +2594,7 @@ msgid "Horizon is the OpenStack dashboard that provides users a self-service por
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:14(para)
-msgid "The dashboard is based on the Django web framework, therefore secure deployment practices for Django apply directly to horizon. This guide provides a popular set of Django security recommendations. Further information can be found by reading the <link href=\"https://docs.djangoproject.com/en/1.5/#security\">Django deployment and security documentation</link>."
+msgid "The dashboard is based on the Django web framework, therefore secure deployment practices for Django apply directly to horizon. This guide provides a popular set of Django security recommendations. Further information can be found by reading the <link href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:21(para)
@@ -2610,31 +2610,31 @@ msgid "The dashboard should be deployed as a Web Services Gateway Interface (WSG
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:32(para)
-msgid "When using nginx, we recommend <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as the WSGI host with an appropriate number of synchronous workers. When using Apache, we recommend <link href=\"https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/\">mod_wsgi</link> to host the dashboard."
+msgid "When using nginx, we recommend <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as the WSGI host with an appropriate number of synchronous workers. When using Apache, we recommend <literal>mod_wsgi</literal> to host the dashboard."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:40(title)
+#: ./security-guide/ch_dashboard.xml:39(title)
 msgid "HTTPS"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:41(para)
+#: ./security-guide/ch_dashboard.xml:40(para)
 msgid "Deploy the dashboard behind a secure <glossterm>HTTPS</glossterm> server by using a valid, trusted certificate from a recognized certificate authority (CA). Private organization-issued certificates are only appropriate when the root of trust is pre-installed in all user browsers."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:48(para)
+#: ./security-guide/ch_dashboard.xml:47(para)
 msgid "Configure HTTP requests to the dashboard domain to redirect to the fully qualified HTTPS URL."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:52(title)
+#: ./security-guide/ch_dashboard.xml:51(title)
 msgid "HTTP Strict Transport Security (HSTS)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:53(para)
+#: ./security-guide/ch_dashboard.xml:52(para)
 msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:56(para)
-msgid "If you are using an HTTPS proxy in front of your web server, rather than using an HTTP server with HTTPS functionality, follow the <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#secure-proxy-ssl-header\">Django documentation on modifying the <literal>SECURE_PROXY_SSL_HEADER</literal> variable</link>."
+#: ./security-guide/ch_dashboard.xml:55(para)
+msgid "If you are using an HTTPS proxy in front of your web server, rather than using an HTTP server with HTTPS functionality, modify the <literal>SECURE_PROXY_SSL_HEADER</literal> variable. Refer to the <link href=\"https://docs.djangoproject.com/\">Django documentation</link> for information about modifying the <literal>SECURE_PROXY_SSL_HEADER</literal> variable."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:63(para)
@@ -2678,7 +2678,7 @@ msgid "The dashboard's static media should be deployed to a subdomain of the das
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:117(para)
-msgid "Django media settings are documented at <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#static-root\">https://docs.djangoproject.com/en/1.5/ref/settings/#static-root</link>."
+msgid "Django media settings are documented in the <link href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:120(para)
@@ -2705,8 +2705,8 @@ msgstr ""
 msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session back end with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies back end, refer to the Django documentation understand the security trade-offs."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:163(para)
-msgid "For further details, consult the <link href=\"https://docs.djangoproject.com/en/1.5/topics/http/sessions/#configuring-the-session-engine\">Django session back end documentation</link>."
+#: ./security-guide/ch_dashboard.xml:163(para) ./security-guide/ch_dashboard.xml:175(para)
+msgid "For further details, see the <link href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:168(title)
@@ -2717,16 +2717,12 @@ msgstr ""
 msgid "Configure the <placeholder-1/> setting with the domain or domains where the dashboard is available. Failure to configure this setting (especially if not following the recommendation above regarding second level domains) opens the dashboard to a number of serious attacks. Wild card domains should be avoided."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:175(para)
-msgid "For further details, see the <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts\">Django documentation on settings</link>."
-msgstr ""
-
 #: ./security-guide/ch_dashboard.xml:180(title)
 msgid "Cross Site Request Forgery (CSRF)"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:181(para)
-msgid "Django has a dedicated middleware for <link href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works\">cross-site request forgery</link> (CSRF)."
+msgid "Django has dedicated middleware for cross-site request forgery (CSRF). For further details, see the <link href=\"https://docs.djangoproject.com/\"> Django documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:184(para)
@@ -2758,7 +2754,7 @@ msgid "Cross Site Scripting (XSS)"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:213(para)
-msgid "Unlike many similar systems, OpenStack dashboard allows the entire Unicode character set in most fields. This means developers have less latitude to make escaping mistakes that open attack vectors for cross-site scripting (XSS)."
+msgid "Unlike many similar systems, the OpenStack dashboard allows the entire Unicode character set in most fields. This means developers have less latitude to make escaping mistakes that open attack vectors for cross-site scripting (XSS)."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:217(para)

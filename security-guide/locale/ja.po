@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-01-22 07:33+0000\n"
-"PO-Revision-Date: 2015-01-22 07:33+0000\n"
+"POT-Creation-Date: 2015-01-28 21:16+0000\n"
+"PO-Revision-Date: 2015-01-28 21:16+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -4376,8 +4376,7 @@ msgid ""
 "deployment practices for Django apply directly to horizon. This guide "
 "provides a popular set of Django security recommendations. Further "
 "information can be found by reading the <link "
-"href=\"https://docs.djangoproject.com/en/1.5/#security\">Django deployment "
-"and security documentation</link>."
+"href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml21(para)
@@ -4405,16 +4404,14 @@ msgid ""
 "When using nginx, we recommend <link "
 "href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as "
 "the WSGI host with an appropriate number of synchronous workers. When using "
-"Apache, we recommend <link "
-"href=\"https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/modwsgi/\">mod_wsgi</link>"
-" to host the dashboard."
+"Apache, we recommend <literal>mod_wsgi</literal> to host the dashboard."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml40(title)
+#: ./security-guide/ch_dashboard.xml39(title)
 msgid "HTTPS"
 msgstr "HTTPS"
 
-#: ./security-guide/ch_dashboard.xml41(para)
+#: ./security-guide/ch_dashboard.xml40(para)
 msgid ""
 "Deploy the dashboard behind a secure <glossterm>HTTPS</glossterm> server by "
 "using a valid, trusted certificate from a recognized certificate authority "
@@ -4422,27 +4419,28 @@ msgid ""
 " root of trust is pre-installed in all user browsers."
 msgstr "ダッシュボードは、認知されている認証局 (CA) から発行された有効かつ信頼できる証明書を使用しているセキュアな <glossterm>HTTPS</glossterm> サーバーの後ろに導入します。プライベートな組織で発行された証明書は、ルート証明機関がお使いのすべてのブラウザーに事前インストールされているときのみ、適切に動作します。"
 
-#: ./security-guide/ch_dashboard.xml48(para)
+#: ./security-guide/ch_dashboard.xml47(para)
 msgid ""
 "Configure HTTP requests to the dashboard domain to redirect to the fully "
 "qualified HTTPS URL."
 msgstr "ダッシュボードのドメインに対する HTTP リクエストは、完全修飾された HTTPS URL にリダイレクトされるよう設定します。"
 
-#: ./security-guide/ch_dashboard.xml52(title)
+#: ./security-guide/ch_dashboard.xml51(title)
 msgid "HTTP Strict Transport Security (HSTS)"
 msgstr "HTTP Strict Transport Security (HSTS)"
 
-#: ./security-guide/ch_dashboard.xml53(para)
+#: ./security-guide/ch_dashboard.xml52(para)
 msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
 msgstr "HTTP Strict Transport Security (HSTS) の使用が強く推奨されます。"
 
-#: ./security-guide/ch_dashboard.xml56(para)
+#: ./security-guide/ch_dashboard.xml55(para)
 msgid ""
 "If you are using an HTTPS proxy in front of your web server, rather than "
-"using an HTTP server with HTTPS functionality, follow the <link "
-"href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#secure-proxy-ssl-"
-"header\">Django documentation on modifying the "
-"<literal>SECURE_PROXY_SSL_HEADER</literal> variable</link>."
+"using an HTTP server with HTTPS functionality, modify the "
+"<literal>SECURE_PROXY_SSL_HEADER</literal> variable. Refer to the <link "
+"href=\"https://docs.djangoproject.com/\">Django documentation</link> for "
+"information about modifying the <literal>SECURE_PROXY_SSL_HEADER</literal> "
+"variable."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml63(para)
@@ -4524,11 +4522,9 @@ msgstr ""
 
 #: ./security-guide/ch_dashboard.xml117(para)
 msgid ""
-"Django media settings are documented at <link "
-"href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#static-"
-"root\">https://docs.djangoproject.com/en/1.5/ref/settings/#static-"
-"root</link>."
-msgstr "Django のメディア設定は <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#static-root\">https://docs.djangoproject.com/en/1.5/ref/settings/#static-root</link> にドキュメント化されています。"
+"Django media settings are documented in the <link "
+"href=\"https://docs.djangoproject.com/\">Django documentation</link>."
+msgstr ""
 
 #: ./security-guide/ch_dashboard.xml120(para)
 msgid ""
@@ -4585,11 +4581,10 @@ msgid ""
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml163(para)
+#: ./security-guide/ch_dashboard.xml175(para)
 msgid ""
-"For further details, consult the <link "
-"href=\"https://docs.djangoproject.com/en/1.5/topics/http/sessions"
-"/#configuring-the-session-engine\">Django session back end "
-"documentation</link>."
+"For further details, see the <link "
+"href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml168(title)
@@ -4605,23 +4600,16 @@ msgid ""
 "avoided."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml175(para)
-msgid ""
-"For further details, see the <link "
-"href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-"
-"hosts\">Django documentation on settings</link>."
-msgstr "さらなる詳細は <link href=\"https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts\">Django documentation on settings</link> を参照してください。"
-
 #: ./security-guide/ch_dashboard.xml180(title)
 msgid "Cross Site Request Forgery (CSRF)"
 msgstr "クロスサイトリクエストフォージェリ (CSRF)"
 
 #: ./security-guide/ch_dashboard.xml181(para)
 msgid ""
-"Django has a dedicated middleware for <link "
-"href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works"
-"\">cross-site request forgery</link> (CSRF)."
-msgstr "Django は<link href=\"https://docs.djangoproject.com/en/1.5/ref/contrib/csrf/#how-it-works\">cross-site request forgery</link> (CSRF) 用の専用ミドルウェアを持ちます。"
+"Django has dedicated middleware for cross-site request forgery (CSRF). For "
+"further details, see the <link href=\"https://docs.djangoproject.com/\"> "
+"Django documentation</link>."
+msgstr ""
 
 #: ./security-guide/ch_dashboard.xml184(para)
 msgid ""
@@ -4667,11 +4655,11 @@ msgstr "クロスサイトスクリプティング (XSS)"
 
 #: ./security-guide/ch_dashboard.xml213(para)
 msgid ""
-"Unlike many similar systems, OpenStack dashboard allows the entire Unicode "
-"character set in most fields. This means developers have less latitude to "
-"make escaping mistakes that open attack vectors for cross-site scripting "
-"(XSS)."
-msgstr "多くの似たようなシステムと異なり、OpenStack のダッシュボードは多くの項目にすべての Unicode 文字を許可します。このことは、開発者が XSS 攻撃の余地を残すエスケープミスをする範囲が少なくなることを意味します。"
+"Unlike many similar systems, the OpenStack dashboard allows the entire "
+"Unicode character set in most fields. This means developers have less "
+"latitude to make escaping mistakes that open attack vectors for cross-site "
+"scripting (XSS)."
+msgstr ""
 
 #: ./security-guide/ch_dashboard.xml217(para)
 msgid ""

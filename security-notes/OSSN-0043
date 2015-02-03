@@ -1,0 +1,60 @@
+glibc 'GHOST' vulnerability can allow remote code execution
+---
+
+### Summary ###
+A serious vulnerability in the GNU C library (glibc) gethostbyname*
+functions can allow an attacker to perform remote code execution with
+the privileges of the application that calls the gethostbyname*
+function. The vulnerable functions are used by a vast number of
+programs, effectively any time a network socket is used in a linux
+system, so the full exploitability of this vulnerability will not
+become known immediately.
+
+The publishers of this vulnerability, Qualys, have announced a proof of
+concept exploit for the Exim mail server, which bypasses operating
+system protections such as ASLR and DEP.
+
+
+### Affected Services / Software ###
+All versions running on Linux installations with a vulnerable glibc
+library.
+
+### Discussion ###
+The GNU C library (glibc), from versions 2.2 to 2.17 inclusive, has
+a group of vulnerable functions for hostname/address resolution. There
+is a buffer overflow in the __nss_hostname_digits_dots() function which
+is used by the gethostbyname*() group of functions. The maximum amount
+of memory that can be overwritten is sizeof(char *), i.e. 4 bytes on
+typical 32-bit systems and 8 bytes on typical 64-bit systems.
+
+These low-level functions are linked by many other C/C++ programs and
+interpreted languages like Python, Perl and Bash, so this vulnerability
+is insidious and will appear in cases where it would not at first seem
+obvious. There are many cases in a typical Linux installation where
+these functions will be used, generally wherever a hostname is resolved
+to an IP address, although in newer applications an IPv6 compatible
+function, getaddinfo() may be used instead.
+
+This vulnerability could let an attacker remotely execute code in cases
+where they control the input to a function that performs hostname
+resolution. There are no currently-known OpenStack-specific
+exploitation paths associated with this vulnerability. However, the
+Python socket library presents a gethostbyname() wrapper around the
+glibc function, and there are various ways in which this could be
+exposed.
+
+### Recommended Actions ###
+The glibc library is loaded into memory when a process that uses it
+starts up, so to fix the vulnerability, glibc should be updated to a
+non-vulnerable version (2.18 or newer) and all services which use glibc
+should be restarted to replace the version in memory. Due to the number
+of places where these vulnerable functions are used, this effectively
+means that vulnerable systems must be restarted after updating glibc.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0043
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1415416
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+CVE: CVE-2015-0235
+Source advisory: https://www.qualys.com/research/security-advisories/GHOST-CVE-2015-0235.txt

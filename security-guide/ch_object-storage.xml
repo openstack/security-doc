@@ -129,7 +129,7 @@
                 example, 'proxy-server', 'container-server',
                 'account-server'.  Detailed steps for setup and
                 configuration can be found in the <link
-                xlink:href="http://docs.openstack.org/icehouse/install-guide/install/apt/content/ch_swift.html">Add
+                xlink:href="http://docs.openstack.org/juno/install-guide/install/apt/content/ch_swift.html">Add
                 Object Storage chapter</link> of the
                 <citetitle>Installation Guide</citetitle> in the <link
                 xlink:href="http://docs.openstack.org" >OpenStack

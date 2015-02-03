@@ -6,7 +6,7 @@
   xml:id="case-studies-database">
     <?dbhtml stop-chunking?>
     <title>Case studies</title>
-      <para>In this case study we discuss how Alice and Bob would address database
+      <para>Earlier in <xref linkend="introduction-to-case-studies"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address database
       selection and configuration for their respective private and public
       clouds.</para>
   <section xml:id="case-studies-database-alice-private-cloud">

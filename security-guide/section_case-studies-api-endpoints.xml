@@ -6,7 +6,7 @@
   xml:id="case-studies-api-endpoints">
   <?dbhtml stop-chunking?>
     <title>Case studies</title>
-    <para>In this case study we discuss how Alice and Bob would address endpoint configuration to secure their private and public clouds. Alice's cloud is not publicly accessible, but she is still concerned about securing the endpoints against improper use. Bob's cloud, being public, must take measures to reduce the risk of attacks by external adversaries.</para>
+    <para>Earlier in <xref linkend="introduction-to-case-studies"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address endpoint configuration to secure their private and public clouds. Alice's cloud is not publicly accessible, but she is still concerned about securing the endpoints against improper use. Bob's cloud, being public, must take measures to reduce the risk of attacks by external adversaries.</para>
     <section xml:id="case-studies-api-endpoints-alice-private-cloud">
       <title>Alice's private cloud</title>
       <para>

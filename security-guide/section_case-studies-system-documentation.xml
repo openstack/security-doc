@@ -6,7 +6,7 @@
   xml:id="case-studies-system-documentation">
   <?dbhtml stop-chunking?>
     <title>Case studies</title>
-    <para>In this case study we discuss how Alice and Bob would address their system documentation requirements. The documentation suggested above includes hardware and software records, network diagrams, and system configuration details.</para>
+    <para>Earlier in <xref linkend="introduction-to-case-studies"/> we introduced the Alice and Bob case studies where Alice is deploying a government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address their system documentation requirements. The documentation suggested above includes hardware and software records, network diagrams, and system configuration details.</para>
     <section xml:id="case-studies-system-documentation-alice-private-cloud">
       <title>Alice's private cloud</title>
       <para>Alice needs detailed documentation to satisfy FedRAMP requirements. She sets up a configuration management database (CMDB) to store information regarding all of the hardware, firmware, and software versions used throughout the cloud. She also creates a network diagram detailing the cloud architecture, paying careful attention to the security domains and the services that span multiple security domains.</para>

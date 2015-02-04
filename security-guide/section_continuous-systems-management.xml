@@ -68,10 +68,11 @@
         decisions.</para>
       <para>Privilege Escalation describes the ability of a user to
         act with the privileges of some other user in a system,
-        bypassing appropriate authorization checks. For example, a
-        standard Linux user running code or performing an operation
-        that allows them to conduct further operations with the
-        privileges of the root users on the system.</para>
+        bypassing appropriate authorization checks. A guest user
+        performing an operation that allows them to conduct
+        unauthorized operations with the privileges of an
+        administrator is an example of this type of
+        vulnerability.</para>
       <para>Denial of Service refers to an exploited vulnerability
         that may cause service or system disruption. This includes
         both distributed attacks to overwhelm network resources, and

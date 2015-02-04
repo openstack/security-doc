@@ -158,8 +158,8 @@
       <para>We suggest that cloud administrators use this table as a
         model to help define which actions to take for the various
         security levels. For example, a critical-level security update
-        might require the cloud to be upgraded on a specified time
-        line, whereas a low-level update might be more relaxed.</para>
+        might require the cloud to be upgraded quickly whereas a
+        low-level update might take longer to be completed.</para>
     </section>
     <section xml:id="continuous-systems-management-vulnerability-management-testing-the-updates">
       <title>Testing the updates</title>

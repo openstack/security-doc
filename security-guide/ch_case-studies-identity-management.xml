@@ -7,7 +7,10 @@
   <?dbhtml stop-chunking?>
     <title>Case studies: Identity management</title>
     <para>
-      In this case study we discuss how Alice and Bob would address
+      Earlier in <xref linkend="introduction-to-case-studies"/> we introduced
+      the Alice and Bob case studies where Alice is deploying a private
+      government cloud and Bob is deploying a public cloud each with
+      different security requirements. Here we discuss how Alice and Bob would address
       configuration of OpenStack core services. These include the
       Identity service, dashboard, and Compute services. Alice will be
       concerned with integration into the existing government

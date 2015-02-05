@@ -6,7 +6,11 @@
   xml:id="case-studies-networking">
   <?dbhtml stop-chunking?>
     <title>Case studies</title>
-    <para>In this case study we discuss how Alice and Bob would address providing networking services to the user.</para>
+    <para>Earlier in <xref linkend="introduction-to-case-studies"/> we introduced
+    the Alice and Bob case studies where Alice is deploying a private government
+    cloud and Bob is deploying a public cloud each with different
+    security requirements. Here we discuss how Alice and Bob would address
+    providing networking services to the user.</para>
     <section xml:id="case-studies-networking-alice-private-cloud">
       <title>Alice's private cloud</title>
       <para>A key objective of Alice's cloud is to integrate with the

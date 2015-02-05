@@ -6,11 +6,9 @@
   xml:id="case-studies-management-interfaces">
   <?dbhtml stop-chunking?>
     <title>Case studies</title>
-    <para>Previously we discussed typical OpenStack management
-    interfaces and associated backplane issues. We will now approach
-    these issues by returning to our Alice and Bob case study.
-    Specifically, we will look into how both Alice and Bob will
-    address:</para>
+    <para>Previously we discussed typical OpenStack management interfaces and associated backplane issues. We will now approach these issues by returning to the Alice and Bob case studies
+    (See <xref linkend="introduction-to-case-studies"/> ) where Alice is deploying a government cloud  and Bob is deploying a public cloud each with different security requirements. In this section, we will look into how both Alice and Bob will address:</para>
+
     <itemizedlist><listitem>
         <para>Cloud administration</para>
       </listitem>

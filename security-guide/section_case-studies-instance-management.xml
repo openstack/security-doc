@@ -6,7 +6,7 @@
   xml:id="case-studies-instance-management">
   <?dbhtml stop-chunking?>
     <title>Case studies</title>
-    <para>In this case study we discuss how Alice and Bob would architect their clouds with respect to instance entropy, scheduling instances, trusted images, and instance migrations.</para>
+    <para>Earlier in <xref linkend="introduction-to-case-studies"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would architect their clouds with respect to instance entropy, scheduling instances, trusted images, and instance migrations.</para>
     <section xml:id="case-studies-instance-management-alice-private-cloud">
       <title>Alice's private cloud</title>
       <para>Alice has a need for lots of high quality entropy in the instances. For this reason, she decides to purchase hardware with Intel Ivy Bridge chip sets that support the RdRand instruction on each compute node. Using the entropy gathering daemon (EGD) and libvirt's EGD support, Alice ensures that this entropy pool is distributed to the instances on each compute node.</para>

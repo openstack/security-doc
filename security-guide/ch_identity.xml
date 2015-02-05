@@ -6,7 +6,7 @@
   xml:id="identity">
   <?dbhtml stop-chunking?>
   <title>Identity</title>
-  <para>The OpenStack Identity service (keystone) supports multiple
+  <para>The OpenStack Identity Service (keystone) supports multiple
     methods of authentication, including user name &amp; password,
     LDAP, and external authentication methods. Upon successful
     authentication, The Identity Service provides the user with an

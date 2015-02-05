@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-01-28 21:16+0000\n"
-"PO-Revision-Date: 2015-01-28 21:16+0000\n"
+"POT-Creation-Date: 2015-02-04 20:56+0000\n"
+"PO-Revision-Date: 2015-02-04 20:56+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -3810,7 +3810,7 @@ msgid ""
 "name \"swift\" with the primary group \"swift.\" Object Storage services "
 "include, for example, 'proxy-server', 'container-server', 'account-server'. "
 "Detailed steps for setup and configuration can be found in the <link "
-"href=\"http://docs.openstack.org/icehouse/install-"
+"href=\"http://docs.openstack.org/juno/install-"
 "guide/install/apt/content/ch_swift.html\">Add Object Storage chapter</link> "
 "of the <citetitle>Installation Guide</citetitle> in the <link "
 "href=\"http://docs.openstack.org\">OpenStack Documentation index</link>. "
@@ -6767,11 +6767,11 @@ msgstr "ハイパーバイザーの選択"
 
 #: ./security-guide/section_hypervisor-selection.xml13(para)
 msgid ""
-"Virtualization provides flexibility and other key benefits that enable cloud"
-" building.virtualization stack can provide isolation between instances, or "
-"guest virtual machines. However, a virtualization stack in a multi-tenant "
-"cloud must have appropriate security measures to reduce the risks associated"
-" with hypervisor breakout attacks."
+"Virtualization can provide flexibility, improved resource utilization, "
+"faster provisioning, and other benefits that enable cloud computing. The "
+"virtualization stack can also provide isolation between guest virtual "
+"machines, however, appropriate security measures must be considered to "
+"reduce the risks associated with hypervisor breakout attacks."
 msgstr ""
 
 #: ./security-guide/section_hypervisor-selection.xml19(para)
@@ -8308,12 +8308,12 @@ msgstr "以下の例では、権限昇格、DoS (サービス妨害)、情報開
 msgid ""
 "Privilege Escalation describes the ability of a user to act with the "
 "privileges of some other user in a system, bypassing appropriate "
-"authorization checks. For example, a standard Linux user running code or "
-"performing an operation that allows them to conduct further operations with "
-"the privileges of the root users on the system."
-msgstr "権限昇格とは、適切な認証チェックをすり抜けてシステム内の他のユーザーの権限を行使するユーザーの能力のことを指します。例えば、標準の Linux ユーザーがシステム上の root ユーザーの権限で自分の権限以上の操作を可能にするオペレーションを実行したり、コードを実行したりするなどです。"
+"authorization checks. A guest user performing an operation that allows them "
+"to conduct unauthorized operations with the privileges of an administrator "
+"is an example of this type of vulnerability."
+msgstr ""
 
-#: ./security-guide/section_continuous-systems-management.xml75(para)
+#: ./security-guide/section_continuous-systems-management.xml76(para)
 msgid ""
 "Denial of Service refers to an exploited vulnerability that may cause "
 "service or system disruption. This includes both distributed attacks to "
@@ -8322,7 +8322,7 @@ msgid ""
 "flaws."
 msgstr "サービス妨害 (DoS) とは、サービスやシステムの中断を引き起こす脆弱性を悪用することを指します。これには、ネットワークリソースを大量に使用する分散型攻撃や、リソース割り当てのバグや誘導型でのシステム障害の問題などで一般的に引き起こされるシングルユーザー攻撃の両方が含まれます。"
 
-#: ./security-guide/section_continuous-systems-management.xml80(para)
+#: ./security-guide/section_continuous-systems-management.xml81(para)
 msgid ""
 "Information Disclosure vulnerabilities reveal information about your system "
 "or operations. These vulnerabilities range from debugging information "
@@ -8330,88 +8330,88 @@ msgid ""
 "credentials and passwords."
 msgstr "情報開示の脆弱性は、システムや操作の情報を公開します。これらの脆弱性は、情報開示のデバッグから認証情報やパスワードなどの重要なセキュリティデータの公開などが当てはまります。"
 
-#: ./security-guide/section_continuous-systems-management.xml96(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml97(emphasis)
 msgid "Attacker position / Privilege level"
 msgstr "攻撃者の位置付け/権限レベル"
 
-#: ./security-guide/section_continuous-systems-management.xml102(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml103(emphasis)
 msgid "External"
 msgstr "外部"
 
-#: ./security-guide/section_continuous-systems-management.xml103(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml104(emphasis)
 msgid "Cloud user"
 msgstr "クラウドユーザー"
 
-#: ./security-guide/section_continuous-systems-management.xml105(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml106(emphasis)
 msgid "Cloud admin"
 msgstr "クラウドの管理者"
 
-#: ./security-guide/section_continuous-systems-management.xml107(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml108(emphasis)
 msgid "Control plane"
 msgstr "制御プレーン"
 
-#: ./security-guide/section_continuous-systems-management.xml111(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml112(emphasis)
 msgid "Privilege elevation (3 levels)"
 msgstr "権限昇格 (3 つのレベル)"
 
-#: ./security-guide/section_continuous-systems-management.xml113(para)
-#: ./security-guide/section_continuous-systems-management.xml121(para)
+#: ./security-guide/section_continuous-systems-management.xml114(para)
 #: ./security-guide/section_continuous-systems-management.xml122(para)
-#: ./security-guide/section_continuous-systems-management.xml129(para)
+#: ./security-guide/section_continuous-systems-management.xml123(para)
 #: ./security-guide/section_continuous-systems-management.xml130(para)
 #: ./security-guide/section_continuous-systems-management.xml131(para)
+#: ./security-guide/section_continuous-systems-management.xml132(para)
 msgid "Critical"
 msgstr "重要"
 
-#: ./security-guide/section_continuous-systems-management.xml114(para)
 #: ./security-guide/section_continuous-systems-management.xml115(para)
 #: ./security-guide/section_continuous-systems-management.xml116(para)
-#: ./security-guide/section_continuous-systems-management.xml123(para)
+#: ./security-guide/section_continuous-systems-management.xml117(para)
 #: ./security-guide/section_continuous-systems-management.xml124(para)
-#: ./security-guide/section_continuous-systems-management.xml132(para)
+#: ./security-guide/section_continuous-systems-management.xml125(para)
+#: ./security-guide/section_continuous-systems-management.xml133(para)
 msgid "n/a"
 msgstr "なし"
 
-#: ./security-guide/section_continuous-systems-management.xml119(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml120(emphasis)
 msgid "Privilege elevation (2 levels)"
 msgstr "権限昇格 (2 つのレベル)"
 
-#: ./security-guide/section_continuous-systems-management.xml127(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml128(emphasis)
 msgid "Privilege elevation (1 level)"
 msgstr "権限昇格 (1つのレベル)"
 
-#: ./security-guide/section_continuous-systems-management.xml135(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml136(emphasis)
 msgid "Denial of service"
 msgstr "サービス妨害 (DoS)"
 
-#: ./security-guide/section_continuous-systems-management.xml137(para)
+#: ./security-guide/section_continuous-systems-management.xml138(para)
 msgid "High"
 msgstr "高"
 
-#: ./security-guide/section_continuous-systems-management.xml138(para)
+#: ./security-guide/section_continuous-systems-management.xml139(para)
 msgid "Medium"
 msgstr "中"
 
-#: ./security-guide/section_continuous-systems-management.xml139(para)
 #: ./security-guide/section_continuous-systems-management.xml140(para)
-#: ./security-guide/section_continuous-systems-management.xml148(para)
+#: ./security-guide/section_continuous-systems-management.xml141(para)
+#: ./security-guide/section_continuous-systems-management.xml149(para)
 msgid "Low"
 msgstr "低"
 
-#: ./security-guide/section_continuous-systems-management.xml143(emphasis)
+#: ./security-guide/section_continuous-systems-management.xml144(emphasis)
 msgid "Information disclosure"
 msgstr "情報開示"
 
-#: ./security-guide/section_continuous-systems-management.xml145(para)
 #: ./security-guide/section_continuous-systems-management.xml146(para)
+#: ./security-guide/section_continuous-systems-management.xml147(para)
 msgid "Critical / high"
 msgstr "重要/高"
 
-#: ./security-guide/section_continuous-systems-management.xml147(para)
+#: ./security-guide/section_continuous-systems-management.xml148(para)
 msgid "Medium / low"
 msgstr "中/低"
 
-#: ./security-guide/section_continuous-systems-management.xml152(para)
+#: ./security-guide/section_continuous-systems-management.xml153(para)
 msgid ""
 "This table illustrates a generic approach to measuring the impact of a "
 "vulnerability based on where it occurs in your deployment and the effect. "
@@ -8420,19 +8420,19 @@ msgid ""
 "privileges as the root user on the node."
 msgstr "この表は、デプロイメントの発生箇所や影響をもとに脆弱性から受ける影響レベルを測定するための一般的な手法を示しています。例えば、Compute API ノードで権限レベルを 1 つ昇格すると、API の標準ユーザーはこのノード上の root ユーザーと同等の権限にまで昇格することが可能です。"
 
-#: ./security-guide/section_continuous-systems-management.xml158(para)
+#: ./security-guide/section_continuous-systems-management.xml159(para)
 msgid ""
 "We suggest that cloud administrators use this table as a model to help "
 "define which actions to take for the various security levels. For example, a"
-" critical-level security update might require the cloud to be upgraded on a "
-"specified time line, whereas a low-level update might be more relaxed."
-msgstr "クラウド管理者が、さまざまなセキュリティレベルに合わせて実行するアクションを定義する役に立てるために、この表をモデルとして使用することを推奨します。例えば、レベルが「重要」であるセキュリティ更新では、指定のスケジュールでクラウドのアップグレードが必要となる可能性がありますが、レベルが「低」の更新ではそこまで厳しくないでしょう。"
+" critical-level security update might require the cloud to be upgraded "
+"quickly whereas a low-level update might take longer to be completed."
+msgstr ""
 
-#: ./security-guide/section_continuous-systems-management.xml165(title)
+#: ./security-guide/section_continuous-systems-management.xml166(title)
 msgid "Testing the updates"
 msgstr "更新のテスト"
 
-#: ./security-guide/section_continuous-systems-management.xml166(para)
+#: ./security-guide/section_continuous-systems-management.xml167(para)
 msgid ""
 "You should test any update before you deploy it in a production environment."
 " Typically this requires having a separate test cloud setup that first "
@@ -8444,22 +8444,22 @@ msgid ""
 "fixed."
 msgstr "何らかの更新を本番環境にデプロイする前に、それらをテストするようにしてください。一般的に、更新を最初に受信するテスト用のクラウド設定が別途必要になります。このクラウドのソフトウェアやハードウェアはできるだけ実稼働クラウドと同じ環境にする必要があります。パフォーマンスの影響、安定性、アプリケーションへの影響など、更新全体をテストする必要があります。特に重要なのは、更新で理論上対応されている問題 (例: 特定の脆弱性) が実際に修正されているかどうかを確認することです。"
 
-#: ./security-guide/section_continuous-systems-management.xml177(title)
+#: ./security-guide/section_continuous-systems-management.xml178(title)
 msgid "Deploying the updates"
 msgstr "更新のデプロイ"
 
-#: ./security-guide/section_continuous-systems-management.xml178(para)
+#: ./security-guide/section_continuous-systems-management.xml179(para)
 msgid ""
 "Once the updates are fully tested, they can be deployed to the production "
 "environment. This deployment should be fully automated using the "
 "configuration management tools described below."
 msgstr "更新の完全なテストが終了すると、実稼働環境にデプロイすることができます。このデプロイメントは、以下に記載の構成管理ツールで完全に自動的に行われます。"
 
-#: ./security-guide/section_continuous-systems-management.xml185(title)
+#: ./security-guide/section_continuous-systems-management.xml186(title)
 msgid "Configuration management"
 msgstr "設定管理"
 
-#: ./security-guide/section_continuous-systems-management.xml186(para)
+#: ./security-guide/section_continuous-systems-management.xml187(para)
 msgid ""
 "A production quality cloud should always use tools to automate configuration"
 " and deployment. This eliminates human error, and allows the cloud to scale "
@@ -8467,7 +8467,7 @@ msgid ""
 "testing."
 msgstr "実稼働環境の品質を持つクラウドは設定とデプロイメントの自動化ツールを必ず使用しています。こうすることで、人的ミスをなくし、クラウドの迅速なスケールアウトが可能になります。自動化により、継続的な統合やテストが行いやすくなります。"
 
-#: ./security-guide/section_continuous-systems-management.xml191(para)
+#: ./security-guide/section_continuous-systems-management.xml192(para)
 msgid ""
 "When building an OpenStack cloud it is strongly recommended to approach your"
 " design and implementation with a configuration management tool or framework"
@@ -8481,7 +8481,7 @@ msgid ""
 "to a known state in a DR event or given a compromise."
 msgstr "OpenStack クラウドの構築時は、構成管理ツールまたはフレームワークを念頭に設計、実装に着手するように強く推奨します。構成管理により、OpenStack のように複雑なインフラストラクチャーの構築、管理、維持において陥りやすい多くの問題を回避することができます。構成管理ユーティリティに必要なマニフェスト、クックブック、テンプレートを作成することで、多くの文書や監督機関へのレポート要件を満たすことができます。さらに、構成管理は、ビジネス継続性計画 (BCP) および災害復旧 (DR) プランの一部としても機能する可能性もあります。その場合、DR やセキュリティ侵害が合った場合にノードやサービスを既知の状態へ再構築することができます。"
 
-#: ./security-guide/section_continuous-systems-management.xml204(para)
+#: ./security-guide/section_continuous-systems-management.xml205(para)
 msgid ""
 "Additionally, when combined with a version control system such as Git or "
 "SVN, you can track changes to your environment over time and re-mediate "
@@ -8496,7 +8496,7 @@ msgid ""
 " it."
 msgstr "さらに、Git や SVN などのバージョン管理システムと統合すると、経年の環境の変化をチェックして、発生する可能性のある未認証の変更を修正することができます。例えば、<filename>nova.conf</filename> ファイルやその他の設定ファイルが規格に準拠しなくなった場合、既知の状態に構成管理ツールはファイルを復元または置き換えることができるでしょう。最後に、構成管理ツールを使用して、更新のデプロイも可能で、セキュリティパッチのプロセスを簡素化します。これらのツールには、この項において便利な機能が幅広く含まれています。クラウドのセキュリティ確保の主な目的は、構成管理のツールを選択して使用することです。"
 
-#: ./security-guide/section_continuous-systems-management.xml216(para)
+#: ./security-guide/section_continuous-systems-management.xml217(para)
 msgid ""
 "There are many configuration management solutions; at the time of this "
 "writing there are two in the marketplace that are robust in their support of"
@@ -8505,27 +8505,27 @@ msgid ""
 "space is provided below:"
 msgstr "構成管理ソリューションは多数存在しますが、本書の作成時点で市場にあるソリューションで OpenStack 環境のサポートが強力なものは <glossterm>Chef</glossterm> と <glossterm>Puppet</glossterm> の 2 種類となっています。以下に完全ではありませんが、ツールのリストを示しています。"
 
-#: ./security-guide/section_continuous-systems-management.xml224(para)
+#: ./security-guide/section_continuous-systems-management.xml225(para)
 msgid "Chef"
 msgstr "Chef"
 
-#: ./security-guide/section_continuous-systems-management.xml227(para)
+#: ./security-guide/section_continuous-systems-management.xml228(para)
 msgid "Puppet"
 msgstr "Puppet"
 
-#: ./security-guide/section_continuous-systems-management.xml230(para)
+#: ./security-guide/section_continuous-systems-management.xml231(para)
 msgid "Salt Stack"
 msgstr "Salt Stack"
 
-#: ./security-guide/section_continuous-systems-management.xml233(para)
+#: ./security-guide/section_continuous-systems-management.xml234(para)
 msgid "Ansible"
 msgstr "Ansible"
 
-#: ./security-guide/section_continuous-systems-management.xml237(title)
+#: ./security-guide/section_continuous-systems-management.xml238(title)
 msgid "Policy changes"
 msgstr "ポリシーの変更"
 
-#: ./security-guide/section_continuous-systems-management.xml238(para)
+#: ./security-guide/section_continuous-systems-management.xml239(para)
 msgid ""
 "Whenever a policy or configuration management is changed, it is good "
 "practice to log the activity, and backup a copy of the new set. Often, such "
@@ -8533,11 +8533,11 @@ msgid ""
 "such as Git."
 msgstr ""
 
-#: ./security-guide/section_continuous-systems-management.xml245(title)
+#: ./security-guide/section_continuous-systems-management.xml246(title)
 msgid "Secure backup and recovery"
 msgstr "セキュアなバックアップとリカバリ"
 
-#: ./security-guide/section_continuous-systems-management.xml246(para)
+#: ./security-guide/section_continuous-systems-management.xml247(para)
 msgid ""
 "It is important to include Backup procedures and policies in the overall "
 "System Security Plan. For a good overview of OpenStack's Backup and Recovery"
@@ -8545,7 +8545,7 @@ msgid ""
 "Guide."
 msgstr "全体的なシステムセキュリティプランにバックアップ手順とポリシーを含めることは重要です。OpenStack のバックアップ／リカバリー機能や手順についての適切な概要は、OpenStack 運用ガイドを参照してください。"
 
-#: ./security-guide/section_continuous-systems-management.xml251(title)
+#: ./security-guide/section_continuous-systems-management.xml252(title)
 #: ./security-guide/section_management-interfaces.xml60(title)
 #: ./security-guide/section_management-interfaces.xml120(title)
 #: ./security-guide/section_management-interfaces.xml153(title)
@@ -8555,23 +8555,23 @@ msgstr "全体的なシステムセキュリティプランにバックアップ
 msgid "Security considerations"
 msgstr "セキュリティの課題"
 
-#: ./security-guide/section_continuous-systems-management.xml254(para)
+#: ./security-guide/section_continuous-systems-management.xml255(para)
 msgid ""
 "Ensure only authenticated users and backup clients have access to the backup"
 " server."
 msgstr "認証済みのユーザーおよびバックアップクライアントのみがバックアップサーバーにアクセスできるようにすること"
 
-#: ./security-guide/section_continuous-systems-management.xml258(para)
+#: ./security-guide/section_continuous-systems-management.xml259(para)
 msgid "Use data encryption options for storage and transmission of backups."
 msgstr "バックアップの保存や送信にはデータ暗号化オプションを使用すること"
 
-#: ./security-guide/section_continuous-systems-management.xml262(para)
+#: ./security-guide/section_continuous-systems-management.xml263(para)
 msgid ""
 "Use a dedicated and hardened backup servers. The logs for the backup server "
 "must be monitored daily and accessible by only few individuals."
 msgstr "セキュリティが強化された専用のバックアップサーバーを使用すること。バックアップサーバーのログは日次で監査し、ほんの一握りの人だけがこのログにアクセスできるようにしなければいけません。"
 
-#: ./security-guide/section_continuous-systems-management.xml267(para)
+#: ./security-guide/section_continuous-systems-management.xml268(para)
 msgid ""
 "Test data recovery options regularly. One of the things that can be restored"
 " from secured backups is the images. In case of a compromise, the best "
@@ -8579,38 +8579,38 @@ msgid ""
 "relaunch the instances from the images in the secured backup repository."
 msgstr "データのリカバリーオプションを定期的にテストすること。セキュアなバックアップからリストアが可能なものの 1 つにイメージがあります。情報漏洩などが発生した場合のベストプラクティスは、すぐに実行中のインスタンスを終了して、セキュアなバックアップリポジトリにあるイメージからインスタンスを再起動することです。"
 
-#: ./security-guide/section_continuous-systems-management.xml277(title)
+#: ./security-guide/section_continuous-systems-management.xml278(title)
 #: ./security-guide/section_management-interfaces.xml93(title)
 #: ./security-guide/section_management-interfaces.xml163(title)
 #: ./security-guide/section_management-interfaces.xml202(title)
 msgid "References"
 msgstr "参考資料"
 
-#: ./security-guide/section_continuous-systems-management.xml280(para)
+#: ./security-guide/section_continuous-systems-management.xml281(para)
 msgid ""
 "<citetitle>OpenStack Operations Guide</citetitle> on <link "
 "href=\"http://docs.openstack.org/openstack-"
 "ops/content/backup_and_recovery.html\">backup and recovery</link>"
 msgstr "<citetitle>OpenStack 運用ガイド</citetitle> の <link href=\"http://docs.openstack.org/openstack-ops/content/backup_and_recovery.html\">バックアップとリカバリー</link>"
 
-#: ./security-guide/section_continuous-systems-management.xml288(link)
+#: ./security-guide/section_continuous-systems-management.xml289(link)
 msgid ""
 "http://www.sans.org/reading_room/whitepapers/backup/security-considerations-"
 "enterprise-level-backups_515"
 msgstr "http://www.sans.org/reading_room/whitepapers/backup/security-considerations-enterprise-level-backups_515"
 
-#: ./security-guide/section_continuous-systems-management.xml291(para)
+#: ./security-guide/section_continuous-systems-management.xml292(para)
 msgid ""
 "<link href=\"http://www.music-piracy.com/?p=494\">OpenStack Security "
 "Primer</link>, an entry in the music piracy blog by a former member of the "
 "original NASA project team that created nova"
 msgstr ""
 
-#: ./security-guide/section_continuous-systems-management.xml300(title)
+#: ./security-guide/section_continuous-systems-management.xml301(title)
 msgid "Security auditing tools"
 msgstr "セキュリティ監査ツール"
 
-#: ./security-guide/section_continuous-systems-management.xml301(para)
+#: ./security-guide/section_continuous-systems-management.xml302(para)
 msgid ""
 "Security auditing tools can complement the configuration management tools. "
 "Security auditing tools automate the process of verifying that a large "
@@ -8623,7 +8623,7 @@ msgid ""
 "satisfied, which ones failed, and which ones were not checked."
 msgstr "セキュリティ監査ツールは、構成管理ツールを補完することができます。セキュリティ監査ツールは、セキュリティ制御の多くが指定のシステム設定を満たしていることを確認するプロセスを自動化します。これらのツールは、セキュリティ設定方針文書 (例: STIG  および NSA ガイド) から個別のシステムインストール環境のギャップを埋めるサポートをします。例えば、<link href=\"https://fedorahosted.org/scap-security-guide/\">SCAP</link> は実行中のシステムと事前定義済みのプロファイルを比較することができます。SCAP はプロファイル内のどの制御に対応しているか、問題があるものはどれか、確認されていないものはどれかを詳細にまとめたレポートを出力します。"
 
-#: ./security-guide/section_continuous-systems-management.xml313(para)
+#: ./security-guide/section_continuous-systems-management.xml314(para)
 msgid ""
 "Combining configuration management and security auditing tools creates a "
 "powerful combination. The auditing tools will highlight deployment concerns."
@@ -8633,7 +8633,7 @@ msgid ""
 "ranging from basic hardening to compliance validation."
 msgstr "構成管理とセキュリティ監査ツールを組み合わせることで強力になります。監査ツールはデプロイメントの課題をハイライトし、構成管理ツールは各システムの変更プロセスを簡素化して監査の課題に対応していきます。このような方法で組み合わせて使用することで、これらのツールは、基本的なセキュリティの強化からコンプライアンスのバリデーションに至るまで、このようなセキュリティ要件を満たすクラウドを維持できるようにします。"
 
-#: ./security-guide/section_continuous-systems-management.xml320(para)
+#: ./security-guide/section_continuous-systems-management.xml321(para)
 msgid ""
 "Configuration management and security auditing tools will introduce another "
 "layer of complexity into the cloud. This complexity brings additional "

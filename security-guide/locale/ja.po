@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-04 20:56+0000\n"
-"PO-Revision-Date: 2015-02-04 20:56+0000\n"
+"POT-Creation-Date: 2015-02-05 17:31+0000\n"
+"PO-Revision-Date: 2015-02-05 17:31+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -690,7 +690,7 @@ msgstr "Identity"
 
 #: ./security-guide/ch_identity.xml9(para)
 msgid ""
-"The OpenStack Identity service (keystone) supports multiple methods of "
+"The OpenStack Identity Service (keystone) supports multiple methods of "
 "authentication, including user name &amp; password, LDAP, and external "
 "authentication methods. Upon successful authentication, The Identity Service"
 " provides the user with an authorization token used for subsequent service "
@@ -1132,23 +1132,26 @@ msgstr "ケーススタディ"
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address deployment of "
-"PKI certification authorities (CA) and certificate management."
-msgstr "このケーススタディでは、アリスとボグがPKI認証局(CA)の構築と証明書管理をどのように行うのかについて解説します。"
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case study where Alice is deploying a government cloud and"
+" Bob is deploying a public cloud each with different security requirements. "
+"Here we discuss how Alice and Bob would address deployment of PKI "
+"certification authorities (CA) and certificate management."
+msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml11(title)
 #: ./security-guide/section_case-studies-system-documentation.xml11(title)
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml11(title)
 #: ./security-guide/section_case-studies-database.xml13(title)
 #: ./security-guide/section_case-studies-tenant-data.xml17(title)
-#: ./security-guide/section_case-studies-messaging.xml11(title)
+#: ./security-guide/section_case-studies-messaging.xml14(title)
 #: ./security-guide/section_case-studies-instance-isolation.xml11(title)
-#: ./security-guide/ch_case-studies-identity-management.xml18(title)
-#: ./security-guide/section_case-studies-management-interfaces.xml28(title)
+#: ./security-guide/ch_case-studies-identity-management.xml21(title)
+#: ./security-guide/section_case-studies-management-interfaces.xml26(title)
 #: ./security-guide/section_case-studies-compliance.xml11(title)
 #: ./security-guide/section_case-studies-instance-management.xml11(title)
 #: ./security-guide/section_case-studies-api-endpoints.xml11(title)
-#: ./security-guide/section_case-studies-networking.xml11(title)
+#: ./security-guide/section_case-studies-networking.xml15(title)
 msgid "Alice's private cloud"
 msgstr "アリスのプライベートクラウド"
 
@@ -1170,14 +1173,14 @@ msgstr "アリスは政府機関のクラウドアーキテクトで、彼女の
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml15(title)
 #: ./security-guide/section_case-studies-database.xml27(title)
 #: ./security-guide/section_case-studies-tenant-data.xml50(title)
-#: ./security-guide/section_case-studies-messaging.xml15(title)
+#: ./security-guide/section_case-studies-messaging.xml18(title)
 #: ./security-guide/section_case-studies-instance-isolation.xml17(title)
-#: ./security-guide/ch_case-studies-identity-management.xml43(title)
-#: ./security-guide/section_case-studies-management-interfaces.xml33(title)
+#: ./security-guide/ch_case-studies-identity-management.xml46(title)
+#: ./security-guide/section_case-studies-management-interfaces.xml31(title)
 #: ./security-guide/section_case-studies-compliance.xml18(title)
 #: ./security-guide/section_case-studies-instance-management.xml17(title)
 #: ./security-guide/section_case-studies-api-endpoints.xml33(title)
-#: ./security-guide/section_case-studies-networking.xml29(title)
+#: ./security-guide/section_case-studies-networking.xml33(title)
 msgid "Bob's public cloud"
 msgstr "ボブのパブリッククラウド"
 
@@ -1199,11 +1202,14 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address their system "
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a government cloud "
+"and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address their system "
 "documentation requirements. The documentation suggested above includes "
 "hardware and software records, network diagrams, and system configuration "
 "details."
-msgstr "今回のケーススタディでは、アリスとボブがシステムの文書要件にどのように対処していくか見ていきます。上記で述べた文書には、ハードウェアおよびソフトウェアの記録、ネットワーク図、システム設定の詳細などが含まれます。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml12(para)
 msgid ""
@@ -1231,13 +1237,16 @@ msgstr "今回のケーススタディでは、ボブはアリスと同様の手
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address monitoring and"
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address monitoring and"
 " logging in the public vs a private cloud. In both instances, time "
 "synchronization and a centralized store of logs become extremely important "
 "for performing proper assessments and troubleshooting of anomalies. Just "
 "collecting logs is not very useful, a robust monitoring system must be built"
 " to generate actionable events."
-msgstr "このケーススタディでは、アリスとボブがパブリッククラウドとプライベートクラウドの中で監視とロギングを実行する方法を議論します。どちらのインスタンスでも、時間同期とログの集中保存が適切なアセスメントの実施と変則的な事のトラブル対応に極めて重要となります。単なるログの収集はそれほど有用ではなく、利用できるイベントを生成する為のロバストな監視システムを構築する必要があります。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml12(para)
 msgid ""
@@ -1273,9 +1282,12 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-database.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address database "
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address database "
 "selection and configuration for their respective private and public clouds."
-msgstr "このケーススタディでは、アリスとボブがどのようにデータベースを選択し、それぞれのプライベートクラウドとパブリッククラウド用に設定するのかについて議論します。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-database.xml14(para)
 msgid ""
@@ -2160,11 +2172,13 @@ msgstr "サービス、プロトコル、ポートの表を参照すると、Ope
 
 #: ./security-guide/section_case-studies-tenant-data.xml9(para)
 msgid ""
-"Returning to Alice and Bob, we will use this section to dive into their "
-"particular tenant data privacy requirements. Specifically, we will look into"
-" how Alice and Bob both handle tenant data, data destruction, and data "
-"encryption."
-msgstr "アリスとボブの話に戻ると、このセクションでは、彼らの特定のテナントのデータのプライバシー要件についてより詳細に説明します。具体的には、アリスとボブの両者がテナントのデータ、データの破壊、データの暗号化をどのように対処するかを見てみます。"
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we dive into their particular tenant data privacy "
+"requirements. Specifically, we will look into how Alice and Bob both handle "
+"tenant data, data destruction, and data encryption."
+msgstr ""
 
 #: ./security-guide/section_case-studies-tenant-data.xml18(para)
 msgid ""
@@ -2231,6 +2245,15 @@ msgstr "安全な一時ディスクを提供するために、ボブは暗号化
 
 #: ./security-guide/section_case-studies-messaging.xml9(para)
 msgid ""
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address security "
+"concerns around the messaging service."
+msgstr ""
+
+#: ./security-guide/section_case-studies-messaging.xml11(para)
+msgid ""
 "The message queue is a critical piece of infrastructure that supports a "
 "number of OpenStack services but is most strongly associated with the "
 "Compute service. Due to the nature of the message queue service, Alice and "
@@ -2245,13 +2268,13 @@ msgid ""
 "OpenStack development process."
 msgstr ""
 
-#: ./security-guide/section_case-studies-messaging.xml12(para)
+#: ./security-guide/section_case-studies-messaging.xml15(para)
 msgid ""
 "In this case, Alice's controls are the same as Bob's controls, which are "
 "described below."
 msgstr ""
 
-#: ./security-guide/section_case-studies-messaging.xml16(para)
+#: ./security-guide/section_case-studies-messaging.xml19(para)
 msgid ""
 "Bob assumes the infrastructure or networks underpinning the Compute service "
 "could become compromised, therefore he recognizes the importance of "
@@ -2263,7 +2286,7 @@ msgid ""
 "credentials to override the controls."
 msgstr ""
 
-#: ./security-guide/section_case-studies-messaging.xml17(para)
+#: ./security-guide/section_case-studies-messaging.xml20(para)
 msgid ""
 "Additionally, Bob adds strong network ACL rulesets to enforce which "
 "endpoints can communicate with the message servers. This second control "
@@ -5796,10 +5819,13 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-instance-isolation.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would ensure that their "
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would ensure that their "
 "instances are properly isolated. First we consider hypervisor selection, and"
 " then techniques for hardening QEMU and applying mandatory access controls."
-msgstr "このケーススタディでは、アリスとボブが所有するインスタンスが正しく分離されていることを確認する方法について説明します。まずはハイパーバイザーの選択とQEMUの強化、強制アクセスコントロールの適用について検討します。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-instance-isolation.xml12(para)
 msgid ""
@@ -6700,14 +6726,17 @@ msgstr "ケーススタディ: ID 管理"
 
 #: ./security-guide/ch_case-studies-identity-management.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address configuration "
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address configuration "
 "of OpenStack core services. These include the Identity service, dashboard, "
 "and Compute services. Alice will be concerned with integration into the "
 "existing government directory services, while Bob will need to provide "
 "access to the public."
-msgstr "このケーススタディでは、アリスとボブが OpenStack コアサービスの設定をどのように取り扱うかを議論します。これらには、Identity Service、Dashboard、Compute が含まれます。アリスは既存の政府ディレクトリサービスに統合することに関心があります。ボブはパブリックにアクセス権を提供する必要があります。"
+msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml19(para)
+#: ./security-guide/ch_case-studies-identity-management.xml22(para)
 msgid ""
 "Alice's enterprise has a well-established directory service with two-factor "
 "authentication for all users. She configures the Identity service to support"
@@ -6719,7 +6748,7 @@ msgid ""
 "access."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml30(para)
+#: ./security-guide/ch_case-studies-identity-management.xml33(para)
 msgid ""
 "Alice also deploys the dashboard to manage many aspects of the cloud. She "
 "deploys the dashboard with HSTS to ensure that only HTTPS is used. The "
@@ -6727,13 +6756,13 @@ msgid ""
 " name system."
 msgstr "アリスはクラウドのさまざまな観点を管理するために Dashboard も導入します。必ず HTTPS のみを使用するために HSTS と共に Dashboard を導入します。Dashboard はプライベートネットワークの DNS の内部サブドメインの中にあります。"
 
-#: ./security-guide/ch_case-studies-identity-management.xml36(para)
+#: ./security-guide/ch_case-studies-identity-management.xml39(para)
 msgid ""
 "Alice decides to use SPICE instead of VNC for the virtual console. She wants"
 " to take advantage of the emerging capabilities in SPICE."
 msgstr "アリスは仮想コンソールに VNC の代わりに SPICE を使用することを決めました。SPICE の先進的な機能の利点を得ようと思います。"
 
-#: ./security-guide/ch_case-studies-identity-management.xml44(para)
+#: ./security-guide/ch_case-studies-identity-management.xml47(para)
 msgid ""
 "Because Bob must support authentication for the general public, he decides "
 "to use authentication based on a user name and password. He has concerns "
@@ -6746,7 +6775,7 @@ msgid ""
 "compromised administrator passwords."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml56(para)
+#: ./security-guide/ch_case-studies-identity-management.xml59(para)
 msgid ""
 "Bob also deploys the dashboard to manage many aspects of the cloud. He "
 "deploys the dashboard with HSTS to ensure that only HTTPS is used. He has "
@@ -6755,7 +6784,7 @@ msgid ""
 "prevent resource exhaustion."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml63(para)
+#: ./security-guide/ch_case-studies-identity-management.xml66(para)
 msgid ""
 "Bob decides to use VNC for his virtual console for its maturity and security"
 " features."
@@ -7684,27 +7713,29 @@ msgstr ""
 msgid ""
 "Previously we discussed typical OpenStack management interfaces and "
 "associated backplane issues. We will now approach these issues by returning "
-"to our Alice and Bob case study. Specifically, we will look into how both "
-"Alice and Bob will address:"
-msgstr "一般的な OpenStack 管理インターフェースと関連のバックプレーンの問題について、ここまでに議論しました。再度、アリスとボブのケーススタディに戻って、これらの問題を見ていきます。特に、アリスとボブが以下の点をどのように対応したかを確認していきます。"
+"to the Alice and Bob case studies (See <xref linkend=\"introduction-to-case-"
+"studies\"/> ) where Alice is deploying a government cloud and Bob is "
+"deploying a public cloud each with different security requirements. In this "
+"section, we will look into how both Alice and Bob will address:"
+msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml15(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml13(para)
 msgid "Cloud administration"
 msgstr "クラウド管理"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml18(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml16(para)
 msgid "Self service"
 msgstr "セルフサービス"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml21(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml19(para)
 msgid "Data replication and recovery"
 msgstr "データの複製およびリカバリー"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml24(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml22(para)
 msgid "SLA and security monitoring"
 msgstr "SLA およびセキュリティの監視"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml29(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml27(para)
 msgid ""
 "When building her private cloud, while air-gapped, Alice still needs to "
 "consider her service management interfaces. Before deploying her private "
@@ -7717,7 +7748,7 @@ msgid ""
 " API services."
 msgstr "プライベートクラウドを構築する際、ネットワークが物理的に分離されていますが、アリスはサービス管理インターフェースを検討する必要があります。プライベートクラウドをデプロイする前に、システム文書を書き上げました。特に、どの OpenStack サービスが各セキュリティドメインに存在するかを特定しました。そこから、アリスは、IDS、SSL、暗号化、物理的なネットワークの分離を組み合わせてデプロイすることで、管理インターフェースへのアクセスをさらに制限しました。また、高可用性や冗長サービスも必要とするため、様々な OpenStack API サービスに対してインフラストラクチャーの冗長設定を行いました。"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml30(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml28(para)
 msgid ""
 "Alice also needs to provide assurances that the physical servers and "
 "hypervisors have been built from a known secure state into a well-defined "
@@ -7732,7 +7763,7 @@ msgid ""
 "provided by the hardware."
 msgstr "また、物理サーバーとハイパーバイザーは既知のセキュアな状態から十分に定義された設定へと確実に構築されるようにする必要があります。これを可能にするには、構成管理プラットフォームを合わせて使用して、準拠する必要のある規格や規定に従い各マシンを設定していきます。また、構成管理プラットフォームは、クラウドの状態を定期的に報告して、通常以外のことが発生した場合に既知の状態に修正することができます。さらに、PXE システムを使用することで、既知のベースイメージからノードを構築してハードウェア保証を提供することができます。ブートプロセス時に、そのハードウェアから提供される Intel TXT や関連の信頼できるブート技術を有効にすることでさらなる保証を確保できます。"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml34(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml32(para)
 msgid ""
 "As a public cloud provider, Bob is concerned with both the continuous "
 "availability of management interfaces and the security of transactions to "
@@ -7744,7 +7775,7 @@ msgid ""
 "networks."
 msgstr "パブリッククラウドのプロバイダーとして、ボブは管理インターフェースの継続的な可用性と、管理インターフェースへのトランザクションのセキュリティの両方を考慮しています。このように、ボブは、クラウドが実行するサービスに対して、冗長化された OpenStack API エンドポイントを実装します。さらに、パブリックネットワークでは、SSL を使用して、顧客とクラウドインターフェースの間のトランザクションをすべて暗号化します。クラウドの運用を分離するために、ボブは管理、インスタンスマイグレーション、ストレージネットワークを物理的に分離しました。"
 
-#: ./security-guide/section_case-studies-management-interfaces.xml35(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml33(para)
 msgid ""
 "To ease scaling and reduce management overhead Bob implements a "
 "configuration management system. For customer data assurances, Bob offers a "
@@ -8137,11 +8168,14 @@ msgstr "コンプライアンス"
 
 #: ./security-guide/section_case-studies-compliance.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address common "
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address common "
 "compliance requirements. The preceding chapter refers to a wide variety of "
 "compliance certifications and standards. Alice will address compliance in a "
 "private cloud, while Bob will be focused on compliance for a public cloud."
-msgstr "このケーススタディでは、アリスとボブがどのように一般的なコンプライアンス要件に対応するかを説明します。これまでの章で、さまざまなコンプライアンス認証と標準について言及しました。アリスはプライベートクラウドでコンプライアンスに取り組み、いっぽうボブはパブリッククラウド向けのコンプライアンスに注力します。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-compliance.xml12(para)
 msgid ""
@@ -8825,10 +8859,13 @@ msgstr "更なる情報は、<citetitle>OpenStack Cloud Administrator Guide</cit
 
 #: ./security-guide/section_case-studies-instance-management.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would architect their clouds"
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would architect their clouds"
 " with respect to instance entropy, scheduling instances, trusted images, and"
 " instance migrations."
-msgstr "このケーススタディでは、アリスとボブがインスタンスのエントロピー、インスタンスのスケジューリング、信頼できるイメージ、インスタンスのマイグレーションを尊重しつつ、彼らのクラウドを設計する方法について議論します。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml12(para)
 msgid ""
@@ -8946,12 +8983,15 @@ msgstr "包括的なプライバシー管理には、十分な準備、考慮と
 
 #: ./security-guide/section_case-studies-api-endpoints.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address endpoint "
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address endpoint "
 "configuration to secure their private and public clouds. Alice's cloud is "
 "not publicly accessible, but she is still concerned about securing the "
 "endpoints against improper use. Bob's cloud, being public, must take "
 "measures to reduce the risk of attacks by external adversaries."
-msgstr "このケーススタディでは、アリスとボブがどうやってプライベートクラウドとパブリッククラウドのエンドポイント設定を堅牢化するかについて議論します。\nアリスのプライベートクラウドは公開されたものではありませんが、不適切な使い方からエンドポイントを守る方法について憂慮しています。ボブのパブリッククラウドは、外部からの攻撃に対してリスクを低減する措置を講じなければいけません。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml12(para)
 msgid ""
@@ -9018,11 +9058,14 @@ msgstr "本項には、OpenStack Networking を実装する際に検討すべき
 
 #: ./security-guide/section_case-studies-networking.xml9(para)
 msgid ""
-"In this case study we discuss how Alice and Bob would address providing "
+"Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced "
+"the Alice and Bob case studies where Alice is deploying a private government"
+" cloud and Bob is deploying a public cloud each with different security "
+"requirements. Here we discuss how Alice and Bob would address providing "
 "networking services to the user."
-msgstr "このケーススタディでは、アリスとボブがどのようにユーザに対してネットワーク提供を扱うかを議論します。"
+msgstr ""
 
-#: ./security-guide/section_case-studies-networking.xml12(para)
+#: ./security-guide/section_case-studies-networking.xml16(para)
 msgid ""
 "A key objective of Alice's cloud is to integrate with the existing auth "
 "services and security resources. The key design parameters for this private "
@@ -9039,7 +9082,7 @@ msgid ""
 "infrastructure."
 msgstr "アリスのクラウドの主目的は、既存の認証サービスとセキュリティリソースを用いたインテグレーションです。このプライベートクラウドのキーとなる設計パラメータは、テナント・ネットワーク・ワークロードタイプの限定されたスコープです。この環境は、どの利用可能なネットワークリソースがテナントから利用可能であり、どの様々なデフォルトクォータとセキュリティポリシーが利用可能かを制限するために設計される可能性があります。ネットワークポリシーエンジンは、ネットワークリソースの作成と変更を制限する為に修正される可能性があります。この環境では、アリスはインスタンス単位のセキュリティグループポリシーの適用における nova-network か、neutron のポートベースのセキュリティグループポリシーの適用のいずれを希望するかも知れません。この環境における L2 アイソレーションは VLAN タギングを用います。VLAN タグの利用は、物理インフラの既存の機能やツールの利用によるテナントトラフィックの素晴らしい可視性が得られます。"
 
-#: ./security-guide/section_case-studies-networking.xml30(para)
+#: ./security-guide/section_case-studies-networking.xml34(para)
 msgid ""
 "A major business driver for Bob is to provide an advanced networking "
 "services to his customers. Bob's customers would like to deploy multi-tiered"
@@ -9053,7 +9096,7 @@ msgid ""
 "important that per-tenant quota's be implemented in this environment."
 msgstr "ボブの主要なビジネス目的は彼の顧客に先進的なネットワークサービスを提供する事です。ボブの顧客はマルチタイアのアプリケーションスタックをデプロイしようとしています。マルチタイアのアプリケーションは、既存の商用アプリケーションや新しくデプロイされるアプリケーションのいずれかです。ボブのパブリッククラウドはマルチテナントの商用サービスである為、この環境の L2 アイソレーションに使用する選択肢は、オーバレイネットワークです。ボブのクラウドの他の側面は、必要に応じて顧客が利用可能なネットワークサービスをプロビジョンできるセルフサービス指向です。これらのネットワークサービスは、L2 ネットワーク、L3 ルーティング、ネットワーク<glossterm>ACL</glossterm>、NAT を含みます。\n\nIt is important that per-tenant quota's be implemented in this environment."
 
-#: ./security-guide/section_case-studies-networking.xml43(para)
+#: ./security-guide/section_case-studies-networking.xml47(para)
 msgid ""
 "An added benefit with utilizing OpenStack Networking is when new advanced "
 "networking services become available, these new features can be easily "

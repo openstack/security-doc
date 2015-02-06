@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-05 06:14+0000\n"
+"POT-Creation-Date: 2015-02-06 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -420,7 +420,7 @@ msgid "Identity"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:9(para)
-msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity Service provides the user with an authorization token used for subsequent service requests."
+msgid "The OpenStack Identity Service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity Service provides the user with an authorization token used for subsequent service requests."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:14(para)
@@ -652,10 +652,10 @@ msgid "Case studies"
 msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address deployment of PKI certification authorities (CA) and certificate management."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case study where Alice is deploying a government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address deployment of PKI certification authorities (CA) and certificate management."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:13(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:11(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/ch_case-studies-identity-management.xml:18(title) ./security-guide/section_case-studies-management-interfaces.xml:28(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:11(title)
+#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:13(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:14(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/ch_case-studies-identity-management.xml:21(title) ./security-guide/section_case-studies-management-interfaces.xml:26(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:15(title)
 msgid "Alice's private cloud"
 msgstr ""
 
@@ -663,7 +663,7 @@ msgstr ""
 msgid "Alice as a cloud architect within a government agency knows that her agency operates its own certification authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a disconnected from the Internet network, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:15(title) ./security-guide/section_case-studies-system-documentation.xml:16(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:15(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:43(title) ./security-guide/section_case-studies-management-interfaces.xml:33(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:29(title)
+#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:15(title) ./security-guide/section_case-studies-system-documentation.xml:16(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:31(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:33(title)
 msgid "Bob's public cloud"
 msgstr ""
 
@@ -672,7 +672,7 @@ msgid "Bob is architecting a public cloud and needs to ensure that the publicly 
 msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address their system documentation requirements. The documentation suggested above includes hardware and software records, network diagrams, and system configuration details."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address their system documentation requirements. The documentation suggested above includes hardware and software records, network diagrams, and system configuration details."
 msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml:12(para)
@@ -688,7 +688,7 @@ msgid "In this case, Bob will approach these steps the same as Alice."
 msgstr ""
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address monitoring and logging in the public vs a private cloud. In both instances, time synchronization and a centralized store of logs become extremely important for performing proper assessments and troubleshooting of anomalies. Just collecting logs is not very useful, a robust monitoring system must be built to generate actionable events."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address monitoring and logging in the public vs a private cloud. In both instances, time synchronization and a centralized store of logs become extremely important for performing proper assessments and troubleshooting of anomalies. Just collecting logs is not very useful, a robust monitoring system must be built to generate actionable events."
 msgstr ""
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml:12(para)
@@ -700,7 +700,7 @@ msgid "When it comes to logging, as a public cloud provider, Bob is interested i
 msgstr ""
 
 #: ./security-guide/section_case-studies-database.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address database selection and configuration for their respective private and public clouds."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address database selection and configuration for their respective private and public clouds."
 msgstr ""
 
 #: ./security-guide/section_case-studies-database.xml:14(para)
@@ -1234,7 +1234,7 @@ msgid "Referencing a table of services, protocols and ports can help in understa
 msgstr ""
 
 #: ./security-guide/section_case-studies-tenant-data.xml:9(para)
-msgid "Returning to Alice and Bob, we will use this section to dive into their particular tenant data privacy requirements. Specifically, we will look into how Alice and Bob both handle tenant data, data destruction, and data encryption."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we dive into their particular tenant data privacy requirements. Specifically, we will look into how Alice and Bob both handle tenant data, data destruction, and data encryption."
 msgstr ""
 
 #: ./security-guide/section_case-studies-tenant-data.xml:18(para)
@@ -1278,18 +1278,22 @@ msgid "To provide secure ephemeral instance storage, Bob implements qcow2 files 
 msgstr ""
 
 #: ./security-guide/section_case-studies-messaging.xml:9(para)
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address security concerns around the messaging service."
+msgstr ""
+
+#: ./security-guide/section_case-studies-messaging.xml:11(para)
 msgid "The message queue is a critical piece of infrastructure that supports a number of OpenStack services but is most strongly associated with the Compute service. Due to the nature of the message queue service, Alice and Bob have similar security concerns. One of the larger concerns that remains is that many systems have access to this queue and there is no way for a consumer of the queue messages to verify which host or service placed the messages on the queue. An attacker who is able to successfully place messages on the queue is able to create and delete VM instances, attach the block storage of any tenant and a myriad of other malicious actions. There are a number of solutions anticipated in the near future, with several proposals for message signing and encryption making their way through the OpenStack development process."
 msgstr ""
 
-#: ./security-guide/section_case-studies-messaging.xml:12(para)
+#: ./security-guide/section_case-studies-messaging.xml:15(para)
 msgid "In this case, Alice's controls are the same as Bob's controls, which are described below."
 msgstr ""
 
-#: ./security-guide/section_case-studies-messaging.xml:16(para)
+#: ./security-guide/section_case-studies-messaging.xml:19(para)
 msgid "Bob assumes the infrastructure or networks underpinning the Compute service could become compromised, therefore he recognizes the importance of hardening the system by restricting access to the message queue. In order to accomplish this task Bob deploys his RabbitMQ servers with SSL and X.509 client auth for access control. Hardening activities assists in limiting the capabilities of a malicious user that has compromised the system by disallowing queue access, provided that this user does not have valid credentials to override the controls."
 msgstr ""
 
-#: ./security-guide/section_case-studies-messaging.xml:17(para)
+#: ./security-guide/section_case-studies-messaging.xml:20(para)
 msgid "Additionally, Bob adds strong network ACL rulesets to enforce which endpoints can communicate with the message servers. This second control provides some additional assurance should the other protections fail."
 msgstr ""
 
@@ -3434,7 +3438,7 @@ msgid "Learn more about how to contribute to the OpenStack docs: <link href=\"ht
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-isolation.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would ensure that their instances are properly isolated. First we consider hypervisor selection, and then techniques for hardening QEMU and applying mandatory access controls."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would ensure that their instances are properly isolated. First we consider hypervisor selection, and then techniques for hardening QEMU and applying mandatory access controls."
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-isolation.xml:12(para)
@@ -3956,30 +3960,30 @@ msgid "Case studies: Identity management"
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address configuration of OpenStack core services. These include the Identity service, dashboard, and Compute services. Alice will be concerned with integration into the existing government directory services, while Bob will need to provide access to the public."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address configuration of OpenStack core services. These include the Identity service, dashboard, and Compute services. Alice will be concerned with integration into the existing government directory services, while Bob will need to provide access to the public."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml:19(para)
+#: ./security-guide/ch_case-studies-identity-management.xml:22(para)
 msgid "Alice's enterprise has a well-established directory service with two-factor authentication for all users. She configures the Identity service to support an external authentication service supporting authentication with government-issued access cards. She also uses an external LDAP server to provide role information for the roles that are integrated with the access control policy. Due to FedRAMP compliance requirements, Alice implements two-factor authentication on the management network for all administrator access."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml:30(para)
+#: ./security-guide/ch_case-studies-identity-management.xml:33(para)
 msgid "Alice also deploys the dashboard to manage many aspects of the cloud. She deploys the dashboard with HSTS to ensure that only HTTPS is used. The dashboard resides within an internal subdomain of the private network domain name system."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml:36(para)
+#: ./security-guide/ch_case-studies-identity-management.xml:39(para)
 msgid "Alice decides to use SPICE instead of VNC for the virtual console. She wants to take advantage of the emerging capabilities in SPICE."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml:44(para)
+#: ./security-guide/ch_case-studies-identity-management.xml:47(para)
 msgid "Because Bob must support authentication for the general public, he decides to use authentication based on a user name and password. He has concerns about brute force attacks attempting to crack user passwords, so he also uses an external authentication extension that throttles the number of failed login attempts. Bob's management network is separate from the other networks within his cloud, but can be reached from his corporate network through ssh. As recommended earlier, Bob requires administrators to use two-factor authentication on the Management network to reduce the risk of compromised administrator passwords."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml:56(para)
+#: ./security-guide/ch_case-studies-identity-management.xml:59(para)
 msgid "Bob also deploys the dashboard to manage many aspects of the cloud. He deploys the dashboard with HSTS to ensure that only HTTPS is used. He has ensured that the dashboard is deployed on a second-level domain due to the limitations of the same-origin policy. He also disables <placeholder-1/> to prevent resource exhaustion."
 msgstr ""
 
-#: ./security-guide/ch_case-studies-identity-management.xml:63(para)
+#: ./security-guide/ch_case-studies-identity-management.xml:66(para)
 msgid "Bob decides to use VNC for his virtual console for its maturity and security features."
 msgstr ""
 
@@ -4608,38 +4612,38 @@ msgid "National Information Assurance Partnership, National Security Telecommuni
 msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml:9(para)
-msgid "Previously we discussed typical OpenStack management interfaces and associated backplane issues. We will now approach these issues by returning to our Alice and Bob case study. Specifically, we will look into how both Alice and Bob will address:"
+msgid "Previously we discussed typical OpenStack management interfaces and associated backplane issues. We will now approach these issues by returning to the Alice and Bob case studies (See <xref linkend=\"introduction-to-case-studies\"/> ) where Alice is deploying a government cloud and Bob is deploying a public cloud each with different security requirements. In this section, we will look into how both Alice and Bob will address:"
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:15(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:13(para)
 msgid "Cloud administration"
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:18(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:16(para)
 msgid "Self service"
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:21(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:19(para)
 msgid "Data replication and recovery"
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:24(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:22(para)
 msgid "SLA and security monitoring"
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:29(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:27(para)
 msgid "When building her private cloud, while air-gapped, Alice still needs to consider her service management interfaces. Before deploying her private cloud, Alice has completed her system documentation. Specifically she has identified which OpenStack services will exist in each security domain. From there Alice has further restricted access to management interfaces by deploying a combination of IDS, SSL encryption, and physical network isolation. Additionally, Alice requires high availability and redundant services. Thus, Alice sets up redundant infrastructure for various OpenStack API services."
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:30(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:28(para)
 msgid "Alice also needs to provide assurances that the physical servers and hypervisors have been built from a known secure state into a well-defined configuration. To enable this, Alice uses a combination of a Configuration Management platform to configure each machine according to the standards and regulations she must comply with. It will also enable Alice to report periodically on the state of her cloud and perform remediation to a known state should anything be out of the ordinary. Additionally, Alice provides hardware assurances by using a PXE system to build her nodes from a known set of base images. During the boot process, Alice provides further assurances by enabling Intel TXT and related trusted boot technologies provided by the hardware."
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:34(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:32(para)
 msgid "As a public cloud provider, Bob is concerned with both the continuous availability of management interfaces and the security of transactions to the management interfaces. To that end Bob implements multiple redundant OpenStack API endpoints for the services his cloud will run. Additionally on the public network Bob uses SSL to encrypt all transactions between his customers and his cloud interfaces. To isolate his cloud operations Bob has physically isolated his management, instance migration, and storage networks."
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:35(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:33(para)
 msgid "To ease scaling and reduce management overhead Bob implements a configuration management system. For customer data assurances, Bob offers a backup as a service product as requirements will vary between customers. Finally, Bob does not provide a \"baremetal\" or the ability to schedule an entire node, so to reduce management overhead and increase operational efficiency Bob does not implement any node boot time security."
 msgstr ""
 
@@ -4842,7 +4846,7 @@ msgid "Compliance"
 msgstr ""
 
 #: ./security-guide/section_case-studies-compliance.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address common compliance requirements. The preceding chapter refers to a wide variety of compliance certifications and standards. Alice will address compliance in a private cloud, while Bob will be focused on compliance for a public cloud."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address common compliance requirements. The preceding chapter refers to a wide variety of compliance certifications and standards. Alice will address compliance in a private cloud, while Bob will be focused on compliance for a public cloud."
 msgstr ""
 
 #: ./security-guide/section_case-studies-compliance.xml:12(para)
@@ -5238,7 +5242,7 @@ msgid "For additional information see the <link href=\"http://docs.openstack.org
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would architect their clouds with respect to instance entropy, scheduling instances, trusted images, and instance migrations."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would architect their clouds with respect to instance entropy, scheduling instances, trusted images, and instance migrations."
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:12(para)
@@ -5290,7 +5294,7 @@ msgid "Comprehensive privacy management requires significant preparation, though
 msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address endpoint configuration to secure their private and public clouds. Alice's cloud is not publicly accessible, but she is still concerned about securing the endpoints against improper use. Bob's cloud, being public, must take measures to reduce the risk of attacks by external adversaries."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address endpoint configuration to secure their private and public clouds. Alice's cloud is not publicly accessible, but she is still concerned about securing the endpoints against improper use. Bob's cloud, being public, must take measures to reduce the risk of attacks by external adversaries."
 msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:12(para)
@@ -5314,18 +5318,18 @@ msgid "This section is a high-level overview of what processes and best practice
 msgstr ""
 
 #: ./security-guide/section_case-studies-networking.xml:9(para)
-msgid "In this case study we discuss how Alice and Bob would address providing networking services to the user."
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address providing networking services to the user."
 msgstr ""
 
-#: ./security-guide/section_case-studies-networking.xml:12(para)
+#: ./security-guide/section_case-studies-networking.xml:16(para)
 msgid "A key objective of Alice's cloud is to integrate with the existing auth services and security resources. The key design parameters for this private cloud are a limited scope of tenants, networks and workload type. This environment can be designed to limit what available network resources are available to the tenant and what are the various default quotas and security policies are available. The network policy engine can be modified to restrict creation and changes to network resources. In this environment, Alice might want to leverage nova-network in the application of security group polices on a per instance basis vs. neutron's application of security group polices on a per port basis. L2 isolation in this environment would leverage VLAN tagging. The use of VLAN tags will allow great visibility of tenant traffic by leveraging existing features and tools of the physical infrastructure."
 msgstr ""
 
-#: ./security-guide/section_case-studies-networking.xml:30(para)
+#: ./security-guide/section_case-studies-networking.xml:34(para)
 msgid "A major business driver for Bob is to provide an advanced networking services to his customers. Bob's customers would like to deploy multi-tiered application stacks. This multi-tiered application are either existing enterprise application or newly deployed applications. Since Bob's public cloud is a multi-tenancy enterprise service, the choice to use for L2 isolation in this environment is to use overlay networking. Another aspect of Bob's cloud is the self-service aspect where the customer can provision available networking services as needed. These networking services encompass L2 networks, L3 Routing, Network <glossterm>ACL</glossterm> and NAT. It is important that per-tenant quota's be implemented in this environment."
 msgstr ""
 
-#: ./security-guide/section_case-studies-networking.xml:43(para)
+#: ./security-guide/section_case-studies-networking.xml:47(para)
 msgid "An added benefit with utilizing OpenStack Networking is when new advanced networking services become available, these new features can be easily provided to the end customers."
 msgstr ""
 

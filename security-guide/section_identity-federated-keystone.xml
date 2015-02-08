@@ -106,7 +106,7 @@
          (for example, using the SQL driver). The external IdP is responsible for
           authenticating users, and communicates the result of the authentication
           to Identity service using SAML assertions. Identity service maps the
-          SAML assertions to Keystone user groups and assignments created in
+          SAML assertions to keystone user groups and assignments created in
           Identity service.</para>
         <section xml:id="section_identity-enabling-federation">
           <title>Enabling Federation</title>
@@ -303,7 +303,7 @@ service_v3</programlisting>
             </procedure>
             <para>Ideally, to test that the Identity Provider and the Identity
            service are communicating, navigate to the protected URL and attempt
-           to sign in. If you get a response back from <literal>keystone</literal>,
+           to sign in. If you get a response back from keystone,
            even if it is a wrong response, indicates the communication.</para>
         </section>
         <section xml:id="section_identity-federated-config">
@@ -435,7 +435,7 @@ idp_contact_type=technical</programlisting>
          a new region with an <literal>ID</literal> of <replaceable>BETA</replaceable>,
          and <literal>URL</literal> of <replaceable>https://beta.com/Shibboleth.sso/SAML2/POST</replaceable>.
          This URL will be used when creating a SAML assertion for <replaceable>BETA</replaceable>,
-         and signed by the current Keystone Identity Provider.</para>
+         and signed by the current keystone Identity Provider.</para>
 <screen><prompt>$</prompt> <userinput>curl -s -X PUT \
   -H "X-Auth-Token: $OS_TOKEN" \
   -H "Content-Type: application/json" \
@@ -445,14 +445,14 @@ idp_contact_type=technical</programlisting>
       <section xml:id="section-testing-federated-identity">
         <title>Testing it all out</title>
         <para>Lastly, if a scoped token and a Service Provider region are presented
-         to Keystone, the result will be a full SAML Assertion, signed by the IdP
-         Keystone, specifically intended for the Service Provider Keystone.</para>
+         to keystone, the result will be a full SAML Assertion, signed by the IdP
+         keystone, specifically intended for the Service Provider keystone.</para>
 <screen><prompt>$</prompt> <userinput>curl -s -X POST \
   -H "Content-Type: application/json" \
   -d '{"auth": {"scope": {"region": {"id": "<replaceable>BETA</replaceable>"}}, "identity": {"token": {"id": "<replaceable>d793d935b9c343f783955cf39ee7dc3c</replaceable>"}, "methods": ["token"]}}}' \
   http://localhost:5000/v3/auth/OS-FEDERATION/saml2</userinput></screen>
         <para>At this point the SAML Assertion can be sent to the Service Provider
-         Keystone, and a valid OpenStack token, issued by a Service Provider Keystone,
+         keystone, and a valid OpenStack token, issued by a Service Provider keystone,
          will be returned.</para>
       </section>
     </section>

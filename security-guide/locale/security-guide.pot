@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-06 06:01+0000\n"
+"POT-Creation-Date: 2015-02-09 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1510,7 +1510,7 @@ msgid "Configuring Identity service for Federation"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:105(para)
-msgid "Federated users are not mirrored in the Identity service back end (for example, using the SQL driver). The external IdP is responsible for authenticating users, and communicates the result of the authentication to Identity service using SAML assertions. Identity service maps the SAML assertions to Keystone user groups and assignments created in Identity service."
+msgid "Federated users are not mirrored in the Identity service back end (for example, using the SQL driver). The external IdP is responsible for authenticating users, and communicates the result of the authentication to Identity service using SAML assertions. Identity service maps the SAML assertions to keystone user groups and assignments created in Identity service."
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:112(title)
@@ -1690,7 +1690,7 @@ msgid "Create the Federation extension tables if using the provided SQL back end
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:304(para)
-msgid "Ideally, to test that the Identity Provider and the Identity service are communicating, navigate to the protected URL and attempt to sign in. If you get a response back from <literal>keystone</literal>, even if it is a wrong response, indicates the communication."
+msgid "Ideally, to test that the Identity Provider and the Identity service are communicating, navigate to the protected URL and attempt to sign in. If you get a response back from keystone, even if it is a wrong response, indicates the communication."
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:310(title)
@@ -1826,7 +1826,7 @@ msgid "Create a region for the Service Provider"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:434(para)
-msgid "Create a new region for the service provider, for example, create a new region with an <literal>ID</literal> of <replaceable>BETA</replaceable>, and <literal>URL</literal> of <replaceable>https://beta.com/Shibboleth.sso/SAML2/POST</replaceable>. This URL will be used when creating a SAML assertion for <replaceable>BETA</replaceable>, and signed by the current Keystone Identity Provider."
+msgid "Create a new region for the service provider, for example, create a new region with an <literal>ID</literal> of <replaceable>BETA</replaceable>, and <literal>URL</literal> of <replaceable>https://beta.com/Shibboleth.sso/SAML2/POST</replaceable>. This URL will be used when creating a SAML assertion for <replaceable>BETA</replaceable>, and signed by the current keystone Identity Provider."
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:442(replaceable)
@@ -1842,7 +1842,7 @@ msgid "Testing it all out"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:447(para)
-msgid "Lastly, if a scoped token and a Service Provider region are presented to Keystone, the result will be a full SAML Assertion, signed by the IdP Keystone, specifically intended for the Service Provider Keystone."
+msgid "Lastly, if a scoped token and a Service Provider region are presented to keystone, the result will be a full SAML Assertion, signed by the IdP keystone, specifically intended for the Service Provider keystone."
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:452(replaceable)
@@ -1850,7 +1850,7 @@ msgid "d793d935b9c343f783955cf39ee7dc3c"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:454(para)
-msgid "At this point the SAML Assertion can be sent to the Service Provider Keystone, and a valid OpenStack token, issued by a Service Provider Keystone, will be returned."
+msgid "At this point the SAML Assertion can be sent to the Service Provider keystone, and a valid OpenStack token, issued by a Service Provider keystone, will be returned."
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:461(para)
@@ -3832,7 +3832,7 @@ msgid "Each manufacturer must provide the BIOS and firmware code for their serve
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:223(para)
-msgid "The initial program loader (IPL) code will most likely be the PXE firmware, assuming the node deployment strategy outlined above. Therefore, the secure boot or boot attestation process can measure all of the early stage boot code, such as, bios, firmware, and the like, the PXE firmware, and the node kernel. Ensuring that each node has the correct versions of these pieces installed provides a solid foundation on which to build the rest of the node software stack."
+msgid "The initial program loader (IPL) code will most likely be the PXE firmware, assuming the node deployment strategy outlined above. Therefore, the secure boot or boot attestation process can measure all of the early stage boot code, such as BIOS, firmware, the PXE firmware, and the kernel image. Ensuring that each node has the correct versions of these pieces installed provides a solid foundation on which to build the rest of the node software stack."
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:231(para)

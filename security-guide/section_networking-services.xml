@@ -63,7 +63,7 @@
       </section>
       <section xml:id="networking-services-network-services-load-balancing">
         <title>Load balancing</title>
-        <para>Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation, is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports.</para>
+        <para>Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports.</para>
       </section>
       <section xml:id="networking-services-network-services-firewalls">
         <title>Firewalls</title>

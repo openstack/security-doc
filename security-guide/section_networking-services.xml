@@ -7,7 +7,7 @@
   <?dbhtml stop-chunking?>
     <title>Networking services</title>
     <para>In the initial architectural phases of designing your OpenStack Network infrastructure it is important to ensure appropriate expertise is available to assist with the design of the physical networking infrastructure, to identify proper security controls and auditing mechanisms.</para>
-    <para>OpenStack Networking adds a layer of virtualized network services - giving tenants the capability to architect their own, virtual networks. These virtualized services are not as currently as mature as their traditional networking counterparts. It is important to be aware of the current state of these virtualized services and what controls may need to be implemented at the virtualized and traditional network boundary.</para>
+    <para>OpenStack Networking adds a layer of virtualized network services - giving tenants the capability to architect their own virtual networks. These virtualized services are not as currently as mature as their traditional networking counterparts. It is important to be aware of the current state of these virtualized services and what controls may need to be implemented at the virtualized and traditional network boundary.</para>
     <section xml:id="networking-services-l2-isolation-using-vlans-and-tunneling">
       <title>L2 isolation using VLANs and tunneling</title>
       <para>OpenStack networking can employ two different mechanisms for traffic segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging) or L2 tunnels using GRE encapsulation. Which method you choose for traffic segregation and isolation is determined by the scope and scale of your OpenStack deployment.</para>

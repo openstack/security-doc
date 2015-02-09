@@ -77,7 +77,13 @@
       <title>Data disposal</title>
       <para>OpenStack operators should strive to provide a certain level of tenant data disposal assurance. Best practices suggest that the operator sanitize cloud system media (digital and non-digital) prior to disposal, release out of organization control or release for reuse. Sanitization methods should implement an appropriate level of strength and integrity given the specific security domain and sensitivity of the information.</para>
       <blockquote>
-        <para>"Sanitization is the process used to remove information from system media such that there is reasonable assurance that the information cannot be retrieved or reconstructed. Sanitization techniques, including clearing, purging, and destroying media information, prevent the disclosure of organizational information to unauthorized individuals when such media is reused or released for disposal." [NIST Special Publication 800-53 Revision 3]</para>
+        <para>"The sanitization process removes information from the media
+            such that the information cannot be retrieved or reconstructed.
+            Sanitization techniques, including clearing, purging,
+            cryptographic erase, and destruction, prevent the disclosure
+            of information to unauthorized individuals when such media is
+            reused or released for disposal."
+            <link xlink:href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">NIST Special Publication 800-53 Revision 4</link></para>
       </blockquote>
       <para>General data disposal and sanitization guidelines as adopted from NIST recommended security controls. Cloud operators should:</para>
       <orderedlist><listitem>

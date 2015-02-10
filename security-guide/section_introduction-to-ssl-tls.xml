@@ -63,7 +63,14 @@
     </section>
     <section xml:id="introduction-to-ssl-tls-ssl-tls-libraries">
       <title>SSL/TLS libraries</title>
-      <para>Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use SSL/TLS libraries. The SSL/TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has been proven to be fairly secure and has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries.</para>
+      <para>Various components, services, and applications within the
+        OpenStack ecosystem or dependencies of OpenStack are implemented
+        and can be configured to use SSL/TLS libraries. The SSL/TLS and
+        HTTP services within OpenStack are typically implemented using
+        OpenSSL which has a module that has been validated for
+        FIPS 140-2. However, keep in mind that each application or
+        service can still introduce weaknesses in how they use the
+        OpenSSL libraries.</para>
     </section>
     <section xml:id="introduction-to-ssl-tls-cryptographic-algorithms-cipher-modes-and-protocols">
       <title>Cryptographic algorithms, cipher modes, and protocols</title>

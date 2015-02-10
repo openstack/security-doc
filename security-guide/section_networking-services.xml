@@ -73,14 +73,11 @@
     </section>
     <section xml:id="networking-services-network-services-extension">
       <title>Network services extensions</title>
-      <para>Here is a list of known plug-ins provided by the open source community or by SDN companies that work with OpenStack Networking:</para>
-      <para>Big Switch Controller plug-in, Brocade neutron plug-in
-      Brocade neutron plug-in, Cisco UCS/Nexus plug-in, Cloudbase
-      Hyper-V plug-in, Extreme Networks plug-in, Juniper Networks
-      neutron plug-in, Linux Bridge plug-in, Mellanox neutron plug-in,
-      MidoNet plug-in, NEC OpenFlow plug-in, Open vSwitch plug-in,
-      PLUMgrid plug-in, Ruijie Networks plug-in, Ryu OpenFlow
-      Controller plug-in, VMware NSX plug-in.</para>
+      <para>A list of known plug-ins provided by the open source
+      community or by SDN companies that work with OpenStack Networking
+      is available at <link
+      xlink:href="https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers"
+      >OpenStack Neutron Plugins and Drivers wiki page</link>.</para>
     </section>
     <section xml:id="networking-services-network-services-limitations">
       <title>Networking services limitations</title>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="data_processing">
+  <title>Data processing</title>
+
+  <xi:include href="section_data-processing-introduction-to-data-processing.xml"/>
+  <xi:include href="section_data-processing-deployment.xml"/>
+  <xi:include href="section_data-processing-configuration-and-hardening.xml"/>
+  <xi:include href="section_data-processing-case-studies.xml"/>
+
+</chapter>
+

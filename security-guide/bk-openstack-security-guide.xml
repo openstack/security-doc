@@ -37,6 +37,16 @@
             <!-- ... continue adding more revisions here as you change this document using the markup shown below... -->
 
             <revision>
+                <date>2015-02-11</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Chapter on Data processing added.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-10-16</date>
                 <revdescription>
                     <itemizedlist>
@@ -94,6 +104,7 @@
     <xi:include href="ch_case-studies-identity-management.xml"/>
     <xi:include href="ch_networking.xml"/>
     <xi:include href="ch_messaging.xml"/>
+    <xi:include href="ch_data_processing.xml"/>
     <xi:include href="ch_databases.xml"/>
     <xi:include href="ch_tenant-data.xml"/>
     <xi:include href="ch_hypervisor.xml"/>

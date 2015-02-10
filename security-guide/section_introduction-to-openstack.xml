@@ -219,6 +219,19 @@
         images are required, as are all the previously mentioned
         issues with respect to data security.</para>
     </section>
+    <section xml:id="introduction-to-openstack-openstack-service-overview-data-processing-service">
+      <title>Data processing service</title>
+      <para>
+        The <glossterm>Data processing service</glossterm> for OpenStack
+        (<glossterm>sahara</glossterm>) provides a platform for the
+        provisioning, management, and usage of clusters running popular
+        processing frameworks.
+      </para>
+      <para>
+        Security considerations for data processing should focus on data
+        privacy and secure communications to provisioned clusters.
+      </para>
+    </section>
     <section xml:id="introduction-to-openstack-openstack-service-overview-other-supporting-technology">
       <title>Other supporting technology</title>
       <para>OpenStack relies on messaging for internal communication

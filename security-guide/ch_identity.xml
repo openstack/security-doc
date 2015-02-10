@@ -11,9 +11,9 @@
     LDAP, and external authentication methods. Upon successful
     authentication, The Identity Service provides the user with an
     authorization token used for subsequent service requests.</para>
-  <para>Transport Layer Security TLS/SSL provides authentication
+  <para>Transport Layer Security (TLS) provides authentication
     between services and persons using X.509 certificates. Although
-    the default mode for SSL is server-side only authentication,
+    the default mode for TLS is server-side only authentication,
     certificates may also be used for client authentication.</para>
   <section xml:id="identity-authentication">
     <title>Authentication</title>
@@ -183,16 +183,16 @@
         be deployed in a production environment since it stores
         passwords in plain text.</para>
       <para>The Identity Service supports client authentication for
-        SSL which may be enabled. SSL client authentication provides
+        TLS which may be enabled. TLS client authentication provides
         an additional authentication factor, in addition to the
-        user name / password, that provides greater reliability on user
+        user name and password, that provides greater reliability on user
         identification. It reduces the risk of unauthorized access
         when user names and passwords may be compromised. However,
         there is additional administrative overhead and cost to issue
         certificates to users that may not be feasible in every
         deployment.</para>
       <note>
-        <para>We recommend that you use client authentication with SSL
+        <para>We recommend that you use client authentication with TLS
           for the authentication of services to the Identity
           Service.</para>
       </note>
@@ -202,7 +202,7 @@
         SELinux, including <filename>/etc/keystone/keystone.conf</filename> and
         X.509 certificates.</para>
 
-      <para>Client authentication with SSL requires certificates be issued
+      <para>Client authentication with TLS requires certificates be issued
         to services. These certificates can be signed by an external or
         internal certificate authority. OpenStack services check the validity
         of certificate signatures against trusted CAs by default and

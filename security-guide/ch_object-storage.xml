@@ -292,11 +292,11 @@
         <section xml:id="object-storage-securing-proxy-services-load-balancer">
             <title>Load balancer</title>
             <para>If the option of using Apache is not feasible or for
-                performance you wish to offload your SSL work you may
+                performance you wish to offload your TLS work you may
                 employ a dedicated network device load balancer. This
                 is also the common way to provide redundancy and load
                 balancing when using multiple proxy nodes.</para>
-            <para>If you choose to offload your SSL, ensure that the
+            <para>If you choose to offload your TLS, ensure that the
                 network link between the load balancer and your proxy
                 nodes are on a private (V)LAN segment such that other
                 nodes on the network (possibly compromised) cannot
@@ -320,7 +320,7 @@
             authentication provider defines what roles and user types
             exist. Some use traditional user name and password
             credentials while others may leverage API key tokens or
-            even client-side x.509 SSL certificates. Custom providers
+            even client-side x.509 certificates. Custom providers
             can be integrated in using custom middleware.</para>
         <para>Object Storage comes with two authentication middleware modules
             by default, either of which can be used as sample code for

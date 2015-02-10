@@ -9,7 +9,7 @@
     <para>
       This chapter covers issues related to network communications to
       and from the database server. This includes IP address bindings
-      and encrypting network traffic with SSL.</para>
+      and encrypting network traffic with TLS.</para>
     <section xml:id="database-transport-security-database-server-ip-address-binding">
       <title>Database server IP address binding</title>
       <para>
@@ -39,12 +39,12 @@ bind-address &lt;ip address or hostname of management network interface&gt;</pro
         In addition to restricting database communications to the
         management network, we also strongly recommend that the cloud
         administrator configure their database back end to require
-        SSL. Using SSL for the database client connections protects
+        TLS. Using TLS for the database client connections protects
         the communications from tampering and eavesdropping. As will
-        be discussed in the next section, using SSL also provides the
+        be discussed in the next section, using TLS also provides the
         framework for doing database user authentication through X.509
         certificates (commonly referred to as PKI). Below is guidance
-        on how SSL is typically configured for the two popular
+        on how TLS is typically configured for the two popular
         database back ends MySQL and PostgreSQL.</para>
       <note>
         <para>

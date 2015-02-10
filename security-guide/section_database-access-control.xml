@@ -30,7 +30,7 @@
             <para>All database communications be isolated to a management network</para>
           </listitem>
 <listitem>
-            <para>Securing communications using SSL</para>
+            <para>Securing communications using TLS</para>
           </listitem>
 <listitem>
             <para>Creating unique database user accounts per OpenStack service endpoint (illustrated below)</para>
@@ -50,7 +50,7 @@
     </section>
     <section xml:id="database-access-control-database-authentication-and-access-control">
       <title>Database authentication and access control</title>
-      <para>Given the risks around access to the database, we strongly recommend that unique database user accounts be created per node needing access to the database. Doing this facilitates better analysis and auditing for ensuring compliance or in the event of a compromise of a node allows you to isolate the compromised host by removing access for that node to the database upon detection. When creating these per service endpoint database user accounts, care should be taken to ensure that they are configured to require SSL. Alternatively, for increased security it is recommended that the database accounts be configured using X.509 certificate authentication in addition to user names and passwords.</para>
+      <para>Given the risks around access to the database, we strongly recommend that unique database user accounts be created per node needing access to the database. Doing this facilitates better analysis and auditing for ensuring compliance or in the event of a compromise of a node allows you to isolate the compromised host by removing access for that node to the database upon detection. When creating these per service endpoint database user accounts, care should be taken to ensure that they are configured to require TLS. Alternatively, for increased security it is recommended that the database accounts be configured using X.509 certificate authentication in addition to user names and passwords.</para>
       <section xml:id="database-access-control-database-authentication-and-access-control-privileges">
         <title>Privileges</title>
         <para>A separate database administrator (DBA) account should be created and protected that has full privileges to create/drop databases, create user accounts, and update user privileges. This simple means of separation of responsibility helps prevent accidental misconfiguration, lowers risk and lowers scope of compromise.</para>

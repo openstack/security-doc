@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-09 06:01+0000\n"
+"POT-Creation-Date: 2015-02-11 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2510,82 +2510,82 @@ msgid "SSL/TLS libraries"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:66(para)
-msgid "Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use SSL/TLS libraries. The SSL/TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has been proven to be fairly secure and has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries."
+msgid "Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use SSL/TLS libraries. The SSL/TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:69(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:76(title)
 msgid "Cryptographic algorithms, cipher modes, and protocols"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:70(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:77(para)
 msgid "We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad client compatibility but we recommend using caution and only enabling these protocols if you have a strong requirement to do so. Other SSL/TLS versions, explicitly older versions, should not be used. These older versions include SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as POODLE. When using TLS v1.2 and in control of both the clients and the server, the cipher suite should be limited to <literal>ECDHE-ECDSA-AES256-GCM-SHA384</literal>. Where you don't control both ends and are using TLS v1+, the more general <literal>HIGH:!aNULL:!eNULL:!DES:!3DES</literal> is a reasonable cipher selection."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:71(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:78(para)
 msgid "However, as this book does not intend to be a thorough reference on cryptography we do not wish to be prescriptive about what specific algorithms or cipher modes you should enable or disable in your OpenStack services. However, there are some authoritative references we would like to recommend for further information:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:73(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:80(link)
 msgid "National Security Agency, Suite B Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:76(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:83(link)
 msgid "OWASP Guide to Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:79(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:86(link)
 msgid "OWASP Transport Layer Protection Cheat Sheet"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:82(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:89(link)
 msgid "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:85(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:92(link)
 msgid "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:88(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:95(link)
 msgid "OpenSSL and FIPS 140-2"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:93(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:100(title)
 msgid "Summary"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:94(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:101(para)
 msgid "Given the complexity of the OpenStack components and the number of deployment possibilities, you must take care to ensure that each component gets the appropriate configuration of SSL certificates, keys, and CAs. Subsequent sections discuss the following services:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:103(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:110(para)
 msgid "Compute API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:106(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:113(para)
 msgid "Identity API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:109(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:116(para)
 msgid "Networking API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:112(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:119(para)
 msgid "Storage API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:115(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:122(para)
 msgid "Messaging server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:118(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:125(para)
 msgid "Database server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:121(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:128(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
 msgid "Dashboard"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:124(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:131(para)
 msgid "This guide uses the term SSL as a shorthand to refer to these recommendations for SSL/TLS protocols."
 msgstr ""
 
@@ -3470,7 +3470,7 @@ msgid "In the initial architectural phases of designing your OpenStack Network i
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:10(para)
-msgid "OpenStack Networking adds a layer of virtualized network services - giving tenants the capability to architect their own, virtual networks. These virtualized services are not as currently as mature as their traditional networking counterparts. It is important to be aware of the current state of these virtualized services and what controls may need to be implemented at the virtualized and traditional network boundary."
+msgid "OpenStack Networking adds a layer of virtualized network services - giving tenants the capability to architect their own virtual networks. These virtualized services are not as currently as mature as their traditional networking counterparts. It is important to be aware of the current state of these virtualized services and what controls may need to be implemented at the virtualized and traditional network boundary."
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:12(title)
@@ -3590,7 +3590,7 @@ msgid "Load balancing"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:66(para)
-msgid "Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation, is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports."
+msgid "Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports."
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:69(title)
@@ -5437,7 +5437,7 @@ msgstr ""
 msgid "Compute instance memory"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:40(para) ./security-guide/section_data-privacy-concerns.xml:105(para)
+#: ./security-guide/section_data-privacy-concerns.xml:40(para) ./security-guide/section_data-privacy-concerns.xml:111(para)
 msgid "Block Storage volume data"
 msgstr ""
 
@@ -5490,126 +5490,126 @@ msgid "OpenStack operators should strive to provide a certain level of tenant da
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:80(para)
-msgid "\"Sanitization is the process used to remove information from system media such that there is reasonable assurance that the information cannot be retrieved or reconstructed. Sanitization techniques, including clearing, purging, and destroying media information, prevent the disclosure of organizational information to unauthorized individuals when such media is reused or released for disposal.\" [NIST Special Publication 800-53 Revision 3]"
+msgid "\"The sanitization process removes information from the media such that the information cannot be retrieved or reconstructed. Sanitization techniques, including clearing, purging, cryptographic erase, and destruction, prevent the disclosure of information to unauthorized individuals when such media is reused or released for disposal.\" <link href=\"http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf\">NIST Special Publication 800-53 Revision 4</link>"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:82(para)
+#: ./security-guide/section_data-privacy-concerns.xml:88(para)
 msgid "General data disposal and sanitization guidelines as adopted from NIST recommended security controls. Cloud operators should:"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:84(para)
+#: ./security-guide/section_data-privacy-concerns.xml:90(para)
 msgid "Track, document and verify media sanitization and disposal actions."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:87(para)
+#: ./security-guide/section_data-privacy-concerns.xml:93(para)
 msgid "Test sanitation equipment and procedures to verify proper performance."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:91(para)
+#: ./security-guide/section_data-privacy-concerns.xml:97(para)
 msgid "Sanitize portable, removable storage devices prior to connecting such devices to the cloud infrastructure."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:94(para)
+#: ./security-guide/section_data-privacy-concerns.xml:100(para)
 msgid "Destroy cloud system media that cannot be sanitized."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:97(para)
+#: ./security-guide/section_data-privacy-concerns.xml:103(para)
 msgid "In an OpenStack deployment you will need to address the following:"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:99(para)
+#: ./security-guide/section_data-privacy-concerns.xml:105(para)
 msgid "Secure data erasure"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:102(para) ./security-guide/section_data-privacy-concerns.xml:119(title)
+#: ./security-guide/section_data-privacy-concerns.xml:108(para) ./security-guide/section_data-privacy-concerns.xml:125(title)
 msgid "Instance memory scrubbing"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:108(para) ./security-guide/section_data-privacy-concerns.xml:161(title)
+#: ./security-guide/section_data-privacy-concerns.xml:114(para) ./security-guide/section_data-privacy-concerns.xml:167(title)
 msgid "Compute instance ephemeral storage"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:111(para) ./security-guide/section_data-privacy-concerns.xml:182(title)
+#: ./security-guide/section_data-privacy-concerns.xml:117(para) ./security-guide/section_data-privacy-concerns.xml:188(title)
 msgid "Bare metal server sanitization"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:115(title)
+#: ./security-guide/section_data-privacy-concerns.xml:121(title)
 msgid "Data not securely erased"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:116(para)
+#: ./security-guide/section_data-privacy-concerns.xml:122(para)
 msgid "Within OpenStack some data may be deleted, but not securely erased in the context of the NIST standards outlined above. This is generally applicable to most or all of the above-defined metadata and information stored in the database. This may be remediated with database and/or system configuration for auto vacuuming and periodic free-space wiping."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:120(para)
+#: ./security-guide/section_data-privacy-concerns.xml:126(para)
 msgid "Specific to various hypervisors is the treatment of instance memory. This behavior is not defined in OpenStack Compute, although it is generally expected of hypervisors that they will make a best effort to scrub memory either upon deletion of an instance, upon creation of an instance, or both."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:121(para)
+#: ./security-guide/section_data-privacy-concerns.xml:127(para)
 msgid "Xen explicitly assigns dedicated memory regions to instances and scrubs data upon the destruction of instances (or domains in Xen parlance). KVM depends more greatly on Linux page management; A complex set of rules related to KVM paging is defined in the <link href=\"http://www.linux-kvm.org/page/Memory\">KVM documentation</link>."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:122(para)
+#: ./security-guide/section_data-privacy-concerns.xml:128(para)
 msgid "It is important to note that use of the Xen memory balloon feature is likely to result in information disclosure. We strongly recommended to avoid use of this feature."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:123(para)
+#: ./security-guide/section_data-privacy-concerns.xml:129(para)
 msgid "For these and other hypervisors, we recommend referring to hypervisor-specific documentation."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:126(title)
+#: ./security-guide/section_data-privacy-concerns.xml:132(title)
 msgid "Cinder volume data"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:127(para)
+#: ./security-guide/section_data-privacy-concerns.xml:133(para)
 msgid "Plugins to OpenStack Block Storage will store data in a variety of ways. Many plug-ins are specific to a vendor or technology, whereas others are more DIY solutions around filesystems such as LVM or ZFS. Methods to securely destroy data will vary from one plugin to another, from one vendor's solution to another, and from one filesystem to another."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:128(para)
+#: ./security-guide/section_data-privacy-concerns.xml:134(para)
 msgid "Some back ends such as ZFS will support copy-on-write to prevent data exposure. In these cases, reads from unwritten blocks will always return zero. Other back ends such as LVM may not natively support this, thus the Block Storage plug-in takes the responsibility to override previously written blocks before handing them to users. It is important to review what assurances your chosen volume back end provides and to see what mediations may be available for those assurances not provided."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:137(para)
+#: ./security-guide/section_data-privacy-concerns.xml:143(para)
 msgid "Finally, while not a feature of OpenStack, vendors and implementors may choose to add or support encryption of volumes. In this case, destruction of data is as simple as throwing away the key."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:143(title)
+#: ./security-guide/section_data-privacy-concerns.xml:149(title)
 msgid "Image Service delay delete feature"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:144(para)
+#: ./security-guide/section_data-privacy-concerns.xml:150(para)
 msgid "OpenStack Image Service has a delayed delete feature, which will pend the deletion of an image for a defined time period. It is recommended to disable this feature if it is a security concern, by editing the <filename>etc/glance/glance-api.conf</filename> file and setting the <literal>delayed_delete</literal> option as <replaceable>False</replaceable>."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:152(title)
+#: ./security-guide/section_data-privacy-concerns.xml:158(title)
 msgid "Compute soft delete feature"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:153(para)
+#: ./security-guide/section_data-privacy-concerns.xml:159(para)
 msgid "OpenStack Compute has a soft-delete feature, which enables an instance that is deleted to be in a soft-delete state for a defined time period. The instance can be restored during this time period. To disable the soft-delete feature, edit the <filename>etc/nova/nova.conf</filename> file and leave the <literal>reclaim_instance_interval</literal> option empty."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:162(para)
+#: ./security-guide/section_data-privacy-concerns.xml:168(para)
 msgid "The creation and destruction of ephemeral storage will be somewhat dependent on the chosen hypervisor and the OpenStack Compute plug-in."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:165(para)
+#: ./security-guide/section_data-privacy-concerns.xml:171(para)
 msgid "The libvirt plug-in for compute may maintain ephemeral storage directly on a filesystem, or in LVM. Filesystem storage generally will not overwrite data when it is removed, although there is a guarantee that dirty extents are not provisioned to users."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:170(para)
+#: ./security-guide/section_data-privacy-concerns.xml:176(para)
 msgid "When using LVM backed ephemeral storage, which is block-based, it is necessary that the OpenStack Compute software securely erases blocks to prevent information disclosure. There have in the past been information disclosure vulnerabilities related to improperly erased ephemeral block storage devices."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:175(para)
+#: ./security-guide/section_data-privacy-concerns.xml:181(para)
 msgid "Filesystem storage is a more secure solution for ephemeral block storage devices than LVM as dirty extents cannot be provisioned to users. However, it is important to be mindful that user data is not destroyed, so it is suggested to encrypt the backing filesystem."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:183(para)
+#: ./security-guide/section_data-privacy-concerns.xml:189(para)
 msgid "A bare metal server driver for Compute was under development and has since moved into a separate project called <link href=\"https://wiki.openstack.org/wiki/Ironic\">ironic</link>. At the time of this writing, ironic does not appear to address sanitization of tenant data resident the physical hardware."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml:190(para)
+#: ./security-guide/section_data-privacy-concerns.xml:196(para)
 msgid "Additionally, it is possible for tenants of a bare metal system to modify system firmware. TPM technology, described in <xref linkend=\"integrity-life-cycle-secure-bootstrapping\"/>, provides a solution for detecting unauthorized firmware changes."
 msgstr ""
 

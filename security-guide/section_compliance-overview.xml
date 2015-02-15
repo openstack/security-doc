@@ -52,7 +52,7 @@
         <term>Fail securely</term>
         <listitem>
           <para>In the case of failure, systems should be configured to fail into a closed secure
-            state. For example, SSL certificate verification should fail closed by severing the
+            state. For example, TLS certificate verification should fail closed by severing the
             network connection if the CNAME doesn't match the server's DNS name. Software often
             fails open in this situation, allowing the connection to proceed without a CNAME match,
             which is less secure and not recommended.</para>

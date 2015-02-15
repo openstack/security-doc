@@ -62,7 +62,7 @@
             <para>The dashboard requires cookies and JavaScript to be enabled in the web browser.</para>
           </listitem>
 <listitem>
-            <para>The web server that hosts dashboard should be configured for SSL to ensure data is encrypted.</para>
+            <para>The web server that hosts the dashboard should be configured for TLS to ensure data is encrypted.</para>
           </listitem>
 <listitem>
             <para>Both the horizon web service and the OpenStack API it
@@ -119,7 +119,7 @@
       <section xml:id="management-interfaces-openstack-api-security-considerations">
         <title>Security considerations</title>
         <itemizedlist><listitem>
-            <para>The API service should be configured for SSL to ensure data is encrypted.</para>
+            <para>The API service should be configured for TLS to ensure data is encrypted.</para>
           </listitem>
 <listitem>
             <para>As a web service, OpenStack API is susceptible to familiar web site attack vectors such as denial of service attacks.</para>
@@ -176,15 +176,15 @@
       <section xml:id="management-interfaces-out-of-band-management-interface-security-consideration">
         <title>Security considerations</title>
         <itemizedlist><listitem>
-            <para>Use strong passwords and safeguard them, or use client-side SSL authentication.</para>
+            <para>Use strong passwords and safeguard them, or use client-side TLS authentication.</para>
           </listitem>
 <listitem>
             <para>Ensure that the network interfaces are on their own private(management or a separate) network. Segregate management domains with firewalls or other network gear.</para>
           </listitem>
 <listitem>
             <para>If you use a web interface to interact with the
-              <glossterm>BMC</glossterm>/IPMI, always use the SSL
-            interface, such as HTTPS or port 443. This SSL interface
+              <glossterm>BMC</glossterm>/IPMI, always use the TLS
+            interface, such as HTTPS or port 443. This TLS interface
             should <emphasis role="bold">NOT</emphasis> use
             self-signed certificates, as is often default, but should
             have trusted certificates using the correctly defined

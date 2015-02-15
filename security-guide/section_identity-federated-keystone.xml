@@ -115,7 +115,7 @@
               <step><para>Run the Identity service under Apache, instead of using
                 <command>keystone-all</command>.</para>
                 <substeps>
-                  <step><para>Enable SSL support. Install <literal>mod_nss</literal>
+                  <step><para>Enable TLS support. Install <literal>mod_nss</literal>
                    according to your distribution, then apply the following patch
                    and restart HTTPD:</para>
 <programlisting>--- /etc/httpd/conf.d/nss.conf.orig 2012-03-29 12:59:06.319470425 -0400
@@ -141,7 +141,7 @@
 &lt;/virtualhost>&lt;/virtualhost></programlisting>
                   </step>
                   <step><para>If you have a firewall in place, configure it to
-                   allow SSL traffic. For example:</para>
+                   allow TLS traffic. For example:</para>
 <programlisting>-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT</programlisting>
                     <para>Note this needs to be added before your reject all rule which might be:</para>
 <programlisting>-A INPUT -j REJECT --reject-with icmp-host-prohibited</programlisting>

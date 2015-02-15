@@ -51,7 +51,7 @@
           </listitem>
           <listitem>
             <para>By default, the remote desktop traffic is not encrypted.
-            SSL can be enabled to encrypt the VNC traffic. Please refer to <link linkend="introduction-to-ssl-tls">Introduction to SSL/TLS</link> for appropriate recommendations.</para>
+            TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend="introduction-to-ssl-tls">Introduction to SSL/TLS</link> for appropriate recommendations.</para>
           </listitem>
           </itemizedlist>
         </section>
@@ -106,7 +106,7 @@
         </section>
         <section xml:id="compute-how-to-select-virtual-consoles-simple-protocol-for-independent-computing-environments-spice-references">
           <title>Bibliography</title>
-          <para>OpenStack Configuration Reference - Havana. SPICE Console. <link xlink:href="http://docs.openstack.org/trunk/config-reference/content/spice-console.html">SPICE Console</link></para>
+          <para>OpenStack Configuration Reference - Havana. SPICE Console. <link xlink:href="http://docs.openstack.org/havana/config-reference/content/spice-console.html">SPICE Console</link></para>
           <para>bugzilla.redhat.com, Bug 913607 - RFE: Support Tunnelling SPICE over websockets. 2013. <link xlink:href="https://bugzilla.redhat.com/show_bug.cgi?id=913607">Red Hat bug 913607</link></para>
         </section>
       </section>

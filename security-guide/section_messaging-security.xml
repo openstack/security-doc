@@ -15,16 +15,16 @@
       <title>Messaging transport security</title>
       <para>
         AMQP based solutions (Qpid and RabbitMQ) support
-        transport-level security using SSL. ZeroMQ messaging does not
-        natively support SSL, but transport-level security is possible
+        transport-level security using TLS. ZeroMQ messaging does not
+        natively support TLS, but transport-level security is possible
         using labelled IPsec or CIPSO network labels.
       </para>
       <para>
         We highly recommend enabling transport-level cryptography for
-        your message queue. Using SSL for the messaging client
+        your message queue. Using TLS for the messaging client
         connections provides protection of the communications from
         tampering and eavesdropping in-transit to the messaging
-        server. Below is guidance on how SSL is typically configured
+        server. Below is guidance on how TLS is typically configured
         for the two popular messaging servers Qpid and RabbitMQ. When
         configuring the trusted certificate authority (CA) bundle that
         your messaging server uses to verify client connections, it is
@@ -32,7 +32,7 @@
         nodes, preferably an internally managed CA. The bundle of
         trusted CAs will determine which client certificates will be
         authorized and pass the client-server verification step of the
-        setting up the SSL connection. Note, when installing the
+        setting up the TLS connection. Note, when installing the
         certificate and key files, ensure that the file permissions
         are restricted, for example using <command>chmod 0600</command>,
         and the ownership is
@@ -101,7 +101,7 @@
         for either user name and password authentication over an
         unencrypted connection or user name and password in
         conjunction with X.509 client certificates to establish the
-        secure SSL connection.
+        secure TLS connection.
       </para>
       <para>
         We recommend configuring X.509 client certificates on all the
@@ -113,9 +113,9 @@
         to the queue.
       </para>
       <para>
-        Before deployment, consider the SSL libraries that the queuing
+        Before deployment, consider the TLS libraries that the queuing
         servers use. Qpid uses Mozilla's NSS library, whereas RabbitMQ
-        uses Erlang's SSL module which uses OpenSSL.</para>
+        uses Erlang's TLS module which uses OpenSSL.</para>
       <section xml:id="messaging-security-queue-authentication-and-access-control-authentication-configuration-example-rabbitmq">
         <title>Authentication configuration example: RabbitMQ</title>
         <para>On the RabbitMQ server, delete the default

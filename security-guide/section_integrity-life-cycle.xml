@@ -74,7 +74,7 @@
         handle all PXE traffic, along with the subsequent boot stage
         downloads depicted above. Note that the node boot process
         begins with two insecure operations: DHCP and TFTP. Then the
-        boot process downloads over SSL the remaining information
+        boot process downloads over TLS the remaining information
         required to deploy the node. This information might include an
         initramfs and a kernel. This concludes by downloading the
         remaining information needed to deploy the node. This may be
@@ -83,10 +83,10 @@
         or <link xlink:href="https://puppetlabs.com/">Puppet</link>,
         or even a complete file system image that is written directly
         to disk.</para>
-      <para>While utilizing SSL during the PXE boot process is
+      <para>While utilizing TLS during the PXE boot process is
         somewhat more challenging, common PXE firmware projects, such
         as iPXE, provide this support. Typically this involves
-        building the PXE firmware with knowledge of the allowed SSL
+        building the PXE firmware with knowledge of the allowed TLS
         certificate chain(s) so that it can properly validate the
         server certificate. This raises the bar for an attacker by
         limiting the number of insecure, plain text network
@@ -380,7 +380,7 @@
             placement depends on your network environment but make
             sure to monitor the impact the IDS may have on your
             services depending on where you choose to add it.
-            Encrypted traffic, such as SSL, cannot generally be
+            Encrypted traffic, such as TLS, cannot generally be
             inspected for content by a Network IDS. However, the
             Network IDS may still provide some benefit in identifying
             anomalous unencrypted traffic on the network.</para>

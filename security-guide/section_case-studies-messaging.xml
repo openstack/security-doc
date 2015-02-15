@@ -16,7 +16,7 @@
     </section>
     <section xml:id="case-studies-messaging-bob-public-cloud">
       <title>Bob's public cloud</title>
-      <para>Bob assumes the infrastructure or networks underpinning the Compute service could become compromised, therefore he recognizes the importance of hardening the system by restricting access to the message queue. In order to accomplish this task Bob deploys his RabbitMQ servers with SSL and X.509 client auth for access control. Hardening activities assists in limiting the capabilities of a malicious user that has compromised the system by disallowing queue access, provided that this user does not have valid credentials to override the controls.</para>
+      <para>Bob assumes the infrastructure or networks underpinning the Compute service could become compromised, therefore he recognizes the importance of hardening the system by restricting access to the message queue. In order to accomplish this task Bob deploys his RabbitMQ servers with TLS and X.509 client auth for access control. Hardening activities assists in limiting the capabilities of a malicious user that has compromised the system by disallowing queue access, provided that this user does not have valid credentials to override the controls.</para>
       <para>Additionally, Bob adds strong network ACL rulesets to enforce which endpoints can communicate with the message servers. This second control provides some additional assurance should the other protections fail.</para>
     </section>
 </section>

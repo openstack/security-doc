@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-10 17:13+0000\n"
-"PO-Revision-Date: 2015-02-10 17:13+0000\n"
+"POT-Creation-Date: 2015-02-15 21:11+0000\n"
+"PO-Revision-Date: 2015-02-15 21:11+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -62,8 +62,8 @@ msgstr "データベース通信セキュリティ"
 msgid ""
 "This chapter covers issues related to network communications to and from the"
 " database server. This includes IP address bindings and encrypting network "
-"traffic with SSL."
-msgstr "本章はデータベースとのネットワーク通信に関連する問題を取り扱います。これには、IP アドレスのバインドや SSL を用いた暗号化ネットワーク通信を含みます。"
+"traffic with TLS."
+msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml14(title)
 msgid "Database server IP address binding"
@@ -104,13 +104,13 @@ msgstr "データベース通信"
 msgid ""
 "In addition to restricting database communications to the management "
 "network, we also strongly recommend that the cloud administrator configure "
-"their database back end to require SSL. Using SSL for the database client "
+"their database back end to require TLS. Using TLS for the database client "
 "connections protects the communications from tampering and eavesdropping. As"
-" will be discussed in the next section, using SSL also provides the "
+" will be discussed in the next section, using TLS also provides the "
 "framework for doing database user authentication through X.509 certificates "
-"(commonly referred to as PKI). Below is guidance on how SSL is typically "
+"(commonly referred to as PKI). Below is guidance on how TLS is typically "
 "configured for the two popular database back ends MySQL and PostgreSQL."
-msgstr "データベース通信を管理ネットワークに制限することに加えて、クラウド管理者がそれらのデータベースのバックエンドに SSL を要求するように設定することを強く推奨します。データベースのクライアント接続に SSL を使用することにより、改ざんや盗聴から通信を保護できます。次のセクションで議論するように、SSL を使用することにより、データベースのユーザー認証に X.509 証明書 (一般的に PKI として参照されます) を使用するフレームワークも提供できます。以下は、2 つの有名なデータベースバックエンド MySQL と PostgreSQL に SSL を典型的に設定する方法について示します。"
+msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml50(para)
 msgid ""
@@ -250,12 +250,12 @@ msgstr "フェイルセキュア"
 #: ./security-guide/section_compliance-overview.xml54(para)
 msgid ""
 "In the case of failure, systems should be configured to fail into a closed "
-"secure state. For example, SSL certificate verification should fail closed "
+"secure state. For example, TLS certificate verification should fail closed "
 "by severing the network connection if the CNAME doesn't match the server's "
 "DNS name. Software often fails open in this situation, allowing the "
 "connection to proceed without a CNAME match, which is less secure and not "
 "recommended."
-msgstr "障害において、システムは独立、安全な状態で停止するように構成されているべきです。たとえば、SSL証明書の検証は、もしそのCNAMEがサーバーのDNS名と一致しなければ、ネットワーク接続を切断し、停止すべきです。ソフトウェアは、CNAMEが一致しないのに接続の継続を許すような、それが安全性の低い、好ましくない状況であっても、開きっぱなしにしてしまうことがあります。"
+msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml62(term)
 msgid "Least privilege"
@@ -699,11 +699,11 @@ msgstr ""
 
 #: ./security-guide/ch_identity.xml14(para)
 msgid ""
-"Transport Layer Security TLS/SSL provides authentication between services "
-"and persons using X.509 certificates. Although the default mode for SSL is "
+"Transport Layer Security (TLS) provides authentication between services and "
+"persons using X.509 certificates. Although the default mode for TLS is "
 "server-side only authentication, certificates may also be used for client "
 "authentication."
-msgstr "Transport Layer Security TLS/SSL は、サービスと人の間で X.509 を使用した認証を提供します。SSL の規定のモードはサーバーのみを認証しますが、証明書はクライアント認証にも使用できます。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml19(title)
 msgid "Authentication"
@@ -945,9 +945,9 @@ msgstr "Nova と Swift のサービスは認証情報を保存するために \"
 
 #: ./security-guide/ch_identity.xml185(para)
 msgid ""
-"The Identity Service supports client authentication for SSL which may be "
-"enabled. SSL client authentication provides an additional authentication "
-"factor, in addition to the user name / password, that provides greater "
+"The Identity Service supports client authentication for TLS which may be "
+"enabled. TLS client authentication provides an additional authentication "
+"factor, in addition to the user name and password, that provides greater "
 "reliability on user identification. It reduces the risk of unauthorized "
 "access when user names and passwords may be compromised. However, there is "
 "additional administrative overhead and cost to issue certificates to users "
@@ -956,9 +956,9 @@ msgstr ""
 
 #: ./security-guide/ch_identity.xml195(para)
 msgid ""
-"We recommend that you use client authentication with SSL for the "
+"We recommend that you use client authentication with TLS for the "
 "authentication of services to the Identity Service."
-msgstr "Identity にサービスの認証をするとき、SSL を使用したクライアント認証を使用することを推奨します。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml199(para)
 msgid ""
@@ -970,7 +970,7 @@ msgstr ""
 
 #: ./security-guide/ch_identity.xml205(para)
 msgid ""
-"Client authentication with SSL requires certificates be issued to services. "
+"Client authentication with TLS requires certificates be issued to services. "
 "These certificates can be signed by an external or internal certificate "
 "authority. OpenStack services check the validity of certificate signatures "
 "against trusted CAs by default and connections will fail if the signature is"
@@ -1189,7 +1189,7 @@ msgid ""
 "Bob is architecting a public cloud and needs to ensure that the publicly "
 "facing OpenStack services are using certificates issued by a major public "
 "CA. Bob acquires certificates for his public OpenStack services and "
-"configures the services to use PKI and SSL and includes the public CAs in "
+"configures the services to use PKI and TLS and includes the public CAs in "
 "his trust bundle for the services. Additionally, Bob also wants to further "
 "isolate the internal communications amongst the services within the "
 "management security domain. Bob contacts the team within his organization "
@@ -2279,7 +2279,7 @@ msgid ""
 "Bob assumes the infrastructure or networks underpinning the Compute service "
 "could become compromised, therefore he recognizes the importance of "
 "hardening the system by restricting access to the message queue. In order to"
-" accomplish this task Bob deploys his RabbitMQ servers with SSL and X.509 "
+" accomplish this task Bob deploys his RabbitMQ servers with TLS and X.509 "
 "client auth for access control. Hardening activities assists in limiting the"
 " capabilities of a malicious user that has compromised the system by "
 "disallowing queue access, provided that this user does not have valid "
@@ -2646,13 +2646,13 @@ msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml118(para)
 msgid ""
-"Enable SSL support. Install <literal>mod_nss</literal> according to your "
+"Enable TLS support. Install <literal>mod_nss</literal> according to your "
 "distribution, then apply the following patch and restart HTTPD:"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml143(para)
 msgid ""
-"If you have a firewall in place, configure it to allow SSL traffic. For "
+"If you have a firewall in place, configure it to allow TLS traffic. For "
 "example:"
 msgstr ""
 
@@ -4033,14 +4033,14 @@ msgstr "負荷分散装置"
 #: ./security-guide/ch_object-storage.xml294(para)
 msgid ""
 "If the option of using Apache is not feasible or for performance you wish to"
-" offload your SSL work you may employ a dedicated network device load "
+" offload your TLS work you may employ a dedicated network device load "
 "balancer. This is also the common way to provide redundancy and load "
 "balancing when using multiple proxy nodes."
-msgstr "Apache を使用するという選択肢が実現できない場合、またはパフォーマンスのために SSL 処理をオフロードしたい場合、専用のネットワークデバイスの負荷分散装置を使用できます。これは、複数のプロキシノードを使用するときに、冗長性と負荷分散を提供するために一般的な方法です。"
+msgstr ""
 
 #: ./security-guide/ch_object-storage.xml299(para)
 msgid ""
-"If you choose to offload your SSL, ensure that the network link between the "
+"If you choose to offload your TLS, ensure that the network link between the "
 "load balancer and your proxy nodes are on a private (V)LAN segment such that"
 " other nodes on the network (possibly compromised) cannot wiretap (sniff) "
 "the unencrypted traffic. If such a breach were to occur the attacker could "
@@ -4066,7 +4066,7 @@ msgid ""
 " not only provides general extensibility but is also used for authentication"
 " of end-point clients. The authentication provider defines what roles and "
 "user types exist. Some use traditional user name and password credentials "
-"while others may leverage API key tokens or even client-side x.509 SSL "
+"while others may leverage API key tokens or even client-side x.509 "
 "certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
@@ -4207,13 +4207,13 @@ msgid ""
 "PKI builds the framework on which to provide encryption algorithms, cipher "
 "modes, and protocols for securing data and authentication. We strongly "
 "recommend securing all services with Public Key Infrastructure (PKI), "
-"including the use of SSL/TLS for API endpoints. It is impossible for the "
+"including the use of TLS for API endpoints. It is impossible for the "
 "encryption or signing of transports or messages alone to solve all these "
 "problems. Hosts themselves must be secure and implement policy, namespaces, "
 "and other controls to protect their private credentials and keys. However, "
 "the challenges of key management and protection do not reduce the necessity "
 "of these controls, or lessen their importance."
-msgstr "PKIはデータと認証をセキュアにする暗号アルゴリズム、暗号モード(cipher mode)、プロトコルの\nフレームワークをバンドルしています。APIエンドポイントの為のSSL/TLS 使用を含み、Public Key Infrastructure (PKI)を用いて、全サービスをセキュアにする事をお勧めします。暗号化や通信路・メッセージの署名の為に、これら全ての問題を解決する事は重要です。プライベート証明と鍵の保護の為、ホスト自身がセキュアで、ポリシー、ネームスペース、その他の制御を実装しなければなりません。しかし、キー管理や保護のチャレンジはこれらの制御の必要性を削減したり、その重要性を失ったりはしません。"
+msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml58(title)
 msgid "Certification authorities"
@@ -4245,13 +4245,13 @@ msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml61(para)
 msgid ""
-"Certificates used to support SSL/TLS on internet facing cloud endpoints (or "
+"Certificates used to support TLS on internet facing cloud endpoints (or "
 "customer interfaces where the customer is not expected to have installed "
 "anything other than standard operating system provided certificate bundles) "
 "should be provisioned using Certificate Authorities that are installed in "
 "the operating system certificate bundle. Typical well known vendors include "
 "Verisign and Thawte but many others exist."
-msgstr "インターネットに面したクラウドのエンドポイント(あるいは証明書をバンドルした標準的なOS以外の何かがインストールされていると顧客が想定していない顧客インターフェース)上のSSL/TLSに対応に使用される証明書はOSの証明書バンドル中にインストールされるCAを用いてプロビジョニングされるべきです。通常、有名ベンダーにはベリサインやThawteを含みますが、他の多くのベンダーもあります。"
+msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml62(para)
 msgid ""
@@ -4262,39 +4262,39 @@ msgid ""
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml65(title)
-msgid "SSL/TLS libraries"
-msgstr "SSL/TLSライブラリ"
+msgid "TLS libraries"
+msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml66(para)
 msgid ""
 "Various components, services, and applications within the OpenStack "
 "ecosystem or dependencies of OpenStack are implemented and can be configured"
-" to use SSL/TLS libraries. The SSL/TLS and HTTP services within OpenStack "
-"are typically implemented using OpenSSL which has a module that has been "
+" to use TLS libraries. The TLS and HTTP services within OpenStack are "
+"typically implemented using OpenSSL which has a module that has been "
 "validated for FIPS 140-2. However, keep in mind that each application or "
 "service can still introduce weaknesses in how they use the OpenSSL "
 "libraries."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml76(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml69(title)
 msgid "Cryptographic algorithms, cipher modes, and protocols"
 msgstr "暗号化アルゴリズム、暗号モード、プロトコル"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml77(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml70(para)
 msgid ""
 "We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad "
 "client compatibility but we recommend using caution and only enabling these "
-"protocols if you have a strong requirement to do so. Other SSL/TLS versions,"
-" explicitly older versions, should not be used. These older versions include"
-" SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as"
-" POODLE. When using TLS v1.2 and in control of both the clients and the "
+"protocols if you have a strong requirement to do so. Other TLS versions, "
+"explicitly older versions, should not be used. These older versions include "
+"SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as "
+"POODLE. When using TLS v1.2 and in control of both the clients and the "
 "server, the cipher suite should be limited to <literal>ECDHE-ECDSA-AES256"
 "-GCM-SHA384</literal>. Where you don't control both ends and are using TLS "
 "v1+, the more general <literal>HIGH:!aNULL:!eNULL:!DES:!3DES</literal> is a "
 "reasonable cipher selection."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml78(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml71(para)
 msgid ""
 "However, as this book does not intend to be a thorough reference on "
 "cryptography we do not wish to be prescriptive about what specific "
@@ -4303,82 +4303,76 @@ msgid ""
 "recommend for further information:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml80(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml73(link)
 msgid "National Security Agency, Suite B Cryptography"
 msgstr "国家安全保障局、Suite B 暗号化"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml83(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml76(link)
 msgid "OWASP Guide to Cryptography"
 msgstr "OWASP Guide to Cryptography"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml86(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml79(link)
 msgid "OWASP Transport Layer Protection Cheat Sheet"
 msgstr "OWASP Transport Layer Protection Cheat Sheet"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml89(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml82(link)
 msgid ""
 "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate "
 "trust model enhancements"
 msgstr "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml92(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml85(link)
 msgid ""
 "The Most Dangerous Code in the World: Validating SSL Certificates in Non-"
 "Browser Software"
 msgstr "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml95(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml88(link)
 msgid "OpenSSL and FIPS 140-2"
 msgstr "OpenSSL and FIPS 140-2"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml100(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml93(title)
 msgid "Summary"
 msgstr "概要"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml101(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml94(para)
 msgid ""
 "Given the complexity of the OpenStack components and the number of "
 "deployment possibilities, you must take care to ensure that each component "
-"gets the appropriate configuration of SSL certificates, keys, and CAs. "
+"gets the appropriate configuration of TLS certificates, keys, and CAs. "
 "Subsequent sections discuss the following services:"
-msgstr "OpenStack コンポーネントの複雑さとデプロイの発展性を考慮すると、確実に各コンポーネントがSSL証明書・鍵・CAを適切に設定されている事に注意を払う必要があります。以下のサービスは、本書の後の章で議論します。"
+msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml110(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml103(para)
 msgid "Compute API endpoints"
 msgstr "Compute APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml113(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml106(para)
 msgid "Identity API endpoints"
 msgstr "Identity APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml116(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml109(para)
 msgid "Networking API endpoints"
 msgstr "Networking APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml119(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml112(para)
 msgid "Storage API endpoints"
 msgstr "ストレージAPIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml122(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml115(para)
 msgid "Messaging server"
 msgstr "メッセージングサーバー"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml125(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml118(para)
 msgid "Database server"
 msgstr "データベースサーバー"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml128(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml121(para)
 #: ./security-guide/ch_dashboard.xml8(title)
 #: ./security-guide/section_introduction-to-openstack.xml190(title)
 #: ./security-guide/section_management-interfaces.xml33(title)
 msgid "Dashboard"
 msgstr "Dashboard"
-
-#: ./security-guide/section_introduction-to-ssl-tls.xml131(para)
-msgid ""
-"This guide uses the term SSL as a shorthand to refer to these "
-"recommendations for SSL/TLS protocols."
-msgstr "このガイドは、SSL/TLSプロトコルに関する推奨を示す略称として、SSL という言葉を使用します。"
 
 #: ./security-guide/ch_introduction.xml7(title)
 msgid "Introduction"
@@ -4870,7 +4864,7 @@ msgstr "!RC4"
 
 #: ./security-guide/section_tls-proxies-and-http-services.xml69(para)
 msgid ""
-"No RC4. RC4 has flaws in the context of TLS/SSL V3. See <link "
+"No RC4. RC4 has flaws in the context of TLS V3. See <link "
 "href=\"http://cr.yp.to/streamciphers/rc4biases-20130708.pdf\"> On the "
 "Security of RC4 in TLS and WPA</link>."
 msgstr ""
@@ -5902,12 +5896,12 @@ msgstr "VLAN とトンネリングを使用した L2 分断"
 
 #: ./security-guide/section_networking-services.xml13(para)
 msgid ""
-"OpenStack networking can employ two different mechanisms for traffic "
+"OpenStack Networking can employ two different mechanisms for traffic "
 "segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging)"
 " or L2 tunnels using GRE encapsulation. Which method you choose for traffic "
 "segregation and isolation is determined by the scope and scale of your "
 "OpenStack deployment."
-msgstr "OpenStack Networking はテナント／ネットワークの組合せ単位で通信を分断する為の、 VLANs (IEEE 802.1Q タギング) 又は GRE カプセル化を使用した L2 トンネルという２つの異なる機構を使用する事が出来ます。通信の分断と独立用にあなたが選択する方式は、あなたの OpenStack デプロイの範囲と規模に依存します。"
+msgstr ""
 
 #: ./security-guide/section_networking-services.xml15(title)
 msgid "VLANs"
@@ -6122,33 +6116,25 @@ msgstr "ネットワークサービス拡張"
 
 #: ./security-guide/section_networking-services.xml76(para)
 msgid ""
-"Here is a list of known plug-ins provided by the open source community or by"
-" SDN companies that work with OpenStack Networking:"
-msgstr "以下はオープンソースコミュニティ又はSDN企業によって提供された、 OpenStack Networking で動作する既知のプラグインの一覧です。"
+"A list of known plug-ins provided by the open source community or by SDN "
+"companies that work with OpenStack Networking is available at <link "
+"href=\"https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers\">OpenStack"
+" Neutron Plugins and Drivers wiki page</link>."
+msgstr ""
 
-#: ./security-guide/section_networking-services.xml77(para)
-msgid ""
-"Big Switch Controller plug-in, Brocade neutron plug-in Brocade neutron plug-"
-"in, Cisco UCS/Nexus plug-in, Cloudbase Hyper-V plug-in, Extreme Networks "
-"plug-in, Juniper Networks neutron plug-in, Linux Bridge plug-in, Mellanox "
-"neutron plug-in, MidoNet plug-in, NEC OpenFlow plug-in, Open vSwitch plug-"
-"in, PLUMgrid plug-in, Ruijie Networks plug-in, Ryu OpenFlow Controller plug-"
-"in, VMware NSX plug-in."
-msgstr "Big Switch Controller プラグイン、Brocade neutron プラグイン、Brocade neutron プラグイン、Cisco UCS/Nexus プラグイン、Cloudbase Hyper-V プラグイン、Extreme Networks プラグイン、Juniper Networks neutron プラグイン、Linux Bridge プラグイン、Mellanox neutron プラグイン、MidoNet プラグイン、NEC OpenFlow プラグイン、Open vSwitch プラグイン、PLUMgrid プラグイン、Ruijie Networks プラグイン、Ryu OpenFlow Controller プラグイン、VMware NSX プラグイン。"
-
-#: ./security-guide/section_networking-services.xml86(title)
+#: ./security-guide/section_networking-services.xml83(title)
 msgid "Networking services limitations"
 msgstr "Networking サービスの制限事項"
 
-#: ./security-guide/section_networking-services.xml87(para)
+#: ./security-guide/section_networking-services.xml84(para)
 msgid "OpenStack Networking has the following known limitations:"
 msgstr "OpenStack Networking は以下の制限があります。"
 
-#: ./security-guide/section_networking-services.xml90(term)
+#: ./security-guide/section_networking-services.xml87(term)
 msgid "Overlapping IP addresses"
 msgstr "IP アドレスの重複"
 
-#: ./security-guide/section_networking-services.xml92(para)
+#: ./security-guide/section_networking-services.xml89(para)
 msgid ""
 "If nodes that run either <systemitem "
 "class=\"service\">neutron-l3-agent</systemitem> or <systemitem "
@@ -6158,28 +6144,28 @@ msgid ""
 "not support these namespaces, run the DHCP and L3 agents on different hosts."
 msgstr "<systemitem class=\"service\">neutron-l3-agent</systemitem> か <systemitem class=\"service\">neutron-dhcp-agent</systemitem> のいずれかを実行するノードが重複した IP アドレスを使用する場合、これらのノード群は Linux のネットワークネームスペースを使用する必要があります。デフォルトでは、DHCP と L3 エージェントは Linux ネットワークネームスペースを使用しています。しかしながら、ホストがこのネームスペースをサポートしていない場合、DHCP と L3 エージェントは異なるホストで実行して下さい。"
 
-#: ./security-guide/section_networking-services.xml102(para)
+#: ./security-guide/section_networking-services.xml99(para)
 msgid ""
 "If network namespace support is not present, a further limitation of the L3 "
 "agent is that only a single logical router is supported."
 msgstr "ネットワークネームスペースサポートがない場合、L3エージェントでは追加の制限事項として単一の論理ルータのみサポートされます。"
 
-#: ./security-guide/section_networking-services.xml109(term)
+#: ./security-guide/section_networking-services.xml106(term)
 msgid "Multi-host DHCP-agent"
 msgstr "マルチホスト DHCP エージェント"
 
-#: ./security-guide/section_networking-services.xml111(para)
+#: ./security-guide/section_networking-services.xml108(para)
 msgid ""
 "OpenStack Networking supports multiple L3 and DHCP agents with load "
 "balancing. However, tight coupling of the location of the virtual machine is"
 " not supported."
 msgstr "OpenStack Networking は複数の L3 エージェントと DHCP エージェントによる負荷分散をサポートしています。しかしながら、（訳注：nova-network がサポートしていた）仮想マシンとの配置上の強い紐付けはサポートされていません。"
 
-#: ./security-guide/section_networking-services.xml119(term)
+#: ./security-guide/section_networking-services.xml116(term)
 msgid "No IPv6 support for L3 agents"
 msgstr "L3 エージェントの IPv6 未対応"
 
-#: ./security-guide/section_networking-services.xml121(para)
+#: ./security-guide/section_networking-services.xml118(para)
 msgid ""
 "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, "
 "supports only IPv4 forwarding."
@@ -6269,24 +6255,24 @@ msgid ""
 "security domain for provisioning. This network will handle all PXE traffic, "
 "along with the subsequent boot stage downloads depicted above. Note that the"
 " node boot process begins with two insecure operations: DHCP and TFTP. Then "
-"the boot process downloads over SSL the remaining information required to "
+"the boot process downloads over TLS the remaining information required to "
 "deploy the node. This information might include an initramfs and a kernel. "
 "This concludes by downloading the remaining information needed to deploy the"
 " node. This may be an operating system installer, a basic install managed by"
 " <link href=\"http://www.opscode.com/chef/\">Chef</link> or <link "
 "href=\"https://puppetlabs.com/\">Puppet</link>, or even a complete file "
 "system image that is written directly to disk."
-msgstr "プロビジョニングには、管理セキュリティドメイン内の別個の分離したネットワークを使用することを推奨します。このネットワークは、上記に示した後続のブート段階のダウンロードに加えて、すべての PXE トラフィックを処理します。 ノードのブートプロセスは、安全性の低い DHCP および TFTP の 2 つの操作で開始する点に注意してください。次にブートプロセスは、ノードのデプロイに必要な残りの情報を SSL を介してダウンロードします。この情報には、initramfs とカーネルが含まれる場合があります。このプロセスは、ノードのデプロイに必要な残りの情報のダウンロードで終了します。これは、オペレーティングシステムのインストーラー、<link href=\"http://www.opscode.com/chef/\">Chef</link> または <link href=\"https://puppetlabs.com/\">Puppet</link> によって管理される基本インストール、またはディスクに直接書き込まれた完全なファイルシステムイメージの場合もあります。"
+msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml86(para)
 msgid ""
-"While utilizing SSL during the PXE boot process is somewhat more "
+"While utilizing TLS during the PXE boot process is somewhat more "
 "challenging, common PXE firmware projects, such as iPXE, provide this "
 "support. Typically this involves building the PXE firmware with knowledge of"
-" the allowed SSL certificate chain(s) so that it can properly validate the "
+" the allowed TLS certificate chain(s) so that it can properly validate the "
 "server certificate. This raises the bar for an attacker by limiting the "
 "number of insecure, plain text network operations."
-msgstr "PXE ブートプロセス中に SSL を活用するのは若干困難ですが、iPXE などの一般的な PXE ファームウェアプロジェクトは、この機能をサポートしています。通常、この作業には、サーバーの証明書を適切に検証するための許可済み SSL 証明書チェーンについての知識を活用した PXE ファームウェア構築が伴います。これにより、安全性の低いプレーンテキストのネットワーク操作数が制限されるので、攻撃者に対するセキュリティレベルが高くなります。."
+msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml96(title)
 msgid "Verified boot"
@@ -6663,11 +6649,11 @@ msgid ""
 "(for example, adding it to the network boundary and/or around sensitive "
 "networks). The placement depends on your network environment but make sure "
 "to monitor the impact the IDS may have on your services depending on where "
-"you choose to add it. Encrypted traffic, such as SSL, cannot generally be "
+"you choose to add it. Encrypted traffic, such as TLS, cannot generally be "
 "inspected for content by a Network IDS. However, the Network IDS may still "
 "provide some benefit in identifying anomalous unencrypted traffic on the "
 "network."
-msgstr "クラウドにネットワーク IDS の配置を検討することは重要です  (例: ネットワーク境界や機密性の高いのネットワークに追加するなど)。 配置はネットワーク環境によって異なりますが、追加する場所によって IDS がサービスにもたらす可能性のある影響を確実に監視するようにしてください。通常 ネットワーク IDS は、SSL などの暗号化トラフィックを調査することはできませんが、ネットワーク上の異常な非暗号化トラフィックを特定するメリットを提供することができます。"
+msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml389(para)
 msgid ""
@@ -7742,11 +7728,11 @@ msgid ""
 "cloud, Alice has completed her system documentation. Specifically she has "
 "identified which OpenStack services will exist in each security domain. From"
 " there Alice has further restricted access to management interfaces by "
-"deploying a combination of IDS, SSL encryption, and physical network "
+"deploying a combination of IDS, TLS encryption, and physical network "
 "isolation. Additionally, Alice requires high availability and redundant "
 "services. Thus, Alice sets up redundant infrastructure for various OpenStack"
 " API services."
-msgstr "プライベートクラウドを構築する際、ネットワークが物理的に分離されていますが、アリスはサービス管理インターフェースを検討する必要があります。プライベートクラウドをデプロイする前に、システム文書を書き上げました。特に、どの OpenStack サービスが各セキュリティドメインに存在するかを特定しました。そこから、アリスは、IDS、SSL、暗号化、物理的なネットワークの分離を組み合わせてデプロイすることで、管理インターフェースへのアクセスをさらに制限しました。また、高可用性や冗長サービスも必要とするため、様々な OpenStack API サービスに対してインフラストラクチャーの冗長設定を行いました。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml28(para)
 msgid ""
@@ -7769,11 +7755,11 @@ msgid ""
 "availability of management interfaces and the security of transactions to "
 "the management interfaces. To that end Bob implements multiple redundant "
 "OpenStack API endpoints for the services his cloud will run. Additionally on"
-" the public network Bob uses SSL to encrypt all transactions between his "
+" the public network Bob uses TLS to encrypt all transactions between his "
 "customers and his cloud interfaces. To isolate his cloud operations Bob has "
 "physically isolated his management, instance migration, and storage "
 "networks."
-msgstr "パブリッククラウドのプロバイダーとして、ボブは管理インターフェースの継続的な可用性と、管理インターフェースへのトランザクションのセキュリティの両方を考慮しています。このように、ボブは、クラウドが実行するサービスに対して、冗長化された OpenStack API エンドポイントを実装します。さらに、パブリックネットワークでは、SSL を使用して、顧客とクラウドインターフェースの間のトランザクションをすべて暗号化します。クラウドの運用を分離するために、ボブは管理、インスタンスマイグレーション、ストレージネットワークを物理的に分離しました。"
+msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml33(para)
 msgid ""
@@ -8997,7 +8983,7 @@ msgstr ""
 msgid ""
 "Alice's organization requires that the security architecture protect the "
 "access to the public and private endpoints, so she elects to use the Apache "
-"SSL proxy on both public and internal services. Alice's organization has "
+"TLS proxy on both public and internal services. Alice's organization has "
 "implemented its own certificate authority. Alice contacts the PKI office in "
 "her agency that manages her PKI and certificate issuance. Alice obtains "
 "certificates issued by this CA and configures the services within both the "
@@ -9014,7 +9000,7 @@ msgstr ""
 #: ./security-guide/section_case-studies-api-endpoints.xml34(para)
 msgid ""
 "Bob must also protect the access to the public and private endpoints, so he "
-"elects to use the Apache SSL proxy on both public and internal services. On "
+"elects to use the Apache TLS proxy on both public and internal services. On "
 "the public services, he has configured the certificate key files with "
 "certificates signed by a well-known Certificate Authority. He has used his "
 "organization's self-signed CA to sign certificates in the internal services "
@@ -9024,7 +9010,7 @@ msgid ""
 "mandatory access control policy to reduce the impact of any publicly "
 "accessible services that may be compromised. He has also configured the "
 "endpoints with a host-based IDS."
-msgstr "ボブもまた、パブリックとプライベートエンドポイントを守るひつようがあるため、 Apache SSL proxy をパブリックサービスと内部サービスの両方に構築しました。\nパブリックサービス側には、よく知られている認証局が署名した証明書キーファイルを、内部サービス側には、自己署名証明書を管理ネットワーク上のサービスに設定しました。\n内部アクセス用の Internal URL 越しに、サービスを Identity のサービスカタログに登録し、また、ホストベースの侵入検知システムを全 API エンドポイントに設定しました。"
+msgstr ""
 
 #: ./security-guide/ch_networking.xml9(para)
 msgid ""
@@ -9709,22 +9695,22 @@ msgstr "メッセージ通信路のセキュリティ"
 #: ./security-guide/section_messaging-security.xml16(para)
 msgid ""
 "AMQP based solutions (Qpid and RabbitMQ) support transport-level security "
-"using SSL. ZeroMQ messaging does not natively support SSL, but transport-"
+"using TLS. ZeroMQ messaging does not natively support TLS, but transport-"
 "level security is possible using labelled IPsec or CIPSO network labels."
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml22(para)
 msgid ""
 "We highly recommend enabling transport-level cryptography for your message "
-"queue. Using SSL for the messaging client connections provides protection of"
+"queue. Using TLS for the messaging client connections provides protection of"
 " the communications from tampering and eavesdropping in-transit to the "
-"messaging server. Below is guidance on how SSL is typically configured for "
+"messaging server. Below is guidance on how TLS is typically configured for "
 "the two popular messaging servers Qpid and RabbitMQ. When configuring the "
 "trusted certificate authority (CA) bundle that your messaging server uses to"
 " verify client connections, it is recommended that this be limited to only "
 "the CA used for your nodes, preferably an internally managed CA. The bundle "
 "of trusted CAs will determine which client certificates will be authorized "
-"and pass the client-server verification step of the setting up the SSL "
+"and pass the client-server verification step of the setting up the TLS "
 "connection. Note, when installing the certificate and key files, ensure that"
 " the file permissions are restricted, for example using <placeholder-1/>, "
 "and the ownership is restricted to the messaging server daemon user to "
@@ -9795,7 +9781,7 @@ msgid ""
 "for requesting a specific SASL authentication mechanism. RabbitMQ support in"
 " OpenStack allows for either user name and password authentication over an "
 "unencrypted connection or user name and password in conjunction with X.509 "
-"client certificates to establish the secure SSL connection."
+"client certificates to establish the secure TLS connection."
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml106(para)
@@ -9810,10 +9796,10 @@ msgstr ""
 
 #: ./security-guide/section_messaging-security.xml115(para)
 msgid ""
-"Before deployment, consider the SSL libraries that the queuing servers use. "
-"Qpid uses Mozilla's NSS library, whereas RabbitMQ uses Erlang's SSL module "
+"Before deployment, consider the TLS libraries that the queuing servers use. "
+"Qpid uses Mozilla's NSS library, whereas RabbitMQ uses Erlang's TLS module "
 "which uses OpenSSL."
-msgstr "導入前に、キューサーバが使用する SSL ライブラリについて考慮します。Qpid はMozilla の NSS ライブラリを、RabbitMQ は OpenSSL を使う Erlang の SSL モジュールを用いています。"
+msgstr ""
 
 #: ./security-guide/section_messaging-security.xml120(title)
 msgid "Authentication configuration example: RabbitMQ"
@@ -10050,8 +10036,8 @@ msgid "All database communications be isolated to a management network"
 msgstr "すべてのデータベース通信の管理ネットワークへの分離"
 
 #: ./security-guide/section_database-access-control.xml33(para)
-msgid "Securing communications using SSL"
-msgstr "SSL を使用したセキュア通信"
+msgid "Securing communications using TLS"
+msgstr ""
 
 #: ./security-guide/section_database-access-control.xml36(para)
 msgid ""
@@ -10071,7 +10057,7 @@ msgid ""
 "compliance or in the event of a compromise of a node allows you to isolate "
 "the compromised host by removing access for that node to the database upon "
 "detection. When creating these per service endpoint database user accounts, "
-"care should be taken to ensure that they are configured to require SSL. "
+"care should be taken to ensure that they are configured to require TLS. "
 "Alternatively, for increased security it is recommended that the database "
 "accounts be configured using X.509 certificate authentication in addition to"
 " user names and passwords."
@@ -10315,9 +10301,9 @@ msgstr "ダッシュボードは Web ブラウザーのクッキーと JavaScrip
 
 #: ./security-guide/section_management-interfaces.xml65(para)
 msgid ""
-"The web server that hosts dashboard should be configured for SSL to ensure "
-"data is encrypted."
-msgstr "ダッシュボードをホストする Web サーバーは、データの暗号化が確実に行われるように SSL の設定をしてください。"
+"The web server that hosts the dashboard should be configured for TLS to "
+"ensure data is encrypted."
+msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml68(para)
 msgid ""
@@ -10370,8 +10356,8 @@ msgstr "API はリソースのプロビジョニング、管理、アクセス�
 
 #: ./security-guide/section_management-interfaces.xml122(para)
 msgid ""
-"The API service should be configured for SSL to ensure data is encrypted."
-msgstr "API サービスはデータが確実に暗号化されるように SSL の設定が必要です。"
+"The API service should be configured for TLS to ensure data is encrypted."
+msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml125(para)
 msgid ""
@@ -10483,9 +10469,9 @@ msgstr "OpenStack コンポーネントを実行するノードにアクセス�
 
 #: ./security-guide/section_management-interfaces.xml179(para)
 msgid ""
-"Use strong passwords and safeguard them, or use client-side SSL "
+"Use strong passwords and safeguard them, or use client-side TLS "
 "authentication."
-msgstr "強力なパスワードを使用してセーフガードするか、クライアント側の SSL 認証を使用してください。"
+msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml182(para)
 msgid ""
@@ -10497,8 +10483,8 @@ msgstr "ネットワークインターフェースはプライベート  (管理
 #: ./security-guide/section_management-interfaces.xml185(para)
 msgid ""
 "If you use a web interface to interact with the "
-"<glossterm>BMC</glossterm>/IPMI, always use the SSL interface, such as HTTPS"
-" or port 443. This SSL interface should <emphasis "
+"<glossterm>BMC</glossterm>/IPMI, always use the TLS interface, such as HTTPS"
+" or port 443. This TLS interface should <emphasis "
 "role=\"bold\">NOT</emphasis> use self-signed certificates, as is often "
 "default, but should have trusted certificates using the correctly defined "
 "fully qualified domain names (FQDNs)."
@@ -10847,7 +10833,7 @@ msgstr "残念ながら、現在はインスタンス起動直前にコンピュ
 #: ./security-guide/section_security-services-for-instances.xml211(para)
 msgid ""
 "Images come from the glance service to the nova service on a node. This "
-"transfer should be protected by running over SSL. Once the image is on the "
+"transfer should be protected by running over TLS. Once the image is on the "
 "node, it is verified with a basic checksum and then it's disk is expanded "
 "based on the size of the instance being launched. If, at a later time, the "
 "same image is launched with the same instance size on this node, it will be "
@@ -10855,7 +10841,7 @@ msgid ""
 "verified before launching, it could be tampered with and the user would not "
 "have any way of knowing, beyond a manual inspection of the files in the "
 "resulting image."
-msgstr "イメージはGlanceサービスからノードのNovaサービスへ供給されます。この転送はSSLによって保護されている必要があります。イメージがノードに転送されたら、一般的なchecksumで検証され、起動するインスタンスのサイズに合わせてディスクが拡張します。以降、このノードで同じサイズの同一イメージを起動する場合はこの拡張されたイメージから起動されます。拡張されたイメージは起動前に再検証されないため、改ざんの可能性があります。これでは作成されたイメージのファイルの手動確認以外に確認方法がありません。"
+msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml212(para)
 msgid ""
@@ -11257,7 +11243,7 @@ msgstr "デフォルトのオープンなパブリックポートによる <syst
 
 #: ./security-guide/ch_compute.xml53(para)
 msgid ""
-"By default, the remote desktop traffic is not encrypted. SSL can be enabled "
+"By default, the remote desktop traffic is not encrypted. TLS can be enabled "
 "to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-"
 "ssl-tls\">Introduction to SSL/TLS</link> for appropriate recommendations."
 msgstr ""
@@ -11342,7 +11328,7 @@ msgstr "VNC の場合のように、今のところ数人の利用者に制限�
 #: ./security-guide/ch_compute.xml109(para)
 msgid ""
 "OpenStack Configuration Reference - Havana. SPICE Console. <link "
-"href=\"http://docs.openstack.org/trunk/config-reference/content/spice-"
+"href=\"http://docs.openstack.org/havana/config-reference/content/spice-"
 "console.html\">SPICE Console</link>"
 msgstr ""
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-11 06:01+0000\n"
+"POT-Creation-Date: 2015-02-16 06:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid "Database transport security"
 msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml:9(para)
-msgid "This chapter covers issues related to network communications to and from the database server. This includes IP address bindings and encrypting network traffic with SSL."
+msgid "This chapter covers issues related to network communications to and from the database server. This includes IP address bindings and encrypting network traffic with TLS."
 msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml:14(title)
@@ -62,7 +62,7 @@ msgid "Database transport"
 msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml:38(para)
-msgid "In addition to restricting database communications to the management network, we also strongly recommend that the cloud administrator configure their database back end to require SSL. Using SSL for the database client connections protects the communications from tampering and eavesdropping. As will be discussed in the next section, using SSL also provides the framework for doing database user authentication through X.509 certificates (commonly referred to as PKI). Below is guidance on how SSL is typically configured for the two popular database back ends MySQL and PostgreSQL."
+msgid "In addition to restricting database communications to the management network, we also strongly recommend that the cloud administrator configure their database back end to require TLS. Using TLS for the database client connections protects the communications from tampering and eavesdropping. As will be discussed in the next section, using TLS also provides the framework for doing database user authentication through X.509 certificates (commonly referred to as PKI). Below is guidance on how TLS is typically configured for the two popular database back ends MySQL and PostgreSQL."
 msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml:50(para)
@@ -158,7 +158,7 @@ msgid "Fail securely"
 msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml:54(para)
-msgid "In the case of failure, systems should be configured to fail into a closed secure state. For example, SSL certificate verification should fail closed by severing the network connection if the CNAME doesn't match the server's DNS name. Software often fails open in this situation, allowing the connection to proceed without a CNAME match, which is less secure and not recommended."
+msgid "In the case of failure, systems should be configured to fail into a closed secure state. For example, TLS certificate verification should fail closed by severing the network connection if the CNAME doesn't match the server's DNS name. Software often fails open in this situation, allowing the connection to proceed without a CNAME match, which is less secure and not recommended."
 msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml:62(term)
@@ -424,7 +424,7 @@ msgid "The OpenStack Identity Service (keystone) supports multiple methods of au
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:14(para)
-msgid "Transport Layer Security TLS/SSL provides authentication between services and persons using X.509 certificates. Although the default mode for SSL is server-side only authentication, certificates may also be used for client authentication."
+msgid "Transport Layer Security (TLS) provides authentication between services and persons using X.509 certificates. Although the default mode for TLS is server-side only authentication, certificates may also be used for client authentication."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:19(title)
@@ -560,11 +560,11 @@ msgid "The Compute and Object Storage services can be configured to use either t
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:185(para)
-msgid "The Identity Service supports client authentication for SSL which may be enabled. SSL client authentication provides an additional authentication factor, in addition to the user name / password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
+msgid "The Identity Service supports client authentication for TLS which may be enabled. TLS client authentication provides an additional authentication factor, in addition to the user name and password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:195(para)
-msgid "We recommend that you use client authentication with SSL for the authentication of services to the Identity Service."
+msgid "We recommend that you use client authentication with TLS for the authentication of services to the Identity Service."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:199(para)
@@ -572,7 +572,7 @@ msgid "The cloud administrator should protect sensitive configuration files from
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:205(para)
-msgid "Client authentication with SSL requires certificates be issued to services. These certificates can be signed by an external or internal certificate authority. OpenStack services check the validity of certificate signatures against trusted CAs by default and connections will fail if the signature is not valid or the CA is not trusted. Cloud deployers may use self-signed certificates. In this case, the validity check must be disabled or the certificate should be marked as trusted. To disable validation of self-signed certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
+msgid "Client authentication with TLS requires certificates be issued to services. These certificates can be signed by an external or internal certificate authority. OpenStack services check the validity of certificate signatures against trusted CAs by default and connections will fail if the signature is not valid or the CA is not trusted. Cloud deployers may use self-signed certificates. In this case, the validity check must be disabled or the certificate should be marked as trusted. To disable validation of self-signed certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:220(title)
@@ -668,7 +668,7 @@ msgid "Bob's public cloud"
 msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:16(para)
-msgid "Bob is architecting a public cloud and needs to ensure that the publicly facing OpenStack services are using certificates issued by a major public CA. Bob acquires certificates for his public OpenStack services and configures the services to use PKI and SSL and includes the public CAs in his trust bundle for the services. Additionally, Bob also wants to further isolate the internal communications amongst the services within the management security domain. Bob contacts the team within his organization that is responsible for managing his organization's PKI and issuance of certificates using their own internal CA. Bob obtains certificates issued by this internal CA and configures the services that communicate within the management security domain to use these certificates and configures the services to only accept client certificates issued by his internal CA."
+msgid "Bob is architecting a public cloud and needs to ensure that the publicly facing OpenStack services are using certificates issued by a major public CA. Bob acquires certificates for his public OpenStack services and configures the services to use PKI and TLS and includes the public CAs in his trust bundle for the services. Additionally, Bob also wants to further isolate the internal communications amongst the services within the management security domain. Bob contacts the team within his organization that is responsible for managing his organization's PKI and issuance of certificates using their own internal CA. Bob obtains certificates issued by this internal CA and configures the services that communicate within the management security domain to use these certificates and configures the services to only accept client certificates issued by his internal CA."
 msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml:9(para)
@@ -1290,7 +1290,7 @@ msgid "In this case, Alice's controls are the same as Bob's controls, which are 
 msgstr ""
 
 #: ./security-guide/section_case-studies-messaging.xml:19(para)
-msgid "Bob assumes the infrastructure or networks underpinning the Compute service could become compromised, therefore he recognizes the importance of hardening the system by restricting access to the message queue. In order to accomplish this task Bob deploys his RabbitMQ servers with SSL and X.509 client auth for access control. Hardening activities assists in limiting the capabilities of a malicious user that has compromised the system by disallowing queue access, provided that this user does not have valid credentials to override the controls."
+msgid "Bob assumes the infrastructure or networks underpinning the Compute service could become compromised, therefore he recognizes the importance of hardening the system by restricting access to the message queue. In order to accomplish this task Bob deploys his RabbitMQ servers with TLS and X.509 client auth for access control. Hardening activities assists in limiting the capabilities of a malicious user that has compromised the system by disallowing queue access, provided that this user does not have valid credentials to override the controls."
 msgstr ""
 
 #: ./security-guide/section_case-studies-messaging.xml:20(para)
@@ -1526,11 +1526,11 @@ msgid "Run the Identity service under Apache, instead of using <placeholder-1/>.
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:118(para)
-msgid "Enable SSL support. Install <literal>mod_nss</literal> according to your distribution, then apply the following patch and restart HTTPD:"
+msgid "Enable TLS support. Install <literal>mod_nss</literal> according to your distribution, then apply the following patch and restart HTTPD:"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:143(para)
-msgid "If you have a firewall in place, configure it to allow SSL traffic. For example:"
+msgid "If you have a firewall in place, configure it to allow TLS traffic. For example:"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:146(para)
@@ -2374,11 +2374,11 @@ msgid "Load balancer"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:294(para)
-msgid "If the option of using Apache is not feasible or for performance you wish to offload your SSL work you may employ a dedicated network device load balancer. This is also the common way to provide redundancy and load balancing when using multiple proxy nodes."
+msgid "If the option of using Apache is not feasible or for performance you wish to offload your TLS work you may employ a dedicated network device load balancer. This is also the common way to provide redundancy and load balancing when using multiple proxy nodes."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:299(para)
-msgid "If you choose to offload your SSL, ensure that the network link between the load balancer and your proxy nodes are on a private (V)LAN segment such that other nodes on the network (possibly compromised) cannot wiretap (sniff) the unencrypted traffic. If such a breach were to occur the attacker could gain access to end-point client or cloud administrator credentials and access the cloud data."
+msgid "If you choose to offload your TLS, ensure that the network link between the load balancer and your proxy nodes are on a private (V)LAN segment such that other nodes on the network (possibly compromised) cannot wiretap (sniff) the unencrypted traffic. If such a breach were to occur the attacker could gain access to end-point client or cloud administrator credentials and access the cloud data."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:307(para)
@@ -2390,7 +2390,7 @@ msgid "Object Storage authentication"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:317(para)
-msgid "Object Storage uses a WSGI model to provide for a middleware capability that not only provides general extensibility but is also used for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 SSL certificates. Custom providers can be integrated in using custom middleware."
+msgid "Object Storage uses a WSGI model to provide for a middleware capability that not only provides general extensibility but is also used for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:325(para)
@@ -2482,7 +2482,7 @@ msgid "The endpoint that is trusting that the CA is valid."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:56(para)
-msgid "PKI builds the framework on which to provide encryption algorithms, cipher modes, and protocols for securing data and authentication. We strongly recommend securing all services with Public Key Infrastructure (PKI), including the use of SSL/TLS for API endpoints. It is impossible for the encryption or signing of transports or messages alone to solve all these problems. Hosts themselves must be secure and implement policy, namespaces, and other controls to protect their private credentials and keys. However, the challenges of key management and protection do not reduce the necessity of these controls, or lessen their importance."
+msgid "PKI builds the framework on which to provide encryption algorithms, cipher modes, and protocols for securing data and authentication. We strongly recommend securing all services with Public Key Infrastructure (PKI), including the use of TLS for API endpoints. It is impossible for the encryption or signing of transports or messages alone to solve all these problems. Hosts themselves must be secure and implement policy, namespaces, and other controls to protect their private credentials and keys. However, the challenges of key management and protection do not reduce the necessity of these controls, or lessen their importance."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:58(title)
@@ -2498,7 +2498,7 @@ msgid "It is recommended that the OpenStack cloud architect consider using separ
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:61(para)
-msgid "Certificates used to support SSL/TLS on internet facing cloud endpoints (or customer interfaces where the customer is not expected to have installed anything other than standard operating system provided certificate bundles) should be provisioned using Certificate Authorities that are installed in the operating system certificate bundle. Typical well known vendors include Verisign and Thawte but many others exist."
+msgid "Certificates used to support TLS on internet facing cloud endpoints (or customer interfaces where the customer is not expected to have installed anything other than standard operating system provided certificate bundles) should be provisioned using Certificate Authorities that are installed in the operating system certificate bundle. Typical well known vendors include Verisign and Thawte but many others exist."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:62(para)
@@ -2506,87 +2506,83 @@ msgid "There are many management, policy, and technical challenges around creati
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:65(title)
-msgid "SSL/TLS libraries"
+msgid "TLS libraries"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:66(para)
-msgid "Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use SSL/TLS libraries. The SSL/TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries."
+msgid "Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use TLS libraries. The TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:76(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:69(title)
 msgid "Cryptographic algorithms, cipher modes, and protocols"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:77(para)
-msgid "We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad client compatibility but we recommend using caution and only enabling these protocols if you have a strong requirement to do so. Other SSL/TLS versions, explicitly older versions, should not be used. These older versions include SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as POODLE. When using TLS v1.2 and in control of both the clients and the server, the cipher suite should be limited to <literal>ECDHE-ECDSA-AES256-GCM-SHA384</literal>. Where you don't control both ends and are using TLS v1+, the more general <literal>HIGH:!aNULL:!eNULL:!DES:!3DES</literal> is a reasonable cipher selection."
+#: ./security-guide/section_introduction-to-ssl-tls.xml:70(para)
+msgid "We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad client compatibility but we recommend using caution and only enabling these protocols if you have a strong requirement to do so. Other TLS versions, explicitly older versions, should not be used. These older versions include SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as POODLE. When using TLS v1.2 and in control of both the clients and the server, the cipher suite should be limited to <literal>ECDHE-ECDSA-AES256-GCM-SHA384</literal>. Where you don't control both ends and are using TLS v1+, the more general <literal>HIGH:!aNULL:!eNULL:!DES:!3DES</literal> is a reasonable cipher selection."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:78(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:71(para)
 msgid "However, as this book does not intend to be a thorough reference on cryptography we do not wish to be prescriptive about what specific algorithms or cipher modes you should enable or disable in your OpenStack services. However, there are some authoritative references we would like to recommend for further information:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:80(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:73(link)
 msgid "National Security Agency, Suite B Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:83(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:76(link)
 msgid "OWASP Guide to Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:86(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:79(link)
 msgid "OWASP Transport Layer Protection Cheat Sheet"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:89(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:82(link)
 msgid "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:92(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:85(link)
 msgid "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:95(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:88(link)
 msgid "OpenSSL and FIPS 140-2"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:100(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:93(title)
 msgid "Summary"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:101(para)
-msgid "Given the complexity of the OpenStack components and the number of deployment possibilities, you must take care to ensure that each component gets the appropriate configuration of SSL certificates, keys, and CAs. Subsequent sections discuss the following services:"
+#: ./security-guide/section_introduction-to-ssl-tls.xml:94(para)
+msgid "Given the complexity of the OpenStack components and the number of deployment possibilities, you must take care to ensure that each component gets the appropriate configuration of TLS certificates, keys, and CAs. Subsequent sections discuss the following services:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:110(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:103(para)
 msgid "Compute API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:113(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:106(para)
 msgid "Identity API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:116(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:109(para)
 msgid "Networking API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:119(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:112(para)
 msgid "Storage API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:122(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:115(para)
 msgid "Messaging server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:125(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:118(para)
 msgid "Database server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:128(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:121(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
 msgid "Dashboard"
-msgstr ""
-
-#: ./security-guide/section_introduction-to-ssl-tls.xml:131(para)
-msgid "This guide uses the term SSL as a shorthand to refer to these recommendations for SSL/TLS protocols."
 msgstr ""
 
 #: ./security-guide/ch_introduction.xml:7(title)
@@ -2886,7 +2882,7 @@ msgid "!RC4"
 msgstr ""
 
 #: ./security-guide/section_tls-proxies-and-http-services.xml:69(para)
-msgid "No RC4. RC4 has flaws in the context of TLS/SSL V3. See <link href=\"http://cr.yp.to/streamciphers/rc4biases-20130708.pdf\"> On the Security of RC4 in TLS and WPA</link>."
+msgid "No RC4. RC4 has flaws in the context of TLS V3. See <link href=\"http://cr.yp.to/streamciphers/rc4biases-20130708.pdf\"> On the Security of RC4 in TLS and WPA</link>."
 msgstr ""
 
 #: ./security-guide/section_tls-proxies-and-http-services.xml:73(code)
@@ -3478,7 +3474,7 @@ msgid "L2 isolation using VLANs and tunneling"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:13(para)
-msgid "OpenStack networking can employ two different mechanisms for traffic segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging) or L2 tunnels using GRE encapsulation. Which method you choose for traffic segregation and isolation is determined by the scope and scale of your OpenStack deployment."
+msgid "OpenStack Networking can employ two different mechanisms for traffic segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging) or L2 tunnels using GRE encapsulation. Which method you choose for traffic segregation and isolation is determined by the scope and scale of your OpenStack deployment."
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:15(title)
@@ -3610,46 +3606,42 @@ msgid "Network services extensions"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:76(para)
-msgid "Here is a list of known plug-ins provided by the open source community or by SDN companies that work with OpenStack Networking:"
+msgid "A list of known plug-ins provided by the open source community or by SDN companies that work with OpenStack Networking is available at <link href=\"https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers\">OpenStack Neutron Plugins and Drivers wiki page</link>."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:77(para)
-msgid "Big Switch Controller plug-in, Brocade neutron plug-in Brocade neutron plug-in, Cisco UCS/Nexus plug-in, Cloudbase Hyper-V plug-in, Extreme Networks plug-in, Juniper Networks neutron plug-in, Linux Bridge plug-in, Mellanox neutron plug-in, MidoNet plug-in, NEC OpenFlow plug-in, Open vSwitch plug-in, PLUMgrid plug-in, Ruijie Networks plug-in, Ryu OpenFlow Controller plug-in, VMware NSX plug-in."
-msgstr ""
-
-#: ./security-guide/section_networking-services.xml:86(title)
+#: ./security-guide/section_networking-services.xml:83(title)
 msgid "Networking services limitations"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:87(para)
+#: ./security-guide/section_networking-services.xml:84(para)
 msgid "OpenStack Networking has the following known limitations:"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:90(term)
+#: ./security-guide/section_networking-services.xml:87(term)
 msgid "Overlapping IP addresses"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:92(para)
+#: ./security-guide/section_networking-services.xml:89(para)
 msgid "If nodes that run either <systemitem class=\"service\">neutron-l3-agent</systemitem> or <systemitem class=\"service\">neutron-dhcp-agent</systemitem> use overlapping IP addresses, those nodes must use Linux network namespaces. By default, the DHCP and L3 agents use Linux network namespaces. However, if the host does not support these namespaces, run the DHCP and L3 agents on different hosts."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:102(para)
+#: ./security-guide/section_networking-services.xml:99(para)
 msgid "If network namespace support is not present, a further limitation of the L3 agent is that only a single logical router is supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:109(term)
+#: ./security-guide/section_networking-services.xml:106(term)
 msgid "Multi-host DHCP-agent"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:111(para)
+#: ./security-guide/section_networking-services.xml:108(para)
 msgid "OpenStack Networking supports multiple L3 and DHCP agents with load balancing. However, tight coupling of the location of the virtual machine is not supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:119(term)
+#: ./security-guide/section_networking-services.xml:116(term)
 msgid "No IPv6 support for L3 agents"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:121(para)
+#: ./security-guide/section_networking-services.xml:118(para)
 msgid "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, supports only IPv4 forwarding."
 msgstr ""
 
@@ -3692,11 +3684,11 @@ msgid "Nodes should use Preboot eXecution Environment (PXE) for provisioning. Th
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:72(para)
-msgid "We recommend using a separate, isolated network within the management security domain for provisioning. This network will handle all PXE traffic, along with the subsequent boot stage downloads depicted above. Note that the node boot process begins with two insecure operations: DHCP and TFTP. Then the boot process downloads over SSL the remaining information required to deploy the node. This information might include an initramfs and a kernel. This concludes by downloading the remaining information needed to deploy the node. This may be an operating system installer, a basic install managed by <link href=\"http://www.opscode.com/chef/\">Chef</link> or <link href=\"https://puppetlabs.com/\">Puppet</link>, or even a complete file system image that is written directly to disk."
+msgid "We recommend using a separate, isolated network within the management security domain for provisioning. This network will handle all PXE traffic, along with the subsequent boot stage downloads depicted above. Note that the node boot process begins with two insecure operations: DHCP and TFTP. Then the boot process downloads over TLS the remaining information required to deploy the node. This information might include an initramfs and a kernel. This concludes by downloading the remaining information needed to deploy the node. This may be an operating system installer, a basic install managed by <link href=\"http://www.opscode.com/chef/\">Chef</link> or <link href=\"https://puppetlabs.com/\">Puppet</link>, or even a complete file system image that is written directly to disk."
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:86(para)
-msgid "While utilizing SSL during the PXE boot process is somewhat more challenging, common PXE firmware projects, such as iPXE, provide this support. Typically this involves building the PXE firmware with knowledge of the allowed SSL certificate chain(s) so that it can properly validate the server certificate. This raises the bar for an attacker by limiting the number of insecure, plain text network operations."
+msgid "While utilizing TLS during the PXE boot process is somewhat more challenging, common PXE firmware projects, such as iPXE, provide this support. Typically this involves building the PXE firmware with knowledge of the allowed TLS certificate chain(s) so that it can properly validate the server certificate. This raises the bar for an attacker by limiting the number of insecure, plain text network operations."
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:96(title)
@@ -3924,7 +3916,7 @@ msgid "There are a few important security considerations for network and host-ba
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:377(para)
-msgid "It is important to consider the placement of the Network IDS on the cloud (for example, adding it to the network boundary and/or around sensitive networks). The placement depends on your network environment but make sure to monitor the impact the IDS may have on your services depending on where you choose to add it. Encrypted traffic, such as SSL, cannot generally be inspected for content by a Network IDS. However, the Network IDS may still provide some benefit in identifying anomalous unencrypted traffic on the network."
+msgid "It is important to consider the placement of the Network IDS on the cloud (for example, adding it to the network boundary and/or around sensitive networks). The placement depends on your network environment but make sure to monitor the impact the IDS may have on your services depending on where you choose to add it. Encrypted traffic, such as TLS, cannot generally be inspected for content by a Network IDS. However, the Network IDS may still provide some benefit in identifying anomalous unencrypted traffic on the network."
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:389(para)
@@ -4632,7 +4624,7 @@ msgid "SLA and security monitoring"
 msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml:27(para)
-msgid "When building her private cloud, while air-gapped, Alice still needs to consider her service management interfaces. Before deploying her private cloud, Alice has completed her system documentation. Specifically she has identified which OpenStack services will exist in each security domain. From there Alice has further restricted access to management interfaces by deploying a combination of IDS, SSL encryption, and physical network isolation. Additionally, Alice requires high availability and redundant services. Thus, Alice sets up redundant infrastructure for various OpenStack API services."
+msgid "When building her private cloud, while air-gapped, Alice still needs to consider her service management interfaces. Before deploying her private cloud, Alice has completed her system documentation. Specifically she has identified which OpenStack services will exist in each security domain. From there Alice has further restricted access to management interfaces by deploying a combination of IDS, TLS encryption, and physical network isolation. Additionally, Alice requires high availability and redundant services. Thus, Alice sets up redundant infrastructure for various OpenStack API services."
 msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml:28(para)
@@ -4640,7 +4632,7 @@ msgid "Alice also needs to provide assurances that the physical servers and hype
 msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml:32(para)
-msgid "As a public cloud provider, Bob is concerned with both the continuous availability of management interfaces and the security of transactions to the management interfaces. To that end Bob implements multiple redundant OpenStack API endpoints for the services his cloud will run. Additionally on the public network Bob uses SSL to encrypt all transactions between his customers and his cloud interfaces. To isolate his cloud operations Bob has physically isolated his management, instance migration, and storage networks."
+msgid "As a public cloud provider, Bob is concerned with both the continuous availability of management interfaces and the security of transactions to the management interfaces. To that end Bob implements multiple redundant OpenStack API endpoints for the services his cloud will run. Additionally on the public network Bob uses TLS to encrypt all transactions between his customers and his cloud interfaces. To isolate his cloud operations Bob has physically isolated his management, instance migration, and storage networks."
 msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml:33(para)
@@ -5298,11 +5290,11 @@ msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced
 msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:12(para)
-msgid "Alice's organization requires that the security architecture protect the access to the public and private endpoints, so she elects to use the Apache SSL proxy on both public and internal services. Alice's organization has implemented its own certificate authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a network disconnected from the Internet, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA. Alice has registered all of the services in the Identity service's catalog, using the internal URLs for access by internal services. She has installed host-based intrusion detection on all of the API endpoints."
+msgid "Alice's organization requires that the security architecture protect the access to the public and private endpoints, so she elects to use the Apache TLS proxy on both public and internal services. Alice's organization has implemented its own certificate authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a network disconnected from the Internet, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA. Alice has registered all of the services in the Identity service's catalog, using the internal URLs for access by internal services. She has installed host-based intrusion detection on all of the API endpoints."
 msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:34(para)
-msgid "Bob must also protect the access to the public and private endpoints, so he elects to use the Apache SSL proxy on both public and internal services. On the public services, he has configured the certificate key files with certificates signed by a well-known Certificate Authority. He has used his organization's self-signed CA to sign certificates in the internal services on the Management network. Bob has registered his services in the Identity service's catalog, using the internal URLs for access by internal services. Bob's public cloud runs services on SELinux, which he has configured with a mandatory access control policy to reduce the impact of any publicly accessible services that may be compromised. He has also configured the endpoints with a host-based IDS."
+msgid "Bob must also protect the access to the public and private endpoints, so he elects to use the Apache TLS proxy on both public and internal services. On the public services, he has configured the certificate key files with certificates signed by a well-known Certificate Authority. He has used his organization's self-signed CA to sign certificates in the internal services on the Management network. Bob has registered his services in the Identity service's catalog, using the internal URLs for access by internal services. Bob's public cloud runs services on SELinux, which he has configured with a mandatory access control policy to reduce the impact of any publicly accessible services that may be compromised. He has also configured the endpoints with a host-based IDS."
 msgstr ""
 
 #: ./security-guide/ch_networking.xml:9(para)
@@ -5722,11 +5714,11 @@ msgid "Messaging transport security"
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:16(para)
-msgid "AMQP based solutions (Qpid and RabbitMQ) support transport-level security using SSL. ZeroMQ messaging does not natively support SSL, but transport-level security is possible using labelled IPsec or CIPSO network labels."
+msgid "AMQP based solutions (Qpid and RabbitMQ) support transport-level security using TLS. ZeroMQ messaging does not natively support TLS, but transport-level security is possible using labelled IPsec or CIPSO network labels."
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:22(para)
-msgid "We highly recommend enabling transport-level cryptography for your message queue. Using SSL for the messaging client connections provides protection of the communications from tampering and eavesdropping in-transit to the messaging server. Below is guidance on how SSL is typically configured for the two popular messaging servers Qpid and RabbitMQ. When configuring the trusted certificate authority (CA) bundle that your messaging server uses to verify client connections, it is recommended that this be limited to only the CA used for your nodes, preferably an internally managed CA. The bundle of trusted CAs will determine which client certificates will be authorized and pass the client-server verification step of the setting up the SSL connection. Note, when installing the certificate and key files, ensure that the file permissions are restricted, for example using <placeholder-1/>, and the ownership is restricted to the messaging server daemon user to prevent unauthorized access by other processes and users on the messaging server."
+msgid "We highly recommend enabling transport-level cryptography for your message queue. Using TLS for the messaging client connections provides protection of the communications from tampering and eavesdropping in-transit to the messaging server. Below is guidance on how TLS is typically configured for the two popular messaging servers Qpid and RabbitMQ. When configuring the trusted certificate authority (CA) bundle that your messaging server uses to verify client connections, it is recommended that this be limited to only the CA used for your nodes, preferably an internally managed CA. The bundle of trusted CAs will determine which client certificates will be authorized and pass the client-server verification step of the setting up the TLS connection. Note, when installing the certificate and key files, ensure that the file permissions are restricted, for example using <placeholder-1/>, and the ownership is restricted to the messaging server daemon user to prevent unauthorized access by other processes and users on the messaging server."
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:44(title)
@@ -5774,7 +5766,7 @@ msgid "RabbitMQ and Qpid offer authentication and access control mechanisms for 
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:92(para)
-msgid "Simple Authentication and Security Layer (SASL) is a framework for authentication and data security in Internet protocols. Both RabbitMQ and Qpid offer SASL and other pluggable authentication mechanisms beyond simple user names and passwords that allow for increased authentication security. While RabbitMQ supports SASL, support in OpenStack does not currently allow for requesting a specific SASL authentication mechanism. RabbitMQ support in OpenStack allows for either user name and password authentication over an unencrypted connection or user name and password in conjunction with X.509 client certificates to establish the secure SSL connection."
+msgid "Simple Authentication and Security Layer (SASL) is a framework for authentication and data security in Internet protocols. Both RabbitMQ and Qpid offer SASL and other pluggable authentication mechanisms beyond simple user names and passwords that allow for increased authentication security. While RabbitMQ supports SASL, support in OpenStack does not currently allow for requesting a specific SASL authentication mechanism. RabbitMQ support in OpenStack allows for either user name and password authentication over an unencrypted connection or user name and password in conjunction with X.509 client certificates to establish the secure TLS connection."
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:106(para)
@@ -5782,7 +5774,7 @@ msgid "We recommend configuring X.509 client certificates on all the OpenStack s
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:115(para)
-msgid "Before deployment, consider the SSL libraries that the queuing servers use. Qpid uses Mozilla's NSS library, whereas RabbitMQ uses Erlang's SSL module which uses OpenSSL."
+msgid "Before deployment, consider the TLS libraries that the queuing servers use. Qpid uses Mozilla's NSS library, whereas RabbitMQ uses Erlang's TLS module which uses OpenSSL."
 msgstr ""
 
 #: ./security-guide/section_messaging-security.xml:120(title)
@@ -5956,7 +5948,7 @@ msgid "All database communications be isolated to a management network"
 msgstr ""
 
 #: ./security-guide/section_database-access-control.xml:33(para)
-msgid "Securing communications using SSL"
+msgid "Securing communications using TLS"
 msgstr ""
 
 #: ./security-guide/section_database-access-control.xml:36(para)
@@ -5968,7 +5960,7 @@ msgid "Database authentication and access control"
 msgstr ""
 
 #: ./security-guide/section_database-access-control.xml:53(para)
-msgid "Given the risks around access to the database, we strongly recommend that unique database user accounts be created per node needing access to the database. Doing this facilitates better analysis and auditing for ensuring compliance or in the event of a compromise of a node allows you to isolate the compromised host by removing access for that node to the database upon detection. When creating these per service endpoint database user accounts, care should be taken to ensure that they are configured to require SSL. Alternatively, for increased security it is recommended that the database accounts be configured using X.509 certificate authentication in addition to user names and passwords."
+msgid "Given the risks around access to the database, we strongly recommend that unique database user accounts be created per node needing access to the database. Doing this facilitates better analysis and auditing for ensuring compliance or in the event of a compromise of a node allows you to isolate the compromised host by removing access for that node to the database upon detection. When creating these per service endpoint database user accounts, care should be taken to ensure that they are configured to require TLS. Alternatively, for increased security it is recommended that the database accounts be configured using X.509 certificate authentication in addition to user names and passwords."
 msgstr ""
 
 #: ./security-guide/section_database-access-control.xml:55(title)
@@ -6120,7 +6112,7 @@ msgid "The dashboard requires cookies and JavaScript to be enabled in the web br
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:65(para)
-msgid "The web server that hosts dashboard should be configured for SSL to ensure data is encrypted."
+msgid "The web server that hosts the dashboard should be configured for TLS to ensure data is encrypted."
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:68(para)
@@ -6152,7 +6144,7 @@ msgid "The API provides a tenant interface for provisioning, managing, and acces
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:122(para)
-msgid "The API service should be configured for SSL to ensure data is encrypted."
+msgid "The API service should be configured for TLS to ensure data is encrypted."
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:125(para)
@@ -6216,7 +6208,7 @@ msgid "OpenStack management relies on out-of-band management interfaces such as 
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:179(para)
-msgid "Use strong passwords and safeguard them, or use client-side SSL authentication."
+msgid "Use strong passwords and safeguard them, or use client-side TLS authentication."
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:182(para)
@@ -6224,7 +6216,7 @@ msgid "Ensure that the network interfaces are on their own private(management or
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:185(para)
-msgid "If you use a web interface to interact with the <glossterm>BMC</glossterm>/IPMI, always use the SSL interface, such as HTTPS or port 443. This SSL interface should <emphasis role=\"bold\">NOT</emphasis> use self-signed certificates, as is often default, but should have trusted certificates using the correctly defined fully qualified domain names (FQDNs)."
+msgid "If you use a web interface to interact with the <glossterm>BMC</glossterm>/IPMI, always use the TLS interface, such as HTTPS or port 443. This TLS interface should <emphasis role=\"bold\">NOT</emphasis> use self-signed certificates, as is often default, but should have trusted certificates using the correctly defined fully qualified domain names (FQDNs)."
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:194(para)
@@ -6406,7 +6398,7 @@ msgid "Unfortunately, it is not currently possible to force Compute to validate 
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:211(para)
-msgid "Images come from the glance service to the nova service on a node. This transfer should be protected by running over SSL. Once the image is on the node, it is verified with a basic checksum and then it's disk is expanded based on the size of the instance being launched. If, at a later time, the same image is launched with the same instance size on this node, it will be launched from the same expanded image. Since this expanded image is not re-verified before launching, it could be tampered with and the user would not have any way of knowing, beyond a manual inspection of the files in the resulting image."
+msgid "Images come from the glance service to the nova service on a node. This transfer should be protected by running over TLS. Once the image is on the node, it is verified with a basic checksum and then it's disk is expanded based on the size of the instance being launched. If, at a later time, the same image is launched with the same instance size on this node, it will be launched from the same expanded image. Since this expanded image is not re-verified before launching, it could be tampered with and the user would not have any way of knowing, beyond a manual inspection of the files in the resulting image."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:212(para)
@@ -6634,7 +6626,7 @@ msgid "The <systemitem class=\"service\">nova-novncproxy</systemitem> and <syste
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:53(para)
-msgid "By default, the remote desktop traffic is not encrypted. SSL can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to SSL/TLS</link> for appropriate recommendations."
+msgid "By default, the remote desktop traffic is not encrypted. TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to SSL/TLS</link> for appropriate recommendations."
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:60(para)
@@ -6686,7 +6678,7 @@ msgid "As is the case for VNC, at this time we recommend using SPICE from the ma
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:109(para)
-msgid "OpenStack Configuration Reference - Havana. SPICE Console. <link href=\"http://docs.openstack.org/trunk/config-reference/content/spice-console.html\">SPICE Console</link>"
+msgid "OpenStack Configuration Reference - Havana. SPICE Console. <link href=\"http://docs.openstack.org/havana/config-reference/content/spice-console.html\">SPICE Console</link>"
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:110(para)

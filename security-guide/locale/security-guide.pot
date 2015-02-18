@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-16 06:22+0000\n"
+"POT-Creation-Date: 2015-02-18 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4782,7 +4782,7 @@ msgid "<emphasis role=\"bold\">Intelligence services</emphasis> — Considered b
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:159(para)
-msgid "<emphasis role=\"bold\">Serious organized crime</emphasis> — Highly capable and financially driven groups of attackers. Able to fund in-house exploit development and target research. In recent years the rise of organizations such as the Russian Business Network, a massive cyber-criminal enterprise has demonstrated how cyber attacks have become a commodity. Industrial espionage falls within the SOC group."
+msgid "<emphasis role=\"bold\">Serious organized crime</emphasis> — Highly capable and financially driven groups of attackers. Able to fund in-house exploit development and target research. In recent years the rise of organizations such as the Russian Business Network, a massive cyber-criminal enterprise has demonstrated how cyber attacks have become a commodity. Industrial espionage falls within the serious organized crime group."
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:166(para)

@@ -49,7 +49,7 @@
           Each project may present an inconsistent way of defining
           target API endpoints. Future releases of OpenStack seek to
           resolve these inconsistencies through consistent use of the
-          Identity Service catalog.</para>
+          Identity service catalog.</para>
         <section xml:id="api-endpoint-configuration-recommendations-internal-api-communications-configure-applications-for-internal-urls-configuration-example-1">
           <title>Configuration example #1: nova</title>
           <programlisting language="ini">[DEFAULT]

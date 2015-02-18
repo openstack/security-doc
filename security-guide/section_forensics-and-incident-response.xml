@@ -36,7 +36,7 @@
       source for investigating and responding to incidents.
     </para>
     <para>
-      For instance, analyzing the access logs of Identity Service or
+      For instance, analyzing the access logs of Identity service or
       its replacement authentication system would alert us to failed
       logins, frequency, origin IP, whether the events are restricted
       to select accounts and other pertinent information. Log analysis

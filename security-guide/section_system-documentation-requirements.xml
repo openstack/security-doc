@@ -54,10 +54,9 @@
         leveraging a CMDB, an organization can quickly identify cloud
         infrastructure hardware. For example, compute nodes, storage
         nodes, and network devices that exist on the network but that might
-        not be adequately protected and/or forgotten. OpenStack
-        provisioning system might provide some CMDB-like functions
-        especially if auto-discovery features of hardware attributes
-        are available.</para>
+        not be adequately protected and/or forgotten. An OpenStack
+        provisioning system can provide some basic CMDB functions if the
+        underlying hardware supports the necessary auto-discovery features.</para>
     </section>
     <section xml:id="system-documentation-requirements-system-inventory-software-inventory">
       <title>Software inventory</title>

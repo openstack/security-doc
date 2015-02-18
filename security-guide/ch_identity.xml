@@ -308,4 +308,5 @@
       mapping routines per tenant.</para>
   </section>
   <xi:include href="section_identity-federated-keystone.xml"/>
+  <xi:include href="section_identity-checklist.xml"/>
 </chapter>

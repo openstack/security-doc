@@ -21,7 +21,7 @@
     <itemizedlist>
       <listitem>
         <para>Infrastructure nodes. The nodes that run the cloud
-          related services such as the OpenStack Identity Service, the
+          related services such as the OpenStack Identity service, the
           message queuing service, storage, networking, and other
           services required to support the operation of the
           cloud.</para>

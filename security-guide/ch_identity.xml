@@ -6,10 +6,10 @@
   xml:id="identity">
   <?dbhtml stop-chunking?>
   <title>Identity</title>
-  <para>The OpenStack Identity Service (keystone) supports multiple
+  <para>The OpenStack Identity service (keystone) supports multiple
     methods of authentication, including user name &amp; password,
     LDAP, and external authentication methods. Upon successful
-    authentication, The Identity Service provides the user with an
+    authentication, The Identity service provides the user with an
     authorization token used for subsequent service requests.</para>
   <para>Transport Layer Security (TLS) provides authentication
     between services and persons using X.509 certificates. Although
@@ -19,7 +19,7 @@
     <title>Authentication</title>
     <section xml:id="identity-authentication-invalid-login-attempts">
       <title>Invalid login attempts</title>
-      <para>The Identity Service does not provide a method to limit
+      <para>The Identity service does not provide a method to limit
         access to accounts after repeated unsuccessful login attempts.
         Repeated failed login attempts are likely brute-force attacks.
         Refer to the <link linkend="security-boundaries-and-threats-attack-types">Attack types figure</link>. This is a more significant issue
@@ -46,7 +46,7 @@
     <section xml:id="identity-multi-factor-authentication">
       <title>Multi-factor authentication</title>
       <para>Employ multi-factor authentication for network access to
-        privileged user accounts. The Identity Service supports
+        privileged user accounts. The Identity service supports
         external authentication services through the Apache web server
         that can provide this functionality. Servers may also enforce
         client-side authentication using certificates.</para>
@@ -59,7 +59,7 @@
     <title>Authentication methods</title>
     <section xml:id="identity-authentication-methods-internally-implemented-authentication-methods">
       <title>Internally implemented authentication methods</title>
-      <para>The Identity Service can store user credentials in an SQL
+      <para>The Identity service can store user credentials in an SQL
         Database, or may use an LDAP-compliant directory server. The
         Identity database may be separate from databases used by other
         OpenStack services to reduce the risk of a compromise of the
@@ -80,7 +80,7 @@
         an organization that seeks to deploy a private cloud and
         already has a database of employees, the users. This may be in
         an LDAP system. Using LDAP as a source of authority
-        authentication, requests to Identity Service are delegated to
+        authentication, requests to Identity service are delegated to
         the LDAP service, which will authorize or deny requests based
         on locally set policies. A token is generated on successful
         authentication.</para>
@@ -89,7 +89,7 @@
         into roles and groups within Identity for use by the various
         OpenStack services. The <filename>/etc/keystone/keystone.conf</filename>
         file maps LDAP attributes to Identity attributes.</para>
-      <para>The Identity Service <emphasis role="bold">MUST
+      <para>The Identity service <emphasis role="bold">MUST
           NOT</emphasis> be allowed to write to LDAP services used for
         authentication outside of the OpenStack deployment as this
         would allow a sufficiently privileged keystone user to make
@@ -142,7 +142,7 @@
   </section>
   <section xml:id="identity-authorization">
     <title>Authorization</title>
-    <para>The Identity Service supports the notion of groups and
+    <para>The Identity service supports the notion of groups and
       roles. Users belong to groups. A group has a list of roles.
       OpenStack services reference the roles of the user attempting to
       access the service. The OpenStack policy enforcer middleware
@@ -178,11 +178,11 @@
         user account provides the service with the authorization to
         authenticate users.</para>
       <para>The Compute and Object Storage services can be configured
-        to use either the "tempAuth" file or Identity Service to store
+        to use either the "tempAuth" file or Identity service to store
         authentication information. The "tempAuth" solution MUST NOT
         be deployed in a production environment since it stores
         passwords in plain text.</para>
-      <para>The Identity Service supports client authentication for
+      <para>The Identity service supports client authentication for
         TLS which may be enabled. TLS client authentication provides
         an additional authentication factor, in addition to the
         user name and password, that provides greater reliability on user
@@ -194,7 +194,7 @@
       <note>
         <para>We recommend that you use client authentication with TLS
           for the authentication of services to the Identity
-          Service.</para>
+          service.</para>
       </note>
       <para>The cloud administrator should protect sensitive
         configuration files from unauthorized modification. This can be
@@ -219,7 +219,7 @@
     <section xml:id="identity-authorization-administrative-users">
       <title>Administrative users</title>
       <para>We recommend that admin users authenticate using Identity
-        Service and an external authentication service that supports
+        service and an external authentication service that supports
         2-factor authentication, such as a certificate. This reduces
         the risk from passwords that may be compromised. This
         recommendation is in compliance with NIST 800-53 IA-2(1)
@@ -228,7 +228,7 @@
     </section>
     <section xml:id="identity-authorization-end-users">
       <title>End users</title>
-      <para>The Identity Service can directly provide end-user
+      <para>The Identity service can directly provide end-user
         authentication, or can be configured to use external
         authentication methods to conform to an organization's
         security policies and requirements.</para>
@@ -275,11 +275,11 @@
       in this example.</para>
     <programlisting language="json"><xi:include href="http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/samples/token.json" parse="text"/></programlisting>
     <para>Note that the token is often passed within the structure of
-      a larger context of an Identity Service response. These
+      a larger context of an Identity service response. These
       responses also provide a catalog of the various OpenStack
       services. Each service is listed with its name, access endpoints
       for internal, admin, and public access.</para>
-    <para>The Identity Service supports token revocation. This
+    <para>The Identity service supports token revocation. This
       manifests as an API to revoke a token, to list revoked tokens
       and individual OpenStack services that cache tokens to query for
       the revoked tokens and remove them from their cache and append

@@ -46,29 +46,46 @@
       persistent resources in a traditional IT system.</para>
     <section xml:id="system-documentation-requirements-system-inventory-hardware-inventory">
       <title>Hardware inventory</title>
-      <para>Clouds without stringent compliance requirements for
-        written documentation might benefit from having a
-        Configuration Management Database
-        (<glossterm>CMDB</glossterm>). CMDBs are normally used for
-        hardware asset tracking and overall life-cycle management. By
-        leveraging a CMDB, an organization can quickly identify cloud
-        infrastructure hardware. For example, compute nodes, storage
-        nodes, and network devices that exist on the network but that might
-        not be adequately protected and/or forgotten. An OpenStack
-        provisioning system can provide some basic CMDB functions if the
-        underlying hardware supports the necessary auto-discovery features.</para>
+      <para>
+        Clouds without stringent compliance requirements for written
+        documentation might benefit from having a Configuration
+        Management Database (<glossterm>CMDB</glossterm>). CMDBs are
+        normally used for hardware asset tracking and overall
+        life-cycle management. By leveraging a CMDB, an organization
+        can quickly identify cloud infrastructure hardware such as
+        compute nodes, storage nodes, or network devices. A CMDB can
+        assist in identifying assets that exist on the network which
+        may have vulnerabilities due to inadequate maintenance,
+        inadequate protection or being displaced and forgotten. An
+        OpenStack provisioning system can provide some basic CMDB
+        functions if the underlying hardware supports the necessary
+        auto-discovery features.
+      </para>
     </section>
     <section xml:id="system-documentation-requirements-system-inventory-software-inventory">
       <title>Software inventory</title>
-      <para>Just as with hardware, all software components within the
-        OpenStack deployment should be documented. Components here
-        should include system databases; OpenStack software components
-        and supporting sub-components; and, supporting infrastructure
-        software such as load-balancers, reverse proxies, and network
-        address translators. Having an authoritative list like this
-        may be critical toward understanding total system impact due
-        to a compromise or vulnerability of a specific class of
-        software.</para>
+      <para>
+        As with hardware, all software components within the OpenStack
+        deployment should be documented. Examples include:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>System databases, such as MySQL or mongoDB</para>
+        </listitem>
+        <listitem>
+          <para>OpenStack software components, such as Identity or
+                Compute</para>
+        </listitem>
+        <listitem>
+          <para>Supporting components, such as load-balancers, reverse
+                proxies, DNS or DHCP services</para>
+        </listitem>
+      </itemizedlist>
+      <para>
+        An authoritative list of software components may be critical
+        when assessing the impact of a compromise or vulnerability in
+        a library, application or class of software.
+      </para>
     </section>
   </section>
   <section xml:id="system-documentation-requirements-network-topology">

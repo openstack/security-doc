@@ -85,14 +85,7 @@
   </section>
   <section xml:id="system-documentation-requirements-services-protocols-and-ports">
     <title>Services, protocols and ports</title>
-    <para>The service, protocols and ports table provides important
-      additional detail of an OpenStack deployment. A table view of
-      all services running within the cloud infrastructure can
-      immediately inform, guide, and help check security procedures.
-      Firewall configuration, service port conflicts, security
-      remediation areas, and compliance requirements become easier to
-      manage when you have concise information available. Consider the
-      following table:</para>
+    <para>Knowing information about organizational assets is typically a best practice, therefore it is beneficial to create a table which contains information regarding the service, protocols and ports being utilized in the OpenStack deployment. The table can be created from information derived from a CMDB or can be constructed manually. The table can be customized to include an overview of all services running within the cloud infrastructure. The level of detail contained in this type of table can be beneficial as the information can immediately inform, guide, and assist with validating security requirements. Standard security components such as firewall configuration, service port conflicts, security remediation areas, and compliance become easier to maintain when concise information is available. An example of this type of table is provided below:</para>
     <para><inlinemediaobject>
         <imageobject role="html">
           <imagedata contentdepth="166" contentwidth="967"

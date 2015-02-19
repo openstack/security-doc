@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-18 06:01+0000\n"
+"POT-Creation-Date: 2015-02-19 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -266,7 +266,7 @@ msgid "Logs are not only valuable for proactive security and continuous complian
 msgstr ""
 
 #: ./security-guide/section_forensics-and-incident-response.xml:38(para)
-msgid "For instance, analyzing the access logs of Identity Service or its replacement authentication system would alert us to failed logins, frequency, origin IP, whether the events are restricted to select accounts and other pertinent information. Log analysis supports detection."
+msgid "For instance, analyzing the access logs of Identity service or its replacement authentication system would alert us to failed logins, frequency, origin IP, whether the events are restricted to select accounts and other pertinent information. Log analysis supports detection."
 msgstr ""
 
 #: ./security-guide/section_forensics-and-incident-response.xml:45(para)
@@ -420,7 +420,7 @@ msgid "Identity"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:9(para)
-msgid "The OpenStack Identity Service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity Service provides the user with an authorization token used for subsequent service requests."
+msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity service provides the user with an authorization token used for subsequent service requests."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:14(para)
@@ -436,7 +436,7 @@ msgid "Invalid login attempts"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:22(para)
-msgid "The Identity Service does not provide a method to limit access to accounts after repeated unsuccessful login attempts. Repeated failed login attempts are likely brute-force attacks. Refer to the <link linkend=\"security-boundaries-and-threats-attack-types\">Attack types figure</link>. This is a more significant issue in Public clouds."
+msgid "The Identity service does not provide a method to limit access to accounts after repeated unsuccessful login attempts. Repeated failed login attempts are likely brute-force attacks. Refer to the <link linkend=\"security-boundaries-and-threats-attack-types\">Attack types figure</link>. This is a more significant issue in Public clouds."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:27(para)
@@ -456,7 +456,7 @@ msgid "Multi-factor authentication"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:48(para)
-msgid "Employ multi-factor authentication for network access to privileged user accounts. The Identity Service supports external authentication services through the Apache web server that can provide this functionality. Servers may also enforce client-side authentication using certificates."
+msgid "Employ multi-factor authentication for network access to privileged user accounts. The Identity service supports external authentication services through the Apache web server that can provide this functionality. Servers may also enforce client-side authentication using certificates."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:53(para)
@@ -472,7 +472,7 @@ msgid "Internally implemented authentication methods"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:62(para)
-msgid "The Identity Service can store user credentials in an SQL Database, or may use an LDAP-compliant directory server. The Identity database may be separate from databases used by other OpenStack services to reduce the risk of a compromise of the stored credentials."
+msgid "The Identity service can store user credentials in an SQL Database, or may use an LDAP-compliant directory server. The Identity database may be separate from databases used by other OpenStack services to reduce the risk of a compromise of the stored credentials."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:67(para)
@@ -484,7 +484,7 @@ msgid "LDAP simplifies integration of Identity authentication into an organizati
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:78(para)
-msgid "Authentication and authorization policy in OpenStack may be delegated to an external LDAP server. A typical use case is an organization that seeks to deploy a private cloud and already has a database of employees, the users. This may be in an LDAP system. Using LDAP as a source of authority authentication, requests to Identity Service are delegated to the LDAP service, which will authorize or deny requests based on locally set policies. A token is generated on successful authentication."
+msgid "Authentication and authorization policy in OpenStack may be delegated to an external LDAP server. A typical use case is an organization that seeks to deploy a private cloud and already has a database of employees, the users. This may be in an LDAP system. Using LDAP as a source of authority authentication, requests to Identity service are delegated to the LDAP service, which will authorize or deny requests based on locally set policies. A token is generated on successful authentication."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:87(para)
@@ -492,7 +492,7 @@ msgid "Note that if the LDAP system has attributes defined for the user such as 
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:92(para)
-msgid "The Identity Service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed to write to LDAP services used for authentication outside of the OpenStack deployment as this would allow a sufficiently privileged keystone user to make changes to the LDAP directory. This would allow privilege escalation within the wider organization or facilitate unauthorized access to other information and resources. In such a deployment, user provisioning would be out of the realm of the OpenStack deployment."
+msgid "The Identity service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed to write to LDAP services used for authentication outside of the OpenStack deployment as this would allow a sufficiently privileged keystone user to make changes to the LDAP directory. This would allow privilege escalation within the wider organization or facilitate unauthorized access to other information and resources. In such a deployment, user provisioning would be out of the realm of the OpenStack deployment."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:102(para)
@@ -532,7 +532,7 @@ msgid "Authorization"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:145(para)
-msgid "The Identity Service supports the notion of groups and roles. Users belong to groups. A group has a list of roles. OpenStack services reference the roles of the user attempting to access the service. The OpenStack policy enforcer middleware takes into consideration the policy rule associated with each resource and the user's group/roles and tenant association to determine if he/she has access to the requested resource."
+msgid "The Identity service supports the notion of groups and roles. Users belong to groups. A group has a list of roles. OpenStack services reference the roles of the user attempting to access the service. The OpenStack policy enforcer middleware takes into consideration the policy rule associated with each resource and the user's group/roles and tenant association to determine if he/she has access to the requested resource."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:152(para)
@@ -556,15 +556,15 @@ msgid "As described in the <link href=\"http://docs.openstack.org/admin-guide-cl
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:180(para)
-msgid "The Compute and Object Storage services can be configured to use either the \"tempAuth\" file or Identity Service to store authentication information. The \"tempAuth\" solution MUST NOT be deployed in a production environment since it stores passwords in plain text."
+msgid "The Compute and Object Storage services can be configured to use either the \"tempAuth\" file or Identity service to store authentication information. The \"tempAuth\" solution MUST NOT be deployed in a production environment since it stores passwords in plain text."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:185(para)
-msgid "The Identity Service supports client authentication for TLS which may be enabled. TLS client authentication provides an additional authentication factor, in addition to the user name and password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
+msgid "The Identity service supports client authentication for TLS which may be enabled. TLS client authentication provides an additional authentication factor, in addition to the user name and password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:195(para)
-msgid "We recommend that you use client authentication with TLS for the authentication of services to the Identity Service."
+msgid "We recommend that you use client authentication with TLS for the authentication of services to the Identity service."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:199(para)
@@ -580,7 +580,7 @@ msgid "Administrative users"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:221(para)
-msgid "We recommend that admin users authenticate using Identity Service and an external authentication service that supports 2-factor authentication, such as a certificate. This reduces the risk from passwords that may be compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) guidance in the use of multi factor authentication for network access to privileged accounts."
+msgid "We recommend that admin users authenticate using Identity service and an external authentication service that supports 2-factor authentication, such as a certificate. This reduces the risk from passwords that may be compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) guidance in the use of multi factor authentication for network access to privileged accounts."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:230(title)
@@ -588,7 +588,7 @@ msgid "End users"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:231(para)
-msgid "The Identity Service can directly provide end-user authentication, or can be configured to use external authentication methods to conform to an organization's security policies and requirements."
+msgid "The Identity service can directly provide end-user authentication, or can be configured to use external authentication methods to conform to an organization's security policies and requirements."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:238(title)
@@ -624,11 +624,11 @@ msgid "The following example shows a PKI token. Note that, in practice, the toke
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:277(para)
-msgid "Note that the token is often passed within the structure of a larger context of an Identity Service response. These responses also provide a catalog of the various OpenStack services. Each service is listed with its name, access endpoints for internal, admin, and public access."
+msgid "Note that the token is often passed within the structure of a larger context of an Identity service response. These responses also provide a catalog of the various OpenStack services. Each service is listed with its name, access endpoints for internal, admin, and public access."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:282(para)
-msgid "The Identity Service supports token revocation. This manifests as an API to revoke a token, to list revoked tokens and individual OpenStack services that cache tokens to query for the revoked tokens and remove them from their cache and append the same to their list of cached revoked tokens."
+msgid "The Identity service supports token revocation. This manifests as an API to revoke a token, to list revoked tokens and individual OpenStack services that cache tokens to query for the revoked tokens and remove them from their cache and append the same to their list of cached revoked tokens."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:289(title) ./security-guide/section_identity-federated-keystone.xml:460(title)
@@ -1161,7 +1161,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_system-documentation-requirements.xml:101(None) ./security-guide/section_system-documentation-requirements.xml:106(None)
+#: ./security-guide/section_system-documentation-requirements.xml:100(None) ./security-guide/section_system-documentation-requirements.xml:105(None)
 msgid "@@image: 'static/services-protocols-ports.png'; md5=fb1e9f47d969127b7a5ca683d38cfe20"
 msgstr ""
 
@@ -1182,7 +1182,7 @@ msgid "The two broadly defined types of nodes that generally make up an OpenStac
 msgstr ""
 
 #: ./security-guide/section_system-documentation-requirements.xml:23(para)
-msgid "Infrastructure nodes. The nodes that run the cloud related services such as the OpenStack Identity Service, the message queuing service, storage, networking, and other services required to support the operation of the cloud."
+msgid "Infrastructure nodes. The nodes that run the cloud related services such as the OpenStack Identity service, the message queuing service, storage, networking, and other services required to support the operation of the cloud."
 msgstr ""
 
 #: ./security-guide/section_system-documentation-requirements.xml:30(para)
@@ -1202,34 +1202,34 @@ msgid "Hardware inventory"
 msgstr ""
 
 #: ./security-guide/section_system-documentation-requirements.xml:49(para)
-msgid "Clouds without stringent compliance requirements for written documentation might benefit from having a Configuration Management Database (<glossterm>CMDB</glossterm>). CMDBs are normally used for hardware asset tracking and overall life-cycle management. By leveraging a CMDB, an organization can quickly identify cloud infrastructure hardware. For example, compute nodes, storage nodes, and network devices that exist on the network but that might not be adequately protected and/or forgotten. OpenStack provisioning system might provide some CMDB-like functions especially if auto-discovery features of hardware attributes are available."
+msgid "Clouds without stringent compliance requirements for written documentation might benefit from having a Configuration Management Database (<glossterm>CMDB</glossterm>). CMDBs are normally used for hardware asset tracking and overall life-cycle management. By leveraging a CMDB, an organization can quickly identify cloud infrastructure hardware. For example, compute nodes, storage nodes, and network devices that exist on the network but that might not be adequately protected and/or forgotten. An OpenStack provisioning system can provide some basic CMDB functions if the underlying hardware supports the necessary auto-discovery features."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:63(title)
+#: ./security-guide/section_system-documentation-requirements.xml:62(title)
 msgid "Software inventory"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:64(para)
+#: ./security-guide/section_system-documentation-requirements.xml:63(para)
 msgid "Just as with hardware, all software components within the OpenStack deployment should be documented. Components here should include system databases; OpenStack software components and supporting sub-components; and, supporting infrastructure software such as load-balancers, reverse proxies, and network address translators. Having an authoritative list like this may be critical toward understanding total system impact due to a compromise or vulnerability of a specific class of software."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:76(title)
+#: ./security-guide/section_system-documentation-requirements.xml:75(title)
 msgid "Network topology"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:77(para)
+#: ./security-guide/section_system-documentation-requirements.xml:76(para)
 msgid "A network topology should be provided with highlights specifically calling out the data flows and bridging points between the security domains. Network ingress and egress points should be identified along with any OpenStack logical system boundaries. Multiple diagrams may be needed to provide complete visual coverage of the system. A network topology document should include virtual networks created on behalf of tenants by the system along with virtual machine instances and gateways created by OpenStack."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:88(title)
+#: ./security-guide/section_system-documentation-requirements.xml:87(title)
 msgid "Services, protocols and ports"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:89(para)
+#: ./security-guide/section_system-documentation-requirements.xml:88(para)
 msgid "The service, protocols and ports table provides important additional detail of an OpenStack deployment. A table view of all services running within the cloud infrastructure can immediately inform, guide, and help check security procedures. Firewall configuration, service port conflicts, security remediation areas, and compliance requirements become easier to manage when you have concise information available. Consider the following table:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:109(para)
+#: ./security-guide/section_system-documentation-requirements.xml:108(para)
 msgid "Referencing a table of services, protocols and ports can help in understanding the relationship between OpenStack components. It is highly recommended that OpenStack deployments have information similar to this on record."
 msgstr ""
 
@@ -1338,7 +1338,7 @@ msgid "You can force some services to use specific API endpoints. Therefore, it 
 msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml:48(para)
-msgid "Each project may present an inconsistent way of defining target API endpoints. Future releases of OpenStack seek to resolve these inconsistencies through consistent use of the Identity Service catalog."
+msgid "Each project may present an inconsistent way of defining target API endpoints. Future releases of OpenStack seek to resolve these inconsistencies through consistent use of the Identity service catalog."
 msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml:54(title)

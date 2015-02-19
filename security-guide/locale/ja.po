@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-17 18:05+0000\n"
-"PO-Revision-Date: 2015-02-17 18:06+0000\n"
+"POT-Creation-Date: 2015-02-18 19:37+0000\n"
+"PO-Revision-Date: 2015-02-18 19:37+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -441,7 +441,7 @@ msgstr "ログは率先したセキュリティや継続的なコンプライア
 
 #: ./security-guide/section_forensics-and-incident-response.xml38(para)
 msgid ""
-"For instance, analyzing the access logs of Identity Service or its "
+"For instance, analyzing the access logs of Identity service or its "
 "replacement authentication system would alert us to failed logins, "
 "frequency, origin IP, whether the events are restricted to select accounts "
 "and other pertinent information. Log analysis supports detection."
@@ -690,9 +690,9 @@ msgstr "Identity"
 
 #: ./security-guide/ch_identity.xml9(para)
 msgid ""
-"The OpenStack Identity Service (keystone) supports multiple methods of "
+"The OpenStack Identity service (keystone) supports multiple methods of "
 "authentication, including user name &amp; password, LDAP, and external "
-"authentication methods. Upon successful authentication, The Identity Service"
+"authentication methods. Upon successful authentication, The Identity service"
 " provides the user with an authorization token used for subsequent service "
 "requests."
 msgstr ""
@@ -715,7 +715,7 @@ msgstr "無効なログイン試行"
 
 #: ./security-guide/ch_identity.xml22(para)
 msgid ""
-"The Identity Service does not provide a method to limit access to accounts "
+"The Identity service does not provide a method to limit access to accounts "
 "after repeated unsuccessful login attempts. Repeated failed login attempts "
 "are likely brute-force attacks. Refer to the <link linkend=\"security-"
 "boundaries-and-threats-attack-types\">Attack types figure</link>. This is a "
@@ -756,10 +756,10 @@ msgstr "多要素認証"
 #: ./security-guide/ch_identity.xml48(para)
 msgid ""
 "Employ multi-factor authentication for network access to privileged user "
-"accounts. The Identity Service supports external authentication services "
+"accounts. The Identity service supports external authentication services "
 "through the Apache web server that can provide this functionality. Servers "
 "may also enforce client-side authentication using certificates."
-msgstr "権限のあるユーザーアカウントにネットワークアクセス用の多要素認証を使用します。Identity はこの機能を提供できる Apache Web サーバーを通して外部認証サービスをサポートします。サーバーは証明書を使用したクライアント認証を強制することもできます。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml53(para)
 msgid ""
@@ -778,11 +778,11 @@ msgstr "内部実装認証方式"
 
 #: ./security-guide/ch_identity.xml62(para)
 msgid ""
-"The Identity Service can store user credentials in an SQL Database, or may "
+"The Identity service can store user credentials in an SQL Database, or may "
 "use an LDAP-compliant directory server. The Identity database may be "
 "separate from databases used by other OpenStack services to reduce the risk "
 "of a compromise of the stored credentials."
-msgstr "Identity はユーザーのクレデンシャルを SQL データベースに保存できます。または、LDAP 対応のディレクトリサーバーを使用できます。Identity のデータベースは、保存されているクレデンシャルが漏洩するリスクを減らすために、他の OpenStack サービスが使用するデータベースと分離することもできます。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml67(para)
 msgid ""
@@ -806,10 +806,10 @@ msgid ""
 "external LDAP server. A typical use case is an organization that seeks to "
 "deploy a private cloud and already has a database of employees, the users. "
 "This may be in an LDAP system. Using LDAP as a source of authority "
-"authentication, requests to Identity Service are delegated to the LDAP "
+"authentication, requests to Identity service are delegated to the LDAP "
 "service, which will authorize or deny requests based on locally set "
 "policies. A token is generated on successful authentication."
-msgstr "OpenStack の認証と認可のポリシーは、外部 LDAP サーバーに権限委譲することができます。一般的なユースケースは、プライベートクラウドの導入を検討していて、すでに従業員とユーザーのデーターベースを持っている組織です。これは LDAP システムにあるかもしれません。権限のある認証のソースとして LDAP を使用することが、LDAP サービスに権限委譲している Identity に要求されます。このサービスがローカルに設定されたポリシーに基づいて認可または拒否します。トークンは認証が成功した場合に生成されます。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml87(para)
 msgid ""
@@ -822,14 +822,14 @@ msgstr ""
 
 #: ./security-guide/ch_identity.xml92(para)
 msgid ""
-"The Identity Service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed "
+"The Identity service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed "
 "to write to LDAP services used for authentication outside of the OpenStack "
 "deployment as this would allow a sufficiently privileged keystone user to "
 "make changes to the LDAP directory. This would allow privilege escalation "
 "within the wider organization or facilitate unauthorized access to other "
 "information and resources. In such a deployment, user provisioning would be "
 "out of the realm of the OpenStack deployment."
-msgstr "Identity Service は OpenStack の外部にある認証用 LDAP サービスに書き込みを許可<emphasis role=\"bold\">してはいけません</emphasis>。十分な権限を持つ keystone ユーザーが LDAP ディレクトリに変更を加えられるようになるからです。これにより、より広い範囲の組織に権限が増えたり、他の情報やリソースに権限のアクセスが容易になったりするかもしれません。このような環境では、ユーザーの払い出しが OpenStack 環境のレルムの範囲外になるかもしれません。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml102(para)
 msgid ""
@@ -889,13 +889,13 @@ msgstr "認可"
 
 #: ./security-guide/ch_identity.xml145(para)
 msgid ""
-"The Identity Service supports the notion of groups and roles. Users belong "
+"The Identity service supports the notion of groups and roles. Users belong "
 "to groups. A group has a list of roles. OpenStack services reference the "
 "roles of the user attempting to access the service. The OpenStack policy "
 "enforcer middleware takes into consideration the policy rule associated with"
 " each resource and the user's group/roles and tenant association to "
 "determine if he/she has access to the requested resource."
-msgstr "Identity はグループとロールの概念をサポートします。ユーザーはグループに所属します。グループはロールの一覧を持ちます。OpenStack サービスはユーザーがサービスにアクセスしようとしているロールを参照します。OpenStack ポリシー判定ミドルウェアにより、各リソースに関連付けられたポリシールール、ユーザーのグループとロール、テナント割り当てを考慮して、要求されたリソースへのアクセスが判断されます。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml152(para)
 msgid ""
@@ -938,14 +938,14 @@ msgstr "<link href=\"http://docs.openstack.org/admin-guide-cloud/content/index.h
 #: ./security-guide/ch_identity.xml180(para)
 msgid ""
 "The Compute and Object Storage services can be configured to use either the "
-"\"tempAuth\" file or Identity Service to store authentication information. "
+"\"tempAuth\" file or Identity service to store authentication information. "
 "The \"tempAuth\" solution MUST NOT be deployed in a production environment "
 "since it stores passwords in plain text."
-msgstr "Nova と Swift のサービスは認証情報を保存するために \"tempAuth\" ファイルと Identity を使用するよう設定できます。\"tempAuth\" ソリューションは、パスワードを平文で保存するため、本番環境で使用してはいけません。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml185(para)
 msgid ""
-"The Identity Service supports client authentication for TLS which may be "
+"The Identity service supports client authentication for TLS which may be "
 "enabled. TLS client authentication provides an additional authentication "
 "factor, in addition to the user name and password, that provides greater "
 "reliability on user identification. It reduces the risk of unauthorized "
@@ -957,7 +957,7 @@ msgstr ""
 #: ./security-guide/ch_identity.xml195(para)
 msgid ""
 "We recommend that you use client authentication with TLS for the "
-"authentication of services to the Identity Service."
+"authentication of services to the Identity service."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml199(para)
@@ -989,13 +989,13 @@ msgstr "管理ユーザー"
 
 #: ./security-guide/ch_identity.xml221(para)
 msgid ""
-"We recommend that admin users authenticate using Identity Service and an "
+"We recommend that admin users authenticate using Identity service and an "
 "external authentication service that supports 2-factor authentication, such "
 "as a certificate. This reduces the risk from passwords that may be "
 "compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) "
 "guidance in the use of multi factor authentication for network access to "
 "privileged accounts."
-msgstr "管理ユーザーは Identity や証明書のような 2 要素認証をサポートする外部認証サービスを使用して認証することを推奨します。これにより、パスワード推測によるリスクを減らすことができます。この推奨事項は特権アカウントへのネットワークアクセスに多要素認証を使用するという NIST 800-53 IA-2(1) ガイドに適合しています。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml230(title)
 msgid "End users"
@@ -1003,10 +1003,10 @@ msgstr "エンドユーザー"
 
 #: ./security-guide/ch_identity.xml231(para)
 msgid ""
-"The Identity Service can directly provide end-user authentication, or can be"
+"The Identity service can directly provide end-user authentication, or can be"
 " configured to use external authentication methods to conform to an "
 "organization's security policies and requirements."
-msgstr "Identity は直接エンドユーザー認証を提供できます。または、組織のセキュリティポリシーや要求事項を確認するために外部認証方式を使用するよう設定できます。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml238(title)
 msgid "Policies"
@@ -1070,18 +1070,18 @@ msgstr "以下は PKI トークンの例です。実際は token id の値が約
 #: ./security-guide/ch_identity.xml277(para)
 msgid ""
 "Note that the token is often passed within the structure of a larger context"
-" of an Identity Service response. These responses also provide a catalog of "
+" of an Identity service response. These responses also provide a catalog of "
 "the various OpenStack services. Each service is listed with its name, access"
 " endpoints for internal, admin, and public access."
-msgstr "トークンは Identity の応答のより大きなコンテキスト構造の中で渡されることに注意してください。これらの応答はさまざまな OpenStack サービスのカタログも提供しています。各サービスはその名前と、内部、管理、パブリックなアクセス用のエンドポイントを一覧にします。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml282(para)
 msgid ""
-"The Identity Service supports token revocation. This manifests as an API to "
+"The Identity service supports token revocation. This manifests as an API to "
 "revoke a token, to list revoked tokens and individual OpenStack services "
 "that cache tokens to query for the revoked tokens and remove them from their"
 " cache and append the same to their list of cached revoked tokens."
-msgstr "Identity はトークン失効をサポートします。これは、トークンを失効するため、失効済みトークンを一覧表示するために API として宣言されます。また、トークンをキャッシュしている各 OpenStack サービスが失効済みトークンを問い合わせるため、それらのキャッシュから失効済みトークンを削除するため、キャッシュした失効済みトークンの一覧に追加するためにもあります。"
+msgstr ""
 
 #: ./security-guide/ch_identity.xml289(title)
 #: ./security-guide/section_identity-federated-keystone.xml460(title)
@@ -2039,8 +2039,8 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_system-documentation-requirements.xml101(None)
-#: ./security-guide/section_system-documentation-requirements.xml106(None)
+#: ./security-guide/section_system-documentation-requirements.xml100(None)
+#: ./security-guide/section_system-documentation-requirements.xml105(None)
 msgid ""
 "@@image: 'static/services-protocols-ports.png'; "
 "md5=fb1e9f47d969127b7a5ca683d38cfe20"
@@ -2074,10 +2074,10 @@ msgstr "通常 OpenStack のインストールを構成している、広く定�
 #: ./security-guide/section_system-documentation-requirements.xml23(para)
 msgid ""
 "Infrastructure nodes. The nodes that run the cloud related services such as "
-"the OpenStack Identity Service, the message queuing service, storage, "
+"the OpenStack Identity service, the message queuing service, storage, "
 "networking, and other services required to support the operation of the "
 "cloud."
-msgstr "インフラストラクチャーノード。OpenStack Identity、メッセージキューサービス、ストレージ、ネットワーク、およびクラウドの運用をサポートするために必要なその他のサービスなどのクラウド関連サービスを実行するノードです。"
+msgstr ""
 
 #: ./security-guide/section_system-documentation-requirements.xml30(para)
 msgid ""
@@ -2113,16 +2113,16 @@ msgid ""
 "tracking and overall life-cycle management. By leveraging a CMDB, an "
 "organization can quickly identify cloud infrastructure hardware. For "
 "example, compute nodes, storage nodes, and network devices that exist on the"
-" network but that might not be adequately protected and/or forgotten. "
-"OpenStack provisioning system might provide some CMDB-like functions "
-"especially if auto-discovery features of hardware attributes are available."
-msgstr "文書化に対する厳密なコンプライアンス要件のないクラウドの場合は、少なくとも構成管理データベース (<glossterm>CMDB</glossterm>) を使用することによってメリットが得られる可能性があります。CMDB は通常、ハードウェア資産の追跡や全般的なライフサイクル管理に使用されます。CMDB を活用することにより、組織はネットワーク上に存在するクラウドインフラストラクチャーハードウェア (例: コンピュートノード、ストレージノード、ネットワークデバイスなど) の中で適切に保護されていないハードウェアや忘れられているハードウェアを迅速に特定することができます。OpenStack のプロビジョニングシステムは、ハードウェア属性の自動検出機能が利用できる場合は特に、CMDB のような機能を一部提供することが可能です。"
+" network but that might not be adequately protected and/or forgotten. An "
+"OpenStack provisioning system can provide some basic CMDB functions if the "
+"underlying hardware supports the necessary auto-discovery features."
+msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml63(title)
+#: ./security-guide/section_system-documentation-requirements.xml62(title)
 msgid "Software inventory"
 msgstr "ソフトウェアインベントリ"
 
-#: ./security-guide/section_system-documentation-requirements.xml64(para)
+#: ./security-guide/section_system-documentation-requirements.xml63(para)
 msgid ""
 "Just as with hardware, all software components within the OpenStack "
 "deployment should be documented. Components here should include system "
@@ -2133,11 +2133,11 @@ msgid ""
 " vulnerability of a specific class of software."
 msgstr "ハードウェアと同様に、OpenStack デプロイメント内のソフトウェアコンポーネントはすべて文書化しておくべきです。このコンポーネントには、システムデータベース、OpenStack ソフトウェアコンポーネントおよびサポートサブコンポーネント、ロードバランサー/リバースプロキシ/ネットワークアドレストランスレーターなどのサポートインフラストラクチャーソフトウェアなどが含まれます。このような信頼できる一覧を用意しておくことは、ソフトウェアの特定のクラスの侵害や脆弱性によってシステムが受ける全体的な影響を把握するために極めて重要となります。"
 
-#: ./security-guide/section_system-documentation-requirements.xml76(title)
+#: ./security-guide/section_system-documentation-requirements.xml75(title)
 msgid "Network topology"
 msgstr "ネットワークトポロジー"
 
-#: ./security-guide/section_system-documentation-requirements.xml77(para)
+#: ./security-guide/section_system-documentation-requirements.xml76(para)
 msgid ""
 "A network topology should be provided with highlights specifically calling "
 "out the data flows and bridging points between the security domains. Network"
@@ -2148,11 +2148,11 @@ msgid ""
 "with virtual machine instances and gateways created by OpenStack."
 msgstr "ネットワークトポロジーは、セキュリティドメイン間のデータフローとブリッジングポイントをはっきりと識別して強調するようにして作成すべきです。OpenStack の論理的なシステム境界とともに、ネットワークの受信および送信ポイントを明確にすることを推奨します。システムを完全に視覚的に網羅するには、図を複数作成する必要がある場合があります。また、ネットワークトポロジーの文書には、テナントに代わってシステムが作成した仮想ネットワークや、OpenStack によって作成された仮想マシンインスタンスとゲートウェイを含めるべきです。"
 
-#: ./security-guide/section_system-documentation-requirements.xml88(title)
+#: ./security-guide/section_system-documentation-requirements.xml87(title)
 msgid "Services, protocols and ports"
 msgstr "サービス、プロトコル、およびポート"
 
-#: ./security-guide/section_system-documentation-requirements.xml89(para)
+#: ./security-guide/section_system-documentation-requirements.xml88(para)
 msgid ""
 "The service, protocols and ports table provides important additional detail "
 "of an OpenStack deployment. A table view of all services running within the "
@@ -2162,7 +2162,7 @@ msgid ""
 "you have concise information available. Consider the following table:"
 msgstr "サービス、プロトコル、ポートの表には OpenStack デプロイメントの重要な追加情報を記載します。クラウドインフラストラクチャー内で稼働中の全サービスを表にまとめると、情報や指針を直ちに確認することができ、セキュリティプロシージャーをチェックするのに役立ちます。簡潔な情報が提供されると、ファイアウォールの設定やサービスポートの競合、セキュリティ修復領域、コンプライアンス要件をより容易に管理できるようになります。以下の表を検討してください。 "
 
-#: ./security-guide/section_system-documentation-requirements.xml109(para)
+#: ./security-guide/section_system-documentation-requirements.xml108(para)
 msgid ""
 "Referencing a table of services, protocols and ports can help in "
 "understanding the relationship between OpenStack components. It is highly "
@@ -2353,8 +2353,8 @@ msgstr "いくつかのサービスは特定のAPIエンドポイントの仕様
 msgid ""
 "Each project may present an inconsistent way of defining target API "
 "endpoints. Future releases of OpenStack seek to resolve these "
-"inconsistencies through consistent use of the Identity Service catalog."
-msgstr "各プロジェクトで一貫性の無いAPIエンドポイントを提供しています。将来のリリースにおいてこれらの不一致を認証サービスカタログを使った一貫性で解決しようとしています。"
+"inconsistencies through consistent use of the Identity service catalog."
+msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml54(title)
 msgid "Configuration example #1: nova"

@@ -217,7 +217,7 @@
         deployment. Whether public or private, clouds tend to have lots of resource available. An
         attacker who has established a point of presence within the cloud, either through hacking or
         entitled access, such as rogue employee, can bring these resources to bear against the
-        internet at large. Clouds with Compute services make for ideal DDoS and brute force engines.
+        internet at large. Clouds with compute services make for ideal DDoS and brute force engines.
         The issue is more pressing for public clouds as their users are largely unaccountable, and
         can quickly spin up numerous disposable instances for outbound attacks. Major damage can be
         inflicted upon a company's reputation if it becomes known for hosting malicious software or

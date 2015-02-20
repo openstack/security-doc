@@ -51,7 +51,7 @@
           </listitem>
           <listitem>
             <para>By default, the remote desktop traffic is not encrypted.
-            TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend="introduction-to-ssl-tls">Introduction to SSL/TLS</link> for appropriate recommendations.</para>
+            TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend="introduction-to-ssl-tls">Introduction to TLS and SSL</link> for appropriate recommendations.</para>
           </listitem>
           </itemizedlist>
         </section>

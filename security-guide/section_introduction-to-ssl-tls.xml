@@ -5,7 +5,7 @@
   version="5.0"
   xml:id="introduction-to-ssl-tls">
   <?dbhtml stop-chunking?>
-    <title>Introduction to SSL/TLS</title>
+    <title>Introduction to TLS and SSL</title>
     <para>
       There are a number of situations where there is a security
       requirement to assure the confidentiality or integrity of

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-19 06:01+0000\n"
+"POT-Creation-Date: 2015-02-20 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2430,158 +2430,166 @@ msgid "Introduction to SSL/TLS"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:9(para)
-msgid "While it is commonly accepted that data over public networks should be secured using cryptographic measures, such as the Transport Layer Security (TLS) protocol, it is insufficient to rely on security domain separation to protect internal traffic. Using a security-in-depth approach, we recommend securing all domains with TLS, including the management domain services. It is important that should a tenant escape their VM isolation and gain access to the hypervisor or host resources, compromise an API endpoint, or any other service, they must not be able to easily inject or capture messages, commands, or otherwise affect or control management capabilities of the cloud. TLS provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of user communications to the OpenStack services and between the OpenStack services themselves."
+msgid "There are a number of situations where there is a security requirement to assure the confidentiality or integrity of network traffic in an OpenStack deployment. This is generally achieved using cryptographic measures, such as the Transport Layer Security (TLS) protocol."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:10(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:16(para)
+msgid "In a typical deployment all traffic transmitted over public networks is secured, but security best practice dictates that internal traffic must also be secured. It is insufficient to rely on security domain separation for protection. If an attacker gains access to the hypervisor or host resources, compromises an API endpoint, or any other service, they must not be able to easily inject or capture messages, commands, or otherwise affect the management capabilities of the cloud."
+msgstr ""
+
+#: ./security-guide/section_introduction-to-ssl-tls.xml:26(para)
+msgid "All domains should be secured with TLS, including the management domain services and intra-service communications. TLS provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of user communications to the OpenStack services and between the OpenStack services themselves."
+msgstr ""
+
+#: ./security-guide/section_introduction-to-ssl-tls.xml:33(para)
 msgid "Due to the published vulnerabilities in the Secure Sockets Layer (SSL) protocols, we strongly recommend that TLS is used in preference to SSL, and that SSL is disabled in all cases, unless compatibility with obsolete browsers or libraries is required."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:11(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:34(para)
 msgid "Public Key Infrastructure (PKI) is a set of hardware, software, policies, and procedures required to operate a secure system that provides authentication, non-repudiation, confidentiality, and integrity. The core components of PKI are:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:18(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:41(term)
 msgid "End entity"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:20(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:43(para)
 msgid "User, process, or system that is the subject of a certificate."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:25(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:48(term)
 msgid "Certification Authority (<glossterm>CA</glossterm>)"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:27(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:50(para)
 msgid "Defines certificate policies, management, and issuance of certificates."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:32(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:55(term)
 msgid "Registration Authority (RA)"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:34(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:57(para)
 msgid "An optional system to which a CA delegates certain management functions."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:39(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:62(term)
 msgid "Repository"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:41(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:64(para)
 msgid "Where the end entity certificates and certificate revocation lists are stored and looked up - sometimes referred to as the <emphasis role=\"italic\">certificate bundle</emphasis>."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:49(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:72(term)
 msgid "Relying party"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:51(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:74(para)
 msgid "The endpoint that is trusting that the CA is valid."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:56(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:79(para)
 msgid "PKI builds the framework on which to provide encryption algorithms, cipher modes, and protocols for securing data and authentication. We strongly recommend securing all services with Public Key Infrastructure (PKI), including the use of TLS for API endpoints. It is impossible for the encryption or signing of transports or messages alone to solve all these problems. Hosts themselves must be secure and implement policy, namespaces, and other controls to protect their private credentials and keys. However, the challenges of key management and protection do not reduce the necessity of these controls, or lessen their importance."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:58(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:81(title)
 msgid "Certification authorities"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:59(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:82(para)
 msgid "Many organizations have an established Public Key Infrastructure with their own certification authority (CA), certificate policies, and management for which they should use to issue certificates for internal OpenStack users or services. Organizations in which the public security domain is Internet facing will additionally need certificates signed by a widely recognized public CA. For cryptographic communications over the management network, it is recommended one not use a public CA. Instead, we expect and recommend most deployments deploy their own internal CA."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:60(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:83(para)
 msgid "It is recommended that the OpenStack cloud architect consider using separate PKI deployments for internal systems and customer facing services. This allows the cloud deployer to maintain control of their PKI infrastructure and among other things makes requesting, signing and deploying certificates for internal systems easier. Advanced configurations may use separate PKI deployments for different security domains. This allows deployers to maintain cryptographic separation of environments, ensuring that certificates issued to one are not recognized by another."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:61(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:84(para)
 msgid "Certificates used to support TLS on internet facing cloud endpoints (or customer interfaces where the customer is not expected to have installed anything other than standard operating system provided certificate bundles) should be provisioned using Certificate Authorities that are installed in the operating system certificate bundle. Typical well known vendors include Verisign and Thawte but many others exist."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:62(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:85(para)
 msgid "There are many management, policy, and technical challenges around creating and signing certificates. This is an area where cloud architects or operators may wish to seek the advice of industry leaders and vendors in addition to the guidance recommended here."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:65(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:88(title)
 msgid "TLS libraries"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:66(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:89(para)
 msgid "Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use TLS libraries. The TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:69(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:92(title)
 msgid "Cryptographic algorithms, cipher modes, and protocols"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:70(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:93(para)
 msgid "We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad client compatibility but we recommend using caution and only enabling these protocols if you have a strong requirement to do so. Other TLS versions, explicitly older versions, should not be used. These older versions include SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as POODLE. When using TLS v1.2 and in control of both the clients and the server, the cipher suite should be limited to <literal>ECDHE-ECDSA-AES256-GCM-SHA384</literal>. Where you don't control both ends and are using TLS v1+, the more general <literal>HIGH:!aNULL:!eNULL:!DES:!3DES</literal> is a reasonable cipher selection."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:71(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:94(para)
 msgid "However, as this book does not intend to be a thorough reference on cryptography we do not wish to be prescriptive about what specific algorithms or cipher modes you should enable or disable in your OpenStack services. However, there are some authoritative references we would like to recommend for further information:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:73(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:96(link)
 msgid "National Security Agency, Suite B Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:76(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:99(link)
 msgid "OWASP Guide to Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:79(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:102(link)
 msgid "OWASP Transport Layer Protection Cheat Sheet"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:82(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:105(link)
 msgid "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:85(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:108(link)
 msgid "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:88(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:111(link)
 msgid "OpenSSL and FIPS 140-2"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:93(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:116(title)
 msgid "Summary"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:94(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:117(para)
 msgid "Given the complexity of the OpenStack components and the number of deployment possibilities, you must take care to ensure that each component gets the appropriate configuration of TLS certificates, keys, and CAs. Subsequent sections discuss the following services:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:103(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:126(para)
 msgid "Compute API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:106(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:129(para)
 msgid "Identity API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:109(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:132(para)
 msgid "Networking API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:112(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:135(para)
 msgid "Storage API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:115(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:138(para)
 msgid "Messaging server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:118(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:141(para)
 msgid "Database server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:121(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:144(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
 msgid "Dashboard"
 msgstr ""
 
@@ -2805,15 +2813,15 @@ msgstr ""
 msgid "OpenStack endpoints are HTTP services providing APIs to both end-users on public networks and to other OpenStack services on the management network. It is highly recommended that all of these requests, both internal and external, operate over TLS. To achieve this goal, API services must be deployed behind a TLS proxy that can establish and terminate TLS sessions. The following table offers a non-exhaustive list of open source software that can be used for this purpose:"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:16(link) ./security-guide/section_tls-proxies-and-http-services.xml:110(title)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:16(link) ./security-guide/section_tls-proxies-and-http-services.xml:115(title)
 msgid "Pound"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:19(link) ./security-guide/section_tls-proxies-and-http-services.xml:164(title)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:19(link) ./security-guide/section_tls-proxies-and-http-services.xml:169(title)
 msgid "Stud"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:22(link) ./security-guide/section_tls-proxies-and-http-services.xml:203(title)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:22(link) ./security-guide/section_tls-proxies-and-http-services.xml:208(title)
 msgid "nginx"
 msgstr ""
 
@@ -2854,111 +2862,119 @@ msgid "Ephemeral Diffie-Hellman (abbreviated either as EDH or DHE) uses prime fi
 msgstr ""
 
 #: ./security-guide/section_tls-proxies-and-http-services.xml:50(para)
-msgid "Both approaches provide <link href=\"http://en.wikipedia.org/wiki/Forward_secrecy\">Perfect Forward Secrecy (PFS)</link>."
+msgid "Both approaches provide <link href=\"http://en.wikipedia.org/wiki/Forward_secrecy\"> Perfect Forward Secrecy (PFS)</link>. See <xref linkend=\"tls-proxies-and-http-services-perfect-forward-secrecy\"/> for additional discussion on properly configuring PFS."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:51(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:56(para)
 msgid "Ephemeral Elliptic Curves require the server to be configured with a named curve, and provide better security than prime field groups and at lower computational cost. However, prime field groups are more widely implemented, and thus typically both are included in list."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:55(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:60(code)
 msgid "kRSA"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:57(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:62(para)
 msgid "Cipher suites using the <link href=\"http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29\">RSA</link> exchange, authentication or either respectively."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:61(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:66(code)
 msgid "HIGH"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:63(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:68(para)
 msgid "Selects highest possible security cipher in the negotiation phase. These typically have keys of length 128 bits or longer."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:67(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:72(code)
 msgid "!RC4"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:69(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:74(para)
 msgid "No RC4. RC4 has flaws in the context of TLS V3. See <link href=\"http://cr.yp.to/streamciphers/rc4biases-20130708.pdf\"> On the Security of RC4 in TLS and WPA</link>."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:73(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:78(code)
 msgid "!MD5"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:75(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:80(para)
 msgid "No MD5. MD5 is not collision resistant, and thus not acceptable for Message Authentication Codes (MAC) or signatures."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:79(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:84(code)
 msgid "!aNULL:!eNULL"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:81(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:86(para)
 msgid "Disallows clear text."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:85(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:90(code)
 msgid "!EXP"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:87(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:92(para)
 msgid "Disallows export encryption algorithms, which by design tend to be weak, typically using 40 and 56 bit keys."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:89(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:94(para)
 msgid "US Export restrictions on cryptography systems have been lifted and no longer need to be supported."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:93(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:98(code)
 msgid "!LOW:!MEDIUM"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:95(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:100(para)
 msgid "Disallows low (56 or 64 bit long keys) and medium (128 bit long keys) ciphers because of their vulnerability to brute force attacks (example 2-DES). This rule still permits Triple Data Encryption Standard (Triple DES) also known as Triple Data Encryption Algorithm (TDEA) and the Advanced Encryption Standard (AES), each of which has keys greater than equal to 128 bits and thus more secure."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:103(code)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:108(code)
 msgid "Protocols"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:105(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:110(para)
 msgid "Protocols are enabled/disabled through SSL_CTX_set_options. We recommend disabling SSLv2/v3 and enabling TLS."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:111(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:116(para)
 msgid "This Pound example enables <literal>AES-NI</literal> acceleration, which helps to improve performance on systems with processors that support this feature."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:165(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:170(para)
 msgid "The <emphasis role=\"italic\">ciphers</emphasis> line can be tweaked based on your needs, however this is a reasonable starting place."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:204(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:209(para)
 msgid "This nginx example requires TLS v1.1 or v1.2 for maximum security. The <placeholder-1/> line can be tweaked based on your needs, however this is a reasonable starting place."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:222(title)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:228(title)
 msgid "Apache"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:247(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:253(para)
 msgid "Compute API SSL endpoint in Apache, which you must pair with a short WSGI script."
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:271(title)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:278(title)
 msgid "HTTP strict transport security"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:272(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:279(para)
 msgid "We recommend that all production deployments use HTTP strict transport security (HSTS). This header prevents browsers from making insecure connections after they have made a single secure one. If you have deployed your HTTP services on a public or an untrusted domain, HSTS is especially important. To enable HSTS, configure your web server to send a header like this with all requests:"
 msgstr ""
 
-#: ./security-guide/section_tls-proxies-and-http-services.xml:278(para)
+#: ./security-guide/section_tls-proxies-and-http-services.xml:285(para)
 msgid "Start with a short timeout of 1 day during testing, and raise it to one year after testing has shown that you have not introduced problems for users. Note that once this header is set to a large timeout, it is (by design) very difficult to disable."
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:290(title)
+msgid "Perfect forward secrecy"
+msgstr ""
+
+#: ./security-guide/section_tls-proxies-and-http-services.xml:291(para)
+msgid "Configuring TLS servers for perfect forward secrecy requires careful planning around key size, session IDs, and session tickets. In addition, for multi-server deployments, shared state is also an important consideration. The example configurations for Apache and Nginx above disable the session tickets options to help mitigate some of these concerns. Real-world deployments may desire to enable this feature for improved performance. This can be done securely, but would require special consideration around key management. Such configurations are beyond the scope of this guide. We suggest reading <link href=\"https://www.imperialviolet.org/2013/06/27/botchingpfs.html\"> How to botch TLS forward secrecy by ImperialViolet</link> as a starting place for understanding the problem space."
 msgstr ""
 
 #: ./security-guide/ch_api-endpoints.xml:7(title)
@@ -4818,7 +4834,7 @@ msgid "Outbound attacks and reputational risk"
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:216(para)
-msgid "Careful consideration should be given to potential outbound abuse from a cloud deployment. Whether public or private, clouds tend to have lots of resource available. An attacker who has established a point of presence within the cloud, either through hacking or entitled access, such as rogue employee, can bring these resources to bear against the internet at large. Clouds with Compute services make for ideal DDoS and brute force engines. The issue is more pressing for public clouds as their users are largely unaccountable, and can quickly spin up numerous disposable instances for outbound attacks. Major damage can be inflicted upon a company's reputation if it becomes known for hosting malicious software or launching attacks on other networks. Methods of prevention include egress security groups, outbound traffic inspection, customer education and awareness, and fraud and abuse mitigation strategies."
+msgid "Careful consideration should be given to potential outbound abuse from a cloud deployment. Whether public or private, clouds tend to have lots of resource available. An attacker who has established a point of presence within the cloud, either through hacking or entitled access, such as rogue employee, can bring these resources to bear against the internet at large. Clouds with compute services make for ideal DDoS and brute force engines. The issue is more pressing for public clouds as their users are largely unaccountable, and can quickly spin up numerous disposable instances for outbound attacks. Major damage can be inflicted upon a company's reputation if it becomes known for hosting malicious software or launching attacks on other networks. Methods of prevention include egress security groups, outbound traffic inspection, customer education and awareness, and fraud and abuse mitigation strategies."
 msgstr ""
 
 #: ./security-guide/section_security-boundaries-and-threats.xml:229(title)

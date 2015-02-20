@@ -1,0 +1,38 @@
+Older versions of noVNC allow session theft
+---
+
+### Summary ###
+Commonly packaged versions of noVNC allow an attacker to hijack user
+sessions even when TLS is enabled. noVNC fails to set the secure flag
+when setting cookies containing an authentication token.
+
+### Affected Services / Software ###
+Nova, when embedding noVNC prior to v0.5
+
+### Discussion ###
+Versions of noVNC prior to October 28, 2013 do not properly set the
+secure flag on cookies for pages served over TLS. Since noVNC stores
+authentication tokens in these cookies, an attacker who can modify
+user traffic can steal these tokens and connect to the VNC session.
+
+Affected deployments can be identified by looking for the "secure"
+flag on the token cookie set by noVNC on TLS-enabled installations. If
+the secure flag is missing, the installation is vulnerable.
+
+At the time of writing, Debian, Ubuntu and Fedora do not provide
+versions of this package with the appropriate patch.
+
+### Recommended Actions ###
+noVNC should be updated to version 0.5 or later. If this is not
+possible, the upstream patch should be applied individually.
+
+Upstream patch:
+https://github.com/kanaka/noVNC/commit/ad941faddead705cd611921730054767a0b32dcd
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0044
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1420942
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+CVE: in progress-http://www.openwall.com/lists/oss-security/2015/02/17/1
+

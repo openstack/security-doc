@@ -69,73 +69,82 @@
     </section>
     <section xml:id="security-services-for-instances-scheduling-instances-to-nodes">
       <title>Scheduling instances to nodes</title>
-      <para>Before an instance is created, a host for the image instantiation must be selected. This selection is performed by the <systemitem class="service">nova-scheduler</systemitem> which determines how to dispatch compute and volume requests.</para>
-      <para>The filter scheduler is the default scheduler for OpenStack Compute,
-      although other schedulers exist (see the section <link
+      <para>Before an instance is created, a host for the image
+        instantiation must be selected. This selection is performed by
+        the <systemitem class="service">nova-scheduler</systemitem>
+        which determines how to dispatch compute and volume requests.
+      </para>
+      <para>The <literal>FilterScheduler</literal> is the default
+        scheduler for OpenStack Compute, although other schedulers
+        exist (see the section <link
         xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html"
         >Scheduling</link> in the <citetitle>OpenStack Configuration
-        Reference</citetitle>). The filter scheduler works in collaboration with
-      'filters' to decide where an instance should be started. This process of
-      host selection allows administrators to fulfill many different security
-      requirements. Depending on the cloud deployment type for example, one
-      could choose to have tenant instances reside on the same hosts whenever
-      possible if data isolation was a primary concern, conversely one could
-      attempt to have instances for a tenant reside on as many different hosts
-      as possible for availability or fault tolerance reasons. The following
-      diagram demonstrates how the filter scheduler works:</para>
+        Reference</citetitle>). This works in collaboration with
+        'filter hints' to decide where an instance should be started.
+        This process of host selection allows administrators to fulfill
+        many different security and compliance requirements. Depending
+        on the cloud deployment type for example, one could choose to
+        have tenant instances reside on the same hosts whenever possible
+        if data isolation was a primary concern. Conversely one could
+        attempt to have instances for a tenant reside on as many different hosts
+        as possible for availability or fault tolerance reasons.</para>
+      <para>Scheduler filters may be used to segregate customer data, or
+        even discard machines of the cloud that cannot be attested as
+        secure. This generally applies to all OpenStack projects
+        offering a scheduler. When building a cloud, you may choose to
+        implement scheduling filters for a variety of security-related
+        purposes.</para>
+      <para>Filter schedulers fall under four main categories:</para>
+      <variablelist>
+        <varlistentry><term>Resource based filters</term>
+          <listitem><para>These filters will create an instance based on
+            the utilizations of the hypervisor host sets and can trigger
+            on free or used properties such as RAM, IO, or CPU
+            utilization</para></listitem>
+        </varlistentry>
+        <varlistentry><term>Image based filters</term>
+          <listitem><para>This delegates instance creation based on the
+            image used, such as the operating system of the VM or type
+            of image used.</para></listitem>
+        </varlistentry>
+        <varlistentry><term>Environment based filters</term>
+          <listitem><para>This filter will create an instance based on
+            external details such as in a specific IP range, across
+            availability zones, or on the same host as another instance.
+          </para></listitem>
+        </varlistentry>
+        <varlistentry><term>Custom criteria</term>
+          <listitem><para>This filter will delegate instance creation
+            based on user or administrator provided criteria such as
+            trusts or metadata parsing.</para></listitem>
+        </varlistentry>
+      </variablelist>
+      <para>Multiple filters can be applied at once, such as the
+        <literal>ServerGroupAffinity</literal> filter to ensure an
+        instance is created on a member of a specific set of hosts and
+        <literal>ServerGroupAntiAffinity</literal> filter to ensure that
+        same instance is not created on another
+        specific set of hosts. These filters should be analyzed
+        carefully to ensure they do not conflict with each other and
+        result in rules that prevent the creation of instances.</para>
       <para><inlinemediaobject><imageobject role="html">
-            <imagedata contentdepth="400" contentwidth="550" fileref="static/filteringWorkflow1.png" format="PNG" scalefit="1"/>
-          </imageobject>
-<imageobject role="fo">
-            <imagedata contentdepth="100%" fileref="static/filteringWorkflow1.png" format="PNG" scalefit="1" width="100%"/>
-          </imageobject>
-</inlinemediaobject></para>
-      <para>The use of scheduler filters may be used to segregate customers, data, or even discard machines of the cloud that cannot be attested as secure. This generally applies to all OpenStack projects offering a scheduler. When building a cloud, you may choose to implement scheduling filters for a variety of security-related purposes.</para>
-      <para>Below we highlight a few of the filters that may be useful
-        in a security context, depending on your requirements, the
-        full set of filter documentation is documented in the <link
-        xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html#filter-figure">
-        Filter Scheduler</link> section of the <citetitle>OpenStack
-        Configuration Reference</citetitle>.</para>
-      <section xml:id="security-services-for-instances-scheduling-instances-to-nodes-host-aggregates">
-        <title>Host aggregates</title>
-        <para>While not a filter, host aggregates allow administrators
-        to assign key-value pairs to groups of machines. This allows
-        cloud administrators to segregate their compute host resources
-        within an availability zone invisible to users. The assigned
-        key-value pairs and the host aggregates itself can be used for
-        advanced filtering and scheduling. The key-value pairs can be
-        applied to multiple aggregates, or have several
-        applied to a single aggregate (see the <link
-        xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html#host-aggregates">
-        Host aggregates</link> section of the <citetitle>OpenStack
-        Configuration Reference</citetitle> for more information on
-        creating and managing aggregates).</para>
-      </section>
-      <section xml:id="security-services-for-instances-scheduling-instances-to-nodes-aggregatemultitenancyisolation">
-        <title>AggregateMultiTenancyIsolation</title>
-        <para>This filter will isolate a
-        tenant or group of tenants to specific host aggregates. If a
-        host is assigned to an aggregate that has the metadata key
-          <literal>filter_tenant_id</literal>, it will only create instances from that
-        tenant or list of tenants. A host can be assigned to multiple
-        aggregates, however if a host does not belong to an aggregate
-        with the metadata key, it can create instances from all
-        tenants.</para>
-      </section>
-      <section xml:id="security-services-for-instances-scheduling-instances-to-nodes-differenthostfilter">
-        <title>DifferentHostFilter</title>
-        <para>Schedule the instance on a different host from a set of instances. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>different_host</literal> as the key and a list of instance UUIDs as the value. This filter is the opposite of the <literal>SameHostFilter</literal>.</para>
-      </section>
-      <section xml:id="security-services-for-instances-scheduling-instances-to-nodes-groupantiaffinityfilter">
-        <title>GroupAntiAffinityFilter</title>
-        <para>The GroupAntiAffinityFilter ensures that each instance in a group is on a different host. To take advantage of this filter, the requester must pass a scheduler hint, using <literal>group</literal> as the key and a list of instance UUIDs as the value.</para>
-      </section>
-      <section xml:id="security-services-for-instances-scheduling-instances-to-nodes-trusted-compute-pools">
-        <title>Trusted compute pools</title>
-        <para>There exists a scheduler filter which integrates with the <link xlink:href="https://github.com/OpenAttestation/OpenAttestation">Open Attestation Project</link> (OATS) to define scheduler behavior according to the attestation of PCRs received from a system using Intel TXT.</para>
-        <para>It is unclear if this feature is compatible with AMD's similar SEM, although the OpenAttestation agent relies on the vendor-agnostic <link xlink:href="http://trousers.sourceforge.net/">TrouSerS library</link>.</para>
-      </section>
+        <imagedata contentdepth="400" contentwidth="550" fileref="static/filteringWorkflow1.png" format="PNG" scalefit="1"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata contentdepth="100%" fileref="static/filteringWorkflow1.png" format="PNG" scalefit="1" width="100%"/>
+        </imageobject>
+      </inlinemediaobject></para>
+      <para>The <literal>GroupAffinity</literal> and
+        <literal>GroupAntiAffinity</literal> filters conflict and should
+        not both be enabled at the same time.</para>
+      <para>The <literal>DiskFilter</literal> filter is capable of
+        oversubscribing disk space. While not normally an issue, this
+        can be a concern on storage devices that are thinly
+        provisioned, and this filter should be used with well-tested
+        quotas applied.</para>
+      <para>We recommend you disable filters that parse things that are
+        provided by users or are able to be manipulated such as
+        metadata.</para>
     </section>
     <section xml:id="security-services-for-instances-trusted-images">
       <title>Trusted images</title>

@@ -18,8 +18,8 @@
       subscribe to the <link
         xlink:href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-announce"
         >OpenStack Announce mailing list</link>. The security
-      notifications are also posted through the downstream packages
-      for example through Linux distributions that you may be
+      notifications are also posted through the downstream packages,
+      for example, through Linux distributions that you may be
       subscribed to as part of the package updates.</para>
     <para>The OpenStack components are only a small fraction of the
       software in a cloud. It is important to keep up to date with all

@@ -1,13 +1,37 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-20 06:01+0000\n"
+"POT-Creation-Date: 2015-02-21 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ./security-guide/section_data-processing-case-studies.xml:8(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:8(title) ./security-guide/section_case-studies-system-documentation.xml:8(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:8(title) ./security-guide/section_case-studies-database.xml:8(title) ./security-guide/section_case-studies-tenant-data.xml:8(title) ./security-guide/section_case-studies-messaging.xml:8(title) ./security-guide/section_case-studies-instance-isolation.xml:8(title) ./security-guide/section_case-studies-management-interfaces.xml:8(title) ./security-guide/section_case-studies-compliance.xml:8(title) ./security-guide/section_case-studies-instance-management.xml:8(title) ./security-guide/section_case-studies-api-endpoints.xml:8(title) ./security-guide/section_case-studies-networking.xml:8(title)
+msgid "Case studies"
+msgstr ""
+
+#: ./security-guide/section_data-processing-case-studies.xml:9(para)
+msgid "Continuing with the studies described in <xref linkend=\"introduction-to-case-studies\"/>, we present Alice and Bob's approaches to deploying the Data processing service for their users."
+msgstr ""
+
+#: ./security-guide/section_data-processing-case-studies.xml:16(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:13(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:14(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/ch_case-studies-identity-management.xml:21(title) ./security-guide/section_case-studies-management-interfaces.xml:26(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:15(title)
+msgid "Alice's private cloud"
+msgstr ""
+
+#: ./security-guide/section_data-processing-case-studies.xml:17(para)
+msgid "Alice is deploying the Data processing service for a group of users that are trusted members of a collaboration. They are all placed in a single project and share the clusters, jobs, and data within. She deploys the controller with TLS enabled, using a certificate signed by the organization's root certificate. She configures the controller to provide floating IP addresses to the cluster instances allowing for users to gain access to the instances in the event of errors. She enables the use of proxy domains to prevent the users from needing to enter their credentials into the Data processing service."
+msgstr ""
+
+#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:15(title) ./security-guide/section_case-studies-system-documentation.xml:16(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:31(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:33(title)
+msgid "Bob's public cloud"
+msgstr ""
+
+#: ./security-guide/section_data-processing-case-studies.xml:31(para)
+msgid "Bob's public cloud contains users that will not necessarily know or trust each other. He puts all users into separate projects. Each user has their own clusters, jobs, and data which cannot be accessed by other users. He deploys the controller with TLS enabled, using a certificate signed by a well known public certificate authority. He configures a custom topology to ensure that access to the provisioned cluster instances will flow through a controlled gateway. He creates a security group that opens only the ports needed for the controller to access the frameworks deployed. He enables the use of proxy domains to prevent the users from needing to enter their credentials into the Data processing service. He configures the rootwrap command to allow the data processing controller user to run the proxy commands."
+msgstr ""
 
 #: ./security-guide/ch_management.xml:7(title) ./security-guide/section_security-boundaries-and-threats.xml:31(para) ./security-guide/section_security-boundaries-and-threats.xml:73(title)
 msgid "Management"
@@ -415,7 +439,7 @@ msgstr ""
 msgid "It is recommended that you follow the guidelines provided in the Queue Authentication and Access Control chapter in the Messaging section for all components that require RPC communication."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:8(title)
+#: ./security-guide/ch_identity.xml:8(title) ./security-guide/section_data-processing-deployment.xml:33(para)
 msgid "Identity"
 msgstr ""
 
@@ -647,24 +671,12 @@ msgstr ""
 msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:8(title) ./security-guide/section_case-studies-system-documentation.xml:8(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:8(title) ./security-guide/section_case-studies-database.xml:8(title) ./security-guide/section_case-studies-tenant-data.xml:8(title) ./security-guide/section_case-studies-messaging.xml:8(title) ./security-guide/section_case-studies-instance-isolation.xml:8(title) ./security-guide/section_case-studies-management-interfaces.xml:8(title) ./security-guide/section_case-studies-compliance.xml:8(title) ./security-guide/section_case-studies-instance-management.xml:8(title) ./security-guide/section_case-studies-api-endpoints.xml:8(title) ./security-guide/section_case-studies-networking.xml:8(title)
-msgid "Case studies"
-msgstr ""
-
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:9(para)
 msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case study where Alice is deploying a government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address deployment of PKI certification authorities (CA) and certificate management."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:13(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:14(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/ch_case-studies-identity-management.xml:21(title) ./security-guide/section_case-studies-management-interfaces.xml:26(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:15(title)
-msgid "Alice's private cloud"
-msgstr ""
-
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:12(para)
 msgid "Alice as a cloud architect within a government agency knows that her agency operates its own certification authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a disconnected from the Internet network, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA."
-msgstr ""
-
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:15(title) ./security-guide/section_case-studies-system-documentation.xml:16(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:31(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:33(title)
-msgid "Bob's public cloud"
 msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:16(para)
@@ -1161,7 +1173,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_system-documentation-requirements.xml:100(None) ./security-guide/section_system-documentation-requirements.xml:105(None)
+#: ./security-guide/section_system-documentation-requirements.xml:93(None) ./security-guide/section_system-documentation-requirements.xml:98(None)
 msgid "@@image: 'static/services-protocols-ports.png'; md5=fb1e9f47d969127b7a5ca683d38cfe20"
 msgstr ""
 
@@ -1226,10 +1238,10 @@ msgid "Services, protocols and ports"
 msgstr ""
 
 #: ./security-guide/section_system-documentation-requirements.xml:88(para)
-msgid "The service, protocols and ports table provides important additional detail of an OpenStack deployment. A table view of all services running within the cloud infrastructure can immediately inform, guide, and help check security procedures. Firewall configuration, service port conflicts, security remediation areas, and compliance requirements become easier to manage when you have concise information available. Consider the following table:"
+msgid "Knowing information about organizational assets is typically a best practice, therefore it is beneficial to create a table which contains information regarding the service, protocols and ports being utilized in the OpenStack deployment. The table can be created from information derived from a CMDB or can be constructed manually. The table can be customized to include an overview of all services running within the cloud infrastructure. The level of detail contained in this type of table can be beneficial as the information can immediately inform, guide, and assist with validating security requirements. Standard security components such as firewall configuration, service port conflicts, security remediation areas, and compliance become easier to maintain when concise information is available. An example of this type of table is provided below:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:108(para)
+#: ./security-guide/section_system-documentation-requirements.xml:101(para)
 msgid "Referencing a table of services, protocols and ports can help in understanding the relationship between OpenStack components. It is highly recommended that OpenStack deployments have information similar to this on record."
 msgstr ""
 
@@ -1857,6 +1869,10 @@ msgstr ""
 msgid "Currently, the CLI supports the Enhanced Client or Proxy (ECP), (the non-browser) support for <literal>keystoneclient</literal> from an API perspective. So, if you are using the <literal>keystoneclient</literal>, you can create a client instance and use the SAML authorization plugin. There is no support for dashboard available presently. With the upcoming OpenStack releases, Federated Identity should be supported with both CLI and the dashboard."
 msgstr ""
 
+#: ./security-guide/ch_data_processing.xml:7(title)
+msgid "Data processing"
+msgstr ""
+
 #: ./security-guide/section_understanding-the-audit-process.xml:8(title)
 msgid "Understanding the audit process"
 msgstr ""
@@ -2149,7 +2165,7 @@ msgstr ""
 msgid "@@image: 'static/swift_network_diagram-2.png'; md5=69f8effe3f5d0f3cbccfb8c5a5dd299e"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:145(title)
+#: ./security-guide/ch_object-storage.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:145(title) ./security-guide/section_data-processing-deployment.xml:43(para)
 msgid "Object Storage"
 msgstr ""
 
@@ -2426,7 +2442,7 @@ msgid "This value should be initially set with a cryptographically secure random
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:8(title)
-msgid "Introduction to SSL/TLS"
+msgid "Introduction to TLS and SSL"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:9(para)
@@ -3143,7 +3159,7 @@ msgstr ""
 msgid "OpenStack embraces a modular architecture to provide a set of core services that facilitates scalability and elasticity as core design tenets. This chapter briefly reviews OpenStack components, their use cases and security considerations."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:122(title) ./security-guide/ch_compute.xml:8(title)
+#: ./security-guide/section_introduction-to-openstack.xml:122(title) ./security-guide/section_data-processing-deployment.xml:28(para) ./security-guide/ch_compute.xml:8(title)
 msgid "Compute"
 msgstr ""
 
@@ -3191,7 +3207,7 @@ msgstr ""
 msgid "Security considerations for block storage are similar to that of object storage."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:174(title) ./security-guide/ch_networking.xml:7(title)
+#: ./security-guide/section_introduction-to-openstack.xml:174(title) ./security-guide/section_data-processing-deployment.xml:38(para) ./security-guide/ch_networking.xml:7(title)
 msgid "Networking"
 msgstr ""
 
@@ -3232,18 +3248,30 @@ msgid "Trusted processes for managing the life cycle of disk images are required
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:223(title)
-msgid "Other supporting technology"
+msgid "Data processing service"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:224(para)
-msgid "OpenStack relies on messaging for internal communication between several of its services. By default, OpenStack uses message queues based on the Advanced Message Queue Protocol (<glossterm baseform=\"Advanced Message Queuing Protocol (AMQP)\">AMQP </glossterm>). Similar to most OpenStack services, it supports pluggable components. Today the implementation back end could be <glossterm>RabbitMQ</glossterm>, <glossterm>Qpid</glossterm>, or <glossterm>ZeroMQ</glossterm>."
+msgid "The <glossterm>Data processing service</glossterm> for OpenStack (<glossterm>sahara</glossterm>) provides a platform for the provisioning, management, and usage of clusters running popular processing frameworks."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:233(para)
-msgid "As most management commands flow through the message queuing system, it is a primary security concern for any OpenStack deployment. Message queuing security is discussed in detail later in this guide."
+#: ./security-guide/section_introduction-to-openstack.xml:230(para)
+msgid "Security considerations for data processing should focus on data privacy and secure communications to provisioned clusters."
+msgstr ""
+
+#: ./security-guide/section_introduction-to-openstack.xml:236(title)
+msgid "Other supporting technology"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:237(para)
+msgid "OpenStack relies on messaging for internal communication between several of its services. By default, OpenStack uses message queues based on the Advanced Message Queue Protocol (<glossterm baseform=\"Advanced Message Queuing Protocol (AMQP)\">AMQP </glossterm>). Similar to most OpenStack services, it supports pluggable components. Today the implementation back end could be <glossterm>RabbitMQ</glossterm>, <glossterm>Qpid</glossterm>, or <glossterm>ZeroMQ</glossterm>."
+msgstr ""
+
+#: ./security-guide/section_introduction-to-openstack.xml:246(para)
+msgid "As most management commands flow through the message queuing system, it is a primary security concern for any OpenStack deployment. Message queuing security is discussed in detail later in this guide."
+msgstr ""
+
+#: ./security-guide/section_introduction-to-openstack.xml:250(para)
 msgid "Several of the components use databases though it is not explicitly called out. Securing the access to the databases and their contents is yet another security concern, and consequently discussed in more detail later in this guide."
 msgstr ""
 
@@ -4619,6 +4647,58 @@ msgstr ""
 msgid "National Information Assurance Partnership, National Security Telecommunications and Information Systems Security Policy. 2003. <link href=\"http://www.niap-ccevs.org/cc-scheme/nstissp_11_revised_factsheet.pdf\">National Security Telecommunications and Information Systems Security Policy No. 11</link>"
 msgstr ""
 
+#: ./security-guide/section_data-processing-deployment.xml:8(title)
+msgid "Deployment"
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:9(para)
+msgid "The Data processing service is deployed, like many other OpenStack services, as an application running on a host connected to the stack. As of the Kilo release, it has the ability to be deployed in a distributed manner with several redundant controllers. Like other services, it also requires a database to store information about its resources. See <xref linkend=\"databases\"/>. It is important to note that the Data processing service will need to manage several Identity service trusts, communicate directly with the Orchestration and Networking services, and potentially create users in a proxy domain. For these reasons the controller will need access to the control plane and as such we recommend installing it alongside other service controllers."
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:23(para)
+msgid "Data processing interacts directly with several openstack services:"
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:48(para)
+msgid "Orchestration"
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:53(para)
+msgid "Block Storage (optional)"
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:58(para)
+msgid "We recommend documenting all the data flows and bridging points between these services and the data processing controller. See <xref linkend=\"documentation\"/>."
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:63(para)
+msgid "The Object Storage service is used by the Data processing service to store job binaries and data sources. Users wishing to have access to the full Data processing service functionality will need an object store in the projects they are using."
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:69(para)
+msgid "The Networking service plays an important role in the provisioning of clusters. Prior to provisioning, the user is expected to provide one or more networks for the cluster instances. The action of associating networks is similar to the process of assigning networks when launching instances through the dashboard. These networks are used by the controller for administrative access to the instances and frameworks of its clusters."
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:78(para)
+msgid "Also of note is the Identity service. Users of the Data processing service will need appropriate roles in their projects to allow the provisioning of instances for their clusters. Installations that use the proxy domain configuration require special consideration. See <xref linkend=\"data-processing-configuration-and-hardening-proxy-domains\"/>. Specifically, the Data processing service will need the ability to create users within the proxy domain."
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:88(title)
+msgid "Controller network access to clusters"
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:89(para)
+msgid "One of the primary tasks of the data processing controller is to communicate with the instances it spawns. These instances are provisioned and then configured depending on the framework being used. The communication between the controller and the instances uses secure shell (SSH) and HTTP protocols."
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:96(para)
+msgid "When provisioning clusters each instance will be given an IP address in the networks provided by the user. The first network is often referred to as the data processing management network and instances can use the fixed IP address assigned by the Networking service for this network. The controller can also be configured to use floating IP addresses for the instances in addition to their fixed address. When communicating with the instances the controller will prefer the floating address if enabled."
+msgstr ""
+
+#: ./security-guide/section_data-processing-deployment.xml:106(para)
+msgid "For situations where the fixed and floating IP addresses do not provide the functionality required the controller can provide access through two alternate methods: custom network topologies and indirect access. The custom network topologies feature allows the controller to access the instances through a supplied shell command in the configuration file. Indirect access is used to specify instances that can be used as proxy gateways by the user during cluster provisioning. These options are discussed with examples of usage in <xref linkend=\"data-processing-configuration-and-hardening\"/>."
+msgstr ""
+
 #: ./security-guide/section_case-studies-management-interfaces.xml:9(para)
 msgid "Previously we discussed typical OpenStack management interfaces and associated backplane issues. We will now approach these issues by returning to the Alice and Bob case studies (See <xref linkend=\"introduction-to-case-studies\"/> ) where Alice is deploying a government cloud and Bob is deploying a public cloud each with different security requirements. In this section, we will look into how both Alice and Bob will address:"
 msgstr ""
@@ -5097,7 +5177,7 @@ msgstr ""
 msgid "Test data recovery options regularly. One of the things that can be restored from secured backups is the images. In case of a compromise, the best practice would be to terminate running instances immediately and then relaunch the instances from the images in the secured backup repository."
 msgstr ""
 
-#: ./security-guide/section_continuous-systems-management.xml:278(title) ./security-guide/section_management-interfaces.xml:93(title) ./security-guide/section_management-interfaces.xml:163(title) ./security-guide/section_management-interfaces.xml:202(title)
+#: ./security-guide/section_continuous-systems-management.xml:278(title) ./security-guide/section_data-processing-configuration-and-hardening.xml:211(title) ./security-guide/section_management-interfaces.xml:93(title) ./security-guide/section_management-interfaces.xml:163(title) ./security-guide/section_management-interfaces.xml:202(title)
 msgid "References"
 msgstr ""
 
@@ -5249,6 +5329,198 @@ msgstr ""
 msgid "For additional information see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html\">Networking chapter</link> in the <citetitle>OpenStack Cloud Administrator Guide</citetitle>."
 msgstr ""
 
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:8(title)
+msgid "Configuration and hardening"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:9(para)
+msgid "There are several configuration options and deployment strategies that can improve security in the Data processing service. The service controller is configured through a main configuration file and one or more policy files. Installations that are using the data-locality features will also have two additional files to specify the physical location of Compute and Object Storage nodes."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:18(title)
+msgid "TLS"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:19(para)
+msgid "The Data processing service controller, like many other OpenStack controllers, can be configured to require TLS connections."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:23(para)
+msgid "Pre-Kilo releases will require a TLS proxy as the controller does not allow direct TLS connections. Configuring TLS proxies is covered in <xref linkend=\"tls-proxies-and-http-services\"/>, and we recommend following the advice there to create this type of installation."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:30(para)
+msgid "From the Kilo release onward the data processing controller allows direct TLS connections. Enabling this behavior requires some small adjustments to the controller configuration file. For any post-Juno installation we recommend enabling the direct TLS connections in the controller configuration."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:38(title)
+msgid "Example. Configuring TLS access to the controller"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:46(title)
+msgid "Role-based access control policies"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:47(para)
+msgid "The Data processing service uses a policy file, as described in <xref linkend=\"identity-policies\"/>, to configure role-based access control. Using the policy file an operator can restrict a group’s access to specific data processing functionality."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:53(para)
+msgid "The reasons for doing this will change depending on the organizational requirements of the installation. In general, these fine grained controls are used in situations where an operator needs to restrict the creation, deletion, and retrieval of the Data processing service resources. Operators who need to restrict access within a project should be fully aware that there will need to be alternative means for users to gain access to the core functionality of the service (for example, provisioning clusters)."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:64(title)
+msgid "Example. Allow all methods to all users (default policy)"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:70(title)
+msgid "Example. Disallow image registry manipulations to non-admin users"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:82(title) ./security-guide/section_networking-services-security-best-practices.xml:48(title)
+msgid "Security groups"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:83(para)
+msgid "The Data processing service allows for the association of security groups with instances provisioned for its clusters. With no additional configuration the service will use the default security group for any project that provisions clusters. A different security group may be used if requested, or an automated option exists which instructs the service to create a security group based on ports specified by the framework being accessed."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:92(para)
+msgid "For production environments we recommend controlling the security groups manually and creating a set of group rules that are appropriate for the installation. In this manner the operator can ensure that the default security group will contain all the appropriate rules. For an expanded discussion of security groups please see <xref linkend=\"networking-services-security-best-practices-security-groups\"/>."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:102(title)
+msgid "Proxy domains"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:103(para)
+msgid "When using the Object Storage service in conjunction with data processing it is necessary to add credentials for the store access. With proxy domains the Data processing service can instead use a delegated trust from the Identity service to allow store access via a temporary user created in the domain. For this delegation mechanism to work the Data processing service must be configured to use proxy domains and the operator must configure an identity domain for the proxy users."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:113(para)
+msgid "The data processing controller retains temporary storage of the username and password provided for object store access. When using proxy domains the controller will generate this pair for the proxy user, and the access of this user will be limited to that of the identity trust. We recommend using proxy domains in any installation where the controller or its database have routes to or from public networks."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:122(title)
+msgid "Example. Configuring for a proxy domain named “dp_proxy”"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:130(title)
+msgid "Custom network topologies"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:131(para)
+msgid "The data processing controller can be configured to use proxy commands for accessing its cluster instances. In this manner custom network topologies can be created for installations which will not use the networks provided directly by the Networking service. We recommend using this option for installations which require limiting access between the controller and the instances."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:140(title)
+msgid "Example. Access instances through a specified relay machine"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:145(title)
+msgid "Example. Access instances through a custom network namespace"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:151(title)
+msgid "Indirect access"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:152(para)
+msgid "For installations in which the controller will have limited access to all the instances of a cluster, due to limits on floating IP addresses or security rules, indirect access may be configured. This allows some instances to be designated as proxy gateways to the other instances of the cluster."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:159(para)
+msgid "This configuration can only be enabled while defining the node group templates that will make up the data processing clusters. It is provided as a run time option to be enabled during the cluster provisioning process."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:167(title)
+msgid "Rootwrap"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:168(para)
+msgid "When creating custom topologies for network access it can be necessary to allow non-root users the ability to run the proxy commands. For these situations the oslo rootwrap package is used to provide a facility for non-root users to run privileged commands. This configuration requires the user associated with the data processing controller application to be in the sudoers list and for the option to be enabled in the configuration file. Optionally, an alternative rootwrap command can be provided."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:179(title)
+msgid "Example. Enabling rootwrap usage and showing the default command"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:183(para)
+msgid "For more information on the rootwrap project, please see the official documentation:"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:188(link)
+msgid "https://wiki.openstack.org/wiki/Rootwrap"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:195(title)
+msgid "Logging"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:196(para)
+msgid "Monitoring the output of the service controller is a powerful forensic tool, as described more thoroughly in <xref linkend=\"monitoring-logging\"/>. The Data processing service controller offers a few options for setting the location and level of logging."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:204(title)
+msgid "Example. Setting the log level higher than warning and specifying an output file."
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:212(para)
+msgid "Sahara project documentation: <link href=\"http://docs.openstack.org/developer/sahara\"> http://docs.openstack.org/developer/sahara </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:218(para)
+msgid "Hadoop project: <link href=\"https://hadoop.apache.org/\"> https://hadoop.apache.org/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:224(para)
+msgid "Hadoop secure mode docs: <link href=\"https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SecureMode.html\"> https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SecureMode.html </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:230(para)
+msgid "Hadoop HDFS documentation: <link href=\"https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html\"> https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:236(para)
+msgid "Spark project: <link href=\"https://spark.apache.org/\"> https://spark.apache.org/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:242(para)
+msgid "Spark security documentation: <link href=\"https://spark.apache.org/docs/latest/security.html\"> https://spark.apache.org/docs/latest/security.html </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:248(para)
+msgid "Storm project: <link href=\"https://storm.apache.org/\"> https://storm.apache.org/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:254(para)
+msgid "Zookeeper project: <link href=\"https://zookeeper.apache.org/\"> https://zookeeper.apache.org/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:260(para)
+msgid "Oozie project: <link href=\"https://oozie.apache.org/\"> https://oozie.apache.org/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:266(para)
+msgid "Hive <link href=\"https://hive.apache.org/\"> https://hive.apache.org/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:272(para)
+msgid "Pig <link href=\"https://pig.apache.org/\"> https://pig.apache.org/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:278(para)
+msgid "Cloudera CDH documentation: <link href=\"https://www.cloudera.com/content/cloudera/en/documentation.html#CDH\"> https://www.cloudera.com/content/cloudera/en/documentation.html#CDH </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:284(para)
+msgid "Hortonworks Data Platform documentation: <link href=\"http://docs.hortonworks.com/\"> http://docs.hortonworks.com/ </link>"
+msgstr ""
+
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:290(para)
+msgid "MapR project: <link href=\"https://www.mapr.com/products/mapr-distribution-including-apache-hadoop\"> https://www.mapr.com/products/mapr-distribution-including-apache-hadoop </link>"
+msgstr ""
+
 #: ./security-guide/section_case-studies-instance-management.xml:9(para)
 msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would architect their clouds with respect to instance entropy, scheduling instances, trusted images, and instance migrations."
 msgstr ""
@@ -5275,6 +5547,132 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:20(para)
 msgid "For migrations, Bob wants to enable secure instance migrations in order to support rolling upgrades with minimal user downtime. Bob ensures that all migrations occur on an isolated VLAN. He plans to defer implementing encrypted migrations until this is better supported in <placeholder-1/> client tools. As a result, he makes a note to track this carefully and switch to encrypted migrations as soon as possible."
+msgstr ""
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:58(None) ./security-guide/section_data-processing-introduction-to-data-processing.xml:61(None)
+msgid "@@image: 'static/data_processing_architecture.png'; md5=f9fa44d2ab5b2b7603cefa0a1fd3a9d6"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:8(title)
+msgid "Introduction to Data processing"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:9(para)
+msgid "The Data processing service for OpenStack (sahara) provides a platform for the provisioning and management of instance clusters using processing frameworks such as Hadoop and Spark. Through the OpenStack dashboard or REST API, users will be able to upload and execute framework applications which may access data in object storage or external providers. The data processing controller uses the Orchestration service to create clusters of instances which may exist as long-running groups that can grow and shrink as requested, or as transient groups created for a single workload."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:20(para)
+msgid "The service controller will be responsible for creating, maintaining, and destroying any instances created for its clusters. The controller will use the Networking service to establish network paths between itself and the cluster instances. It will also manage the deployment and life-cycle of user applications that are to be run on the clusters. The instances within a cluster contain the core of a framework's processing engine and the Data processing service provides several options for creating and managing the connections to these instances."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:31(para)
+msgid "Data processing resources (clusters, jobs, and data sources) are segregated by projects defined within the Identity service. These resources are shared within a project and it is important to understand the access needs of those who are using the service. Activities within projects (for example launching clusters, uploading jobs, etc.) can be restricted further through the use of role-based access controls."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:40(para)
+msgid "In this chapter we discuss how to assess the needs of data processing users with respect to their applications, the data that they use, and their expected capabilities within a project. We will also demonstrate a number of hardening techniques for the service controller and its clusters, and provide examples of various controller configurations and user management approaches to ensure an adequate level of security and privacy."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:50(title)
+msgid "Architecture"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:51(para)
+msgid "The following diagram presents a conceptual view of how the Data processing service fits into the greater OpenStack ecosystem."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:65(para)
+msgid "The Data processing service makes heavy use of the Compute, Orchestration, Image, and Block Storage services during the provisioning of clusters. It will also use one or more networks, created by the Networking service, provided during cluster creation for administrative access to the instances. While users are running framework applications the controller and the clusters will be accessing the Object Storage service. Given these service usages, we recommend following the instructions outlined in <xref linkend=\"documentation\"/> for cataloging all the components of an installation."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:79(title)
+msgid "Technologies involved"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:80(para)
+msgid "The Data Processing service is responsible for the deployment and management of several applications. For a complete understanding of the security options provided we recommend that operators have a general familiarity with these applications. The list of highlighted technologies is broken into two sections: first, high priority applications that have a greater impact on security, and second, supporting applications with a lower impact."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:89(para)
+msgid "Higher impact"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:93(link)
+msgid "Hadoop"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:100(link)
+msgid "Hadoop secure mode docs"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:107(link)
+msgid "HDFS"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:114(link)
+msgid "Spark"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:121(link)
+msgid "Spark Security"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:128(link)
+msgid "Storm"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:135(link)
+msgid "Zookeeper"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:141(para)
+msgid "Lower impact"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:145(link)
+msgid "Oozie"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:152(link)
+msgid "Hive"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:159(link)
+msgid "Pig"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:165(para)
+msgid "These technologies comprise the core of the frameworks that are deployed with the Data processing service. In addition to these technologies, the service also includes bundled frameworks provided by third party vendors. These bundled frameworks are built using the same core pieces described above plus configurations and applications that the vendors include. For more information on the third party framework bundles please see the following links:"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:177(link)
+msgid "Cloudera CDH"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:184(link)
+msgid "Hortonworks Data Platform"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:191(link)
+msgid "MapR"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:199(title)
+msgid "User access to resources"
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:200(para)
+msgid "The resources (clusters, jobs, and data sources) of the Data processing service are shared within the scope of a project. Although a single controller installation may manage several sets of resources, these resources will each be scoped to a single project. Given this constraint we recommend that user membership in projects is monitored closely to maintain proper segregation of resources."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:208(para)
+msgid "As the security requirements of organizations deploying this service will vary based on their specific needs, we recommend that operators focus on data privacy, cluster management, and end-user applications as a starting point for evaluating the needs of their users. These decisions will help guide the process of configuring user access to the service. For an expanded discussion on data privacy see <xref linkend=\"tenant-data\"/>."
+msgstr ""
+
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:217(para)
+msgid "The default assumption for a data processing installation is that users will have access to all functionality within their projects. In the event that more granular control is required the Data processing service provides a policy file (as described in <xref linkend=\"identity-policies\"/>). These configurations will be highly dependent on the needs of the installing organization, and as such there is no general advice on their usage: see <xref linkend=\"data-processing-configuration-and-hardening-role-based-access-control-policies\"/> for details."
 msgstr ""
 
 #: ./security-guide/section_privacy.xml:8(title)
@@ -5371,10 +5769,6 @@ msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:37(para)
 msgid "If your deployment of OpenStack provides multiple external access points into different security domains it is important that you limit the tenant's ability to attach multiple vNICs to multiple external access pointsthis would bridge these security domains and could lead to unforeseen security compromise. It is possible mitigate this risk by utilizing the host aggregates functionality provided by OpenStack Compute or through splitting the tenant VMs into multiple tenant projects with different virtual network configurations."
-msgstr ""
-
-#: ./security-guide/section_networking-services-security-best-practices.xml:48(title)
-msgid "Security groups"
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:49(para)
@@ -5686,34 +6080,42 @@ msgid "This book provides best practices and conceptual information about securi
 msgstr ""
 
 #: ./security-guide/bk-openstack-security-guide.xml:40(date)
-msgid "2014-10-16"
+msgid "2015-02-11"
 msgstr ""
 
 #: ./security-guide/bk-openstack-security-guide.xml:44(para)
+msgid "Chapter on Data processing added."
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml:50(date)
+msgid "2014-10-16"
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml:54(para)
 msgid "This book has been extensively reviewed and updated. Chapters have been rearranged and a glossary has been added."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:53(date)
+#: ./security-guide/bk-openstack-security-guide.xml:63(date)
 msgid "2013-12-02"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:57(para)
+#: ./security-guide/bk-openstack-security-guide.xml:67(para)
 msgid "Chapter on Object Storage added."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:63(date)
+#: ./security-guide/bk-openstack-security-guide.xml:73(date)
 msgid "2013-10-17"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:67(para)
+#: ./security-guide/bk-openstack-security-guide.xml:77(para)
 msgid "Havana release."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:73(date)
+#: ./security-guide/bk-openstack-security-guide.xml:83(date)
 msgid "2013-07-02"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:77(para)
+#: ./security-guide/bk-openstack-security-guide.xml:87(para)
 msgid "Initial creation..."
 msgstr ""
 
@@ -6642,7 +7044,7 @@ msgid "The <systemitem class=\"service\">nova-novncproxy</systemitem> and <syste
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:53(para)
-msgid "By default, the remote desktop traffic is not encrypted. TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to SSL/TLS</link> for appropriate recommendations."
+msgid "By default, the remote desktop traffic is not encrypted. TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to TLS and SSL</link> for appropriate recommendations."
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:60(para)

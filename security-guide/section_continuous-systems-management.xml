@@ -24,9 +24,9 @@
     <para>The OpenStack components are only a small fraction of the
       software in a cloud. It is important to keep up to date with all
       of these other components, too. While certain data sources
-      will be deployment specific, the key idea is to ensure that a
-      cloud administrator subscribes to the necessary mailing lists
-      for receiving notification of any related security updates.
+      will be deployment specific, it is important that a cloud administrator
+      subscribe to the necessary mailing lists in order to receive notification
+      of any security updates applicable to the organization's environment.
       Often this is as simple as tracking an upstream Linux
       distribution.</para>
     <note>

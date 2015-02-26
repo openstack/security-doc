@@ -73,6 +73,15 @@
           authentication method as a hashed password. We provide a
           secure authentication example in the section below.</para>
       </section>
+      <section xml:id="database-access-control-openstack-service-database-configuration-tls">
+        <title>OpenStack service database configuration</title>
+        <para>If your database server is configured for TLS transport, you will need to specify the certificate authority information for use with the initial connection string in the SQLAlchemy query.
+        </para>
+        <section xml:id="database-access-control-openstack-service-database-configuration-tls-example-1-mysql">
+          <title>Example of a <literal>:sql_connection</literal> string to MySQL:</title>
+          <programlisting language="ini">sql_connection = mysql://compute01:<replaceable>NOVA_DBPASS</replaceable>@localhost/nova?charset=utf8&amp;ssl_ca=/etc/mysql/cacert.pem</programlisting>
+        </section>
+      </section>
     </section>
     <section xml:id="database-access-control-authentication-with-x509-certificates">
       <title>Authentication with X.509 certificates</title>
@@ -96,7 +105,7 @@
       end. These parameters specify the certificate, private key, and
       certificate authority information for use with the initial
       connection string.</para>
-      <para>Example of an <literal>:sql_connection</literal> string for X.509 certificate authentication to MySQL:</para>
+      <para>Example of a <literal>:sql_connection</literal> string for X.509 certificate authentication to MySQL:</para>
       <programlisting language="ini">sql_connection = mysql://compute01:<replaceable>NOVA_DBPASS</replaceable>@localhost/nova?
 charset=utf8&amp;ssl_ca=/etc/mysql/cacert.pem&amp;ssl_cert=/etc/mysql/server-cert.pem&amp;ssl_key=/etc/mysql/server-key.pem</programlisting>
     </section>

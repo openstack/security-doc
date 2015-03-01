@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-25 06:22+0000\n"
+"POT-Creation-Date: 2015-03-01 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3638,7 +3638,7 @@ msgid "Firewalls"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:70(para)
-msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Icehouse release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this."
+msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Juno release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this.The FWaaS admin guide is available at <link href=\"http://docs.openstack.org/admin-guide-cloud/content/fwaas.html\"/>"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:71(para)

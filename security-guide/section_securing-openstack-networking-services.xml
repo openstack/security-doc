@@ -76,13 +76,11 @@ bind_port = 9696</programlisting>
           Networking.</para>
         <para>
           It is recommended that you follow the guidelines provided in
-          the Database Authentication and Access Control chapter in
-          the Database section for all components that require direct
+          <xref linkend="database-access-control-database-authentication-and-access-control"/> for all components which require direct
           DB connections.</para>
         <para>
           It is recommended that you follow the guidelines provided in
-          the Queue Authentication and Access Control chapter in the
-          Messaging section for all components that require RPC
+          <xref linkend="messaging-security-queue-authentication-and-access-control"/> for all components which require RPC
           communication.</para>
       </section>
     </section>

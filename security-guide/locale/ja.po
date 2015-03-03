@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-02-28 08:36+0000\n"
-"PO-Revision-Date: 2015-02-27 14:05+0000\n"
+"POT-Creation-Date: 2015-03-02 18:37+0000\n"
+"PO-Revision-Date: 2015-03-02 18:37+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -2079,8 +2079,8 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_system-documentation-requirements.xml93(None)
-#: ./security-guide/section_system-documentation-requirements.xml98(None)
+#: ./security-guide/section_system-documentation-requirements.xml110(None)
+#: ./security-guide/section_system-documentation-requirements.xml115(None)
 msgid ""
 "@@image: 'static/services-protocols-ports.png'; "
 "md5=fb1e9f47d969127b7a5ca683d38cfe20"
@@ -2151,33 +2151,51 @@ msgid ""
 "might benefit from having a Configuration Management Database "
 "(<glossterm>CMDB</glossterm>). CMDBs are normally used for hardware asset "
 "tracking and overall life-cycle management. By leveraging a CMDB, an "
-"organization can quickly identify cloud infrastructure hardware. For "
-"example, compute nodes, storage nodes, and network devices that exist on the"
-" network but that might not be adequately protected and/or forgotten. An "
-"OpenStack provisioning system can provide some basic CMDB functions if the "
-"underlying hardware supports the necessary auto-discovery features."
+"organization can quickly identify cloud infrastructure hardware such as "
+"compute nodes, storage nodes, or network devices. A CMDB can assist in "
+"identifying assets that exist on the network which may have vulnerabilities "
+"due to inadequate maintenance, inadequate protection or being displaced and "
+"forgotten. An OpenStack provisioning system can provide some basic CMDB "
+"functions if the underlying hardware supports the necessary auto-discovery "
+"features."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml62(title)
+#: ./security-guide/section_system-documentation-requirements.xml66(title)
 msgid "Software inventory"
 msgstr "ソフトウェアインベントリ"
 
-#: ./security-guide/section_system-documentation-requirements.xml63(para)
+#: ./security-guide/section_system-documentation-requirements.xml67(para)
 msgid ""
-"Just as with hardware, all software components within the OpenStack "
-"deployment should be documented. Components here should include system "
-"databases; OpenStack software components and supporting sub-components; and,"
-" supporting infrastructure software such as load-balancers, reverse proxies,"
-" and network address translators. Having an authoritative list like this may"
-" be critical toward understanding total system impact due to a compromise or"
-" vulnerability of a specific class of software."
-msgstr "ハードウェアと同様に、OpenStack デプロイメント内のソフトウェアコンポーネントはすべて文書化しておくべきです。このコンポーネントには、システムデータベース、OpenStack ソフトウェアコンポーネントおよびサポートサブコンポーネント、ロードバランサー/リバースプロキシ/ネットワークアドレストランスレーターなどのサポートインフラストラクチャーソフトウェアなどが含まれます。このような信頼できる一覧を用意しておくことは、ソフトウェアの特定のクラスの侵害や脆弱性によってシステムが受ける全体的な影響を把握するために極めて重要となります。"
+"As with hardware, all software components within the OpenStack deployment "
+"should be documented. Examples include:"
+msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml75(title)
+#: ./security-guide/section_system-documentation-requirements.xml73(para)
+msgid "System databases, such as MySQL or mongoDB"
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml76(para)
+msgid "OpenStack software components, such as Identity or Compute"
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml80(para)
+msgid ""
+"Supporting components, such as load-balancers, reverse proxies, DNS or DHCP "
+"services"
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml84(para)
+msgid ""
+"An authoritative list of software components may be critical when assessing "
+"the impact of a compromise or vulnerability in a library, application or "
+"class of software."
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml92(title)
 msgid "Network topology"
 msgstr "ネットワークトポロジー"
 
-#: ./security-guide/section_system-documentation-requirements.xml76(para)
+#: ./security-guide/section_system-documentation-requirements.xml93(para)
 msgid ""
 "A network topology should be provided with highlights specifically calling "
 "out the data flows and bridging points between the security domains. Network"
@@ -2188,11 +2206,11 @@ msgid ""
 "with virtual machine instances and gateways created by OpenStack."
 msgstr "ネットワークトポロジーは、セキュリティドメイン間のデータフローとブリッジングポイントをはっきりと識別して強調するようにして作成すべきです。OpenStack の論理的なシステム境界とともに、ネットワークの受信および送信ポイントを明確にすることを推奨します。システムを完全に視覚的に網羅するには、図を複数作成する必要がある場合があります。また、ネットワークトポロジーの文書には、テナントに代わってシステムが作成した仮想ネットワークや、OpenStack によって作成された仮想マシンインスタンスとゲートウェイを含めるべきです。"
 
-#: ./security-guide/section_system-documentation-requirements.xml87(title)
+#: ./security-guide/section_system-documentation-requirements.xml104(title)
 msgid "Services, protocols and ports"
 msgstr "サービス、プロトコル、およびポート"
 
-#: ./security-guide/section_system-documentation-requirements.xml88(para)
+#: ./security-guide/section_system-documentation-requirements.xml105(para)
 msgid ""
 "Knowing information about organizational assets is typically a best "
 "practice, therefore it is beneficial to create a table which contains "
@@ -2208,7 +2226,7 @@ msgid ""
 "An example of this type of table is provided below:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml101(para)
+#: ./security-guide/section_system-documentation-requirements.xml118(para)
 msgid ""
 "Referencing a table of services, protocols and ports can help in "
 "understanding the relationship between OpenStack components. It is highly "
@@ -6105,15 +6123,16 @@ msgstr "セキュリティグループでは、管理者とテナントが仮想
 
 #: ./security-guide/section_networking-services.xml37(para)
 msgid ""
-"It is our recommendation that you enable security groups through OpenStack "
-"Networking."
-msgstr "OpenStack Networking 経由でセキュリティグループを有効にする事をお勧めします。"
+"When using the Networking service, it is our recommendation that you enable "
+"security groups through OpenStack Networking and disable security groups in "
+"Compute."
+msgstr ""
 
-#: ./security-guide/section_networking-services.xml41(title)
+#: ./security-guide/section_networking-services.xml43(title)
 msgid "L3 routing and NAT"
 msgstr "L3 ルーティングおよび NAT"
 
-#: ./security-guide/section_networking-services.xml42(para)
+#: ./security-guide/section_networking-services.xml44(para)
 msgid ""
 "OpenStack Networking routers can connect multiple L2 networks, and can also "
 "provide a <emphasis>gateway</emphasis> that connects one or more private L2 "
@@ -6121,7 +6140,7 @@ msgid ""
 " network for access to the Internet."
 msgstr "OpenStack Networking のルータは複数の L2 ネットワークを接続でき、１つ以上のプライベート L2 ネットワークを共有<emphasis>外部</emphasis>ネットワーク（インターネットアクセス用のパブリックネットワーク等）に接続する<emphasis>ゲートウェイ</emphasis>を提供する事も出来ます。"
 
-#: ./security-guide/section_networking-services.xml43(para)
+#: ./security-guide/section_networking-services.xml45(para)
 msgid ""
 "The L3 router provides basic Network Address Translation (NAT) capabilities "
 "on <emphasis>gateway</emphasis> ports that uplink the router to external "
@@ -6131,17 +6150,17 @@ msgid ""
 "subnets attached to the router."
 msgstr "L3 ルータは、外部ネットワークへのルータに接続する<emphasis>ゲートウェイ</emphasis>ポート上の基本的なネットワークアドレス変換 (NAT) 機能を提供します。このルータはデフォルトで全てのネットワークの SNAT (静的 NAT) を行います。これは、外部ネットワーク上のパブリック IP アドレスから、ルータにアタッチされた他の１サブネットのプライベート IP アドレスへ変換する静的な１対１マッピングを作成します。"
 
-#: ./security-guide/section_networking-services.xml44(para)
+#: ./security-guide/section_networking-services.xml46(para)
 msgid ""
 "It is our recommendation to leverage per tenant L3 routing and Floating IPs "
 "for more granular connectivity of tenant VMs."
 msgstr "テナント VM のより粒度の細かいテナント L3 ルーティングとフローティング IP 単位で設定する事をお勧めします。"
 
-#: ./security-guide/section_networking-services.xml47(title)
+#: ./security-guide/section_networking-services.xml49(title)
 msgid "Quality of Service (QoS)"
 msgstr "サービス品質(QoS)"
 
-#: ./security-guide/section_networking-services.xml48(para)
+#: ./security-guide/section_networking-services.xml50(para)
 msgid ""
 "The ability to set QoS on the virtual interface ports of tenant instances is"
 " a current deficiency for OpenStack Networking. The application of QoS for "
@@ -6153,23 +6172,23 @@ msgid ""
 "following services:"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml50(para)
+#: ./security-guide/section_networking-services.xml52(para)
 msgid "Traffic shaping through DSCP markings"
 msgstr "DSCP マーキングによるトラフィックシェーピング"
 
-#: ./security-guide/section_networking-services.xml53(para)
+#: ./security-guide/section_networking-services.xml55(para)
 msgid "Rate-limiting on a per port/network/tenant basis."
 msgstr "ポート・ネットワーク・テナント単位のレートリミット"
 
-#: ./security-guide/section_networking-services.xml56(para)
+#: ./security-guide/section_networking-services.xml58(para)
 msgid "Port mirroring (through open source or third-party plug-ins)"
 msgstr "ポートミラーリング (オープンソースのサードパーティ製プラグイン使用)"
 
-#: ./security-guide/section_networking-services.xml59(para)
+#: ./security-guide/section_networking-services.xml61(para)
 msgid "Flow analysis (through open source or third-party plug-ins)"
 msgstr "フロー分析 (オープンソースのサードパーティプラグイン使用)"
 
-#: ./security-guide/section_networking-services.xml62(para)
+#: ./security-guide/section_networking-services.xml64(para)
 msgid ""
 "Tenant traffic port mirroring or Network Flow monitoring is currently not an"
 " exposed feature in OpenStack Networking. There are third-party plug-in "
@@ -6179,11 +6198,11 @@ msgid ""
 " effort to implement."
 msgstr "テナントトラフィックポートミラーリング又はNetwork Flow モニタリングは現在、OpenStack Networking の機能として公開されていません。ポート／ネットワーク／テナント単位でポートミラーリングを行うサードパーティ製のプラグイン拡張があります。ハイパーバイザー上で Open vSwitch を使用する場合、sFlow とポートミラーリングを有効にできますが、実装には幾つかの運用操作が必要になるでしょう。"
 
-#: ./security-guide/section_networking-services.xml65(title)
+#: ./security-guide/section_networking-services.xml67(title)
 msgid "Load balancing"
 msgstr "負荷分散"
 
-#: ./security-guide/section_networking-services.xml66(para)
+#: ./security-guide/section_networking-services.xml68(para)
 msgid ""
 "Another feature in OpenStack Networking is Load-Balancer-as-a-service "
 "(LBaaS). The LBaaS reference implementation is based on HA-Proxy. There are "
@@ -6191,11 +6210,11 @@ msgid ""
 "to provide extensive L4-L7 functionality for virtual interface ports."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml69(title)
+#: ./security-guide/section_networking-services.xml71(title)
 msgid "Firewalls"
 msgstr "ファイアウォール"
 
-#: ./security-guide/section_networking-services.xml70(para)
+#: ./security-guide/section_networking-services.xml72(para)
 msgid ""
 "FW-as-a-Service (FWaaS) is currently in development for the OpenStack "
 "Networking Juno release as an experimental feature. FWaaS will address the "
@@ -6207,7 +6226,7 @@ msgid ""
 "href=\"http://docs.openstack.org/admin-guide-cloud/content/fwaas.html\"/>"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml71(para)
+#: ./security-guide/section_networking-services.xml73(para)
 msgid ""
 "It is critical during the design of an OpenStack Networking infrastructure "
 "to understand the current features and limitations of network services that "
@@ -6216,11 +6235,11 @@ msgid ""
 "environment."
 msgstr "利用可能なネットワークサービスの現在の機能と制限を理解する事は OpenStack Networking の設計上極めて重要です。仮想／物理ネットワークの境界がどこかを理解する事は、あなたの環境で要求されたセキュリティコントロールを追加する際の助けになるでしょう。"
 
-#: ./security-guide/section_networking-services.xml75(title)
+#: ./security-guide/section_networking-services.xml77(title)
 msgid "Network services extensions"
 msgstr "ネットワークサービス拡張"
 
-#: ./security-guide/section_networking-services.xml76(para)
+#: ./security-guide/section_networking-services.xml78(para)
 msgid ""
 "A list of known plug-ins provided by the open source community or by SDN "
 "companies that work with OpenStack Networking is available at <link "
@@ -6228,19 +6247,19 @@ msgid ""
 " Neutron Plugins and Drivers wiki page</link>."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml83(title)
+#: ./security-guide/section_networking-services.xml85(title)
 msgid "Networking services limitations"
 msgstr "Networking サービスの制限事項"
 
-#: ./security-guide/section_networking-services.xml84(para)
+#: ./security-guide/section_networking-services.xml86(para)
 msgid "OpenStack Networking has the following known limitations:"
 msgstr "OpenStack Networking は以下の制限があります。"
 
-#: ./security-guide/section_networking-services.xml87(term)
+#: ./security-guide/section_networking-services.xml89(term)
 msgid "Overlapping IP addresses"
 msgstr "IP アドレスの重複"
 
-#: ./security-guide/section_networking-services.xml89(para)
+#: ./security-guide/section_networking-services.xml91(para)
 msgid ""
 "If nodes that run either <systemitem "
 "class=\"service\">neutron-l3-agent</systemitem> or <systemitem "
@@ -6250,28 +6269,28 @@ msgid ""
 "not support these namespaces, run the DHCP and L3 agents on different hosts."
 msgstr "<systemitem class=\"service\">neutron-l3-agent</systemitem> か <systemitem class=\"service\">neutron-dhcp-agent</systemitem> のいずれかを実行するノードが重複した IP アドレスを使用する場合、これらのノード群は Linux のネットワークネームスペースを使用する必要があります。デフォルトでは、DHCP と L3 エージェントは Linux ネットワークネームスペースを使用しています。しかしながら、ホストがこのネームスペースをサポートしていない場合、DHCP と L3 エージェントは異なるホストで実行して下さい。"
 
-#: ./security-guide/section_networking-services.xml99(para)
+#: ./security-guide/section_networking-services.xml101(para)
 msgid ""
 "If network namespace support is not present, a further limitation of the L3 "
 "agent is that only a single logical router is supported."
 msgstr "ネットワークネームスペースサポートがない場合、L3エージェントでは追加の制限事項として単一の論理ルータのみサポートされます。"
 
-#: ./security-guide/section_networking-services.xml106(term)
+#: ./security-guide/section_networking-services.xml108(term)
 msgid "Multi-host DHCP-agent"
 msgstr "マルチホスト DHCP エージェント"
 
-#: ./security-guide/section_networking-services.xml108(para)
+#: ./security-guide/section_networking-services.xml110(para)
 msgid ""
 "OpenStack Networking supports multiple L3 and DHCP agents with load "
 "balancing. However, tight coupling of the location of the virtual machine is"
 " not supported."
 msgstr "OpenStack Networking は複数の L3 エージェントと DHCP エージェントによる負荷分散をサポートしています。しかしながら、（訳注：nova-network がサポートしていた）仮想マシンとの配置上の強い紐付けはサポートされていません。"
 
-#: ./security-guide/section_networking-services.xml116(term)
+#: ./security-guide/section_networking-services.xml118(term)
 msgid "No IPv6 support for L3 agents"
 msgstr "L3 エージェントの IPv6 未対応"
 
-#: ./security-guide/section_networking-services.xml118(para)
+#: ./security-guide/section_networking-services.xml120(para)
 msgid ""
 "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, "
 "supports only IPv4 forwarding."

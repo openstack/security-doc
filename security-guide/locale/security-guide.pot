@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-01 06:01+0000\n"
+"POT-Creation-Date: 2015-03-03 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1173,7 +1173,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_system-documentation-requirements.xml:93(None) ./security-guide/section_system-documentation-requirements.xml:98(None)
+#: ./security-guide/section_system-documentation-requirements.xml:110(None) ./security-guide/section_system-documentation-requirements.xml:115(None)
 msgid "@@image: 'static/services-protocols-ports.png'; md5=fb1e9f47d969127b7a5ca683d38cfe20"
 msgstr ""
 
@@ -1214,34 +1214,50 @@ msgid "Hardware inventory"
 msgstr ""
 
 #: ./security-guide/section_system-documentation-requirements.xml:49(para)
-msgid "Clouds without stringent compliance requirements for written documentation might benefit from having a Configuration Management Database (<glossterm>CMDB</glossterm>). CMDBs are normally used for hardware asset tracking and overall life-cycle management. By leveraging a CMDB, an organization can quickly identify cloud infrastructure hardware. For example, compute nodes, storage nodes, and network devices that exist on the network but that might not be adequately protected and/or forgotten. An OpenStack provisioning system can provide some basic CMDB functions if the underlying hardware supports the necessary auto-discovery features."
+msgid "Clouds without stringent compliance requirements for written documentation might benefit from having a Configuration Management Database (<glossterm>CMDB</glossterm>). CMDBs are normally used for hardware asset tracking and overall life-cycle management. By leveraging a CMDB, an organization can quickly identify cloud infrastructure hardware such as compute nodes, storage nodes, or network devices. A CMDB can assist in identifying assets that exist on the network which may have vulnerabilities due to inadequate maintenance, inadequate protection or being displaced and forgotten. An OpenStack provisioning system can provide some basic CMDB functions if the underlying hardware supports the necessary auto-discovery features."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:62(title)
+#: ./security-guide/section_system-documentation-requirements.xml:66(title)
 msgid "Software inventory"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:63(para)
-msgid "Just as with hardware, all software components within the OpenStack deployment should be documented. Components here should include system databases; OpenStack software components and supporting sub-components; and, supporting infrastructure software such as load-balancers, reverse proxies, and network address translators. Having an authoritative list like this may be critical toward understanding total system impact due to a compromise or vulnerability of a specific class of software."
+#: ./security-guide/section_system-documentation-requirements.xml:67(para)
+msgid "As with hardware, all software components within the OpenStack deployment should be documented. Examples include:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:75(title)
-msgid "Network topology"
+#: ./security-guide/section_system-documentation-requirements.xml:73(para)
+msgid "System databases, such as MySQL or mongoDB"
 msgstr ""
 
 #: ./security-guide/section_system-documentation-requirements.xml:76(para)
+msgid "OpenStack software components, such as Identity or Compute"
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml:80(para)
+msgid "Supporting components, such as load-balancers, reverse proxies, DNS or DHCP services"
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml:84(para)
+msgid "An authoritative list of software components may be critical when assessing the impact of a compromise or vulnerability in a library, application or class of software."
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml:92(title)
+msgid "Network topology"
+msgstr ""
+
+#: ./security-guide/section_system-documentation-requirements.xml:93(para)
 msgid "A network topology should be provided with highlights specifically calling out the data flows and bridging points between the security domains. Network ingress and egress points should be identified along with any OpenStack logical system boundaries. Multiple diagrams may be needed to provide complete visual coverage of the system. A network topology document should include virtual networks created on behalf of tenants by the system along with virtual machine instances and gateways created by OpenStack."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:87(title)
+#: ./security-guide/section_system-documentation-requirements.xml:104(title)
 msgid "Services, protocols and ports"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:88(para)
+#: ./security-guide/section_system-documentation-requirements.xml:105(para)
 msgid "Knowing information about organizational assets is typically a best practice, therefore it is beneficial to create a table which contains information regarding the service, protocols and ports being utilized in the OpenStack deployment. The table can be created from information derived from a CMDB or can be constructed manually. The table can be customized to include an overview of all services running within the cloud infrastructure. The level of detail contained in this type of table can be beneficial as the information can immediately inform, guide, and assist with validating security requirements. Standard security components such as firewall configuration, service port conflicts, security remediation areas, and compliance become easier to maintain when concise information is available. An example of this type of table is provided below:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:101(para)
+#: ./security-guide/section_system-documentation-requirements.xml:118(para)
 msgid "Referencing a table of services, protocols and ports can help in understanding the relationship between OpenStack components. It is highly recommended that OpenStack deployments have information similar to this on record."
 msgstr ""
 
@@ -3578,114 +3594,114 @@ msgid "Security groups allow administrators and tenants the ability to specify t
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:37(para)
-msgid "It is our recommendation that you enable security groups through OpenStack Networking."
+msgid "When using the Networking service, it is our recommendation that you enable security groups through OpenStack Networking and disable security groups in Compute."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:41(title)
+#: ./security-guide/section_networking-services.xml:43(title)
 msgid "L3 routing and NAT"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:42(para)
+#: ./security-guide/section_networking-services.xml:44(para)
 msgid "OpenStack Networking routers can connect multiple L2 networks, and can also provide a <emphasis>gateway</emphasis> that connects one or more private L2 networks to a shared <emphasis>external</emphasis> network, such as a public network for access to the Internet."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:43(para)
+#: ./security-guide/section_networking-services.xml:45(para)
 msgid "The L3 router provides basic Network Address Translation (NAT) capabilities on <emphasis>gateway</emphasis> ports that uplink the router to external networks. This router SNATs (Static NAT) all traffic by default, and supports floating IPs, which creates a static one-to-one mapping from a public IP on the external network to a private IP on one of the other subnets attached to the router."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:44(para)
+#: ./security-guide/section_networking-services.xml:46(para)
 msgid "It is our recommendation to leverage per tenant L3 routing and Floating IPs for more granular connectivity of tenant VMs."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:47(title)
+#: ./security-guide/section_networking-services.xml:49(title)
 msgid "Quality of Service (QoS)"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:48(para)
+#: ./security-guide/section_networking-services.xml:50(para)
 msgid "The ability to set QoS on the virtual interface ports of tenant instances is a current deficiency for OpenStack Networking. The application of QoS for traffic shaping and rate-limiting at the physical network edge device is insufficient due to the dynamic nature of workloads in an OpenStack deployment and can not be leveraged in the traditional way. QoS-as-a-Service (QoSaaS) is currently in development for the OpenStack Networking Icehouse release as an experimental feature. QoSaaS is planning to provide the following services:"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:50(para)
+#: ./security-guide/section_networking-services.xml:52(para)
 msgid "Traffic shaping through DSCP markings"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:53(para)
+#: ./security-guide/section_networking-services.xml:55(para)
 msgid "Rate-limiting on a per port/network/tenant basis."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:56(para)
+#: ./security-guide/section_networking-services.xml:58(para)
 msgid "Port mirroring (through open source or third-party plug-ins)"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:59(para)
+#: ./security-guide/section_networking-services.xml:61(para)
 msgid "Flow analysis (through open source or third-party plug-ins)"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:62(para)
+#: ./security-guide/section_networking-services.xml:64(para)
 msgid "Tenant traffic port mirroring or Network Flow monitoring is currently not an exposed feature in OpenStack Networking. There are third-party plug-in extensions that do provide Port Mirroring on a per port/network/tenant basis. If Open vSwitch is used on the networking hypervisor, it is possible to enable sFlow and port mirroring, however it will require some operational effort to implement."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:65(title)
+#: ./security-guide/section_networking-services.xml:67(title)
 msgid "Load balancing"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:66(para)
+#: ./security-guide/section_networking-services.xml:68(para)
 msgid "Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:69(title)
+#: ./security-guide/section_networking-services.xml:71(title)
 msgid "Firewalls"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:70(para)
+#: ./security-guide/section_networking-services.xml:72(para)
 msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Juno release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this.The FWaaS admin guide is available at <link href=\"http://docs.openstack.org/admin-guide-cloud/content/fwaas.html\"/>"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:71(para)
+#: ./security-guide/section_networking-services.xml:73(para)
 msgid "It is critical during the design of an OpenStack Networking infrastructure to understand the current features and limitations of network services that are available. Understanding where the boundaries of your virtual and physical networks will help you add the required security controls in your environment."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:75(title)
+#: ./security-guide/section_networking-services.xml:77(title)
 msgid "Network services extensions"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:76(para)
+#: ./security-guide/section_networking-services.xml:78(para)
 msgid "A list of known plug-ins provided by the open source community or by SDN companies that work with OpenStack Networking is available at <link href=\"https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers\">OpenStack Neutron Plugins and Drivers wiki page</link>."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:83(title)
+#: ./security-guide/section_networking-services.xml:85(title)
 msgid "Networking services limitations"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:84(para)
+#: ./security-guide/section_networking-services.xml:86(para)
 msgid "OpenStack Networking has the following known limitations:"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:87(term)
+#: ./security-guide/section_networking-services.xml:89(term)
 msgid "Overlapping IP addresses"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:89(para)
+#: ./security-guide/section_networking-services.xml:91(para)
 msgid "If nodes that run either <systemitem class=\"service\">neutron-l3-agent</systemitem> or <systemitem class=\"service\">neutron-dhcp-agent</systemitem> use overlapping IP addresses, those nodes must use Linux network namespaces. By default, the DHCP and L3 agents use Linux network namespaces. However, if the host does not support these namespaces, run the DHCP and L3 agents on different hosts."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:99(para)
+#: ./security-guide/section_networking-services.xml:101(para)
 msgid "If network namespace support is not present, a further limitation of the L3 agent is that only a single logical router is supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:106(term)
+#: ./security-guide/section_networking-services.xml:108(term)
 msgid "Multi-host DHCP-agent"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:108(para)
+#: ./security-guide/section_networking-services.xml:110(para)
 msgid "OpenStack Networking supports multiple L3 and DHCP agents with load balancing. However, tight coupling of the location of the virtual machine is not supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:116(term)
+#: ./security-guide/section_networking-services.xml:118(term)
 msgid "No IPv6 support for L3 agents"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:118(para)
+#: ./security-guide/section_networking-services.xml:120(para)
 msgid "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, supports only IPv4 forwarding."
 msgstr ""
 

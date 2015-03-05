@@ -70,15 +70,13 @@
           </imageobject>
         </inlinemediaobject></para>
       <para>We recommend using a separate, isolated network within the
-        management security domain for provisioning. This network will
-        handle all PXE traffic, along with the subsequent boot stage
-        downloads depicted above. Note that the node boot process
-        begins with two insecure operations: DHCP and TFTP. Then the
-        boot process downloads over TLS the remaining information
-        required to deploy the node. This information might include an
-        initramfs and a kernel. This concludes by downloading the
-        remaining information needed to deploy the node. This may be
-        an operating system installer, a basic install managed by
+          management security domain for provisioning. This network will
+          handle all PXE traffic, along with the subsequent boot stage
+          downloads depicted above. Note that the node boot process begins
+          with two insecure operations: DHCP and TFTP. Then the boot process
+          uses TLS to download the remaining information required to deploy
+          the node. This may be an operating system installer, a basic
+          install managed by
           <link xlink:href="http://www.opscode.com/chef/">Chef</link>
         or <link xlink:href="https://puppetlabs.com/">Puppet</link>,
         or even a complete file system image that is written directly

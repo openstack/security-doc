@@ -324,7 +324,7 @@ service_v3</programlisting>
                 groups that should be created so that when mapping from the SAML
                 attribute <literal>Employees</literal>, you can map it to a
                 Identity service group <literal>devs</literal>.</para>
-                <para>The Identity service administator can create as many groups
+                <para>The Identity service administrator can create as many groups
                  as there are SAML attributes, whatever the mapping calls for.</para></step>
             <step><para>Add Identity Providers, Mappings and Protocols.</para>
               <para>To utilize Federation, create the following in the Identity service:

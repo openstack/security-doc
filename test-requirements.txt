@@ -3,4 +3,4 @@
 # process, which may cause wedges in the gate later.
 
 doc8  # Apache-2.0
-openstack-doc-tools>=0.21.1
+openstack-doc-tools>=0.23

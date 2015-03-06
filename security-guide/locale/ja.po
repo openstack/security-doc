@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-02 18:37+0000\n"
-"PO-Revision-Date: 2015-03-02 18:37+0000\n"
+"POT-Creation-Date: 2015-03-05 17:41+0000\n"
+"PO-Revision-Date: 2015-03-05 17:41+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -758,17 +758,17 @@ msgstr "OpenStack Networking サービスの様々なコンポーネントは、
 
 #: ./security-guide/section_securing-openstack-networking-services.xml77(para)
 msgid ""
-"It is recommended that you follow the guidelines provided in the Database "
-"Authentication and Access Control chapter in the Database section for all "
-"components that require direct DB connections."
-msgstr "DB への直接接続を必要とする全てのコンポーネントに対し、データベースの章のデータベース認証とアクセスコントロールの節で示されたガイドラインに従う事を推奨します。"
+"It is recommended that you follow the guidelines provided in <xref linkend"
+"=\"database-access-control-database-authentication-and-access-control\"/> "
+"for all components which require direct DB connections."
+msgstr ""
 
-#: ./security-guide/section_securing-openstack-networking-services.xml82(para)
+#: ./security-guide/section_securing-openstack-networking-services.xml81(para)
 msgid ""
-"It is recommended that you follow the guidelines provided in the Queue "
-"Authentication and Access Control chapter in the Messaging section for all "
-"components that require RPC communication."
-msgstr "RPC 通信を必要とする全てのコンポーネントに対し、メッセージングの章のキュー認証とアクセスコントロールの節中で示されたガイドラインに従う事を推奨します。"
+"It is recommended that you follow the guidelines provided in <xref linkend"
+"=\"messaging-security-queue-authentication-and-access-control\"/> for all "
+"components which require RPC communication."
+msgstr ""
 
 #: ./security-guide/ch_identity.xml8(title)
 #: ./security-guide/section_data-processing-deployment.xml33(para)
@@ -2994,7 +2994,7 @@ msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml327(para)
 msgid ""
-"The Identity service administator can create as many groups as there are "
+"The Identity service administrator can create as many groups as there are "
 "SAML attributes, whatever the mapping calls for."
 msgstr ""
 
@@ -6380,16 +6380,14 @@ msgid ""
 "security domain for provisioning. This network will handle all PXE traffic, "
 "along with the subsequent boot stage downloads depicted above. Note that the"
 " node boot process begins with two insecure operations: DHCP and TFTP. Then "
-"the boot process downloads over TLS the remaining information required to "
-"deploy the node. This information might include an initramfs and a kernel. "
-"This concludes by downloading the remaining information needed to deploy the"
-" node. This may be an operating system installer, a basic install managed by"
-" <link href=\"http://www.opscode.com/chef/\">Chef</link> or <link "
+"the boot process uses TLS to download the remaining information required to "
+"deploy the node. This may be an operating system installer, a basic install "
+"managed by <link href=\"http://www.opscode.com/chef/\">Chef</link> or <link "
 "href=\"https://puppetlabs.com/\">Puppet</link>, or even a complete file "
 "system image that is written directly to disk."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml86(para)
+#: ./security-guide/section_integrity-life-cycle.xml84(para)
 msgid ""
 "While utilizing TLS during the PXE boot process is somewhat more "
 "challenging, common PXE firmware projects, such as iPXE, provide this "
@@ -6399,11 +6397,11 @@ msgid ""
 "number of insecure, plain text network operations."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml96(title)
+#: ./security-guide/section_integrity-life-cycle.xml94(title)
 msgid "Verified boot"
 msgstr "検証済みブート"
 
-#: ./security-guide/section_integrity-life-cycle.xml97(para)
+#: ./security-guide/section_integrity-life-cycle.xml95(para)
 msgid ""
 "In general, there are two different strategies for verifying the boot "
 "process. Traditional <emphasis>secure boot</emphasis> will validate the code"
@@ -6416,11 +6414,11 @@ msgid ""
 "is stored in a platform configuration register (PCR) in the TPM."
 msgstr "ブートプロセスの検証には、通常 2 つの異なる戦略があります。従来の<emphasis>セキュアブート</emphasis>は、プロセスの各ステップに実行されるコードを検証し、コードが正しくない場合にはブートを中止します。<emphasis>ブートアテステーション</emphasis>は、どのステップでどのコードが実行されるかを記録し、ブートプロセスが想定通りに完了した証拠として、この情報を別のマシンに提供します。いずれのケースにおいても、第 1 のステップでは、実行前にコードの各要素を計測します。この場合、計測値は実質的にはコードの SHA-1 ハッシュで、実行前に取得されます。 このハッシュは、TPM 内の Platform Configuration Register (PCR) に保管されます。"
 
-#: ./security-guide/section_integrity-life-cycle.xml109(para)
+#: ./security-guide/section_integrity-life-cycle.xml107(para)
 msgid "Note: SHA-1 is used here because this is what the TPM chips support."
 msgstr "注記:  ここで SHA-1 を使用するのは、TPM チップが対応しているためです。"
 
-#: ./security-guide/section_integrity-life-cycle.xml111(para)
+#: ./security-guide/section_integrity-life-cycle.xml109(para)
 msgid ""
 "Each TPM has at least 24 PCRs. The TCG Generic Server Specification, v1.0, "
 "March 2005, defines the PCR assignments for boot-time integrity "
@@ -6433,125 +6431,125 @@ msgid ""
 "configured exactly as desired."
 msgstr "各 TPM には少なくとも 24 の PCR が含まれます。TCG Generic Server Specification ( v1.0、2005 年 3 月版) には、ブート時の完全性計測のための PCR の割り当てが定義されています。以下の表には、標準的な PCR 設定を記載しています。コンテキストには、その値がノードのハードウェア (ファームウェア) をベースに決定されるか、ノードにプロビジョニングされているソフトウェアをベースに決定されるかを示しています。一部の値は、ファームウェアのバージョンやディスクサイズ、その他の低レベルの情報によって影響を受けます。このため、設定管理の適切なプラクティスを整備し、デプロイするシステムが要望通りに設定されるようにしておくことが重要となります。"
 
-#: ./security-guide/section_integrity-life-cycle.xml131(emphasis)
+#: ./security-guide/section_integrity-life-cycle.xml129(emphasis)
 msgid "Register"
 msgstr "レジスター"
 
-#: ./security-guide/section_integrity-life-cycle.xml132(emphasis)
+#: ./security-guide/section_integrity-life-cycle.xml130(emphasis)
 msgid "What is measured"
 msgstr "計測の対象"
 
-#: ./security-guide/section_integrity-life-cycle.xml135(emphasis)
+#: ./security-guide/section_integrity-life-cycle.xml133(emphasis)
 msgid "Context"
 msgstr "コンテキスト"
 
-#: ./security-guide/section_integrity-life-cycle.xml138(para)
+#: ./security-guide/section_integrity-life-cycle.xml136(para)
 msgid "PCR-00"
 msgstr "PCR-00"
 
-#: ./security-guide/section_integrity-life-cycle.xml139(para)
+#: ./security-guide/section_integrity-life-cycle.xml137(para)
 msgid ""
 "Core Root of Trust Measurement (CRTM), BIOS code, Host platform extensions"
 msgstr "Core Root of Trust Measurement (CRTM)、 BIOS コード、ホストプラットフォームの拡張機能"
 
-#: ./security-guide/section_integrity-life-cycle.xml141(para)
-#: ./security-guide/section_integrity-life-cycle.xml146(para)
-#: ./security-guide/section_integrity-life-cycle.xml151(para)
-#: ./security-guide/section_integrity-life-cycle.xml156(para)
+#: ./security-guide/section_integrity-life-cycle.xml139(para)
+#: ./security-guide/section_integrity-life-cycle.xml144(para)
+#: ./security-guide/section_integrity-life-cycle.xml149(para)
+#: ./security-guide/section_integrity-life-cycle.xml154(para)
 msgid "Hardware"
 msgstr "ハードウェア"
 
-#: ./security-guide/section_integrity-life-cycle.xml144(para)
+#: ./security-guide/section_integrity-life-cycle.xml142(para)
 msgid "PCR-01"
 msgstr "PCR-01"
 
-#: ./security-guide/section_integrity-life-cycle.xml145(para)
+#: ./security-guide/section_integrity-life-cycle.xml143(para)
 msgid "Host platform configuration"
 msgstr "ハードウェアプラットフォームの設定"
 
-#: ./security-guide/section_integrity-life-cycle.xml149(para)
+#: ./security-guide/section_integrity-life-cycle.xml147(para)
 msgid "PCR-02"
 msgstr "PCR-02"
 
-#: ./security-guide/section_integrity-life-cycle.xml150(para)
+#: ./security-guide/section_integrity-life-cycle.xml148(para)
 msgid "Option ROM code"
 msgstr "オプションの ROM コード"
 
-#: ./security-guide/section_integrity-life-cycle.xml154(para)
+#: ./security-guide/section_integrity-life-cycle.xml152(para)
 msgid "PCR-03"
 msgstr "PCR-03"
 
-#: ./security-guide/section_integrity-life-cycle.xml155(para)
+#: ./security-guide/section_integrity-life-cycle.xml153(para)
 msgid "Option ROM configuration and data"
 msgstr "オプションの ROM 設定およびデータ"
 
-#: ./security-guide/section_integrity-life-cycle.xml159(para)
+#: ./security-guide/section_integrity-life-cycle.xml157(para)
 msgid "PCR-04"
 msgstr "PCR-04"
 
-#: ./security-guide/section_integrity-life-cycle.xml160(para)
+#: ./security-guide/section_integrity-life-cycle.xml158(para)
 msgid "Initial Program Loader (IPL) code. For example, master boot record."
 msgstr "Initial Program Loader (IPL) コード (例: マスターブートレコード) "
 
-#: ./security-guide/section_integrity-life-cycle.xml162(para)
-#: ./security-guide/section_integrity-life-cycle.xml167(para)
-#: ./security-guide/section_integrity-life-cycle.xml172(para)
-#: ./security-guide/section_integrity-life-cycle.xml177(para)
-#: ./security-guide/section_integrity-life-cycle.xml183(para)
-#: ./security-guide/section_integrity-life-cycle.xml188(para)
-#: ./security-guide/section_integrity-life-cycle.xml193(para)
+#: ./security-guide/section_integrity-life-cycle.xml160(para)
+#: ./security-guide/section_integrity-life-cycle.xml165(para)
+#: ./security-guide/section_integrity-life-cycle.xml170(para)
+#: ./security-guide/section_integrity-life-cycle.xml175(para)
+#: ./security-guide/section_integrity-life-cycle.xml181(para)
+#: ./security-guide/section_integrity-life-cycle.xml186(para)
+#: ./security-guide/section_integrity-life-cycle.xml191(para)
 msgid "Software"
 msgstr "ソフトウェア"
 
-#: ./security-guide/section_integrity-life-cycle.xml165(para)
+#: ./security-guide/section_integrity-life-cycle.xml163(para)
 msgid "PCR-05"
 msgstr "PCR-05"
 
-#: ./security-guide/section_integrity-life-cycle.xml166(para)
+#: ./security-guide/section_integrity-life-cycle.xml164(para)
 msgid "IPL code configuration and data"
 msgstr "IPL コードの設定およびデータ"
 
-#: ./security-guide/section_integrity-life-cycle.xml170(para)
+#: ./security-guide/section_integrity-life-cycle.xml168(para)
 msgid "PCR-06"
 msgstr "PCR-06"
 
-#: ./security-guide/section_integrity-life-cycle.xml171(para)
+#: ./security-guide/section_integrity-life-cycle.xml169(para)
 msgid "State transition and wake events"
 msgstr "状態遷移とウェイクイベント"
 
-#: ./security-guide/section_integrity-life-cycle.xml175(para)
+#: ./security-guide/section_integrity-life-cycle.xml173(para)
 msgid "PCR-07"
 msgstr "PCR-07"
 
-#: ./security-guide/section_integrity-life-cycle.xml176(para)
+#: ./security-guide/section_integrity-life-cycle.xml174(para)
 msgid "Host platform manufacturer control"
 msgstr "ホストプラットフォームのメーカーによる制御"
 
-#: ./security-guide/section_integrity-life-cycle.xml180(para)
+#: ./security-guide/section_integrity-life-cycle.xml178(para)
 msgid "PCR-08"
 msgstr "PCR-08"
 
-#: ./security-guide/section_integrity-life-cycle.xml181(para)
+#: ./security-guide/section_integrity-life-cycle.xml179(para)
 msgid "Platform specific, often kernel, kernel extensions, and drivers"
 msgstr "プラットフォーム固有、多くの場合はカーネル、カーネル拡張機能、ドライバー"
 
-#: ./security-guide/section_integrity-life-cycle.xml186(para)
+#: ./security-guide/section_integrity-life-cycle.xml184(para)
 msgid "PCR-09"
 msgstr "PCR-09"
 
-#: ./security-guide/section_integrity-life-cycle.xml187(para)
+#: ./security-guide/section_integrity-life-cycle.xml185(para)
 msgid "Platform specific, often Initramfs"
 msgstr "プラットフォーム固有、多くの場合は  Initramfs"
 
-#: ./security-guide/section_integrity-life-cycle.xml191(para)
+#: ./security-guide/section_integrity-life-cycle.xml189(para)
 msgid "PCR-10 to PCR-23"
 msgstr "PCR-10 から PCR-23"
 
-#: ./security-guide/section_integrity-life-cycle.xml192(para)
+#: ./security-guide/section_integrity-life-cycle.xml190(para)
 msgid "Platform specific"
 msgstr "プラットフォーム固有"
 
-#: ./security-guide/section_integrity-life-cycle.xml198(para)
+#: ./security-guide/section_integrity-life-cycle.xml196(para)
 msgid ""
 "At the time of this writing, very few clouds are using secure boot "
 "technologies in a production environment. As a result, these technologies "
@@ -6566,7 +6564,7 @@ msgid ""
 "up to date."
 msgstr "本ガイドの執筆時点では、実稼働環境でセキュアブートテクノロジーを使用するクラウドはほとんどありませんでした。このため、これらのテクノロジーはまだ若干未成熟な状態です。ハードウェアは、慎重に計画した上で選択することを推奨します (例: TPM および Intel TXT の対応を確認するなど)。次に、ノードのハードウェアベンダーが PCR 値をどのように事前設定しているかを検証します (例: どの値を検証できるか)。上記の表のコンテキストにソフトウェアと記載されている PCR 値は通常、クラウドアーキテクトが直接コントロールできます。ただし、これらの値は、クラウド内のソフトウェアをアップグレードすると変更される場合があります。設定管理は、PCR ポリシーエンジン内にリンクして、検証を常に最新の状態 に確保すべきです。"
 
-#: ./security-guide/section_integrity-life-cycle.xml211(para)
+#: ./security-guide/section_integrity-life-cycle.xml209(para)
 msgid ""
 "Each manufacturer must provide the BIOS and firmware code for their servers."
 " Different servers, hypervisors, and operating systems will choose to "
@@ -6580,7 +6578,7 @@ msgid ""
 "chosen hypervisor solution."
 msgstr "各メーカーは、サーバーの BIOS とファームウェアのコードを提供する必要があります。サーバー、ハイパーバイザー、オペレーティングシステムによって、事前設定される PCR 値の選択が異なります。実際のデプロイメントではほとんどの場合、既知の適切な量 (「黄金の計測値」) と対照して各 PCR を検証することは不可能です。単一のベンダー の製品ラインの場合でも、一定の PCR の計測プロセスに一貫性がない場合があることが、経験により実証されています。各サーバーに基準値を定め、 PCR 値の予期せぬ変化を監視することを推奨します。選択したハイパーバイザーソリューションによっては、TPM プロビジョニングおよび監視プロセスを支援する サードパーティー製のソフトウェアが提供されている可能性があります。"
 
-#: ./security-guide/section_integrity-life-cycle.xml223(para)
+#: ./security-guide/section_integrity-life-cycle.xml221(para)
 msgid ""
 "The initial program loader (IPL) code will most likely be the PXE firmware, "
 "assuming the node deployment strategy outlined above. Therefore, the secure "
@@ -6591,7 +6589,7 @@ msgid ""
 "stack."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml231(para)
+#: ./security-guide/section_integrity-life-cycle.xml229(para)
 msgid ""
 "Depending on the strategy selected, in the event of a failure the node will "
 "either fail to boot or it can report the failure back to another entity in "
@@ -6607,11 +6605,11 @@ msgid ""
 "failure mode specific."
 msgstr "選択した戦略に応じて、障害発生時にノードがブートに失敗するか、クラウド内の別のエンティティに障害を報告することができます。セキュアブートの場合には、ノードがブートに失敗し、管理セキュリティドメイン内のプロビジョニングサービスがこの問題を認識してイベントログを記録する必要があります。ブートアテステーションの場合には、障害検出時にはノードがすでに稼働している状態です。この場合、ネットワークアクセスを無効にすることによってノードの検疫を直ちに行った後に、イベントを解析して根本原因を特定するべきです。いずれの場合も、ポリシーにより、障害発生後の対処方法を指示する必要があります。クラウドが、特定の回数、ノードの再プロビジョニングを自動的に試みるようにしたり、問題を調査するようにクラウド管理者に直ちに通知するようにすることができます。この場合に適正となるポリシーは、デプロイメントと障害のモードによって異なります。 "
 
-#: ./security-guide/section_integrity-life-cycle.xml247(title)
+#: ./security-guide/section_integrity-life-cycle.xml245(title)
 msgid "Node hardening"
 msgstr "ノードのセキュリティ強化機能"
 
-#: ./security-guide/section_integrity-life-cycle.xml248(para)
+#: ./security-guide/section_integrity-life-cycle.xml246(para)
 msgid ""
 "At this point we know that the node has booted with the correct kernel and "
 "underlying components. There are many paths for hardening a given operating "
@@ -6624,34 +6622,34 @@ msgid ""
 " guides</link> are useful starting places."
 msgstr "この時点で、ノードが正しいカーネルと配下のコンポーネントでブートしていることが分かります。オペレーティングシステムのデプロイメントのセキュリティを強化するには、数多くの方法があります。これらの手順についての詳しい説明は本書の範囲外です。お使いのオペレーティングシステム固有のセキュリティ強化ガイドのアドバイスに従うことを推奨します。例えば、<link href=\"http://iase.disa.mil/stigs/\">security technical implementation guides</link> (STIG) や <link href=\"http://www.nsa.gov/ia/mitigation_guidance/security_configuration_guides/\">NSA guides</link> を最初に参考にすると役立ちます。"
 
-#: ./security-guide/section_integrity-life-cycle.xml258(para)
+#: ./security-guide/section_integrity-life-cycle.xml256(para)
 msgid ""
 "The nature of the nodes makes additional hardening possible. We recommend "
 "the following additional steps for production nodes:"
 msgstr "ノードはその性質上、追加のセキュリティ強化が可能です。実稼働用のノードには、次の追加手順に従うことを推奨します。"
 
-#: ./security-guide/section_integrity-life-cycle.xml263(para)
+#: ./security-guide/section_integrity-life-cycle.xml261(para)
 msgid ""
 "Use a read-only file system where possible. Ensure that writeable file "
 "systems do not permit execution. This can be handled through the mount "
 "options provided in <filename>/etc/fstab</filename>."
 msgstr "可能な場合には、読み取り専用のファイルシステムを使用します。書き込みが可能なファイルシステムでは、実行が許可されないようにします。これは、<filename>/etc/fstab</filename> で指定するマウントオプションを使用して対処することが可能です。"
 
-#: ./security-guide/section_integrity-life-cycle.xml269(para)
+#: ./security-guide/section_integrity-life-cycle.xml267(para)
 msgid ""
 "Use a mandatory access control policy to contain the instances, the node "
 "services, and any other critical processes and data on the node. See the "
 "discussions on sVirt / SELinux and AppArmor below."
 msgstr "強制アクセス制御ポリシーを使用して、インスタンス、ノードサービス、その他の重要なプロセスおよびノード上のデータが含まれるようにします。以下に記載の sVirt / SELinux および AppArmor についての説明を参照してください。"
 
-#: ./security-guide/section_integrity-life-cycle.xml275(para)
+#: ./security-guide/section_integrity-life-cycle.xml273(para)
 msgid ""
 "Remove any unnecessary software packages. This should result in a very "
 "stripped down installation because a compute node has a relatively small "
 "number of dependencies."
 msgstr "不要なソフトウェアパッケージは削除します。これにより、コンピュートノードの依存関係が比較的少なくなるので、インストールを小さく絞ることができます。"
 
-#: ./security-guide/section_integrity-life-cycle.xml281(para)
+#: ./security-guide/section_integrity-life-cycle.xml279(para)
 msgid ""
 "Finally, the node kernel should have a mechanism to validate that the rest "
 "of the node starts in a known good state. This provides the necessary link "
@@ -6663,11 +6661,11 @@ msgid ""
 "verity</link>."
 msgstr "最後に、ノードのカーネルには、残りのノードが既知の良好な状態で起動することを検証するメカニズムを取り入れるべきです。これにより、ブート検証プロセスからシステム全体の検証に至るまでの必要なリンクが提供されます。手順はデプロイメントによって異なります。例えば、カーネルモジュールは、<link href=\"https://code.google.com/p/cryptsetup/wiki/DMVerity\">dm-verity</link> を使用して、ファイルシステムをマウントする前に、そのファイルシステムを構成するブロック上のハッシュを検証することができます。"
 
-#: ./security-guide/section_integrity-life-cycle.xml293(title)
+#: ./security-guide/section_integrity-life-cycle.xml291(title)
 msgid "Runtime verification"
 msgstr "ランタイムの検証"
 
-#: ./security-guide/section_integrity-life-cycle.xml294(para)
+#: ./security-guide/section_integrity-life-cycle.xml292(para)
 msgid ""
 "Once the node is running, we need to ensure that it remains in a good state "
 "over time. Broadly speaking, this includes both configuration management and"
@@ -6677,11 +6675,11 @@ msgid ""
 "security monitoring below."
 msgstr "ノードが稼働したら、長時間にわたって良好な状態で稼働を継続するように確保する必要があります。大まかに言うと、これには設定管理とセキュリティ監視が含まれます。これらの各領域の目標は異なります。両方を確認することにより、システムが希望通りに稼働していることをより確実に保証します。設定管理については、管理のセクションおよび次のセキュリティ監視で説明します。"
 
-#: ./security-guide/section_integrity-life-cycle.xml302(title)
+#: ./security-guide/section_integrity-life-cycle.xml300(title)
 msgid "Intrusion detection system"
 msgstr "侵入検知システム"
 
-#: ./security-guide/section_integrity-life-cycle.xml303(para)
+#: ./security-guide/section_integrity-life-cycle.xml301(para)
 msgid ""
 "Host-based intrusion detection tools are also useful for automated "
 "validation of the cloud internals. There are a wide variety of host-based "
@@ -6695,7 +6693,7 @@ msgid ""
 "process."
 msgstr "ホストベースの侵入検知ツールは、クラウド内部の検証の自動化にも役立ちます。ホストベースの侵入検知ツールにはさまざまな種類があります。オープンソースで自由に利用できるツールもあれば、商用のツールもあります。通常、これらのツールは、さまざまなソースからデータを分析し、ルールセットやトレーニングに基づいてセキュリティ警告を出します。標準的な機能には、ログ解析、ファイルの完全性チェック、ポリシー監視、ルートキット検出などがあります。また、より高度なツール (カスタムの場合が多い) を使用すると、インメモリープロセスイメージがオンディスクの実行可能ファイルと一致するかどうかを確認して、実行中のプロセスの実行状態を検証することができます。"
 
-#: ./security-guide/section_integrity-life-cycle.xml315(para)
+#: ./security-guide/section_integrity-life-cycle.xml313(para)
 msgid ""
 "One critical policy decision for a cloud architect is what to do with the "
 "output from a security monitoring tool. There are effectively two options. "
@@ -6708,7 +6706,7 @@ msgid ""
 " can be challenging due to the possibility of false positives."
 msgstr "セキュリティ監視ツールの出力の処理方法は、クラウドアーキテクトにとっての重要なポリシー決定の一つです。オプションは実質的に 2 つあります。第 1 のオプションは、問題を調査して修正措置を取るように、人間に警告を発する方法です。これは、クラウド管理者向けのログまたはイベントのフィードにセキュリティ警告を組み込むことによって可能となります。第 2 のオプションは、イベントのログ記録に加えて、クラウドが何らかの形の修復措置を自動的に実行するように設定する方法です。修復措置にはノードの再インストールから、マイナーなサービス設定の実行まで含めることができます。ただし、自動修復措置は、誤検知の可能性があるため、困難となる場合があります。"
 
-#: ./security-guide/section_integrity-life-cycle.xml326(para)
+#: ./security-guide/section_integrity-life-cycle.xml324(para)
 msgid ""
 "False positives occur when the security monitoring tool produces a security "
 "alert for a benign event. Due to the nature of security monitoring tools, "
@@ -6719,7 +6717,7 @@ msgid ""
 "setting up a security monitoring system in the cloud."
 msgstr "誤検知は、セキュリティ監視ツールが害のないイベントのセキュリティ警告を出した場合に発生します。セキュリティ警告ツールの性質上、時々誤検知が発生することは間違いありません。通常、クラウド管理者は、セキュリティ監視ツールを微調整して、誤検知を少なくすることができますが、これにより、全体的な検知率も同時に下がる場合があります。このような典型的トレードオフを理解し、クラウドにセキュリティ管理システムをセットアップする際には考慮に入れる必要があります。"
 
-#: ./security-guide/section_integrity-life-cycle.xml335(para)
+#: ./security-guide/section_integrity-life-cycle.xml333(para)
 msgid ""
 "The selection and configuration of a host-based intrusion detection tool is "
 "highly deployment specific. We recommend starting by exploring the following"
@@ -6727,23 +6725,23 @@ msgid ""
 "detection and file monitoring features."
 msgstr "ホストベースの侵入検知ツールの選択と設定はデプロイメントによって大幅に異なります。多様なホストベースの侵入検知/ファイル監視機能を実装する以下のオープンソースプロジェクトの検討から開始することをお勧めします。"
 
-#: ./security-guide/section_integrity-life-cycle.xml343(link)
+#: ./security-guide/section_integrity-life-cycle.xml341(link)
 msgid "OSSEC"
 msgstr "OSSEC"
 
-#: ./security-guide/section_integrity-life-cycle.xml347(link)
+#: ./security-guide/section_integrity-life-cycle.xml345(link)
 msgid "Samhain"
 msgstr "Samhain"
 
-#: ./security-guide/section_integrity-life-cycle.xml352(link)
+#: ./security-guide/section_integrity-life-cycle.xml350(link)
 msgid "Tripwire"
 msgstr "Tripwire"
 
-#: ./security-guide/section_integrity-life-cycle.xml356(link)
+#: ./security-guide/section_integrity-life-cycle.xml354(link)
 msgid "AIDE"
 msgstr "AIDE"
 
-#: ./security-guide/section_integrity-life-cycle.xml359(para)
+#: ./security-guide/section_integrity-life-cycle.xml357(para)
 msgid ""
 "Network intrusion detection tools complement the host-based tools. OpenStack"
 " doesn't have a specific network IDS built-in, but OpenStack Networking "
@@ -6753,7 +6751,7 @@ msgid ""
 "like a firewall, an intrusion detection system, or a VPN between the VMs."
 msgstr "ネットワーク侵入検知ツールは、ホストベースのツールを補完します。OpenStack には、特定のネットワーク IDS は組み込まれていませんが、OpenStack Networking は、Networking API を使用して異なるテクノロジーを有効にするプラグインメカニズムを提供しています。このプラグインのアーキテクチャーにより、テナントは API 拡張機能を開発して、ファイアウォール、侵入検知システム、仮想マシン間の VPN などの独自の高度なネットワークサービスを挿入/設定することができます。"
 
-#: ./security-guide/section_integrity-life-cycle.xml367(para)
+#: ./security-guide/section_integrity-life-cycle.xml365(para)
 msgid ""
 "Similar to host-based tools, the selection and configuration of a network-"
 "based intrusion detection tool is deployment specific. <link "
@@ -6762,13 +6760,13 @@ msgid ""
 "more."
 msgstr "ホストベースのツールと同様に、ネットワークベースの侵入検知ツールはデプロイメントによって異なります。 <link href=\"http://www.snort.org/\">Snort</link> は、先進的なオープンソースのネットワーク侵入検知ツールです。このツールを起点として、更に知識を深めてゆくとよいでしょう。"
 
-#: ./security-guide/section_integrity-life-cycle.xml373(para)
+#: ./security-guide/section_integrity-life-cycle.xml371(para)
 msgid ""
 "There are a few important security considerations for network and host-based"
 " intrusion detection systems."
 msgstr "ネットワークおよびホストベースの侵入検知システムには、いくつかの重要なセキュリティ課題があります。"
 
-#: ./security-guide/section_integrity-life-cycle.xml377(para)
+#: ./security-guide/section_integrity-life-cycle.xml375(para)
 msgid ""
 "It is important to consider the placement of the Network IDS on the cloud "
 "(for example, adding it to the network boundary and/or around sensitive "
@@ -6780,7 +6778,7 @@ msgid ""
 "network."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml389(para)
+#: ./security-guide/section_integrity-life-cycle.xml387(para)
 msgid ""
 "In some deployments it may be required to add host-based IDS on sensitive "
 "components on security domain bridges. A host-based IDS may detect anomalous"
@@ -6788,11 +6786,11 @@ msgid ""
 " should transmit alert and log information on the Management network."
 msgstr "一部のデプロイメントでは、ホストベースの IDS をセキュリティドメインブリッジ上の機密性の高いコンポーネントに追加する必要がある場合があります。ホストベースの IDS は、そのコンポーネント上の侵害された、あるいは許可されていないプロセスによる異常なアクティビティを検知することができます。IDS は管理ネットワーク上で警告およびログ情報を伝送すべきです。"
 
-#: ./security-guide/section_integrity-life-cycle.xml400(title)
+#: ./security-guide/section_integrity-life-cycle.xml398(title)
 msgid "Server hardening"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml401(para)
+#: ./security-guide/section_integrity-life-cycle.xml399(para)
 msgid ""
 "Servers in the cloud, including undercloud and overcloud infrastructure, "
 "should implement hardening best practices. As OS and server hardening is "
@@ -6801,11 +6799,11 @@ msgid ""
 "should be applied to all infrastructure."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml410(title)
+#: ./security-guide/section_integrity-life-cycle.xml408(title)
 msgid "File integrity management (FIM)"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml411(para)
+#: ./security-guide/section_integrity-life-cycle.xml409(para)
 msgid ""
 "File integrity management (FIM) is the method of ensuring that files such as"
 " sensitive system or application configuration files are not corrupted or "
@@ -6817,7 +6815,7 @@ msgid ""
 "are presented to the user."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml422(para)
+#: ./security-guide/section_integrity-life-cycle.xml420(para)
 msgid ""
 "These should be put in place to monitor and report on changes to system, "
 "hypervisor, and application configuration files such as <filename>/etc/pam.d"

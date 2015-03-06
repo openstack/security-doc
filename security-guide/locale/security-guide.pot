@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-03 06:01+0000\n"
+"POT-Creation-Date: 2015-03-06 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -432,11 +432,11 @@ msgid "Various components of the OpenStack Networking services use either the me
 msgstr ""
 
 #: ./security-guide/section_securing-openstack-networking-services.xml:77(para)
-msgid "It is recommended that you follow the guidelines provided in the Database Authentication and Access Control chapter in the Database section for all components that require direct DB connections."
+msgid "It is recommended that you follow the guidelines provided in <xref linkend=\"database-access-control-database-authentication-and-access-control\"/> for all components which require direct DB connections."
 msgstr ""
 
-#: ./security-guide/section_securing-openstack-networking-services.xml:82(para)
-msgid "It is recommended that you follow the guidelines provided in the Queue Authentication and Access Control chapter in the Messaging section for all components that require RPC communication."
+#: ./security-guide/section_securing-openstack-networking-services.xml:81(para)
+msgid "It is recommended that you follow the guidelines provided in <xref linkend=\"messaging-security-queue-authentication-and-access-control\"/> for all components which require RPC communication."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:8(title) ./security-guide/section_data-processing-deployment.xml:33(para)
@@ -1742,7 +1742,7 @@ msgid "Thus, it is required to create the necessary Identity service groups that
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:327(para)
-msgid "The Identity service administator can create as many groups as there are SAML attributes, whatever the mapping calls for."
+msgid "The Identity service administrator can create as many groups as there are SAML attributes, whatever the mapping calls for."
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:329(para)
@@ -3744,262 +3744,262 @@ msgid "Nodes should use Preboot eXecution Environment (PXE) for provisioning. Th
 msgstr ""
 
 #: ./security-guide/section_integrity-life-cycle.xml:72(para)
-msgid "We recommend using a separate, isolated network within the management security domain for provisioning. This network will handle all PXE traffic, along with the subsequent boot stage downloads depicted above. Note that the node boot process begins with two insecure operations: DHCP and TFTP. Then the boot process downloads over TLS the remaining information required to deploy the node. This information might include an initramfs and a kernel. This concludes by downloading the remaining information needed to deploy the node. This may be an operating system installer, a basic install managed by <link href=\"http://www.opscode.com/chef/\">Chef</link> or <link href=\"https://puppetlabs.com/\">Puppet</link>, or even a complete file system image that is written directly to disk."
+msgid "We recommend using a separate, isolated network within the management security domain for provisioning. This network will handle all PXE traffic, along with the subsequent boot stage downloads depicted above. Note that the node boot process begins with two insecure operations: DHCP and TFTP. Then the boot process uses TLS to download the remaining information required to deploy the node. This may be an operating system installer, a basic install managed by <link href=\"http://www.opscode.com/chef/\">Chef</link> or <link href=\"https://puppetlabs.com/\">Puppet</link>, or even a complete file system image that is written directly to disk."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:86(para)
+#: ./security-guide/section_integrity-life-cycle.xml:84(para)
 msgid "While utilizing TLS during the PXE boot process is somewhat more challenging, common PXE firmware projects, such as iPXE, provide this support. Typically this involves building the PXE firmware with knowledge of the allowed TLS certificate chain(s) so that it can properly validate the server certificate. This raises the bar for an attacker by limiting the number of insecure, plain text network operations."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:96(title)
+#: ./security-guide/section_integrity-life-cycle.xml:94(title)
 msgid "Verified boot"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:97(para)
+#: ./security-guide/section_integrity-life-cycle.xml:95(para)
 msgid "In general, there are two different strategies for verifying the boot process. Traditional <emphasis>secure boot</emphasis> will validate the code run at each step in the process, and stop the boot if code is incorrect. <emphasis>Boot attestation</emphasis> will record which code is run at each step, and provide this information to another machine as proof that the boot process completed as expected. In both cases, the first step is to measure each piece of code before it is run. In this context, a measurement is effectively a SHA-1 hash of the code, taken before it is executed. The hash is stored in a platform configuration register (PCR) in the TPM."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:109(para)
+#: ./security-guide/section_integrity-life-cycle.xml:107(para)
 msgid "Note: SHA-1 is used here because this is what the TPM chips support."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:111(para)
+#: ./security-guide/section_integrity-life-cycle.xml:109(para)
 msgid "Each TPM has at least 24 PCRs. The TCG Generic Server Specification, v1.0, March 2005, defines the PCR assignments for boot-time integrity measurements. The table below shows a typical PCR configuration. The context indicates if the values are determined based on the node hardware (firmware) or the software provisioned onto the node. Some values are influenced by firmware versions, disk sizes, and other low-level information. Therefore, it is important to have good practices in place around configuration management to ensure that each system deployed is configured exactly as desired."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:131(emphasis)
+#: ./security-guide/section_integrity-life-cycle.xml:129(emphasis)
 msgid "Register"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:132(emphasis)
+#: ./security-guide/section_integrity-life-cycle.xml:130(emphasis)
 msgid "What is measured"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:135(emphasis)
+#: ./security-guide/section_integrity-life-cycle.xml:133(emphasis)
 msgid "Context"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:138(para)
+#: ./security-guide/section_integrity-life-cycle.xml:136(para)
 msgid "PCR-00"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:139(para)
+#: ./security-guide/section_integrity-life-cycle.xml:137(para)
 msgid "Core Root of Trust Measurement (CRTM), BIOS code, Host platform extensions"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:141(para) ./security-guide/section_integrity-life-cycle.xml:146(para) ./security-guide/section_integrity-life-cycle.xml:151(para) ./security-guide/section_integrity-life-cycle.xml:156(para)
+#: ./security-guide/section_integrity-life-cycle.xml:139(para) ./security-guide/section_integrity-life-cycle.xml:144(para) ./security-guide/section_integrity-life-cycle.xml:149(para) ./security-guide/section_integrity-life-cycle.xml:154(para)
 msgid "Hardware"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:144(para)
+#: ./security-guide/section_integrity-life-cycle.xml:142(para)
 msgid "PCR-01"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:145(para)
+#: ./security-guide/section_integrity-life-cycle.xml:143(para)
 msgid "Host platform configuration"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:149(para)
+#: ./security-guide/section_integrity-life-cycle.xml:147(para)
 msgid "PCR-02"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:150(para)
+#: ./security-guide/section_integrity-life-cycle.xml:148(para)
 msgid "Option ROM code"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:154(para)
+#: ./security-guide/section_integrity-life-cycle.xml:152(para)
 msgid "PCR-03"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:155(para)
+#: ./security-guide/section_integrity-life-cycle.xml:153(para)
 msgid "Option ROM configuration and data"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:159(para)
+#: ./security-guide/section_integrity-life-cycle.xml:157(para)
 msgid "PCR-04"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:160(para)
+#: ./security-guide/section_integrity-life-cycle.xml:158(para)
 msgid "Initial Program Loader (IPL) code. For example, master boot record."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:162(para) ./security-guide/section_integrity-life-cycle.xml:167(para) ./security-guide/section_integrity-life-cycle.xml:172(para) ./security-guide/section_integrity-life-cycle.xml:177(para) ./security-guide/section_integrity-life-cycle.xml:183(para) ./security-guide/section_integrity-life-cycle.xml:188(para) ./security-guide/section_integrity-life-cycle.xml:193(para)
+#: ./security-guide/section_integrity-life-cycle.xml:160(para) ./security-guide/section_integrity-life-cycle.xml:165(para) ./security-guide/section_integrity-life-cycle.xml:170(para) ./security-guide/section_integrity-life-cycle.xml:175(para) ./security-guide/section_integrity-life-cycle.xml:181(para) ./security-guide/section_integrity-life-cycle.xml:186(para) ./security-guide/section_integrity-life-cycle.xml:191(para)
 msgid "Software"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:165(para)
+#: ./security-guide/section_integrity-life-cycle.xml:163(para)
 msgid "PCR-05"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:166(para)
+#: ./security-guide/section_integrity-life-cycle.xml:164(para)
 msgid "IPL code configuration and data"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:170(para)
+#: ./security-guide/section_integrity-life-cycle.xml:168(para)
 msgid "PCR-06"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:171(para)
+#: ./security-guide/section_integrity-life-cycle.xml:169(para)
 msgid "State transition and wake events"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:175(para)
+#: ./security-guide/section_integrity-life-cycle.xml:173(para)
 msgid "PCR-07"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:176(para)
+#: ./security-guide/section_integrity-life-cycle.xml:174(para)
 msgid "Host platform manufacturer control"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:180(para)
+#: ./security-guide/section_integrity-life-cycle.xml:178(para)
 msgid "PCR-08"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:181(para)
+#: ./security-guide/section_integrity-life-cycle.xml:179(para)
 msgid "Platform specific, often kernel, kernel extensions, and drivers"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:186(para)
+#: ./security-guide/section_integrity-life-cycle.xml:184(para)
 msgid "PCR-09"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:187(para)
+#: ./security-guide/section_integrity-life-cycle.xml:185(para)
 msgid "Platform specific, often Initramfs"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:191(para)
+#: ./security-guide/section_integrity-life-cycle.xml:189(para)
 msgid "PCR-10 to PCR-23"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:192(para)
+#: ./security-guide/section_integrity-life-cycle.xml:190(para)
 msgid "Platform specific"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:198(para)
+#: ./security-guide/section_integrity-life-cycle.xml:196(para)
 msgid "At the time of this writing, very few clouds are using secure boot technologies in a production environment. As a result, these technologies are still somewhat immature. We recommend planning carefully in terms of hardware selection. For example, ensure that you have a TPM and Intel TXT support. Then verify how the node hardware vendor populates the PCR values. For example, which values will be available for validation. Typically the PCR values listed under the software context in the table above are the ones that a cloud architect has direct control over. But even these may change as the software in the cloud is upgraded. Configuration management should be linked into the PCR policy engine to ensure that the validation is always up to date."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:211(para)
+#: ./security-guide/section_integrity-life-cycle.xml:209(para)
 msgid "Each manufacturer must provide the BIOS and firmware code for their servers. Different servers, hypervisors, and operating systems will choose to populate different PCRs. In most real world deployments, it will be impossible to validate every PCR against a known good quantity (\"golden measurement\"). Experience has shown that, even within a single vendor's product line, the measurement process for a given PCR may not be consistent. We recommend establishing a baseline for each server and monitoring the PCR values for unexpected changes. Third-party software may be available to assist in the TPM provisioning and monitoring process, depending upon your chosen hypervisor solution."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:223(para)
+#: ./security-guide/section_integrity-life-cycle.xml:221(para)
 msgid "The initial program loader (IPL) code will most likely be the PXE firmware, assuming the node deployment strategy outlined above. Therefore, the secure boot or boot attestation process can measure all of the early stage boot code, such as BIOS, firmware, the PXE firmware, and the kernel image. Ensuring that each node has the correct versions of these pieces installed provides a solid foundation on which to build the rest of the node software stack."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:231(para)
+#: ./security-guide/section_integrity-life-cycle.xml:229(para)
 msgid "Depending on the strategy selected, in the event of a failure the node will either fail to boot or it can report the failure back to another entity in the cloud. For secure boot, the node will fail to boot and a provisioning service within the management security domain must recognize this and log the event. For boot attestation, the node will already be running when the failure is detected. In this case the node should be immediately quarantined by disabling its network access. Then the event should be analyzed for the root cause. In either case, policy should dictate how to proceed after a failure. A cloud may automatically attempt to re-provision a node a certain number of times. Or it may immediately notify a cloud administrator to investigate the problem. The right policy here will be deployment and failure mode specific."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:247(title)
+#: ./security-guide/section_integrity-life-cycle.xml:245(title)
 msgid "Node hardening"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:248(para)
+#: ./security-guide/section_integrity-life-cycle.xml:246(para)
 msgid "At this point we know that the node has booted with the correct kernel and underlying components. There are many paths for hardening a given operating system deployment. The specifics on these steps are outside of the scope of this book. We recommend following the guidance from a hardening guide specific to your operating system. For example, the <link href=\"http://iase.disa.mil/stigs/\">security technical implementation guides</link> (STIG) and the <link href=\"http://www.nsa.gov/ia/mitigation_guidance/security_configuration_guides/\">NSA guides</link> are useful starting places."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:258(para)
+#: ./security-guide/section_integrity-life-cycle.xml:256(para)
 msgid "The nature of the nodes makes additional hardening possible. We recommend the following additional steps for production nodes:"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:263(para)
+#: ./security-guide/section_integrity-life-cycle.xml:261(para)
 msgid "Use a read-only file system where possible. Ensure that writeable file systems do not permit execution. This can be handled through the mount options provided in <filename>/etc/fstab</filename>."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:269(para)
+#: ./security-guide/section_integrity-life-cycle.xml:267(para)
 msgid "Use a mandatory access control policy to contain the instances, the node services, and any other critical processes and data on the node. See the discussions on sVirt / SELinux and AppArmor below."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:275(para)
+#: ./security-guide/section_integrity-life-cycle.xml:273(para)
 msgid "Remove any unnecessary software packages. This should result in a very stripped down installation because a compute node has a relatively small number of dependencies."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:281(para)
+#: ./security-guide/section_integrity-life-cycle.xml:279(para)
 msgid "Finally, the node kernel should have a mechanism to validate that the rest of the node starts in a known good state. This provides the necessary link from the boot validation process to validating the entire system. The steps for doing this will be deployment specific. As an example, a kernel module could verify a hash over the blocks comprising the file system before mounting it using <link href=\"https://code.google.com/p/cryptsetup/wiki/DMVerity\">dm-verity</link>."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:293(title)
+#: ./security-guide/section_integrity-life-cycle.xml:291(title)
 msgid "Runtime verification"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:294(para)
+#: ./security-guide/section_integrity-life-cycle.xml:292(para)
 msgid "Once the node is running, we need to ensure that it remains in a good state over time. Broadly speaking, this includes both configuration management and security monitoring. The goals for each of these areas are different. By checking both, we achieve higher assurance that the system is operating as desired. We discuss configuration management in the management section, and security monitoring below."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:302(title)
+#: ./security-guide/section_integrity-life-cycle.xml:300(title)
 msgid "Intrusion detection system"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:303(para)
+#: ./security-guide/section_integrity-life-cycle.xml:301(para)
 msgid "Host-based intrusion detection tools are also useful for automated validation of the cloud internals. There are a wide variety of host-based intrusion detection tools available. Some are open source projects that are freely available, while others are commercial. Typically these tools analyze data from a variety of sources and produce security alerts based on rule sets and/or training. Typical capabilities include log analysis, file integrity checking, policy monitoring, and rootkit detection. More advanced -- often custom -- tools can validate that in-memory process images match the on-disk executable and validate the execution state of a running process."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:315(para)
+#: ./security-guide/section_integrity-life-cycle.xml:313(para)
 msgid "One critical policy decision for a cloud architect is what to do with the output from a security monitoring tool. There are effectively two options. The first is to alert a human to investigate and/or take corrective action. This could be done by including the security alert in a log or events feed for cloud administrators. The second option is to have the cloud take some form of remedial action automatically, in addition to logging the event. Remedial actions could include anything from re-installing a node to performing a minor service configuration. However, automated remedial action can be challenging due to the possibility of false positives."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:326(para)
+#: ./security-guide/section_integrity-life-cycle.xml:324(para)
 msgid "False positives occur when the security monitoring tool produces a security alert for a benign event. Due to the nature of security monitoring tools, false positives will most certainly occur from time to time. Typically a cloud administrator can tune security monitoring tools to reduce the false positives, but this may also reduce the overall detection rate at the same time. These classic trade-offs must be understood and accounted for when setting up a security monitoring system in the cloud."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:335(para)
+#: ./security-guide/section_integrity-life-cycle.xml:333(para)
 msgid "The selection and configuration of a host-based intrusion detection tool is highly deployment specific. We recommend starting by exploring the following open source projects which implement a variety of host-based intrusion detection and file monitoring features."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:343(link)
+#: ./security-guide/section_integrity-life-cycle.xml:341(link)
 msgid "OSSEC"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:347(link)
+#: ./security-guide/section_integrity-life-cycle.xml:345(link)
 msgid "Samhain"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:352(link)
+#: ./security-guide/section_integrity-life-cycle.xml:350(link)
 msgid "Tripwire"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:356(link)
+#: ./security-guide/section_integrity-life-cycle.xml:354(link)
 msgid "AIDE"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:359(para)
+#: ./security-guide/section_integrity-life-cycle.xml:357(para)
 msgid "Network intrusion detection tools complement the host-based tools. OpenStack doesn't have a specific network IDS built-in, but OpenStack Networking provides a plug-in mechanism to enable different technologies through the Networking API. This plug-in architecture will allow tenants to develop API extensions to insert and configure their own advanced networking services like a firewall, an intrusion detection system, or a VPN between the VMs."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:367(para)
+#: ./security-guide/section_integrity-life-cycle.xml:365(para)
 msgid "Similar to host-based tools, the selection and configuration of a network-based intrusion detection tool is deployment specific. <link href=\"http://www.snort.org/\">Snort</link> is the leading open source networking intrusion detection tool, and a good starting place to learn more."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:373(para)
+#: ./security-guide/section_integrity-life-cycle.xml:371(para)
 msgid "There are a few important security considerations for network and host-based intrusion detection systems."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:377(para)
+#: ./security-guide/section_integrity-life-cycle.xml:375(para)
 msgid "It is important to consider the placement of the Network IDS on the cloud (for example, adding it to the network boundary and/or around sensitive networks). The placement depends on your network environment but make sure to monitor the impact the IDS may have on your services depending on where you choose to add it. Encrypted traffic, such as TLS, cannot generally be inspected for content by a Network IDS. However, the Network IDS may still provide some benefit in identifying anomalous unencrypted traffic on the network."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:389(para)
+#: ./security-guide/section_integrity-life-cycle.xml:387(para)
 msgid "In some deployments it may be required to add host-based IDS on sensitive components on security domain bridges. A host-based IDS may detect anomalous activity by compromised or unauthorized processes on the component. The IDS should transmit alert and log information on the Management network."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:400(title)
+#: ./security-guide/section_integrity-life-cycle.xml:398(title)
 msgid "Server hardening"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:401(para)
+#: ./security-guide/section_integrity-life-cycle.xml:399(para)
 msgid "Servers in the cloud, including undercloud and overcloud infrastructure, should implement hardening best practices. As OS and server hardening is common, applicable best practices including but not limited to logging, user account restrictions, and regular updates will not be covered here, but should be applied to all infrastructure."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:410(title)
+#: ./security-guide/section_integrity-life-cycle.xml:408(title)
 msgid "File integrity management (FIM)"
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:411(para)
+#: ./security-guide/section_integrity-life-cycle.xml:409(para)
 msgid "File integrity management (FIM) is the method of ensuring that files such as sensitive system or application configuration files are not corrupted or changed to allow unauthorized access or malicious behavior. This can be done through a utility such as Samhain that will create a checksum hash of the specified resource and then validate that hash at regular intervals, or through a tool such as DMVerity that can take a hash of block devices and will validate those hashes as they are accessed by the system before they are presented to the user."
 msgstr ""
 
-#: ./security-guide/section_integrity-life-cycle.xml:422(para)
+#: ./security-guide/section_integrity-life-cycle.xml:420(para)
 msgid "These should be put in place to monitor and report on changes to system, hypervisor, and application configuration files such as <filename>/etc/pam.d/system-auth</filename> and <filename> /etc/keystone.conf</filename>, as well as kernel modules (such as virtio). Best practice is to use the <placeholder-1/> command to show what is regularly being loaded on a system to help determine what should or should not be included in FIM checks."
 msgstr ""
 

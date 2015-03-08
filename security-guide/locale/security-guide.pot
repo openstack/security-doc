@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-06 06:01+0000\n"
+"POT-Creation-Date: 2015-03-08 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1116,7 +1116,7 @@ msgid "The importance of encrypting data on behalf of tenants is largely related
 msgstr ""
 
 #: ./security-guide/section_data-encryption.xml:11(para)
-msgid "Per-instance or per-object encryption is preferable over, in descending order, over per-project, per-tenant, per-host, and per-cloud aggregations. This recommendation is inverse to the complexity and difficulty of implementation. Presently, in some projects it is difficult or impossible to implement encryption as loosely granular as even per-tenant. We recommend implementors make a best-effort in encrypting tenant data."
+msgid "Per-instance or per-object encryption is preferable over, in descending order, per-project, per-tenant, per-host, and per-cloud aggregations. This recommendation is inverse to the complexity and difficulty of implementation. Presently, in some projects it is difficult or impossible to implement encryption as loosely granular as even per-tenant. We recommend implementors make a best-effort in encrypting tenant data."
 msgstr ""
 
 #: ./security-guide/section_data-encryption.xml:12(para)

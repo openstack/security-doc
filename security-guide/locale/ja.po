@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-05 17:41+0000\n"
-"PO-Revision-Date: 2015-03-05 17:41+0000\n"
+"POT-Creation-Date: 2015-03-07 03:53+0000\n"
+"PO-Revision-Date: 2015-03-07 03:54+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1975,12 +1975,12 @@ msgstr "テナントの為のデータ暗号化の重要性は、攻撃者がテ
 #: ./security-guide/section_data-encryption.xml11(para)
 msgid ""
 "Per-instance or per-object encryption is preferable over, in descending "
-"order, over per-project, per-tenant, per-host, and per-cloud aggregations. "
-"This recommendation is inverse to the complexity and difficulty of "
+"order, per-project, per-tenant, per-host, and per-cloud aggregations. This "
+"recommendation is inverse to the complexity and difficulty of "
 "implementation. Presently, in some projects it is difficult or impossible to"
 " implement encryption as loosely granular as even per-tenant. We recommend "
 "implementors make a best-effort in encrypting tenant data."
-msgstr "暗号化の単位は、好ましい方から順にインスタンス単位又はオブジェクト単位、プロジェクト単位、テナント単位、ホスト単位、クラウド集合単位です。この推奨順は、実装の複雑さと困難さの順序の逆です。現在、いくつかのプロジェクトでは、テナント単位ですら粒度の荒い暗号化の実装が困難又は不可能です。実装者がテナントデータの暗号化を最善策とする事をお勧めします。"
+msgstr ""
 
 #: ./security-guide/section_data-encryption.xml12(para)
 msgid ""

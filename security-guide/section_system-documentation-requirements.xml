@@ -6,14 +6,6 @@
   xml:id="system-documentation-requirements">
   <?dbhtml stop-chunking?>
   <title>System documentation requirements</title>
-  <para>The system documentation for an OpenStack cloud deployment
-    should follow the templates and best practices for the Enterprise
-    Information Technology System in your organization. Organizations
-    often have compliance requirements which may require an overall
-    System Security Plan to inventory and document the architecture of
-    a given system. There are common challenges across the industry
-    related to documenting the dynamic cloud infrastructure and
-    keeping the information up-to-date.</para>
   <section xml:id="system-documentation-requirements-system-roles-and-types">
     <title>System roles and types</title>
     <para>The two broadly defined types of

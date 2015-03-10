@@ -1,0 +1,83 @@
+Vulnerable clients allow a TLS protocol downgrade (FREAK)
+---
+
+### Summary ###
+Some client-side libraries, including un-patched versions of OpenSSL, contain a
+vulnerability which can allow a man-in-the-middle (MITM) to force a TLS version
+downgrade. Even though this vulnerability exists in the client side, an attack
+known as FREAK is exploitable when TLS servers offer weak cipher choices. This
+security note provides guidance to mitigate the FREAK attack on the server side,
+so that TLS provides reasonable security for even un-patched clients.
+
+### Affected Services / Software ###
+Any service using TLS. Depending on the backend TLS library, this
+can include many components of an OpenStack cloud:
+
+- OpenStack services
+- OpenStack clients
+- Web servers (Apache, Nginx, etc)
+- SSL/TLS terminators (Stud, Pound, etc)
+- Proxy services (HAProxy, etc)
+- Miscellaneous services (eventlet, syslog, ldap, smtp, etc)
+
+### Discussion ###
+TLS connections are established by a process known as a TLS handshake. During
+this process a client first sends a message to the server known as "HELLO",
+where among other things the client lists all of the TLS encryption ciphers it
+supports. In the next step, the server responds with its own "HELLO" packet, in
+which the server picks one of the cipher options the client offered. After this
+the client and server continue on to securely exchange a secret which becomes a
+master key.
+
+The FREAK attack exploits a flaw in client logic in which vulnerable clients
+don't actually check that the cipher which was selected by the server was one
+they had offered in the first place. This creates the possibility that an
+attacker on the network somewhere between the client and server can alter the
+client's HELLO packet, removing all choices except for really weak ciphers known
+as "export grade ciphers". If the server supports these weak ciphers, it will
+(regretfully) chose it, as it appears that this is the only option that the
+client supports, and send it back in the server HELLO message.
+
+Export grade ciphers are a legacy of a time when the US government prohibited
+the export of cryptographic ciphers which were stronger than 512 bits for
+asymmetric ciphers and 40 bits for symmetric ciphers. Today these ciphers are
+easily and quickly crackable using commodity hardware or cloud resources.
+
+### Recommended Actions ###
+Since this is a vulnerability in client logic, the best option is to ensure that
+all clients update to the latest version of the affected library. For more
+details about upgrading OpenSSL please see the link to the OpenSSL advisory in
+the "Further discussion" section below. Since it is unfeasible to assume that
+all clients have updated, we should also mitigate this on the TLS server-side.
+
+To mitigate the FREAK attack on the server side, we need to remove support for
+any ciphers which are weak. This is to prevent a MITM from forcing the
+negotiation of a weak cipher. In particular we need to remove support for any
+export grade ciphers, which are especially weak.
+
+The first step is to find what versions your TLS server currently supports.
+Two useful solutions exist for this: SSL Server Test at Qualys SSL Labs can be
+used to scan any web accessible endpoints, and SSLScan is a command line tool
+which attempts a TLS connection to a server with all possible cipher suites.
+Please see "tools" below for links to both.
+
+The specific steps required to configure which cipher suites are supported in a
+TLS deployment depend on the software and configuration, and are beyond the
+scope of this note. Some good starting places are provided below in the section:
+"Resources for configuring TLS options".
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0045
+Original LaunchPad Bug : N/A
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+CVE: CVE-2015-0204 (OpenSSL)
+Further discussion of the issue:
+        http://blog.cryptographyengineering.com/2015/03/attack-of-week-freak-or-factoring-nsa.html
+        https://www.smacktls.com/
+        https://www.openssl.org/news/secadv_20150108.txt
+Tools:
+        SSLScan: http://sourceforge.net/projects/sslscan/
+        SSL Server Test: https://www.ssllabs.com/ssltest/
+Resources for configuring TLS options:
+        In OpenStack: http://docs.openstack.org/security-guide/content/tls-proxies-and-http-services.html

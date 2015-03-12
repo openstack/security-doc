@@ -30,12 +30,16 @@
       confidentiality, and integrity of user communications to the
       OpenStack services and between the OpenStack services themselves.
     </para>
-    <para>Due to the published vulnerabilities in the Secure Sockets Layer (SSL) protocols, we strongly recommend that TLS is used in preference to SSL, and that SSL is disabled in all cases, unless compatibility with obsolete browsers or libraries is required.</para>
     <para>
-      Public Key Infrastructure (PKI) is a set of hardware, software,
-      policies, and procedures required to operate a secure system
-      that provides authentication, non-repudiation, confidentiality,
-      and integrity. The core components of PKI are:</para>
+      Due to the published vulnerabilities in the Secure Sockets Layer
+      (SSL) protocols, we strongly recommend that TLS is used in preference
+      to SSL, and that SSL is disabled in all cases, unless compatibility
+      with obsolete browsers or libraries is required.</para>
+    <para>
+      Public Key Infrastructure (PKI) is the framework for securing
+      communication in a network. It consists of a set of systems and
+      processes to ensure traffic can be sent securely while validating
+      the identities of the parties. The core components of PKI are:</para>
     <variablelist>
       <varlistentry>
         <term>End entity</term>

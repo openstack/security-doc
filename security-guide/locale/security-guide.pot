@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-08 06:01+0000\n"
+"POT-Creation-Date: 2015-03-12 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6333,7 +6333,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_database-access-control.xml:109(None) ./security-guide/section_database-access-control.xml:112(None)
+#: ./security-guide/section_database-access-control.xml:118(None) ./security-guide/section_database-access-control.xml:121(None)
 msgid "@@image: 'static/novaconductor.png'; md5=dbc1ba139bd1af333f0415bb48704843"
 msgstr ""
 
@@ -6365,7 +6365,7 @@ msgstr ""
 msgid "By default, each of the OpenStack services and their processes access the database using a shared set of credentials. This makes auditing database operations and revoking access privileges from a service and its processes to the database particularly difficult."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:26(title) ./security-guide/section_database-access-control.xml:104(title)
+#: ./security-guide/section_database-access-control.xml:26(title) ./security-guide/section_database-access-control.xml:113(title)
 msgid "Nova-conductor"
 msgstr ""
 
@@ -6413,15 +6413,15 @@ msgstr ""
 msgid "Require user accounts to require SSL transport"
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:63(title) ./security-guide/section_database-access-control.xml:81(title)
+#: ./security-guide/section_database-access-control.xml:63(title) ./security-guide/section_database-access-control.xml:90(title)
 msgid "Configuration example #1: (MySQL)"
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:64(replaceable) ./security-guide/section_database-access-control.xml:82(replaceable) ./security-guide/section_database-access-control.xml:100(replaceable)
+#: ./security-guide/section_database-access-control.xml:64(replaceable) ./security-guide/section_database-access-control.xml:82(replaceable) ./security-guide/section_database-access-control.xml:91(replaceable) ./security-guide/section_database-access-control.xml:109(replaceable)
 msgid "NOVA_DBPASS"
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:67(title) ./security-guide/section_database-access-control.xml:87(title)
+#: ./security-guide/section_database-access-control.xml:67(title) ./security-guide/section_database-access-control.xml:96(title)
 msgid "Configuration example #2: (PostgreSQL)"
 msgstr ""
 
@@ -6437,47 +6437,55 @@ msgstr ""
 msgid "The <literal>md5</literal> parameter defines the authentication method as a hashed password. We provide a secure authentication example in the section below."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:78(title)
-msgid "Authentication with X.509 certificates"
-msgstr ""
-
-#: ./security-guide/section_database-access-control.xml:79(para)
-msgid "Security may be enhanced by requiring X.509 client certificates for authentication. Authenticating to the database in this manner provides greater identity assurance of the client making the connection to the database and ensures that the communications are encrypted."
-msgstr ""
-
-#: ./security-guide/section_database-access-control.xml:92(title)
+#: ./security-guide/section_database-access-control.xml:77(title) ./security-guide/section_database-access-control.xml:101(title)
 msgid "OpenStack service database configuration"
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:93(para)
+#: ./security-guide/section_database-access-control.xml:78(para)
+msgid "If your database server is configured for TLS transport, you will need to specify the certificate authority information for use with the initial connection string in the SQLAlchemy query."
+msgstr ""
+
+#: ./security-guide/section_database-access-control.xml:81(title)
+msgid "Example of a <literal>:sql_connection</literal> string to MySQL:"
+msgstr ""
+
+#: ./security-guide/section_database-access-control.xml:87(title)
+msgid "Authentication with X.509 certificates"
+msgstr ""
+
+#: ./security-guide/section_database-access-control.xml:88(para)
+msgid "Security may be enhanced by requiring X.509 client certificates for authentication. Authenticating to the database in this manner provides greater identity assurance of the client making the connection to the database and ensures that the communications are encrypted."
+msgstr ""
+
+#: ./security-guide/section_database-access-control.xml:102(para)
 msgid "If your database server is configured to require X.509 certificates for authentication you will need to specify the appropriate SQLAlchemy query parameters for the database back end. These parameters specify the certificate, private key, and certificate authority information for use with the initial connection string."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:99(para)
-msgid "Example of an <literal>:sql_connection</literal> string for X.509 certificate authentication to MySQL:"
+#: ./security-guide/section_database-access-control.xml:108(para)
+msgid "Example of a <literal>:sql_connection</literal> string for X.509 certificate authentication to MySQL:"
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:105(para)
+#: ./security-guide/section_database-access-control.xml:114(para)
 msgid "OpenStack Compute offers a sub-service called <systemitem class=\"service\">nova-conductor</systemitem> which proxies database connections, with the primary purpose of having the nova compute nodes interfacing with <systemitem class=\"service\">nova-conductor</systemitem> to meet data persistence needs as opposed to directly communicating with the database."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:106(para)
+#: ./security-guide/section_database-access-control.xml:115(para)
 msgid "Nova-conductor receives requests over RPC and performs actions on behalf of the calling service without granting granular access to the database, its tables, or data within. Nova-conductor essentially abstracts direct database access away from compute nodes."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:107(para)
+#: ./security-guide/section_database-access-control.xml:116(para)
 msgid "This abstraction offers the advantage of restricting services to executing methods with parameters, similar to stored procedures, preventing a large number of systems from directly accessing or modifying database data. This is accomplished without having these procedures stored or executed within the context or scope of the database itself, a frequent criticism of typical stored procedures."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:115(para)
+#: ./security-guide/section_database-access-control.xml:124(para)
 msgid "Unfortunately, this solution complicates the task of more fine-grained access control and the ability to audit data access. Because the <systemitem class=\"service\">nova-conductor</systemitem> service receives requests over RPC, it highlights the importance of improving the security of messaging. Any node with access to the message queue may execute these methods provided by the <systemitem class=\"service\">nova-conductor</systemitem> and effectively modifying the database."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:116(para)
+#: ./security-guide/section_database-access-control.xml:125(para)
 msgid "Note, as <systemitem class=\"service\">nova-conductor</systemitem> only applies to OpenStack Compute, direct database access from compute hosts may still be necessary for the operation of other OpenStack components such as Telemetry (ceilometer), Networking, and Block Storage."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml:122(para)
+#: ./security-guide/section_database-access-control.xml:131(para)
 msgid "To disable the <systemitem class=\"service\">nova-conductor</systemitem>, place the following into your <filename>nova.conf</filename> file (on your compute hosts):"
 msgstr ""
 

@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-07 03:53+0000\n"
-"PO-Revision-Date: 2015-03-07 03:54+0000\n"
+"POT-Creation-Date: 2015-03-11 21:27+0000\n"
+"PO-Revision-Date: 2015-03-11 21:27+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -10704,8 +10704,8 @@ msgstr "@@image: 'static/databaseusernamessl.png'; md5=9c43242c47eb159b6f61ac41f
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_database-access-control.xml109(None)
-#: ./security-guide/section_database-access-control.xml112(None)
+#: ./security-guide/section_database-access-control.xml118(None)
+#: ./security-guide/section_database-access-control.xml121(None)
 msgid ""
 "@@image: 'static/novaconductor.png'; md5=dbc1ba139bd1af333f0415bb48704843"
 msgstr "@@image: 'static/novaconductor.png'; md5=dbc1ba139bd1af333f0415bb48704843"
@@ -10756,7 +10756,7 @@ msgid ""
 msgstr "OpenStack の各サービスとそれらのプロセスはデフォルトで、共有クレデンシャルを使用してデータベースにアクセスします。これにより、データベース操作の監査および、サービスとそのプロセスからデータベースへのアクセス権の剥奪が特に難しくなります。"
 
 #: ./security-guide/section_database-access-control.xml26(title)
-#: ./security-guide/section_database-access-control.xml104(title)
+#: ./security-guide/section_database-access-control.xml113(title)
 msgid "Nova-conductor"
 msgstr "Nova-conductor"
 
@@ -10830,18 +10830,19 @@ msgid "Require user accounts to require SSL transport"
 msgstr "SSL 通信利用のための必須ユーザーアカウント"
 
 #: ./security-guide/section_database-access-control.xml63(title)
-#: ./security-guide/section_database-access-control.xml81(title)
+#: ./security-guide/section_database-access-control.xml90(title)
 msgid "Configuration example #1: (MySQL)"
 msgstr "設定例 #1: (MySQL)"
 
 #: ./security-guide/section_database-access-control.xml64(replaceable)
 #: ./security-guide/section_database-access-control.xml82(replaceable)
-#: ./security-guide/section_database-access-control.xml100(replaceable)
+#: ./security-guide/section_database-access-control.xml91(replaceable)
+#: ./security-guide/section_database-access-control.xml109(replaceable)
 msgid "NOVA_DBPASS"
 msgstr "NOVA_DBPASS"
 
 #: ./security-guide/section_database-access-control.xml67(title)
-#: ./security-guide/section_database-access-control.xml87(title)
+#: ./security-guide/section_database-access-control.xml96(title)
 msgid "Configuration example #2: (PostgreSQL)"
 msgstr "設定例 #2: (PostgreSQL)"
 
@@ -10863,11 +10864,27 @@ msgid ""
 "below."
 msgstr "<literal>md5</literal> パラメーターは認証方式をハッシュ化パスワードとして定義します。以下のセクションでセキュアな認証例を提供します。"
 
-#: ./security-guide/section_database-access-control.xml78(title)
+#: ./security-guide/section_database-access-control.xml77(title)
+#: ./security-guide/section_database-access-control.xml101(title)
+msgid "OpenStack service database configuration"
+msgstr "OpenStack サービスのデータベース設定"
+
+#: ./security-guide/section_database-access-control.xml78(para)
+msgid ""
+"If your database server is configured for TLS transport, you will need to "
+"specify the certificate authority information for use with the initial "
+"connection string in the SQLAlchemy query."
+msgstr ""
+
+#: ./security-guide/section_database-access-control.xml81(title)
+msgid "Example of a <literal>:sql_connection</literal> string to MySQL:"
+msgstr ""
+
+#: ./security-guide/section_database-access-control.xml87(title)
 msgid "Authentication with X.509 certificates"
 msgstr "X.509 証明書を用いた認証"
 
-#: ./security-guide/section_database-access-control.xml79(para)
+#: ./security-guide/section_database-access-control.xml88(para)
 msgid ""
 "Security may be enhanced by requiring X.509 client certificates for "
 "authentication. Authenticating to the database in this manner provides "
@@ -10875,11 +10892,7 @@ msgid ""
 "database and ensures that the communications are encrypted."
 msgstr "認証に X.509 クライアント証明書を要求することにより、セキュリティを向上させられるかもしれません。この方法でデータベースに認証することにより、データベースに接続しているクライアントの ID 確認をより強力にでき、通信が確実に暗号化されます。"
 
-#: ./security-guide/section_database-access-control.xml92(title)
-msgid "OpenStack service database configuration"
-msgstr "OpenStack サービスのデータベース設定"
-
-#: ./security-guide/section_database-access-control.xml93(para)
+#: ./security-guide/section_database-access-control.xml102(para)
 msgid ""
 "If your database server is configured to require X.509 certificates for "
 "authentication you will need to specify the appropriate SQLAlchemy query "
@@ -10888,13 +10901,13 @@ msgid ""
 " the initial connection string."
 msgstr ""
 
-#: ./security-guide/section_database-access-control.xml99(para)
+#: ./security-guide/section_database-access-control.xml108(para)
 msgid ""
-"Example of an <literal>:sql_connection</literal> string for X.509 "
-"certificate authentication to MySQL:"
-msgstr "MySQL への X.509 証明書認証の <literal>:sql_connection</literal> 文字列の例:"
+"Example of a <literal>:sql_connection</literal> string for X.509 certificate"
+" authentication to MySQL:"
+msgstr ""
 
-#: ./security-guide/section_database-access-control.xml105(para)
+#: ./security-guide/section_database-access-control.xml114(para)
 msgid ""
 "OpenStack Compute offers a sub-service called <systemitem class=\"service"
 "\">nova-conductor</systemitem> which proxies database connections, with the "
@@ -10903,7 +10916,7 @@ msgid ""
 "persistence needs as opposed to directly communicating with the database."
 msgstr "OpenStack Compute は <systemitem class=\"service\">nova-conductor</systemitem> というサブサービスを提供します。これは、<systemitem class=\"service\">nova-conductor</systemitem> と直接接する nova コンピュートノードがデータ永続性の要求を満たすことを主目的として、それらがデータベースと直接通信する代わりにデータベース接続を中継します。"
 
-#: ./security-guide/section_database-access-control.xml106(para)
+#: ./security-guide/section_database-access-control.xml115(para)
 msgid ""
 "Nova-conductor receives requests over RPC and performs actions on behalf of "
 "the calling service without granting granular access to the database, its "
@@ -10911,7 +10924,7 @@ msgid ""
 " access away from compute nodes."
 msgstr "Nova-conductor は RPC 経由でリクエストを受信します。そして、データベース、テーブル、データへの精細なアクセス権なしでサービスを呼び出す動作を実行します。Nova-conductor は本質的にコンピュートノードがデータベースに直接アクセスすることを抽象化します。"
 
-#: ./security-guide/section_database-access-control.xml107(para)
+#: ./security-guide/section_database-access-control.xml116(para)
 msgid ""
 "This abstraction offers the advantage of restricting services to executing "
 "methods with parameters, similar to stored procedures, preventing a large "
@@ -10921,7 +10934,7 @@ msgid ""
 " stored procedures."
 msgstr "この抽象化は、サービスがパラメーター、ストアドプロシージャーのようなものを用いたメソッドの実行を制限し、数多くのシステムがデータベースのデータに直接アクセスしたり変更したりすることを防ぐという利点を提供します。これは、一般的なストアドプロシージャーという頻繁に批判される、データベース自体の文脈や範囲の中で、これらの手順を保存して実行することなく実現されます。"
 
-#: ./security-guide/section_database-access-control.xml115(para)
+#: ./security-guide/section_database-access-control.xml124(para)
 msgid ""
 "Unfortunately, this solution complicates the task of more fine-grained "
 "access control and the ability to audit data access. Because the <systemitem"
@@ -10932,7 +10945,7 @@ msgid ""
 "conductor</systemitem> and effectively modifying the database."
 msgstr "残念なことに、このソリューションはより詳細なアクセス制御とデータアクセスの監査機能を複雑にします。<systemitem class=\"service\">nova-conductor</systemitem> サービスは RPC 経由でリクエストを受信するため、メッセージングのセキュリティを改善する重要性を強調させます。メッセージキューにアクセスするすべてのノードは、<systemitem class=\"service\">nova-conductor</systemitem> により提供されるこれらの方式を実行し、データベースを効率的に変更するかもしれません。"
 
-#: ./security-guide/section_database-access-control.xml116(para)
+#: ./security-guide/section_database-access-control.xml125(para)
 msgid ""
 "Note, as <systemitem class=\"service\">nova-conductor</systemitem> only "
 "applies to OpenStack Compute, direct database access from compute hosts may "
@@ -10940,7 +10953,7 @@ msgid ""
 "Telemetry (ceilometer), Networking, and Block Storage."
 msgstr "<systemitem class=\"service\">nova-conductor</systemitem> は OpenStack Compute のみに適用されるので、Telemetry (ceilometer)、Networking、Block Storage のような他の OpenStack コンポーネントの動作のために、コンピュートホストから直接データベースにアクセスする必要があるかもしれないことに注意してください。"
 
-#: ./security-guide/section_database-access-control.xml122(para)
+#: ./security-guide/section_database-access-control.xml131(para)
 msgid ""
 "To disable the <systemitem class=\"service\">nova-conductor</systemitem>, "
 "place the following into your <filename>nova.conf</filename> file (on your "

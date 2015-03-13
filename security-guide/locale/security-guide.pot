@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-12 06:01+0000\n"
+"POT-Creation-Date: 2015-03-13 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1103,6 +1103,10 @@ msgstr ""
 msgid "System documentation"
 msgstr ""
 
+#: ./security-guide/ch_documentation.xml:9(para)
+msgid "The system documentation for an OpenStack cloud deployment should follow the templates and best practices for the Enterprise Information Technology System in your organization. Organizations often have compliance requirements which may require an overall System Security Plan to inventory and document the architecture of a given system. There are common challenges across the industry related to documenting the dynamic cloud infrastructure and keeping the information up-to-date."
+msgstr ""
+
 #: ./security-guide/section_data-encryption.xml:8(title)
 msgid "Data encryption"
 msgstr ""
@@ -1173,7 +1177,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_system-documentation-requirements.xml:110(None) ./security-guide/section_system-documentation-requirements.xml:115(None)
+#: ./security-guide/section_system-documentation-requirements.xml:102(None) ./security-guide/section_system-documentation-requirements.xml:107(None)
 msgid "@@image: 'static/services-protocols-ports.png'; md5=fb1e9f47d969127b7a5ca683d38cfe20"
 msgstr ""
 
@@ -1181,83 +1185,79 @@ msgstr ""
 msgid "System documentation requirements"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:9(para)
-msgid "The system documentation for an OpenStack cloud deployment should follow the templates and best practices for the Enterprise Information Technology System in your organization. Organizations often have compliance requirements which may require an overall System Security Plan to inventory and document the architecture of a given system. There are common challenges across the industry related to documenting the dynamic cloud infrastructure and keeping the information up-to-date."
-msgstr ""
-
-#: ./security-guide/section_system-documentation-requirements.xml:18(title)
+#: ./security-guide/section_system-documentation-requirements.xml:10(title)
 msgid "System roles and types"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:19(para)
+#: ./security-guide/section_system-documentation-requirements.xml:11(para)
 msgid "The two broadly defined types of nodes that generally make up an OpenStack installation are:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:23(para)
+#: ./security-guide/section_system-documentation-requirements.xml:15(para)
 msgid "Infrastructure nodes. The nodes that run the cloud related services such as the OpenStack Identity service, the message queuing service, storage, networking, and other services required to support the operation of the cloud."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:30(para)
+#: ./security-guide/section_system-documentation-requirements.xml:22(para)
 msgid "Compute, storage, or other resource nodes. Provide storage capacity or virtual machines for your cloud."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:37(title)
+#: ./security-guide/section_system-documentation-requirements.xml:29(title)
 msgid "System inventory"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:38(para)
+#: ./security-guide/section_system-documentation-requirements.xml:30(para)
 msgid "Documentation should provide a general description of the OpenStack environment and cover all systems used (production, development, test, etc.). Documenting system components, networks, services, and software often provides the bird's-eye view needed to thoroughly cover and consider security concerns, attack vectors and possible security domain bridging points. A system inventory may need to capture ephemeral resources such as virtual machines or virtual disk volumes that would otherwise be persistent resources in a traditional IT system."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:48(title)
+#: ./security-guide/section_system-documentation-requirements.xml:40(title)
 msgid "Hardware inventory"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:49(para)
+#: ./security-guide/section_system-documentation-requirements.xml:41(para)
 msgid "Clouds without stringent compliance requirements for written documentation might benefit from having a Configuration Management Database (<glossterm>CMDB</glossterm>). CMDBs are normally used for hardware asset tracking and overall life-cycle management. By leveraging a CMDB, an organization can quickly identify cloud infrastructure hardware such as compute nodes, storage nodes, or network devices. A CMDB can assist in identifying assets that exist on the network which may have vulnerabilities due to inadequate maintenance, inadequate protection or being displaced and forgotten. An OpenStack provisioning system can provide some basic CMDB functions if the underlying hardware supports the necessary auto-discovery features."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:66(title)
+#: ./security-guide/section_system-documentation-requirements.xml:58(title)
 msgid "Software inventory"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:67(para)
+#: ./security-guide/section_system-documentation-requirements.xml:59(para)
 msgid "As with hardware, all software components within the OpenStack deployment should be documented. Examples include:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:73(para)
+#: ./security-guide/section_system-documentation-requirements.xml:65(para)
 msgid "System databases, such as MySQL or mongoDB"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:76(para)
+#: ./security-guide/section_system-documentation-requirements.xml:68(para)
 msgid "OpenStack software components, such as Identity or Compute"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:80(para)
+#: ./security-guide/section_system-documentation-requirements.xml:72(para)
 msgid "Supporting components, such as load-balancers, reverse proxies, DNS or DHCP services"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:84(para)
+#: ./security-guide/section_system-documentation-requirements.xml:76(para)
 msgid "An authoritative list of software components may be critical when assessing the impact of a compromise or vulnerability in a library, application or class of software."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:92(title)
+#: ./security-guide/section_system-documentation-requirements.xml:84(title)
 msgid "Network topology"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:93(para)
+#: ./security-guide/section_system-documentation-requirements.xml:85(para)
 msgid "A network topology should be provided with highlights specifically calling out the data flows and bridging points between the security domains. Network ingress and egress points should be identified along with any OpenStack logical system boundaries. Multiple diagrams may be needed to provide complete visual coverage of the system. A network topology document should include virtual networks created on behalf of tenants by the system along with virtual machine instances and gateways created by OpenStack."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:104(title)
+#: ./security-guide/section_system-documentation-requirements.xml:96(title)
 msgid "Services, protocols and ports"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:105(para)
+#: ./security-guide/section_system-documentation-requirements.xml:97(para)
 msgid "Knowing information about organizational assets is typically a best practice, therefore it is beneficial to create a table which contains information regarding the service, protocols and ports being utilized in the OpenStack deployment. The table can be created from information derived from a CMDB or can be constructed manually. The table can be customized to include an overview of all services running within the cloud infrastructure. The level of detail contained in this type of table can be beneficial as the information can immediately inform, guide, and assist with validating security requirements. Standard security components such as firewall configuration, service port conflicts, security remediation areas, and compliance become easier to maintain when concise information is available. An example of this type of table is provided below:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml:118(para)
+#: ./security-guide/section_system-documentation-requirements.xml:110(para)
 msgid "Referencing a table of services, protocols and ports can help in understanding the relationship between OpenStack components. It is highly recommended that OpenStack deployments have information similar to this on record."
 msgstr ""
 

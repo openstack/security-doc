@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-11 21:27+0000\n"
-"PO-Revision-Date: 2015-03-11 21:27+0000\n"
+"POT-Creation-Date: 2015-03-12 19:13+0000\n"
+"PO-Revision-Date: 2015-03-12 08:05+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1949,6 +1949,17 @@ msgstr "OpenStack Security Group は、このドキュメントの作成を手�
 msgid "System documentation"
 msgstr "システムドキュメント"
 
+#: ./security-guide/ch_documentation.xml9(para)
+msgid ""
+"The system documentation for an OpenStack cloud deployment should follow the"
+" templates and best practices for the Enterprise Information Technology "
+"System in your organization. Organizations often have compliance "
+"requirements which may require an overall System Security Plan to inventory "
+"and document the architecture of a given system. There are common challenges"
+" across the industry related to documenting the dynamic cloud infrastructure"
+" and keeping the information up-to-date."
+msgstr "OpenStack クラウドデプロイメントのシステム文書化は、その組織のエンタープライズ IT システムを対象とするテンプレートとベストプラクティスに従って行うべきです。組織には大抵、コンプライアンス要件が設定されており、それによって対象システムのインベントリ作成とアーキテクチャの文書化を行う全体的なシステムセキュリティ計画が義務付けられている場合があります。動的なクラウドインフラストラクチャーを文書化し、情報を最新の状態に維持するのあたっては、業界全体の共通課題があります。 "
+
 #: ./security-guide/section_data-encryption.xml8(title)
 msgid "Data encryption"
 msgstr "データ暗号化"
@@ -2079,8 +2090,8 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_system-documentation-requirements.xml110(None)
-#: ./security-guide/section_system-documentation-requirements.xml115(None)
+#: ./security-guide/section_system-documentation-requirements.xml102(None)
+#: ./security-guide/section_system-documentation-requirements.xml107(None)
 msgid ""
 "@@image: 'static/services-protocols-ports.png'; "
 "md5=fb1e9f47d969127b7a5ca683d38cfe20"
@@ -2090,28 +2101,17 @@ msgstr "@@image: 'static/services-protocols-ports.png'; md5=fb1e9f47d969127b7a5c
 msgid "System documentation requirements"
 msgstr "システムの文書化における要件"
 
-#: ./security-guide/section_system-documentation-requirements.xml9(para)
-msgid ""
-"The system documentation for an OpenStack cloud deployment should follow the"
-" templates and best practices for the Enterprise Information Technology "
-"System in your organization. Organizations often have compliance "
-"requirements which may require an overall System Security Plan to inventory "
-"and document the architecture of a given system. There are common challenges"
-" across the industry related to documenting the dynamic cloud infrastructure"
-" and keeping the information up-to-date."
-msgstr "OpenStack クラウドデプロイメントのシステム文書化は、その組織のエンタープライズ IT システムを対象とするテンプレートとベストプラクティスに従って行うべきです。組織には大抵、コンプライアンス要件が設定されており、それによって対象システムのインベントリ作成とアーキテクチャの文書化を行う全体的なシステムセキュリティ計画が義務付けられている場合があります。動的なクラウドインフラストラクチャーを文書化し、情報を最新の状態に維持するのあたっては、業界全体の共通課題があります。 "
-
-#: ./security-guide/section_system-documentation-requirements.xml18(title)
+#: ./security-guide/section_system-documentation-requirements.xml10(title)
 msgid "System roles and types"
 msgstr "システムのロールとタイプ"
 
-#: ./security-guide/section_system-documentation-requirements.xml19(para)
+#: ./security-guide/section_system-documentation-requirements.xml11(para)
 msgid ""
 "The two broadly defined types of nodes that generally make up an OpenStack "
 "installation are:"
 msgstr "通常 OpenStack のインストールを構成している、広く定義された 2 つのノードタイプは次のとおりです。"
 
-#: ./security-guide/section_system-documentation-requirements.xml23(para)
+#: ./security-guide/section_system-documentation-requirements.xml15(para)
 msgid ""
 "Infrastructure nodes. The nodes that run the cloud related services such as "
 "the OpenStack Identity service, the message queuing service, storage, "
@@ -2119,17 +2119,17 @@ msgid ""
 "cloud."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml30(para)
+#: ./security-guide/section_system-documentation-requirements.xml22(para)
 msgid ""
 "Compute, storage, or other resource nodes. Provide storage capacity or "
 "virtual machines for your cloud."
 msgstr "コンピュート、ストレージ、その他のリソースのノード。クラウド用のストレージ容量や仮想マシンを提供するノードです。"
 
-#: ./security-guide/section_system-documentation-requirements.xml37(title)
+#: ./security-guide/section_system-documentation-requirements.xml29(title)
 msgid "System inventory"
 msgstr "システムインベントリ"
 
-#: ./security-guide/section_system-documentation-requirements.xml38(para)
+#: ./security-guide/section_system-documentation-requirements.xml30(para)
 msgid ""
 "Documentation should provide a general description of the OpenStack "
 "environment and cover all systems used (production, development, test, "
@@ -2141,11 +2141,11 @@ msgid ""
 "resources in a traditional IT system."
 msgstr "文書には、OpenStack 環境の概要を記載し、使用する全システム (実稼働、開発、テストなど)  を対象とするべきです。多くの場合、システムコンポーネント、ネットワーク、サービス、およびソフトウェアについて文書化することにより、セキュリティ課題、攻撃ベクトル、考えられるセキュリティドメインのブリッジングポイントを完全に網羅して検討するにあたって必要な概観が提供されます。システムインベントリには、従来の IT システムでは永続的なリソースとされている、仮想マシンや仮想ディスクボリュームなどの一時的なリソースを取り込む必要がある場合があります。"
 
-#: ./security-guide/section_system-documentation-requirements.xml48(title)
+#: ./security-guide/section_system-documentation-requirements.xml40(title)
 msgid "Hardware inventory"
 msgstr "ハードウェアインベントリ"
 
-#: ./security-guide/section_system-documentation-requirements.xml49(para)
+#: ./security-guide/section_system-documentation-requirements.xml41(para)
 msgid ""
 "Clouds without stringent compliance requirements for written documentation "
 "might benefit from having a Configuration Management Database "
@@ -2160,42 +2160,42 @@ msgid ""
 "features."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml66(title)
+#: ./security-guide/section_system-documentation-requirements.xml58(title)
 msgid "Software inventory"
 msgstr "ソフトウェアインベントリ"
 
-#: ./security-guide/section_system-documentation-requirements.xml67(para)
+#: ./security-guide/section_system-documentation-requirements.xml59(para)
 msgid ""
 "As with hardware, all software components within the OpenStack deployment "
 "should be documented. Examples include:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml73(para)
+#: ./security-guide/section_system-documentation-requirements.xml65(para)
 msgid "System databases, such as MySQL or mongoDB"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml76(para)
+#: ./security-guide/section_system-documentation-requirements.xml68(para)
 msgid "OpenStack software components, such as Identity or Compute"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml80(para)
+#: ./security-guide/section_system-documentation-requirements.xml72(para)
 msgid ""
 "Supporting components, such as load-balancers, reverse proxies, DNS or DHCP "
 "services"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml84(para)
+#: ./security-guide/section_system-documentation-requirements.xml76(para)
 msgid ""
 "An authoritative list of software components may be critical when assessing "
 "the impact of a compromise or vulnerability in a library, application or "
 "class of software."
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml92(title)
+#: ./security-guide/section_system-documentation-requirements.xml84(title)
 msgid "Network topology"
 msgstr "ネットワークトポロジー"
 
-#: ./security-guide/section_system-documentation-requirements.xml93(para)
+#: ./security-guide/section_system-documentation-requirements.xml85(para)
 msgid ""
 "A network topology should be provided with highlights specifically calling "
 "out the data flows and bridging points between the security domains. Network"
@@ -2206,11 +2206,11 @@ msgid ""
 "with virtual machine instances and gateways created by OpenStack."
 msgstr "ネットワークトポロジーは、セキュリティドメイン間のデータフローとブリッジングポイントをはっきりと識別して強調するようにして作成すべきです。OpenStack の論理的なシステム境界とともに、ネットワークの受信および送信ポイントを明確にすることを推奨します。システムを完全に視覚的に網羅するには、図を複数作成する必要がある場合があります。また、ネットワークトポロジーの文書には、テナントに代わってシステムが作成した仮想ネットワークや、OpenStack によって作成された仮想マシンインスタンスとゲートウェイを含めるべきです。"
 
-#: ./security-guide/section_system-documentation-requirements.xml104(title)
+#: ./security-guide/section_system-documentation-requirements.xml96(title)
 msgid "Services, protocols and ports"
 msgstr "サービス、プロトコル、およびポート"
 
-#: ./security-guide/section_system-documentation-requirements.xml105(para)
+#: ./security-guide/section_system-documentation-requirements.xml97(para)
 msgid ""
 "Knowing information about organizational assets is typically a best "
 "practice, therefore it is beneficial to create a table which contains "
@@ -2226,7 +2226,7 @@ msgid ""
 "An example of this type of table is provided below:"
 msgstr ""
 
-#: ./security-guide/section_system-documentation-requirements.xml118(para)
+#: ./security-guide/section_system-documentation-requirements.xml110(para)
 msgid ""
 "Referencing a table of services, protocols and ports can help in "
 "understanding the relationship between OpenStack components. It is highly "

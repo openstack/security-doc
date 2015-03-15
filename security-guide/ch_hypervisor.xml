@@ -6,6 +6,19 @@
   xml:id="hypervisor">
   <title>Hypervisor and virtualization layer</title>
 
+  <para>
+    Virtualization can provide flexibility, improved resource
+    utilization, faster provisioning, and other benefits that enable
+    cloud computing. The virtualization stack can also provide
+    isolation between guest virtual machines, however, appropriate
+    security measures must be considered to reduce the risks
+    associated with hypervisor breakout attacks.
+  </para>
+  <para>
+    This chapter discusses the hypervisor selection process, hardening
+    the virtualization layer, and how to improve instance isolation.
+  </para>
+
   <xi:include href="section_hypervisor-selection.xml"/>
   <xi:include href="section_hardening-the-virtualization-layers.xml"/>
   <xi:include href="section_case-studies-instance-isolation.xml"/>

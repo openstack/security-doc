@@ -6,22 +6,6 @@
   xml:id="data-privacy-concerns">
   <?dbhtml stop-chunking?>
     <title>Data privacy concerns</title>
-    <para>
-      OpenStack is designed to support multitenancy and those tenants
-      will most probably have different data requirements. As a cloud
-      builder and operator you need to ensure your OpenStack
-      environment can address various data privacy concerns and
-      regulations. In this chapter we will address the following
-      topics around Data Privacy as it pertains to OpenStack
-      implementations:
-    </para>
-    <itemizedlist><listitem>
-        <para>Data residency</para>
-      </listitem>
-<listitem>
-        <para>Data disposal</para>
-      </listitem>
-</itemizedlist>
     <section xml:id="data-privacy-concerns-data-residency">
       <title>Data residency</title>
       <para>The privacy and isolation of data has consistently been cited as the primary barrier to cloud adoption over the past few years. Concerns over who owns data in the cloud and whether the cloud operator can be ultimately trusted as a custodian of this data have been significant issues in the past.</para>

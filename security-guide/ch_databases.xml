@@ -6,6 +6,14 @@
   xml:id="databases">
   <title>Databases</title>
 
+  <para>
+    The choice of database server is an important consideration in the
+    security of an OpenStack deployment. Multiple factors should be
+    considered when deciding on a database server, however for the scope
+    of this book only security considerations will be discussed.
+    OpenStack supports PostgreSQL and MySQL database types.
+  </para>
+
   <xi:include href="section_database-backend-considerations.xml"/>
   <xi:include href="section_database-access-control.xml"/>
   <xi:include href="section_database-transport-security.xml"/>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-03-13 06:06+0000\n"
+"POT-Creation-Date: 2015-03-17 06:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6029,6 +6029,122 @@ msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:196(para)
 msgid "Additionally, it is possible for tenants of a bare metal system to modify system firmware. TPM technology, described in <xref linkend=\"integrity-life-cycle-secure-bootstrapping\"/>, provides a solution for detecting unauthorized firmware changes."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:8(title)
+msgid "Checklist"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:10(title)
+msgid "Check-Identity-01: Is user and group ownership of Identity configuration files set to keystone?"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:12(para)
+msgid "Configuration files contain critical parameters and information required for smooth functioning of the component. If an unprivileged user, either intentionally or accidently modifies or deletes any of the parameters or the file itself then it would cause severe availability issue causing denial of service to the other end users. Thus user and group ownership of such critical configuration files must be set to that component owner."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:20(para) ./security-guide/section_identity-checklist.xml:46(para)
+msgid "Run the following commands:"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:28(para)
+msgid "<emphasis role=\"bold\">Pass:</emphasis> If user and group ownership of all these config files is set to keystone. The above commands show output of keystone keystone."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:32(para)
+msgid "<emphasis role=\"bold\">Fail:</emphasis> If the above commands does not return any output as the user or group ownership might have set to any user other than keystone."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:36(para) ./security-guide/section_identity-checklist.xml:58(para)
+msgid "Recommended in: <xref linkend=\"identity-authentication-methods-internally-implemented-authentication-methods\"/>"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:41(title)
+msgid "Check-Identity-02: Are strict permissions set for Identity configuration files?"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:43(para)
+msgid "Similar to previous check, it is recommended to set strict access permissions for such configuration files."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:54(para)
+msgid "<emphasis role=\"bold\">Pass:</emphasis> If permissions are set to 640 or stricter."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:56(para)
+msgid "<emphasis role=\"bold\">Fail:</emphasis> If permissions are not set to atleast 640."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:63(title)
+msgid "Check-Identity-03: is SSL enabled for Identity?"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:65(para)
+msgid "OpenStack components communicate with each other using various protocols and the communication might involve sensitive or confidential data. An attacker may try to eavesdrop on the channel in order to get access to sensitive information. Thus all the components must communicate with each other using a secured communication protocol like HTTPS."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:72(para)
+msgid "<emphasis role=\"bold\">Pass:</emphasis> If value of parameter <placeholder-1/> under <literal>[ssl]</literal> section in <filename>/etc/keystone/keystone.conf</filename> is set to <literal>True</literal>."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:77(para)
+msgid "<emphasis role=\"bold\">Fail:</emphasis> If value of parameter <placeholder-1/> under <literal>[ssl]</literal> section is not set to <literal>True</literal>."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:80(para)
+msgid "Recommended in: <xref linkend=\"secure_communication\"/>"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:84(title)
+msgid "Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:86(para)
+msgid "MD5 is a weak and depreciated hashing algorithm. It can be cracked using bruteforce attack. Identity tokens are sensitive and need to be protected with a stronger hashing algorithm to prevent unauthorized disclosure and subsequent access."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:91(para)
+msgid "<emphasis role=\"bold\">Pass:</emphasis> If value of parameter <placeholder-1/> under <literal>[token]</literal> section in <filename>/etc/keystone/keystone.conf</filename> is set to SHA256."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:96(para)
+msgid "<emphasis role=\"bold\">Fail:</emphasis> If value of parameter <placeholder-1/> under <literal>[token]</literal>section is set to MD5."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:99(para)
+msgid "Recommended in: <xref linkend=\"identity-tokens\"/>"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:103(title)
+msgid "Check-Identity-05: Is value of parameter <placeholder-1/> set to default (114688)?"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:106(para)
+msgid "The parameter <placeholder-1/> defines the maximum body size per request in bytes. If the maximum size is not defined, the attacker could craft an arbitary request of large size causing the service to crash and finally resulting in Denial Of Service attack. Assigning the maximum value ensures that any malicious oversized request gets blocked ensuring continued availability of the component."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:115(para)
+msgid "<emphasis role=\"bold\">Pass:</emphasis> If value of parameter <placeholder-1/> in <filename>/etc/keystone/keystone.conf</filename> is set to default (114688) or some reasonable value based on your environment."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:120(para)
+msgid "<emphasis role=\"bold\">Fail:</emphasis> If value of parameter <placeholder-1/> is not set."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:125(title)
+msgid "Check-Identity-06: is admin token disabled in <filename>/etc/keystone/keystone.conf</filename>?"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:127(para)
+msgid "Admin token is generally used to bootstrap Identity. This token is the most valuable Identity asset, which could be used to gain cloud admin privileges."
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:130(para)
+msgid "<emphasis role=\"bold\">Pass:</emphasis> If <placeholder-1/> under <literal>[DEFAULT]</literal> section in <filename>/etc/keystone/keystone.conf</filename> is disabled. And, AdminTokenAuthMiddleware under <literal>[filter:admin_token_auth]</literal> is deleted from <filename>/etc/keystone/keystone-paste.ini</filename>"
+msgstr ""
+
+#: ./security-guide/section_identity-checklist.xml:137(para)
+msgid "<emphasis role=\"bold\">Fail:</emphasis> If <placeholder-1/> under [DEFAULT] section is set and AdminTokenAuthMiddleware exists in <filename>keystone-paste.ini</filename>."
 msgstr ""
 
 #: ./security-guide/section_key-management.xml:8(title)

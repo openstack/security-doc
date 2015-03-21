@@ -2,7 +2,7 @@
 # Translators:
 # Akira Yoshiyama <akirayoshiyama@gmail.com>, 2013-2014
 # yfukuda <fukuda.yuko@jp.fujitsu.com>, 2014
-# Kuo(Kyohei MORIYAMA) <>, 2014
+# Sasuke(Kyohei MORIYAMA) <>, 2014
 # Mitsuhiro Tanino <mittjp1129@gmail.com>, 2014
 # myamamot <myamamot@redhat.com>, 2013-2014
 # Tomoaki Nakajima <>, 2013-2014
@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-16 19:32+0000\n"
-"PO-Revision-Date: 2015-03-16 19:32+0000\n"
+"POT-Creation-Date: 2015-03-21 05:34+0000\n"
+"PO-Revision-Date: 2015-03-21 05:34+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -264,47 +264,11 @@ msgstr "<filename>$PGDATA/root.crl</filename> - 証明書失効リスト"
 msgid "Compliance overview"
 msgstr "コンプライアンス概要"
 
-#: ./security-guide/section_compliance-overview.xml9(para)
-msgid ""
-"An OpenStack deployment may require compliance activities for many purposes,"
-" such as regulatory and legal requirements, customer need, privacy "
-"considerations, and security best practices. The Compliance function is "
-"important for the business and its customers. Compliance means adhering to "
-"regulations, specifications, standards and laws. It is also used when "
-"describing an organizations status regarding assessments, audits, and "
-"certifications. Compliance, when done correctly, unifies and strengthens the"
-" other security topics discussed in this guide."
-msgstr ""
-
-#: ./security-guide/section_compliance-overview.xml16(para)
-msgid "This chapter has several objectives:"
-msgstr "この章の目的は以下の通りです。"
-
-#: ./security-guide/section_compliance-overview.xml19(para)
-msgid "Review common security principles."
-msgstr "共通のセキュリティ原則を確認する"
-
-#: ./security-guide/section_compliance-overview.xml22(para)
-msgid ""
-"Discuss common control frameworks and certification resources to achieve "
-"industry certifications or regulator attestations."
-msgstr "業界認定や監督当局の認証を得るために必要な、共通コントロールフレームワークと認定リソースを説明する"
-
-#: ./security-guide/section_compliance-overview.xml26(para)
-msgid "Act as a reference for auditors when evaluating OpenStack deployments."
-msgstr "監査人がOpenStack環境を評価する際のリファレンスとなる"
-
-#: ./security-guide/section_compliance-overview.xml29(para)
-msgid ""
-"Introduce privacy considerations specific to OpenStack and cloud "
-"environments."
-msgstr "OpenStackおよびクラウド環境におけるプライバシーの考慮事項を説明する"
-
-#: ./security-guide/section_compliance-overview.xml33(title)
+#: ./security-guide/section_compliance-overview.xml10(title)
 msgid "Security principles"
 msgstr "セキュリティ原則"
 
-#: ./security-guide/section_compliance-overview.xml34(para)
+#: ./security-guide/section_compliance-overview.xml11(para)
 msgid ""
 "Industry standard security principles provide a baseline for compliance "
 "certifications and attestations. If these principles are considered and "
@@ -312,11 +276,11 @@ msgid ""
 "be simplified."
 msgstr "業界標準のセキュリティ原則は、コンプライアンス認証、認定のための基準を提供します。もしそれらの原則が対象のOpenStack環境で考慮、適用されていれば、認証を得る活動はシンプルになるでしょう。"
 
-#: ./security-guide/section_compliance-overview.xml39(term)
+#: ./security-guide/section_compliance-overview.xml16(term)
 msgid "Layered defenses"
 msgstr "階層防御"
 
-#: ./security-guide/section_compliance-overview.xml41(para)
+#: ./security-guide/section_compliance-overview.xml18(para)
 msgid ""
 "Identify where risks exist in a cloud architecture and apply controls to "
 "mitigate the risks. In areas of significant concern, layered defences "
@@ -329,11 +293,11 @@ msgid ""
 "will exist to offer protection and minimize exposure."
 msgstr "クラウドアーキテクチャ内にあるリスクの存在場所を特定し、そのリスクを受容可能なレベルに管理すべく、コントロールします。特に心配される部分では、多層防御はさらなるリスク緩和のため、相互補完的なコントロールを提供します。たとえば、クラウドテナント間の十分な独立性を確保するには、QEMUの強化、SELinuxサポートのハイパーバイザーを使う、強制アクセス制御の適用、攻撃対象面の縮小、などがおすすめです。この基本的な原則により、もしある階層が危険にさらされても、他の階層が防御し、露出を最小化することで、懸念される部分が強化されるのです。"
 
-#: ./security-guide/section_compliance-overview.xml52(term)
+#: ./security-guide/section_compliance-overview.xml29(term)
 msgid "Fail securely"
 msgstr "フェイルセキュア"
 
-#: ./security-guide/section_compliance-overview.xml54(para)
+#: ./security-guide/section_compliance-overview.xml31(para)
 msgid ""
 "In the case of failure, systems should be configured to fail into a closed "
 "secure state. For example, TLS certificate verification should fail closed "
@@ -343,11 +307,11 @@ msgid ""
 "recommended."
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml62(term)
+#: ./security-guide/section_compliance-overview.xml39(term)
 msgid "Least privilege"
 msgstr "最小権限"
 
-#: ./security-guide/section_compliance-overview.xml64(para)
+#: ./security-guide/section_compliance-overview.xml41(para)
 msgid ""
 "Only the minimum level of access for users and system services is granted. "
 "This access is based upon role, responsibility and job function. This "
@@ -356,11 +320,11 @@ msgid ""
 "United States."
 msgstr "ユーザーとシステムサービスには最小限のアクセス権限のみを付与すべきです。アクセス権限は役割、責任と職務にもとづきます。この最小権限原則は、いくつかの国際セキュリティポリシーに明記されています。たとえば米国のNIST 800-53 AC-6項が挙げられます。"
 
-#: ./security-guide/section_compliance-overview.xml71(term)
+#: ./security-guide/section_compliance-overview.xml48(term)
 msgid "Compartmentalize"
 msgstr "コンパートメント化"
 
-#: ./security-guide/section_compliance-overview.xml73(para)
+#: ./security-guide/section_compliance-overview.xml50(para)
 msgid ""
 "Systems should be segregated in a such way that if one machine, or system-"
 "level service, is compromised the security of the other systems will remain "
@@ -368,21 +332,21 @@ msgid ""
 "accomplish this goal."
 msgstr "システムは、仮にあるマシンやシステムレベルのサービスが危険にさらされたとしても、他の無傷なシステムとは分離されているべきです。実際、SELinuxの正しい使用は、この目標を達成するのに役立ちます。"
 
-#: ./security-guide/section_compliance-overview.xml80(term)
+#: ./security-guide/section_compliance-overview.xml57(term)
 msgid "Promote privacy"
 msgstr "プライバシー保護の奨励"
 
-#: ./security-guide/section_compliance-overview.xml82(para)
+#: ./security-guide/section_compliance-overview.xml59(para)
 msgid ""
 "The amount of information that can be gathered about a system and its users "
 "should be minimized."
 msgstr "システムとそのユーザーに関わる、収集可能な情報の量は最小化すべきです。"
 
-#: ./security-guide/section_compliance-overview.xml87(term)
+#: ./security-guide/section_compliance-overview.xml64(term)
 msgid "Logging capability"
 msgstr "ロギング機能"
 
-#: ./security-guide/section_compliance-overview.xml89(para)
+#: ./security-guide/section_compliance-overview.xml66(para)
 msgid ""
 "Appropriate logging is implemented to monitor for unauthorized use, incident"
 " response and forensics. It is highly recommended that selected audit "
@@ -390,21 +354,21 @@ msgid ""
 " records in most countries."
 msgstr "適切なロギングは、不正利用の監視や障害対応、証拠収集に役立ちます。多くの国において、それを再度証明する必要が無い、Common Criteria認定をうけた監査サブシステムの採用を強くおすすめします。"
 
-#: ./security-guide/section_compliance-overview.xml99(title)
+#: ./security-guide/section_compliance-overview.xml75(title)
 msgid "Common control frameworks"
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml100(para)
+#: ./security-guide/section_compliance-overview.xml76(para)
 msgid ""
 "The following is a list of Control Frameworks that an organization can use "
 "to build their security controls"
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml106(link)
+#: ./security-guide/section_compliance-overview.xml82(link)
 msgid "Cloud Security Alliance (CSA) Common Control Matrix (CCM)"
 msgstr "Cloud Security Alliance (CSA) Common Control Matrix (CCM)"
 
-#: ./security-guide/section_compliance-overview.xml108(para)
+#: ./security-guide/section_compliance-overview.xml84(para)
 msgid ""
 "The CSA CCM is specifically designed to provide fundamental security "
 "principles to guide cloud vendors and to assist prospective cloud customers "
@@ -417,7 +381,7 @@ msgid ""
 "service organization control reports attestations."
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml116(para)
+#: ./security-guide/section_compliance-overview.xml92(para)
 msgid ""
 "The CSA CCM strengthens existing information security control environments "
 "by enabling the reduction of security threats and vulnerabilities in the "
@@ -426,11 +390,11 @@ msgid ""
 "and security measures implemented in the cloud."
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml124(link)
+#: ./security-guide/section_compliance-overview.xml100(link)
 msgid "ISO 27001/2:2013"
 msgstr "ISO 27001/2:2013"
 
-#: ./security-guide/section_compliance-overview.xml126(para)
+#: ./security-guide/section_compliance-overview.xml102(para)
 msgid ""
 "The ISO 27001 Information Security standard and certification has been used "
 "for many years to evaluate and distinguish an organizations alignment with "
@@ -439,7 +403,7 @@ msgid ""
 "(ISMS) and Annex A which contains a list of controls organized by domain."
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml131(para)
+#: ./security-guide/section_compliance-overview.xml107(para)
 msgid ""
 "The information security management system preserves the confidentiality, "
 "integrity, and availability of information by applying a risk management "
@@ -447,11 +411,11 @@ msgid ""
 " managed."
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml139(link)
+#: ./security-guide/section_compliance-overview.xml115(link)
 msgid "Trusted Security Principles"
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml141(para)
+#: ./security-guide/section_compliance-overview.xml117(para)
 msgid ""
 "Trust Services are a set of professional attestation and advisory services "
 "based on a core set of principles and criteria that address the risks and "
@@ -461,11 +425,11 @@ msgid ""
 "requirement."
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml152(title)
+#: ./security-guide/section_compliance-overview.xml128(title)
 msgid "Audit reference"
 msgstr "監査参照"
 
-#: ./security-guide/section_compliance-overview.xml153(para)
+#: ./security-guide/section_compliance-overview.xml129(para)
 msgid ""
 "OpenStack is innovative in many ways however the process used to audit an "
 "OpenStack deployment is fairly common. Auditors will evaluate a process by "
@@ -475,7 +439,7 @@ msgid ""
 "linkend=\"understanding-the-audit-process\"/>."
 msgstr ""
 
-#: ./security-guide/section_compliance-overview.xml158(para)
+#: ./security-guide/section_compliance-overview.xml134(para)
 msgid ""
 "The most common frameworks for auditing and evaluating a cloud deployment "
 "include the previously mentioned ISO 27001/2 Information Security standard, "
@@ -493,15 +457,6 @@ msgstr "フォレンジングとインシデント対応"
 
 #: ./security-guide/section_forensics-and-incident-response.xml9(para)
 msgid ""
-"A lot of activity goes on within a cloud environment. It is a mix of "
-"hardware, operating systems, virtual machine managers, the OpenStack "
-"services, cloud-user activity such as creating instances and attaching "
-"storage, the network underlying the whole, and finally end-users using the "
-"applications running on the various instances."
-msgstr "多数の活動がクラウド環境内で行われます。これはハードウェア、オペレーティングシステム、仮想マシンマネージャ、OpenStackサービス群、インスタンス作成やストレージアタッチのようなクラウド⇔ユーザ活動、全体の土台であるネットワーク、最後に様々なインスタンス上で実行されるアプリケーションを使用するエンドユーザのミックスです。"
-
-#: ./security-guide/section_forensics-and-incident-response.xml17(para)
-msgid ""
 "The generation and collection of logs is an important component of securely "
 "monitoring an OpenStack infrastructure. Logs provide visibility into the "
 "day-to-day actions of administrators, tenants, and guests, in addition to "
@@ -509,23 +464,14 @@ msgid ""
 "that comprise your OpenStack deployment."
 msgstr "ログの生成と収集は OpenStack インフラのセキュリティ監視の重要なコンポーネントです。ログは日々の管理者・テナント・ゲストの行動に加え、あなたの OpenStack デプロイを構成する Compute、Networking、ストレージ、他のコンポーネントの活動の可視性を提供します。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml25(para)
-msgid ""
-"The basics of logging: configuration, setting log level, location of the log"
-" files, and how to use and customize logs, as well as how to do centralized "
-"collections of logs is well covered in the <link "
-"href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations "
-"Guide</citetitle></link>."
-msgstr "ロギングの基本: ログを集中収集する方法と同様、設定、ログレベル設定、ログファイルの位置、ログの使用とカスタマイズ方法は、<link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link> で充分にカバーされています。"
-
-#: ./security-guide/section_forensics-and-incident-response.xml33(para)
+#: ./security-guide/section_forensics-and-incident-response.xml17(para)
 msgid ""
 "Logs are not only valuable for proactive security and continuous compliance "
 "activities, but they are also a valuable information source for "
 "investigating and responding to incidents."
 msgstr "ログは率先したセキュリティや継続的なコンプライアンス活動に有用であるのみならず、インシデントの調査と対応の為の情報源としても有用です。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml38(para)
+#: ./security-guide/section_forensics-and-incident-response.xml22(para)
 msgid ""
 "For instance, analyzing the access logs of Identity service or its "
 "replacement authentication system would alert us to failed logins, "
@@ -533,32 +479,32 @@ msgid ""
 "and other pertinent information. Log analysis supports detection."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml45(para)
+#: ./security-guide/section_forensics-and-incident-response.xml29(para)
 msgid ""
 "Actions may be taken to mitigate potential malicious activity such as "
 "blacklisting an IP address, recommending the strengthening of user "
 "passwords, or de-activating a user account if it is deemed dormant."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml52(title)
+#: ./security-guide/section_forensics-and-incident-response.xml36(title)
 msgid "Monitoring use cases"
 msgstr "監視ユースケース"
 
-#: ./security-guide/section_forensics-and-incident-response.xml53(para)
+#: ./security-guide/section_forensics-and-incident-response.xml37(para)
 msgid ""
 "Event monitoring is a more pro-active approach to securing an environment, "
 "providing real-time detection and response. Several tools exist which can "
 "aid in monitoring."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml58(para)
+#: ./security-guide/section_forensics-and-incident-response.xml42(para)
 msgid ""
 "In the case of an OpenStack cloud instance, we need to monitor the hardware,"
 " the OpenStack services, and the cloud resource usage. The latter stems from"
 " wanting to be elastic, to scale to the dynamic needs of the users."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml64(para)
+#: ./security-guide/section_forensics-and-incident-response.xml48(para)
 msgid ""
 "Here are a few important use cases to consider when implementing log "
 "aggregation, analysis and monitoring. These use cases can be implemented and"
@@ -570,7 +516,7 @@ msgid ""
 "specific network and what you may consider anomalous behavior."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml78(para)
+#: ./security-guide/section_forensics-and-incident-response.xml62(para)
 msgid ""
 "Detecting the absence of log generation is an event of high value. Such an "
 "event would indicate a service failure or even an intruder who has "
@@ -578,34 +524,34 @@ msgid ""
 "tracks."
 msgstr "ログ生成無しの検知は価値の高いイベントです。このようなイベントはサービス障害、または一時的にログをオフにしたり、監視者から隠れるためにログレベルを変更した侵入者を示している可能性があります。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml86(para)
+#: ./security-guide/section_forensics-and-incident-response.xml70(para)
 msgid ""
 "Application events such as start or stop events that were unscheduled would "
 "also be events to monitor and examine for possible security implications."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml93(para)
+#: ./security-guide/section_forensics-and-incident-response.xml77(para)
 msgid ""
 "Operating system events on the OpenStack service machines such as user "
 "logins or restarts also provide valuable insight into proper and improper "
 "usage of systems."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml100(para)
+#: ./security-guide/section_forensics-and-incident-response.xml84(para)
 msgid ""
 "Being able to detect the load on the OpenStack servers also enables "
 "responding by way of introducing additional servers for load balancing to "
 "ensure high availability."
 msgstr "OpenStack サーバ群の負荷を検知可能にする事はまた、高可用化対応の為に負荷分散用追加サーバを導入する為の対応を可能にする事でもあります。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml107(para)
+#: ./security-guide/section_forensics-and-incident-response.xml91(para)
 msgid ""
 "Other events that are actionable are networking bridges going down, ip "
 "tables being flushed on compute nodes and consequential loss of access to "
 "instances resulting in unhappy customers."
 msgstr "行動可能な他のイベントはネットワークブリッジがダウンした事です。compute ノード上で設定がクリアされた iptables や、インスタンスへのアクセスの重大なロスはユーザを不幸にします。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml115(para)
+#: ./security-guide/section_forensics-and-incident-response.xml99(para)
 msgid ""
 "To reduce security risks from orphan instances on a user, tenant, or domain "
 "deletion in the Identity service there is discussion to generate "
@@ -614,14 +560,14 @@ msgid ""
 "volumes, reclaiming CPU and storage resources and so on."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml125(para)
+#: ./security-guide/section_forensics-and-incident-response.xml109(para)
 msgid ""
 "A cloud will host many virtual instances, and monitoring these instances "
 "goes beyond hardware monitoring and log files which may just contain CRUD "
 "events."
 msgstr "クラウドには多数の仮想インスタンスがあり、これらのインスタンスの監視はハードウェア監視と CRUD イベントのみ含むログファイルの背後にあります。"
 
-#: ./security-guide/section_forensics-and-incident-response.xml130(para)
+#: ./security-guide/section_forensics-and-incident-response.xml114(para)
 msgid ""
 "Security monitoring controls such as intrusion detection software, antivirus"
 " software, and spyware detection and removal utilities can generate logs "
@@ -631,21 +577,21 @@ msgid ""
 "their instances."
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml141(title)
-#: ./security-guide/section_hypervisor-selection.xml677(title)
+#: ./security-guide/section_forensics-and-incident-response.xml125(title)
+#: ./security-guide/section_hypervisor-selection.xml668(title)
 #: ./security-guide/ch_compute.xml59(title)
 #: ./security-guide/ch_compute.xml108(title)
 msgid "Bibliography"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml142(para)
+#: ./security-guide/section_forensics-and-incident-response.xml126(para)
 msgid ""
 "Siwczak, Piotr. Some Practical Considerations for Monitoring in the "
 "OpenStack Cloud. 2012. <link href=\"http://www.mirantis.com/blog/openstack-"
 "monitoring/\">http://www.mirantis.com/blog/openstack-monitoring</link>"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml143(para)
+#: ./security-guide/section_forensics-and-incident-response.xml127(para)
 msgid ""
 "blog.sflow.com, sflow: Host sFlow distributed agent. 2012. <link "
 "href=\"http://blog.sflow.com/2012/01/host-sflow-distributed-"
@@ -653,14 +599,14 @@ msgid ""
 "agent.html</link>"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml144(para)
+#: ./security-guide/section_forensics-and-incident-response.xml128(para)
 msgid ""
 "blog.sflow.com, sflow: LAN and WAN. 2009. <link "
 "href=\"http://blog.sflow.com/2009/09/lan-and-"
 "wan.html\">http://blog.sflow.com/2009/09/lan-and-wan.html</link>"
 msgstr ""
 
-#: ./security-guide/section_forensics-and-incident-response.xml145(para)
+#: ./security-guide/section_forensics-and-incident-response.xml129(para)
 msgid ""
 "blog.sflow.com, sflow: Rapidly detecting large flows sFlow vs. "
 "NetFlow/IPFIX. 2013. <link href=\"http://blog.sflow.com/2013/01/rapidly-"
@@ -1364,22 +1310,13 @@ msgstr ""
 
 #: ./security-guide/section_database-backend-considerations.xml9(para)
 msgid ""
-"The choice of database server is an important consideration in the security "
-"of an OpenStack deployment. Multiple factors should be considered when "
-"deciding on a database server, however for the scope of this book only "
-"security considerations will be discussed. OpenStack supports PostgreSQL and"
-" MySQL database types."
-msgstr ""
-
-#: ./security-guide/section_database-backend-considerations.xml10(para)
-msgid ""
 "PostgreSQL has a number of desirable security features such as Kerberos "
 "authentication, object-level security, and encryption support. The "
 "PostgreSQL community has done well to provide solid guidance, documentation,"
 " and tooling to promote positive security practices."
 msgstr "PostgreSQL は、Kerberos 認証、オブジェクトレベルのセキュリティ、暗号化のサポートなど、数多くの望ましいセキュリティ機能を有します。PostgreSQL コミュニティは実用的なセキュリティ実践を推進するために、わかりやすいガイダンス、ドキュメント、ツールを十分に提供してきました。"
 
-#: ./security-guide/section_database-backend-considerations.xml11(para)
+#: ./security-guide/section_database-backend-considerations.xml10(para)
 msgid ""
 "MySQL has a large community, widespread adoption, and provides high "
 "availability options. MySQL also has the ability to provide enhanced client "
@@ -1390,47 +1327,65 @@ msgid ""
 "provided for the given distribution."
 msgstr "MySQL は大規模なコミュニティを持ち、幅広く適用され、高可用性のオプションを提供しています。MySQL も、プラグイン認証機構の方法により高度なクライアント認証を提供する機能があります。MySQL コミュニティから派生したディストリビューションは、考慮事項に対する多くのオプションを提供しています。セキュリティの考え方やディストリビューションに提供されるサポートレベルの評価に基づいて、特定の MySQL ディストリビューションを選択することが重要です。"
 
-#: ./security-guide/section_database-backend-considerations.xml13(title)
+#: ./security-guide/section_database-backend-considerations.xml12(title)
 msgid "Security references for database back ends"
 msgstr "データベースバックエンドのセキュリティ参考資料"
 
-#: ./security-guide/section_database-backend-considerations.xml14(para)
+#: ./security-guide/section_database-backend-considerations.xml13(para)
 msgid ""
 "Those deploying MySQL or PostgreSQL are advised to refer to existing "
 "security guidance. Some references are listed below:"
 msgstr "MySQL や PostgreSQL を導入する人は、既存のセキュリティガイダンスを参照することが推奨されます。いくつかの参考資料を以下に一覧化します。"
 
-#: ./security-guide/section_database-backend-considerations.xml15(para)
+#: ./security-guide/section_database-backend-considerations.xml14(para)
 msgid "MySQL:"
 msgstr "MySQL:"
 
-#: ./security-guide/section_database-backend-considerations.xml17(link)
+#: ./security-guide/section_database-backend-considerations.xml16(link)
 msgid "OWASP MySQL Hardening"
 msgstr "OWASP MySQL Hardening"
 
-#: ./security-guide/section_database-backend-considerations.xml20(link)
+#: ./security-guide/section_database-backend-considerations.xml19(link)
 msgid "MySQL Pluggable Authentication"
 msgstr "MySQL Pluggable Authentication"
 
-#: ./security-guide/section_database-backend-considerations.xml23(link)
+#: ./security-guide/section_database-backend-considerations.xml22(link)
 msgid "Security in MySQL"
 msgstr "Security in MySQL"
 
-#: ./security-guide/section_database-backend-considerations.xml26(para)
+#: ./security-guide/section_database-backend-considerations.xml25(para)
 msgid "PostgreSQL:"
 msgstr "PostgreSQL:"
 
-#: ./security-guide/section_database-backend-considerations.xml28(link)
+#: ./security-guide/section_database-backend-considerations.xml27(link)
 msgid "OWASP PostgreSQL Hardening"
 msgstr "OWASP PostgreSQL Hardening"
 
-#: ./security-guide/section_database-backend-considerations.xml31(link)
+#: ./security-guide/section_database-backend-considerations.xml30(link)
 msgid "Total security in a PostgreSQL database"
 msgstr "Total security in a PostgreSQL database"
 
 #: ./security-guide/ch_monitoring-logging.xml7(title)
 msgid "Monitoring and logging"
 msgstr "監視とログ採取"
+
+#: ./security-guide/ch_monitoring-logging.xml9(para)
+msgid ""
+"A lot of activity goes on within a cloud environment. It is a mix of "
+"hardware, operating systems, virtual machine managers, the OpenStack "
+"services, cloud-user activity such as creating instances and attaching "
+"storage, the network underlying the whole, and finally end-users using the "
+"applications running on the various instances."
+msgstr "多数の活動がクラウド環境内で行われます。これはハードウェア、オペレーティングシステム、仮想マシンマネージャ、OpenStackサービス群、インスタンス作成やストレージアタッチのようなクラウド⇔ユーザ活動、全体の土台であるネットワーク、最後に様々なインスタンス上で実行されるアプリケーションを使用するエンドユーザのミックスです。"
+
+#: ./security-guide/ch_monitoring-logging.xml16(para)
+msgid ""
+"The basics of logging: configuration, setting log level, location of the log"
+" files, and how to use and customize logs, as well as how to do centralized "
+"collections of logs is well covered in the <link "
+"href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations "
+"Guide</citetitle></link>."
+msgstr "ロギングの基本: ログを集中収集する方法と同様、設定、ログレベル設定、ログファイルの位置、ログの使用とカスタマイズ方法は、<link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link> で充分にカバーされています。"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -1856,7 +1811,7 @@ msgid "sVirt SELinux Boolean"
 msgstr "sVirt SELinux ブーリアン"
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml399(emphasis)
-#: ./security-guide/section_hypervisor-selection.xml491(td)
+#: ./security-guide/section_hypervisor-selection.xml482(td)
 msgid "Description"
 msgstr "記述"
 
@@ -2007,7 +1962,7 @@ msgstr "ユーザ用のデータ暗号化をする機会は現存します。"
 
 #: ./security-guide/section_data-encryption.xml15(para)
 #: ./security-guide/section_data-encryption.xml25(title)
-#: ./security-guide/section_data-privacy-concerns.xml31(para)
+#: ./security-guide/section_data-privacy-concerns.xml15(para)
 msgid "Object Storage objects"
 msgstr "Object Storage オブジェクト"
 
@@ -2360,6 +2315,15 @@ msgstr "さらにボブは、メッセージサーバーと通信できるエン
 #: ./security-guide/ch_tenant-data.xml7(title)
 msgid "Tenant data privacy"
 msgstr "テナントデータのプライバシー"
+
+#: ./security-guide/ch_tenant-data.xml9(para)
+msgid ""
+"OpenStack is designed to support multitenancy and those tenants will most "
+"probably have different data requirements. As a cloud builder and operator "
+"you need to ensure your OpenStack environment can address various data "
+"privacy concerns and regulations. In this chapter we will address data "
+"residency and disposal as it pertains to OpenStack implementations."
+msgstr ""
 
 #: ./security-guide/section_api-endpoint-configuration-recommendations.xml8(title)
 msgid "API endpoint configuration recommendations"
@@ -6829,6 +6793,21 @@ msgstr ""
 msgid "Hypervisor and virtualization layer"
 msgstr ""
 
+#: ./security-guide/ch_hypervisor.xml9(para)
+msgid ""
+"Virtualization can provide flexibility, improved resource utilization, "
+"faster provisioning, and other benefits that enable cloud computing. The "
+"virtualization stack can also provide isolation between guest virtual "
+"machines, however, appropriate security measures must be considered to "
+"reduce the risks associated with hypervisor breakout attacks."
+msgstr ""
+
+#: ./security-guide/ch_hypervisor.xml17(para)
+msgid ""
+"This chapter discusses the hypervisor selection process, hardening the "
+"virtualization layer, and how to improve instance isolation."
+msgstr ""
+
 #: ./security-guide/ch_case-studies-identity-management.xml8(title)
 msgid "Case studies: Identity management"
 msgstr "ケーススタディ: ID 管理"
@@ -6903,27 +6882,11 @@ msgstr "ボブはその成熟度とセキュリティ機能から仮想コンソ
 msgid "Hypervisor selection"
 msgstr "ハイパーバイザーの選択"
 
-#: ./security-guide/section_hypervisor-selection.xml13(para)
-msgid ""
-"Virtualization can provide flexibility, improved resource utilization, "
-"faster provisioning, and other benefits that enable cloud computing. The "
-"virtualization stack can also provide isolation between guest virtual "
-"machines, however, appropriate security measures must be considered to "
-"reduce the risks associated with hypervisor breakout attacks."
-msgstr ""
-
-#: ./security-guide/section_hypervisor-selection.xml19(para)
-msgid ""
-"This chapter discusses the hypervisor selection process. The chapters that "
-"follow provide foundational information needed for securing a virtualization"
-" stack."
-msgstr "本章は、ハイパーバイザーの選択について説明します。さらに以降の章は、仮想スタックを安全に保つために必要な基礎情報を説明します。"
-
-#: ./security-guide/section_hypervisor-selection.xml23(title)
+#: ./security-guide/section_hypervisor-selection.xml14(title)
 msgid "Hypervisors in OpenStack"
 msgstr "OpenStack におけるハイパーバイザー"
 
-#: ./security-guide/section_hypervisor-selection.xml24(para)
+#: ./security-guide/section_hypervisor-selection.xml15(para)
 msgid ""
 "Whether OpenStack is deployed within private data centers or as a public "
 "cloud service, the underlying virtualization technology provides enterprise-"
@@ -6938,7 +6901,7 @@ msgid ""
 "holds true across commercial, government, and military communities."
 msgstr "OpenStack がプライベートデータセンターに導入されているか、パブリッククラウドサービスとして導入されているかによらず、基礎となる仮想化技術はスケーラビリティ、リソース効率、稼働時間においてエンタープライズレベルの能力を提供します。そのような高レベルな利点は OpenStack がサポートする多くのハイパーバイザー技術で一般的に利用可能である一方、各ハイパーバイザーのセキュリティアーキテクチャーや機能に顕著な違いがあります。とくに、伸縮可能な OpenStack 環境に特有であるセキュリティ脅威ベクターを考慮するときです。アプリケーションが単一の IaaS プラットフォームの中に統合されるので、ハイパーバイザーレベルでのインスタンス分離が最も重要になってきます。セキュアな分離性に関する要件は、企業、政府、軍事関連のコミュニティに渡り、当てはまります。"
 
-#: ./security-guide/section_hypervisor-selection.xml38(para)
+#: ./security-guide/section_hypervisor-selection.xml29(para)
 msgid ""
 "Within the OpenStack framework, you can choose among many hypervisor "
 "platforms and corresponding OpenStack plug-ins to optimize your cloud "
@@ -6951,69 +6914,69 @@ msgid ""
 "Technologies</emphasis>\"."
 msgstr "OpenStack のフレームワークの中で、クラウド環境を最適化するために、いくつものハイパーバイザーおよび対応する OpenStack プラグインから選択できます。このガイドの観点では、ハイパーバイザーはセキュリティに必須となる機能セットに関連するため、ハイパーバイザーの選択における考慮事項について注目します。しかしながら、これらの考慮事項は特定のハイパーバイザーの得失について徹底的に調査したことを意味するわけではありません。NIST は Special Publication 800-125, \"<emphasis>Guide to Security for Full Virtualization Technologies</emphasis>\" でさらなるガイドラインを提供しています。"
 
-#: ./security-guide/section_hypervisor-selection.xml50(title)
+#: ./security-guide/section_hypervisor-selection.xml41(title)
 msgid "Selection criteria"
 msgstr "選択基準"
 
-#: ./security-guide/section_hypervisor-selection.xml51(para)
+#: ./security-guide/section_hypervisor-selection.xml42(para)
 msgid ""
 "As part of your hypervisor selection process, you must consider a number of "
 "important factors to help increase your security posture. Specifically, you "
 "must become familiar with these areas:"
 msgstr "ハイパーバイザーの選択において、セキュリティを保証するために考慮すべき重要な要因がいくつかあります。特に下記の面に注目します。"
 
-#: ./security-guide/section_hypervisor-selection.xml57(para)
-#: ./security-guide/section_hypervisor-selection.xml92(title)
+#: ./security-guide/section_hypervisor-selection.xml48(para)
+#: ./security-guide/section_hypervisor-selection.xml83(title)
 msgid "Team expertise"
 msgstr "チーム習熟度"
 
-#: ./security-guide/section_hypervisor-selection.xml60(para)
-#: ./security-guide/section_hypervisor-selection.xml105(title)
+#: ./security-guide/section_hypervisor-selection.xml51(para)
+#: ./security-guide/section_hypervisor-selection.xml96(title)
 msgid "Product or project maturity"
 msgstr "製品やプロジェクトの成熟度"
 
-#: ./security-guide/section_hypervisor-selection.xml63(para)
-#: ./security-guide/section_hypervisor-selection.xml155(title)
+#: ./security-guide/section_hypervisor-selection.xml54(para)
+#: ./security-guide/section_hypervisor-selection.xml146(title)
 msgid "Common criteria"
 msgstr "コモンクライテリア (Common Criteria)"
 
-#: ./security-guide/section_hypervisor-selection.xml66(para)
-#: ./security-guide/section_hypervisor-selection.xml145(title)
+#: ./security-guide/section_hypervisor-selection.xml57(para)
+#: ./security-guide/section_hypervisor-selection.xml136(title)
 msgid "Certifications and attestations"
 msgstr "証明書"
 
-#: ./security-guide/section_hypervisor-selection.xml69(para)
-#: ./security-guide/section_hypervisor-selection.xml472(title)
+#: ./security-guide/section_hypervisor-selection.xml60(para)
+#: ./security-guide/section_hypervisor-selection.xml463(title)
 msgid "Hardware concerns"
 msgstr "ハードウェア関連"
 
-#: ./security-guide/section_hypervisor-selection.xml72(para)
-#: ./security-guide/section_hypervisor-selection.xml527(title)
+#: ./security-guide/section_hypervisor-selection.xml63(para)
+#: ./security-guide/section_hypervisor-selection.xml518(title)
 msgid "Hypervisor vs. baremetal"
 msgstr "ハードウェア対ベアメタル"
 
-#: ./security-guide/section_hypervisor-selection.xml75(para)
-#: ./security-guide/section_hypervisor-selection.xml603(title)
+#: ./security-guide/section_hypervisor-selection.xml66(para)
+#: ./security-guide/section_hypervisor-selection.xml594(title)
 msgid "Additional security features"
 msgstr "追加のセキュリティ機能"
 
-#: ./security-guide/section_hypervisor-selection.xml78(para)
+#: ./security-guide/section_hypervisor-selection.xml69(para)
 msgid ""
 "Additionally, the following security-related criteria are highly encouraged "
 "to be evaluated when selecting a hypervisor for OpenStack deployments:"
 msgstr "加えて、OpenStack 環境のハイパーバイザーを選択する際に、以下のセキュリティ関連の認証を評価することが推奨されます。"
 
-#: ./security-guide/section_hypervisor-selection.xml83(para)
+#: ./security-guide/section_hypervisor-selection.xml74(para)
 msgid ""
 "Has the hypervisor undergone Common Criteria certification? If so, to what "
 "levels?"
 msgstr "ハイパーバイザーはCommon Criteria認定を取得していますか？取得している場合はどのレベルですか？"
 
-#: ./security-guide/section_hypervisor-selection.xml87(para)
+#: ./security-guide/section_hypervisor-selection.xml78(para)
 msgid "Is the underlying cryptography certified by a third-party?"
 msgstr "採用している暗号化技術は第三者によって認定されていますか？"
 
-#: ./security-guide/section_hypervisor-selection.xml93(para)
+#: ./security-guide/section_hypervisor-selection.xml84(para)
 msgid ""
 "Most likely, the most important aspect in hypervisor selection is the "
 "expertise of your staff in managing and maintaining a particular hypervisor "
@@ -7025,30 +6988,30 @@ msgid ""
 "unavailable."
 msgstr "多分、ハイパーバイザー選択における一番重要な観点はある特定のハイパーバイザープラットフォームの管理と保守におけるあなたのスタッフのノウハウです。あなたのチームが与えられた製品、その設定、クセに慣れていればいるほど、設定ミスは少なくなります。加えて、あなたのスタッフが与えられたハイパーバイザーについて組織を横断してノウハウを広めていけば、あなたのシステムの可用性は向上し、職務分掌が可能になり、チームメンバーが対応できない場合での問題を軽減します。"
 
-#: ./security-guide/section_hypervisor-selection.xml106(para)
+#: ./security-guide/section_hypervisor-selection.xml97(para)
 msgid ""
 "The maturity of a given hypervisor product or project is critical to your "
 "security posture as well. Product maturity has a number of effects once you "
 "have deployed your cloud:"
 msgstr "ハイパーバイザー製品またはプロジェクトの成熟度もセキュリティ上重要です。製品の成熟度はクラウドを配備してから大きな影響が現れます。"
 
-#: ./security-guide/section_hypervisor-selection.xml112(para)
+#: ./security-guide/section_hypervisor-selection.xml103(para)
 msgid "Availability of expertise"
 msgstr "ノウハウの入手先"
 
-#: ./security-guide/section_hypervisor-selection.xml115(para)
+#: ./security-guide/section_hypervisor-selection.xml106(para)
 msgid "Active developer and user communities"
 msgstr "活発な開発者とユーザーのコミュニティ"
 
-#: ./security-guide/section_hypervisor-selection.xml118(para)
+#: ./security-guide/section_hypervisor-selection.xml109(para)
 msgid "Timeliness and availability of updates"
 msgstr "タイムラインとアップデートの入手先"
 
-#: ./security-guide/section_hypervisor-selection.xml121(para)
+#: ./security-guide/section_hypervisor-selection.xml112(para)
 msgid "Incidence response"
 msgstr "インシデントレスポンス"
 
-#: ./security-guide/section_hypervisor-selection.xml124(para)
+#: ./security-guide/section_hypervisor-selection.xml115(para)
 msgid ""
 "One of the biggest indicators of a hypervisor's maturity is the size and "
 "vibrancy of the community that surrounds it. As this concerns security, the "
@@ -7058,7 +7021,7 @@ msgid ""
 "architectures and best practices."
 msgstr "ハイパーバイザーの完成度の最大の指標の１つに、それを取り巻くコミュニティのサイズと活気があります。これはセキュリティに関するので、コミュニティの質はあなたが追加のクラウドオペレーターを必要とする、利用可能なノウハウに影響します。これはまた、ハイパーバイザーがいかに広く開発されているかの印でもあり、同様に、リファレンスアーキテクチャやベストプラクティスの戦闘準備につながるのです。"
 
-#: ./security-guide/section_hypervisor-selection.xml131(para)
+#: ./security-guide/section_hypervisor-selection.xml122(para)
 msgid ""
 "Further, the quality of community, as it surrounds an open source hypervisor"
 " like KVM or Xen, has a direct impact on the timeliness of bug fixes and "
@@ -7072,7 +7035,7 @@ msgid ""
 "hypervisor."
 msgstr "さらに、コミュニティが KVM や Xen のようなオープンソースのハイパーバイザーを取り巻くので、その質はバグ修正やセキュリティ更新の適時性に直接的な影響があります。商用ハイパーバイザーとオープンソースのものを調査するとき、リリース間隔やサポートサイクルだけではなく、バグやセキュリティ問題のアナウンスから、パッチや対応までの時間間隔を調査する必要があります。最後に、OpenStack Compute のサポート能力は、お使いのハイパーバイザーにより異なります。ハイパーバイザーによりサポートされる OpenStack Compute の機能は、<link href=\"https://wiki.openstack.org/wiki/HypervisorSupportMatrix\">OpenStack Hypervisor Support Matrix</link> を参照してください。"
 
-#: ./security-guide/section_hypervisor-selection.xml146(para)
+#: ./security-guide/section_hypervisor-selection.xml137(para)
 msgid ""
 "One additional consideration when selecting a hypervisor is the availability"
 " of various formal certifications and attestations. While they may not be "
@@ -7081,7 +7044,7 @@ msgid ""
 "of the testing a particular hypervisor platform has been subjected to."
 msgstr "ハイパーバイザーを選択する際にもう１つ考慮すべき点は、様々な公式の認証や証明書が利用可能かという事です。あなたの特定の組織の要件ではないかも知れませんが、これらの認証や証明書は、成熟度、商利用可能、特定のハイパーバイザーが目標としてきたテストの徹底さを物語ります。"
 
-#: ./security-guide/section_hypervisor-selection.xml156(para)
+#: ./security-guide/section_hypervisor-selection.xml147(para)
 msgid ""
 "Common Criteria is an internationally standardized software evaluation "
 "process, used by governments and commercial companies to validate software "
@@ -7093,25 +7056,25 @@ msgid ""
 "have."
 msgstr "共通の条件は国際的に標準化されたソフトウェア評価プロセスです。これは、宣伝目的でソフトウェア技術の実行を検証する為に政府や企業が使用します。政府部門では、NSTISSP No. 11 のみ政府機関にコモンクライテリア認証（2002年7月に登場したポリシー）を受けたソフトウェアの調達権限を与えます。特に、Opentack はコモンクライテリア認証を受けておらず、多くの入手可能なハイパーバイザーは受けている事に注意すべきでしょう。"
 
-#: ./security-guide/section_hypervisor-selection.xml166(para)
+#: ./security-guide/section_hypervisor-selection.xml157(para)
 msgid ""
 "In addition to validating a technologies capabilities, the Common Criteria "
 "process evaluates <emphasis>how</emphasis> technologies are developed."
 msgstr "Common Criteria のプロセスは、技術的な機能の評価に加えて、技術が<emphasis>どのように</emphasis>開発されているのかを評価します。"
 
-#: ./security-guide/section_hypervisor-selection.xml171(para)
+#: ./security-guide/section_hypervisor-selection.xml162(para)
 msgid "How is source code management performed?"
 msgstr "どのようにしてソースコード管理が行われるのか？"
 
-#: ./security-guide/section_hypervisor-selection.xml174(para)
+#: ./security-guide/section_hypervisor-selection.xml165(para)
 msgid "How are users granted access to build systems?"
 msgstr "どのようにしてユーザがビルドシステムへのアクセスを許可されるのか？"
 
-#: ./security-guide/section_hypervisor-selection.xml177(para)
+#: ./security-guide/section_hypervisor-selection.xml168(para)
 msgid "Is the technology cryptographically signed before distribution?"
 msgstr "技術は配布前に暗号署名されるのか？"
 
-#: ./security-guide/section_hypervisor-selection.xml181(para)
+#: ./security-guide/section_hypervisor-selection.xml172(para)
 msgid ""
 "The KVM hypervisor has been Common Criteria certified through the U.S. "
 "Government and commercial distributions, which have been validated to "
@@ -7120,7 +7083,7 @@ msgid ""
 " to virtual machine isolation, KVM has been Common Criteria certified to"
 msgstr "KVM ハイパーバイザーはアメリカ政府から Common Criteria 認証された商用ディストリビューションです。インスタンス分離を強制するための基礎的な技術を提供し、仮想マシンの実行環境を分離できることが検証されました。仮想マシンの分離に加えて、KVM は次のとおり Common Criteria 認証されています。"
 
-#: ./security-guide/section_hypervisor-selection.xml189(para)
+#: ./security-guide/section_hypervisor-selection.xml180(para)
 msgid ""
 "\"<emphasis>provide system-inherent separation mechanisms to the resources "
 "of virtual machines. This separation ensures that large software component "
@@ -7131,7 +7094,7 @@ msgid ""
 "category settings transparently to the administrator</emphasis>\""
 msgstr "\"<emphasis>provide system-inherent separation mechanisms to the resources of virtual machines. This separation ensures that large software component used for virtualizing and simulating devices executing for each virtual machine cannot interfere with each other. Using the SELinux multi-category mechanism, the virtualization and simulation software instances are isolated. The virtual machine management framework configures SELinux multi-category settings transparently to the administrator</emphasis>\" (システム固有の分離機構を仮想マシンのリソースに提供する。この分離により、各仮想マシン用に実行される仮想および擬似デバイスに対して使用される大規模なソフトウェアコンポーネントが、お互いに干渉しないことを保証する。仮想マシンの管理フレームワークは、管理者に対して SELinux のマルチカテゴリ設定を透過的に設定する。)"
 
-#: ./security-guide/section_hypervisor-selection.xml200(para)
+#: ./security-guide/section_hypervisor-selection.xml191(para)
 msgid ""
 "While many hypervisor vendors, such as Red Hat, Microsoft, and VMware have "
 "achieved Common Criteria Certification their underlying certified feature "
@@ -7139,22 +7102,22 @@ msgid ""
 "minimally satisfy the following requirements:"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml212(para)
+#: ./security-guide/section_hypervisor-selection.xml203(para)
 msgid "Identification and Authentication"
 msgstr "IDと認証"
 
-#: ./security-guide/section_hypervisor-selection.xml213(para)
+#: ./security-guide/section_hypervisor-selection.xml204(para)
 msgid ""
 "Identification and authentication using pluggable authentication modules "
 "(PAM) based upon user passwords. The quality of the passwords used can be "
 "enforced through configuration options."
 msgstr "pluggable authentication modules (PAM) を使用した識別と認証はユーザーパスワードに基づいています。使用されるパスワードの質は設定オプションにより強制できます。"
 
-#: ./security-guide/section_hypervisor-selection.xml219(para)
+#: ./security-guide/section_hypervisor-selection.xml210(para)
 msgid "Audit"
 msgstr "監査"
 
-#: ./security-guide/section_hypervisor-selection.xml220(para)
+#: ./security-guide/section_hypervisor-selection.xml211(para)
 msgid ""
 "The system provides the capability to audit a large number of events "
 "including individual system calls as well as events generated by trusted "
@@ -7162,7 +7125,7 @@ msgid ""
 "system provides a program for the purpose of searching the audit records."
 msgstr "システムは、個々のシステムコールを含む大多数のイベントおよび信頼されたプロセスにより生成されたイベントを監査する機能を提供します。監査データは通常のファイルに ASCII 形式で収集されます。システムは、監査レコードを検索するためのプログラムを提供します。"
 
-#: ./security-guide/section_hypervisor-selection.xml226(para)
+#: ./security-guide/section_hypervisor-selection.xml217(para)
 msgid ""
 "The system administrator can define a rule base to restrict auditing to the "
 "events they are interested in. This includes the ability to restrict "
@@ -7170,15 +7133,15 @@ msgid ""
 "combination of all of this."
 msgstr "システム管理者は、関心のあるイベントに監査を制限するために、ルールベースを定義できます。これには、特定のイベント、特定のユーザー、特定のオブジェクトやこれらすべての組み合わせに監査を制限する機能が含まれます。"
 
-#: ./security-guide/section_hypervisor-selection.xml231(para)
+#: ./security-guide/section_hypervisor-selection.xml222(para)
 msgid "Audit records can be transferred to a remote audit daemon."
 msgstr "監査レコードはリモート監査デーモンに転送できます。"
 
-#: ./security-guide/section_hypervisor-selection.xml235(para)
+#: ./security-guide/section_hypervisor-selection.xml226(para)
 msgid "Discretionary Access Control"
 msgstr "任意アクセス制御"
 
-#: ./security-guide/section_hypervisor-selection.xml237(para)
+#: ./security-guide/section_hypervisor-selection.xml228(para)
 msgid ""
 "Discretionary Access Control (<glossterm>DAC</glossterm>) restricts access "
 "to file system objects based on <glossterm baseform=\"access control "
@@ -7187,18 +7150,18 @@ msgid ""
 "protect IPC objects from unauthorized access."
 msgstr "任意アクセス制御 (<glossterm>DAC</glossterm>) は、ユーザー、グループ、その他に対する標準 UNIX パーミッションを含む<glossterm baseform=\"access control list\">アクセス制御リスト</glossterm> (ACL) に基づいてファイルシステムオブジェクトへのアクセスを制限します。アクセス制御機構は権限のないアクセスから IPC オブジェクトも保護します。"
 
-#: ./security-guide/section_hypervisor-selection.xml245(para)
+#: ./security-guide/section_hypervisor-selection.xml236(para)
 msgid ""
 "The system includes the ext4 file system, which supports POSIX ACLs. This "
 "allows defining access rights to files within this type of file system down "
 "to the granularity of a single user."
 msgstr "システムは POSIX ACL をサポートする ext4 ファイルシステムを含みます。この種類のファイルシステムにあるファイルにユーザー単位でアクセス権を定義できます。"
 
-#: ./security-guide/section_hypervisor-selection.xml252(para)
+#: ./security-guide/section_hypervisor-selection.xml243(para)
 msgid "Mandatory Access Control"
 msgstr "強制アクセス制御"
 
-#: ./security-guide/section_hypervisor-selection.xml253(para)
+#: ./security-guide/section_hypervisor-selection.xml244(para)
 msgid ""
 "Mandatory Access Control (MAC) restricts access to objects based on labels "
 "assigned to subjects and objects. Sensitivity labels are automatically "
@@ -7207,7 +7170,7 @@ msgid ""
 "\">Bell-LaPadula access control model</glossterm>."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml259(para)
+#: ./security-guide/section_hypervisor-selection.xml250(para)
 msgid ""
 "SELinux categories are attached to virtual machines and its resources. The "
 "access control policy enforced using these categories grant virtual machines"
@@ -7215,37 +7178,37 @@ msgid ""
 "the category of the accessed resource."
 msgstr "SELinux カテゴリが仮想マシンとそのリソースに付けられます。仮想マシンのカテゴリがアクセスされるリソースのカテゴリと同じ場合、これらのカテゴリを使用して強制されたアクセス制御ポリシーは、仮想マシンのそのリソースへのアクセスが許可されます。"
 
-#: ./security-guide/section_hypervisor-selection.xml265(para)
+#: ./security-guide/section_hypervisor-selection.xml256(para)
 msgid ""
 "The TOE implements non-hierarchical categories to control access to virtual "
 "machines."
 msgstr "TOE は、仮想マシンへのアクセスを制御するために、非階層的なカテゴリを実装します。"
 
-#: ./security-guide/section_hypervisor-selection.xml270(para)
+#: ./security-guide/section_hypervisor-selection.xml261(para)
 msgid "Role-Based Access Control"
 msgstr "ロールベースアクセス制御"
 
-#: ./security-guide/section_hypervisor-selection.xml271(para)
+#: ./security-guide/section_hypervisor-selection.xml262(para)
 msgid ""
 "Role-based access control (RBAC) allows separation of roles to eliminate the"
 " need for an all-powerful system administrator."
 msgstr "ロールベースアクセス制御 (RBAC) は、全権を持つシステム管理者の必要性を減らすために、役割を分割できるようにします。"
 
-#: ./security-guide/section_hypervisor-selection.xml276(para)
+#: ./security-guide/section_hypervisor-selection.xml267(para)
 msgid "Object Reuse"
 msgstr "オブジェクト再利用"
 
-#: ./security-guide/section_hypervisor-selection.xml277(para)
+#: ./security-guide/section_hypervisor-selection.xml268(para)
 msgid ""
 "File system objects and memory and IPC objects are cleared before they can "
 "be reused by a process belonging to a different user."
 msgstr "ファイルシステムのオブジェクト、メモリ、IPC オブジェクトは、他のユーザーに属するプロセスにより再利用される前に、クリアされます。"
 
-#: ./security-guide/section_hypervisor-selection.xml282(para)
+#: ./security-guide/section_hypervisor-selection.xml273(para)
 msgid "Security Management"
 msgstr "セキュリティ管理"
 
-#: ./security-guide/section_hypervisor-selection.xml283(para)
+#: ./security-guide/section_hypervisor-selection.xml274(para)
 msgid ""
 "The management of the security critical parameters of the system is "
 "performed by administrative users. A set of commands that require root "
@@ -7255,32 +7218,32 @@ msgid ""
 "unauthorized access by users that are not administrative users."
 msgstr "セキュリティ的に重要なシステムパラメーターの管理が、管理ユーザーにより実行されます。root 権限 (または RBAC 使用時の特定のロール) が必要となる一組のコマンドが、システム管理のために使用されます。セキュリティ関連のパラメーターは特定のファイルに保存されます。これらは、システムのアクセス制御機構により、管理ユーザー以外の権限のないアクセスに対して保護されます。"
 
-#: ./security-guide/section_hypervisor-selection.xml294(para)
+#: ./security-guide/section_hypervisor-selection.xml285(para)
 msgid "Secure Communication"
 msgstr "セキュア通信"
 
-#: ./security-guide/section_hypervisor-selection.xml295(para)
+#: ./security-guide/section_hypervisor-selection.xml286(para)
 msgid ""
 "The system supports the definition of trusted channels using SSH. Password "
 "based authentication is supported. Only a restricted number of cipher suites"
 " are supported for those protocols in the evaluated configuration."
 msgstr "システムは SSH を使用する信頼チャネルの定義をサポートします。パスワードによる認証がサポートされます。少しの暗号スイートのみが、評価された設定でそれらのプロトコルのためにサポートされます。"
 
-#: ./security-guide/section_hypervisor-selection.xml302(para)
+#: ./security-guide/section_hypervisor-selection.xml293(para)
 msgid "Storage Encryption"
 msgstr "ストレージ暗号化"
 
-#: ./security-guide/section_hypervisor-selection.xml303(para)
+#: ./security-guide/section_hypervisor-selection.xml294(para)
 msgid ""
 "The system supports encrypted block devices to provide storage "
 "confidentiality via dm_crypt."
 msgstr "システムは dm_crypt 経由でストレージの機密性を提供するために暗号化ブロックデバイスを提供します。"
 
-#: ./security-guide/section_hypervisor-selection.xml308(para)
+#: ./security-guide/section_hypervisor-selection.xml299(para)
 msgid "TSF Protection"
 msgstr "TSF 保護"
 
-#: ./security-guide/section_hypervisor-selection.xml309(para)
+#: ./security-guide/section_hypervisor-selection.xml300(para)
 msgid ""
 "While in operation, the kernel software and data are protected by the "
 "hardware memory protection mechanisms. The memory and process management "
@@ -7288,7 +7251,7 @@ msgid ""
 "or storage belonging to other processes."
 msgstr "動作中、カーネルソフトウェアとデータがハードウェアメモリ保護機構により保護されます。カーネルのメモリとプロセスの管理コンポーネントにより、ユーザープロセスがカーネルストレージや他のプロセスのストレージにアクセスできないことが保証されます。"
 
-#: ./security-guide/section_hypervisor-selection.xml314(para)
+#: ./security-guide/section_hypervisor-selection.xml305(para)
 msgid ""
 "Non-kernel TSF software and data are protected by DAC and process isolation "
 "mechanisms. In the evaluated configuration, the reserved user ID root owns "
@@ -7298,7 +7261,7 @@ msgid ""
 "permissions."
 msgstr "非カーネル TSF ソフトウェアとデータが DAC とプロセス分離機構により保護されます。評価済みの設定で、予約済みユーザー ID root は TSF 設定を定義するディレクトリとファイルを所有します。一般的に、設定ファイルやバッチジョブのキューのような、内部 TSF データを含むファイルとディレクトリも、DAC パーミッションにより読み取りから保護されます。"
 
-#: ./security-guide/section_hypervisor-selection.xml322(para)
+#: ./security-guide/section_hypervisor-selection.xml313(para)
 msgid ""
 "The system and the hardware and firmware components are required to be "
 "physically protected from unauthorized access. The system kernel mediates "
@@ -7306,17 +7269,17 @@ msgid ""
 " CPU instruction functions."
 msgstr "システム、ハードウェア、ファームウェアのコンポーネントは、権限のないアクセスから物理的に保護される必要があります。システムカーネルは、プログラムから利用できる CPU 命令ファンクション以外に、ハードウェア機構自身へのすべてのアクセスを調停します。"
 
-#: ./security-guide/section_hypervisor-selection.xml327(para)
+#: ./security-guide/section_hypervisor-selection.xml318(para)
 msgid ""
 "In addition, mechanisms for protection against stack overflow attacks are "
 "provided."
 msgstr "さらに、スタックオーバーフロー攻撃に対する保護機構が提供されます。"
 
-#: ./security-guide/section_hypervisor-selection.xml335(title)
+#: ./security-guide/section_hypervisor-selection.xml326(title)
 msgid "Cryptography standards"
 msgstr "暗号標準"
 
-#: ./security-guide/section_hypervisor-selection.xml336(para)
+#: ./security-guide/section_hypervisor-selection.xml327(para)
 msgid ""
 "Several cryptography algorithms are available within OpenStack for "
 "identification and authorization, data transfer and protection of data at "
@@ -7324,155 +7287,155 @@ msgid ""
 "and implementation standards to ensure the virtualization layer supports:"
 msgstr "いくつかの暗号アルゴリズムは、認証と識別、データ転送、保存データの保護のために、OpenStack の中で利用可能です。ハイパーバイザーの選択時、以下が推奨アルゴリズムで、仮想化層のサポートを確実にするための実装標準です。"
 
-#: ./security-guide/section_hypervisor-selection.xml351(th)
+#: ./security-guide/section_hypervisor-selection.xml342(th)
 msgid "Algorithm"
 msgstr "アルゴリズム"
 
-#: ./security-guide/section_hypervisor-selection.xml352(th)
+#: ./security-guide/section_hypervisor-selection.xml343(th)
 msgid "Key length"
 msgstr "鍵の長さ"
 
-#: ./security-guide/section_hypervisor-selection.xml353(th)
+#: ./security-guide/section_hypervisor-selection.xml344(th)
 msgid "Intended purpose"
 msgstr "想定用途"
 
-#: ./security-guide/section_hypervisor-selection.xml354(th)
+#: ./security-guide/section_hypervisor-selection.xml345(th)
 msgid "Security function"
 msgstr "セキュリティ機能"
 
-#: ./security-guide/section_hypervisor-selection.xml355(th)
+#: ./security-guide/section_hypervisor-selection.xml346(th)
 msgid "Implementation standard"
 msgstr "実装標準"
 
-#: ./security-guide/section_hypervisor-selection.xml360(td)
+#: ./security-guide/section_hypervisor-selection.xml351(td)
 msgid "AES"
 msgstr "AES"
 
-#: ./security-guide/section_hypervisor-selection.xml361(td)
-#: ./security-guide/section_hypervisor-selection.xml400(td)
+#: ./security-guide/section_hypervisor-selection.xml352(td)
+#: ./security-guide/section_hypervisor-selection.xml391(td)
 msgid "128, 192, or 256 bits"
 msgstr "128、196、256 ビット"
 
-#: ./security-guide/section_hypervisor-selection.xml362(td)
-#: ./security-guide/section_hypervisor-selection.xml372(td)
+#: ./security-guide/section_hypervisor-selection.xml353(td)
+#: ./security-guide/section_hypervisor-selection.xml363(td)
+#: ./security-guide/section_hypervisor-selection.xml392(td)
 #: ./security-guide/section_hypervisor-selection.xml401(td)
-#: ./security-guide/section_hypervisor-selection.xml410(td)
 msgid "Encryption / decryption"
 msgstr "暗号化 / 復号"
 
-#: ./security-guide/section_hypervisor-selection.xml363(td)
+#: ./security-guide/section_hypervisor-selection.xml354(td)
 msgid "Protected data transfer, protection for data at rest"
 msgstr "保護されたデータ転送、保存データの保護"
 
+#: ./security-guide/section_hypervisor-selection.xml358(link)
 #: ./security-guide/section_hypervisor-selection.xml367(link)
-#: ./security-guide/section_hypervisor-selection.xml376(link)
 msgid "RFC 4253"
 msgstr "RFC 4253"
 
-#: ./security-guide/section_hypervisor-selection.xml370(td)
+#: ./security-guide/section_hypervisor-selection.xml361(td)
 msgid "TDES"
 msgstr "TDES"
 
-#: ./security-guide/section_hypervisor-selection.xml371(td)
+#: ./security-guide/section_hypervisor-selection.xml362(td)
 msgid "168 bits"
 msgstr "168 ビット"
 
-#: ./security-guide/section_hypervisor-selection.xml373(td)
+#: ./security-guide/section_hypervisor-selection.xml364(td)
 msgid "Protected data transfer"
 msgstr "保護されたデータ転送"
 
-#: ./security-guide/section_hypervisor-selection.xml379(td)
+#: ./security-guide/section_hypervisor-selection.xml370(td)
 msgid "RSA"
 msgstr "RSA"
 
-#: ./security-guide/section_hypervisor-selection.xml380(td)
+#: ./security-guide/section_hypervisor-selection.xml371(td)
 msgid "1024, 2048, or 3072 bits"
 msgstr "1024、2048、3072 ビット"
 
-#: ./security-guide/section_hypervisor-selection.xml381(td)
-#: ./security-guide/section_hypervisor-selection.xml391(td)
+#: ./security-guide/section_hypervisor-selection.xml372(td)
+#: ./security-guide/section_hypervisor-selection.xml382(td)
 msgid "Authentication, key exchange"
 msgstr "認証、鍵交換"
 
-#: ./security-guide/section_hypervisor-selection.xml382(td)
-#: ./security-guide/section_hypervisor-selection.xml392(td)
+#: ./security-guide/section_hypervisor-selection.xml373(td)
+#: ./security-guide/section_hypervisor-selection.xml383(td)
 msgid "Identification and authentication, protected data transfer"
 msgstr "識別と認証、保護されたデータ転送"
 
-#: ./security-guide/section_hypervisor-selection.xml386(link)
-#: ./security-guide/section_hypervisor-selection.xml396(link)
+#: ./security-guide/section_hypervisor-selection.xml377(link)
+#: ./security-guide/section_hypervisor-selection.xml387(link)
 msgid "U.S. NIST FIPS PUB 186-3"
 msgstr "U.S. NIST FIPS PUB 186-3"
 
-#: ./security-guide/section_hypervisor-selection.xml389(td)
+#: ./security-guide/section_hypervisor-selection.xml380(td)
 msgid "DSA"
 msgstr "DSA"
 
-#: ./security-guide/section_hypervisor-selection.xml390(td)
+#: ./security-guide/section_hypervisor-selection.xml381(td)
 msgid "L=1024, N=160 bits"
 msgstr "L=1024、N=160 ビット"
 
-#: ./security-guide/section_hypervisor-selection.xml399(td)
+#: ./security-guide/section_hypervisor-selection.xml390(td)
 msgid "Serpent"
 msgstr "Serpent"
 
+#: ./security-guide/section_hypervisor-selection.xml393(td)
 #: ./security-guide/section_hypervisor-selection.xml402(td)
-#: ./security-guide/section_hypervisor-selection.xml411(td)
 msgid "Protection of data at rest"
 msgstr "保存データの保護"
 
-#: ./security-guide/section_hypervisor-selection.xml405(link)
+#: ./security-guide/section_hypervisor-selection.xml396(link)
 msgid "http://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf"
 msgstr "http://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf"
 
-#: ./security-guide/section_hypervisor-selection.xml408(td)
+#: ./security-guide/section_hypervisor-selection.xml399(td)
 msgid "Twofish"
 msgstr "Twofish"
 
-#: ./security-guide/section_hypervisor-selection.xml409(td)
+#: ./security-guide/section_hypervisor-selection.xml400(td)
 msgid "128, 192, or 256 bit"
 msgstr "128、196、256 ビット"
 
-#: ./security-guide/section_hypervisor-selection.xml414(link)
+#: ./security-guide/section_hypervisor-selection.xml405(link)
 msgid "http://www.schneier.com/paper-twofish-paper.html"
 msgstr "http://www.schneier.com/paper-twofish-paper.html"
 
-#: ./security-guide/section_hypervisor-selection.xml417(td)
+#: ./security-guide/section_hypervisor-selection.xml408(td)
 msgid "SHA-1"
 msgstr "SHA-1"
 
-#: ./security-guide/section_hypervisor-selection.xml418(td)
-#: ./security-guide/section_hypervisor-selection.xml428(td)
+#: ./security-guide/section_hypervisor-selection.xml409(td)
+#: ./security-guide/section_hypervisor-selection.xml419(td)
 msgid "-"
 msgstr "-"
 
-#: ./security-guide/section_hypervisor-selection.xml419(td)
-#: ./security-guide/section_hypervisor-selection.xml429(td)
+#: ./security-guide/section_hypervisor-selection.xml410(td)
+#: ./security-guide/section_hypervisor-selection.xml420(td)
 msgid "Message Digest"
 msgstr "メッセージダイジェスト"
 
-#: ./security-guide/section_hypervisor-selection.xml420(td)
+#: ./security-guide/section_hypervisor-selection.xml411(td)
 msgid "Protection of data at rest, protected data transfer"
 msgstr "保存データの保護、保護されたデータ転送"
 
-#: ./security-guide/section_hypervisor-selection.xml424(link)
-#: ./security-guide/section_hypervisor-selection.xml434(link)
+#: ./security-guide/section_hypervisor-selection.xml415(link)
+#: ./security-guide/section_hypervisor-selection.xml425(link)
 msgid "U.S. NIST FIPS PUB 180-3"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml427(td)
+#: ./security-guide/section_hypervisor-selection.xml418(td)
 msgid "SHA-2 (224, 256, 384, or 512 bits)"
 msgstr "SHA-2 (224、256、384、512 ビット)"
 
-#: ./security-guide/section_hypervisor-selection.xml430(td)
+#: ./security-guide/section_hypervisor-selection.xml421(td)
 msgid "Protection for data at rest, identification and authentication"
 msgstr "保存データの保護、識別と認証"
 
-#: ./security-guide/section_hypervisor-selection.xml439(title)
+#: ./security-guide/section_hypervisor-selection.xml430(title)
 msgid "FIPS 140-2"
 msgstr "FIPS 140-2"
 
-#: ./security-guide/section_hypervisor-selection.xml440(para)
+#: ./security-guide/section_hypervisor-selection.xml431(para)
 msgid ""
 "In the United States the National Institute of Science and Technology (NIST)"
 " certifies cryptographic algorithms through a process known the "
@@ -7481,7 +7444,7 @@ msgid ""
 "140-2), which ensures:"
 msgstr "アメリカでは、National Institute of Science and Technology (NIST) が Cryptographic Module Validation Program として知られるプロセスにより暗号アルゴリズムを認証します。NIST は、以下を保証する Federal Information Processing Standard 140-2 (FIPS 140-2) に適合するアルゴリズムを認証します。"
 
-#: ./security-guide/section_hypervisor-selection.xml447(emphasis)
+#: ./security-guide/section_hypervisor-selection.xml438(emphasis)
 msgid ""
 "Products validated as conforming to FIPS 140-2 are accepted by the Federal "
 "agencies of both countries [United States and Canada] for the protection of "
@@ -7491,7 +7454,7 @@ msgid ""
 "procuring equipment containing validated cryptographic modules."
 msgstr "FIPS 140-2 への適合性を検証された製品は、機密情報 (アメリカ) や指定情報 (カナダ) の保護のために、両国 (アメリカとカナダ) の連邦機関により受け入れられます。CMVP の目標は、検証済み暗号モジュールを含む物品調達で使用するために、検証済み暗号モジュール利用を推進することと、連邦機関へのセキュリティ評価基準を提供することです。"
 
-#: ./security-guide/section_hypervisor-selection.xml457(para)
+#: ./security-guide/section_hypervisor-selection.xml448(para)
 msgid ""
 "When evaluating base hypervisor technologies, consider if the hypervisor has"
 " been certified against FIPS 140-2. Not only is conformance against FIPS "
@@ -7504,7 +7467,7 @@ msgid ""
 "tests; design assurance; and mitigation of other attacks."
 msgstr "ハイパーバイザーの基礎技術の評価時、ハイパーバイザーが FIPS 140-2 に認証されているかどうかを考慮します。正式な認証は、指定された暗号アルゴリズムの実装が、アメリカ政府機関のポリシーごとに強制される FIPS 140-2 への適合性だけではなく、モジュール仕様、暗号モジュールのポートとインターフェース、ロール、サービス、認証、有限オートマトン、物理セキュリティ、運用環境、暗号鍵管理、EMI/EMC、自己テスト、設計保証、他の攻撃の緩和に対する適合性をレビューされることを意味します。"
 
-#: ./security-guide/section_hypervisor-selection.xml473(para)
+#: ./security-guide/section_hypervisor-selection.xml464(para)
 msgid ""
 "Further, when you evaluate a hypervisor platform, consider the "
 "supportability of the hardware on which the hypervisor will run. "
@@ -7516,65 +7479,65 @@ msgid ""
 "technologies are important from a security perspective."
 msgstr "さらに、ハイパーバイザープラットフォームの評価時、ハイパーバイザーを実行するハイパーバイザーを考慮すべきです。加えて、ハードウェアで利用可能な追加機能を評価します。また、それらの機能が OpenStack 環境の一部として選択したハイパーバイザーによりどのようにサポートされるかを考慮します。そのためにも、ハイパーバイザーはそれぞれ自身のハードウェア互換性リスト (HCL) を持つでしょう。互換性のあるハードウェアの選択時、まずどのハードウェア仮想化技術がセキュリティの観点から重要であるかを理解することが重要です。"
 
-#: ./security-guide/section_hypervisor-selection.xml492(td)
+#: ./security-guide/section_hypervisor-selection.xml483(td)
 msgid "Technology"
 msgstr "技術"
 
-#: ./security-guide/section_hypervisor-selection.xml493(td)
+#: ./security-guide/section_hypervisor-selection.xml484(td)
 msgid "Explanation"
 msgstr "説明"
 
-#: ./security-guide/section_hypervisor-selection.xml498(td)
+#: ./security-guide/section_hypervisor-selection.xml489(td)
 msgid "I/O MMU"
 msgstr "I/O MMU"
 
-#: ./security-guide/section_hypervisor-selection.xml499(td)
+#: ./security-guide/section_hypervisor-selection.xml490(td)
 msgid "VT-d / AMD-Vi"
 msgstr "VT-d / AMD-Vi"
 
-#: ./security-guide/section_hypervisor-selection.xml500(td)
+#: ./security-guide/section_hypervisor-selection.xml491(td)
 msgid "Required for protecting PCI-passthrough"
 msgstr "PCI パススルーの保護に必要です"
 
-#: ./security-guide/section_hypervisor-selection.xml504(td)
+#: ./security-guide/section_hypervisor-selection.xml495(td)
 msgid "Intel Trusted Execution Technology"
 msgstr "Intel Trusted Execution Technology"
 
-#: ./security-guide/section_hypervisor-selection.xml505(td)
+#: ./security-guide/section_hypervisor-selection.xml496(td)
 msgid "Intel TXT / SEM"
 msgstr "Intel TXT / SEM"
 
-#: ./security-guide/section_hypervisor-selection.xml506(td)
+#: ./security-guide/section_hypervisor-selection.xml497(td)
 msgid "Required for dynamic attestation services"
 msgstr "動的証明サービスに必要です"
 
-#: ./security-guide/section_hypervisor-selection.xml510(td)
+#: ./security-guide/section_hypervisor-selection.xml501(td)
 msgid ""
 "<anchor xml:id=\"PCI-SIG_I.2FO_virtualization_.28IOV.29\"/>PCI-SIG I/O "
 "virtualization"
 msgstr "<anchor xml:id=\"PCI-SIG_I.2FO_virtualization_.28IOV.29\"/>PCI-SIG I/O 仮想化"
 
-#: ./security-guide/section_hypervisor-selection.xml513(td)
+#: ./security-guide/section_hypervisor-selection.xml504(td)
 msgid "SR-IOV, MR-IOV, ATS"
 msgstr "SR-IOV, MR-IOV, ATS"
 
-#: ./security-guide/section_hypervisor-selection.xml514(td)
+#: ./security-guide/section_hypervisor-selection.xml505(td)
 msgid "Required to allow secure sharing of PCI Express devices"
 msgstr "PCI Express デバイスをセキュアに共有するために必要です"
 
-#: ./security-guide/section_hypervisor-selection.xml518(td)
+#: ./security-guide/section_hypervisor-selection.xml509(td)
 msgid "Network virtualization"
 msgstr "ネットワーク仮想化"
 
-#: ./security-guide/section_hypervisor-selection.xml519(td)
+#: ./security-guide/section_hypervisor-selection.xml510(td)
 msgid "VT-c"
 msgstr "VT-c"
 
-#: ./security-guide/section_hypervisor-selection.xml520(td)
+#: ./security-guide/section_hypervisor-selection.xml511(td)
 msgid "Improves performance of network I/O on hypervisors"
 msgstr "ハイパーバイザーにおけるネットワーク I/O の性能を改善します"
 
-#: ./security-guide/section_hypervisor-selection.xml528(para)
+#: ./security-guide/section_hypervisor-selection.xml519(para)
 msgid ""
 "It is important to recognize the difference between using LXC (Linux "
 "Containers) or baremetal systems vs using a hypervisor like KVM. "
@@ -7584,7 +7547,7 @@ msgid ""
 " the particular differences in regard to deployment of that environment."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml536(para)
+#: ./security-guide/section_hypervisor-selection.xml527(para)
 msgid ""
 "In particular, you must assure your end users that the node has been "
 "properly sanitized of their data prior to re-provisioning. Additionally, "
@@ -7592,30 +7555,30 @@ msgid ""
 "not been tampered or otherwise compromised."
 msgstr "とくに、ノードが再配備する前にデータを適切に無害化されることをエンドユーザーに保証する必要があります。加えて、ノードを再利用する前に、ハードウェアが汚染されていたり、侵入されたりしていないことを保証する必要があります。"
 
-#: ./security-guide/section_hypervisor-selection.xml542(para)
+#: ./security-guide/section_hypervisor-selection.xml533(para)
 msgid ""
 "While OpenStack has a baremetal project, a discussion of the particular "
 "security implications of running baremetal is beyond the scope of this book."
 msgstr "OpenStack はベアメタルのプロジェクトを持ちますが、ベアメタル実行の具体的なセキュリティ実装に関する議論は本書の範囲外です。"
 
-#: ./security-guide/section_hypervisor-selection.xml546(para)
+#: ./security-guide/section_hypervisor-selection.xml537(para)
 msgid ""
 "Finally, due to the time constraints around a book sprint, the team chose to"
 " use KVM as the hypervisor in our example implementations and architectures."
 msgstr "最後に、ブックスプリントの時間的制約のため、実装例とアーキテクチャ例にハイパーバイザーとして KVM を使用することにしました。"
 
-#: ./security-guide/section_hypervisor-selection.xml550(para)
+#: ./security-guide/section_hypervisor-selection.xml541(para)
 msgid ""
 "There is an OpenStack Security Note pertaining to the <link "
 "href=\"https://bugs.launchpad.net/ossn/+bug/1098582\">use of LXC in "
 "Compute</link>."
 msgstr "<link href=\"https://bugs.launchpad.net/ossn/+bug/1098582\">use of LXC in Compute</link> に関する OpenStack Security Note があります。"
 
-#: ./security-guide/section_hypervisor-selection.xml557(title)
+#: ./security-guide/section_hypervisor-selection.xml548(title)
 msgid "Hypervisor memory optimization"
 msgstr "ハイパーバイザーのメモリ最適化"
 
-#: ./security-guide/section_hypervisor-selection.xml558(para)
+#: ./security-guide/section_hypervisor-selection.xml549(para)
 msgid ""
 "Many hypervisors use memory optimization techniques to overcommit memory to "
 "guest virtual machines. This is a useful feature that allows you to deploy "
@@ -7625,7 +7588,7 @@ msgid ""
 "same memory."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml565(para)
+#: ./security-guide/section_hypervisor-selection.xml556(para)
 msgid ""
 "Typically this is achieved through Copy-On-Write (COW) mechanisms. These "
 "mechanisms have been shown to be vulnerable to side-channel attacks where "
@@ -7634,11 +7597,11 @@ msgid ""
 "or share the same levels of trust."
 msgstr "これは一般的に、Copy-On-Write (COW) 機構により実現されます。これらの機構は、ある仮想マシンが別の仮想マシンの状態に関する何かに影響する可能性がある、サイドチャネル攻撃に脆弱なため、必ずしもすべてのテナントが信頼できず、同じ信頼レベルを共有できないようなマルチテナント環境に適していません。"
 
-#: ./security-guide/section_hypervisor-selection.xml573(title)
+#: ./security-guide/section_hypervisor-selection.xml564(title)
 msgid "KVM Kernel Samepage Merging"
 msgstr "KVM Kernel Samepage Merging"
 
-#: ./security-guide/section_hypervisor-selection.xml574(para)
+#: ./security-guide/section_hypervisor-selection.xml565(para)
 msgid ""
 "Introduced into the Linux kernel in version 2.6.32, Kernel Samepage Merging "
 "(KSM) consolidates identical memory pages between Linux processes. As each "
@@ -7646,11 +7609,11 @@ msgid ""
 "to optimize memory use between VMs."
 msgstr "Linux カーネル 2.6.32 に導入された、Kernel Samepage Merging (KSM) は複数の Linux プロセスの同一メモリページを集約します。KVM ハイパーバイザーにある各ゲスト仮想マシンは、自身のプロセスで動作するので、KSM は仮想マシン間でメモリ使用量を最適化するために使用できます。"
 
-#: ./security-guide/section_hypervisor-selection.xml581(title)
+#: ./security-guide/section_hypervisor-selection.xml572(title)
 msgid "XEN transparent page sharing"
 msgstr "XEN transparent page sharing"
 
-#: ./security-guide/section_hypervisor-selection.xml582(para)
+#: ./security-guide/section_hypervisor-selection.xml573(para)
 msgid ""
 "XenServer 5.6 includes a memory overcommitment feature named Transparent "
 "Page Sharing (TPS). TPS scans memory in 4 KB chunks for any duplicates. When"
@@ -7658,11 +7621,11 @@ msgid ""
 " and records the reference of the second one."
 msgstr "XenServer 5.6 は、Transparent Page Sharing (TPS) という名前のメモリオーバーコミット機能を持ちます。TPS は4KB 単位でメモリの重複をスキャンします。検出時、Xen Virtual Machine Monitor (VMM) は重複のどちらかを破棄し、2 つ目の参照を記録します。"
 
-#: ./security-guide/section_hypervisor-selection.xml589(title)
+#: ./security-guide/section_hypervisor-selection.xml580(title)
 msgid "Security considerations for memory optimization"
 msgstr "メモリ最適化に関するセキュリティの課題"
 
-#: ./security-guide/section_hypervisor-selection.xml590(para)
+#: ./security-guide/section_hypervisor-selection.xml581(para)
 msgid ""
 "Traditionally, memory de-duplication systems are vulnerable to side channel "
 "attacks. Both KSM and TPS have demonstrated to be vulnerable to some form of"
@@ -7672,14 +7635,14 @@ msgid ""
 "access times on the attacker VM."
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml597(para)
+#: ./security-guide/section_hypervisor-selection.xml588(para)
 msgid ""
 "If a cloud deployment requires strong separation of tenants, as is the "
 "situation with public clouds and some private clouds, deployers should "
 "consider disabling TPS and KSM memory optimizations."
 msgstr "テナントを強く分離する必要があるクラウド環境の場合、つまりパブリッククラウドや特定のプライベートクラウドの場合、導入者は TPS や KSM メモリ最適化を無効化することを検討すべきです。"
 
-#: ./security-guide/section_hypervisor-selection.xml604(para)
+#: ./security-guide/section_hypervisor-selection.xml595(para)
 msgid ""
 "Another thing to look into when selecting a hypervisor platform is the "
 "availability of specific security features. In particular, we are referring "
@@ -7688,120 +7651,120 @@ msgid ""
 " as well as provide a good foundation."
 msgstr "ハイパーバイザー選択時に検討すべき他の事項は、特定のセキュリティ機能の利用可否です。とくに、Xen Server の XSM (Xen Security Modules)、sVirt、Intel TXT、AppArmor のような機能を利用しています。これらの機能の存在は、セキュリティプロファイルを向上するだけでなく、良い基盤を提供します。"
 
-#: ./security-guide/section_hypervisor-selection.xml610(para)
+#: ./security-guide/section_hypervisor-selection.xml601(para)
 msgid ""
 "The following table calls out these features by common hypervisor platforms."
 msgstr "以下の表は一般的なハイパーバイザーにおけるこれらの機能の対応状況を示します。"
 
-#: ./security-guide/section_hypervisor-selection.xml625(para)
+#: ./security-guide/section_hypervisor-selection.xml616(para)
 msgid "XSM"
 msgstr "XSM"
 
-#: ./security-guide/section_hypervisor-selection.xml626(para)
+#: ./security-guide/section_hypervisor-selection.xml617(para)
 msgid "sVirt"
 msgstr "sVirt"
 
-#: ./security-guide/section_hypervisor-selection.xml627(para)
+#: ./security-guide/section_hypervisor-selection.xml618(para)
 msgid "TXT"
 msgstr "TXT"
 
-#: ./security-guide/section_hypervisor-selection.xml628(para)
+#: ./security-guide/section_hypervisor-selection.xml619(para)
 msgid "AppArmor"
 msgstr "AppArmor"
 
-#: ./security-guide/section_hypervisor-selection.xml629(para)
+#: ./security-guide/section_hypervisor-selection.xml620(para)
 msgid "cgroups"
 msgstr "cgroups"
 
-#: ./security-guide/section_hypervisor-selection.xml630(para)
+#: ./security-guide/section_hypervisor-selection.xml621(para)
 msgid "MAC Policy"
 msgstr "MAC ポリシー"
 
-#: ./security-guide/section_hypervisor-selection.xml633(para)
+#: ./security-guide/section_hypervisor-selection.xml624(para)
 msgid "KVM"
 msgstr "KVM"
 
-#: ./security-guide/section_hypervisor-selection.xml642(para)
+#: ./security-guide/section_hypervisor-selection.xml633(para)
 msgid "Xen"
 msgstr "Xen"
 
-#: ./security-guide/section_hypervisor-selection.xml651(para)
+#: ./security-guide/section_hypervisor-selection.xml642(para)
 msgid "ESXi"
 msgstr "ESXi"
 
-#: ./security-guide/section_hypervisor-selection.xml660(para)
+#: ./security-guide/section_hypervisor-selection.xml651(para)
 msgid "Hyper-V"
 msgstr "Hyper-V"
 
-#: ./security-guide/section_hypervisor-selection.xml670(para)
+#: ./security-guide/section_hypervisor-selection.xml661(para)
 msgid ""
 "MAC Policy: Mandatory Access Control; may be implemented with SELinux or "
 "other operating systems"
 msgstr "MAC ポリシー: 強制アクセス制御は SELinux または他のオペレーティングシステムを用いて実装されます"
 
-#: ./security-guide/section_hypervisor-selection.xml672(para)
+#: ./security-guide/section_hypervisor-selection.xml663(para)
 msgid ""
 "* Features in this table might not be applicable to all hypervisors or "
 "directly mappable between hypervisors."
 msgstr "* この表にある機能はすべてのハイパーバイザーに適用できないかもしれません。また、ハイパーバイザー間で直接対応付けできないかもしれません。"
 
-#: ./security-guide/section_hypervisor-selection.xml680(para)
+#: ./security-guide/section_hypervisor-selection.xml671(para)
 msgid ""
 "Sunar, Eisenbarth, Inci, Gorka Irazoqui Apecechea. Fine Grain Cross-VM "
 "Attacks on Xen and VMware are possible!. 2014. <link "
 "href=\"https://eprint.iacr.org/2014/248.pdf\">https://eprint.iacr.org/2014/248.pdf</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml687(para)
+#: ./security-guide/section_hypervisor-selection.xml678(para)
 msgid ""
 "Artho, Yagi, Iijima, Kuniyasu Suzaki. Memory Deduplication as a Threat to "
 "the Guest OS. 2011. <link "
 "href=\"https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf\">https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml694(para)
+#: ./security-guide/section_hypervisor-selection.xml685(para)
 msgid ""
 "KVM: Kernal-based Virtual Machine. Kernal Samepage Merging. 2010. <link "
 "href=\"http://www.linux-kvm.org/page/KSM\">KVM: Kernel Samepage "
 "Merging</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml698(para)
+#: ./security-guide/section_hypervisor-selection.xml689(para)
 msgid ""
 "Xen Project, Xen Security Modules: XSM-FLASK. 2014. <link "
 "href=\"http://wiki.xen.org/wiki/Xen_Security_Modules_:_XSM-FLASK\">XSM: Xen "
 "Security Modules</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml703(para)
+#: ./security-guide/section_hypervisor-selection.xml694(para)
 msgid ""
 "SELinux Project, SVirt. 2011. <link "
 "href=\"http://selinuxproject.org/page/SVirt\">xVirt: Mandatory Access "
 "Control for Linux-based virtualization</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml708(para)
+#: ./security-guide/section_hypervisor-selection.xml699(para)
 msgid ""
 "Intel.com, Trusted Compute Pools with Intel Trusted Execution Technology "
 "(Intel TXT). <link href=\"http://www.intel.com/txt\">TXT: Intel Trusted "
 "Execution Technology</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml713(para)
+#: ./security-guide/section_hypervisor-selection.xml704(para)
 msgid ""
 "AppArmor.net, AppArmor Main Page. 2011. <link "
 "href=\"http://wiki.apparmor.net/index.php/Main_Page\">AppArmor: Linux "
 "security module implementing MAC</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml718(para)
+#: ./security-guide/section_hypervisor-selection.xml709(para)
 msgid ""
 "Kernal.org, CGroups. 2004. <link "
 "href=\"https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt\">cgroups:"
 " Linux kernel feature to control resource usage</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml723(para)
+#: ./security-guide/section_hypervisor-selection.xml714(para)
 msgid ""
 "Computer Security Resource Centre. Guide to Security for Full Virtualization"
 " Technologies. 2011. <link "
@@ -7809,7 +7772,7 @@ msgid ""
 " to Security for Full Virtualization Technologies</link>"
 msgstr ""
 
-#: ./security-guide/section_hypervisor-selection.xml728(para)
+#: ./security-guide/section_hypervisor-selection.xml719(para)
 msgid ""
 "National Information Assurance Partnership, National Security "
 "Telecommunications and Information Systems Security Policy. 2003. <link "
@@ -7998,6 +7961,69 @@ msgstr "管理オーバーヘッドのスケーリングや削減を簡単にす
 
 #: ./security-guide/ch_instance-management.xml7(title)
 msgid "Instance security management"
+msgstr ""
+
+#: ./security-guide/ch_instance-management.xml9(para)
+msgid ""
+"One of the virtues of running instances in a virtualized environment is that"
+" it opens up new opportunities for security controls that are not typically "
+"available when deploying onto bare metal. There are several technologies "
+"that can be applied to the virtualization stack that bring improved "
+"information assurance for cloud tenants."
+msgstr "仮想環境でインスタンスを運用する長所の一つは、ベアメタルで配備した際には利用できないセキュリティ管理方法の選択肢が増えることです。仮想スタック上のクラウドテナントの情報管理を改善する技術は多数存在します。"
+
+#: ./security-guide/ch_instance-management.xml16(para)
+msgid ""
+"Deployers or users of OpenStack with strong security requirements may want "
+"to consider deploying these technologies. Not all are applicable in every "
+"situation, indeed in some cases technologies may be ruled out for use in a "
+"cloud because of prescriptive business requirements. Similarly some "
+"technologies inspect instance data such as run state which may be "
+"undesirable to the users of the system."
+msgstr "高いセキュリティ要件を持つOpenStackユーザーや配備者はこれらの技術の採用を検討すると良いかもしれませんが、状況によっては適用できない場合があります。クラウド運用においては、規範的なビジネス要件のために技術の選択肢が削られることがあります。また、run stateなど、仕組みによってはインスタンス内のデータを調べる機構もあり、システムのユーザーからは好まれないものもあります。"
+
+#: ./security-guide/ch_instance-management.xml24(para)
+msgid ""
+"In this chapter we explore these technologies and describe the situations "
+"where they can be used to enhance security for instances or underlying "
+"instances. We also seek to highlight where privacy concerns may exist. These"
+" include data pass through, introspection, or providing a source of entropy."
+" In this section we highlight the following additional security services:"
+msgstr "本章では、これらの仕組みの詳細とどのような状況においてインスタンスのセキュリティが向上されるかを説明します。また、プライバシー観点における懸念箇所にも焦点をあてます。データのパススルー、イントロスペクション、またエントロピー元の提供などが該当します。本セクションでは、下記のセキュリティサービスに焦点を当てます:"
+
+#: ./security-guide/ch_instance-management.xml33(para)
+#: ./security-guide/section_security-services-for-instances.xml10(title)
+msgid "Entropy to instances"
+msgstr "インスタンスへのエントロピー"
+
+#: ./security-guide/ch_instance-management.xml38(para)
+#: ./security-guide/section_security-services-for-instances.xml46(title)
+msgid "Scheduling instances to nodes"
+msgstr "ノードへのインスタンスのスケジューリング"
+
+#: ./security-guide/ch_instance-management.xml43(para)
+#: ./security-guide/section_security-services-for-instances.xml125(title)
+msgid "Trusted images"
+msgstr "信頼されたイメージ"
+
+#: ./security-guide/ch_instance-management.xml48(para)
+#: ./security-guide/section_security-services-for-instances.xml200(title)
+msgid "Instance migrations"
+msgstr "インスタンスのマイグレーション"
+
+#: ./security-guide/ch_instance-management.xml53(para)
+#: ./security-guide/section_security-services-for-instances.xml272(title)
+msgid "Monitoring, alerting, and reporting"
+msgstr ""
+
+#: ./security-guide/ch_instance-management.xml58(para)
+#: ./security-guide/section_security-services-for-instances.xml301(title)
+msgid "Updates and patches"
+msgstr ""
+
+#: ./security-guide/ch_instance-management.xml63(para)
+#: ./security-guide/section_security-services-for-instances.xml319(title)
+msgid "Firewalls and other host-based security controls"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for
@@ -8376,6 +8402,42 @@ msgstr "攻撃の形式ごとの規範的な防御については、本書の対
 #: ./security-guide/ch_compliance.xml7(title)
 msgid "Compliance"
 msgstr "コンプライアンス"
+
+#: ./security-guide/ch_compliance.xml9(para)
+msgid ""
+"An OpenStack deployment may require compliance activities for many purposes,"
+" such as regulatory and legal requirements, customer need, privacy "
+"considerations, and security best practices. The Compliance function is "
+"important for the business and its customers. Compliance means adhering to "
+"regulations, specifications, standards and laws. It is also used when "
+"describing an organizations status regarding assessments, audits, and "
+"certifications. Compliance, when done correctly, unifies and strengthens the"
+" other security topics discussed in this guide."
+msgstr ""
+
+#: ./security-guide/ch_compliance.xml20(para)
+msgid "This chapter has several objectives:"
+msgstr "この章の目的は以下の通りです。"
+
+#: ./security-guide/ch_compliance.xml25(para)
+msgid "Review common security principles."
+msgstr "共通のセキュリティ原則を確認する"
+
+#: ./security-guide/ch_compliance.xml30(para)
+msgid ""
+"Discuss common control frameworks and certification resources to achieve "
+"industry certifications or regulator attestations."
+msgstr "業界認定や監督当局の認証を得るために必要な、共通コントロールフレームワークと認定リソースを説明する"
+
+#: ./security-guide/ch_compliance.xml36(para)
+msgid "Act as a reference for auditors when evaluating OpenStack deployments."
+msgstr "監査人がOpenStack環境を評価する際のリファレンスとなる"
+
+#: ./security-guide/ch_compliance.xml42(para)
+msgid ""
+"Introduce privacy considerations specific to OpenStack and cloud "
+"environments."
+msgstr "OpenStackおよびクラウド環境におけるプライバシーの考慮事項を説明する"
 
 #: ./security-guide/section_case-studies-compliance.xml9(para)
 msgid ""
@@ -9958,27 +10020,11 @@ msgstr "OpenStack Networking はまた、クォータ拡張 API 経由で、テ�
 msgid "Data privacy concerns"
 msgstr "データプライバシ関連"
 
-#: ./security-guide/section_data-privacy-concerns.xml9(para)
-msgid ""
-"OpenStack is designed to support multitenancy and those tenants will most "
-"probably have different data requirements. As a cloud builder and operator "
-"you need to ensure your OpenStack environment can address various data "
-"privacy concerns and regulations. In this chapter we will address the "
-"following topics around Data Privacy as it pertains to OpenStack "
-"implementations:"
-msgstr "OpenStack はマルチテナンシーをサポートするよう設計されており、これらのテナントには、まず間違いなく異なるデータ要件があるでしょう。クラウド構築者とオペレータとして、あなたは自身の OpenStack 環境が様々なデータプライバシー関連と規制を扱える事を確認する必要があります。OpenStack 実装に関連するので、本章ではデータプライバシーにまつわる以下のトピックを扱います。"
-
-#: ./security-guide/section_data-privacy-concerns.xml19(para)
-#: ./security-guide/section_data-privacy-concerns.xml26(title)
+#: ./security-guide/section_data-privacy-concerns.xml10(title)
 msgid "Data residency"
 msgstr "データの所在"
 
-#: ./security-guide/section_data-privacy-concerns.xml22(para)
-#: ./security-guide/section_data-privacy-concerns.xml77(title)
-msgid "Data disposal"
-msgstr "データの処分"
-
-#: ./security-guide/section_data-privacy-concerns.xml27(para)
+#: ./security-guide/section_data-privacy-concerns.xml11(para)
 msgid ""
 "The privacy and isolation of data has consistently been cited as the primary"
 " barrier to cloud adoption over the past few years. Concerns over who owns "
@@ -9986,79 +10032,83 @@ msgid ""
 "as a custodian of this data have been significant issues in the past."
 msgstr "データのプライバシーと分割は、ここ数年クラウド採用の最初の障壁としてずっと言及されてきました。クラウド中でデータを所有するのは誰か、このデータの管理人としてクラウドオペレータは結局信用できるのか否かという事は、これまで重要な問題でした。"
 
-#: ./security-guide/section_data-privacy-concerns.xml28(para)
+#: ./security-guide/section_data-privacy-concerns.xml12(para)
 msgid ""
 "Numerous OpenStack services maintain data and metadata belonging to tenants "
 "or reference tenant information."
 msgstr "多数の OpenStack サービス群は、テナントやテナント情報の所在に属するデータとメタデータを管理します。"
 
-#: ./security-guide/section_data-privacy-concerns.xml29(para)
+#: ./security-guide/section_data-privacy-concerns.xml13(para)
 msgid ""
 "Tenant data stored in an OpenStack cloud may include the following items:"
 msgstr "OpenStack クラウドに保存されたテナントデータは以下の項目を含まれます："
 
-#: ./security-guide/section_data-privacy-concerns.xml34(para)
+#: ./security-guide/section_data-privacy-concerns.xml18(para)
 msgid "Compute instance ephemeral filesystem storage"
 msgstr "Compute のインスタンスの一時的ファイルシステムストレージ"
 
-#: ./security-guide/section_data-privacy-concerns.xml37(para)
+#: ./security-guide/section_data-privacy-concerns.xml21(para)
 msgid "Compute instance memory"
 msgstr "Compute インスタンスのメモリ"
 
-#: ./security-guide/section_data-privacy-concerns.xml40(para)
-#: ./security-guide/section_data-privacy-concerns.xml111(para)
+#: ./security-guide/section_data-privacy-concerns.xml24(para)
+#: ./security-guide/section_data-privacy-concerns.xml95(para)
 msgid "Block Storage volume data"
 msgstr "ブロックストレージボリュームデータ"
 
-#: ./security-guide/section_data-privacy-concerns.xml43(para)
+#: ./security-guide/section_data-privacy-concerns.xml27(para)
 msgid "Public keys for Compute Access"
 msgstr "Comptue アクセス用パブリックキー"
 
-#: ./security-guide/section_data-privacy-concerns.xml46(para)
+#: ./security-guide/section_data-privacy-concerns.xml30(para)
 msgid "Virtual Machine Images in the Image Service"
 msgstr "Image Service 中の仮想マシンイメージ"
 
-#: ./security-guide/section_data-privacy-concerns.xml49(para)
+#: ./security-guide/section_data-privacy-concerns.xml33(para)
 msgid "Machine snapshots"
 msgstr "マシンのスナップショット"
 
-#: ./security-guide/section_data-privacy-concerns.xml52(para)
+#: ./security-guide/section_data-privacy-concerns.xml36(para)
 msgid "Data passed to OpenStack Compute's configuration-drive extension"
 msgstr "OpenStack Compute の設定用ドライブ拡張に渡されたデータ"
 
-#: ./security-guide/section_data-privacy-concerns.xml55(para)
+#: ./security-guide/section_data-privacy-concerns.xml39(para)
 msgid ""
 "Metadata stored by an OpenStack cloud includes the following non-exhaustive "
 "items:"
 msgstr "以下の不完全な一覧を含む、OpenStack クラウドが保存したメタデータ:"
 
-#: ./security-guide/section_data-privacy-concerns.xml57(para)
+#: ./security-guide/section_data-privacy-concerns.xml41(para)
 msgid "Organization name"
 msgstr "組織名"
 
-#: ./security-guide/section_data-privacy-concerns.xml60(para)
+#: ./security-guide/section_data-privacy-concerns.xml44(para)
 msgid "User's \"Real Name\""
 msgstr "ユーザの「実名」"
 
-#: ./security-guide/section_data-privacy-concerns.xml63(para)
+#: ./security-guide/section_data-privacy-concerns.xml47(para)
 msgid ""
 "Number or size of running instances, buckets, objects, volumes, and other "
 "quota-related items"
 msgstr "実行中のインスタンスのサイズ、バケット、オブジェクト、ボリューム、その他クォータ関連の項目"
 
-#: ./security-guide/section_data-privacy-concerns.xml66(para)
+#: ./security-guide/section_data-privacy-concerns.xml50(para)
 msgid "Number of hours running instances or storing data"
 msgstr "実行中のインスタンス又は保存されたデータの経過時間"
 
-#: ./security-guide/section_data-privacy-concerns.xml69(para)
+#: ./security-guide/section_data-privacy-concerns.xml53(para)
 msgid "IP addresses of users"
 msgstr "ユーザの IP アドレス"
 
-#: ./security-guide/section_data-privacy-concerns.xml72(para)
+#: ./security-guide/section_data-privacy-concerns.xml56(para)
 msgid "Internally generated private keys for compute image bundling"
 msgstr "Compute イメージ作成用に内部で生成されたプライベートキー"
 
-#: ./security-guide/section_data-privacy-concerns.xml78(para)
+#: ./security-guide/section_data-privacy-concerns.xml61(title)
+msgid "Data disposal"
+msgstr "データの処分"
+
+#: ./security-guide/section_data-privacy-concerns.xml62(para)
 msgid ""
 "OpenStack operators should strive to provide a certain level of tenant data "
 "disposal assurance. Best practices suggest that the operator sanitize cloud "
@@ -10068,7 +10118,7 @@ msgid ""
 "security domain and sensitivity of the information."
 msgstr "OpenStack オペレータは、ある一定レベルのテナントデータ破棄保証が提供できるよう努力しなければんりません。ベストプラクティスは、クラウドシステムメディア (デジタル・非デジタル) を破棄、組織コントロール外へのリリース、再利用の為の開放より前にオペレータがメディアをクリアする事を推奨しています。メディアのクリア方法は、特定のセキュリティドメインと情報のデリケートさが与えられた、適切なレベルの強度と完全性を実装すべきです。"
 
-#: ./security-guide/section_data-privacy-concerns.xml80(para)
+#: ./security-guide/section_data-privacy-concerns.xml64(para)
 msgid ""
 "\"The sanitization process removes information from the media such that the "
 "information cannot be retrieved or reconstructed. Sanitization techniques, "
@@ -10079,58 +10129,58 @@ msgid ""
 " Special Publication 800-53 Revision 4</link>"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml88(para)
+#: ./security-guide/section_data-privacy-concerns.xml72(para)
 msgid ""
 "General data disposal and sanitization guidelines as adopted from NIST "
 "recommended security controls. Cloud operators should:"
 msgstr "NIST が採用した汎用のデータ破棄とサニタイズのガイドラインは、セキュリティ制御を推奨しています。クラウドオペレータは以下のことをすべきです。"
 
-#: ./security-guide/section_data-privacy-concerns.xml90(para)
+#: ./security-guide/section_data-privacy-concerns.xml74(para)
 msgid "Track, document and verify media sanitization and disposal actions."
 msgstr "媒体サニタイズと破棄行為の追跡・文書化・検証を行うこと。"
 
-#: ./security-guide/section_data-privacy-concerns.xml93(para)
+#: ./security-guide/section_data-privacy-concerns.xml77(para)
 msgid "Test sanitation equipment and procedures to verify proper performance."
 msgstr "適切なパフォーマンスを検証する為、サニタイズ設備と過程の評価を行うこと。"
 
-#: ./security-guide/section_data-privacy-concerns.xml97(para)
+#: ./security-guide/section_data-privacy-concerns.xml81(para)
 msgid ""
 "Sanitize portable, removable storage devices prior to connecting such "
 "devices to the cloud infrastructure."
 msgstr "持ち運び可能なリムーバルストレージデバイスをクラウドインフラに接続する前にサニタイズすること。"
 
-#: ./security-guide/section_data-privacy-concerns.xml100(para)
+#: ./security-guide/section_data-privacy-concerns.xml84(para)
 msgid "Destroy cloud system media that cannot be sanitized."
 msgstr "サニタイズできないクラウドシステム媒体を破壊すること。"
 
-#: ./security-guide/section_data-privacy-concerns.xml103(para)
+#: ./security-guide/section_data-privacy-concerns.xml87(para)
 msgid "In an OpenStack deployment you will need to address the following:"
 msgstr "OpenStack デプロイでは、以下の事も実施する必要があるでしょう。"
 
-#: ./security-guide/section_data-privacy-concerns.xml105(para)
+#: ./security-guide/section_data-privacy-concerns.xml89(para)
 msgid "Secure data erasure"
 msgstr "安全なデータの消去"
 
-#: ./security-guide/section_data-privacy-concerns.xml108(para)
-#: ./security-guide/section_data-privacy-concerns.xml125(title)
+#: ./security-guide/section_data-privacy-concerns.xml92(para)
+#: ./security-guide/section_data-privacy-concerns.xml109(title)
 msgid "Instance memory scrubbing"
 msgstr "インスタンスメモリの消去"
 
-#: ./security-guide/section_data-privacy-concerns.xml114(para)
-#: ./security-guide/section_data-privacy-concerns.xml167(title)
+#: ./security-guide/section_data-privacy-concerns.xml98(para)
+#: ./security-guide/section_data-privacy-concerns.xml151(title)
 msgid "Compute instance ephemeral storage"
 msgstr "Compute インスタンスの一時ストレージ"
 
-#: ./security-guide/section_data-privacy-concerns.xml117(para)
-#: ./security-guide/section_data-privacy-concerns.xml188(title)
+#: ./security-guide/section_data-privacy-concerns.xml101(para)
+#: ./security-guide/section_data-privacy-concerns.xml172(title)
 msgid "Bare metal server sanitization"
 msgstr "物理サーバのサニタイズ"
 
-#: ./security-guide/section_data-privacy-concerns.xml121(title)
+#: ./security-guide/section_data-privacy-concerns.xml105(title)
 msgid "Data not securely erased"
 msgstr "安全に消去されなかったデータ"
 
-#: ./security-guide/section_data-privacy-concerns.xml122(para)
+#: ./security-guide/section_data-privacy-concerns.xml106(para)
 msgid ""
 "Within OpenStack some data may be deleted, but not securely erased in the "
 "context of the NIST standards outlined above. This is generally applicable "
@@ -10139,7 +10189,7 @@ msgid ""
 "for auto vacuuming and periodic free-space wiping."
 msgstr "OpenStack 中でいくつかのデータは削除されるかも知れませんが、上記で触れた NIST 標準の文脈における安全な消去ではありません。これは一般に、データベースに保存された上記で定義したメタデータと情報の大半又は全てに当てはまります。これは、データベースとシステム設定のどちらか又は両方で、自動バキュームと定期的な空き領域のクリアを実施する事で解決する事ができるかも知れません。"
 
-#: ./security-guide/section_data-privacy-concerns.xml126(para)
+#: ./security-guide/section_data-privacy-concerns.xml110(para)
 msgid ""
 "Specific to various hypervisors is the treatment of instance memory. This "
 "behavior is not defined in OpenStack Compute, although it is generally "
@@ -10147,7 +10197,7 @@ msgid ""
 "either upon deletion of an instance, upon creation of an instance, or both."
 msgstr "様々なハイパーバイザの特色はインスタンスメモリの扱いにあります。\n\nThis behavior is not defined in OpenStack Compute, although it is generally expected of hypervisors that they will make a best effort to scrub memory either upon deletion of an instance, upon creation of an instance, or both.\n\nこの挙動は OpenStack Compute で定義されておらず、ハイパーバイザがインスタンス作成時または削除時、あるいはその両方において、ベストエフォートでメモリのクリンアップを行うだろうと一般に考えられています。"
 
-#: ./security-guide/section_data-privacy-concerns.xml127(para)
+#: ./security-guide/section_data-privacy-concerns.xml111(para)
 msgid ""
 "Xen explicitly assigns dedicated memory regions to instances and scrubs data"
 " upon the destruction of instances (or domains in Xen parlance). KVM depends"
@@ -10156,24 +10206,24 @@ msgid ""
 "kvm.org/page/Memory\">KVM documentation</link>."
 msgstr "Xen は、専用のメモリ範囲をインスタンスに明確に割り当て、インスタンス (又は Xen の用語でドメイン) 破棄時にそのデータをクリンアップします。KVM はより大いに Linux のページ管理に依存しています。 KVM のページングに関する複雑なルールセットは、<link href=\"http://www.linux-kvm.org/page/Memory\">KVM の文書</link>で定義されています。"
 
-#: ./security-guide/section_data-privacy-concerns.xml128(para)
+#: ./security-guide/section_data-privacy-concerns.xml112(para)
 msgid ""
 "It is important to note that use of the Xen memory balloon feature is likely"
 " to result in information disclosure. We strongly recommended to avoid use "
 "of this feature."
 msgstr "Xen のメモリバルーン機能の使用は情報漏えいの結果になりかねないという事への注意は重要です。"
 
-#: ./security-guide/section_data-privacy-concerns.xml129(para)
+#: ./security-guide/section_data-privacy-concerns.xml113(para)
 msgid ""
 "For these and other hypervisors, we recommend referring to hypervisor-"
 "specific documentation."
 msgstr "これらや他のハイパーバイザでは、ハイパーバイザ毎のドキュメントを参照すると良いでしょう。"
 
-#: ./security-guide/section_data-privacy-concerns.xml132(title)
+#: ./security-guide/section_data-privacy-concerns.xml116(title)
 msgid "Cinder volume data"
 msgstr "Cinder のボリュームデータ"
 
-#: ./security-guide/section_data-privacy-concerns.xml133(para)
+#: ./security-guide/section_data-privacy-concerns.xml117(para)
 msgid ""
 "Plugins to OpenStack Block Storage will store data in a variety of ways. "
 "Many plug-ins are specific to a vendor or technology, whereas others are "
@@ -10182,7 +10232,7 @@ msgid ""
 "vendor's solution to another, and from one filesystem to another."
 msgstr "OpenStack Block Storage のプラグインは様々な方法でデータの保存を行います。多くのプラグインはベンダー又はストレージ技術に特化していますが、その他は LVM や ZFS といったファイルシステム辺りのより手作りのソリューションです。安全にデータを破壊する方法はプラグイン毎、ベンダーのソリューション毎、ファイルシステム毎に異なるでしょう。"
 
-#: ./security-guide/section_data-privacy-concerns.xml134(para)
+#: ./security-guide/section_data-privacy-concerns.xml118(para)
 msgid ""
 "Some back ends such as ZFS will support copy-on-write to prevent data "
 "exposure. In these cases, reads from unwritten blocks will always return "
@@ -10193,18 +10243,18 @@ msgid ""
 "may be available for those assurances not provided."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml143(para)
+#: ./security-guide/section_data-privacy-concerns.xml127(para)
 msgid ""
 "Finally, while not a feature of OpenStack, vendors and implementors may "
 "choose to add or support encryption of volumes. In this case, destruction of"
 " data is as simple as throwing away the key."
 msgstr "最後に、これは OpenStack の機能ではありませんが、ベンダーと開発者がボリュームの暗号化機能をサポートするか、あるいは追加可能であるかも知れません。この場合、データの破壊は単にキーを破棄するだけです。"
 
-#: ./security-guide/section_data-privacy-concerns.xml149(title)
+#: ./security-guide/section_data-privacy-concerns.xml133(title)
 msgid "Image Service delay delete feature"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml150(para)
+#: ./security-guide/section_data-privacy-concerns.xml134(para)
 msgid ""
 "OpenStack Image Service has a delayed delete feature, which will pend the "
 "deletion of an image for a defined time period. It is recommended to disable"
@@ -10214,11 +10264,11 @@ msgid ""
 "<replaceable>False</replaceable>."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml158(title)
+#: ./security-guide/section_data-privacy-concerns.xml142(title)
 msgid "Compute soft delete feature"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml159(para)
+#: ./security-guide/section_data-privacy-concerns.xml143(para)
 msgid ""
 "OpenStack Compute has a soft-delete feature, which enables an instance that "
 "is deleted to be in a soft-delete state for a defined time period. The "
@@ -10227,13 +10277,13 @@ msgid ""
 "the <literal>reclaim_instance_interval</literal> option empty."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml168(para)
+#: ./security-guide/section_data-privacy-concerns.xml152(para)
 msgid ""
 "The creation and destruction of ephemeral storage will be somewhat dependent"
 " on the chosen hypervisor and the OpenStack Compute plug-in."
 msgstr "一時ストレージの作成・削除は選択したハイパーバイザや OpenStack Compute プラグインに依存するでしょう。"
 
-#: ./security-guide/section_data-privacy-concerns.xml171(para)
+#: ./security-guide/section_data-privacy-concerns.xml155(para)
 msgid ""
 "The libvirt plug-in for compute may maintain ephemeral storage directly on a"
 " filesystem, or in LVM. Filesystem storage generally will not overwrite data"
@@ -10241,7 +10291,7 @@ msgid ""
 "not provisioned to users."
 msgstr "compute 用の libvirt プラグインは、ファイルシステム又は LVM 上の一時ストレージを直接管理出来ます。ファイルシステムストレージは一般にデータを削除する際に上書きはしませんが、ユーザに対して汚れたエクステンドが用意されないという保証があります。"
 
-#: ./security-guide/section_data-privacy-concerns.xml176(para)
+#: ./security-guide/section_data-privacy-concerns.xml160(para)
 msgid ""
 "When using LVM backed ephemeral storage, which is block-based, it is "
 "necessary that the OpenStack Compute software securely erases blocks to "
@@ -10250,7 +10300,7 @@ msgid ""
 "storage devices."
 msgstr "ブロックデバイスベースである LVM をバックエンドにした一時ストレージを使用する場合、OpenStack Compute は情報漏えいを防ぐために、安全にブロックを削除する必要があります。これらには、過去において、不適切な一時ブロックストレージデバイスの削除に関連する情報漏洩の脆弱性がありました。"
 
-#: ./security-guide/section_data-privacy-concerns.xml181(para)
+#: ./security-guide/section_data-privacy-concerns.xml165(para)
 msgid ""
 "Filesystem storage is a more secure solution for ephemeral block storage "
 "devices than LVM as dirty extents cannot be provisioned to users. However, "
@@ -10258,7 +10308,7 @@ msgid ""
 "suggested to encrypt the backing filesystem."
 msgstr "データが含まれたエクステンドがユーザに用意されないので、一時ブロックストレージデバイス用としてファイルシステムストレージは LVM より安全なソリューションです。しかしながら、ユーザデータが破壊されない事を覚えておく事は重要であり、このためバックエンドのファイルシステムの暗号化が提案されています。"
 
-#: ./security-guide/section_data-privacy-concerns.xml189(para)
+#: ./security-guide/section_data-privacy-concerns.xml173(para)
 msgid ""
 "A bare metal server driver for Compute was under development and has since "
 "moved into a separate project called <link "
@@ -10267,7 +10317,7 @@ msgid ""
 "data resident the physical hardware."
 msgstr "Compute の物理サーバドライバは開発中だったのですが、<link href=\"https://wiki.openstack.org/wiki/Ironic\">ironic</link>と呼ばれる独立したプロジェクトに移管される事になりました。この文書の執筆時点では、ironic には物理ハードウェア上にあるテナントデータのサニタイズ機能はまだありません。"
 
-#: ./security-guide/section_data-privacy-concerns.xml196(para)
+#: ./security-guide/section_data-privacy-concerns.xml180(para)
 msgid ""
 "Additionally, it is possible for tenants of a bare metal system to modify "
 "system firmware. TPM technology, described in <xref linkend=\"integrity-"
@@ -10872,6 +10922,15 @@ msgstr "強制アクセス制御と任意アクセス制御を併用して、プ
 msgid "Databases"
 msgstr "データベース"
 
+#: ./security-guide/ch_databases.xml9(para)
+msgid ""
+"The choice of database server is an important consideration in the security "
+"of an OpenStack deployment. Multiple factors should be considered when "
+"deciding on a database server, however for the scope of this book only "
+"security considerations will be discussed. OpenStack supports PostgreSQL and"
+" MySQL database types."
+msgstr ""
+
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -11456,8 +11515,8 @@ msgstr "オフ状態のサーバーのハッキング"
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_security-services-for-instances.xml131(None)
-#: ./security-guide/section_security-services-for-instances.xml134(None)
+#: ./security-guide/section_security-services-for-instances.xml106(None)
+#: ./security-guide/section_security-services-for-instances.xml109(None)
 msgid ""
 "@@image: 'static/filteringWorkflow1.png'; "
 "md5=c144af5cbdee1bd17a7bde0bea5b5fe7"
@@ -11467,70 +11526,7 @@ msgstr "@@image: 'static/filteringWorkflow1.png'; md5=c144af5cbdee1bd17a7bde0bea
 msgid "Security services for instances"
 msgstr "インスタンスのセキュリティサービス"
 
-#: ./security-guide/section_security-services-for-instances.xml9(para)
-msgid ""
-"One of the virtues of running instances in a virtualized environment is that"
-" it opens up new opportunities for security controls that are not typically "
-"available when deploying onto bare metal. There are several technologies "
-"that can be applied to the virtualization stack that bring improved "
-"information assurance for cloud tenants."
-msgstr "仮想環境でインスタンスを運用する長所の一つは、ベアメタルで配備した際には利用できないセキュリティ管理方法の選択肢が増えることです。仮想スタック上のクラウドテナントの情報管理を改善する技術は多数存在します。"
-
-#: ./security-guide/section_security-services-for-instances.xml10(para)
-msgid ""
-"Deployers or users of OpenStack with strong security requirements may want "
-"to consider deploying these technologies. Not all are applicable in every "
-"situation, indeed in some cases technologies may be ruled out for use in a "
-"cloud because of prescriptive business requirements. Similarly some "
-"technologies inspect instance data such as run state which may be "
-"undesirable to the users of the system."
-msgstr "高いセキュリティ要件を持つOpenStackユーザーや配備者はこれらの技術の採用を検討すると良いかもしれませんが、状況によっては適用できない場合があります。クラウド運用においては、規範的なビジネス要件のために技術の選択肢が削られることがあります。また、run stateなど、仕組みによってはインスタンス内のデータを調べる機構もあり、システムのユーザーからは好まれないものもあります。"
-
 #: ./security-guide/section_security-services-for-instances.xml11(para)
-msgid ""
-"In this chapter we explore these technologies and describe the situations "
-"where they can be used to enhance security for instances or underlying "
-"instances. We also seek to highlight where privacy concerns may exist. These"
-" include data pass through, introspection, or providing a source of entropy."
-" In this section we highlight the following additional security services:"
-msgstr "本章では、これらの仕組みの詳細とどのような状況においてインスタンスのセキュリティが向上されるかを説明します。また、プライバシー観点における懸念箇所にも焦点をあてます。データのパススルー、イントロスペクション、またエントロピー元の提供などが該当します。本セクションでは、下記のセキュリティサービスに焦点を当てます:"
-
-#: ./security-guide/section_security-services-for-instances.xml13(para)
-#: ./security-guide/section_security-services-for-instances.xml35(title)
-msgid "Entropy to instances"
-msgstr "インスタンスへのエントロピー"
-
-#: ./security-guide/section_security-services-for-instances.xml16(para)
-#: ./security-guide/section_security-services-for-instances.xml71(title)
-msgid "Scheduling instances to nodes"
-msgstr "ノードへのインスタンスのスケジューリング"
-
-#: ./security-guide/section_security-services-for-instances.xml19(para)
-#: ./security-guide/section_security-services-for-instances.xml150(title)
-msgid "Trusted images"
-msgstr "信頼されたイメージ"
-
-#: ./security-guide/section_security-services-for-instances.xml22(para)
-#: ./security-guide/section_security-services-for-instances.xml225(title)
-msgid "Instance migrations"
-msgstr "インスタンスのマイグレーション"
-
-#: ./security-guide/section_security-services-for-instances.xml25(para)
-#: ./security-guide/section_security-services-for-instances.xml297(title)
-msgid "Monitoring, alerting, and reporting"
-msgstr ""
-
-#: ./security-guide/section_security-services-for-instances.xml28(para)
-#: ./security-guide/section_security-services-for-instances.xml326(title)
-msgid "Updates and patches"
-msgstr ""
-
-#: ./security-guide/section_security-services-for-instances.xml31(para)
-#: ./security-guide/section_security-services-for-instances.xml344(title)
-msgid "Firewalls and other host-based security controls"
-msgstr ""
-
-#: ./security-guide/section_security-services-for-instances.xml36(para)
 msgid ""
 "We consider entropy to refer to the quality and source of random data that "
 "is available to an instance. Cryptographic technologies typically rely "
@@ -11544,7 +11540,7 @@ msgid ""
 "applications running in the cloud less secure overall."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml48(para)
+#: ./security-guide/section_security-services-for-instances.xml23(para)
 msgid ""
 "Fortunately, a cloud architect may address these issues by providing a high "
 "quality source of entropy to the cloud instances. This can be done by having"
@@ -11558,7 +11554,7 @@ msgid ""
 " available."
 msgstr "これらの課題は、クラウドアーキテクトが高品質のエントロピーをクラウドインスタンスに提供することで対応できます。例えば、クラウド内にインスタンス用に適量なハードウェア乱数生成器(HRNG)があれば解決できます（適量はドメインによって異なる）。一般的なハードウェア乱数生成器なら通常運用されている50-100台のコンピュートノード分のエントロピーを生成することが可能です。高帯域ハードウェア乱数生成器（Intel Ivy Bridgeや最新プロセッサなどと提供されるRdRand instructionなど）はさらに多くのノードに対応できます。エントロピーの量が十分かどうかを判断するためには、クラウド上で運用するアプリケーションの要求を理解している必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml60(para)
+#: ./security-guide/section_security-services-for-instances.xml35(para)
 msgid ""
 "The Virtio RNG is a random number generator that uses "
 "<filename>/dev/random</filename> as the source of entropy by default, "
@@ -11570,7 +11566,7 @@ msgid ""
 "used to create the instance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml72(para)
+#: ./security-guide/section_security-services-for-instances.xml47(para)
 msgid ""
 "Before an instance is created, a host for the image instantiation must be "
 "selected. This selection is performed by the <systemitem class=\"service"
@@ -11578,7 +11574,7 @@ msgid ""
 "volume requests."
 msgstr "インスタンスを生成する前に、イメージのインスタンス化のためのホストを選択する必要があります。この選択は<systemitem class=\"service\">nova-scheduler</systemitem>によって行われ、さらにコンピュートとボリューム要求の伝達方法も決定します。"
 
-#: ./security-guide/section_security-services-for-instances.xml77(para)
+#: ./security-guide/section_security-services-for-instances.xml52(para)
 msgid ""
 "The <literal>FilterScheduler</literal> is the default scheduler for "
 "OpenStack Compute, although other schedulers exist (see the section <link "
@@ -11595,7 +11591,7 @@ msgid ""
 "reasons."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml91(para)
+#: ./security-guide/section_security-services-for-instances.xml66(para)
 msgid ""
 "Scheduler filters may be used to segregate customer data, or even discard "
 "machines of the cloud that cannot be attested as secure. This generally "
@@ -11604,53 +11600,53 @@ msgid ""
 "security-related purposes."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml97(para)
+#: ./security-guide/section_security-services-for-instances.xml72(para)
 msgid "Filter schedulers fall under four main categories:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml99(term)
+#: ./security-guide/section_security-services-for-instances.xml74(term)
 msgid "Resource based filters"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml100(para)
+#: ./security-guide/section_security-services-for-instances.xml75(para)
 msgid ""
 "These filters will create an instance based on the utilizations of the "
 "hypervisor host sets and can trigger on free or used properties such as RAM,"
 " IO, or CPU utilization"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml105(term)
+#: ./security-guide/section_security-services-for-instances.xml80(term)
 msgid "Image based filters"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml106(para)
+#: ./security-guide/section_security-services-for-instances.xml81(para)
 msgid ""
 "This delegates instance creation based on the image used, such as the "
 "operating system of the VM or type of image used."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml110(term)
+#: ./security-guide/section_security-services-for-instances.xml85(term)
 msgid "Environment based filters"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml111(para)
+#: ./security-guide/section_security-services-for-instances.xml86(para)
 msgid ""
 "This filter will create an instance based on external details such as in a "
 "specific IP range, across availability zones, or on the same host as another"
 " instance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml116(term)
+#: ./security-guide/section_security-services-for-instances.xml91(term)
 msgid "Custom criteria"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml117(para)
+#: ./security-guide/section_security-services-for-instances.xml92(para)
 msgid ""
 "This filter will delegate instance creation based on user or administrator "
 "provided criteria such as trusts or metadata parsing."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml122(para)
+#: ./security-guide/section_security-services-for-instances.xml97(para)
 msgid ""
 "Multiple filters can be applied at once, such as the "
 "<literal>ServerGroupAffinity</literal> filter to ensure an instance is "
@@ -11661,14 +11657,14 @@ msgid ""
 "and result in rules that prevent the creation of instances."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml137(para)
+#: ./security-guide/section_security-services-for-instances.xml112(para)
 msgid ""
 "The <literal>GroupAffinity</literal> and "
 "<literal>GroupAntiAffinity</literal> filters conflict and should not both be"
 " enabled at the same time."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml140(para)
+#: ./security-guide/section_security-services-for-instances.xml115(para)
 msgid ""
 "The <literal>DiskFilter</literal> filter is capable of oversubscribing disk "
 "space. While not normally an issue, this can be a concern on storage devices"
@@ -11676,13 +11672,13 @@ msgid ""
 "tested quotas applied."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml145(para)
+#: ./security-guide/section_security-services-for-instances.xml120(para)
 msgid ""
 "We recommend you disable filters that parse things that are provided by "
 "users or are able to be manipulated such as metadata."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml151(para)
+#: ./security-guide/section_security-services-for-instances.xml126(para)
 msgid ""
 "In a cloud environment, users work with either pre-installed images or "
 "images they upload themselves. In both cases, users should be able to ensure"
@@ -11692,11 +11688,11 @@ msgid ""
 "around these actions there are also several gaps in the process."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml153(title)
+#: ./security-guide/section_security-services-for-instances.xml128(title)
 msgid "Image creation process"
 msgstr "イメージ作成プロセス"
 
-#: ./security-guide/section_security-services-for-instances.xml154(para)
+#: ./security-guide/section_security-services-for-instances.xml129(para)
 msgid ""
 "The OpenStack Documentation provides guidance on how to create and upload an"
 " image to the Image Service. Additionally it is assumed that you have a "
@@ -11707,11 +11703,11 @@ msgid ""
 " image's provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml162(para)
+#: ./security-guide/section_security-services-for-instances.xml137(para)
 msgid "The first option is to obtain boot media from a trusted source."
 msgstr "最初の選択肢は、信頼された提供元からブートメディアを入手することです。"
 
-#: ./security-guide/section_security-services-for-instances.xml169(para)
+#: ./security-guide/section_security-services-for-instances.xml144(para)
 msgid ""
 "The second option is to use the <link href=\"http://docs.openstack.org"
 "/image-guide/content/\"><citetitle>OpenStack Virtual Machine Image "
@@ -11721,7 +11717,7 @@ msgid ""
 "linux/Pages/index.aspx\">Linux STIGs</link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml177(para)
+#: ./security-guide/section_security-services-for-instances.xml152(para)
 msgid ""
 "The final option is to use an automated image builder. The following example"
 " uses the Oz image builder. The OpenStack community has recently created a "
@@ -11729,13 +11725,13 @@ msgid ""
 "this tool from a security perspective."
 msgstr "最後の手段として説明するのはイメージの自動生成機構の使用です。次の例では、Oz image builderを採用しています。OpenStackコミュニティでは、disk-image-builderというさらに新しいツールが公開されています。本ツールはセキュリティ観点において未検証です。"
 
-#: ./security-guide/section_security-services-for-instances.xml178(para)
+#: ./security-guide/section_security-services-for-instances.xml153(para)
 msgid ""
 "Example of RHEL 6 CCE-26976-1 which will help implement NIST 800-53 "
 "Section<emphasis>AC-19(d) in</emphasis> Oz."
 msgstr "OzでNIST 800-53 セクション<emphasis>AC-19(d)</emphasis> の実装を手助けするRHEL 6 CCE-26976-1の例"
 
-#: ./security-guide/section_security-services-for-instances.xml214(para)
+#: ./security-guide/section_security-services-for-instances.xml189(para)
 msgid ""
 "It is recommended to avoid the manual image building process as it is "
 "complex and prone to error. Additionally, using an automated system like Oz "
@@ -11745,7 +11741,7 @@ msgid ""
 "hardening guidelines over time."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml215(para)
+#: ./security-guide/section_security-services-for-instances.xml190(para)
 msgid ""
 "If subscribing to a public cloud service, you should check with the cloud "
 "provider for an outline of the process used to produce their default images."
@@ -11755,11 +11751,11 @@ msgid ""
 "on Image Provenance."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml218(title)
+#: ./security-guide/section_security-services-for-instances.xml193(title)
 msgid "Image provenance and validation"
 msgstr "イメージの出所と妥当性確認"
 
-#: ./security-guide/section_security-services-for-instances.xml219(para)
+#: ./security-guide/section_security-services-for-instances.xml194(para)
 msgid ""
 "Unfortunately, it is not currently possible to force Compute to validate an "
 "image hash immediately prior to starting an instance. To understand the "
@@ -11767,7 +11763,7 @@ msgid ""
 "the time of image launch."
 msgstr "残念ながら、現在はインスタンス起動直前にコンピュートにイメージのハッシュを検証を強制する方法がありません。状況を理解するために、イメージ起動の際にイメージがどのように扱われるのかを簡単に説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml220(para)
+#: ./security-guide/section_security-services-for-instances.xml195(para)
 msgid ""
 "Images come from the glance service to the nova service on a node. This "
 "transfer should be protected by running over TLS. Once the image is on the "
@@ -11780,7 +11776,7 @@ msgid ""
 "resulting image."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml221(para)
+#: ./security-guide/section_security-services-for-instances.xml196(para)
 msgid ""
 "We hope that future versions of Compute and/or the Image Service will offer "
 "support for validating the image hash before each instance launch. An "
@@ -11789,7 +11785,7 @@ msgid ""
 "launched."
 msgstr "将来的にコンピュートまたはイメージサービスでインスタンス起動の前にイメージのハッシュを検証する機構を提供することが期待されています。さらに考えられる強力な代替手段はユーザーにイメージを署名させ、インスタンスの起動前に署名の検証を実行させることです。"
 
-#: ./security-guide/section_security-services-for-instances.xml226(para)
+#: ./security-guide/section_security-services-for-instances.xml201(para)
 msgid ""
 "OpenStack and the underlying virtualization layers provide for the live "
 "migration of images between OpenStack nodes, allowing you to seamlessly "
@@ -11799,31 +11795,31 @@ msgid ""
 "performed during a live migration:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml236(para)
+#: ./security-guide/section_security-services-for-instances.xml211(para)
 msgid "Start instance on destination host"
 msgstr "目的先ホストでインスタンスを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml237(para)
+#: ./security-guide/section_security-services-for-instances.xml212(para)
 msgid "Transfer memory"
 msgstr "メモリを転送"
 
-#: ./security-guide/section_security-services-for-instances.xml238(para)
+#: ./security-guide/section_security-services-for-instances.xml213(para)
 msgid "Stop the guest &amp; sync disks"
 msgstr "ゲスト&amp;syncディスクを停止"
 
-#: ./security-guide/section_security-services-for-instances.xml239(para)
+#: ./security-guide/section_security-services-for-instances.xml214(para)
 msgid "Transfer state"
 msgstr "転送状態となる"
 
-#: ./security-guide/section_security-services-for-instances.xml240(para)
+#: ./security-guide/section_security-services-for-instances.xml215(para)
 msgid "Start the guest"
 msgstr "ゲストを起動"
 
-#: ./security-guide/section_security-services-for-instances.xml243(title)
+#: ./security-guide/section_security-services-for-instances.xml218(title)
 msgid "Live migration risks"
 msgstr "ライブマイグレーションのリスク"
 
-#: ./security-guide/section_security-services-for-instances.xml244(para)
+#: ./security-guide/section_security-services-for-instances.xml219(para)
 msgid ""
 "At various stages of the live migration process the contents of an instances"
 " run time memory and disk are transmitted over the network in plain text. "
@@ -11831,68 +11827,68 @@ msgid ""
 "migration. The following in-exhaustive list details some of these risks:"
 msgstr "ライブマイグレーションのステージによっては、インスタンスのランタイムメモリやディスクの今テンスが平文でネットワーク上転送されます。そのため、ライブマイグレーション中には対処が必要なリスクがあります。次は一部のリスクの詳細を列挙しています。"
 
-#: ./security-guide/section_security-services-for-instances.xml246(para)
+#: ./security-guide/section_security-services-for-instances.xml221(para)
 msgid ""
 "<emphasis>Denial of Service (DoS)</emphasis>: If something fails during the "
 "migration process, the instance could be lost."
 msgstr "<emphasis>Denial of Service (DoS)</emphasis>: マイグレーションプロセス中に何かが失敗した場合、インスタンスを失う可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml249(para)
+#: ./security-guide/section_security-services-for-instances.xml224(para)
 msgid ""
 "<emphasis>Data exposure</emphasis>: Memory or disk transfers must be handled"
 " securely."
 msgstr "<emphasis>データの公開</emphasis>: メモリやディスクの転送は安全に行う必要があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml252(para)
+#: ./security-guide/section_security-services-for-instances.xml227(para)
 msgid ""
 "<emphasis>Data manipulation</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate user data during the "
 "migration."
 msgstr "<emphasis>データの操作</emphasis>: メモリやディスクの転送がセキュアに処理されなければ、攻撃者がマイグレーション中にユーザーデータを操作できる可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml255(para)
+#: ./security-guide/section_security-services-for-instances.xml230(para)
 msgid ""
 "<emphasis>Code injection</emphasis>: If memory or disk transfers are not "
 "handled securely, then an attacker could manipulate executables, either on "
 "disk or in memory, during the migration."
 msgstr "<emphasis>コードの挿入</emphasis>: メモリやディスクの転送が安全ではない場合、マイグレーション中に攻撃者によってディスクやメモリ上の実行ファイルが操作される可能性があります。"
 
-#: ./security-guide/section_security-services-for-instances.xml260(title)
+#: ./security-guide/section_security-services-for-instances.xml235(title)
 msgid "Live migration mitigations"
 msgstr "ライブマイグレーションのリスクの軽減"
 
-#: ./security-guide/section_security-services-for-instances.xml261(para)
+#: ./security-guide/section_security-services-for-instances.xml236(para)
 msgid ""
 "There are several methods to mitigate some of the risk associated with live "
 "migrations, the following list details some of these:"
 msgstr "ライブマイグレーションに関連するリスクを軽減するためには様々な手法があります。次のリストで詳しく説明します。"
 
-#: ./security-guide/section_security-services-for-instances.xml263(para)
-#: ./security-guide/section_security-services-for-instances.xml273(title)
+#: ./security-guide/section_security-services-for-instances.xml238(para)
+#: ./security-guide/section_security-services-for-instances.xml248(title)
 msgid "Disable live migration"
 msgstr "ライブマイグレーションの無効化"
 
-#: ./security-guide/section_security-services-for-instances.xml266(para)
+#: ./security-guide/section_security-services-for-instances.xml241(para)
 msgid "Isolated migration network"
 msgstr "マイグレーションネットワークの分離"
 
-#: ./security-guide/section_security-services-for-instances.xml269(para)
-#: ./security-guide/section_security-services-for-instances.xml286(title)
+#: ./security-guide/section_security-services-for-instances.xml244(para)
+#: ./security-guide/section_security-services-for-instances.xml261(title)
 msgid "Encrypted live migration"
 msgstr "ライブマイグレーションの暗号化"
 
-#: ./security-guide/section_security-services-for-instances.xml274(para)
+#: ./security-guide/section_security-services-for-instances.xml249(para)
 msgid ""
 "At this time, live migration is enabled in OpenStack by default. Live "
 "migrations can be disabled by adding the following lines to the nova "
 "<filename>policy.json</filename> file:"
 msgstr "現在、OpenStackではデフォルトでライブマイグレーションを有効にしています。ライブマイグレーションは nova <filename>policy.json</filename> ファイルへ下記の行を追加することによって無効化できます。"
 
-#: ./security-guide/section_security-services-for-instances.xml282(title)
+#: ./security-guide/section_security-services-for-instances.xml257(title)
 msgid "Migration network"
 msgstr "マイグレーションネットワーク"
 
-#: ./security-guide/section_security-services-for-instances.xml283(para)
+#: ./security-guide/section_security-services-for-instances.xml258(para)
 msgid ""
 "As a general practice, live migration traffic should be restricted to the "
 "management security domain, see <xref linkend=\"security-boundaries-and-"
@@ -11903,7 +11899,7 @@ msgid ""
 "traffic to a dedicated network can reduce the risk of exposure."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml287(para)
+#: ./security-guide/section_security-services-for-instances.xml262(para)
 msgid ""
 "If there is a sufficient business case for keeping live migration enabled, "
 "then libvirtd can provide encrypted tunnels for the live migrations. "
@@ -11913,23 +11909,23 @@ msgid ""
 "following high-level steps:"
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml289(para)
+#: ./security-guide/section_security-services-for-instances.xml264(para)
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml290(para)
+#: ./security-guide/section_security-services-for-instances.xml265(para)
 msgid ""
 "An encrypted tunnel is created between libvirtd processes on both source and"
 " destination hosts."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml291(para)
+#: ./security-guide/section_security-services-for-instances.xml266(para)
 msgid ""
 "Destination libvirtd host copies the instances back to an underlying "
 "hypervisor."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml298(para)
+#: ./security-guide/section_security-services-for-instances.xml273(para)
 msgid ""
 "As an OpenStack virtual machine is a server image able to be replicated "
 "across hosts, best practice in logging applies similarly between physical "
@@ -11943,14 +11939,14 @@ msgid ""
 "Elasticsearch, Logstash, and Kibana</citetitle></link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml311(para)
+#: ./security-guide/section_security-services-for-instances.xml286(para)
 msgid ""
 "These logs should be reviewed at a regular cadence such as a live view by a "
 "network operations center (NOC), or if the environment is not large enough "
 "to necessitate a NOC, then logs should undergo a regular log review process."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml315(para)
+#: ./security-guide/section_security-services-for-instances.xml290(para)
 msgid ""
 "Many times interesting events trigger an alert which is sent to a responder "
 "for action. Frequently this alert takes the form of an email with the "
@@ -11961,7 +11957,7 @@ msgid ""
 "<link href=\"http://www.zabbix.com\"><citetitle>Zabbix </citetitle></link>."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml327(para)
+#: ./security-guide/section_security-services-for-instances.xml302(para)
 msgid ""
 "A hypervisor runs independent virtual machines. This hypervisor can run in "
 "an operating system or directly on the hardware (called baremetal). Updates "
@@ -11971,7 +11967,7 @@ msgid ""
 "Debian virtual machines."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml334(para)
+#: ./security-guide/section_security-services-for-instances.xml309(para)
 msgid ""
 "Therefore, we recommend that clear ownership of virtual machines be "
 "assigned, and that those owners be responsible for the hardening, "
@@ -11982,7 +11978,7 @@ msgid ""
 "patch."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml345(para)
+#: ./security-guide/section_security-services-for-instances.xml320(para)
 msgid ""
 "Most common operating systems include host-based firewalls for additional "
 "security. While we recommend that virtual machines run as few applications "
@@ -11997,7 +11993,7 @@ msgid ""
 "denied in the firewall configuration."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml358(para)
+#: ./security-guide/section_security-services-for-instances.xml333(para)
 msgid ""
 "On Linux virtual machines, the application profile above can be used in "
 "conjunction with a tool like <link "
@@ -12010,7 +12006,7 @@ msgid ""
 "resources that are not needed."
 msgstr ""
 
-#: ./security-guide/section_security-services-for-instances.xml367(para)
+#: ./security-guide/section_security-services-for-instances.xml342(para)
 msgid ""
 "OpenStack provides security groups for both hosts and the network to add "
 "defense in depth to the virtual machines in a given project. These are "

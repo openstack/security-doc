@@ -6,6 +6,15 @@
   xml:id="tenant-data">
   <title>Tenant data privacy</title>
 
+  <para>
+    OpenStack is designed to support multitenancy and those tenants will
+    most probably have different data requirements. As a cloud builder
+    and operator you need to ensure your OpenStack environment can
+    address various data privacy concerns and regulations. In this
+    chapter we will address data residency and disposal as it pertains
+    to OpenStack implementations.
+  </para>
+
   <xi:include href="section_data-privacy-concerns.xml"/>
   <xi:include href="section_data-encryption.xml"/>
   <xi:include href="section_key-management.xml"/>

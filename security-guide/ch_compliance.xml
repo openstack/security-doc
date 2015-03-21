@@ -6,6 +6,46 @@
   xml:id="compliance">
   <title>Compliance</title>
 
+  <para>
+    An OpenStack deployment may require compliance activities for many
+    purposes, such as regulatory and legal requirements, customer need,
+    privacy considerations, and security best practices. The Compliance
+    function is important for the business and its customers. Compliance
+    means adhering to regulations, specifications, standards and laws.
+    It is also used when describing an organizations status regarding
+    assessments, audits, and certifications. Compliance, when done
+    correctly, unifies and strengthens the other security topics
+    discussed in this guide.
+  </para>
+  <para>
+    This chapter has several objectives:
+  </para>
+  <itemizedlist>
+    <listitem>
+      <para>
+        Review common security principles.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Discuss common control frameworks and certification resources to
+        achieve industry certifications or regulator attestations.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Act as a reference for auditors when evaluating OpenStack
+        deployments.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Introduce privacy considerations specific to OpenStack and cloud
+        environments.
+      </para>
+    </listitem>
+  </itemizedlist>
+
   <xi:include href="section_compliance-overview.xml"/>
   <xi:include href="section_understanding-the-audit-process.xml"/>
   <xi:include href="section_compliance-activities.xml"/>

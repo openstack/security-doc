@@ -7,26 +7,15 @@
   <?dbhtml stop-chunking?>
   <title>Introduction to Data processing</title>
   <para>
-    The Data processing service for OpenStack (sahara) provides a platform
-    for the provisioning and management of instance clusters using processing
-    frameworks such as Hadoop and Spark. Through the OpenStack dashboard
-    or REST API, users will be able to upload and execute framework
-    applications which may access data in object storage or external
-    providers. The data processing controller uses the Orchestration
-    service to create clusters of instances which may exist as
-    long-running groups that can grow and shrink as requested, or as
-    transient groups created for a single workload.
-  </para>
-  <para>
-    The service controller will be responsible for creating, maintaining,
-    and destroying any instances created for its clusters. The controller
-    will use the Networking service to establish network paths between
-    itself and the cluster instances. It will also manage the deployment
-    and life-cycle of user applications that are to be run on the
-    clusters. The instances within a cluster contain the core of a
-    framework's processing engine and the Data processing service provides
-    several options for creating and managing the connections to these
-    instances.
+    The Data processing service controller will be responsible for
+    creating, maintaining, and destroying any instances created for its
+    clusters. The controller will use the Networking service to
+    establish network paths between itself and the cluster instances. It
+    will also manage the deployment and life-cycle of user applications
+    that are to be run on the clusters. The instances within a cluster
+    contain the core of a framework's processing engine and the Data
+    processing service provides several options for creating and
+    managing the connections to these instances.
   </para>
   <para>
     Data processing resources (clusters, jobs, and data sources) are

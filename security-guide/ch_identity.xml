@@ -75,15 +75,14 @@
       <para>LDAP simplifies integration of Identity authentication
         into an organization's existing directory service and user
         account management processes.</para>
-      <para>Authentication and authorization policy in OpenStack may
-        be delegated to an external LDAP server. A typical use case is
-        an organization that seeks to deploy a private cloud and
-        already has a database of employees, the users. This may be in
-        an LDAP system. Using LDAP as a source of authority
-        authentication, requests to Identity service are delegated to
-        the LDAP service, which will authorize or deny requests based
-        on locally set policies. A token is generated on successful
-        authentication.</para>
+      <para>Authentication and authorization policy in OpenStack may be
+      delegated to another service. A typical use case is an organization
+      that seeks to deploy a private cloud and already has a database of employees
+      and users in an LDAP system. Using this as the authentication authority,
+      requests to the Identity service are delegated to the LDAP system,
+      which will then authorize or deny based on its policies. Upon successful authentication,
+      the Identity service then generates a token that is used for access to
+      authorized services.</para>
       <para>Note that if the LDAP system has attributes defined for
         the user such as admin, finance, HR etc, these must be mapped
         into roles and groups within Identity for use by the various

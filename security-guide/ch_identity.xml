@@ -143,17 +143,17 @@
   <section xml:id="identity-authorization">
     <title>Authorization</title>
     <para>The Identity service supports the notion of groups and
-      roles. Users belong to groups. A group has a list of roles.
+      roles. Users belong to groups while a group has a list of roles.
       OpenStack services reference the roles of the user attempting to
       access the service. The OpenStack policy enforcer middleware
       takes into consideration the policy rule associated with each
-      resource and the user's group/roles and tenant association to
-      determine if he/she has access to the requested resource.</para>
-    <para>The Policy enforcement middleware enables fine-grained
+      resource then the user's group/roles and association to
+      determine if access is allowed to the requested resource.</para>
+    <para>The policy enforcement middleware enables fine-grained
       access control to OpenStack resources. Only admin users can
       provision new users and have access to various management
-      functionality. The cloud tenant would be able to only spin up
-      instances, attach volumes, etc.</para>
+      functionality. The cloud users would only be able to spin up
+      instances, attach volumes, and perform other operational tasks.</para>
     <section xml:id="identity-authorization-establish-formal-access-control-policies">
       <title>Establish formal access control policies</title>
       <para>Prior to configuring roles, groups, and users, document
@@ -170,18 +170,19 @@
     </section>
     <section xml:id="identity-authorization-service-authorization">
       <title>Service authorization</title>
-      <para>As described in the <link
+      <para>Cloud administrators must define a user with the role of
+        admin for each service, as described in the <link
           xlink:href="http://docs.openstack.org/admin-guide-cloud/content/index.html"
             ><citetitle>OpenStack Cloud Administrator
-            Guide</citetitle></link>, cloud administrators must define
-        a user for each service, with a role of Admin. This service
-        user account provides the service with the authorization to
+            Guide</citetitle></link>. This service
+        account provides the service with the authorization to
         authenticate users.</para>
       <para>The Compute and Object Storage services can be configured
-        to use either the "tempAuth" file or Identity service to store
-        authentication information. The "tempAuth" solution MUST NOT
-        be deployed in a production environment since it stores
-        passwords in plain text.</para>
+        to use the Identity service to store authentication information.
+        Other options to store authentication information include the use
+        of the "tempAuth" file, however this should not be deployed in a
+        production environment as the password is displayed in plain text.
+      </para>
       <para>The Identity service supports client authentication for
         TLS which may be enabled. TLS client authentication provides
         an additional authentication factor, in addition to the
@@ -223,7 +224,7 @@
         2-factor authentication, such as a certificate. This reduces
         the risk from passwords that may be compromised. This
         recommendation is in compliance with NIST 800-53 IA-2(1)
-        guidance in the use of multi factor authentication for network
+        guidance in the use of multi-factor authentication for network
         access to privileged accounts.</para>
     </section>
     <section xml:id="identity-authorization-end-users">

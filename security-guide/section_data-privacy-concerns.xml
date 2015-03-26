@@ -114,7 +114,10 @@
       </section>
       <section xml:id="data-privacy-concerns-data-disposal-cinder-volume-data">
         <title>Cinder volume data</title>
-        <para>Plugins to OpenStack Block Storage will store data in a variety of ways. Many plug-ins are specific to a vendor or technology, whereas others are more DIY solutions around filesystems such as LVM or ZFS. Methods to securely destroy data will vary from one plugin to another, from one vendor's solution to another, and from one filesystem to another.</para>
+        <para>Use of the OpenStack volume encryption feature is highly encouraged. This is
+        discussed in the Data Encryption section below.  When this feature is used,
+        destruction of data is accomplished by securely deleting the encryption key.</para>
+        <para>If a backend plugin is being used, there may be independent ways of doing encryption or non-standard overwrite solutions. Plugins to OpenStack Block Storage will store data in a variety of ways. Many plug-ins are specific to a vendor or technology, whereas others are more DIY solutions around filesystems such as LVM or ZFS. Methods to securely destroy data will vary from one plugin to another, from one vendor's solution to another, and from one filesystem to another.</para>
         <para>Some back ends such as ZFS will support copy-on-write to
         prevent data exposure. In these cases, reads from unwritten
         blocks will always return zero. Other back ends such as LVM
@@ -124,10 +127,10 @@
         assurances your chosen volume back end provides and to see what
         mediations may be available for those assurances not
         provided.</para>
-        <para>Finally, while not a feature of OpenStack, vendors and
-          implementors may choose to add or support encryption of volumes.
-          In this case, destruction of data is as simple as throwing
-          away the key.</para>
+      <para>Finally, while not a feature of OpenStack, vendors and
+        implementors may choose to add or support encryption of volumes.
+        In this case, destruction of data is as simple as throwing
+        away the key.</para>
       </section>
       <section xml:id="data-privacy-concerns-data-disposal-glance-delay-delete">
         <title>Image Service delay delete feature</title>

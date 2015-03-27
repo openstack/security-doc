@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-25 19:43+0000\n"
-"PO-Revision-Date: 2015-03-26 03:30+0000\n"
+"POT-Creation-Date: 2015-03-26 08:13+0000\n"
+"PO-Revision-Date: 2015-03-26 08:14+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1921,11 +1921,12 @@ msgstr "データ暗号化"
 
 #: ./security-guide/section_data-encryption.xml9(para)
 msgid ""
-"The option exists for implementors to encrypt tenant data wherever it is "
-"stored on disk or transported over a network. This is above and beyond the "
-"general recommendation that users encrypt their own data before sending it "
-"to their provider."
-msgstr "このオプションは、データをディスクに保存する箇所やデータをネットワーク経由で転送する箇所でテナントデータを暗号化する実装者用です。ユーザが自分自身のデータをプロバイダに送信する前にデータを暗号化するという一般的な推奨の上またはその先にあるものです。"
+"The option exists for implementers to encrypt tenant data wherever it is "
+"stored on disk or transported over a network, such as the OpenStack volume "
+"encryption feature described below. This is above and beyond the general "
+"recommendation that users encrypt their own data before sending it to their "
+"provider."
+msgstr ""
 
 #: ./security-guide/section_data-encryption.xml10(para)
 msgid ""
@@ -1961,22 +1962,110 @@ msgid "Opportunities to encrypt data for users are present:"
 msgstr "ユーザ用のデータ暗号化をする機会は現存します。"
 
 #: ./security-guide/section_data-encryption.xml15(para)
-#: ./security-guide/section_data-encryption.xml25(title)
+#: ./security-guide/section_data-encryption.xml80(title)
 #: ./security-guide/section_data-privacy-concerns.xml15(para)
 msgid "Object Storage objects"
 msgstr "Object Storage オブジェクト"
 
 #: ./security-guide/section_data-encryption.xml18(para)
-#: ./security-guide/section_data-encryption.xml31(title)
-msgid "Block Storage volumes and instance ephemeral filesystems"
-msgstr "Block Storage ボリュームとインスタンスの一時ファイルシステム"
-
-#: ./security-guide/section_data-encryption.xml21(para)
-#: ./security-guide/section_data-encryption.xml38(title)
+#: ./security-guide/section_data-encryption.xml92(title)
 msgid "Network data"
 msgstr "ネットワークデータ"
 
+#: ./security-guide/section_data-encryption.xml22(title)
+msgid "Volume encryption"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml23(para)
+msgid ""
+"A volume encryption feature in OpenStack supports privacy on a per-tenant "
+"basis. As of the Kilo release, the following features are supported:"
+msgstr ""
+
 #: ./security-guide/section_data-encryption.xml26(para)
+msgid ""
+"Creation and usage of encrypted volume types, initiated through the "
+"dashboard or a command line interface"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml29(para)
+msgid ""
+"Enable encryption and select parameters such as encryption algorithm and key"
+" size"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml34(para)
+msgid "Volume data contained within iSCSI packets is encrypted"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml37(para)
+msgid "Supports encrypted backups if the original volume is encrypted"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml40(para)
+msgid ""
+"Dashboard indication of volume encryption status. Includes indication that a"
+" volume is encrypted, and includes the encryption parameters such as "
+"algorithm and key size"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml43(para)
+#: ./security-guide/section_data-encryption.xml64(para)
+msgid "Interface with the Key management service through a secure wrapper"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml46(para)
+msgid ""
+"Volume encryption is supported by back-end key storage for enhanced security"
+" (for example, a Hardware Security Module (HSM) or a KMIP server can be used"
+" as a Barbican back-end secret store)"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml53(title)
+msgid "Ephemeral disk encryption"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml54(para)
+msgid ""
+"An ephemeral disk encryption feature addresses data privacy. The ephemeral "
+"disk is a temporary work space used by the virtual host operating system. "
+"Without encryption, sensitive user information could be accessed on this "
+"disk, and vestigial information could remain after the disk is unmounted. As"
+" of the Kilo release, the following ephemeral disk encryption features are "
+"supported:"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml56(para)
+msgid "Creation and usage of encrypted LVM ephemeral disks"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml59(para)
+msgid ""
+"Compute configuration enables encryption and specifies encryption parameters"
+" such as algorithm and key size"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml67(para)
+msgid ""
+"Key management service will support data isolation by providing ephemeral "
+"disk encryption keys on a per-tenant basis"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml70(para)
+msgid ""
+"Ephemeral disk encryption is supported by back-end key storage for enhanced "
+"security (for example, an HSM or a KMIP server can be used as a Barbican "
+"back-end secret store)"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml73(para)
+msgid ""
+"With the Key management service, when an ephemeral disk is no longer needed,"
+" simply deleting the key may take the place of overwriting the ephemeral "
+"disk storage area"
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml81(para)
 msgid ""
 "The ability to encrypt objects in Object Storage is presently limited to "
 "disk-level encryption per node. However, there does exist third-party "
@@ -1985,33 +2074,37 @@ msgid ""
 "Below are some pointers:"
 msgstr "Object Storage 中のオブジェクトの暗号化の可能性は、現時点ではノード単位のディスクレベル暗号化に限定されています。しかしながら、オブジェクト単位の暗号化用のサードパーティ拡張やモジュールが存在します。これらのモジュールはアップストリームに提案されていますが、この文書を書いている時点では公式に認可されていません。下記はそれらの幾つかへのポインタです。"
 
-#: ./security-guide/section_data-encryption.xml27(link)
+#: ./security-guide/section_data-encryption.xml82(link)
 msgid "https://github.com/Mirantis/swift-encrypt"
 msgstr "https://github.com/Mirantis/swift-encrypt"
 
-#: ./security-guide/section_data-encryption.xml28(link)
+#: ./security-guide/section_data-encryption.xml83(link)
 msgid ""
 "http://www.mirantis.com/blog/on-disk-encryption-prototype-for-openstack-"
 "swift/"
 msgstr "http://www.mirantis.com/blog/on-disk-encryption-prototype-for-openstack-swift/"
 
-#: ./security-guide/section_data-encryption.xml32(para)
+#: ./security-guide/section_data-encryption.xml86(title)
+msgid "Block Storage volumes and instance ephemeral filesystems"
+msgstr "Block Storage ボリュームとインスタンスの一時ファイルシステム"
+
+#: ./security-guide/section_data-encryption.xml87(para)
 msgid ""
 "Block Storage supports a variety of mechanisms for supplying mountable "
-"volumes. The ability to encrypt volumes depends on the service back ends "
-"chosen. Some back ends may not support this at all. It is outside the scope "
-"of this guide to specify recommendations for each Block Storage back-end "
-"driver."
-msgstr "Block Storage は、マウント可能なボリュームの提供に向けた様々な機構をサポートします。Block Storage の各バックエンドドライバ用に推奨を指定する事はこのガイドの範囲外です。"
+"volumes. The ability to encrypt volumes on the storage host depends on the "
+"service back ends chosen. Some back ends may not support this at all. It is "
+"outside the scope of this guide to specify recommendations for each Block "
+"Storage back-end driver."
+msgstr ""
 
-#: ./security-guide/section_data-encryption.xml33(para)
+#: ./security-guide/section_data-encryption.xml88(para)
 msgid ""
 "For the purpose of performance, many storage protocols are unencrypted. Some"
 " protocols such as iSCSI can provide authentication and encrypted sessions, "
 "it is our recommendation to enable these features."
 msgstr "性能の為に、多くのストレージプロトコルは暗号化されていません。iSCSI のような幾つかのプロトコルは、認証と暗号化セッションを提供できます。これらの機能を有効にする事を推奨します。"
 
-#: ./security-guide/section_data-encryption.xml34(para)
+#: ./security-guide/section_data-encryption.xml89(para)
 msgid ""
 "As both block storage and compute support LVM backed storage, we can easily "
 "provide an example applicable to both systems. In deployments using LVM, "
@@ -2022,24 +2115,17 @@ msgid ""
 "encrypted physical volume to an LVM volume group (VG)."
 msgstr "Block Storage と Compute は両方、LVM ベースのストレージをサポートしているので、両システムに簡単に適用可能な例を提供します。LVM を用いたデプロイでは、暗号化はベースの物理ボリュームに対して実施できます。暗号化ブロックデバイスは、pvcreate を使用して復号化したブロックデバイスの上に作成した LVM 物理ボリューム (PV) を用いて、標準の Linux ツールを使用して作成する事ができます。それから、vgcreate 又は vgmodify ツールを使用して、暗号化した物理ボリュームを LVM のボリュームグループ (VG) に追加できます。"
 
-#: ./security-guide/section_data-encryption.xml35(para)
-msgid ""
-"A feature aimed for the Havana release provides encryption of the VM's data "
-"before it is written to disk. This allows the privacy of data to be "
-"maintained while residing on the storage device. The idea is similar to how "
-"self-encrypting drives work. This feature presents a normal block storage "
-"device to the VM but encrypts the bytes in the virtualization host before "
-"writing them to the disk. The block server operates exactly as it does when "
-"reading and writing unencrypted blocks, except special handling will be "
-"required for Block Storage features such as snapshots and live migration. "
-"Note that this feature uses an independent key manager."
-msgstr "Havana リリース向けの１機能が、ディスクに書き込まれる前の VM データの暗号化を提供しています。これは、ストレージデバイス上でもデータのプライバシーが管理される事を可能にします。このアイデアは自己暗号化ドライブが機能する方法と同様です。この機能は、VM には通常のブロックストレージデバイスとして見えますが、仮想化ホストではディスクにデータが書き込まれる前にデータが暗号化されます。ブロックサーバは、特別な処理がスナップショットやライブマイグレーションといった Block Storage の機能に向けて要求される事を除いて、暗号化されていないブロックを読み書きする場合と全く同様に処理が行われます。この機能は独立した鍵管理を使用する事に注意して下さい。"
-
-#: ./security-guide/section_data-encryption.xml39(para)
+#: ./security-guide/section_data-encryption.xml93(para)
 msgid ""
 "Tenant data for compute could be encrypted over IPsec or other tunnels. This"
 " is not functionality common or standard in OpenStack, but is an option "
 "available to motivated and interested implementors."
+msgstr ""
+
+#: ./security-guide/section_data-encryption.xml97(para)
+msgid ""
+"Likewise, encrypted data will remain encrypted as it is transferred over the"
+" network."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for
@@ -10167,12 +10253,12 @@ msgid "Instance memory scrubbing"
 msgstr "インスタンスメモリの消去"
 
 #: ./security-guide/section_data-privacy-concerns.xml98(para)
-#: ./security-guide/section_data-privacy-concerns.xml151(title)
+#: ./security-guide/section_data-privacy-concerns.xml154(title)
 msgid "Compute instance ephemeral storage"
 msgstr "Compute インスタンスの一時ストレージ"
 
 #: ./security-guide/section_data-privacy-concerns.xml101(para)
-#: ./security-guide/section_data-privacy-concerns.xml172(title)
+#: ./security-guide/section_data-privacy-concerns.xml175(title)
 msgid "Bare metal server sanitization"
 msgstr "物理サーバのサニタイズ"
 
@@ -10225,14 +10311,23 @@ msgstr "Cinder のボリュームデータ"
 
 #: ./security-guide/section_data-privacy-concerns.xml117(para)
 msgid ""
-"Plugins to OpenStack Block Storage will store data in a variety of ways. "
-"Many plug-ins are specific to a vendor or technology, whereas others are "
-"more DIY solutions around filesystems such as LVM or ZFS. Methods to "
-"securely destroy data will vary from one plugin to another, from one "
-"vendor's solution to another, and from one filesystem to another."
-msgstr "OpenStack Block Storage のプラグインは様々な方法でデータの保存を行います。多くのプラグインはベンダー又はストレージ技術に特化していますが、その他は LVM や ZFS といったファイルシステム辺りのより手作りのソリューションです。安全にデータを破壊する方法はプラグイン毎、ベンダーのソリューション毎、ファイルシステム毎に異なるでしょう。"
+"Use of the OpenStack volume encryption feature is highly encouraged. This is"
+" discussed in the Data Encryption section below. When this feature is used, "
+"destruction of data is accomplished by securely deleting the encryption key."
+msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml118(para)
+#: ./security-guide/section_data-privacy-concerns.xml120(para)
+msgid ""
+"If a backend plugin is being used, there may be independent ways of doing "
+"encryption or non-standard overwrite solutions. Plugins to OpenStack Block "
+"Storage will store data in a variety of ways. Many plug-ins are specific to "
+"a vendor or technology, whereas others are more DIY solutions around "
+"filesystems such as LVM or ZFS. Methods to securely destroy data will vary "
+"from one plugin to another, from one vendor's solution to another, and from "
+"one filesystem to another."
+msgstr ""
+
+#: ./security-guide/section_data-privacy-concerns.xml121(para)
 msgid ""
 "Some back ends such as ZFS will support copy-on-write to prevent data "
 "exposure. In these cases, reads from unwritten blocks will always return "
@@ -10243,18 +10338,18 @@ msgid ""
 "may be available for those assurances not provided."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml127(para)
+#: ./security-guide/section_data-privacy-concerns.xml130(para)
 msgid ""
 "Finally, while not a feature of OpenStack, vendors and implementors may "
 "choose to add or support encryption of volumes. In this case, destruction of"
 " data is as simple as throwing away the key."
 msgstr "最後に、これは OpenStack の機能ではありませんが、ベンダーと開発者がボリュームの暗号化機能をサポートするか、あるいは追加可能であるかも知れません。この場合、データの破壊は単にキーを破棄するだけです。"
 
-#: ./security-guide/section_data-privacy-concerns.xml133(title)
+#: ./security-guide/section_data-privacy-concerns.xml136(title)
 msgid "Image Service delay delete feature"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml134(para)
+#: ./security-guide/section_data-privacy-concerns.xml137(para)
 msgid ""
 "OpenStack Image Service has a delayed delete feature, which will pend the "
 "deletion of an image for a defined time period. It is recommended to disable"
@@ -10264,11 +10359,11 @@ msgid ""
 "<replaceable>False</replaceable>."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml142(title)
+#: ./security-guide/section_data-privacy-concerns.xml145(title)
 msgid "Compute soft delete feature"
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml143(para)
+#: ./security-guide/section_data-privacy-concerns.xml146(para)
 msgid ""
 "OpenStack Compute has a soft-delete feature, which enables an instance that "
 "is deleted to be in a soft-delete state for a defined time period. The "
@@ -10277,13 +10372,13 @@ msgid ""
 "the <literal>reclaim_instance_interval</literal> option empty."
 msgstr ""
 
-#: ./security-guide/section_data-privacy-concerns.xml152(para)
+#: ./security-guide/section_data-privacy-concerns.xml155(para)
 msgid ""
 "The creation and destruction of ephemeral storage will be somewhat dependent"
 " on the chosen hypervisor and the OpenStack Compute plug-in."
 msgstr "一時ストレージの作成・削除は選択したハイパーバイザや OpenStack Compute プラグインに依存するでしょう。"
 
-#: ./security-guide/section_data-privacy-concerns.xml155(para)
+#: ./security-guide/section_data-privacy-concerns.xml158(para)
 msgid ""
 "The libvirt plug-in for compute may maintain ephemeral storage directly on a"
 " filesystem, or in LVM. Filesystem storage generally will not overwrite data"
@@ -10291,7 +10386,7 @@ msgid ""
 "not provisioned to users."
 msgstr "compute 用の libvirt プラグインは、ファイルシステム又は LVM 上の一時ストレージを直接管理出来ます。ファイルシステムストレージは一般にデータを削除する際に上書きはしませんが、ユーザに対して汚れたエクステンドが用意されないという保証があります。"
 
-#: ./security-guide/section_data-privacy-concerns.xml160(para)
+#: ./security-guide/section_data-privacy-concerns.xml163(para)
 msgid ""
 "When using LVM backed ephemeral storage, which is block-based, it is "
 "necessary that the OpenStack Compute software securely erases blocks to "
@@ -10300,7 +10395,7 @@ msgid ""
 "storage devices."
 msgstr "ブロックデバイスベースである LVM をバックエンドにした一時ストレージを使用する場合、OpenStack Compute は情報漏えいを防ぐために、安全にブロックを削除する必要があります。これらには、過去において、不適切な一時ブロックストレージデバイスの削除に関連する情報漏洩の脆弱性がありました。"
 
-#: ./security-guide/section_data-privacy-concerns.xml165(para)
+#: ./security-guide/section_data-privacy-concerns.xml168(para)
 msgid ""
 "Filesystem storage is a more secure solution for ephemeral block storage "
 "devices than LVM as dirty extents cannot be provisioned to users. However, "
@@ -10308,7 +10403,7 @@ msgid ""
 "suggested to encrypt the backing filesystem."
 msgstr "データが含まれたエクステンドがユーザに用意されないので、一時ブロックストレージデバイス用としてファイルシステムストレージは LVM より安全なソリューションです。しかしながら、ユーザデータが破壊されない事を覚えておく事は重要であり、このためバックエンドのファイルシステムの暗号化が提案されています。"
 
-#: ./security-guide/section_data-privacy-concerns.xml173(para)
+#: ./security-guide/section_data-privacy-concerns.xml176(para)
 msgid ""
 "A bare metal server driver for Compute was under development and has since "
 "moved into a separate project called <link "
@@ -10317,7 +10412,7 @@ msgid ""
 "data resident the physical hardware."
 msgstr "Compute の物理サーバドライバは開発中だったのですが、<link href=\"https://wiki.openstack.org/wiki/Ironic\">ironic</link>と呼ばれる独立したプロジェクトに移管される事になりました。この文書の執筆時点では、ironic には物理ハードウェア上にあるテナントデータのサニタイズ機能はまだありません。"
 
-#: ./security-guide/section_data-privacy-concerns.xml180(para)
+#: ./security-guide/section_data-privacy-concerns.xml183(para)
 msgid ""
 "Additionally, it is possible for tenants of a bare metal system to modify "
 "system firmware. TPM technology, described in <xref linkend=\"integrity-"
@@ -10541,45 +10636,34 @@ msgstr ""
 
 #: ./security-guide/section_key-management.xml10(para)
 msgid ""
-"A key management service is in the early stages of being developed and has a"
-" way to go before becoming an official component of OpenStack. Refer to "
-"<link "
-"href=\"http://docs.openstack.org/developer/barbican/\">http://docs.openstack.org/developer/barbican/</link>"
-" for details."
+"The volume encryption and ephemeral disk encryption features rely on a key "
+"management service (for example, Barbican) for the creation and secure "
+"storage of keys. The key manager is pluggable to facilitate deployments that"
+" need a third-party Hardware Security Module (HSM) or the use of the Key "
+"Management Interchange Protocol (KMIP), which is supported by an open-source"
+" project called PyKMIP."
 msgstr ""
 
-#: ./security-guide/section_key-management.xml11(para)
-msgid ""
-"It shall support the creation of keys, and their secure saving (with a "
-"service master-key). Some of the design questions still being debated are "
-"how much of the Key Management Interchange Protocol (KMIP) to support, key "
-"formats, and certificate management. The key manager will be pluggable to "
-"facilitate deployments that need a third-party Hardware Security Module "
-"(HSM)."
-msgstr "鍵管理は、鍵の作成と安全な保存'（'サービスマスター鍵付き'）'をサポートしなければなりません。いくつかの鍵管理における相互運用性プロトコル"
-
-#: ./security-guide/section_key-management.xml12(para)
-msgid ""
-"OpenStack Block Storage, cinder, is the first service looking to integrate "
-"with the key manager to provide volume encryption."
-msgstr "OpenStack Block Storage (cinder) は、ボリュームの暗号化を提供するためにキーマネージャーとの統合を検討した最初のサービスです。"
-
-#: ./security-guide/section_key-management.xml14(title)
+#: ./security-guide/section_key-management.xml12(title)
 msgid "Bibliography:"
 msgstr ""
 
-#: ./security-guide/section_key-management.xml17(para)
+#: ./security-guide/section_key-management.xml15(para)
 msgid ""
 "OpenStack.org, Welcome to Barbican's Developer Documentation!. 2014. <link "
 "href=\"http://docs.openstack.org/developer/barbican\">Barbican developer "
 "documentation</link>"
 msgstr ""
 
-#: ./security-guide/section_key-management.xml20(para)
+#: ./security-guide/section_key-management.xml18(para)
 msgid ""
 "oasis-open.org, OASIS Key Management Interoperability Protocol (KMIP). 2014."
 " <link href=\"https://www.oasis-"
 "open.org/committees/tc_home.php?wg_abbrev=kmip\">KMIP</link>"
+msgstr ""
+
+#: ./security-guide/section_key-management.xml21(para)
+msgid "PyKMIP library https://github.com/OpenKMIP/PyKMIP"
 msgstr ""
 
 #: ./security-guide/bk-openstack-security-guide.xml7(title)

@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-03-26 08:13+0000\n"
-"PO-Revision-Date: 2015-03-26 08:14+0000\n"
+"POT-Creation-Date: 2015-03-30 18:04+0000\n"
+"PO-Revision-Date: 2015-03-30 18:04+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -924,20 +924,21 @@ msgstr "認可"
 #: ./security-guide/ch_identity.xml144(para)
 msgid ""
 "The Identity service supports the notion of groups and roles. Users belong "
-"to groups. A group has a list of roles. OpenStack services reference the "
-"roles of the user attempting to access the service. The OpenStack policy "
-"enforcer middleware takes into consideration the policy rule associated with"
-" each resource and the user's group/roles and tenant association to "
-"determine if he/she has access to the requested resource."
+"to groups while a group has a list of roles. OpenStack services reference "
+"the roles of the user attempting to access the service. The OpenStack policy"
+" enforcer middleware takes into consideration the policy rule associated "
+"with each resource then the user's group/roles and association to determine "
+"if access is allowed to the requested resource."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml151(para)
 msgid ""
-"The Policy enforcement middleware enables fine-grained access control to "
+"The policy enforcement middleware enables fine-grained access control to "
 "OpenStack resources. Only admin users can provision new users and have "
-"access to various management functionality. The cloud tenant would be able "
-"to only spin up instances, attach volumes, etc."
-msgstr "ポリシー強制ミドルウェアにより OpenStack リソースに細かなアクセス制御を実現できます。管理ユーザーのみが新しいユーザーを作成でき、さまざまな管理機能にアクセスできます。クラウドのテナントはインスタンスの稼動、ボリュームの接続などのみが実行できます。"
+"access to various management functionality. The cloud users would only be "
+"able to spin up instances, attach volumes, and perform other operational "
+"tasks."
+msgstr ""
 
 #: ./security-guide/ch_identity.xml157(title)
 msgid "Establish formal access control policies"
@@ -962,22 +963,23 @@ msgstr "サービス認可"
 
 #: ./security-guide/ch_identity.xml172(para)
 msgid ""
-"As described in the <link href=\"http://docs.openstack.org/admin-guide-"
-"cloud/content/index.html\"><citetitle>OpenStack Cloud Administrator "
-"Guide</citetitle></link>, cloud administrators must define a user for each "
-"service, with a role of Admin. This service user account provides the "
-"service with the authorization to authenticate users."
-msgstr "<link href=\"http://docs.openstack.org/admin-guide-cloud/content/index.html\"><citetitle>OpenStack Cloud Administrator Guide</citetitle></link> に記載されているとおり、クラウド管理者は各サービスに対して Admin ロールを持つユーザーを定義する必要があります。このサービスユーザーアカウントは、サービスがユーザーを認証するための権限を提供します。"
+"Cloud administrators must define a user with the role of admin for each "
+"service, as described in the <link href=\"http://docs.openstack.org/admin-"
+"guide-cloud/content/index.html\"><citetitle>OpenStack Cloud Administrator "
+"Guide</citetitle></link>. This service account provides the service with the"
+" authorization to authenticate users."
+msgstr ""
 
 #: ./security-guide/ch_identity.xml179(para)
 msgid ""
-"The Compute and Object Storage services can be configured to use either the "
-"\"tempAuth\" file or Identity service to store authentication information. "
-"The \"tempAuth\" solution MUST NOT be deployed in a production environment "
-"since it stores passwords in plain text."
+"The Compute and Object Storage services can be configured to use the "
+"Identity service to store authentication information. Other options to store"
+" authentication information include the use of the \"tempAuth\" file, "
+"however this should not be deployed in a production environment as the "
+"password is displayed in plain text."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml184(para)
+#: ./security-guide/ch_identity.xml185(para)
 msgid ""
 "The Identity service supports client authentication for TLS which may be "
 "enabled. TLS client authentication provides an additional authentication "
@@ -988,13 +990,13 @@ msgid ""
 "that may not be feasible in every deployment."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml194(para)
+#: ./security-guide/ch_identity.xml195(para)
 msgid ""
 "We recommend that you use client authentication with TLS for the "
 "authentication of services to the Identity service."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml198(para)
+#: ./security-guide/ch_identity.xml199(para)
 msgid ""
 "The cloud administrator should protect sensitive configuration files from "
 "unauthorized modification. This can be achieved with mandatory access "
@@ -1002,7 +1004,7 @@ msgid ""
 "<filename>/etc/keystone/keystone.conf</filename> and X.509 certificates."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml204(para)
+#: ./security-guide/ch_identity.xml205(para)
 msgid ""
 "Client authentication with TLS requires certificates be issued to services. "
 "These certificates can be signed by an external or internal certificate "
@@ -1017,36 +1019,36 @@ msgid ""
 "disables certificates for other components."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml219(title)
+#: ./security-guide/ch_identity.xml220(title)
 msgid "Administrative users"
 msgstr "管理ユーザー"
 
-#: ./security-guide/ch_identity.xml220(para)
+#: ./security-guide/ch_identity.xml221(para)
 msgid ""
 "We recommend that admin users authenticate using Identity service and an "
 "external authentication service that supports 2-factor authentication, such "
 "as a certificate. This reduces the risk from passwords that may be "
 "compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) "
-"guidance in the use of multi factor authentication for network access to "
+"guidance in the use of multi-factor authentication for network access to "
 "privileged accounts."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml229(title)
+#: ./security-guide/ch_identity.xml230(title)
 msgid "End users"
 msgstr "エンドユーザー"
 
-#: ./security-guide/ch_identity.xml230(para)
+#: ./security-guide/ch_identity.xml231(para)
 msgid ""
 "The Identity service can directly provide end-user authentication, or can be"
 " configured to use external authentication methods to conform to an "
 "organization's security policies and requirements."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml237(title)
+#: ./security-guide/ch_identity.xml238(title)
 msgid "Policies"
 msgstr "ポリシー"
 
-#: ./security-guide/ch_identity.xml238(para)
+#: ./security-guide/ch_identity.xml239(para)
 msgid ""
 "Each OpenStack service has a policy file in JSON format, called "
 "<filename>policy.json</filename>. The policy file specifies rules, and the "
@@ -1054,7 +1056,7 @@ msgid ""
 " to attach to a volume, or to fire up instances."
 msgstr "各 OpenStack サービスは <filename>policy.json</filename> という JSON 形式のポリシーファイルを持ちます。ポリシーファイルはルールを指定します。ルールは各リソースを決定します。リソースは API アクセスできます。ボリュームの接続やインスタンスの起動などです。"
 
-#: ./security-guide/ch_identity.xml243(para)
+#: ./security-guide/ch_identity.xml244(para)
 msgid ""
 "The policies can be updated by the cloud administrator to further control "
 "access to the various resources. The middleware could also be further "
@@ -1062,13 +1064,13 @@ msgid ""
 "refer to in your policies."
 msgstr "さまざまなリソースへのアクセス権をさらに制御するために、クラウド管理者がポリシーを更新できます。ミドルウェアによりさらにカスタマイズすることもできます。そのポリシーを参照しているグループやロールにユーザーを割り当てる必要があることに注意してください。"
 
-#: ./security-guide/ch_identity.xml248(para)
+#: ./security-guide/ch_identity.xml249(para)
 msgid ""
 "Below is a snippet of the Block Storage service "
 "<filename>policy.json</filename> file."
 msgstr "以下は Block Storage Service の <filename>policy.json</filename> ファイルの抜粋です。"
 
-#: ./security-guide/ch_identity.xml251(para)
+#: ./security-guide/ch_identity.xml252(para)
 msgid ""
 "Note the <emphasis role=\"bold\">default</emphasis> rule specifies that the "
 "user must be either an admin or the owner of the volume. It essentially says"
@@ -1077,11 +1079,11 @@ msgid ""
 "to admin users."
 msgstr "<emphasis role=\"bold\">デフォルト</emphasis>のルールは、ユーザーが管理者であるか、ボリュームの所有者である必要があることを指定しています。つまり、ボリュームの所有者と管理者のみがボリュームを作成、削除、更新できます。ボリューム形式の管理など、他の特定の操作は管理ユーザーのみがアクセス可能です。"
 
-#: ./security-guide/ch_identity.xml259(title)
+#: ./security-guide/ch_identity.xml260(title)
 msgid "Tokens"
 msgstr "トークン"
 
-#: ./security-guide/ch_identity.xml260(para)
+#: ./security-guide/ch_identity.xml261(para)
 msgid ""
 "Once a user is authenticated a token is generated for authorization and "
 "access to an OpenStack environment. A token can have a variable life span; "
@@ -1094,13 +1096,13 @@ msgid ""
 "transfer a disk image onto the hypervisor for local caching."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml271(para)
+#: ./security-guide/ch_identity.xml272(para)
 msgid ""
 "The following example shows a PKI token. Note that token id values are "
 "typically 3500 bytes. In this example, the value has been truncated."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml275(para)
+#: ./security-guide/ch_identity.xml276(para)
 msgid ""
 "The token is often passed within the structure of a larger context of an "
 "Identity service response. These responses also provide a catalog of the "
@@ -1108,7 +1110,7 @@ msgid ""
 "endpoints for internal, admin, and public access."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml280(para)
+#: ./security-guide/ch_identity.xml281(para)
 msgid ""
 "The Identity service supports token revocation. This manifests as an API to "
 "revoke a token, to list revoked tokens and individual OpenStack services "
@@ -1116,12 +1118,12 @@ msgid ""
 " cache and append the same to their list of cached revoked tokens."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml287(title)
+#: ./security-guide/ch_identity.xml288(title)
 #: ./security-guide/section_identity-federated-keystone.xml460(title)
 msgid "Future"
 msgstr "将来"
 
-#: ./security-guide/ch_identity.xml288(para)
+#: ./security-guide/ch_identity.xml289(para)
 msgid ""
 "Domains are high-level containers for projects, users and groups. As such, "
 "they can be used to centrally manage all keystone-based identity components."
@@ -1132,7 +1134,7 @@ msgid ""
 "domain and assigned roles that vary for each project."
 msgstr "ドメインはプロジェクト、ユーザー、グループの高いレベルでのコンテナーです。そのように、すべての keystone ベースの識別コンポーネントを一元的に管理するために使用されます。アカウントドメインを導入すると、サーバー、ストレージ、他のリソースは複数のプロジェクト (以前はテナントと呼ばれていました) の中で論理的にグループ化できます。これは、アカウントのようなマスターコンテナーの下でグループ化できます。さらに、複数のユーザーがアカウントドメインの中で管理でき、各プロジェクトで変化するロールを割り当てられます。"
 
-#: ./security-guide/ch_identity.xml297(para)
+#: ./security-guide/ch_identity.xml298(para)
 msgid ""
 "The Identity V3 API supports multiple domains. Users of different domains "
 "may be represented in different authentication back ends and even have "
@@ -1141,7 +1143,7 @@ msgid ""
 "service resources."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml303(para)
+#: ./security-guide/ch_identity.xml304(para)
 msgid ""
 "Where a rule may specify access to only admin users and users belonging to "
 "the tenant, the mapping may be trivial. In other scenarios the cloud "
@@ -2274,6 +2276,233 @@ msgid ""
 "recommended that OpenStack deployments have information similar to this on "
 "record."
 msgstr "サービス、プロトコル、ポートの表を参照すると、OpenStack のコンポーネント間の関係を理解するのに役立ちます。OpenStack のデプロイメントには、これと同様の情報を記録することを強く推奨します。"
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ./security-guide/section_secure-reference-architectures.xml58(None)
+#: ./security-guide/section_secure-reference-architectures.xml62(None)
+msgid ""
+"@@image: 'static/secure-arch-ref-1.png'; "
+"md5=121169233c45b935f55a2603543723f5"
+msgstr ""
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ./security-guide/section_secure-reference-architectures.xml104(None)
+#: ./security-guide/section_secure-reference-architectures.xml108(None)
+msgid ""
+"@@image: 'static/secure-arch-ref-2.png'; "
+"md5=6d5c53c319bed5beccf7c7a1ba712637"
+msgstr ""
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ./security-guide/section_secure-reference-architectures.xml160(None)
+#: ./security-guide/section_secure-reference-architectures.xml164(None)
+msgid ""
+"@@image: 'static/secure-arch-ref-3.png'; "
+"md5=d1e5c7103c9e9311536529413b93e9de"
+msgstr ""
+
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ./security-guide/section_secure-reference-architectures.xml189(None)
+#: ./security-guide/section_secure-reference-architectures.xml193(None)
+msgid ""
+"@@image: 'static/secure-arch-ref-4.png'; "
+"md5=68dad0a758d3a5647e01404e49510333"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml8(title)
+msgid "Secure reference architectures"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml9(para)
+msgid ""
+"We recommend using SSL/TLS on both public networks and management networks "
+"in <xref linkend=\"tls-proxies-and-http-services\"/>. However, if actually "
+"deploying SSL/TLS everywhere is too difficult, we recommend evaluating your "
+"OpenStack SSL/TLS needs and following one of the architectures discussed "
+"here."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml15(para)
+msgid ""
+"The first thing one should do when evaluating their OpenStack SSL/TLS needs "
+"is to identify the threats. You can divide these threats into external and "
+"internal attacker categories, but the lines tend to get blurred since "
+"certain components of OpenStack operate on both the public and management "
+"networks."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml20(para)
+msgid ""
+"For publicly facing services, the threats are pretty straightforward. Users "
+"will be authenticating against horizon and keystone with their username and "
+"password. Users will also be accessing the API endpoints for other services "
+"using their keystone tokens. If this network traffic is unencrypted, "
+"passwords and tokens can be intercepted by an attacker using a man-in-the-"
+"middle attack. The attacker can then use these valid credentials to perform "
+"malicious operations. All real deployments should be using SSL/TLS to "
+"protect publicly facing services."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml29(para)
+msgid ""
+"For services that are deployed on management networks, the threats aren't so"
+" clear due to the bridging of security domains with network security. There "
+"is always the chance that an administrator with access to the management "
+"network decides to do something malicious. SSL/TLS isn't going to help in "
+"this situation if the attacker is allowed to access the private key. Not "
+"everyone on the management network would be allowed to access the private "
+"key of course, so there is still value in using SSL/TLS to protect yourself "
+"from internal attackers. Even if everyone that is allowed to access your "
+"management network is 100% trusted, there is still a threat that an "
+"unauthorized user gains access to your internal network by exploiting a "
+"misconfiguration or software vulnerability. One must keep in mind that you "
+"have users running their own code on instances in the OpenStack Compute "
+"nodes, which are deployed on the management network. If a vulnerability "
+"allows them to break out of the hypervisor, they will have access to your "
+"management network. Using SSL/TLS on the management network can minimize the"
+" damage that an attacker can cause."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml48(title)
+msgid "SSL/TLS proxy in front"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml49(para)
+msgid ""
+"It is generally accepted that it is best to encrypt sensitive data as early "
+"as possible and decrypt it as late as possible. Despite this best practice, "
+"it seems that it's common to use a SSL/TLS proxy in front of the OpenStack "
+"services and use clear communication afterwards as shown below:"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml65(para)
+msgid ""
+"Some of the concerns with the use of SSL/TLS proxies as pictured above:"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml68(para)
+msgid ""
+"Native SSL/TLS in OpenStack services does not perform/scale as well as SSL "
+"proxies (particularly for Python implementations like Eventlet)."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml74(para)
+msgid ""
+"Native SSL/TLS in OpenStack services not as well scrutinized/ audited as "
+"more proven solutions."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml79(para)
+msgid ""
+"Native SSL/TLS configuration is difficult (not well documented, tested, or "
+"consistent across services)."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml84(para)
+msgid ""
+"Privilege separation (OpenStack service processes should not have direct "
+"access to private keys used for SSL/TLS)."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml89(para)
+msgid "Traffic inspection needs for load balancing."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml94(para)
+msgid ""
+"All of the above are valid concerns, but none of them prevent SSL/TLS from "
+"being used on the management network. Let's consider the next deployment "
+"model."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml99(title)
+msgid "SSL/TLS on same physical hosts as API endpoints"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml111(para)
+msgid ""
+"This is very similar to the <link linkend=\"ssl-tls-proxy-in-"
+"front\">\"SSL/TLS in front model\" </link> but the SSL/TLS proxy is on the "
+"same physical system as the API endpoint. The API endpoint would be "
+"configured to only listen on the local network interface. All remote "
+"communication with the API endpoint would go through the SSL/TLS proxy. With"
+" this deployment model, we address a number of the bullet points in <link "
+"linkend=\"ssl-tls-proxy-in-front\">\"SSL/TLS in front model\" </link>. A "
+"proven SSL implementation that performs well would be used. The same SSL "
+"proxy software would be used for all services, so SSL configuration for the "
+"API endpoints would be consistent. The OpenStack service processes would not"
+" have direct access to the private keys used for SSL/TLS, as you would run "
+"the SSL proxies as a different user and restrict access using permissions "
+"(and additionally mandatory access controls using something like SELinux). "
+"We would ideally have the API endpoints listen on a Unix socket such that we"
+" could restrict access to it using permissions and mandatory access controls"
+" as well. Unfortunately, this does not seem to work currently in Eventlet "
+"from our testing. It is a good future development goal."
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml133(title)
+msgid "SSL/TLS over load balancer"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml134(para)
+msgid ""
+"What about high availability or load balanced deployments that need to "
+"inspect traffic? The previous deployment model (<link linkend=\"ssl-tls-"
+"proxy-on-same-physical-hosts-as-api-endpoints\">SSL/TLS on same physical "
+"hosts as API endpoints</link>) would not allow for deep packet inspection "
+"since the traffic is encrypted. If the traffic only needs to be inspected "
+"for basic routing purposes, it might not be necessary for the load balancer "
+"to have access to the unencrypted traffic. HAProxy has the ability to "
+"extract the SSL/TLS session ID during the handshake, which can then be used "
+"to achieve session affinity (<link "
+"href=\"http://blog.exceliance.fr/2011/07/04/maintain-affinity-based-on-ssl-"
+"session-id/\">configuration details here</link>). HAProxy can also use the "
+"TLS Server Name Indication (SNI) extension to determine where traffic should"
+" be routed to (<link href=\"http://blog.exceliance.fr/2012/04/13/enhanced-"
+"ssl-load-balancing-with-server-name-indication-sni-tls-"
+"extension/\">configuration details here</link>). These features likely cover"
+" some of the most common load balancer needs. HAProxy would be able to just "
+"pass the HTTPS traffic straight through to the API endpoint systems in this "
+"case:"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml169(title)
+msgid "Cryptographic seperation of external and internal environments"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml170(para)
+msgid ""
+"What if you want cryptographic separation of your external and internal "
+"environments? A public cloud provider would likely want their public facing "
+"services (or proxies) to use certificates that are issued by a CA that "
+"chains up to a trusted Root CA that is distributed in popular web browser "
+"software for SSL/TLS. For the internal services, one might want to instead "
+"use their own PKI to issue certificates for SSL/TLS. This cryptographic "
+"separation can be accomplished by terminating SSL at the network boundary, "
+"then re-encrypting using the internally issued certificates. The traffic "
+"will be unencrypted for a brief period on the public facing SSL/TLS proxy, "
+"but it will never be transmitted over the network in the clear. The same re-"
+"encryption approach that is used to achieve cryptographic separation can "
+"also be used if deep packet inspection is really needed on a load balancer. "
+"Here is what this deployment model would look like:"
+msgstr ""
+
+#: ./security-guide/section_secure-reference-architectures.xml196(para)
+msgid ""
+"As with most things, there are trade-offs. The main trade-off is going to be"
+" between security and performance. Encryption has a cost, but so does being "
+"hacked. The security and performance requirements are going to be different "
+"for every deployment, so how SSL/TLS is used will ultimately be an "
+"individual decision."
+msgstr ""
 
 #: ./security-guide/section_case-studies-tenant-data.xml9(para)
 msgid ""

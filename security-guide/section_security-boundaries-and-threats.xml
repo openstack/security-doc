@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <section xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -230,7 +230,10 @@
       <para>The diagram shows the types of attacks that may be expected from the actors described in
         the previous section. Note that there will always be exceptions to this diagram but in
         general, this describes the sorts of attack that could be typical for each actor.</para>
-      <para><inlinemediaobject xml:id="security-boundaries-and-threats-attack-types">
+      <para>
+        <figure xml:id="security-boundaries-and-threats-attack-types">
+          <title>Attack types</title>
+          <mediaobject>
           <imageobject role="html">
             <imagedata contentdepth="642" contentwidth="616" fileref="static/high-capability.png"
               format="PNG" scalefit="1"/>
@@ -239,7 +242,9 @@
             <imagedata contentdepth="100%" fileref="static/high-capability.png" format="PNG"
               scalefit="1" width="100%"/>
           </imageobject>
-        </inlinemediaobject></para>
+        </mediaobject>
+      </figure>
+      </para>
       <para>The prescriptive defense for each form of attack is beyond the scope of this document.
         The above diagram can assist you in making an informed decision about which types of
         threats, and threat actors, should be protected against. For commercial public cloud

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-04 06:01+0000\n"
+"POT-Creation-Date: 2015-04-06 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2777,6 +2777,10 @@ msgstr ""
 msgid "Introduction"
 msgstr ""
 
+#: ./security-guide/ch_introduction.xml:9(para)
+msgid "The OpenStack Security Guide is the result of a five day sprint of collaborative work of many individuals. The purpose of this document is to provide the best practice guidelines for deploying a secure OpenStack cloud. It is a living document that is updated as new changes are merged into the repository, and is meant to reflect the current state of security within the OpenStack community and provide frameworks for decision making where listing specific security controls are not feasible due to complexity or other environment specific details."
+msgstr ""
+
 #: ./security-guide/ch_dashboard.xml:9(para)
 msgid "Horizon is the OpenStack dashboard that provides users a self-service portal to provision their own resources within the limits set by administrators. These include provisioning users, defining instance flavors, uploading VM images, managing networks, setting up security groups, starting instances, and accessing the instances through a console."
 msgstr ""
@@ -3162,11 +3166,23 @@ msgid "API endpoints"
 msgstr ""
 
 #: ./security-guide/ch_api-endpoints.xml:9(para)
+msgid "The process of engaging an OpenStack cloud is started through the querying of an API endpoint. While there are different challenges for public and private endpoints, these are high value assets that can pose a significant risk if compromised."
+msgstr ""
+
+#: ./security-guide/ch_api-endpoints.xml:15(para)
 msgid "This chapter recommends security enhancements for both public and private-facing API endpoints."
 msgstr ""
 
 #: ./security-guide/ch_secure_communication.xml:7(title)
 msgid "Secure communication"
+msgstr ""
+
+#: ./security-guide/ch_secure_communication.xml:9(para)
+msgid "Inter-device communication is an issue still plaguing security researchers. Between large project errors such as Heartbleed or more advanced attacks such as BEAST and CRIME, secure methods of communication over a network are becoming more important. It should be remembered, however that encryption should be applied as one part of a larger security strategy. The compromise of an endpoint means that an attacker no longer needs to break the encryption used, but is able to view and manipulate messages as they are processed by the system."
+msgstr ""
+
+#: ./security-guide/ch_secure_communication.xml:20(para)
+msgid "This chapter will review several features around configuring TLS to secure both internal and external resources, and will call out specific categories of systems that should be given specific attention."
 msgstr ""
 
 #: ./security-guide/section_compliance-activities.xml:8(title)

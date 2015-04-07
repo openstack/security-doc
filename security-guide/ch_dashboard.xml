@@ -199,15 +199,6 @@
     <programlisting>CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True</programlisting>
   </section>
-  <section xml:id="dashboard-password-auto-complete">
-    <title>Password auto complete</title>
-    <para>We recommend that implementers do not change the default
-      password auto complete behavior. Users choose stronger passwords
-      in environments that allow them to use the secure browser
-      password manager. Organizations which forbid the browser
-      password manager should enforce this policy at the desktop
-      level.</para>
-  </section>
   <section xml:id="dashboard-cross-site-scripting-xss">
     <title>Cross Site Scripting (XSS)</title>
     <para>Unlike many similar systems, the OpenStack dashboard allows the

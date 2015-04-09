@@ -21,10 +21,11 @@
       <title>Invalid login attempts</title>
       <para>The Identity service does not provide a method to limit
         access to accounts after repeated unsuccessful login attempts.
-        Repeated failed login attempts are likely brute-force attacks.
-        Refer to <xref linkend="security-boundaries-and-threats-attack-types" />.
-        This is a more significant issue
-        in Public clouds.</para>
+        A pattern of repetitive failed login attempts is generally an
+        indicator of brute-force attacks (refer to
+        <xref linkend="security-boundaries-and-threats-attack-types" />).
+        This type of attack is more prevalent in public cloud deployments.
+      </para>
       <para>Prevention is possible by using an external authentication
         system that blocks out an account after some configured number
         of failed login attempts. The account then may only be

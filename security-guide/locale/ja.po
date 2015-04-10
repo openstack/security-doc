@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-04 15:31+0000\n"
-"PO-Revision-Date: 2015-04-04 15:31+0000\n"
+"POT-Creation-Date: 2015-04-09 19:41+0000\n"
+"PO-Revision-Date: 2015-04-09 19:41+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -749,13 +749,13 @@ msgstr "無効なログイン試行"
 #: ./security-guide/ch_identity.xml22(para)
 msgid ""
 "The Identity service does not provide a method to limit access to accounts "
-"after repeated unsuccessful login attempts. Repeated failed login attempts "
-"are likely brute-force attacks. Refer to <xref linkend=\"security-"
-"boundaries-and-threats-attack-types\"/>. This is a more significant issue in"
-" Public clouds."
+"after repeated unsuccessful login attempts. A pattern of repetitive failed "
+"login attempts is generally an indicator of brute-force attacks (refer to "
+"<xref linkend=\"security-boundaries-and-threats-attack-types\"/>). This type"
+" of attack is more prevalent in public cloud deployments."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml28(para)
+#: ./security-guide/ch_identity.xml29(para)
 msgid ""
 "Prevention is possible by using an external authentication system that "
 "blocks out an account after some configured number of failed login attempts."
@@ -763,7 +763,7 @@ msgid ""
 "intervention."
 msgstr "ログイン試行を指定した回数だけ失敗すると、アカウントをブロックするような外部認証システムを使用することにより、防止することができます。アカウントは、別の連絡手段を介してのみ、ロック解除するようにできます。"
 
-#: ./security-guide/ch_identity.xml32(para)
+#: ./security-guide/ch_identity.xml33(para)
 msgid ""
 "If prevention is not an option, detection can be used to mitigate damage. "
 "Detection involves frequent review of access control logs to identify "
@@ -774,7 +774,7 @@ msgid ""
 "effectiveness, and thus dissuade the attacker."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml41(para)
+#: ./security-guide/ch_identity.xml42(para)
 msgid ""
 "In addition, it is useful to examine account activity for unusual login "
 "times and suspicious actions, and take corrective actions such as disabling "
@@ -782,11 +782,11 @@ msgid ""
 "fraud detection and alert."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml48(title)
+#: ./security-guide/ch_identity.xml49(title)
 msgid "Multi-factor authentication"
 msgstr "多要素認証"
 
-#: ./security-guide/ch_identity.xml49(para)
+#: ./security-guide/ch_identity.xml50(para)
 msgid ""
 "Employ multi-factor authentication for network access to privileged user "
 "accounts. The Identity service supports external authentication services "
@@ -794,22 +794,22 @@ msgid ""
 "may also enforce client-side authentication using certificates."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml54(para)
+#: ./security-guide/ch_identity.xml55(para)
 msgid ""
 "This recommendation provides insulation from brute force, social "
 "engineering, and both spear and mass phishing attacks that may compromise "
 "administrator passwords."
 msgstr "このお勧めの方式は、管理者パスワードを流出させる可能性のある、総当たり、ソーシャルエンジニアリング、標的型と無差別のフィッシング攻撃に対する防御になります。"
 
-#: ./security-guide/ch_identity.xml60(title)
+#: ./security-guide/ch_identity.xml61(title)
 msgid "Authentication methods"
 msgstr "認証方式"
 
-#: ./security-guide/ch_identity.xml62(title)
+#: ./security-guide/ch_identity.xml63(title)
 msgid "Internally implemented authentication methods"
 msgstr "内部実装認証方式"
 
-#: ./security-guide/ch_identity.xml63(para)
+#: ./security-guide/ch_identity.xml64(para)
 msgid ""
 "The Identity service can store user credentials in an SQL Database, or may "
 "use an LDAP-compliant directory server. The Identity database may be "
@@ -817,7 +817,7 @@ msgid ""
 "of a compromise of the stored credentials."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml68(para)
+#: ./security-guide/ch_identity.xml69(para)
 msgid ""
 "When you use a user name and password to authenticate, Identity does not "
 "enforce policies on password strength, expiration, or failed authentication "
@@ -826,14 +826,14 @@ msgid ""
 "consider using Identity extensions or external authentication services."
 msgstr "認証のためにユーザー名とパスワードを使用する場合、Identity は NIST Special Publication 800-118 (draft) により推奨されている、パスワード強度、有効期限、ログイン試行回数制限に関するポリシーを強制できません。より強固なパスワードポリシーを強制したい組織は、Identity 拡張や外部認証サービスの使用を検討すべきです。"
 
-#: ./security-guide/ch_identity.xml76(para)
+#: ./security-guide/ch_identity.xml77(para)
 msgid ""
 "LDAP simplifies integration of Identity authentication into an "
 "organization's existing directory service and user account management "
 "processes."
 msgstr "LDAP により、組織の既存のディレクトリサービスやユーザーアカウント管理プロセスに Identity 認証をシンプルに統合できます。"
 
-#: ./security-guide/ch_identity.xml79(para)
+#: ./security-guide/ch_identity.xml80(para)
 msgid ""
 "Authentication and authorization policy in OpenStack may be delegated to "
 "another service. A typical use case is an organization that seeks to deploy "
@@ -845,7 +845,7 @@ msgid ""
 "services."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml87(para)
+#: ./security-guide/ch_identity.xml88(para)
 msgid ""
 "Note that if the LDAP system has attributes defined for the user such as "
 "admin, finance, HR etc, these must be mapped into roles and groups within "
@@ -854,7 +854,7 @@ msgid ""
 "to Identity attributes."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml92(para)
+#: ./security-guide/ch_identity.xml93(para)
 msgid ""
 "The Identity service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed "
 "to write to LDAP services used for authentication outside of the OpenStack "
@@ -865,25 +865,25 @@ msgid ""
 "out of the realm of the OpenStack deployment."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml102(para)
+#: ./security-guide/ch_identity.xml103(para)
 msgid ""
 "There is an <link "
 "href=\"https://bugs.launchpad.net/ossn/+bug/1168252\">OpenStack Security "
 "Note (OSSN) regarding keystone.conf permissions</link>."
 msgstr "<link href=\"https://bugs.launchpad.net/ossn/+bug/1168252\">keystone.conf のパーミッションに関する OpenStack Security Note (OSSN)</link> があります。"
 
-#: ./security-guide/ch_identity.xml106(para)
+#: ./security-guide/ch_identity.xml107(para)
 msgid ""
 "There is an <link "
 "href=\"https://bugs.launchpad.net/ossn/+bug/1155566\">OpenStack Security "
 "Note (OSSN) regarding potential DoS attacks</link>."
 msgstr "<link href=\"https://bugs.launchpad.net/ossn/+bug/1155566\">潜在的な DoS 攻撃に関する OpenStack Security Note (OSSN)</link> があります。"
 
-#: ./security-guide/ch_identity.xml113(title)
+#: ./security-guide/ch_identity.xml114(title)
 msgid "External authentication methods"
 msgstr "外部認証方式"
 
-#: ./security-guide/ch_identity.xml114(para)
+#: ./security-guide/ch_identity.xml115(para)
 msgid ""
 "Organizations may desire to implement external authentication for "
 "compatibility with existing authentication services or to enforce stronger "
@@ -894,18 +894,18 @@ msgid ""
 "risk from weak passwords."
 msgstr "組織は、既存の認証サービスとの互換性のために外部認証を実装したいかもしれません。または、より強固な認証ポリシー要件を強制するためかもしれません。パスワードが認証のもっとも一般的な形式ですが、キー入力ロギングやパスワード推測など、さまざまな方法で破られる可能性があります。外部認証サービスにより、弱いパスワードのリスクを最小化する他の認証形式を提供できます。"
 
-#: ./security-guide/ch_identity.xml123(para)
+#: ./security-guide/ch_identity.xml124(para)
 msgid "These include:"
 msgstr "これらは以下のものが含まれます。"
 
-#: ./security-guide/ch_identity.xml126(para)
+#: ./security-guide/ch_identity.xml127(para)
 msgid ""
 "Password policy enforcement: Requires user passwords to conform to minimum "
 "standards for length, diversity of characters, expiration, or failed login "
 "attempts."
 msgstr "パスワードポリシー強制: ユーザーパスワードが、長さ、文字種の量、有効期限、失敗試行回数の最低基準を満たしていることを要求します。"
 
-#: ./security-guide/ch_identity.xml131(para)
+#: ./security-guide/ch_identity.xml132(para)
 msgid ""
 "Multi-factor authentication: The authentication service requires the user to"
 " provide information based on something they have, such as a one-time "
@@ -913,15 +913,15 @@ msgid ""
 "password."
 msgstr "多要素認証: 認証サービスが、ユーザーが持っているもの (例: ワンタイムパスワードトークン、X.509 証明書) と知っていること (例: パスワード) に基づいた情報を提示するよう要求します。"
 
-#: ./security-guide/ch_identity.xml138(para)
+#: ./security-guide/ch_identity.xml139(para)
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ./security-guide/ch_identity.xml144(title)
+#: ./security-guide/ch_identity.xml145(title)
 msgid "Authorization"
 msgstr "認可"
 
-#: ./security-guide/ch_identity.xml145(para)
+#: ./security-guide/ch_identity.xml146(para)
 msgid ""
 "The Identity service supports the notion of groups and roles. Users belong "
 "to groups while a group has a list of roles. OpenStack services reference "
@@ -931,7 +931,7 @@ msgid ""
 "if access is allowed to the requested resource."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml152(para)
+#: ./security-guide/ch_identity.xml153(para)
 msgid ""
 "The policy enforcement middleware enables fine-grained access control to "
 "OpenStack resources. Only admin users can provision new users and have "
@@ -940,11 +940,11 @@ msgid ""
 "tasks."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml158(title)
+#: ./security-guide/ch_identity.xml159(title)
 msgid "Establish formal access control policies"
 msgstr "公式なアクセス制御ポリシーの確立"
 
-#: ./security-guide/ch_identity.xml159(para)
+#: ./security-guide/ch_identity.xml160(para)
 msgid ""
 "Prior to configuring roles, groups, and users, document your required access"
 " control policies for the OpenStack installation. The policies should be "
@@ -957,11 +957,11 @@ msgid ""
 "policies."
 msgstr "ロール、グループ、ユーザーを設定する前に、OpenStack に必要なアクセス制御ポリシーをドキュメント化します。ポリシーは組織に対するあらゆる規制や法令の要求事項に沿っているべきです。アクセス制御設定のさらなる変更は公式なポリシーに従って実行されるべきです。ポリシーは、アカウントの作成、削除、無効化、有効化、および権限の割り当てに関する条件とプロセスを含めるべきです。定期的にポリシーをレビューし、設定が承認されたポリシーに従っていることを確認します。"
 
-#: ./security-guide/ch_identity.xml172(title)
+#: ./security-guide/ch_identity.xml173(title)
 msgid "Service authorization"
 msgstr "サービス認可"
 
-#: ./security-guide/ch_identity.xml173(para)
+#: ./security-guide/ch_identity.xml174(para)
 msgid ""
 "Cloud administrators must define a user with the role of admin for each "
 "service, as described in the <link href=\"http://docs.openstack.org/admin-"
@@ -970,7 +970,7 @@ msgid ""
 " authorization to authenticate users."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml180(para)
+#: ./security-guide/ch_identity.xml181(para)
 msgid ""
 "The Compute and Object Storage services can be configured to use the "
 "Identity service to store authentication information. Other options to store"
@@ -979,7 +979,7 @@ msgid ""
 "password is displayed in plain text."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml186(para)
+#: ./security-guide/ch_identity.xml187(para)
 msgid ""
 "The Identity service supports client authentication for TLS which may be "
 "enabled. TLS client authentication provides an additional authentication "
@@ -990,13 +990,13 @@ msgid ""
 "that may not be feasible in every deployment."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml196(para)
+#: ./security-guide/ch_identity.xml197(para)
 msgid ""
 "We recommend that you use client authentication with TLS for the "
 "authentication of services to the Identity service."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml200(para)
+#: ./security-guide/ch_identity.xml201(para)
 msgid ""
 "The cloud administrator should protect sensitive configuration files from "
 "unauthorized modification. This can be achieved with mandatory access "
@@ -1004,7 +1004,7 @@ msgid ""
 "<filename>/etc/keystone/keystone.conf</filename> and X.509 certificates."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml206(para)
+#: ./security-guide/ch_identity.xml207(para)
 msgid ""
 "Client authentication with TLS requires certificates be issued to services. "
 "These certificates can be signed by an external or internal certificate "
@@ -1019,11 +1019,11 @@ msgid ""
 "disables certificates for other components."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml221(title)
+#: ./security-guide/ch_identity.xml222(title)
 msgid "Administrative users"
 msgstr "管理ユーザー"
 
-#: ./security-guide/ch_identity.xml222(para)
+#: ./security-guide/ch_identity.xml223(para)
 msgid ""
 "We recommend that admin users authenticate using Identity service and an "
 "external authentication service that supports 2-factor authentication, such "
@@ -1033,22 +1033,22 @@ msgid ""
 "privileged accounts."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml231(title)
+#: ./security-guide/ch_identity.xml232(title)
 msgid "End users"
 msgstr "エンドユーザー"
 
-#: ./security-guide/ch_identity.xml232(para)
+#: ./security-guide/ch_identity.xml233(para)
 msgid ""
 "The Identity service can directly provide end-user authentication, or can be"
 " configured to use external authentication methods to conform to an "
 "organization's security policies and requirements."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml239(title)
+#: ./security-guide/ch_identity.xml240(title)
 msgid "Policies"
 msgstr "ポリシー"
 
-#: ./security-guide/ch_identity.xml240(para)
+#: ./security-guide/ch_identity.xml241(para)
 msgid ""
 "Each OpenStack service has a policy file in JSON format, called "
 "<filename>policy.json</filename>. The policy file specifies rules, and the "
@@ -1056,7 +1056,7 @@ msgid ""
 " to attach to a volume, or to fire up instances."
 msgstr "各 OpenStack サービスは <filename>policy.json</filename> という JSON 形式のポリシーファイルを持ちます。ポリシーファイルはルールを指定します。ルールは各リソースを決定します。リソースは API アクセスできます。ボリュームの接続やインスタンスの起動などです。"
 
-#: ./security-guide/ch_identity.xml245(para)
+#: ./security-guide/ch_identity.xml246(para)
 msgid ""
 "The policies can be updated by the cloud administrator to further control "
 "access to the various resources. The middleware could also be further "
@@ -1064,13 +1064,13 @@ msgid ""
 "refer to in your policies."
 msgstr "さまざまなリソースへのアクセス権をさらに制御するために、クラウド管理者がポリシーを更新できます。ミドルウェアによりさらにカスタマイズすることもできます。そのポリシーを参照しているグループやロールにユーザーを割り当てる必要があることに注意してください。"
 
-#: ./security-guide/ch_identity.xml250(para)
+#: ./security-guide/ch_identity.xml251(para)
 msgid ""
 "Below is a snippet of the Block Storage service "
 "<filename>policy.json</filename> file."
 msgstr "以下は Block Storage Service の <filename>policy.json</filename> ファイルの抜粋です。"
 
-#: ./security-guide/ch_identity.xml253(para)
+#: ./security-guide/ch_identity.xml254(para)
 msgid ""
 "Note the <emphasis role=\"bold\">default</emphasis> rule specifies that the "
 "user must be either an admin or the owner of the volume. It essentially says"
@@ -1079,11 +1079,11 @@ msgid ""
 "to admin users."
 msgstr "<emphasis role=\"bold\">デフォルト</emphasis>のルールは、ユーザーが管理者であるか、ボリュームの所有者である必要があることを指定しています。つまり、ボリュームの所有者と管理者のみがボリュームを作成、削除、更新できます。ボリューム形式の管理など、他の特定の操作は管理ユーザーのみがアクセス可能です。"
 
-#: ./security-guide/ch_identity.xml261(title)
+#: ./security-guide/ch_identity.xml262(title)
 msgid "Tokens"
 msgstr "トークン"
 
-#: ./security-guide/ch_identity.xml262(para)
+#: ./security-guide/ch_identity.xml263(para)
 msgid ""
 "Once a user is authenticated a token is generated for authorization and "
 "access to an OpenStack environment. A token can have a variable life span; "
@@ -1096,13 +1096,13 @@ msgid ""
 "transfer a disk image onto the hypervisor for local caching."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml273(para)
+#: ./security-guide/ch_identity.xml274(para)
 msgid ""
 "The following example shows a PKI token. Note that token id values are "
 "typically 3500 bytes. In this example, the value has been truncated."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml277(para)
+#: ./security-guide/ch_identity.xml278(para)
 msgid ""
 "The token is often passed within the structure of a larger context of an "
 "Identity service response. These responses also provide a catalog of the "
@@ -1110,7 +1110,7 @@ msgid ""
 "endpoints for internal, admin, and public access."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml282(para)
+#: ./security-guide/ch_identity.xml283(para)
 msgid ""
 "The Identity service supports token revocation. This manifests as an API to "
 "revoke a token, to list revoked tokens and individual OpenStack services "
@@ -1118,12 +1118,12 @@ msgid ""
 " cache and append the same to their list of cached revoked tokens."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml289(title)
+#: ./security-guide/ch_identity.xml290(title)
 #: ./security-guide/section_identity-federated-keystone.xml460(title)
 msgid "Future"
 msgstr "将来"
 
-#: ./security-guide/ch_identity.xml290(para)
+#: ./security-guide/ch_identity.xml291(para)
 msgid ""
 "Domains are high-level containers for projects, users and groups. As such, "
 "they can be used to centrally manage all keystone-based identity components."
@@ -1134,7 +1134,7 @@ msgid ""
 "domain and assigned roles that vary for each project."
 msgstr "ドメインはプロジェクト、ユーザー、グループの高いレベルでのコンテナーです。そのように、すべての keystone ベースの識別コンポーネントを一元的に管理するために使用されます。アカウントドメインを導入すると、サーバー、ストレージ、他のリソースは複数のプロジェクト (以前はテナントと呼ばれていました) の中で論理的にグループ化できます。これは、アカウントのようなマスターコンテナーの下でグループ化できます。さらに、複数のユーザーがアカウントドメインの中で管理でき、各プロジェクトで変化するロールを割り当てられます。"
 
-#: ./security-guide/ch_identity.xml299(para)
+#: ./security-guide/ch_identity.xml300(para)
 msgid ""
 "The Identity V3 API supports multiple domains. Users of different domains "
 "may be represented in different authentication back ends and even have "
@@ -1143,7 +1143,7 @@ msgid ""
 "service resources."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml305(para)
+#: ./security-guide/ch_identity.xml306(para)
 msgid ""
 "Where a rule may specify access to only admin users and users belonging to "
 "the tenant, the mapping may be trivial. In other scenarios the cloud "
@@ -4509,60 +4509,60 @@ msgid ""
 "browsers or libraries is required."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml34(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml38(para)
 msgid ""
-"Public Key Infrastructure (PKI) is a set of hardware, software, policies, "
-"and procedures required to operate a secure system that provides "
-"authentication, non-repudiation, confidentiality, and integrity. The core "
-"components of PKI are:"
-msgstr "Public Key Infrastructure (PKI)は認証、偽証不可、秘匿性、完全性を提供するセキュアなシステムを運用するために必要となるハードウェア、ソフトウェア、ポリシーのセットです。PKIのコアコンポーネントは以下の通り。"
+"Public Key Infrastructure (PKI) is the framework for securing communication "
+"in a network. It consists of a set of systems and processes to ensure "
+"traffic can be sent securely while validating the identities of the parties."
+" The core components of PKI are:"
+msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml41(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml45(term)
 msgid "End entity"
 msgstr "エンドエンティティ"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml43(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml47(para)
 msgid "User, process, or system that is the subject of a certificate."
 msgstr "証明対象のユーザ、プロセス、システム。"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml48(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml52(term)
 msgid "Certification Authority (<glossterm>CA</glossterm>)"
 msgstr "認証局 (<glossterm>CA</glossterm>)"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml50(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml54(para)
 msgid ""
 "Defines certificate policies, management, and issuance of certificates."
 msgstr "証明ポリシーの定義、管理、証明書の発行。"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml55(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml59(term)
 msgid "Registration Authority (RA)"
 msgstr "登録局 (RA)"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml57(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml61(para)
 msgid ""
 "An optional system to which a CA delegates certain management functions."
 msgstr "CAが一定の管理機能を委任する追加システム。"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml62(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml66(term)
 msgid "Repository"
 msgstr "リポジトリ"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml64(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml68(para)
 msgid ""
 "Where the end entity certificates and certificate revocation lists are "
 "stored and looked up - sometimes referred to as the <emphasis "
 "role=\"italic\">certificate bundle</emphasis>."
 msgstr "エンドエンティティが証明され、証明書の廃止リストが保存・参照される場所 - 時々<emphasis role=\"italic\">証明バンドル(Certificate bundle)</emphasis>と呼ばれます。"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml72(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml76(term)
 msgid "Relying party"
 msgstr "信頼機関"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml74(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml78(para)
 msgid "The endpoint that is trusting that the CA is valid."
 msgstr "CAが有効であると証明するエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml79(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml83(para)
 msgid ""
 "PKI builds the framework on which to provide encryption algorithms, cipher "
 "modes, and protocols for securing data and authentication. We strongly "
@@ -4575,11 +4575,11 @@ msgid ""
 "of these controls, or lessen their importance."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml81(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml85(title)
 msgid "Certification authorities"
 msgstr "認証局(CA)"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml82(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml86(para)
 msgid ""
 "Many organizations have an established Public Key Infrastructure with their "
 "own certification authority (CA), certificate policies, and management for "
@@ -4591,7 +4591,7 @@ msgid ""
 "most deployments deploy their own internal CA."
 msgstr "多くの組織には、内部のOpenStackユーザやサービス用に証明書を発行する為に使用されるべき場所用の自身の認証局(CA)、証明ポリシー、管理を備えたPublic Key Infrastructure (PKI)が設置されています\n。加えて、パブリックセキュリティドメインがインターネットに面している所の組織は、幅広く認識された公共のCAにより署名された証明書が必要になるでしょう。管理ネットワーク上の暗号化通信用には、パブリックCAを使用しない事をお勧めします。代わりに、多くのデプロイでは自身の内部CAを設置していると思われますし、推奨します。"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml83(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml87(para)
 msgid ""
 "It is recommended that the OpenStack cloud architect consider using separate"
 " PKI deployments for internal systems and customer facing services. This "
@@ -4603,7 +4603,7 @@ msgid ""
 "certificates issued to one are not recognized by another."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml84(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml88(para)
 msgid ""
 "Certificates used to support TLS on internet facing cloud endpoints (or "
 "customer interfaces where the customer is not expected to have installed "
@@ -4613,7 +4613,7 @@ msgid ""
 "Verisign and Thawte but many others exist."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml85(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml89(para)
 msgid ""
 "There are many management, policy, and technical challenges around creating "
 "and signing certificates. This is an area where cloud architects or "
@@ -4621,11 +4621,11 @@ msgid ""
 "addition to the guidance recommended here."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml88(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml92(title)
 msgid "TLS libraries"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml89(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml93(para)
 msgid ""
 "Various components, services, and applications within the OpenStack "
 "ecosystem or dependencies of OpenStack are implemented and can be configured"
@@ -4636,11 +4636,11 @@ msgid ""
 "libraries."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml92(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml96(title)
 msgid "Cryptographic algorithms, cipher modes, and protocols"
 msgstr "暗号化アルゴリズム、暗号モード、プロトコル"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml93(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml97(para)
 msgid ""
 "We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad "
 "client compatibility but we recommend using caution and only enabling these "
@@ -4654,7 +4654,7 @@ msgid ""
 "reasonable cipher selection."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml94(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml98(para)
 msgid ""
 "However, as this book does not intend to be a thorough reference on "
 "cryptography we do not wish to be prescriptive about what specific "
@@ -4663,39 +4663,39 @@ msgid ""
 "recommend for further information:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml96(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml100(link)
 msgid "National Security Agency, Suite B Cryptography"
 msgstr "国家安全保障局、Suite B 暗号化"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml99(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml103(link)
 msgid "OWASP Guide to Cryptography"
 msgstr "OWASP Guide to Cryptography"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml102(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml106(link)
 msgid "OWASP Transport Layer Protection Cheat Sheet"
 msgstr "OWASP Transport Layer Protection Cheat Sheet"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml105(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml109(link)
 msgid ""
 "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate "
 "trust model enhancements"
 msgstr "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml108(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml112(link)
 msgid ""
 "The Most Dangerous Code in the World: Validating SSL Certificates in Non-"
 "Browser Software"
 msgstr "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml111(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml115(link)
 msgid "OpenSSL and FIPS 140-2"
 msgstr "OpenSSL and FIPS 140-2"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml116(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml120(title)
 msgid "Summary"
 msgstr "概要"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml117(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml121(para)
 msgid ""
 "Given the complexity of the OpenStack components and the number of "
 "deployment possibilities, you must take care to ensure that each component "
@@ -4703,31 +4703,31 @@ msgid ""
 "Subsequent sections discuss the following services:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml126(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml130(para)
 msgid "Compute API endpoints"
 msgstr "Compute APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml129(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml133(para)
 msgid "Identity API endpoints"
 msgstr "Identity APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml132(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml136(para)
 msgid "Networking API endpoints"
 msgstr "Networking APIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml135(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml139(para)
 msgid "Storage API endpoints"
 msgstr "ストレージAPIエンドポイント"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml138(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml142(para)
 msgid "Messaging server"
 msgstr "メッセージングサーバー"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml141(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml145(para)
 msgid "Database server"
 msgstr "データベースサーバー"
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml144(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml148(para)
 #: ./security-guide/ch_dashboard.xml8(title)
 #: ./security-guide/section_introduction-to-openstack.xml190(title)
 #: ./security-guide/section_management-interfaces.xml33(title)
@@ -5026,23 +5026,10 @@ msgid ""
 msgstr "ドットから始まるワイルドカードドメインを持つよう、CSRF やセッションクッキーを設定してはいけません。Horizon のセッションクッキーと CSRF クッキーは HTTPS を使用した環境のときにセキュア化すべきです。"
 
 #: ./security-guide/ch_dashboard.xml203(title)
-msgid "Password auto complete"
-msgstr "パスワード自動補完"
-
-#: ./security-guide/ch_dashboard.xml204(para)
-msgid ""
-"We recommend that implementers do not change the default password auto "
-"complete behavior. Users choose stronger passwords in environments that "
-"allow them to use the secure browser password manager. Organizations which "
-"forbid the browser password manager should enforce this policy at the "
-"desktop level."
-msgstr "実装者は標準のパスワードオートコンプリート機能を変更しないことを推奨します。ユーザーはセキュアなブラウザのパスワードマネージャーを使用できる環境で、より強力なパスワードを選択します。ブラウザのパスワードマネージャーを禁止している組織は、デスクトップレベルでこのポリシーを強制すべきです。"
-
-#: ./security-guide/ch_dashboard.xml212(title)
 msgid "Cross Site Scripting (XSS)"
 msgstr "クロスサイトスクリプティング (XSS)"
 
-#: ./security-guide/ch_dashboard.xml213(para)
+#: ./security-guide/ch_dashboard.xml204(para)
 msgid ""
 "Unlike many similar systems, the OpenStack dashboard allows the entire "
 "Unicode character set in most fields. This means developers have less "
@@ -5050,7 +5037,7 @@ msgid ""
 "scripting (XSS)."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml217(para)
+#: ./security-guide/ch_dashboard.xml208(para)
 msgid ""
 "Dashboard provides tools for developers to avoid creating XSS "
 "vulnerabilities, but they only work if developers use them correctly. Audit "
@@ -5061,25 +5048,25 @@ msgid ""
 "improperly escaped data."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml228(title)
+#: ./security-guide/ch_dashboard.xml219(title)
 msgid "Cross Origin Resource Sharing (CORS)"
 msgstr "クロスオリジンリソースシェアリング (CORS)"
 
-#: ./security-guide/ch_dashboard.xml229(para)
+#: ./security-guide/ch_dashboard.xml220(para)
 msgid ""
 "Configure your web server to send a restrictive CORS header with each "
 "response, allowing only the dashboard domain and protocol:"
 msgstr "ウェブブラウザが各レスポンスに限定的な CORS ヘッダーを付けて送信するよう設定します。ダッシュボードのドメインとプロトコルのみを許可します。"
 
-#: ./security-guide/ch_dashboard.xml233(para)
+#: ./security-guide/ch_dashboard.xml224(para)
 msgid "Never allow the wild card origin."
 msgstr "ワイルドカードオリジンを許可してはいけません。"
 
-#: ./security-guide/ch_dashboard.xml236(title)
+#: ./security-guide/ch_dashboard.xml227(title)
 msgid "Horizon image upload"
 msgstr "Horizon のイメージのアップロード"
 
-#: ./security-guide/ch_dashboard.xml237(para)
+#: ./security-guide/ch_dashboard.xml228(para)
 msgid ""
 "We recommend that implementers <link "
 "href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html"
@@ -5087,11 +5074,11 @@ msgid ""
 "implemented a plan to prevent resource exhaustion and denial of service."
 msgstr "導入者はリソース枯渇とサービス妨害を防ぐ計画を実装していなければ、<link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads\">HORIZON_IMAGES_ALLOW_UPLOAD を無効化</link> することを強く推奨します。"
 
-#: ./security-guide/ch_dashboard.xml244(title)
+#: ./security-guide/ch_dashboard.xml235(title)
 msgid "Upgrading"
 msgstr "アップグレード"
 
-#: ./security-guide/ch_dashboard.xml245(para)
+#: ./security-guide/ch_dashboard.xml236(para)
 msgid ""
 "Django security releases are generally well tested and aggressively "
 "backwards compatible. In almost all cases, new major releases of Django are "
@@ -5100,11 +5087,11 @@ msgid ""
 "Django with up-to-date security releases."
 msgstr "Django セキュリティリリースは、一般的に十分にテストされ、積極的に後方互換性を確保しています。ほぼすべての場合、Django の新しいメジャーリリースも前のリリースと後方互換性があります。ダッシュボードの実装者は、最新のセキュリティリリースを持つ最新の安定リリースの Django を実行することを強く推奨されます。"
 
-#: ./security-guide/ch_dashboard.xml253(title)
+#: ./security-guide/ch_dashboard.xml244(title)
 msgid "Debug"
 msgstr "デバッグ"
 
-#: ./security-guide/ch_dashboard.xml255(para)
+#: ./security-guide/ch_dashboard.xml246(para)
 msgid ""
 "Make sure <placeholder-1/> is set to <literal>False</literal> in production."
 " In Django, <placeholder-2/> displays stack traces and sensitive web server "

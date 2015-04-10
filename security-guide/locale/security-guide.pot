@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-06 06:01+0000\n"
+"POT-Creation-Date: 2015-04-10 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -428,214 +428,214 @@ msgid "Invalid login attempts"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:22(para)
-msgid "The Identity service does not provide a method to limit access to accounts after repeated unsuccessful login attempts. Repeated failed login attempts are likely brute-force attacks. Refer to <xref linkend=\"security-boundaries-and-threats-attack-types\"/>. This is a more significant issue in Public clouds."
+msgid "The Identity service does not provide a method to limit access to accounts after repeated unsuccessful login attempts. A pattern of repetitive failed login attempts is generally an indicator of brute-force attacks (refer to <xref linkend=\"security-boundaries-and-threats-attack-types\"/>). This type of attack is more prevalent in public cloud deployments."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:28(para)
+#: ./security-guide/ch_identity.xml:29(para)
 msgid "Prevention is possible by using an external authentication system that blocks out an account after some configured number of failed login attempts. The account then may only be unlocked with further side-channel intervention."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:32(para)
+#: ./security-guide/ch_identity.xml:33(para)
 msgid "If prevention is not an option, detection can be used to mitigate damage. Detection involves frequent review of access control logs to identify unauthorized attempts to access accounts. Possible remediation would include reviewing the strength of the user password, or blocking the network source of the attack through firewall rules. Firewall rules on the keystone server that restrict the number of connections could be used to reduce the attack effectiveness, and thus dissuade the attacker."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:41(para)
+#: ./security-guide/ch_identity.xml:42(para)
 msgid "In addition, it is useful to examine account activity for unusual login times and suspicious actions, and take corrective actions such as disabling the account. Oftentimes this approach is taken by credit card providers for fraud detection and alert."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:48(title)
+#: ./security-guide/ch_identity.xml:49(title)
 msgid "Multi-factor authentication"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:49(para)
+#: ./security-guide/ch_identity.xml:50(para)
 msgid "Employ multi-factor authentication for network access to privileged user accounts. The Identity service supports external authentication services through the Apache web server that can provide this functionality. Servers may also enforce client-side authentication using certificates."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:54(para)
+#: ./security-guide/ch_identity.xml:55(para)
 msgid "This recommendation provides insulation from brute force, social engineering, and both spear and mass phishing attacks that may compromise administrator passwords."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:60(title)
+#: ./security-guide/ch_identity.xml:61(title)
 msgid "Authentication methods"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:62(title)
+#: ./security-guide/ch_identity.xml:63(title)
 msgid "Internally implemented authentication methods"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:63(para)
+#: ./security-guide/ch_identity.xml:64(para)
 msgid "The Identity service can store user credentials in an SQL Database, or may use an LDAP-compliant directory server. The Identity database may be separate from databases used by other OpenStack services to reduce the risk of a compromise of the stored credentials."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:68(para)
+#: ./security-guide/ch_identity.xml:69(para)
 msgid "When you use a user name and password to authenticate, Identity does not enforce policies on password strength, expiration, or failed authentication attempts as recommended by NIST Special Publication 800-118 (draft). Organizations that desire to enforce stronger password policies should consider using Identity extensions or external authentication services."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:76(para)
+#: ./security-guide/ch_identity.xml:77(para)
 msgid "LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:79(para)
+#: ./security-guide/ch_identity.xml:80(para)
 msgid "Authentication and authorization policy in OpenStack may be delegated to another service. A typical use case is an organization that seeks to deploy a private cloud and already has a database of employees and users in an LDAP system. Using this as the authentication authority, requests to the Identity service are delegated to the LDAP system, which will then authorize or deny based on its policies. Upon successful authentication, the Identity service then generates a token that is used for access to authorized services."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:87(para)
+#: ./security-guide/ch_identity.xml:88(para)
 msgid "Note that if the LDAP system has attributes defined for the user such as admin, finance, HR etc, these must be mapped into roles and groups within Identity for use by the various OpenStack services. The <filename>/etc/keystone/keystone.conf</filename> file maps LDAP attributes to Identity attributes."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:92(para)
+#: ./security-guide/ch_identity.xml:93(para)
 msgid "The Identity service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed to write to LDAP services used for authentication outside of the OpenStack deployment as this would allow a sufficiently privileged keystone user to make changes to the LDAP directory. This would allow privilege escalation within the wider organization or facilitate unauthorized access to other information and resources. In such a deployment, user provisioning would be out of the realm of the OpenStack deployment."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:102(para)
+#: ./security-guide/ch_identity.xml:103(para)
 msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1168252\">OpenStack Security Note (OSSN) regarding keystone.conf permissions</link>."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:106(para)
+#: ./security-guide/ch_identity.xml:107(para)
 msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1155566\">OpenStack Security Note (OSSN) regarding potential DoS attacks</link>."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:113(title)
+#: ./security-guide/ch_identity.xml:114(title)
 msgid "External authentication methods"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:114(para)
+#: ./security-guide/ch_identity.xml:115(para)
 msgid "Organizations may desire to implement external authentication for compatibility with existing authentication services or to enforce stronger authentication policy requirements. Although passwords are the most common form of authentication, they can be compromised through numerous methods, including keystroke logging and password compromise. External authentication services can provide alternative forms of authentication that minimize the risk from weak passwords."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:123(para)
+#: ./security-guide/ch_identity.xml:124(para)
 msgid "These include:"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:126(para)
+#: ./security-guide/ch_identity.xml:127(para)
 msgid "Password policy enforcement: Requires user passwords to conform to minimum standards for length, diversity of characters, expiration, or failed login attempts."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:131(para)
+#: ./security-guide/ch_identity.xml:132(para)
 msgid "Multi-factor authentication: The authentication service requires the user to provide information based on something they have, such as a one-time password token or X.509 certificate, and something they know, such as a password."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:138(para)
+#: ./security-guide/ch_identity.xml:139(para)
 msgid "Kerberos"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:144(title)
+#: ./security-guide/ch_identity.xml:145(title)
 msgid "Authorization"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:145(para)
+#: ./security-guide/ch_identity.xml:146(para)
 msgid "The Identity service supports the notion of groups and roles. Users belong to groups while a group has a list of roles. OpenStack services reference the roles of the user attempting to access the service. The OpenStack policy enforcer middleware takes into consideration the policy rule associated with each resource then the user's group/roles and association to determine if access is allowed to the requested resource."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:152(para)
+#: ./security-guide/ch_identity.xml:153(para)
 msgid "The policy enforcement middleware enables fine-grained access control to OpenStack resources. Only admin users can provision new users and have access to various management functionality. The cloud users would only be able to spin up instances, attach volumes, and perform other operational tasks."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:158(title)
+#: ./security-guide/ch_identity.xml:159(title)
 msgid "Establish formal access control policies"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:159(para)
+#: ./security-guide/ch_identity.xml:160(para)
 msgid "Prior to configuring roles, groups, and users, document your required access control policies for the OpenStack installation. The policies should be consistent with any regulatory or legal requirements for the organization. Future modifications to access control configuration should be done consistently with the formal policies. The policies should include the conditions and processes for creating, deleting, disabling, and enabling accounts, and for assigning privileges to the accounts. Periodically review the policies and ensure that configuration is in compliance with approved policies."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:172(title)
+#: ./security-guide/ch_identity.xml:173(title)
 msgid "Service authorization"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:173(para)
+#: ./security-guide/ch_identity.xml:174(para)
 msgid "Cloud administrators must define a user with the role of admin for each service, as described in the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/index.html\"><citetitle>OpenStack Cloud Administrator Guide</citetitle></link>. This service account provides the service with the authorization to authenticate users."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:180(para)
+#: ./security-guide/ch_identity.xml:181(para)
 msgid "The Compute and Object Storage services can be configured to use the Identity service to store authentication information. Other options to store authentication information include the use of the \"tempAuth\" file, however this should not be deployed in a production environment as the password is displayed in plain text."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:186(para)
+#: ./security-guide/ch_identity.xml:187(para)
 msgid "The Identity service supports client authentication for TLS which may be enabled. TLS client authentication provides an additional authentication factor, in addition to the user name and password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:196(para)
+#: ./security-guide/ch_identity.xml:197(para)
 msgid "We recommend that you use client authentication with TLS for the authentication of services to the Identity service."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:200(para)
+#: ./security-guide/ch_identity.xml:201(para)
 msgid "The cloud administrator should protect sensitive configuration files from unauthorized modification. This can be achieved with mandatory access control frameworks such as SELinux, including <filename>/etc/keystone/keystone.conf</filename> and X.509 certificates."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:206(para)
+#: ./security-guide/ch_identity.xml:207(para)
 msgid "Client authentication with TLS requires certificates be issued to services. These certificates can be signed by an external or internal certificate authority. OpenStack services check the validity of certificate signatures against trusted CAs by default and connections will fail if the signature is not valid or the CA is not trusted. Cloud deployers may use self-signed certificates. In this case, the validity check must be disabled or the certificate should be marked as trusted. To disable validation of self-signed certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:221(title)
+#: ./security-guide/ch_identity.xml:222(title)
 msgid "Administrative users"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:222(para)
+#: ./security-guide/ch_identity.xml:223(para)
 msgid "We recommend that admin users authenticate using Identity service and an external authentication service that supports 2-factor authentication, such as a certificate. This reduces the risk from passwords that may be compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) guidance in the use of multi-factor authentication for network access to privileged accounts."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:231(title)
+#: ./security-guide/ch_identity.xml:232(title)
 msgid "End users"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:232(para)
+#: ./security-guide/ch_identity.xml:233(para)
 msgid "The Identity service can directly provide end-user authentication, or can be configured to use external authentication methods to conform to an organization's security policies and requirements."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:239(title)
+#: ./security-guide/ch_identity.xml:240(title)
 msgid "Policies"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:240(para)
+#: ./security-guide/ch_identity.xml:241(para)
 msgid "Each OpenStack service has a policy file in JSON format, called <filename>policy.json</filename>. The policy file specifies rules, and the rule that governs each resource. A resource could be API access, the ability to attach to a volume, or to fire up instances."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:245(para)
+#: ./security-guide/ch_identity.xml:246(para)
 msgid "The policies can be updated by the cloud administrator to further control access to the various resources. The middleware could also be further customized. Note that your users must be assigned to groups/roles that you refer to in your policies."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:250(para)
+#: ./security-guide/ch_identity.xml:251(para)
 msgid "Below is a snippet of the Block Storage service <filename>policy.json</filename> file."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:253(para)
+#: ./security-guide/ch_identity.xml:254(para)
 msgid "Note the <emphasis role=\"bold\">default</emphasis> rule specifies that the user must be either an admin or the owner of the volume. It essentially says only the owner of a volume or the admin may create/delete/update volumes. Certain other operations such as managing volume types are accessible only to admin users."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:261(title)
+#: ./security-guide/ch_identity.xml:262(title)
 msgid "Tokens"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:262(para)
+#: ./security-guide/ch_identity.xml:263(para)
 msgid "Once a user is authenticated a token is generated for authorization and access to an OpenStack environment. A token can have a variable life span; however since the release of OpenStack Icehouse, the default value for expiry has been reduced to one hour. The recommended expiry value should be set to a lower value that allows enough time for internal services to complete tasks. In the event that the token expires before tasks complete, the cloud may become unresponsive or stop providing services. An example of expended time during use would be the time needed by the Compute service to transfer a disk image onto the hypervisor for local caching."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:273(para)
+#: ./security-guide/ch_identity.xml:274(para)
 msgid "The following example shows a PKI token. Note that token id values are typically 3500 bytes. In this example, the value has been truncated."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:277(para)
+#: ./security-guide/ch_identity.xml:278(para)
 msgid "The token is often passed within the structure of a larger context of an Identity service response. These responses also provide a catalog of the various OpenStack services. Each service is listed with its name, access endpoints for internal, admin, and public access."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:282(para)
+#: ./security-guide/ch_identity.xml:283(para)
 msgid "The Identity service supports token revocation. This manifests as an API to revoke a token, to list revoked tokens and individual OpenStack services that cache tokens to query for the revoked tokens and remove them from their cache and append the same to their list of cached revoked tokens."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:289(title) ./security-guide/section_identity-federated-keystone.xml:460(title)
+#: ./security-guide/ch_identity.xml:290(title) ./security-guide/section_identity-federated-keystone.xml:460(title)
 msgid "Future"
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:290(para)
+#: ./security-guide/ch_identity.xml:291(para)
 msgid "Domains are high-level containers for projects, users and groups. As such, they can be used to centrally manage all keystone-based identity components. With the introduction of account domains, server, storage and other resources can now be logically grouped into multiple projects (previously called tenants) which can themselves be grouped under a master account-like container. In addition, multiple users can be managed within an account domain and assigned roles that vary for each project."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:299(para)
+#: ./security-guide/ch_identity.xml:300(para)
 msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:305(para)
+#: ./security-guide/ch_identity.xml:306(para)
 msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
 msgstr ""
 
@@ -2625,151 +2625,151 @@ msgstr ""
 msgid "Due to the published vulnerabilities in the Secure Sockets Layer (SSL) protocols, we strongly recommend that TLS is used in preference to SSL, and that SSL is disabled in all cases, unless compatibility with obsolete browsers or libraries is required."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:34(para)
-msgid "Public Key Infrastructure (PKI) is a set of hardware, software, policies, and procedures required to operate a secure system that provides authentication, non-repudiation, confidentiality, and integrity. The core components of PKI are:"
+#: ./security-guide/section_introduction-to-ssl-tls.xml:38(para)
+msgid "Public Key Infrastructure (PKI) is the framework for securing communication in a network. It consists of a set of systems and processes to ensure traffic can be sent securely while validating the identities of the parties. The core components of PKI are:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:41(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:45(term)
 msgid "End entity"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:43(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:47(para)
 msgid "User, process, or system that is the subject of a certificate."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:48(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:52(term)
 msgid "Certification Authority (<glossterm>CA</glossterm>)"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:50(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:54(para)
 msgid "Defines certificate policies, management, and issuance of certificates."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:55(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:59(term)
 msgid "Registration Authority (RA)"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:57(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:61(para)
 msgid "An optional system to which a CA delegates certain management functions."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:62(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:66(term)
 msgid "Repository"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:64(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:68(para)
 msgid "Where the end entity certificates and certificate revocation lists are stored and looked up - sometimes referred to as the <emphasis role=\"italic\">certificate bundle</emphasis>."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:72(term)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:76(term)
 msgid "Relying party"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:74(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:78(para)
 msgid "The endpoint that is trusting that the CA is valid."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:79(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:83(para)
 msgid "PKI builds the framework on which to provide encryption algorithms, cipher modes, and protocols for securing data and authentication. We strongly recommend securing all services with Public Key Infrastructure (PKI), including the use of TLS for API endpoints. It is impossible for the encryption or signing of transports or messages alone to solve all these problems. Hosts themselves must be secure and implement policy, namespaces, and other controls to protect their private credentials and keys. However, the challenges of key management and protection do not reduce the necessity of these controls, or lessen their importance."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:81(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:85(title)
 msgid "Certification authorities"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:82(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:86(para)
 msgid "Many organizations have an established Public Key Infrastructure with their own certification authority (CA), certificate policies, and management for which they should use to issue certificates for internal OpenStack users or services. Organizations in which the public security domain is Internet facing will additionally need certificates signed by a widely recognized public CA. For cryptographic communications over the management network, it is recommended one not use a public CA. Instead, we expect and recommend most deployments deploy their own internal CA."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:83(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:87(para)
 msgid "It is recommended that the OpenStack cloud architect consider using separate PKI deployments for internal systems and customer facing services. This allows the cloud deployer to maintain control of their PKI infrastructure and among other things makes requesting, signing and deploying certificates for internal systems easier. Advanced configurations may use separate PKI deployments for different security domains. This allows deployers to maintain cryptographic separation of environments, ensuring that certificates issued to one are not recognized by another."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:84(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:88(para)
 msgid "Certificates used to support TLS on internet facing cloud endpoints (or customer interfaces where the customer is not expected to have installed anything other than standard operating system provided certificate bundles) should be provisioned using Certificate Authorities that are installed in the operating system certificate bundle. Typical well known vendors include Verisign and Thawte but many others exist."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:85(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:89(para)
 msgid "There are many management, policy, and technical challenges around creating and signing certificates. This is an area where cloud architects or operators may wish to seek the advice of industry leaders and vendors in addition to the guidance recommended here."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:88(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:92(title)
 msgid "TLS libraries"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:89(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:93(para)
 msgid "Various components, services, and applications within the OpenStack ecosystem or dependencies of OpenStack are implemented and can be configured to use TLS libraries. The TLS and HTTP services within OpenStack are typically implemented using OpenSSL which has a module that has been validated for FIPS 140-2. However, keep in mind that each application or service can still introduce weaknesses in how they use the OpenSSL libraries."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:92(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:96(title)
 msgid "Cryptographic algorithms, cipher modes, and protocols"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:93(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:97(para)
 msgid "We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad client compatibility but we recommend using caution and only enabling these protocols if you have a strong requirement to do so. Other TLS versions, explicitly older versions, should not be used. These older versions include SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as POODLE. When using TLS v1.2 and in control of both the clients and the server, the cipher suite should be limited to <literal>ECDHE-ECDSA-AES256-GCM-SHA384</literal>. Where you don't control both ends and are using TLS v1+, the more general <literal>HIGH:!aNULL:!eNULL:!DES:!3DES</literal> is a reasonable cipher selection."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:94(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:98(para)
 msgid "However, as this book does not intend to be a thorough reference on cryptography we do not wish to be prescriptive about what specific algorithms or cipher modes you should enable or disable in your OpenStack services. However, there are some authoritative references we would like to recommend for further information:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:96(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:100(link)
 msgid "National Security Agency, Suite B Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:99(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:103(link)
 msgid "OWASP Guide to Cryptography"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:102(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:106(link)
 msgid "OWASP Transport Layer Protection Cheat Sheet"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:105(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:109(link)
 msgid "SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:108(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:112(link)
 msgid "The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:111(link)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:115(link)
 msgid "OpenSSL and FIPS 140-2"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:116(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:120(title)
 msgid "Summary"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:117(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:121(para)
 msgid "Given the complexity of the OpenStack components and the number of deployment possibilities, you must take care to ensure that each component gets the appropriate configuration of TLS certificates, keys, and CAs. Subsequent sections discuss the following services:"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:126(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:130(para)
 msgid "Compute API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:129(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:133(para)
 msgid "Identity API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:132(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:136(para)
 msgid "Networking API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:135(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:139(para)
 msgid "Storage API endpoints"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:138(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:142(para)
 msgid "Messaging server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:141(para)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:145(para)
 msgid "Database server"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-ssl-tls.xml:144(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
+#: ./security-guide/section_introduction-to-ssl-tls.xml:148(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
 msgid "Dashboard"
 msgstr ""
 
@@ -2934,58 +2934,50 @@ msgid "Never configure CSRF or session cookies to have a wild card domain with a
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:203(title)
-msgid "Password auto complete"
-msgstr ""
-
-#: ./security-guide/ch_dashboard.xml:204(para)
-msgid "We recommend that implementers do not change the default password auto complete behavior. Users choose stronger passwords in environments that allow them to use the secure browser password manager. Organizations which forbid the browser password manager should enforce this policy at the desktop level."
-msgstr ""
-
-#: ./security-guide/ch_dashboard.xml:212(title)
 msgid "Cross Site Scripting (XSS)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:213(para)
+#: ./security-guide/ch_dashboard.xml:204(para)
 msgid "Unlike many similar systems, the OpenStack dashboard allows the entire Unicode character set in most fields. This means developers have less latitude to make escaping mistakes that open attack vectors for cross-site scripting (XSS)."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:217(para)
+#: ./security-guide/ch_dashboard.xml:208(para)
 msgid "Dashboard provides tools for developers to avoid creating XSS vulnerabilities, but they only work if developers use them correctly. Audit any custom dashboards, paying particular attention to use of the <literal>mark_safe</literal> function, use of <literal>is_safe</literal> with custom template tags, the <literal>safe</literal> template tag, anywhere auto escape is turned off, and any JavaScript which might evaluate improperly escaped data."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:228(title)
+#: ./security-guide/ch_dashboard.xml:219(title)
 msgid "Cross Origin Resource Sharing (CORS)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:229(para)
+#: ./security-guide/ch_dashboard.xml:220(para)
 msgid "Configure your web server to send a restrictive CORS header with each response, allowing only the dashboard domain and protocol:"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:233(para)
+#: ./security-guide/ch_dashboard.xml:224(para)
 msgid "Never allow the wild card origin."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:236(title)
+#: ./security-guide/ch_dashboard.xml:227(title)
 msgid "Horizon image upload"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:237(para)
+#: ./security-guide/ch_dashboard.xml:228(para)
 msgid "We recommend that implementers <link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads\">disable HORIZON_IMAGES_ALLOW_UPLOAD</link> unless they have implemented a plan to prevent resource exhaustion and denial of service."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:244(title)
+#: ./security-guide/ch_dashboard.xml:235(title)
 msgid "Upgrading"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:245(para)
+#: ./security-guide/ch_dashboard.xml:236(para)
 msgid "Django security releases are generally well tested and aggressively backwards compatible. In almost all cases, new major releases of Django are also fully backwards compatible with previous releases. Dashboard implementers are strongly encouraged to run the latest stable release of Django with up-to-date security releases."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:253(title)
+#: ./security-guide/ch_dashboard.xml:244(title)
 msgid "Debug"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:255(para)
+#: ./security-guide/ch_dashboard.xml:246(para)
 msgid "Make sure <placeholder-1/> is set to <literal>False</literal> in production. In Django, <placeholder-2/> displays stack traces and sensitive web server state information on any exception."
 msgstr ""
 

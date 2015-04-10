@@ -77,7 +77,7 @@
         <title>Qpid server SSL configuration</title>
         <para>The Apache Foundation has a messaging security guide for Qpid. See:</para>
         <itemizedlist><listitem>
-            <para><link xlink:href="http://qpid.apache.org/books/0.22/AMQP-Messaging-Broker-CPP-Book/html/chap-Messaging_User_Guide-Security.html#sect-Messaging_User_Guide-Security-Encryption_using_SSL">Apache Qpid SSL</link></para>
+            <para><link xlink:href="http://qpid.apache.org/releases/qpid-0.32/cpp-broker/book/chap-Messaging_User_Guide-Security.html#sect-Messaging_User_Guide-Security-Encryption_using_SSL">Apache Qpid SSL</link></para>
           </listitem>
         </itemizedlist>
       </section>
@@ -159,10 +159,10 @@ kombu_ssl_ca_certs=/etc/ssl/cacert.pem</programlisting>
         <title>Authentication configuration example: Qpid</title>
         <para>For configuration information see:</para>
         <itemizedlist><listitem>
-            <para><link xlink:href="http://qpid.apache.org/books/0.22/AMQP-Messaging-Broker-CPP-Book/html/chap-Messaging_User_Guide-Security.html#sect-Messaging_User_Guide-Security-User_Authentication">Apache Qpid Authentication</link></para>
+            <para><link xlink:href="http://qpid.apache.org/releases/qpid-0.32/cpp-broker/book/chap-Messaging_User_Guide-Security.html#sect-Messaging_User_Guide-Security-User_Authentication">Apache Qpid Authentication</link></para>
           </listitem>
 <listitem>
-            <para><link xlink:href="http://qpid.apache.org/books/0.22/AMQP-Messaging-Broker-CPP-Book/html/chap-Messaging_User_Guide-Security.html#sect-Messaging_User_Guide-Security-Authorization">Apache Qpid Authorization</link></para>
+            <para><link xlink:href="http://qpid.apache.org/releases/qpid-0.32/cpp-broker/book/chap-Messaging_User_Guide-Security.html#sect-Messaging_User_Guide-Security-Authorization">Apache Qpid Authorization</link></para>
           </listitem>
 </itemizedlist>
       </section>

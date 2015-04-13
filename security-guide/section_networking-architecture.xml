@@ -69,12 +69,12 @@
         <term>network provider services (SDN server/services)</term>
         <listitem>
           <para>
-            Provide additional networking services to tenant
-            networks. These SDN services might interact with the
+            Provides additional networking services to tenant
+            networks. These SDN services may interact with
             <systemitem class="service">neutron-server</systemitem>,
             <systemitem class="service">neutron-plugin</systemitem>,
-            and/or plugin-agents through REST APIs or other
-            communication channels.</para>
+            and plugin-agents through communication channels
+            such as REST APIs.</para>
         </listitem>
       </varlistentry>
     </variablelist>

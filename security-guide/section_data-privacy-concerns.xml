@@ -24,10 +24,10 @@
           <para>Block Storage volume data</para>
         </listitem>
         <listitem>
-          <para>Public keys for Compute Access</para>
+          <para>Public keys for Compute access</para>
         </listitem>
         <listitem>
-          <para>Virtual Machine Images in the Image Service</para>
+          <para>Virtual machine images in the Image service</para>
         </listitem>
         <listitem>
           <para>Machine snapshots</para>
@@ -133,8 +133,8 @@
         away the key.</para>
       </section>
       <section xml:id="data-privacy-concerns-data-disposal-glance-delay-delete">
-        <title>Image Service delay delete feature</title>
-        <para>OpenStack Image Service has a delayed delete feature, which will
+        <title>Image service delay delete feature</title>
+        <para>OpenStack Image service has a delayed delete feature, which will
           pend the deletion of an image for a defined time period. It
           is recommended to disable this feature if it is a security
           concern, by editing the <filename>etc/glance/glance-api.conf</filename>

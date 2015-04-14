@@ -209,10 +209,10 @@
         communication.</para>
     </section>
     <section xml:id="introduction-to-openstack-openstack-service-overview-image-service">
-      <title>Image Service</title>
-      <para>The OpenStack <glossterm>Image Service</glossterm>
+      <title>Image service</title>
+      <para>The OpenStack <glossterm>Image service</glossterm>
         (<glossterm>glance</glossterm>) provides disk image
-        management services. The Image Service provides image
+        management services. The Image service provides image
         discovery, registration, and delivery services to the
         Compute service, as needed.</para>
       <para>Trusted processes for managing the life cycle of disk

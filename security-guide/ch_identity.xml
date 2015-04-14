@@ -161,12 +161,12 @@
         your required access control policies for the OpenStack
         installation. The policies should be consistent with any
         regulatory or legal requirements for the organization. Future
-        modifications to access control configuration should be done
+        modifications to the access control configuration should be done
         consistently with the formal policies. The policies should
         include the conditions and processes for creating, deleting,
         disabling, and enabling accounts, and for assigning privileges
         to the accounts. Periodically review the policies and ensure
-        that configuration is in compliance with approved
+        that the configuration is in compliance with approved
         policies.</para>
     </section>
     <section xml:id="identity-authorization-service-authorization">

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-10 06:00+0000\n"
+"POT-Creation-Date: 2015-04-15 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -536,7 +536,7 @@ msgid "Establish formal access control policies"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:160(para)
-msgid "Prior to configuring roles, groups, and users, document your required access control policies for the OpenStack installation. The policies should be consistent with any regulatory or legal requirements for the organization. Future modifications to access control configuration should be done consistently with the formal policies. The policies should include the conditions and processes for creating, deleting, disabling, and enabling accounts, and for assigning privileges to the accounts. Periodically review the policies and ensure that configuration is in compliance with approved policies."
+msgid "Prior to configuring roles, groups, and users, document your required access control policies for the OpenStack installation. The policies should be consistent with any regulatory or legal requirements for the organization. Future modifications to the access control configuration should be done consistently with the formal policies. The policies should include the conditions and processes for creating, deleting, disabling, and enabling accounts, and for assigning privileges to the accounts. Periodically review the policies and ensure that the configuration is in compliance with approved policies."
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:173(title)
@@ -2037,6 +2037,10 @@ msgstr ""
 msgid "Data processing"
 msgstr ""
 
+#: ./security-guide/ch_data_processing.xml:9(para)
+msgid "The Data processing service for OpenStack (sahara) provides a platform for the provisioning and management of instance clusters using processing frameworks such as Hadoop and Spark. Through the OpenStack dashboard or REST API, users will be able to upload and execute framework applications which may access data in object storage or external providers. The data processing controller uses the Orchestration service to create clusters of instances which may exist as long-running groups that can grow and shrink as requested, or as transient groups created for a single workload."
+msgstr ""
+
 #: ./security-guide/section_understanding-the-audit-process.xml:8(title)
 msgid "Understanding the audit process"
 msgstr ""
@@ -3408,11 +3412,11 @@ msgid "Security concerns here pertain to trust in authentication, management of 
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:212(title)
-msgid "Image Service"
+msgid "Image service"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:213(para)
-msgid "The OpenStack <glossterm>Image Service</glossterm> (<glossterm>glance</glossterm>) provides disk image management services. The Image Service provides image discovery, registration, and delivery services to the Compute service, as needed."
+msgid "The OpenStack <glossterm>Image service</glossterm> (<glossterm>glance</glossterm>) provides disk image management services. The Image service provides image discovery, registration, and delivery services to the Compute service, as needed."
 msgstr ""
 
 #: ./security-guide/section_introduction-to-openstack.xml:218(para)
@@ -5506,7 +5510,7 @@ msgid "network provider services (SDN server/services)"
 msgstr ""
 
 #: ./security-guide/section_networking-architecture.xml:71(para)
-msgid "Provide additional networking services to tenant networks. These SDN services might interact with the <systemitem class=\"service\">neutron-server</systemitem>, <systemitem class=\"service\">neutron-plugin</systemitem>, and/or plugin-agents through REST APIs or other communication channels."
+msgid "Provides additional networking services to tenant networks. These SDN services may interact with <systemitem class=\"service\">neutron-server</systemitem>, <systemitem class=\"service\">neutron-plugin</systemitem>, and plugin-agents through communication channels such as REST APIs."
 msgstr ""
 
 #: ./security-guide/section_networking-architecture.xml:81(para)
@@ -5550,7 +5554,7 @@ msgid "External network"
 msgstr ""
 
 #: ./security-guide/section_networking-architecture.xml:146(para)
-msgid "Used to provide VMs with Internet access in some deployment scenarios. The IP addresses on this network should be reachable by anyone on the Internet and is considered to be in the Public Security Domain."
+msgid "Used to provide VMs with Internet access in some deployment scenarios. The IP addresses on this network should be reachable by anyone on the Internet. This network is considered to be in the Public Security Domain."
 msgstr ""
 
 #: ./security-guide/section_networking-architecture.xml:154(term)
@@ -5787,7 +5791,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:58(None) ./security-guide/section_data-processing-introduction-to-data-processing.xml:61(None)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:47(None) ./security-guide/section_data-processing-introduction-to-data-processing.xml:50(None)
 msgid "@@image: 'static/data_processing_architecture.png'; md5=f9fa44d2ab5b2b7603cefa0a1fd3a9d6"
 msgstr ""
 
@@ -5796,118 +5800,114 @@ msgid "Introduction to Data processing"
 msgstr ""
 
 #: ./security-guide/section_data-processing-introduction-to-data-processing.xml:9(para)
-msgid "The Data processing service for OpenStack (sahara) provides a platform for the provisioning and management of instance clusters using processing frameworks such as Hadoop and Spark. Through the OpenStack dashboard or REST API, users will be able to upload and execute framework applications which may access data in object storage or external providers. The data processing controller uses the Orchestration service to create clusters of instances which may exist as long-running groups that can grow and shrink as requested, or as transient groups created for a single workload."
+msgid "The Data processing service controller will be responsible for creating, maintaining, and destroying any instances created for its clusters. The controller will use the Networking service to establish network paths between itself and the cluster instances. It will also manage the deployment and life-cycle of user applications that are to be run on the clusters. The instances within a cluster contain the core of a framework's processing engine and the Data processing service provides several options for creating and managing the connections to these instances."
 msgstr ""
 
 #: ./security-guide/section_data-processing-introduction-to-data-processing.xml:20(para)
-msgid "The service controller will be responsible for creating, maintaining, and destroying any instances created for its clusters. The controller will use the Networking service to establish network paths between itself and the cluster instances. It will also manage the deployment and life-cycle of user applications that are to be run on the clusters. The instances within a cluster contain the core of a framework's processing engine and the Data processing service provides several options for creating and managing the connections to these instances."
-msgstr ""
-
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:31(para)
 msgid "Data processing resources (clusters, jobs, and data sources) are segregated by projects defined within the Identity service. These resources are shared within a project and it is important to understand the access needs of those who are using the service. Activities within projects (for example launching clusters, uploading jobs, etc.) can be restricted further through the use of role-based access controls."
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:40(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:29(para)
 msgid "In this chapter we discuss how to assess the needs of data processing users with respect to their applications, the data that they use, and their expected capabilities within a project. We will also demonstrate a number of hardening techniques for the service controller and its clusters, and provide examples of various controller configurations and user management approaches to ensure an adequate level of security and privacy."
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:50(title)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:39(title)
 msgid "Architecture"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:51(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:40(para)
 msgid "The following diagram presents a conceptual view of how the Data processing service fits into the greater OpenStack ecosystem."
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:65(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:54(para)
 msgid "The Data processing service makes heavy use of the Compute, Orchestration, Image, and Block Storage services during the provisioning of clusters. It will also use one or more networks, created by the Networking service, provided during cluster creation for administrative access to the instances. While users are running framework applications the controller and the clusters will be accessing the Object Storage service. Given these service usages, we recommend following the instructions outlined in <xref linkend=\"documentation\"/> for cataloging all the components of an installation."
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:79(title)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:68(title)
 msgid "Technologies involved"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:80(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:69(para)
 msgid "The Data Processing service is responsible for the deployment and management of several applications. For a complete understanding of the security options provided we recommend that operators have a general familiarity with these applications. The list of highlighted technologies is broken into two sections: first, high priority applications that have a greater impact on security, and second, supporting applications with a lower impact."
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:89(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:78(para)
 msgid "Higher impact"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:93(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:82(link)
 msgid "Hadoop"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:100(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:89(link)
 msgid "Hadoop secure mode docs"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:107(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:96(link)
 msgid "HDFS"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:114(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:103(link)
 msgid "Spark"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:121(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:110(link)
 msgid "Spark Security"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:128(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:117(link)
 msgid "Storm"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:135(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:124(link)
 msgid "Zookeeper"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:141(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:130(para)
 msgid "Lower impact"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:145(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:134(link)
 msgid "Oozie"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:152(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:141(link)
 msgid "Hive"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:159(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:148(link)
 msgid "Pig"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:165(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:154(para)
 msgid "These technologies comprise the core of the frameworks that are deployed with the Data processing service. In addition to these technologies, the service also includes bundled frameworks provided by third party vendors. These bundled frameworks are built using the same core pieces described above plus configurations and applications that the vendors include. For more information on the third party framework bundles please see the following links:"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:177(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:166(link)
 msgid "Cloudera CDH"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:184(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:173(link)
 msgid "Hortonworks Data Platform"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:191(link)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:180(link)
 msgid "MapR"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:199(title)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:188(title)
 msgid "User access to resources"
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:200(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:189(para)
 msgid "The resources (clusters, jobs, and data sources) of the Data processing service are shared within the scope of a project. Although a single controller installation may manage several sets of resources, these resources will each be scoped to a single project. Given this constraint we recommend that user membership in projects is monitored closely to maintain proper segregation of resources."
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:208(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:197(para)
 msgid "As the security requirements of organizations deploying this service will vary based on their specific needs, we recommend that operators focus on data privacy, cluster management, and end-user applications as a starting point for evaluating the needs of their users. These decisions will help guide the process of configuring user access to the service. For an expanded discussion on data privacy see <xref linkend=\"tenant-data\"/>."
 msgstr ""
 
-#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:217(para)
+#: ./security-guide/section_data-processing-introduction-to-data-processing.xml:206(para)
 msgid "The default assumption for a data processing installation is that users will have access to all functionality within their projects. In the event that more granular control is required the Data processing service provides a policy file (as described in <xref linkend=\"identity-policies\"/>). These configurations will be highly dependent on the needs of the installing organization, and as such there is no general advice on their usage: see <xref linkend=\"data-processing-configuration-and-hardening-role-based-access-control-policies\"/> for details."
 msgstr ""
 
@@ -6072,11 +6072,11 @@ msgid "Block Storage volume data"
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:27(para)
-msgid "Public keys for Compute Access"
+msgid "Public keys for Compute access"
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:30(para)
-msgid "Virtual Machine Images in the Image Service"
+msgid "Virtual machine images in the Image service"
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:33(para)
@@ -6212,11 +6212,11 @@ msgid "Finally, while not a feature of OpenStack, vendors and implementors may c
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:136(title)
-msgid "Image Service delay delete feature"
+msgid "Image service delay delete feature"
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:137(para)
-msgid "OpenStack Image Service has a delayed delete feature, which will pend the deletion of an image for a defined time period. It is recommended to disable this feature if it is a security concern, by editing the <filename>etc/glance/glance-api.conf</filename> file and setting the <literal>delayed_delete</literal> option as <replaceable>False</replaceable>."
+msgid "OpenStack Image service has a delayed delete feature, which will pend the deletion of an image for a defined time period. It is recommended to disable this feature if it is a security concern, by editing the <filename>etc/glance/glance-api.conf</filename> file and setting the <literal>delayed_delete</literal> option as <replaceable>False</replaceable>."
 msgstr ""
 
 #: ./security-guide/section_data-privacy-concerns.xml:145(title)
@@ -7104,7 +7104,7 @@ msgid "Image creation process"
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:129(para)
-msgid "The OpenStack Documentation provides guidance on how to create and upload an image to the Image Service. Additionally it is assumed that you have a process by which you install and harden operating systems. Thus, the following items will provide additional guidance on how to ensure your images are transferred securely into OpenStack. There are a variety of options for obtaining images. Each has specific steps that help validate the image's provenance."
+msgid "The OpenStack Documentation provides guidance on how to create and upload an image to the Image service. Additionally it is assumed that you have a process by which you install and harden operating systems. Thus, the following items will provide additional guidance on how to ensure your images are transferred securely into OpenStack. There are a variety of options for obtaining images. Each has specific steps that help validate the image's provenance."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:137(para)
@@ -7144,7 +7144,7 @@ msgid "Images come from the glance service to the nova service on a node. This t
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:196(para)
-msgid "We hope that future versions of Compute and/or the Image Service will offer support for validating the image hash before each instance launch. An alternative option that would be even more powerful would be allow users to sign an image and then have the signature validated when the instance is launched."
+msgid "We hope that future versions of Compute and/or the Image service will offer support for validating the image hash before each instance launch. An alternative option that would be even more powerful would be allow users to sign an image and then have the signature validated when the instance is launched."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:201(para)

@@ -1,0 +1,66 @@
+Glance method filtering does not work under certain conditions
+---
+
+### Summary ###
+Glance is using the Python assert statement for validating the HTTP
+method type in its caching middleware for some image endpoints. The
+Python documentation states that when optimization is requested
+(command line option -O), assert statements will not be evaluated.
+This results in a condition where these method validations will not
+occur and can allow a specific method to be called with a different
+HTTP verb.
+
+### Affected Services / Software ###
+Glance, Icehouse, Juno, Kilo
+
+### Discussion ###
+Glance uses the Python assert statement to validate the HTTP method
+for some of the image endpoints in the version 1 and 2 REST interfaces.
+In circumstances where glance is being run with Python optimization
+enabled (by using the -O command line option), these assert statements
+will not be evaluated. In these cases, the HTTP verb is unchecked for
+the requested endpoints.
+
+The endpoints and methods affected by this are the following:
+
+* GET on /v1/images/{image_id}
+* DELETE on /v1/images/{image_id}
+* GET on /v2/images/{image_id}/file
+* DELETE on /v2/images/{image_id}
+
+This can lead to access violations in some configurations. For
+example, if filtering were occurring in front of the glance API to
+restrict queries based on HTTP method and IP address, an attacker
+could circumvent this filtering by matching the endpoint regular
+expression and providing a different HTTP verb. In this example
+an attacker would be able to download or delete images from glance.
+
+Assuming a user were restricted by network filtering to only send
+DELETE requests to the glance API endpoint. The user could attempt to
+circumvent the filtering by sending a well crafted request to the
+endpoint that would actually retrieve the named image. If an image ID
+were known to be "12345", then a DELETE request sent to the glance API
+endpoint "/v2/images/12345/file" would end up matching the GET URI
+pattern. This would retrieve the image from glance, thus exploiting the
+filtering.
+
+### Recommended Actions ###
+As of the Kilo-rc1 release of glance, this vulnerability has been
+patched. It has also been backported to the stable branch of the Juno
+release and will be officially updated in the 2014.2.4 tag of glance.
+This will not be fixed for Icehouse.
+
+Kilo deployments should be updated to the rc1 tag. Juno deployments
+should be updated to the 2014.2.4 tag. Operators maintaining Icehouse
+deployments of glance should consider upgrading to the Juno 2014.2.4
+release.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0048
+Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1414532
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Python assert documentation: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+Python optimize documentation: https://docs.python.org/2/using/cmdline.html#envvar-PYTHONOPTIMIZE
+Glance v1 API: http://developer.openstack.org/api-ref-image-v1.html
+Glance v2 API: http://developer.openstack.org/api-ref-image-v2.html

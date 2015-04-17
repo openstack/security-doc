@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-15 06:01+0000\n"
+"POT-Creation-Date: 2015-04-17 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,6 +131,70 @@ msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml:98(para)
 msgid "<filename>$PGDATA/root.crl</filename> - Certificate revocation list"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:8(title)
+msgid "Authentication methods"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:11(title)
+msgid "Internally implemented authentication methods"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:12(para)
+msgid "The Identity service can store user credentials in an SQL Database, or may use an LDAP-compliant directory server. The Identity database may be separate from databases used by other OpenStack services to reduce the risk of a compromise of the stored credentials."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:17(para)
+msgid "When you use a user name and password to authenticate, Identity does not enforce policies on password strength, expiration, or failed authentication attempts as recommended by NIST Special Publication 800-118 (draft). Organizations that desire to enforce stronger password policies should consider using Identity extensions or external authentication services."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:25(para)
+msgid "LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:28(para)
+msgid "Authentication and authorization policy in OpenStack may be delegated to another service. A typical use case is an organization that seeks to deploy a private cloud and already has a database of employees and users in an LDAP system. Using this as the authentication authority, requests to the Identity service are delegated to the LDAP system, which will then authorize or deny based on its policies. Upon successful authentication, the Identity service then generates a token that is used for access to authorized services."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:36(para)
+msgid "Note that if the LDAP system has attributes defined for the user such as admin, finance, HR etc, these must be mapped into roles and groups within Identity for use by the various OpenStack services. The <filename>/etc/keystone/keystone.conf</filename> file maps LDAP attributes to Identity attributes."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:41(para)
+msgid "The Identity service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed to write to LDAP services used for authentication outside of the OpenStack deployment as this would allow a sufficiently privileged keystone user to make changes to the LDAP directory. This would allow privilege escalation within the wider organization or facilitate unauthorized access to other information and resources. In such a deployment, user provisioning would be out of the realm of the OpenStack deployment."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:51(para)
+msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1168252\">OpenStack Security Note (OSSN) regarding keystone.conf permissions</link>."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:55(para)
+msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1155566\">OpenStack Security Note (OSSN) regarding potential DoS attacks</link>."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:63(title)
+msgid "External authentication methods"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:64(para)
+msgid "Organizations may desire to implement external authentication for compatibility with existing authentication services or to enforce stronger authentication policy requirements. Although passwords are the most common form of authentication, they can be compromised through numerous methods, including keystroke logging and password compromise. External authentication services can provide alternative forms of authentication that minimize the risk from weak passwords."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:73(para)
+msgid "These include:"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:76(para)
+msgid "Password policy enforcement: Requires user passwords to conform to minimum standards for length, diversity of characters, expiration, or failed login attempts."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:81(para)
+msgid "Multi-factor authentication: The authentication service requires the user to provide information based on something they have, such as a one-time password token or X.509 certificate, and something they know, such as a password."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication-methods.xml:88(para)
+msgid "Kerberos"
 msgstr ""
 
 #: ./security-guide/section_compliance-overview.xml:8(title)
@@ -407,236 +471,12 @@ msgstr ""
 msgid "It is recommended that you follow the guidelines provided in <xref linkend=\"messaging-security-queue-authentication-and-access-control\"/> for all components which require RPC communication."
 msgstr ""
 
-#: ./security-guide/ch_identity.xml:8(title) ./security-guide/section_data-processing-deployment.xml:33(para)
+#: ./security-guide/ch_identity.xml:7(title) ./security-guide/section_data-processing-deployment.xml:33(para)
 msgid "Identity"
 msgstr ""
 
 #: ./security-guide/ch_identity.xml:9(para)
-msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity service provides the user with an authorization token used for subsequent service requests."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:14(para)
-msgid "Transport Layer Security (TLS) provides authentication between services and persons using X.509 certificates. Although the default mode for TLS is server-side only authentication, certificates may also be used for client authentication."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:19(title)
-msgid "Authentication"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:21(title)
-msgid "Invalid login attempts"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:22(para)
-msgid "The Identity service does not provide a method to limit access to accounts after repeated unsuccessful login attempts. A pattern of repetitive failed login attempts is generally an indicator of brute-force attacks (refer to <xref linkend=\"security-boundaries-and-threats-attack-types\"/>). This type of attack is more prevalent in public cloud deployments."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:29(para)
-msgid "Prevention is possible by using an external authentication system that blocks out an account after some configured number of failed login attempts. The account then may only be unlocked with further side-channel intervention."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:33(para)
-msgid "If prevention is not an option, detection can be used to mitigate damage. Detection involves frequent review of access control logs to identify unauthorized attempts to access accounts. Possible remediation would include reviewing the strength of the user password, or blocking the network source of the attack through firewall rules. Firewall rules on the keystone server that restrict the number of connections could be used to reduce the attack effectiveness, and thus dissuade the attacker."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:42(para)
-msgid "In addition, it is useful to examine account activity for unusual login times and suspicious actions, and take corrective actions such as disabling the account. Oftentimes this approach is taken by credit card providers for fraud detection and alert."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:49(title)
-msgid "Multi-factor authentication"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:50(para)
-msgid "Employ multi-factor authentication for network access to privileged user accounts. The Identity service supports external authentication services through the Apache web server that can provide this functionality. Servers may also enforce client-side authentication using certificates."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:55(para)
-msgid "This recommendation provides insulation from brute force, social engineering, and both spear and mass phishing attacks that may compromise administrator passwords."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:61(title)
-msgid "Authentication methods"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:63(title)
-msgid "Internally implemented authentication methods"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:64(para)
-msgid "The Identity service can store user credentials in an SQL Database, or may use an LDAP-compliant directory server. The Identity database may be separate from databases used by other OpenStack services to reduce the risk of a compromise of the stored credentials."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:69(para)
-msgid "When you use a user name and password to authenticate, Identity does not enforce policies on password strength, expiration, or failed authentication attempts as recommended by NIST Special Publication 800-118 (draft). Organizations that desire to enforce stronger password policies should consider using Identity extensions or external authentication services."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:77(para)
-msgid "LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:80(para)
-msgid "Authentication and authorization policy in OpenStack may be delegated to another service. A typical use case is an organization that seeks to deploy a private cloud and already has a database of employees and users in an LDAP system. Using this as the authentication authority, requests to the Identity service are delegated to the LDAP system, which will then authorize or deny based on its policies. Upon successful authentication, the Identity service then generates a token that is used for access to authorized services."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:88(para)
-msgid "Note that if the LDAP system has attributes defined for the user such as admin, finance, HR etc, these must be mapped into roles and groups within Identity for use by the various OpenStack services. The <filename>/etc/keystone/keystone.conf</filename> file maps LDAP attributes to Identity attributes."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:93(para)
-msgid "The Identity service <emphasis role=\"bold\">MUST NOT</emphasis> be allowed to write to LDAP services used for authentication outside of the OpenStack deployment as this would allow a sufficiently privileged keystone user to make changes to the LDAP directory. This would allow privilege escalation within the wider organization or facilitate unauthorized access to other information and resources. In such a deployment, user provisioning would be out of the realm of the OpenStack deployment."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:103(para)
-msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1168252\">OpenStack Security Note (OSSN) regarding keystone.conf permissions</link>."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:107(para)
-msgid "There is an <link href=\"https://bugs.launchpad.net/ossn/+bug/1155566\">OpenStack Security Note (OSSN) regarding potential DoS attacks</link>."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:114(title)
-msgid "External authentication methods"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:115(para)
-msgid "Organizations may desire to implement external authentication for compatibility with existing authentication services or to enforce stronger authentication policy requirements. Although passwords are the most common form of authentication, they can be compromised through numerous methods, including keystroke logging and password compromise. External authentication services can provide alternative forms of authentication that minimize the risk from weak passwords."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:124(para)
-msgid "These include:"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:127(para)
-msgid "Password policy enforcement: Requires user passwords to conform to minimum standards for length, diversity of characters, expiration, or failed login attempts."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:132(para)
-msgid "Multi-factor authentication: The authentication service requires the user to provide information based on something they have, such as a one-time password token or X.509 certificate, and something they know, such as a password."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:139(para)
-msgid "Kerberos"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:145(title)
-msgid "Authorization"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:146(para)
-msgid "The Identity service supports the notion of groups and roles. Users belong to groups while a group has a list of roles. OpenStack services reference the roles of the user attempting to access the service. The OpenStack policy enforcer middleware takes into consideration the policy rule associated with each resource then the user's group/roles and association to determine if access is allowed to the requested resource."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:153(para)
-msgid "The policy enforcement middleware enables fine-grained access control to OpenStack resources. Only admin users can provision new users and have access to various management functionality. The cloud users would only be able to spin up instances, attach volumes, and perform other operational tasks."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:159(title)
-msgid "Establish formal access control policies"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:160(para)
-msgid "Prior to configuring roles, groups, and users, document your required access control policies for the OpenStack installation. The policies should be consistent with any regulatory or legal requirements for the organization. Future modifications to the access control configuration should be done consistently with the formal policies. The policies should include the conditions and processes for creating, deleting, disabling, and enabling accounts, and for assigning privileges to the accounts. Periodically review the policies and ensure that the configuration is in compliance with approved policies."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:173(title)
-msgid "Service authorization"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:174(para)
-msgid "Cloud administrators must define a user with the role of admin for each service, as described in the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/index.html\"><citetitle>OpenStack Cloud Administrator Guide</citetitle></link>. This service account provides the service with the authorization to authenticate users."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:181(para)
-msgid "The Compute and Object Storage services can be configured to use the Identity service to store authentication information. Other options to store authentication information include the use of the \"tempAuth\" file, however this should not be deployed in a production environment as the password is displayed in plain text."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:187(para)
-msgid "The Identity service supports client authentication for TLS which may be enabled. TLS client authentication provides an additional authentication factor, in addition to the user name and password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:197(para)
-msgid "We recommend that you use client authentication with TLS for the authentication of services to the Identity service."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:201(para)
-msgid "The cloud administrator should protect sensitive configuration files from unauthorized modification. This can be achieved with mandatory access control frameworks such as SELinux, including <filename>/etc/keystone/keystone.conf</filename> and X.509 certificates."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:207(para)
-msgid "Client authentication with TLS requires certificates be issued to services. These certificates can be signed by an external or internal certificate authority. OpenStack services check the validity of certificate signatures against trusted CAs by default and connections will fail if the signature is not valid or the CA is not trusted. Cloud deployers may use self-signed certificates. In this case, the validity check must be disabled or the certificate should be marked as trusted. To disable validation of self-signed certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:222(title)
-msgid "Administrative users"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:223(para)
-msgid "We recommend that admin users authenticate using Identity service and an external authentication service that supports 2-factor authentication, such as a certificate. This reduces the risk from passwords that may be compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) guidance in the use of multi-factor authentication for network access to privileged accounts."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:232(title)
-msgid "End users"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:233(para)
-msgid "The Identity service can directly provide end-user authentication, or can be configured to use external authentication methods to conform to an organization's security policies and requirements."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:240(title)
-msgid "Policies"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:241(para)
-msgid "Each OpenStack service has a policy file in JSON format, called <filename>policy.json</filename>. The policy file specifies rules, and the rule that governs each resource. A resource could be API access, the ability to attach to a volume, or to fire up instances."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:246(para)
-msgid "The policies can be updated by the cloud administrator to further control access to the various resources. The middleware could also be further customized. Note that your users must be assigned to groups/roles that you refer to in your policies."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:251(para)
-msgid "Below is a snippet of the Block Storage service <filename>policy.json</filename> file."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:254(para)
-msgid "Note the <emphasis role=\"bold\">default</emphasis> rule specifies that the user must be either an admin or the owner of the volume. It essentially says only the owner of a volume or the admin may create/delete/update volumes. Certain other operations such as managing volume types are accessible only to admin users."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:262(title)
-msgid "Tokens"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:263(para)
-msgid "Once a user is authenticated a token is generated for authorization and access to an OpenStack environment. A token can have a variable life span; however since the release of OpenStack Icehouse, the default value for expiry has been reduced to one hour. The recommended expiry value should be set to a lower value that allows enough time for internal services to complete tasks. In the event that the token expires before tasks complete, the cloud may become unresponsive or stop providing services. An example of expended time during use would be the time needed by the Compute service to transfer a disk image onto the hypervisor for local caching."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:274(para)
-msgid "The following example shows a PKI token. Note that token id values are typically 3500 bytes. In this example, the value has been truncated."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:278(para)
-msgid "The token is often passed within the structure of a larger context of an Identity service response. These responses also provide a catalog of the various OpenStack services. Each service is listed with its name, access endpoints for internal, admin, and public access."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:283(para)
-msgid "The Identity service supports token revocation. This manifests as an API to revoke a token, to list revoked tokens and individual OpenStack services that cache tokens to query for the revoked tokens and remove them from their cache and append the same to their list of cached revoked tokens."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:290(title) ./security-guide/section_identity-federated-keystone.xml:460(title)
-msgid "Future"
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:291(para)
-msgid "Domains are high-level containers for projects, users and groups. As such, they can be used to centrally manage all keystone-based identity components. With the introduction of account domains, server, storage and other resources can now be logically grouped into multiple projects (previously called tenants) which can themselves be grouped under a master account-like container. In addition, multiple users can be managed within an account domain and assigned roles that vary for each project."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:300(para)
-msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
-msgstr ""
-
-#: ./security-guide/ch_identity.xml:306(para)
-msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
+msgid "Identity service (keystone) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the frontend, for example an authenticate call will validate user/project credentials with the identity service and, upon success, create and return a token with the token service. Further information can be found by reading the <link href=\"http://docs.openstack.org/developer/keystone/index.html\"> Keystone Developer Documentation</link>."
 msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:9(para)
@@ -2029,6 +1869,10 @@ msgstr ""
 msgid "At this point the SAML Assertion can be sent to the Service Provider keystone, and a valid OpenStack token, issued by a Service Provider keystone, will be returned."
 msgstr ""
 
+#: ./security-guide/section_identity-federated-keystone.xml:460(title) ./security-guide/section_identity-future.xml:8(title)
+msgid "Future"
+msgstr ""
+
 #: ./security-guide/section_identity-federated-keystone.xml:461(para)
 msgid "Currently, the CLI supports the Enhanced Client or Proxy (ECP), (the non-browser) support for <literal>keystoneclient</literal> from an API perspective. So, if you are using the <literal>keystoneclient</literal>, you can create a client instance and use the SAML authorization plugin. There is no support for dashboard available presently. With the upcoming OpenStack releases, Federated Identity should be supported with both CLI and the dashboard."
 msgstr ""
@@ -2039,6 +1883,70 @@ msgstr ""
 
 #: ./security-guide/ch_data_processing.xml:9(para)
 msgid "The Data processing service for OpenStack (sahara) provides a platform for the provisioning and management of instance clusters using processing frameworks such as Hadoop and Spark. Through the OpenStack dashboard or REST API, users will be able to upload and execute framework applications which may access data in object storage or external providers. The data processing controller uses the Orchestration service to create clusters of instances which may exist as long-running groups that can grow and shrink as requested, or as transient groups created for a single workload."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:8(title)
+msgid "Authorization"
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:9(para)
+msgid "The Identity service supports the notion of groups and roles. Users belong to groups while a group has a list of roles. OpenStack services reference the roles of the user attempting to access the service. The OpenStack policy enforcer middleware takes into consideration the policy rule associated with each resource then the user's group/roles and association to determine if access is allowed to the requested resource."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:16(para)
+msgid "The policy enforcement middleware enables fine-grained access control to OpenStack resources. Only admin users can provision new users and have access to various management functionality. The cloud users would only be able to spin up instances, attach volumes, and perform other operational tasks."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:22(title)
+msgid "Establish formal access control policies"
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:23(para)
+msgid "Prior to configuring roles, groups, and users, document your required access control policies for the OpenStack installation. The policies should be consistent with any regulatory or legal requirements for the organization. Future modifications to the access control configuration should be done consistently with the formal policies. The policies should include the conditions and processes for creating, deleting, disabling, and enabling accounts, and for assigning privileges to the accounts. Periodically review the policies and ensure that the configuration is in compliance with approved policies."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:36(title)
+msgid "Service authorization"
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:37(para)
+msgid "Cloud administrators must define a user with the role of admin for each service, as described in the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/index.html\"><citetitle>OpenStack Cloud Administrator Guide</citetitle></link>. This service account provides the service with the authorization to authenticate users."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:44(para)
+msgid "The Compute and Object Storage services can be configured to use the Identity service to store authentication information. Other options to store authentication information include the use of the \"tempAuth\" file, however this should not be deployed in a production environment as the password is displayed in plain text."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:50(para)
+msgid "The Identity service supports client authentication for TLS which may be enabled. TLS client authentication provides an additional authentication factor, in addition to the user name and password, that provides greater reliability on user identification. It reduces the risk of unauthorized access when user names and passwords may be compromised. However, there is additional administrative overhead and cost to issue certificates to users that may not be feasible in every deployment."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:60(para)
+msgid "We recommend that you use client authentication with TLS for the authentication of services to the Identity service."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:64(para)
+msgid "The cloud administrator should protect sensitive configuration files from unauthorized modification. This can be achieved with mandatory access control frameworks such as SELinux, including <filename>/etc/keystone/keystone.conf</filename> and X.509 certificates."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:70(para)
+msgid "Client authentication with TLS requires certificates be issued to services. These certificates can be signed by an external or internal certificate authority. OpenStack services check the validity of certificate signatures against trusted CAs by default and connections will fail if the signature is not valid or the CA is not trusted. Cloud deployers may use self-signed certificates. In this case, the validity check must be disabled or the certificate should be marked as trusted. To disable validation of self-signed certificates, set <code>insecure=False</code> in the <code>[filter:authtoken]</code> section in the <filename>/etc/nova/api.paste.ini</filename> file. This setting also disables certificates for other components."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:85(title)
+msgid "Administrative users"
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:86(para)
+msgid "We recommend that admin users authenticate using Identity service and an external authentication service that supports 2-factor authentication, such as a certificate. This reduces the risk from passwords that may be compromised. This recommendation is in compliance with NIST 800-53 IA-2(1) guidance in the use of multi-factor authentication for network access to privileged accounts."
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:95(title)
+msgid "End users"
+msgstr ""
+
+#: ./security-guide/section_identity-authorization.xml:96(para)
+msgid "The Identity service can directly provide end-user authentication, or can be configured to use external authentication methods to conform to an organization's security policies and requirements."
 msgstr ""
 
 #: ./security-guide/section_understanding-the-audit-process.xml:8(title)
@@ -3865,6 +3773,18 @@ msgstr ""
 msgid "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, supports only IPv4 forwarding."
 msgstr ""
 
+#: ./security-guide/section_identity-future.xml:9(para)
+msgid "Domains are high-level containers for projects, users and groups. As such, they can be used to centrally manage all keystone-based identity components. With the introduction of account domains, server, storage and other resources can now be logically grouped into multiple projects (previously called tenants) which can themselves be grouped under a master account-like container. In addition, multiple users can be managed within an account domain and assigned roles that vary for each project."
+msgstr ""
+
+#: ./security-guide/section_identity-future.xml:18(para)
+msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
+msgstr ""
+
+#: ./security-guide/section_identity-future.xml:24(para)
+msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
+msgstr ""
+
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ./security-guide/section_integrity-life-cycle.xml:64(None) ./security-guide/section_integrity-life-cycle.xml:69(None)
@@ -5145,6 +5065,26 @@ msgstr ""
 msgid "The prescriptive defense for each form of attack is beyond the scope of this document. The above diagram can assist you in making an informed decision about which types of threats, and threat actors, should be protected against. For commercial public cloud deployments this might include prevention against serious crime. For those deploying private clouds for government use, more stringent protective mechanisms should be in place, including carefully protected facilities and supply chains. In contrast those standing up basic development or test environments will likely require less restrictive controls (middle of the spectrum)."
 msgstr ""
 
+#: ./security-guide/section_identity-tokens.xml:8(title)
+msgid "Tokens"
+msgstr ""
+
+#: ./security-guide/section_identity-tokens.xml:9(para)
+msgid "Once a user is authenticated a token is generated for authorization and access to an OpenStack environment. A token can have a variable life span; however since the release of OpenStack Icehouse, the default value for expiry has been reduced to one hour. The recommended expiry value should be set to a lower value that allows enough time for internal services to complete tasks. In the event that the token expires before tasks complete, the cloud may become unresponsive or stop providing services. An example of expended time during use would be the time needed by the Compute service to transfer a disk image onto the hypervisor for local caching."
+msgstr ""
+
+#: ./security-guide/section_identity-tokens.xml:20(para)
+msgid "The following example shows a PKI token. Note that token id values are typically 3500 bytes. In this example, the value has been truncated."
+msgstr ""
+
+#: ./security-guide/section_identity-tokens.xml:24(para)
+msgid "The token is often passed within the structure of a larger context of an Identity service response. These responses also provide a catalog of the various OpenStack services. Each service is listed with its name, access endpoints for internal, admin, and public access."
+msgstr ""
+
+#: ./security-guide/section_identity-tokens.xml:29(para)
+msgid "The Identity service supports token revocation. This manifests as an API to revoke a token, to list revoked tokens and individual OpenStack services that cache tokens to query for the revoked tokens and remove them from their cache and append the same to their list of cached revoked tokens."
+msgstr ""
+
 #: ./security-guide/ch_compliance.xml:7(title)
 msgid "Compliance"
 msgstr ""
@@ -5171,6 +5111,26 @@ msgstr ""
 
 #: ./security-guide/ch_compliance.xml:42(para)
 msgid "Introduce privacy considerations specific to OpenStack and cloud environments."
+msgstr ""
+
+#: ./security-guide/section_identity-policies.xml:8(title)
+msgid "Policies"
+msgstr ""
+
+#: ./security-guide/section_identity-policies.xml:9(para)
+msgid "Each OpenStack service has a policy file in JSON format, called <filename>policy.json</filename>. The policy file specifies rules, and the rule that governs each resource. A resource could be API access, the ability to attach to a volume, or to fire up instances."
+msgstr ""
+
+#: ./security-guide/section_identity-policies.xml:14(para)
+msgid "The policies can be updated by the cloud administrator to further control access to the various resources. The middleware could also be further customized. Note that your users must be assigned to groups/roles that you refer to in your policies."
+msgstr ""
+
+#: ./security-guide/section_identity-policies.xml:19(para)
+msgid "Below is a snippet of the Block Storage service <filename>policy.json</filename> file."
+msgstr ""
+
+#: ./security-guide/section_identity-policies.xml:22(para)
+msgid "Note the <emphasis role=\"bold\">default</emphasis> rule specifies that the user must be either an admin or the owner of the volume. It essentially says only the owner of a volume or the admin may create/delete/update volumes. Certain other operations such as managing volume types are accessible only to admin users."
 msgstr ""
 
 #: ./security-guide/section_case-studies-compliance.xml:9(para)
@@ -5945,6 +5905,50 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:34(para)
 msgid "Bob must also protect the access to the public and private endpoints, so he elects to use the Apache TLS proxy on both public and internal services. On the public services, he has configured the certificate key files with certificates signed by a well-known Certificate Authority. He has used his organization's self-signed CA to sign certificates in the internal services on the Management network. Bob has registered his services in the Identity service's catalog, using the internal URLs for access by internal services. Bob's public cloud runs services on SELinux, which he has configured with a mandatory access control policy to reduce the impact of any publicly accessible services that may be compromised. He has also configured the endpoints with a host-based IDS."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:8(title)
+msgid "Authentication"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:9(para)
+msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity service provides the user with an authorization token used for subsequent service requests."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:14(para)
+msgid "Transport Layer Security (TLS) provides authentication between services and persons using X.509 certificates. Although the default mode for TLS is server-side only authentication, certificates may also be used for client authentication."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:20(title)
+msgid "Invalid login attempts"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:21(para)
+msgid "The Identity service does not provide a method to limit access to accounts after repeated unsuccessful login attempts. A pattern of repetitive failed login attempts is generally an indicator of brute-force attacks (refer to <xref linkend=\"security-boundaries-and-threats-attack-types\"/>). This type of attack is more prevalent in public cloud deployments."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:28(para)
+msgid "Prevention is possible by using an external authentication system that blocks out an account after some configured number of failed login attempts. The account then may only be unlocked with further side-channel intervention."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:32(para)
+msgid "If prevention is not an option, detection can be used to mitigate damage. Detection involves frequent review of access control logs to identify unauthorized attempts to access accounts. Possible remediation would include reviewing the strength of the user password, or blocking the network source of the attack through firewall rules. Firewall rules on the keystone server that restrict the number of connections could be used to reduce the attack effectiveness, and thus dissuade the attacker."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:41(para)
+msgid "In addition, it is useful to examine account activity for unusual login times and suspicious actions, and take corrective actions such as disabling the account. Oftentimes this approach is taken by credit card providers for fraud detection and alert."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:49(title)
+msgid "Multi-factor authentication"
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:50(para)
+msgid "Employ multi-factor authentication for network access to privileged user accounts. The Identity service supports external authentication services through the Apache web server that can provide this functionality. Servers may also enforce client-side authentication using certificates."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:55(para)
+msgid "This recommendation provides insulation from brute force, social engineering, and both spear and mass phishing attacks that may compromise administrator passwords."
 msgstr ""
 
 #: ./security-guide/ch_networking.xml:9(para)

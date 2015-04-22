@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-04-16 16:45+0000\n"
-"PO-Revision-Date: 2015-04-16 16:45+0000\n"
+"POT-Creation-Date: 2015-04-20 18:36+0000\n"
+"PO-Revision-Date: 2015-04-20 10:50+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -9296,9 +9296,9 @@ msgstr "プラグインエージェント (<systemitem class=\"service\">neutron
 msgid ""
 "Runs on each compute node to manage local virtual switch (vswitch) "
 "configuration. The plug-in that you use determine which agents run. This "
-"service requires message queue access. <emphasis>Optional depending on "
-"plugin.</emphasis>"
-msgstr "ローカルの仮想スイッチ（vswitch）設定を管理する為に各 compute ノード上で実行されます。使用するプラグインにより、どのエージェントを実行するか決まります。このサービスはメッセージキューへのアクセスを必要とします。<emphasis>オプションのプラグインに依存します。</emphasis>"
+"service requires message queue access. This service requires message queue "
+"access and depends on the plugin used."
+msgstr ""
 
 #: ./security-guide/section_networking-architecture.xml46(term)
 msgid "DHCP agent (<systemitem class=\"service\">neutron-dhcp-agent</systemitem>)"

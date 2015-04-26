@@ -133,10 +133,10 @@
   <section xml:id="dashboard-secret-key">
     <title>Secret key</title>
     <para>The dashboard depends on a shared <option>SECRET_KEY</option>
-      setting for some security functions. It should be a randomly
-      generated string at least 64 characters long. It must be shared
-      across all active dashboard instances. Compromise of this key
-      may allow a remote attacker to execute arbitrary code. Rotating
+      setting for some security functions. The secret key should be a
+      randomly generated string at least 64 characters long, which must
+      be shared across all active dashboard instances. Compromise of this
+      key may allow a remote attacker to execute arbitrary code. Rotating
       this key invalidates existing user sessions and caching. Do not
       commit this key to public repositories.</para>
   </section>

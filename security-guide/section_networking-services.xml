@@ -61,7 +61,7 @@
             <para>Flow analysis (through open source or third-party plug-ins)</para>
           </listitem>
         </itemizedlist>
-        <para>Tenant traffic port mirroring or Network Flow monitoring is currently not an exposed feature in OpenStack Networking. There are third-party plug-in extensions that do provide Port Mirroring on a per port/network/tenant basis. If Open vSwitch is used on the networking hypervisor, it is possible to enable sFlow and port mirroring, however it will require some operational effort to implement.</para>
+        <para>Tenant traffic port mirroring or Network Flow monitoring is currently not an exposed feature in OpenStack Networking. There are third-party plug-in extensions that do provide port mirroring on a per port/network/tenant basis. If Open vSwitch is used on the networking hypervisor, it is possible to enable sFlow and port mirroring, however it will require some operational effort to implement.</para>
       </section>
       <section xml:id="networking-services-network-services-load-balancing">
         <title>Load balancing</title>

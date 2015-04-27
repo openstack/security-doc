@@ -47,16 +47,16 @@
     <section xml:id="networking-services-security-best-practices-security-groups">
       <title>Security groups</title>
       <para>
-        The OpenStack Networking Service provides security group
+        The OpenStack Networking service provides security group
         functionality using a mechanism that is more flexible and
         powerful than the security group capabilities built into
-        OpenStack Compute. Thus, when using OpenStack Networking,
-        <filename>nova.conf</filename> should always disable built-in
-        security groups and proxy all security group calls to the
-        OpenStack Networking API. Failure to do so will result in
-        conflicting security policies being simultaneously applied by
-        both services. To proxy security groups to OpenStack
-        Networking, use the following configuration values:</para>
+        OpenStack Compute. Thus, <filename>nova.conf</filename> should
+        always disable built-in security groups and proxy all security
+        group calls to the OpenStack Networking API when using OpenStack
+        Networking. Failure to do so results in conflicting security
+        policies being simultaneously applied by both services.
+        To proxy security groups to OpenStack Networking,
+        use the following configuration values:</para>
       <itemizedlist><listitem>
           <para><option>firewall_driver</option> must be set to
           <literal>nova.virt.firewall.NoopFirewallDriver</literal> so

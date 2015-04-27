@@ -13,7 +13,7 @@
     <para>This section discusses OpenStack Networking configuration best practices as they apply to tenant network security within your OpenStack deployment.</para>
     <section xml:id="networking-services-security-best-practices-tenant-network-services-workflow">
       <title>Tenant network services workflow</title>
-      <para>OpenStack Networking provides users real self services of network resources and configurations. It is important that cloud architects and operators evaluate their design use cases in providing users the ability to create, update, and destroy available network resources.</para>
+      <para>OpenStack Networking provides users self services of network resources and configurations. It is important that cloud architects and operators evaluate their design use cases in providing users the ability to create, update, and destroy available network resources.</para>
     </section>
     <section xml:id="networking-services-security-best-practices-networking-resource-policy-engine">
       <title>Networking resource policy engine</title>

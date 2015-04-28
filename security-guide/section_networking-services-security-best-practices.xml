@@ -20,12 +20,10 @@
       <para>A policy engine and its configuration file,
       <filename>policy.json</filename>, within OpenStack Networking
       provides a method to provide finer grained authorization of
-      users on tenant networking methods and objects. It is important
-      that cloud architects and operators evaluate their design and
-      use cases in providing users and tenants the ability to create,
-      update, and destroy available network resources as it has a
-      tangible effect on tenant network availability, network
-      security, and overall OpenStack security. For a more detailed
+      users on tenant networking methods and objects. The OpenStack Networking policy
+      definitions affect network availability, network security and overall OpenStack
+      security.  Cloud architects and operators should carefully evaluate their policy
+      towards user and tenant access to administration of network resources. For a more detailed
       explanation of OpenStack Networking policy definition, please
       refer to the <link
       xlink:href="http://docs.openstack.org/admin-guide-cloud/content/section_networking_auth.html">Authentication

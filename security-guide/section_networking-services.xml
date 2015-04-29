@@ -7,10 +7,10 @@
   <?dbhtml stop-chunking?>
     <title>Networking services</title>
     <para>In the initial architectural phases of designing your OpenStack Network infrastructure it is important to ensure appropriate expertise is available to assist with the design of the physical networking infrastructure, to identify proper security controls and auditing mechanisms.</para>
-    <para>OpenStack Networking adds a layer of virtualized network services - giving tenants the capability to architect their own virtual networks. These virtualized services are not as currently as mature as their traditional networking counterparts. It is important to be aware of the current state of these virtualized services and what controls may need to be implemented at the virtualized and traditional network boundary.</para>
+    <para>OpenStack Networking adds a layer of virtualized network services which gives tenants the capability to architect their own virtual networks. Currently, these virtualized services are not as mature as their traditional networking counterparts. Consider the current state of these virtualized services before adopting them as it dictates what controls you may have to implement at the virtualized and traditional network boundaries.</para>
     <section xml:id="networking-services-l2-isolation-using-vlans-and-tunneling">
       <title>L2 isolation using VLANs and tunneling</title>
-      <para>OpenStack Networking can employ two different mechanisms for traffic segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging) or L2 tunnels using GRE encapsulation. Which method you choose for traffic segregation and isolation is determined by the scope and scale of your OpenStack deployment.</para>
+      <para>OpenStack Networking can employ two different mechanisms for traffic segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging) or L2 tunnels using GRE encapsulation. The scope and scale of your OpenStack deployment determines which method you should utilize for traffic segregation or isolation.</para>
       <section xml:id="networking-services-l2-isolation-using-vlans-and-tunneling-vlans">
         <title>VLANs</title>
         <para>VLANs are realized as packets on a specific physical network containing IEEE 802.1Q headers with a specific VLAN ID (VID) field value. VLAN networks sharing the same physical network are isolated from each other at L2, and can even have overlapping IP address spaces. Each distinct physical network supporting VLAN networks is treated as a separate VLAN trunk, with a distinct space of VID values. Valid VID values are 1 through 4094.</para>
@@ -34,10 +34,7 @@
         <para>OpenStack Compute supports tenant network traffic access controls directly when deployed with the legacy nova-network service, or may defer access control to the OpenStack Networking service.</para>
         <para>Note, legacy nova-network security groups are applied to all virtual interface ports on an instance using iptables.</para>
         <para>Security groups allow administrators and tenants the ability to specify the type of traffic, and direction (ingress/egress) that is allowed to pass through a virtual interface port. Security groups rules are stateful L2-L4 traffic filters.</para>
-        <para>When using the Networking service, it is our
-          recommendation that you enable security groups through
-          OpenStack Networking and disable security groups in Compute.
-        </para>
+        <para>When using the Networking service, we recommend that you enable security groups in this service and disable it in the Compute service.</para>
       </section>
       <section xml:id="networking-services-network-services-l3-routing-and-nat">
         <title>L3 routing and NAT</title>

@@ -52,7 +52,7 @@
       <para>The <literal>FilterScheduler</literal> is the default
         scheduler for OpenStack Compute, although other schedulers
         exist (see the section <link
-        xlink:href="http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html"
+        xlink:href="http://docs.openstack.org/kilo/config-reference/content/section_compute-scheduler.html"
         >Scheduling</link> in the <citetitle>OpenStack Configuration
         Reference</citetitle>). This works in collaboration with
         'filter hints' to decide where an instance should be started.

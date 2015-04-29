@@ -69,10 +69,16 @@
       </section>
       <section xml:id="networking-services-network-services-firewalls">
         <title>Firewalls</title>
-        <para>FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Juno release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of
-        security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. Third-party plug-ins are being developed for
-        extensions in OpenStack Networking to support this component. Documentation for administration of FWaaS is located at <link xlink:href="http://docs.openstack.org/admin-guide-cloud/content/fwaas.html">
-        </link></para>
+      <para>FW-as-a-Service (FWaaS) is considered an experimental feature for
+        the Kilo release of OpenStack Networking. FWaaS addresses the need to
+        manage and leverage the rich set of security features provided by
+        typical firewall products which are typically far more comprehensive
+        than what is currently provided by security groups. Both Freescale and
+        Intel developed third-party plug-ins as extensions in OpenStack
+        Networking to support this component in the Kilo release. Documentation
+        for administration of FWaaS is located at <link
+          xlink:href="http://docs.openstack.org/admin-guide-cloud/content/fwaas.html"
+        > </link></para>
         <para>It is critical during the design of an OpenStack Networking infrastructure to understand the current features and limitations of network services that are available. Understanding where the boundaries of your virtual and physical networks will help you add the required security controls in your environment.</para>
       </section>
     </section>

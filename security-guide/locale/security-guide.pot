@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-22 06:01+0000\n"
+"POT-Creation-Date: 2015-04-29 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2794,7 +2794,7 @@ msgid "Secret key"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:135(para)
-msgid "The dashboard depends on a shared <placeholder-1/> setting for some security functions. It should be a randomly generated string at least 64 characters long. It must be shared across all active dashboard instances. Compromise of this key may allow a remote attacker to execute arbitrary code. Rotating this key invalidates existing user sessions and caching. Do not commit this key to public repositories."
+msgid "The dashboard depends on a shared <placeholder-1/> setting for some security functions. The secret key should be a randomly generated string at least 64 characters long, which must be shared across all active dashboard instances. Compromise of this key may allow a remote attacker to execute arbitrary code. Rotating this key invalidates existing user sessions and caching. Do not commit this key to public repositories."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:144(title)
@@ -3722,54 +3722,54 @@ msgid "Firewalls"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:72(para)
-msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Juno release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. There are third-party plug-ins in development for extensions in OpenStack Networking to support this.The FWaaS admin guide is available at <link href=\"http://docs.openstack.org/admin-guide-cloud/content/fwaas.html\"/>"
+msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Juno release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. Third-party plug-ins are being developed for extensions in OpenStack Networking to support this component. Documentation for administration of FWaaS is located at <placeholder-1/>"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:73(para)
+#: ./security-guide/section_networking-services.xml:76(para)
 msgid "It is critical during the design of an OpenStack Networking infrastructure to understand the current features and limitations of network services that are available. Understanding where the boundaries of your virtual and physical networks will help you add the required security controls in your environment."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:77(title)
+#: ./security-guide/section_networking-services.xml:80(title)
 msgid "Network services extensions"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:78(para)
+#: ./security-guide/section_networking-services.xml:81(para)
 msgid "A list of known plug-ins provided by the open source community or by SDN companies that work with OpenStack Networking is available at <link href=\"https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers\">OpenStack Neutron Plugins and Drivers wiki page</link>."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:85(title)
+#: ./security-guide/section_networking-services.xml:88(title)
 msgid "Networking services limitations"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:86(para)
+#: ./security-guide/section_networking-services.xml:89(para)
 msgid "OpenStack Networking has the following known limitations:"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:89(term)
+#: ./security-guide/section_networking-services.xml:92(term)
 msgid "Overlapping IP addresses"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:91(para)
+#: ./security-guide/section_networking-services.xml:94(para)
 msgid "If nodes that run either <systemitem class=\"service\">neutron-l3-agent</systemitem> or <systemitem class=\"service\">neutron-dhcp-agent</systemitem> use overlapping IP addresses, those nodes must use Linux network namespaces. By default, the DHCP and L3 agents use Linux network namespaces. However, if the host does not support these namespaces, run the DHCP and L3 agents on different hosts."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:101(para)
+#: ./security-guide/section_networking-services.xml:104(para)
 msgid "If network namespace support is not present, a further limitation of the L3 agent is that only a single logical router is supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:108(term)
+#: ./security-guide/section_networking-services.xml:111(term)
 msgid "Multi-host DHCP-agent"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:110(para)
+#: ./security-guide/section_networking-services.xml:113(para)
 msgid "OpenStack Networking supports multiple L3 and DHCP agents with load balancing. However, tight coupling of the location of the virtual machine is not supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:118(term)
+#: ./security-guide/section_networking-services.xml:121(term)
 msgid "No IPv6 support for L3 agents"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:120(para)
+#: ./security-guide/section_networking-services.xml:123(para)
 msgid "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, supports only IPv4 forwarding."
 msgstr ""
 
@@ -5992,7 +5992,7 @@ msgid "Tenant network services workflow"
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:16(para)
-msgid "OpenStack Networking provides users real self services of network resources and configurations. It is important that cloud architects and operators evaluate their design use cases in providing users the ability to create, update, and destroy available network resources."
+msgid "OpenStack Networking provides users self services of network resources and configurations. It is important that cloud architects and operators evaluate their design use cases in providing users the ability to create, update, and destroy available network resources."
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:19(title)
@@ -6024,7 +6024,7 @@ msgid "<placeholder-1/> must be set to <literal>neutron</literal> so that all se
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:73(para)
-msgid "Security groups and security group rules allow administrators and tenants the ability to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a virtual interface port. A security group is a container for security group rules. When a virtual interface port is created in OpenStack Networking it is associated with a security group. If a security group is not specified, the port will be associated with a 'default' security group. By default this group will drop all ingress traffic and allow all egress. Rules can be added to this group in order to change the behaviour."
+msgid "A security group is a container for security group rules. Security groups and their rules allow administrators and tenants the ability to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a virtual interface port. When a virtual interface port is created in OpenStack Networking it is associated with a security group. If a security group is not specified, the port will be associated with a 'default' security group. By default this group will drop all ingress traffic and allow all egress. Rules can be added to this group in order to change the behaviour."
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:74(para)

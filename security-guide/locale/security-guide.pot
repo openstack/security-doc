@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-29 06:01+0000\n"
+"POT-Creation-Date: 2015-05-01 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2334,7 +2334,7 @@ msgid "Run services as non-root user"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:124(para)
-msgid "It is recommended that you configure each Object Storage service to run under a non-root (UID 0) service account. One recommendation is the user name \"swift\" with the primary group \"swift.\" Object Storage services include, for example, 'proxy-server', 'container-server', 'account-server'. Detailed steps for setup and configuration can be found in the <link href=\"http://docs.openstack.org/juno/install-guide/install/apt/content/ch_swift.html\">Add Object Storage chapter</link> of the <citetitle>Installation Guide</citetitle> in the <link href=\"http://docs.openstack.org\">OpenStack Documentation index</link>. (The link defaults to the Ubuntu version.)"
+msgid "It is recommended that you configure each Object Storage service to run under a non-root (UID 0) service account. One recommendation is the user name \"swift\" with the primary group \"swift.\" Object Storage services include, for example, 'proxy-server', 'container-server', 'account-server'. Detailed steps for setup and configuration can be found in the <link href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_swift.html\">Add Object Storage chapter</link> of the <citetitle>Installation Guide</citetitle> in the <link href=\"http://docs.openstack.org\">OpenStack Documentation index</link>. (The link defaults to the Ubuntu version.)"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:140(title)
@@ -3594,7 +3594,7 @@ msgid "In the initial architectural phases of designing your OpenStack Network i
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:10(para)
-msgid "OpenStack Networking adds a layer of virtualized network services - giving tenants the capability to architect their own virtual networks. These virtualized services are not as currently as mature as their traditional networking counterparts. It is important to be aware of the current state of these virtualized services and what controls may need to be implemented at the virtualized and traditional network boundary."
+msgid "OpenStack Networking adds a layer of virtualized network services which gives tenants the capability to architect their own virtual networks. Currently, these virtualized services are not as mature as their traditional networking counterparts. Consider the current state of these virtualized services before adopting them as it dictates what controls you may have to implement at the virtualized and traditional network boundaries."
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:12(title)
@@ -3602,7 +3602,7 @@ msgid "L2 isolation using VLANs and tunneling"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:13(para)
-msgid "OpenStack Networking can employ two different mechanisms for traffic segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging) or L2 tunnels using GRE encapsulation. Which method you choose for traffic segregation and isolation is determined by the scope and scale of your OpenStack deployment."
+msgid "OpenStack Networking can employ two different mechanisms for traffic segregation on a per tenant/network combination: VLANs (IEEE 802.1Q tagging) or L2 tunnels using GRE encapsulation. The scope and scale of your OpenStack deployment determines which method you should utilize for traffic segregation or isolation."
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:15(title)
@@ -3662,114 +3662,114 @@ msgid "Security groups allow administrators and tenants the ability to specify t
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:37(para)
-msgid "When using the Networking service, it is our recommendation that you enable security groups through OpenStack Networking and disable security groups in Compute."
+msgid "When using the Networking service, we recommend that you enable security groups in this service and disable it in the Compute service."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:43(title)
+#: ./security-guide/section_networking-services.xml:40(title)
 msgid "L3 routing and NAT"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:44(para)
+#: ./security-guide/section_networking-services.xml:41(para)
 msgid "OpenStack Networking routers can connect multiple L2 networks, and can also provide a <emphasis>gateway</emphasis> that connects one or more private L2 networks to a shared <emphasis>external</emphasis> network, such as a public network for access to the Internet."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:45(para)
+#: ./security-guide/section_networking-services.xml:42(para)
 msgid "The L3 router provides basic Network Address Translation (NAT) capabilities on <emphasis>gateway</emphasis> ports that uplink the router to external networks. This router SNATs (Static NAT) all traffic by default, and supports floating IPs, which creates a static one-to-one mapping from a public IP on the external network to a private IP on one of the other subnets attached to the router."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:46(para)
+#: ./security-guide/section_networking-services.xml:43(para)
 msgid "It is our recommendation to leverage per tenant L3 routing and Floating IPs for more granular connectivity of tenant VMs."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:49(title)
+#: ./security-guide/section_networking-services.xml:46(title)
 msgid "Quality of Service (QoS)"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:50(para)
+#: ./security-guide/section_networking-services.xml:47(para)
 msgid "The ability to set QoS on the virtual interface ports of tenant instances is a current deficiency for OpenStack Networking. The application of QoS for traffic shaping and rate-limiting at the physical network edge device is insufficient due to the dynamic nature of workloads in an OpenStack deployment and can not be leveraged in the traditional way. QoS-as-a-Service (QoSaaS) is currently in development for the OpenStack Networking Icehouse release as an experimental feature. QoSaaS is planning to provide the following services:"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:52(para)
+#: ./security-guide/section_networking-services.xml:49(para)
 msgid "Traffic shaping through DSCP markings"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:55(para)
+#: ./security-guide/section_networking-services.xml:52(para)
 msgid "Rate-limiting on a per port/network/tenant basis."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:58(para)
+#: ./security-guide/section_networking-services.xml:55(para)
 msgid "Port mirroring (through open source or third-party plug-ins)"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:61(para)
+#: ./security-guide/section_networking-services.xml:58(para)
 msgid "Flow analysis (through open source or third-party plug-ins)"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:64(para)
+#: ./security-guide/section_networking-services.xml:61(para)
 msgid "Tenant traffic port mirroring or Network Flow monitoring is currently not an exposed feature in OpenStack Networking. There are third-party plug-in extensions that do provide Port Mirroring on a per port/network/tenant basis. If Open vSwitch is used on the networking hypervisor, it is possible to enable sFlow and port mirroring, however it will require some operational effort to implement."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:67(title)
+#: ./security-guide/section_networking-services.xml:64(title)
 msgid "Load balancing"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:68(para)
+#: ./security-guide/section_networking-services.xml:65(para)
 msgid "Another feature in OpenStack Networking is Load-Balancer-as-a-service (LBaaS). The LBaaS reference implementation is based on HA-Proxy. There are third-party plug-ins in development for extensions in OpenStack Networking to provide extensive L4-L7 functionality for virtual interface ports."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:71(title)
+#: ./security-guide/section_networking-services.xml:68(title)
 msgid "Firewalls"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:72(para)
-msgid "FW-as-a-Service (FWaaS) is currently in development for the OpenStack Networking Juno release as an experimental feature. FWaaS will address the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. Third-party plug-ins are being developed for extensions in OpenStack Networking to support this component. Documentation for administration of FWaaS is located at <placeholder-1/>"
+#: ./security-guide/section_networking-services.xml:69(para)
+msgid "FW-as-a-Service (FWaaS) is considered an experimental feature for the Kilo release of OpenStack Networking. FWaaS addresses the need to manage and leverage the rich set of security features provided by typical firewall products which are typically far more comprehensive than what is currently provided by security groups. Both Freescale and Intel developed third-party plug-ins as extensions in OpenStack Networking to support this component in the Kilo release. Documentation for administration of FWaaS is located at <placeholder-1/>"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:76(para)
+#: ./security-guide/section_networking-services.xml:79(para)
 msgid "It is critical during the design of an OpenStack Networking infrastructure to understand the current features and limitations of network services that are available. Understanding where the boundaries of your virtual and physical networks will help you add the required security controls in your environment."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:80(title)
+#: ./security-guide/section_networking-services.xml:83(title)
 msgid "Network services extensions"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:81(para)
+#: ./security-guide/section_networking-services.xml:84(para)
 msgid "A list of known plug-ins provided by the open source community or by SDN companies that work with OpenStack Networking is available at <link href=\"https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers\">OpenStack Neutron Plugins and Drivers wiki page</link>."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:88(title)
+#: ./security-guide/section_networking-services.xml:91(title)
 msgid "Networking services limitations"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:89(para)
+#: ./security-guide/section_networking-services.xml:92(para)
 msgid "OpenStack Networking has the following known limitations:"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:92(term)
+#: ./security-guide/section_networking-services.xml:95(term)
 msgid "Overlapping IP addresses"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:94(para)
+#: ./security-guide/section_networking-services.xml:97(para)
 msgid "If nodes that run either <systemitem class=\"service\">neutron-l3-agent</systemitem> or <systemitem class=\"service\">neutron-dhcp-agent</systemitem> use overlapping IP addresses, those nodes must use Linux network namespaces. By default, the DHCP and L3 agents use Linux network namespaces. However, if the host does not support these namespaces, run the DHCP and L3 agents on different hosts."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:104(para)
+#: ./security-guide/section_networking-services.xml:107(para)
 msgid "If network namespace support is not present, a further limitation of the L3 agent is that only a single logical router is supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:111(term)
+#: ./security-guide/section_networking-services.xml:114(term)
 msgid "Multi-host DHCP-agent"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:113(para)
+#: ./security-guide/section_networking-services.xml:116(para)
 msgid "OpenStack Networking supports multiple L3 and DHCP agents with load balancing. However, tight coupling of the location of the virtual machine is not supported."
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:121(term)
+#: ./security-guide/section_networking-services.xml:124(term)
 msgid "No IPv6 support for L3 agents"
 msgstr ""
 
-#: ./security-guide/section_networking-services.xml:123(para)
+#: ./security-guide/section_networking-services.xml:126(para)
 msgid "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, supports only IPv4 forwarding."
 msgstr ""
 
@@ -6012,7 +6012,7 @@ msgid "If your deployment of OpenStack provides multiple external access points 
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:49(para)
-msgid "The OpenStack Networking Service provides security group functionality using a mechanism that is more flexible and powerful than the security group capabilities built into OpenStack Compute. Thus, when using OpenStack Networking, <filename>nova.conf</filename> should always disable built-in security groups and proxy all security group calls to the OpenStack Networking API. Failure to do so will result in conflicting security policies being simultaneously applied by both services. To proxy security groups to OpenStack Networking, use the following configuration values:"
+msgid "The OpenStack Networking service provides security group functionality using a mechanism that is more flexible and powerful than the security group capabilities built into OpenStack Compute. Thus, <filename>nova.conf</filename> should always disable built-in security groups and proxy all security group calls to the OpenStack Networking API when using OpenStack Networking. Failure to do so results in conflicting security policies being simultaneously applied by both services. To proxy security groups to OpenStack Networking, use the following configuration values:"
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:61(para)
@@ -6431,43 +6431,51 @@ msgstr ""
 msgid "This book provides best practices and conceptual information about securing an OpenStack cloud."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:40(date)
+#: ./security-guide/bk-openstack-security-guide.xml:39(date)
+msgid "2015-04-29"
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml:43(para)
+msgid "Final prep for Kilo release."
+msgstr ""
+
+#: ./security-guide/bk-openstack-security-guide.xml:49(date)
 msgid "2015-02-11"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:44(para)
+#: ./security-guide/bk-openstack-security-guide.xml:53(para)
 msgid "Chapter on Data processing added."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:50(date)
+#: ./security-guide/bk-openstack-security-guide.xml:59(date)
 msgid "2014-10-16"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:54(para)
+#: ./security-guide/bk-openstack-security-guide.xml:63(para)
 msgid "This book has been extensively reviewed and updated. Chapters have been rearranged and a glossary has been added."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:63(date)
+#: ./security-guide/bk-openstack-security-guide.xml:72(date)
 msgid "2013-12-02"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:67(para)
+#: ./security-guide/bk-openstack-security-guide.xml:76(para)
 msgid "Chapter on Object Storage added."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:73(date)
+#: ./security-guide/bk-openstack-security-guide.xml:82(date)
 msgid "2013-10-17"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:77(para)
+#: ./security-guide/bk-openstack-security-guide.xml:86(para)
 msgid "Havana release."
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:83(date)
+#: ./security-guide/bk-openstack-security-guide.xml:92(date)
 msgid "2013-07-02"
 msgstr ""
 
-#: ./security-guide/bk-openstack-security-guide.xml:87(para)
+#: ./security-guide/bk-openstack-security-guide.xml:96(para)
 msgid "Initial creation..."
 msgstr ""
 
@@ -7040,7 +7048,7 @@ msgid "Before an instance is created, a host for the image instantiation must be
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:52(para)
-msgid "The <literal>FilterScheduler</literal> is the default scheduler for OpenStack Compute, although other schedulers exist (see the section <link href=\"http://docs.openstack.org/trunk/config-reference/content/section_compute-scheduler.html\">Scheduling</link> in the <citetitle>OpenStack Configuration Reference</citetitle>). This works in collaboration with 'filter hints' to decide where an instance should be started. This process of host selection allows administrators to fulfill many different security and compliance requirements. Depending on the cloud deployment type for example, one could choose to have tenant instances reside on the same hosts whenever possible if data isolation was a primary concern. Conversely one could attempt to have instances for a tenant reside on as many different hosts as possible for availability or fault tolerance reasons."
+msgid "The <literal>FilterScheduler</literal> is the default scheduler for OpenStack Compute, although other schedulers exist (see the section <link href=\"http://docs.openstack.org/kilo/config-reference/content/section_compute-scheduler.html\">Scheduling</link> in the <citetitle>OpenStack Configuration Reference</citetitle>). This works in collaboration with 'filter hints' to decide where an instance should be started. This process of host selection allows administrators to fulfill many different security and compliance requirements. Depending on the cloud deployment type for example, one could choose to have tenant instances reside on the same hosts whenever possible if data isolation was a primary concern. Conversely one could attempt to have instances for a tenant reside on as many different hosts as possible for availability or fault tolerance reasons."
 msgstr ""
 
 #: ./security-guide/section_security-services-for-instances.xml:66(para)

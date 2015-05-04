@@ -243,9 +243,10 @@ SESSION_COOKIE_SECURE = True</programlisting>
   <section xml:id="dashboard-debug">
     <title>Debug</title>
 
-    <para>Make sure <option>DEBUG</option> is set to <literal>False</literal>
-      in production. In Django, <option>DEBUG</option> displays stack traces
-      and sensitive web server state information on any
-      exception.</para>
+    <para>We recommend that the <option>DEBUG</option> setting
+      is set to <literal>False</literal> in production environments.
+      If <option>DEBUG</option> is set to True,
+      Django will display stack traces and sensitive web server
+      state information when exceptions are thrown.</para>
   </section>
 </chapter>

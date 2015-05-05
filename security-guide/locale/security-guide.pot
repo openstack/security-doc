@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-01 06:01+0000\n"
+"POT-Creation-Date: 2015-05-05 06:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2890,7 +2890,7 @@ msgid "Debug"
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:246(para)
-msgid "Make sure <placeholder-1/> is set to <literal>False</literal> in production. In Django, <placeholder-2/> displays stack traces and sensitive web server state information on any exception."
+msgid "We recommend that the <placeholder-1/> setting is set to <literal>False</literal> in production environments. If <placeholder-2/> is set to True, Django will display stack traces and sensitive web server state information when exceptions are thrown."
 msgstr ""
 
 #: ./security-guide/section_tls-proxies-and-http-services.xml:8(title)
@@ -3706,7 +3706,7 @@ msgid "Flow analysis (through open source or third-party plug-ins)"
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:61(para)
-msgid "Tenant traffic port mirroring or Network Flow monitoring is currently not an exposed feature in OpenStack Networking. There are third-party plug-in extensions that do provide Port Mirroring on a per port/network/tenant basis. If Open vSwitch is used on the networking hypervisor, it is possible to enable sFlow and port mirroring, however it will require some operational effort to implement."
+msgid "Tenant traffic port mirroring or Network Flow monitoring is currently not an exposed feature in OpenStack Networking. There are third-party plug-in extensions that do provide port mirroring on a per port/network/tenant basis. If Open vSwitch is used on the networking hypervisor, it is possible to enable sFlow and port mirroring, however it will require some operational effort to implement."
 msgstr ""
 
 #: ./security-guide/section_networking-services.xml:64(title)
@@ -5577,7 +5577,7 @@ msgstr ""
 msgid "Example. Disallow image registry manipulations to non-admin users"
 msgstr ""
 
-#: ./security-guide/section_data-processing-configuration-and-hardening.xml:82(title) ./security-guide/section_networking-services-security-best-practices.xml:48(title)
+#: ./security-guide/section_data-processing-configuration-and-hardening.xml:82(title) ./security-guide/section_networking-services-security-best-practices.xml:46(title)
 msgid "Security groups"
 msgstr ""
 
@@ -6000,46 +6000,46 @@ msgid "Networking resource policy engine"
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:20(para)
-msgid "A policy engine and its configuration file, <filename>policy.json</filename>, within OpenStack Networking provides a method to provide finer grained authorization of users on tenant networking methods and objects. It is important that cloud architects and operators evaluate their design and use cases in providing users and tenants the ability to create, update, and destroy available network resources as it has a tangible effect on tenant network availability, network security, and overall OpenStack security. For a more detailed explanation of OpenStack Networking policy definition, please refer to the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/section_networking_auth.html\">Authentication and authorization section</link> in the <citetitle>OpenStack Cloud Administrator Guide</citetitle>."
+msgid "A policy engine and its configuration file, <filename>policy.json</filename>, within OpenStack Networking provides a method to provide finer grained authorization of users on tenant networking methods and objects. The OpenStack Networking policy definitions affect network availability, network security and overall OpenStack security. Cloud architects and operators should carefully evaluate their policy towards user and tenant access to administration of network resources. For a more detailed explanation of OpenStack Networking policy definition, please refer to the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/section_networking_auth.html\">Authentication and authorization section</link> in the <citetitle>OpenStack Cloud Administrator Guide</citetitle>."
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:34(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:32(para)
 msgid "It is important to review the default networking resource policy and modify the policy appropriately for your security posture."
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:37(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:35(para)
 msgid "If your deployment of OpenStack provides multiple external access points into different security domains it is important that you limit the tenant's ability to attach multiple vNICs to multiple external access pointsthis would bridge these security domains and could lead to unforeseen security compromise. It is possible mitigate this risk by utilizing the host aggregates functionality provided by OpenStack Compute or through splitting the tenant VMs into multiple tenant projects with different virtual network configurations."
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:49(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:47(para)
 msgid "The OpenStack Networking service provides security group functionality using a mechanism that is more flexible and powerful than the security group capabilities built into OpenStack Compute. Thus, <filename>nova.conf</filename> should always disable built-in security groups and proxy all security group calls to the OpenStack Networking API when using OpenStack Networking. Failure to do so results in conflicting security policies being simultaneously applied by both services. To proxy security groups to OpenStack Networking, use the following configuration values:"
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:61(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:59(para)
 msgid "<placeholder-1/> must be set to <literal>nova.virt.firewall.NoopFirewallDriver</literal> so that <systemitem class=\"service\">nova-compute</systemitem> does not perform iptables-based filtering itself."
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:67(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:65(para)
 msgid "<placeholder-1/> must be set to <literal>neutron</literal> so that all security group requests are proxied to the OpenStack Networking service."
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:73(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:71(para)
 msgid "A security group is a container for security group rules. Security groups and their rules allow administrators and tenants the ability to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a virtual interface port. When a virtual interface port is created in OpenStack Networking it is associated with a security group. If a security group is not specified, the port will be associated with a 'default' security group. By default this group will drop all ingress traffic and allow all egress. Rules can be added to this group in order to change the behaviour."
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:74(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:72(para)
 msgid "When using the security group API through OpenStack Compute, security groups are applied to all virtual interface ports on an instance. The reason for this is that OpenStack Compute security group APIs are instance based and not virtual interface port based as OpenStack Networking."
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:77(title)
+#: ./security-guide/section_networking-services-security-best-practices.xml:75(title)
 msgid "Quotas"
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:79(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:77(para)
 msgid "Quotas provide the ability to limit the number of network resources available to tenants. You can enforce default quotas for all tenants. The <filename>/etc/neutron/neutron.conf</filename> includes these options for quota:"
 msgstr ""
 
-#: ./security-guide/section_networking-services-security-best-practices.xml:108(para)
+#: ./security-guide/section_networking-services-security-best-practices.xml:106(para)
 msgid "OpenStack Networking also supports per-tenant quotas limit through a quota extension API. To enable per-tenant quotas, you must set the <literal>quota_driver</literal> option in <filename>neutron.conf</filename>."
 msgstr ""
 

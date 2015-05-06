@@ -85,7 +85,7 @@
       community or by SDN companies that work with OpenStack Networking
       is available at <link
       xlink:href="https://wiki.openstack.org/wiki/Neutron_Plugins_and_Drivers"
-      >OpenStack Neutron Plugins and Drivers wiki page</link>.</para>
+      >OpenStack neutron plug-ins and drivers wiki page</link>.</para>
     </section>
     <section xml:id="networking-services-network-services-limitations">
       <title>Networking services limitations</title>

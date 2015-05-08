@@ -91,15 +91,13 @@
       advise against deploying to bare internal domains like
         <uri>https://horizon/</uri>. These recommendations are based on the limitations of
       browser same-origin-policy.</para>
-    <para>The recommendations in this guide cannot
-      effectively protect users against known attacks if the dashboard is
-      deployed on a domain which also hosts user-generated content,
-      such as scripts, images, or uploads of any kind, even if the
-      user-generated content is on a different subdomain. This
-      approach is used by most major web presences, such as
-      googleusercontent.com, fbcdn.com, github.io, and twimg.com, to
-      ensure that user generated content stays separate from cookies
-      and security tokens.</para>
+    <para>Recommendations given in this guide cannot effectively guard against
+      known attacks if the dashboard is deployed on a domain which also hosts
+      user-generated content, even when this content is located on a separate
+      sub-domain. User generated content can consist of scripts, images, or uploads
+      of any type. Most major web presences inclusive of googleusercontent.com,
+      fbcdn.com, github.io, and twimg.co, utilize this approach to segregate
+      user-generated content from cookies and security tokens.</para>
     <para>Additionally, if you decline to follow this recommendation
       above about second-level domains, it is vital that you avoid the
       cookie backed session store and employ HTTP Strict Transport

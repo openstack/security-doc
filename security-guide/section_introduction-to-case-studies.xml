@@ -14,7 +14,7 @@
       department in the US. The cloud must comply with relevant
       standards, such as FedRAMP. The security paperwork requirements
       for this cloud are very high. It must have no direct access to
-      the internet: its API endpoints, compute instances, and other
+      the Internet: its API endpoints, compute instances, and other
       resources must be exposed to only systems within the
       department's network, which is entirely air-gapped from all
       other networks. The cloud can access other network services on

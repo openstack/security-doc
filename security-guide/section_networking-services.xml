@@ -76,7 +76,10 @@
         for administration of FWaaS is located at <link
           xlink:href="http://docs.openstack.org/admin-guide-cloud/content/fwaas.html"
         > </link></para>
-        <para>It is critical during the design of an OpenStack Networking infrastructure to understand the current features and limitations of network services that are available. Understanding where the boundaries of your virtual and physical networks will help you add the required security controls in your environment.</para>
+        <para>During the design of an OpenStack Networking infrastructure it is important
+         that you understand the current features and limitations of available network
+         services. Understanding the boundaries of your virtual and physical
+         networks will assist in adding required security controls in your environment.</para>
       </section>
     </section>
     <section xml:id="networking-services-network-services-extension">

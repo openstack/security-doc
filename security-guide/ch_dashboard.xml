@@ -83,27 +83,26 @@
       structure is convenient and simplifies name server
       maintenance.</para>
     <para>We strongly recommend deploying horizon to a
-        <emphasis>second-level domain</emphasis>, such as
-        <uri>https://example.com</uri>, and advise against deploying
+      <emphasis>second-level domain</emphasis>, such as
+      <uri>https://example.com</uri>, and advise against deploying
       horizon on a <emphasis>shared subdomain</emphasis> of any level,
       for example <uri>https://openstack.example.org</uri> or
-        <uri>https://horizon.openstack.example.org</uri>. We also
+      <uri>https://horizon.openstack.example.org</uri>. We also
       advise against deploying to bare internal domains like
-        <uri>https://horizon/</uri>. These recommendations are based on the limitations of
-      browser same-origin-policy.</para>
+      <uri>https://horizon/</uri>. These recommendations are based on the
+      limitations of browser same-origin-policy.</para>
     <para>Recommendations given in this guide cannot effectively guard against
-      known attacks if the dashboard is deployed on a domain which also hosts
-      user-generated content, even when this content is located on a separate
-      sub-domain. User generated content can consist of scripts, images, or uploads
-      of any type. Most major web presences inclusive of googleusercontent.com,
-      fbcdn.com, github.io, and twimg.co, utilize this approach to segregate
+      known attacks if you deploy the dashboard in a domain that also hosts
+      user-generated content, even when this content resides on a separate
+      sub-domain. User-generated content can consist of scripts, images, or uploads
+      of any type. Most major web presences, including googleusercontent.com,
+      fbcdn.com, github.io, and twimg.co, use this approach to segregate
       user-generated content from cookies and security tokens.</para>
-    <para>Additionally, if you decline to follow this recommendation
-      above about second-level domains, it is vital that you avoid the
-      cookie backed session store and employ HTTP Strict Transport
-      Security (HSTS). When deployed on a subdomain, the dashboard's
-      security is only as strong as the weakest application deployed
-      on the same second-level domain.</para>
+    <para>If you do not follow this recommendation regarding
+      second-level domains, avoid a cookie-backed session store and
+      employ HTTP Strict Transport Security (HSTS). When deployed on
+      a subdomain, the dashboard's security is equivalent to the least secure
+      application deployed on the same second-level domain.</para>
   </section>
   <section xml:id="dashboard-static-media">
     <title>Static media</title>

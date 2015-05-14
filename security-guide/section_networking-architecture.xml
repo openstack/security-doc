@@ -38,8 +38,7 @@
           <para>Runs on each compute node to manage local virtual
           switch (vswitch) configuration. The plug-in that you use
           determine which agents run. This service requires message
-          queue access. This service requires message queue access and
-          depends on the plugin used.</para>
+          queue access and depends on the plugin used.</para>
         </listitem>
       </varlistentry>
       <varlistentry>

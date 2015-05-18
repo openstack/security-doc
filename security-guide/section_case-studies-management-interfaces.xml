@@ -24,8 +24,48 @@
 </itemizedlist>
     <section xml:id="case-studies-management-interfaces-alice-private-cloud">
       <title>Alice's private cloud</title>
-      <para>When building her private cloud, while air-gapped, Alice still needs to consider her service management interfaces. Before deploying her private cloud, Alice has completed her system documentation. Specifically she has identified which OpenStack services will exist in each security domain. From there Alice has further restricted access to management interfaces by deploying a combination of IDS, TLS encryption, and physical network isolation. Additionally, Alice requires high availability and redundant services. Thus, Alice sets up redundant infrastructure for various OpenStack API services.</para>
-      <para>Alice also needs to provide assurances that the physical servers and hypervisors have been built from a known secure state into a well-defined configuration. To enable this, Alice uses a combination of a Configuration Management platform to configure each machine according to the standards and regulations she must comply with. It will also enable Alice to report periodically on the state of her cloud and perform remediation to a known state should anything be out of the ordinary. Additionally, Alice provides hardware assurances by using a PXE system to build her nodes from a known set of base images. During the boot process, Alice provides further assurances by enabling Intel TXT and related trusted boot technologies provided by the hardware.</para>
+      <para>
+        Alice's cloud has very strict requirements around management and
+        interfaces. She builds an SVN repository and uploads the
+        baseline configuration files there for service teams to modify
+        and deploy through tool automation. User and group accounts for
+        each service are created with the principle of least privilege
+        in mind. Service teams also have their roles defined, and are
+        given or denied access as well. For example, the development
+        team is not given production access, however an escalation path
+        is outlined through Alice's Security Operations Center where
+        privileges can be added and audited during issues. Additionally,
+        an update and patching policy is created, with tiered
+        criticalities for normal updates compared to security or other
+        critical fixes that may be more time sensitive.
+      </para>
+      <para>
+        For out-of-band management Alice has included a BMC/IPMI version
+        specification for the 'Request for Pricing' (RFP) which she
+        submits to approved hardware vendors for quotes and system
+        specifications. This includes ensuring communication with the
+        out-of-band management interface can be encrypted with TLS for
+        both textual and GUI access. She ensures that a network
+        intrusion detection system (NIDS) will be monitoring the
+        management security domain that the IPMI traffic will be using.
+        Depending on usage, which may vary throughout the year, Alice may
+        set the NIDS to do passive anomoly detection so that packets are
+        not missed by the NIDS while it is processing.
+      </para>
+      <para>
+        Alice also creates 'golden images' of various systems that
+        will be used to quickly spin up a new instance. These golden
+        images already have the service accounts, configuration details,
+        logging, and other policies set. One is built for each service
+        type that may be needed, such as a golden image for API
+        endpoints, hypervisors, network devices, message queue
+        instances, and any other devices that are commonly used or may
+        need to be recreated quickly. She then ensures a process exists
+        for updating golden images on a regular schedule as well as
+        reporting package versions for each image, as well as what will
+        be used by the Ansible configuration management tool, and
+        exporting that data into the CMDB automatically.
+      </para>
     </section>
     <section xml:id="case-studies-management-interfaces-bob-public-cloud">
       <title>Bob's public cloud</title>

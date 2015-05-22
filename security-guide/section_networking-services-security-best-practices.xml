@@ -30,7 +30,7 @@
       and authorization section</link> in the <citetitle>OpenStack
       Cloud Administrator Guide</citetitle>.</para>
       <note><para>It is important to review the default networking
-      resource policy and modify the policy appropriately for your
+      resource policy, as this policy can be modified to suit your
       security posture.</para></note>
       <para>If your deployment of OpenStack provides multiple external
       access points into different security domains it is important

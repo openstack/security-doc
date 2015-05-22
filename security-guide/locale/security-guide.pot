@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-13 06:04+0000\n"
+"POT-Creation-Date: 2015-05-22 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Alice is deploying the Data processing service for a group of users that are trusted members of a collaboration. They are all placed in a single project and share the clusters, jobs, and data within. She deploys the controller with TLS enabled, using a certificate signed by the organization's root certificate. She configures the controller to provide floating IP addresses to the cluster instances allowing for users to gain access to the instances in the event of errors. She enables the use of proxy domains to prevent the users from needing to enter their credentials into the Data processing service."
 msgstr ""
 
-#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:15(title) ./security-guide/section_case-studies-system-documentation.xml:16(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:31(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:33(title)
+#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:30(title) ./security-guide/section_case-studies-system-documentation.xml:38(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:71(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:43(title)
 msgid "Bob's public cloud"
 msgstr ""
 
@@ -484,10 +484,10 @@ msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced
 msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:12(para)
-msgid "Alice as a cloud architect within a government agency knows that her agency operates its own certification authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a disconnected from the Internet network, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA."
+msgid "After looking through the secure communication controls of both FedRAMP/FISMA and HIPAA, Alice decides to have all the systems use TLS 1.1 or greater, with export ciphers, the RC4 encryption algorithm, and all versions of SSL disabled. She registers the website through a certificate signing company and validates her identity and workplace to get a public certificate. This is then added to the web application so that incoming clients will be able to use TLS. Internally, she configures a PKI infrastructure to failover across availability zones, and bundles the trust certificate into each golden image's certificate store so that new images will be able to use the certificate upon creation. She also notes in the golden image update policy that the certificate will need to be rotated in the image and on running instances before the expiration date. She also validates that HSTS is enabled on all web servers and other protections outlined in the Dashboard chapter."
 msgstr ""
 
-#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:16(para)
+#: ./security-guide/section_case-studies-pki-and-certificate-management.xml:31(para)
 msgid "Bob is architecting a public cloud and needs to ensure that the publicly facing OpenStack services are using certificates issued by a major public CA. Bob acquires certificates for his public OpenStack services and configures the services to use PKI and TLS and includes the public CAs in his trust bundle for the services. Additionally, Bob also wants to further isolate the internal communications amongst the services within the management security domain. Bob contacts the team within his organization that is responsible for managing his organization's PKI and issuance of certificates using their own internal CA. Bob obtains certificates issued by this internal CA and configures the services that communicate within the management security domain to use these certificates and configures the services to only accept client certificates issued by his internal CA."
 msgstr ""
 
@@ -496,14 +496,14 @@ msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced
 msgstr ""
 
 #: ./security-guide/section_case-studies-system-documentation.xml:12(para)
-msgid "Alice needs detailed documentation to satisfy FedRAMP requirements. She sets up a configuration management database (CMDB) to store information regarding all of the hardware, firmware, and software versions used throughout the cloud. She also creates a network diagram detailing the cloud architecture, paying careful attention to the security domains and the services that span multiple security domains."
+msgid "As Alice needs detailed documentation to satisfy FISMA and FedRAMP requirements, she implements Microsoft's Systems Center due to its established auditing capabilities to support FedRAMP artifact creation, including capturing hardware, firmware, and software details. Architecture docs are created that clearly define the components, services, and data flows, with supporting materials listing the details of those services including processes, protocols, and ports used. These documents are then stored on a secured file share, allowing authenticated access for service and architecture teams to reference."
 msgstr ""
 
-#: ./security-guide/section_case-studies-system-documentation.xml:13(para)
-msgid "Alice also needs to record each network service running in the cloud, what interfaces and ports it binds to, the security domains for each service, and why the service is needed. Alice decides to build automated tools to log into each system in the cloud over secure shell (SSH) using the <link href=\"http://fabfile.org\">Python Fabric library</link>. The tools collect and store the information in the CMDB, which simplifies the audit process."
+#: ./security-guide/section_case-studies-system-documentation.xml:22(para)
+msgid "Additionally, the security domains are clearly highlighted on each document, and asset groups are categorized per the NIST Risk Management Framework. Specifically, Alice will call out the fact that several services cross security domains, such as the API endpoints crossing the Public and Management domains, the Identity data being served from a Federated entity crossing from a system she does not manage to her Management domain, the Database service crossing both Data and Guest domains, and hypervisor crossing Management, Guest, and Public domains. She will then be able to dictate additional controls that ensure and reinforce the trust level of each domain. For example, the application will be exposed to the Internet, and therefore data coming through that will initially be untrusted before it is moved through to the data domain and into the database."
 msgstr ""
 
-#: ./security-guide/section_case-studies-system-documentation.xml:17(para)
+#: ./security-guide/section_case-studies-system-documentation.xml:39(para)
 msgid "In this case, Bob will approach these steps the same as Alice."
 msgstr ""
 
@@ -2766,130 +2766,130 @@ msgid "We strongly recommend deploying horizon to a <emphasis>second-level domai
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:94(para)
-msgid "Recommendations given in this guide cannot effectively guard against known attacks if the dashboard is deployed on a domain which also hosts user-generated content, even when this content is located on a separate sub-domain. User generated content can consist of scripts, images, or uploads of any type. Most major web presences inclusive of googleusercontent.com, fbcdn.com, github.io, and twimg.co, utilize this approach to segregate user-generated content from cookies and security tokens."
+msgid "Recommendations given in this guide cannot effectively guard against known attacks if you deploy the dashboard in a domain that also hosts user-generated content, even when this content resides on a separate sub-domain. User-generated content can consist of scripts, images, or uploads of any type. Most major web presences, including googleusercontent.com, fbcdn.com, github.io, and twimg.co, use this approach to segregate user-generated content from cookies and security tokens."
 msgstr ""
 
 #: ./security-guide/ch_dashboard.xml:101(para)
-msgid "Additionally, if you decline to follow this recommendation above about second-level domains, it is vital that you avoid the cookie backed session store and employ HTTP Strict Transport Security (HSTS). When deployed on a subdomain, the dashboard's security is only as strong as the weakest application deployed on the same second-level domain."
+msgid "If you do not follow this recommendation regarding second-level domains, avoid a cookie-backed session store and employ HTTP Strict Transport Security (HSTS). When deployed on a subdomain, the dashboard's security is equivalent to the least secure application deployed on the same second-level domain."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:109(title)
+#: ./security-guide/ch_dashboard.xml:108(title)
 msgid "Static media"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:110(para)
+#: ./security-guide/ch_dashboard.xml:109(para)
 msgid "The dashboard's static media should be deployed to a subdomain of the dashboard domain and served by the web server. The use of an external content delivery network (CDN) is also acceptable. This subdomain should not set cookies or serve user-provided content. The media should also be served with HTTPS."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:115(para)
+#: ./security-guide/ch_dashboard.xml:114(para)
 msgid "Django media settings are documented in the <link href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:118(para)
+#: ./security-guide/ch_dashboard.xml:117(para)
 msgid "Dashboard's default configuration uses <link href=\"http://django-compressor.readthedocs.org/\">django_compressor</link> to compress and minify CSS and JavaScript content before serving it. This process should be statically done before deploying the dashboard, rather than using the default in-request dynamic compression and copying the resulting files along with deployed code or to the CDN server. Compression should be done in a non-production build environment. If this is not practical, we recommend disabling resource compression entirely. Online compression dependencies (less, Node.js) should not be installed on production machines."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:132(title)
+#: ./security-guide/ch_dashboard.xml:131(title)
 msgid "Secret key"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:133(para)
+#: ./security-guide/ch_dashboard.xml:132(para)
 msgid "The dashboard depends on a shared <placeholder-1/> setting for some security functions. The secret key should be a randomly generated string at least 64 characters long, which must be shared across all active dashboard instances. Compromise of this key may allow a remote attacker to execute arbitrary code. Rotating this key invalidates existing user sessions and caching. Do not commit this key to public repositories."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:142(title)
+#: ./security-guide/ch_dashboard.xml:141(title)
 msgid "Session back end"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:143(para)
+#: ./security-guide/ch_dashboard.xml:142(para)
 msgid "Horizon's default session back end (<literal>django.contrib.sessions.backends.signed_cookies</literal>) stores user data in <emphasis>signed</emphasis> but <emphasis>unencrypted </emphasis>cookies stored in the browser. This approach allows the most simple session back-end scaling since each dashboard instance is stateless, but it comes at the cost of <emphasis>storing sensitive access tokens in the client browser</emphasis> and transmitting them with every request. This back end ensures that session data has not been tampered with, but the data itself is not encrypted other than the encryption provided by HTTPS."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:154(para)
+#: ./security-guide/ch_dashboard.xml:153(para)
 msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session back end with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies back end, refer to the Django documentation understand the security trade-offs."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:161(para) ./security-guide/ch_dashboard.xml:173(para)
+#: ./security-guide/ch_dashboard.xml:160(para) ./security-guide/ch_dashboard.xml:172(para)
 msgid "For further details, see the <link href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:166(title)
+#: ./security-guide/ch_dashboard.xml:165(title)
 msgid "Allowed hosts"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:167(para)
+#: ./security-guide/ch_dashboard.xml:166(para)
 msgid "Configure the <placeholder-1/> setting with the domain or domains where the dashboard is available. Failure to configure this setting (especially if not following the recommendation above regarding second level domains) opens the dashboard to a number of serious attacks. Wild card domains should be avoided."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:178(title)
+#: ./security-guide/ch_dashboard.xml:177(title)
 msgid "Cross Site Request Forgery (CSRF)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:179(para)
+#: ./security-guide/ch_dashboard.xml:178(para)
 msgid "Django has dedicated middleware for cross-site request forgery (CSRF). For further details, see the <link href=\"https://docs.djangoproject.com/\"> Django documentation</link>."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:182(para)
+#: ./security-guide/ch_dashboard.xml:181(para)
 msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are JavaScript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:191(title)
+#: ./security-guide/ch_dashboard.xml:190(title)
 msgid "Cookies"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:192(para)
+#: ./security-guide/ch_dashboard.xml:191(para)
 msgid "Session Cookies should be set to HTTPONLY:"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:194(para)
+#: ./security-guide/ch_dashboard.xml:193(para)
 msgid "Never configure CSRF or session cookies to have a wild card domain with a leading dot. Horizon's session and CSRF cookie should be secured when deployed with HTTPS:"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:201(title)
+#: ./security-guide/ch_dashboard.xml:200(title)
 msgid "Cross Site Scripting (XSS)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:202(para)
+#: ./security-guide/ch_dashboard.xml:201(para)
 msgid "Unlike many similar systems, the OpenStack dashboard allows the entire Unicode character set in most fields. This means developers have less latitude to make escaping mistakes that open attack vectors for cross-site scripting (XSS)."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:206(para)
+#: ./security-guide/ch_dashboard.xml:205(para)
 msgid "Dashboard provides tools for developers to avoid creating XSS vulnerabilities, but they only work if developers use them correctly. Audit any custom dashboards, paying particular attention to use of the <literal>mark_safe</literal> function, use of <literal>is_safe</literal> with custom template tags, the <literal>safe</literal> template tag, anywhere auto escape is turned off, and any JavaScript which might evaluate improperly escaped data."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:217(title)
+#: ./security-guide/ch_dashboard.xml:216(title)
 msgid "Cross Origin Resource Sharing (CORS)"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:218(para)
+#: ./security-guide/ch_dashboard.xml:217(para)
 msgid "Configure your web server to send a restrictive CORS header with each response, allowing only the dashboard domain and protocol:"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:222(para)
+#: ./security-guide/ch_dashboard.xml:221(para)
 msgid "Never allow the wild card origin."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:225(title)
+#: ./security-guide/ch_dashboard.xml:224(title)
 msgid "Horizon image upload"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:226(para)
+#: ./security-guide/ch_dashboard.xml:225(para)
 msgid "We recommend that implementers <link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads\">disable HORIZON_IMAGES_ALLOW_UPLOAD</link> unless they have implemented a plan to prevent resource exhaustion and denial of service."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:233(title)
+#: ./security-guide/ch_dashboard.xml:232(title)
 msgid "Upgrading"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:234(para)
+#: ./security-guide/ch_dashboard.xml:233(para)
 msgid "Django security releases are generally well tested and aggressively backwards compatible. In almost all cases, new major releases of Django are also fully backwards compatible with previous releases. Dashboard implementers are strongly encouraged to run the latest stable release of Django with up-to-date security releases."
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:242(title)
+#: ./security-guide/ch_dashboard.xml:241(title)
 msgid "Debug"
 msgstr ""
 
-#: ./security-guide/ch_dashboard.xml:244(para)
+#: ./security-guide/ch_dashboard.xml:243(para)
 msgid "We recommend that the <placeholder-1/> setting is set to <literal>False</literal> in production environments. If <placeholder-2/> is set to True, Django will display stack traces and sensitive web server state information when exceptions are thrown."
 msgstr ""
 
@@ -4816,18 +4816,22 @@ msgid "SLA and security monitoring"
 msgstr ""
 
 #: ./security-guide/section_case-studies-management-interfaces.xml:27(para)
-msgid "When building her private cloud, while air-gapped, Alice still needs to consider her service management interfaces. Before deploying her private cloud, Alice has completed her system documentation. Specifically she has identified which OpenStack services will exist in each security domain. From there Alice has further restricted access to management interfaces by deploying a combination of IDS, TLS encryption, and physical network isolation. Additionally, Alice requires high availability and redundant services. Thus, Alice sets up redundant infrastructure for various OpenStack API services."
+msgid "Alice's cloud has very strict requirements around management and interfaces. She builds an SVN repository and uploads the baseline configuration files there for service teams to modify and deploy through tool automation. User and group accounts for each service are created with the principle of least privilege in mind. Service teams also have their roles defined, and are given or denied access as well. For example, the development team is not given production access, however an escalation path is outlined through Alice's Security Operations Center where privileges can be added and audited during issues. Additionally, an update and patching policy is created, with tiered criticalities for normal updates compared to security or other critical fixes that may be more time sensitive."
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:28(para)
-msgid "Alice also needs to provide assurances that the physical servers and hypervisors have been built from a known secure state into a well-defined configuration. To enable this, Alice uses a combination of a Configuration Management platform to configure each machine according to the standards and regulations she must comply with. It will also enable Alice to report periodically on the state of her cloud and perform remediation to a known state should anything be out of the ordinary. Additionally, Alice provides hardware assurances by using a PXE system to build her nodes from a known set of base images. During the boot process, Alice provides further assurances by enabling Intel TXT and related trusted boot technologies provided by the hardware."
+#: ./security-guide/section_case-studies-management-interfaces.xml:42(para)
+msgid "For out-of-band management Alice has included a BMC/IPMI version specification for the 'Request for Pricing' (RFP) which she submits to approved hardware vendors for quotes and system specifications. This includes ensuring communication with the out-of-band management interface can be encrypted with TLS for both textual and GUI access. She ensures that a network intrusion detection system (NIDS) will be monitoring the management security domain that the IPMI traffic will be using. Depending on usage, which may vary throughout the year, Alice may set the NIDS to do passive anomoly detection so that packets are not missed by the NIDS while it is processing."
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:32(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:55(para)
+msgid "Alice also creates 'golden images' of various systems that will be used to quickly spin up a new instance. These golden images already have the service accounts, configuration details, logging, and other policies set. One is built for each service type that may be needed, such as a golden image for API endpoints, hypervisors, network devices, message queue instances, and any other devices that are commonly used or may need to be recreated quickly. She then ensures a process exists for updating golden images on a regular schedule as well as reporting package versions for each image, as well as what will be used by the Ansible configuration management tool, and exporting that data into the CMDB automatically."
+msgstr ""
+
+#: ./security-guide/section_case-studies-management-interfaces.xml:72(para)
 msgid "As a public cloud provider, Bob is concerned with both the continuous availability of management interfaces and the security of transactions to the management interfaces. To that end Bob implements multiple redundant OpenStack API endpoints for the services his cloud will run. Additionally on the public network Bob uses TLS to encrypt all transactions between his customers and his cloud interfaces. To isolate his cloud operations Bob has physically isolated his management, instance migration, and storage networks."
 msgstr ""
 
-#: ./security-guide/section_case-studies-management-interfaces.xml:33(para)
+#: ./security-guide/section_case-studies-management-interfaces.xml:73(para)
 msgid "To ease scaling and reduce management overhead Bob implements a configuration management system. For customer data assurances, Bob offers a backup as a service product as requirements will vary between customers. Finally, Bob does not provide a \"baremetal\" or the ability to schedule an entire node, so to reduce management overhead and increase operational efficiency Bob does not implement any node boot time security."
 msgstr ""
 
@@ -5411,13 +5415,13 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_networking-architecture.xml:87(None) ./security-guide/section_networking-architecture.xml:92(None)
+#: ./security-guide/section_networking-architecture.xml:86(None) ./security-guide/section_networking-architecture.xml:91(None)
 msgid "@@image: 'static/sdn-connections.png'; md5=1de9169834b34c83f574f2a1225b27f0"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/section_networking-architecture.xml:109(None) ./security-guide/section_networking-architecture.xml:114(None)
+#: ./security-guide/section_networking-architecture.xml:108(None) ./security-guide/section_networking-architecture.xml:113(None)
 msgid "@@image: 'static/1aa-network-domains-diagram.png'; md5=135806775939d9e5e750264d8a5fe8de"
 msgstr ""
 
@@ -5446,86 +5450,86 @@ msgid "plugin agent (<systemitem class=\"service\">neutron-*-agent</systemitem>)
 msgstr ""
 
 #: ./security-guide/section_networking-architecture.xml:38(para)
-msgid "Runs on each compute node to manage local virtual switch (vswitch) configuration. The plug-in that you use determine which agents run. This service requires message queue access. This service requires message queue access and depends on the plugin used."
+msgid "Runs on each compute node to manage local virtual switch (vswitch) configuration. The plug-in that you use determine which agents run. This service requires message queue access and depends on the plugin used."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:46(term)
+#: ./security-guide/section_networking-architecture.xml:45(term)
 msgid "DHCP agent (<systemitem class=\"service\">neutron-dhcp-agent</systemitem>)"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:49(para)
+#: ./security-guide/section_networking-architecture.xml:48(para)
 msgid "Provides DHCP services to tenant networks. This agent is the same across all plug-ins and is responsible for maintaining DHCP configuration. The <systemitem class=\"service\">neutron-dhcp-agent</systemitem> requires message queue access."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:58(term)
+#: ./security-guide/section_networking-architecture.xml:57(term)
 msgid "L3 agent (<systemitem class=\"service\">neutron-l3-agent</systemitem>)"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:61(para)
+#: ./security-guide/section_networking-architecture.xml:60(para)
 msgid "Provides L3/NAT forwarding for external network access of VMs on tenant networks. Requires message queue access. <emphasis>Optional depending on plug-in.</emphasis>"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:69(term)
+#: ./security-guide/section_networking-architecture.xml:68(term)
 msgid "network provider services (SDN server/services)"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:71(para)
+#: ./security-guide/section_networking-architecture.xml:70(para)
 msgid "Provides additional networking services to tenant networks. These SDN services may interact with <systemitem class=\"service\">neutron-server</systemitem>, <systemitem class=\"service\">neutron-plugin</systemitem>, and plugin-agents through communication channels such as REST APIs."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:81(para)
+#: ./security-guide/section_networking-architecture.xml:80(para)
 msgid "The following figure shows an architectural and networking flow diagram of the OpenStack Networking components:"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:97(title)
+#: ./security-guide/section_networking-architecture.xml:96(title)
 msgid "OpenStack Networking service placement on physical servers"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:98(para)
+#: ./security-guide/section_networking-architecture.xml:97(para)
 msgid "This guide focuses on a standard architecture that includes a <emphasis>cloud controller</emphasis> host, a <emphasis>network</emphasis> host, and a set of <emphasis>compute</emphasis> hypervisors for running VMs."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:105(title)
+#: ./security-guide/section_networking-architecture.xml:104(title)
 msgid "Network connectivity of physical servers"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:118(para)
+#: ./security-guide/section_networking-architecture.xml:117(para)
 msgid "A standard OpenStack Networking setup has up to four distinct physical data center networks:"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:122(term)
+#: ./security-guide/section_networking-architecture.xml:121(term)
 msgid "Management network"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:124(para)
+#: ./security-guide/section_networking-architecture.xml:123(para)
 msgid "Used for internal communication between OpenStack Components. The IP addresses on this network should be reachable only within the data center and is considered the Management Security Domain."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:132(term)
+#: ./security-guide/section_networking-architecture.xml:131(term)
 msgid "Guest network"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:134(para)
+#: ./security-guide/section_networking-architecture.xml:133(para)
 msgid "Used for VM data communication within the cloud deployment. The IP addressing requirements of this network depend on the OpenStack Networking plug-in in use and the network configuration choices of the virtual networks made by the tenant. This network is considered the Guest Security Domain."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:144(term)
+#: ./security-guide/section_networking-architecture.xml:143(term)
 msgid "External network"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:146(para)
+#: ./security-guide/section_networking-architecture.xml:145(para)
 msgid "Used to provide VMs with Internet access in some deployment scenarios. The IP addresses on this network should be reachable by anyone on the Internet. This network is considered to be in the Public Security Domain."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:154(term)
+#: ./security-guide/section_networking-architecture.xml:153(term)
 msgid "API network"
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:156(para)
+#: ./security-guide/section_networking-architecture.xml:155(para)
 msgid "Exposes all OpenStack APIs, including the OpenStack Networking API, to tenants. The IP addresses on this network should be reachable by anyone on the Internet. This may be the same network as the external network, as it is possible to create a subnet for the external network that uses IP allocation ranges to use only less than the full range of IP addresses in an IP block. This network is considered the Public Security Domain."
 msgstr ""
 
-#: ./security-guide/section_networking-architecture.xml:169(para)
+#: ./security-guide/section_networking-architecture.xml:168(para)
 msgid "For additional information see the <link href=\"http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html\">Networking chapter</link> in the <citetitle>OpenStack Cloud Administrator Guide</citetitle>."
 msgstr ""
 
@@ -5968,14 +5972,18 @@ msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced
 msgstr ""
 
 #: ./security-guide/section_case-studies-networking.xml:16(para)
-msgid "A key objective of Alice's cloud is to integrate with the existing auth services and security resources. The key design parameters for this private cloud are a limited scope of tenants, networks and workload type. This environment can be designed to limit what available network resources are available to the tenant and what are the various default quotas and security policies are available. The network policy engine can be modified to restrict creation and changes to network resources. In this environment, Alice might want to leverage nova-network in the application of security group polices on a per instance basis vs. neutron's application of security group polices on a per port basis. L2 isolation in this environment would leverage VLAN tagging. The use of VLAN tags will allow great visibility of tenant traffic by leveraging existing features and tools of the physical infrastructure."
+msgid "Alice picks nova-network due to its stability. She understands a migration from nova-network to OpenStack Networking (neutron) will not be easy, and keeps a blueprint for the migration that is refreshed every OpenStack release. This will ensure that Alice and her team are up-to-date with OpenStack Networking features even though they are focusing on nova-network, and will allow the migration plan to mature with Alice's experience with OpenStack to help enable a smooth transition."
 msgstr ""
 
-#: ./security-guide/section_case-studies-networking.xml:34(para)
+#: ./security-guide/section_case-studies-networking.xml:26(para)
+msgid "Alice configures nova-network with the VLAN network manager so that each tenant will have its own virtual network, keeping in mind the VLAN trunking will stress the environment and the scaling limit of 4096 tenants. She is aware that all traffic will pass through the virtual networking appliance, however she is comfortable with this given the hardware positioned to support the VLAN trunking across the entire environment. Additionally, as the nova-network hypervisor enforces the security group rules with iptables, invalid traffic will not be an issue. To ensure this, she designates a quarterly review of the security group rules for each VLAN. She understands there is no overlapping IP space and has ensured the deployment systems have separate IP ranges with room for growth until the migration to OpenStack Networking occurs."
+msgstr ""
+
+#: ./security-guide/section_case-studies-networking.xml:44(para)
 msgid "A major business driver for Bob is to provide an advanced networking services to his customers. Bob's customers would like to deploy multi-tiered application stacks. This multi-tiered application are either existing enterprise application or newly deployed applications. Since Bob's public cloud is a multi-tenancy enterprise service, the choice to use for L2 isolation in this environment is to use overlay networking. Another aspect of Bob's cloud is the self-service aspect where the customer can provision available networking services as needed. These networking services encompass L2 networks, L3 Routing, Network <glossterm>ACL</glossterm> and NAT. It is important that per-tenant quota's be implemented in this environment."
 msgstr ""
 
-#: ./security-guide/section_case-studies-networking.xml:47(para)
+#: ./security-guide/section_case-studies-networking.xml:57(para)
 msgid "An added benefit with utilizing OpenStack Networking is when new advanced networking services become available, these new features can be easily provided to the end customers."
 msgstr ""
 
@@ -7300,14 +7308,14 @@ msgid "Case study: Alice, the private cloud builder"
 msgstr ""
 
 #: ./security-guide/section_introduction-to-case-studies.xml:13(para)
-msgid "Alice deploys a private cloud for use by a government department in the US. The cloud must comply with relevant standards, such as FedRAMP. The security paperwork requirements for this cloud are very high. It must have no direct access to the Internet: its API endpoints, compute instances, and other resources must be exposed to only systems within the department's network, which is entirely air-gapped from all other networks. The cloud can access other network services on the organization's intranet such as the authentication and logging services."
+msgid "Alice is a technical manager overseeing a new OpenStack deployment for the US government in support of Healthcare.gov. The load on the cloud is expected to be variable, with moderate usage increasing to heavy usage during annual enrollment periods. She is aware that her private cloud will need to be certified against FISMA through the FedRAMP accreditation process required for all federal agencies, departments, and contractors as well as being under HIPAA purview. These compliance frameworks will place the burden of effort around logging, reporting, and policy. While technical controls will require Alice to use Public Key Infrastructure to encrypt wire-level communication, and SELinux for Mandatory Access Controls, Alice will invest in tool development to automate the reporting. Additionally, comprehensive documentation is expected covering application and network architecture, controls, and other details. The FedRAMP classification of Alice's system is High per FIPS-199. Alice will leverage existing authentication/authorization infrastructure in the form of Microsoft Active Directory, and an existing enterprise SEIM deployment that she will use to build new views and correlation rules to better monitor the state of her cloud."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-case-studies.xml:25(title)
+#: ./security-guide/section_introduction-to-case-studies.xml:35(title)
 msgid "Case study: Bob, the public cloud provider"
 msgstr ""
 
-#: ./security-guide/section_introduction-to-case-studies.xml:26(para)
+#: ./security-guide/section_introduction-to-case-studies.xml:36(para)
 msgid "Bob is a lead architect for a company that deploys a large greenfield public cloud. This cloud provides IaaS for the masses and enables any consumer with a valid credit card access to utility computing and storage, but the primary focus is enterprise customers. Data privacy concerns are a big priority for Bob as they are seen as a major barrier to large-scale adoption of the cloud by organizations."
 msgstr ""
 

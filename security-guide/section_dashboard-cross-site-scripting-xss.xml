@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-cross-site-scripting-xss">
+  <?dbhtml stop-chunking?>
+      <title>Cross Site Scripting (XSS)</title>
+      <para>Unlike many similar systems, the OpenStack dashboard allows the
+        entire Unicode character set in most fields. This means
+        developers have less latitude to make escaping mistakes that
+        open attack vectors for cross-site scripting (XSS).</para>
+      <para>Dashboard provides tools for developers to avoid creating
+        XSS vulnerabilities, but they only work if developers use them
+        correctly. Audit any custom dashboards, paying particular
+        attention to use of the <literal>mark_safe</literal> function,
+        use of <literal>is_safe</literal> with
+        custom template tags, the <literal>safe</literal> template tag, anywhere
+        auto escape
+        is turned off, and any JavaScript which might evaluate
+        improperly escaped data.</para>
+</section>

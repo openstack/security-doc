@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-session-back-end">
+  <?dbhtml stop-chunking?>
+      <title>Session back end</title>
+      <para>Horizon's default session back end
+          (<literal>django.contrib.sessions.backends.signed_cookies</literal>)
+        stores user data in <emphasis>signed</emphasis> but
+          <emphasis>unencrypted </emphasis>cookies stored in the
+        browser. This approach allows the most simple session back-end
+        scaling since each dashboard instance is stateless, but it comes
+        at the cost of <emphasis>storing sensitive access tokens in the
+          client browser</emphasis> and transmitting them with every
+        request. This back end ensures that session data has not been
+        tampered with, but the data itself is not encrypted other than
+        the encryption provided by HTTPS.</para>
+      <para>If your architecture allows it, we recommend using
+          <literal>django.contrib.sessions.backends.cache</literal> as
+        your session back end with memcache as the cache. Memcache must
+        not be exposed publicly, and should communicate over a secured
+        private channel. If you choose to use the signed cookies
+        back end, refer to the Django documentation understand the
+        security trade-offs.</para>
+      <para>For further details, see the <link
+          xlink:href="https://docs.djangoproject.com/"
+          >Django documentation</link>.</para>
+</section>

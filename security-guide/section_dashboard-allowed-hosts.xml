@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-allowed-hosts">
+  <?dbhtml stop-chunking?>
+      <title>Allowed hosts</title>
+      <para>Configure the <option>ALLOWED_HOSTS</option> setting with
+        the domain or domains where the dashboard is available. Failure
+        to configure this setting (especially if not following the
+        recommendation above regarding second level domains) opens the
+        dashboard to a number of serious attacks. Wild card domains
+        should be avoided.</para>
+      <para>For further details, see the <link
+          xlink:href="https://docs.djangoproject.com/"
+          >Django documentation</link>.</para>
+</section>

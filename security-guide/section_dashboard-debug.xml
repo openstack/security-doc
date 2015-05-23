@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-debug">
+  <?dbhtml stop-chunking?>
+      <title>Debug</title>
+      <para>We recommend that the <option>DEBUG</option> setting
+        is set to <literal>False</literal> in production environments.
+        If <option>DEBUG</option> is set to True,
+        Django will display stack traces and sensitive web server
+        state information when exceptions are thrown.</para>
+</section>

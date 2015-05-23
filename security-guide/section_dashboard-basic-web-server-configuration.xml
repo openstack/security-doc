@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-basic-web-server-configuration">
+  <?dbhtml stop-chunking?>
+    <title>Basic web server configuration</title>
+    <para>The dashboard should be deployed as a Web Services Gateway
+      Interface (WSGI) application behind an HTTPS proxy such as
+      Apache or nginx. If Apache is not already in use, we recommend
+      nginx since it is lightweight and easier to configure
+      correctly.</para>
+    <para>When using nginx, we recommend <link
+      xlink:href="http://docs.gunicorn.org/en/latest/deploy.html"
+      >gunicorn</link> as the WSGI host with an appropriate number
+      of synchronous workers. When using Apache, we recommend
+      <literal>mod_wsgi</literal> to host the dashboard.</para>
+</section>

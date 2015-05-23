@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-22 06:01+0000\n"
+"POT-Creation-Date: 2015-05-23 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -309,6 +309,106 @@ msgstr ""
 msgid "The most common frameworks for auditing and evaluating a cloud deployment include the previously mentioned ISO 27001/2 Information Security standard, ISACA's Control Objectives for Information and Related Technology (COBIT) framework, Committee of Sponsoring Organizations of the Treadway Commission (COSO), and Information Technology Infrastructure Library (ITIL). It is very common for audits to include areas of focus from one or more of these frameworks. Fortunately there is a lot of overlap between the frameworks, so an organization that adopts one will be in a good position come audit time."
 msgstr ""
 
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:8(title)
+msgid "How to select virtual consoles"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:9(para)
+msgid "One decision a cloud architect will need to make regarding Compute service configuration is whether to use <glossterm baseform=\"Virtual Network Computing (VNC)\">VNC</glossterm> or <glossterm>SPICE</glossterm>. Below we provide some details on the differences between these options."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:15(title)
+msgid "Virtual Network Computer (VNC)"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:16(para)
+msgid "OpenStack can be configured to provide remote desktop console access to instances for tenants and/or administrators using the Virtual Network Computer (VNC) protocol."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:18(title) ./security-guide/section_compute-how-to-select-virtual-consoles.xml:66(title) ./security-guide/section_management-interfaces.xml:41(title) ./security-guide/section_management-interfaces.xml:106(title)
+msgid "Capabilities"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:20(para)
+msgid "The OpenStack dashboard (horizon) can provide a VNC console for instances directly on the web page using the HTML5 noVNC client. This requires the <systemitem class=\"service\">nova-novncproxy</systemitem> service to bridge from the public network to the management network."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:30(para)
+msgid "The <placeholder-1/> command-line utility can return a URL for the VNC console for access by the <systemitem class=\"service\">nova</systemitem> Java VNC client. This requires the <systemitem class=\"service\">nova-xvpvncproxy</systemitem> service to bridge from the public network to the management network."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:41(title) ./security-guide/section_compute-how-to-select-virtual-consoles.xml:89(title) ./security-guide/section_continuous-systems-management.xml:252(title) ./security-guide/section_management-interfaces.xml:60(title) ./security-guide/section_management-interfaces.xml:120(title) ./security-guide/section_management-interfaces.xml:153(title) ./security-guide/section_management-interfaces.xml:177(title)
+msgid "Security considerations"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:43(para)
+msgid "The <systemitem class=\"service\">nova-novncproxy</systemitem> and <systemitem class=\"service\">nova-xvpvncproxy</systemitem> services by default open public-facing ports that are token authenticated."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:50(para)
+msgid "By default, the remote desktop traffic is not encrypted. TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to TLS and SSL</link> for appropriate recommendations."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:56(title) ./security-guide/section_compute-how-to-select-virtual-consoles.xml:105(title) ./security-guide/section_forensics-and-incident-response.xml:125(title) ./security-guide/section_hypervisor-selection.xml:668(title)
+msgid "Bibliography"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:57(para)
+msgid "blog.malchuk.ru, OpenStack VNC Security. 2013. <link href=\"http://blog.malchuk.ru/2013/05/21/47\">Secure Connections to VNC ports</link>"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:58(para)
+msgid "OpenStack Mailing List, [OpenStack] nova-novnc SSL configuration - Havana. 2014. <link href=\"http://lists.openstack.org/pipermail/openstack/2014-February/005357.html\">OpenStack nova-novnc SSL Configuration</link>"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:59(para)
+msgid "Redhat.com/solutions, Using SSL Encryption with OpenStack nova-novacproxy. 2014. <link href=\"https://access.redhat.com/solutions/514143\">OpenStack nova-novncproxy SSL encryption</link>"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:63(title)
+msgid "Simple Protocol for Independent Computing Environments (SPICE)"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:64(para)
+msgid "As an alternative to VNC, OpenStack provides remote desktop access to guest virtual machines using the Simple Protocol for Independent Computing Environments (SPICE) protocol."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:68(para)
+msgid "SPICE is supported by the OpenStack dashboard (horizon) directly on the instance web page. This requires the <systemitem class=\"service\">nova-spicehtml5proxy</systemitem> service."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:77(para)
+msgid "The nova command-line utility can return a URL for SPICE console for access by a SPICE-html client."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:82(title)
+msgid "Limitations"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:84(para)
+msgid "Although SPICE has many advantages over VNC, the spice-html5 browser integration currently doesn't really allow admins to take advantage of any of the benefits. To take advantage of SPICE features like multi-monitor, USB pass through, etc. admins are recommended to use a standalone SPICE client within the Management Network."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:92(para)
+msgid "The <systemitem class=\"service\">nova-spicehtml5proxy</systemitem> service by default opens public-facing ports that are token authenticated."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:97(para)
+msgid "The functionality and integration are still evolving. We will access the features in the next release and make recommendations."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:100(para)
+msgid "As is the case for VNC, at this time we recommend using SPICE from the management network in addition to limiting use to few individuals."
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:106(para)
+msgid "OpenStack Configuration Reference - Havana. SPICE Console. <link href=\"http://docs.openstack.org/havana/config-reference/content/spice-console.html\">SPICE Console</link>"
+msgstr ""
+
+#: ./security-guide/section_compute-how-to-select-virtual-consoles.xml:107(para)
+msgid "bugzilla.redhat.com, Bug 913607 - RFE: Support Tunnelling SPICE over websockets. 2013. <link href=\"https://bugzilla.redhat.com/show_bug.cgi?id=913607\">Red Hat bug 913607</link>"
+msgstr ""
+
 #: ./security-guide/section_forensics-and-incident-response.xml:8(title)
 msgid "Forensics and incident response"
 msgstr ""
@@ -375,10 +475,6 @@ msgstr ""
 
 #: ./security-guide/section_forensics-and-incident-response.xml:114(para)
 msgid "Security monitoring controls such as intrusion detection software, antivirus software, and spyware detection and removal utilities can generate logs that show when and how an attack or intrusion took place. Deploying these tools on the cloud machines provides value and protection. Cloud users, those running instances on the cloud, may also want to run such tools on their instances."
-msgstr ""
-
-#: ./security-guide/section_forensics-and-incident-response.xml:125(title) ./security-guide/section_hypervisor-selection.xml:668(title) ./security-guide/ch_compute.xml:59(title) ./security-guide/ch_compute.xml:108(title)
-msgid "Bibliography"
 msgstr ""
 
 #: ./security-guide/section_forensics-and-incident-response.xml:126(para)
@@ -5361,10 +5457,6 @@ msgstr ""
 msgid "It is important to include Backup procedures and policies in the overall System Security Plan. For a good overview of OpenStack's Backup and Recovery capabilities and procedures, please refer to the OpenStack Operations Guide."
 msgstr ""
 
-#: ./security-guide/section_continuous-systems-management.xml:252(title) ./security-guide/section_management-interfaces.xml:60(title) ./security-guide/section_management-interfaces.xml:120(title) ./security-guide/section_management-interfaces.xml:153(title) ./security-guide/section_management-interfaces.xml:177(title) ./security-guide/ch_compute.xml:44(title) ./security-guide/ch_compute.xml:92(title)
-msgid "Security considerations"
-msgstr ""
-
 #: ./security-guide/section_continuous-systems-management.xml:255(para)
 msgid "Ensure only authenticated users and backup clients have access to the backup server."
 msgstr ""
@@ -6881,10 +6973,6 @@ msgstr ""
 msgid "The OpenStack dashboard (horizon) provides administrators and tenants with a web-based graphical interface to provision and access cloud-based resources. The dashboard communicates with the back-end services through calls to the OpenStack API."
 msgstr ""
 
-#: ./security-guide/section_management-interfaces.xml:41(title) ./security-guide/section_management-interfaces.xml:106(title) ./security-guide/ch_compute.xml:21(title) ./security-guide/ch_compute.xml:69(title)
-msgid "Capabilities"
-msgstr ""
-
 #: ./security-guide/section_management-interfaces.xml:43(para)
 msgid "As a cloud administrator, the dashboard provides an overall view of the size and state of your cloud. You can create users and tenants/projects, assign users to tenant/projects and set limits on the resources available for them."
 msgstr ""
@@ -7357,94 +7445,6 @@ msgstr ""
 
 #: ./security-guide/ch_compute.xml:9(para)
 msgid "The Compute service (nova) is one of the more complex OpenStack services. It runs in many locations throughout the cloud and interacts with a variety of internal services. For this reason, most of our recommendations regarding best practices for Compute service configuration are distributed throughout this book. We provide specific details in the sections on Management, API Endpoints, Messaging, and Database."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:11(title)
-msgid "How to select virtual consoles"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:12(para)
-msgid "One decision a cloud architect will need to make regarding Compute service configuration is whether to use <glossterm baseform=\"Virtual Network Computing (VNC)\">VNC</glossterm> or <glossterm>SPICE</glossterm>. Below we provide some details on the differences between these options."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:18(title)
-msgid "Virtual Network Computer (VNC)"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:19(para)
-msgid "OpenStack can be configured to provide remote desktop console access to instances for tenants and/or administrators using the Virtual Network Computer (VNC) protocol."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:23(para)
-msgid "The OpenStack dashboard (horizon) can provide a VNC console for instances directly on the web page using the HTML5 noVNC client. This requires the <systemitem class=\"service\">nova-novncproxy</systemitem> service to bridge from the public network to the management network."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:33(para)
-msgid "The <placeholder-1/> command-line utility can return a URL for the VNC console for access by the <systemitem class=\"service\">nova</systemitem> Java VNC client. This requires the <systemitem class=\"service\">nova-xvpvncproxy</systemitem> service to bridge from the public network to the management network."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:46(para)
-msgid "The <systemitem class=\"service\">nova-novncproxy</systemitem> and <systemitem class=\"service\">nova-xvpvncproxy</systemitem> services by default open public-facing ports that are token authenticated."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:53(para)
-msgid "By default, the remote desktop traffic is not encrypted. TLS can be enabled to encrypt the VNC traffic. Please refer to <link linkend=\"introduction-to-ssl-tls\">Introduction to TLS and SSL</link> for appropriate recommendations."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:60(para)
-msgid "blog.malchuk.ru, OpenStack VNC Security. 2013. <link href=\"http://blog.malchuk.ru/2013/05/21/47\">Secure Connections to VNC ports</link>"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:61(para)
-msgid "OpenStack Mailing List, [OpenStack] nova-novnc SSL configuration - Havana. 2014. <link href=\"http://lists.openstack.org/pipermail/openstack/2014-February/005357.html\">OpenStack nova-novnc SSL Configuration</link>"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:62(para)
-msgid "Redhat.com/solutions, Using SSL Encryption with OpenStack nova-novacproxy. 2014. <link href=\"https://access.redhat.com/solutions/514143\">OpenStack nova-novncproxy SSL encryption</link>"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:66(title)
-msgid "Simple Protocol for Independent Computing Environments (SPICE)"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:67(para)
-msgid "As an alternative to VNC, OpenStack provides remote desktop access to guest virtual machines using the Simple Protocol for Independent Computing Environments (SPICE) protocol."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:71(para)
-msgid "SPICE is supported by the OpenStack dashboard (horizon) directly on the instance web page. This requires the <systemitem class=\"service\">nova-spicehtml5proxy</systemitem> service."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:80(para)
-msgid "The nova command-line utility can return a URL for SPICE console for access by a SPICE-html client."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:85(title)
-msgid "Limitations"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:87(para)
-msgid "Although SPICE has many advantages over VNC, the spice-html5 browser integration currently doesn't really allow admins to take advantage of any of the benefits. To take advantage of SPICE features like multi-monitor, USB pass through, etc. admins are recommended to use a standalone SPICE client within the Management Network."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:95(para)
-msgid "The <systemitem class=\"service\">nova-spicehtml5proxy</systemitem> service by default opens public-facing ports that are token authenticated."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:100(para)
-msgid "The functionality and integration are still evolving. We will access the features in the next release and make recommendations."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:103(para)
-msgid "As is the case for VNC, at this time we recommend using SPICE from the management network in addition to limiting use to few individuals."
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:109(para)
-msgid "OpenStack Configuration Reference - Havana. SPICE Console. <link href=\"http://docs.openstack.org/havana/config-reference/content/spice-console.html\">SPICE Console</link>"
-msgstr ""
-
-#: ./security-guide/ch_compute.xml:110(para)
-msgid "bugzilla.redhat.com, Bug 913607 - RFE: Support Tunnelling SPICE over websockets. 2013. <link href=\"https://bugzilla.redhat.com/show_bug.cgi?id=913607\">Red Hat bug 913607</link>"
 msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-cookies">
+  <?dbhtml stop-chunking?>
+      <title>Cookies</title>
+      <para>Session Cookies should be set to HTTPONLY:</para>
+      <programlisting>SESSION_COOKIE_HTTPONLY = True</programlisting>
+      <para>Never configure CSRF or session cookies to have a wild card
+        domain with a leading dot. Horizon's session and CSRF cookie
+        should be secured when deployed with HTTPS:</para>
+      <programlisting>CSRF_COOKIE_SECURE = True
+  SESSION_COOKIE_SECURE = True</programlisting>
+</section>

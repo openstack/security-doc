@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-upgrading">
+  <?dbhtml stop-chunking?>
+      <title>Upgrading</title>
+      <para>Django security releases are generally well tested and
+        aggressively backwards compatible. In almost all cases, new
+        major releases of Django are also fully backwards compatible
+        with previous releases. Dashboard implementers are strongly
+        encouraged to run the latest stable release of Django with
+        up-to-date security releases.</para>
+</section>

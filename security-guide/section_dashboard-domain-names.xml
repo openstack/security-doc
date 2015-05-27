@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-domain-names">
+      <title>Domain names</title>
+      <para>Many organizations typically deploy web applications at
+        subdomains of an overarching organization domain. It is natural
+        for users to expect a domain of the form
+          <uri>openstack.example.org</uri>. In this context, there are
+        often many other applications deployed in the same second-level
+        namespace, often serving user-controlled content. This name
+        structure is convenient and simplifies name server
+        maintenance.</para>
+      <para>We strongly recommend deploying horizon to a
+        <emphasis>second-level domain</emphasis>, such as
+        <uri>https://example.com</uri>, and advise against deploying
+        horizon on a <emphasis>shared subdomain</emphasis> of any level,
+        for example <uri>https://openstack.example.org</uri> or
+        <uri>https://horizon.openstack.example.org</uri>. We also
+        advise against deploying to bare internal domains like
+        <uri>https://horizon/</uri>. These recommendations are based on the
+        limitations of browser same-origin-policy.</para>
+      <para>Recommendations given in this guide cannot effectively guard against
+        known attacks if you deploy the dashboard in a domain that also hosts
+        user-generated content, even when this content resides on a separate
+        sub-domain. User-generated content can consist of scripts, images, or uploads
+        of any type. Most major web presences, including googleusercontent.com,
+        fbcdn.com, github.io, and twimg.co, use this approach to segregate
+        user-generated content from cookies and security tokens.</para>
+      <para>If you do not follow this recommendation regarding
+        second-level domains, avoid a cookie-backed session store and
+        employ HTTP Strict Transport Security (HSTS). When deployed on
+        a subdomain, the dashboard's security is equivalent to the least secure
+        application deployed on the same second-level domain.</para>
+</section>

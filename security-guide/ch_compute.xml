@@ -6,6 +6,21 @@
   xml:id="compute">
   <?dbhtml stop-chunking?>
     <title>Compute</title>
-    <para>The Compute service (nova) is one of the more complex OpenStack services. It runs in many locations throughout the cloud and interacts with a variety of internal services. For this reason, most of our recommendations regarding best practices for Compute service configuration are distributed throughout this book. We provide specific details in the sections on Management, API Endpoints, Messaging, and Database.</para>
+    <para>
+      The OpenStack Compute service (nova) is one of the more complex
+      OpenStack services. It runs in many locations throughout the cloud
+      and interacts with a variety of internal services. There are a
+      variety of configuration options when using the OpenStack Compute
+      service, and these can be deployment-specific. In this chapter we
+      will call out general best practice around Compute security as
+      well as specific known configurations that can lead to security
+      issues. In general, the <filename>nova.conf</filename> file and
+      the <filename>/var/lib/nova</filename> locations should be secured.
+      Controls like centralized logging, the
+      <filename>policy.json</filename> file, and a mandatory access
+      control framework should be implemented. Additionally, there are
+      environmental considerations to keep in mind, depending on what
+      functionality is desired for your cloud.
+    </para>
     <xi:include href="section_compute-how-to-select-virtual-consoles.xml"/>
   </chapter>

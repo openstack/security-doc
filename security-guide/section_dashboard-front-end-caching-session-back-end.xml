@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-front-end-caching-session-back-end">
+  <?dbhtml stop-chunking?>
+    <title>Front-end caching and session back end</title>
+    <section xml:id="dashboard-front-end-caching">
+        <title>Front-end caching</title>
+        <para>Since the dashboard is rendering dynamic content passed directly
+          from OpenStack API requests, we do not recommend front-end
+          caching layers such as varnish. In Django, static media is
+          directly served from Apache or nginx and already benefits from
+          web host caching.</para>
+    </section>
+    <section xml:id="dashboard-session-back-end">
+        <title>Session back end</title>
+        <para>The default session back end for horizon
+          (<literal>django.contrib.sessions.backends.signed_cookies</literal>)
+          saves user data in signed, but unencrypted cookies stored in the
+          browser. Due to the fact that each dashboard instance is
+          stateless, the previously mentioned methodology provides the
+          ability to implement the most simple session back-end scaling.</para>
+        <para>It should be noted that with this type of implementation
+          sensitive access tokens will be stored in the browser and will be
+          transmitted with each request made. The back end ensures the
+          integrity of session data, even though the transmitted data
+          is only encrypted by HTTPS.</para>
+        <para>If your architecture allows it, we recommend using
+          <literal>django.contrib.sessions.backends.cache</literal> as
+          your session back end with memcache as the cache. Memcache must
+          not be exposed publicly, and should communicate over a secured
+          private channel. If you choose to use the signed cookies
+          back end, refer to the Django documentation to understand the
+          security trade-offs.</para>
+        <para>For further details, see the <link
+          xlink:href="https://docs.djangoproject.com/"
+          >Django documentation</link>.</para>
+    </section>
+</section>

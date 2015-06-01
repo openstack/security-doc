@@ -22,21 +22,13 @@
     and has good <link
       xlink:href="http://docs.openstack.org/developer/horizon/topics/deployment.html"
       >deployment and configuration documentation</link>.</para>
-  <xi:include href="section_dashboard-basic-web-server-configuration.xml"/>
-  <xi:include href="section_dashboard-https.xml"/>
-  <xi:include href="section_dashboard-http-strict-transport-security-hsts.xml"/>
-  <xi:include href="section_dashboard-front-end-caching.xml"/>
-  <xi:include href="section_dashboard-domain-names.xml"/>
+  <xi:include href="section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml"/>
+  <xi:include href="section_dashboard-https-hsts-xss-ssrf.xml"/>
+  <xi:include href="section_dashboard-front-end-caching-session-back-end.xml"/>
   <xi:include href="section_dashboard-static-media.xml"/>
   <xi:include href="section_dashboard-secret-key.xml"/>
-  <xi:include href="section_dashboard-session-back-end.xml"/>
-  <xi:include href="section_dashboard-allowed-hosts.xml"/>
-  <xi:include href="section_dashboard-cross-site-request-forgery-csrf.xml"/>
   <xi:include href="section_dashboard-cookies.xml"/>
-  <xi:include href="section_dashboard-cross-site-scripting-xss.xml"/>
   <xi:include href="section_dashboard-cross-origin-resource-sharing-cors.xml"/>
-  <xi:include href="section_dashboard-horizon-image-upload.xml"/>
-  <xi:include href="section_dashboard-upgrading.xml"/>
   <xi:include href="section_dashboard-debug.xml"/>
   <xi:include href="section_case-studies-dashboard.xml"/>
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="5.0"
+  xml:id="dashboard-https-hsts-xss-ssrf">
+  <?dbhtml stop-chunking?>
+  <title>HTTPS, HSTS, XSS, and SSRF</title>
+  <section xml:id="dashboard-cross-site-scripting-xss">
+      <title>Cross Site Scripting (XSS)</title>
+      <para>Unlike many similar systems, the OpenStack dashboard allows the
+        entire Unicode character set in most fields. This means
+        developers have less latitude to make escaping mistakes that
+        open attack vectors for cross-site scripting (XSS).</para>
+      <para>Dashboard provides tools for developers to avoid creating
+        XSS vulnerabilities, but they only work if developers use them
+        correctly. Audit any custom dashboards, paying particular
+        attention to use of the <literal>mark_safe</literal> function,
+        use of <literal>is_safe</literal> with
+        custom template tags, the <literal>safe</literal> template tag, anywhere
+        auto escape
+        is turned off, and any JavaScript which might evaluate
+        improperly escaped data.</para>
+  </section>
+  <section xml:id="dashboard-cross-site-request-forgery-csrf">
+      <title>Cross Site Request Forgery (CSRF)</title>
+      <para>Django has dedicated middleware for cross-site request forgery (CSRF).
+        For further details, see the <link xlink:href="https://docs.djangoproject.com/">
+        Django documentation</link>.</para>
+      <para>Dashboard is designed to discourage developers from
+        introducing cross-site scripting vulnerabilities with custom
+        dashboards. However, it is important to audit custom dashboards,
+        especially ones that are JavaScript-heavy for inappropriate use
+        of the <literal>@csrf_exempt</literal> decorator. Dashboards
+        which do not follow these recommended security settings should
+        be carefully evaluated before restrictions are relaxed.</para>
+  </section>
+  <section xml:id="dashboard-https">
+      <title>HTTPS</title>
+      <para>
+        Deploy the dashboard behind a secure
+        <glossterm>HTTPS</glossterm> server by using a valid, trusted
+        certificate from a recognized certificate authority
+        (CA). Private organization-issued certificates are only
+        appropriate when the root of trust is pre-installed in all user
+        browsers.</para>
+      <para>Configure HTTP requests to the dashboard domain to redirect
+          to the fully qualified HTTPS URL.</para>
+  </section>
+  <section xml:id="dashboard-http-strict-transport-security-hsts">
+      <title>HTTP Strict Transport Security (HSTS)</title>
+      <para>It is highly recommended to use HTTP Strict Transport
+      Security (HSTS).</para>
+      <note>
+        <para>If you are using an HTTPS proxy in front of your web
+        server, rather than using an HTTP server with HTTPS
+        functionality, modify the <literal>SECURE_PROXY_SSL_HEADER</literal>
+        variable. Refer to the <link
+          xlink:href="https://docs.djangoproject.com/"
+          >Django documentation</link> for information about modifying the
+          <literal>SECURE_PROXY_SSL_HEADER</literal> variable.</para>
+      </note>
+      <para>See the chapter on PKI/SSL Everywhere for more specific
+        recommendations and server configurations for HTTPS
+        configurations, including the configuration of HSTS.</para>
+  </section>
+</section>

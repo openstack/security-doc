@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-28 06:01+0000\n"
+"POT-Creation-Date: 2015-06-12 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Alice is deploying the Data processing service for a group of users that are trusted members of a collaboration. They are all placed in a single project and share the clusters, jobs, and data within. She deploys the controller with TLS enabled, using a certificate signed by the organization's root certificate. She configures the controller to provide floating IP addresses to the cluster instances allowing for users to gain access to the instances in the event of errors. She enables the use of proxy domains to prevent the users from needing to enter their credentials into the Data processing service."
 msgstr ""
 
-#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:30(title) ./security-guide/section_case-studies-system-documentation.xml:38(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:15(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:71(title) ./security-guide/section_case-studies-compliance.xml:18(title) ./security-guide/section_case-studies-instance-management.xml:17(title) ./security-guide/section_case-studies-api-endpoints.xml:33(title) ./security-guide/section_case-studies-networking.xml:43(title)
+#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:30(title) ./security-guide/section_case-studies-system-documentation.xml:38(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:44(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:71(title) ./security-guide/section_case-studies-compliance.xml:61(title) ./security-guide/section_case-studies-instance-management.xml:37(title) ./security-guide/section_case-studies-api-endpoints.xml:39(title) ./security-guide/section_case-studies-networking.xml:43(title)
 msgid "Bob's public cloud"
 msgstr ""
 
@@ -628,10 +628,14 @@ msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced
 msgstr ""
 
 #: ./security-guide/section_case-studies-monitoring-and-logging.xml:12(para)
-msgid "In the private cloud, Alice has a better understanding of the tenants’ requirements thus she has the ability to add appropriate oversight, actively enforcing compliance for monitoring and logging activities. Alice should identify critical services and data to verify that logging is turned on for each of the services while ensuring the information is being aggregated to a central log server. She should start with simple, known use cases then implement correlation and alerting to limit the number of false positives. To implement correlation and alerting, she sends the log data to her organization's existing SIEM tool. Security monitoring should be an ongoing process therefore she should continue to define use cases and alerts in order to have a better understanding of the network traffic activity and usage over time."
+msgid "As Alice is building out a new cloud within an existing organization, she is able to leverage several existing tools inside the existing business unit to help monitor and log her environment. She assigns a resource to the Security Operations Center (SOC) to monitor and respond to alerts coming from the new infrastructure. She uses a currently existing Security Event and Incident Management (SEIM) solution, and configures secure logging to the SEIM event collector. Alice and the SOC analyst build the SEIM views so that logs are correlated by type, and trigger alerts on unexpected or “interesting” events, such as a successful login by a user immediately after a string of failed login attempts within a given timeframe. The SOC analyst is also given escalation protocols and contact information so that when an specific event occurs, the analyst will escalate to the proper resource and coordinate communications about the event."
 msgstr ""
 
-#: ./security-guide/section_case-studies-monitoring-and-logging.xml:16(para)
+#: ./security-guide/section_case-studies-monitoring-and-logging.xml:30(para)
+msgid "Alice ensures that only her resource in the SOC has access to SEIM feeds from her systems as well as the database back-end. She also gives the services teams read-only access to separate views SEIM feeds so that they can perform compliance-related duties such as regular log review or create tickets for tracking and other engagement. Finally, based on the default reporting that is currently built out, Alice may choose to hire a consultant to ensure specific events are captured for compliance purposes, or that specific events trigger the proper SEIM workflows."
+msgstr ""
+
+#: ./security-guide/section_case-studies-monitoring-and-logging.xml:45(para)
 msgid "When it comes to logging, as a public cloud provider, Bob is interested in the activities for situational awareness as well as compliance. In the aspect of compliance, as a provider, Bob is subject to adherence to various rules and regulations to include activities such as providing timely, relevant logs or reports to customers to meet the requirements of their compliance programs. With that in mind, Bob configures all of his instances, nodes, and infrastructure devices to perform time synchronization with an external, validated time device. Additionally, Bob's team has built a Django based web application for his customers to perform self-service log retrieval from the SIEM tool. Bob also uses this SIEM tool along with a robust set of alerts and integration with his CMDB to provide operational awareness to both customers and cloud administrators."
 msgstr ""
 
@@ -5165,23 +5169,23 @@ msgstr ""
 msgid "Alice is building an OpenStack private cloud for the United States government, specifically to provide elastic compute environments for signal processing. Alice has researched government compliance requirements, and has identified that her private cloud will be required to certify against FISMA and follow the FedRAMP accreditation process, which is required for all federal agencies, departments and contractors to become a Certified Cloud Provider (CCP). In this particular scenario for signal processing, the FISMA controls required will most likely be FISMA High, which indicates possible \"severe or catastrophic adverse effects\" should the information system become compromised. In addition to FISMA Moderate controls Alice must ensure her private cloud is FedRAMP certified, as this is a requirement for all agencies that currently utilize, or host federal information within a cloud environment."
 msgstr ""
 
-#: ./security-guide/section_case-studies-compliance.xml:13(para)
+#: ./security-guide/section_case-studies-compliance.xml:29(para)
 msgid "To meet these strict government regulations Alice undertakes a number of activities. Scoping of requirements is particularly important due to the volume of controls that must be implemented, which will be defined in NIST Publication 800-53."
 msgstr ""
 
-#: ./security-guide/section_case-studies-compliance.xml:14(para)
-msgid "All technology within her private cloud must be FIPS certified technology, as mandated within NIST 800-53 and FedRAMP. As the U.S. Department of Defense is involved, Security Technical Implementation Guides (STIGs) will come into play, which are the configuration standards for DOD IA and IA-enabled devices / systems. Alice notices a number of complications here as there is no STIG for OpenStack, so she must address several underlying requirements for each OpenStack service; for example, the networking SRG and Application SRG will both be applicable (<link href=\"http://iase.disa.mil/stigs/srgs/Pages/index.aspx\">list of SRGs</link>). Other critical controls include ensuring that all identities in the cloud use PKI, that SELinux is enabled, that encryption exists for all wire-level communications, and that continuous monitoring is in place and clearly documented. Alice is not concerned with object encryption, as this will be the tenants responsibility rather than the provider."
+#: ./security-guide/section_case-studies-compliance.xml:35(para)
+msgid "As the U.S. Department of Defense is involved, Security Technical Implementation Guides (STIGs) will come into play, which are the configuration standards for DOD IA and IA-enabled devices and systems. Alice notices a number of complications here as there is no STIG for OpenStack, so she must address several underlying requirements for each OpenStack service; for example, the networking SRG and Application SRG will both be applicable (list of SRGs). Other critical controls include ensuring that all identities in the cloud use PKI, that SELinux is enabled, that encryption exists for all wire-level communications, and that continuous monitoring is in place and clearly documented. Alice is not concerned with object encryption, as this will be the tenant's responsibility rather than the provider."
 msgstr ""
 
-#: ./security-guide/section_case-studies-compliance.xml:15(para)
-msgid "If Alice has adequately scoped and executed these compliance activities, she may begin the process to become FedRAMP compliant by hiring an approved third-party auditor. Typically this process takes up to 6 months, after which she will receive an Authority to Operate and can offer OpenStack cloud services to the government."
+#: ./security-guide/section_case-studies-compliance.xml:51(para)
+msgid "If Alice has adequately scoped and executed these compliance activities, she may begin the process to become FedRAMP compliant by hiring an approved third-party auditor. Typically this process takes up to six months, after which she will receive an Authority to Operate and can offer OpenStack cloud services to the government."
 msgstr ""
 
-#: ./security-guide/section_case-studies-compliance.xml:19(para)
+#: ./security-guide/section_case-studies-compliance.xml:62(para)
 msgid "Bob is tasked with compliance for a new OpenStack public cloud deployment, that is focused on providing cloud services to both small developers and startups, as well as large enterprises. Bob recognizes that individual developers are not necessarily concerned with compliance certifications, but to larger enterprises certifications are critical. Specifically Bob desires to achieve SOC 1, SOC 2 Security, as well as ISO 27001/2 as quickly as possible. Bob references the Cloud Security Alliance Cloud Control Matrix (CCM) to assist in identifying common controls across these three certifications (such as periodic access reviews, auditable logging and monitoring services, risk assessment activities, security reviews, etc). Bob then engages an experienced audit team to conduct a gap analysis on the public cloud deployment, reviews the results and fills any gaps identified. Bob works with other team members to ensure that these security controls and activities are regularly conducted for a typical audit period (~6-12 months)."
 msgstr ""
 
-#: ./security-guide/section_case-studies-compliance.xml:36(para)
+#: ./security-guide/section_case-studies-compliance.xml:79(para)
 msgid "At the end of the audit period Bob has arranged for an external audit team to review in-scope security controls at randomly sampled points of time over a 6 month period. The audit team provides Bob with an official report for SOC 1 and SOC 2, and separately for ISO 27001/2. As Bob has been diligent in ensuring security controls are in place for his OpenStack public cloud, there are no additional gaps exposed on the report. Bob can now provide these official reports to his customers under NDA, and advertise that he is SOC 1, SOC 2 and ISO 27001/2 compliant on his website."
 msgstr ""
 
@@ -5746,26 +5750,18 @@ msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced
 msgstr ""
 
 #: ./security-guide/section_case-studies-instance-management.xml:12(para)
-msgid "Alice has a need for lots of high quality entropy in the instances. For this reason, she decides to purchase hardware with Intel Ivy Bridge chip sets that support the RdRand instruction on each compute node. Using the entropy gathering daemon (EGD) and libvirt's EGD support, Alice ensures that this entropy pool is distributed to the instances on each compute node."
+msgid "Earlier in <xref linkend=\"case-studies-management-interfaces-alice-private-cloud\"/>, Alice issued a Request for Product (or RFP) to major hardware vendors that outlined her performance and form factor needs. This RFP includes the requirement for a processor architecture with rdrand support (currently Ivy Bridge or Haswell). When the hardware has been delivered and is being configured, Alice will use the entropy-gathering daemon (egd) in libvirt to ensure sufficient entropy and the ability to feed that entropy to instances. She also enables 'trusted compute pools' for boot time attestation of the image that will be compared to a hash from the 'golden images.' She configures the <filename>.bash_profile</filename> to log all commands, and sends those to the event monitoring collector. As users are expected to only have access to the application, and not the instance behind it, Alice installs a host intrusion detection system (HIDS) agent on the instance as well to monitor and export system events, and also ensures her internal public certificate is installed into the certficate store on the system. Alice is also aware that a side effect of this architecture is that Alice's team will be expected to manage all of the instances in the environment."
 msgstr ""
 
-#: ./security-guide/section_case-studies-instance-management.xml:13(para)
-msgid "For instance scheduling, Alice uses the trusted compute pools to ensure that all cloud workloads are deployed to nodes that presented a proper boot time attestation. Alice decides to disable user permissions for image uploading to help ensure that the images used in the cloud are generated in a known and trusted manner by the cloud administrators."
-msgstr ""
-
-#: ./security-guide/section_case-studies-instance-management.xml:14(para)
-msgid "Finally, Alice disables instance migrations as this feature is less critical for the high performance application workloads expected to run in this cloud. This helps avoid the various security concerns related to instance migrations."
-msgstr ""
-
-#: ./security-guide/section_case-studies-instance-management.xml:18(para)
+#: ./security-guide/section_case-studies-instance-management.xml:38(para)
 msgid "Bob is aware that entropy will be a concern for some of his customers, such as those in the financial industry. However, due to the added cost and complexity, Bob has decided to forgo integrating hardware entropy into the first iteration of his cloud. He adds hardware entropy as a fast-follow to do for a later improvement for the second generation of his cloud architecture."
 msgstr ""
 
-#: ./security-guide/section_case-studies-instance-management.xml:19(para)
+#: ./security-guide/section_case-studies-instance-management.xml:39(para)
 msgid "Bob is interested in ensuring that customers receive a high quality of service. He is concerned that providing excess explicit user control over instance scheduling could negatively impact the quality of service. As a result, he disables this feature. Bob provides images in the cloud from a known trusted source for users to use. Additionally, he allows users to upload their own images. However, users generally cannot share their images. This helps prevent a user from sharing a malicious image, which could negatively impact the security of other users in the cloud."
 msgstr ""
 
-#: ./security-guide/section_case-studies-instance-management.xml:20(para)
+#: ./security-guide/section_case-studies-instance-management.xml:40(para)
 msgid "For migrations, Bob wants to enable secure instance migrations in order to support rolling upgrades with minimal user downtime. Bob ensures that all migrations occur on an isolated VLAN. He plans to defer implementing encrypted migrations until this is better supported in <placeholder-1/> client tools. As a result, he makes a note to track this carefully and switch to encrypted migrations as soon as possible."
 msgstr ""
 
@@ -5920,10 +5916,14 @@ msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced
 msgstr ""
 
 #: ./security-guide/section_case-studies-api-endpoints.xml:12(para)
-msgid "Alice's organization requires that the security architecture protect the access to the public and private endpoints, so she elects to use the Apache TLS proxy on both public and internal services. Alice's organization has implemented its own certificate authority. Alice contacts the PKI office in her agency that manages her PKI and certificate issuance. Alice obtains certificates issued by this CA and configures the services within both the public and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a network disconnected from the Internet, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA. Alice has registered all of the services in the Identity service's catalog, using the internal URLs for access by internal services. She has installed host-based intrusion detection on all of the API endpoints."
+msgid "Alice's organization requires that the security architecture protect the access to the private endpoints, so she elects to use Apache with TLS enabled and HAProxy for load balancing in front of the web service. As Alice's organization has implemented its own certificate authority, she configures the services within both the guest and management security domains to use these certificates. Since Alice's OpenStack deployment exists entirely on a network disconnected from the Internet, she makes sure to remove all default CA bundles that contain external public CA providers to ensure the OpenStack services only accept client certificates issued by her agency's CA. As she is using HAProxy, Alice configures SSL offloading on her load balancer, and a virtual server IP (VIP) on the load balancer with the http to https redirection policy to her API endpoint systems."
 msgstr ""
 
-#: ./security-guide/section_case-studies-api-endpoints.xml:34(para)
+#: ./security-guide/section_case-studies-api-endpoints.xml:29(para)
+msgid "Alice has registered all of the services in the Identity service's catalog, using the internal URLs for access by internal services. She has installed host-based intrusion detection (HIDS) to monitor the security events on the endpoints. On the hosts, Alice also ensures that the API services are confined to a network namespace while confirming that there is a robust SELinux profile applied to the services."
+msgstr ""
+
+#: ./security-guide/section_case-studies-api-endpoints.xml:40(para)
 msgid "Bob must also protect the access to the public and private endpoints, so he elects to use the Apache TLS proxy on both public and internal services. On the public services, he has configured the certificate key files with certificates signed by a well-known Certificate Authority. He has used his organization's self-signed CA to sign certificates in the internal services on the Management network. Bob has registered his services in the Identity service's catalog, using the internal URLs for access by internal services. Bob's public cloud runs services on SELinux, which he has configured with a mandatory access control policy to reduce the impact of any publicly accessible services that may be compromised. He has also configured the endpoints with a host-based IDS."
 msgstr ""
 
@@ -7444,7 +7444,7 @@ msgid "With ZeroMQ messaging, IPC sockets are used on individual machines. Becau
 msgstr ""
 
 #: ./security-guide/ch_compute.xml:9(para)
-msgid "The Compute service (nova) is one of the more complex OpenStack services. It runs in many locations throughout the cloud and interacts with a variety of internal services. For this reason, most of our recommendations regarding best practices for Compute service configuration are distributed throughout this book. We provide specific details in the sections on Management, API Endpoints, Messaging, and Database."
+msgid "The OpenStack Compute service (nova) is one of the more complex OpenStack services. It runs in many locations throughout the cloud and interacts with a variety of internal services. There are a variety of configuration options when using the OpenStack Compute service, and these can be deployment-specific. In this chapter we will call out general best practice around Compute security as well as specific known configurations that can lead to security issues. In general, the <filename>nova.conf</filename> file and the <filename>/var/lib/nova</filename> locations should be secured. Controls like centralized logging, the <filename>policy.json</filename> file, and a mandatory access control framework should be implemented. Additionally, there are environmental considerations to keep in mind, depending on what functionality is desired for your cloud."
 msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2

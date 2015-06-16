@@ -4,8 +4,8 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
   xml:id="compute">
-  <?dbhtml stop-chunking?>
     <title>Compute</title>
+
     <para>
       The OpenStack Compute service (nova) is one of the more complex
       OpenStack services. It runs in many locations throughout the cloud
@@ -22,5 +22,10 @@
       environmental considerations to keep in mind, depending on what
       functionality is desired for your cloud.
     </para>
+
+    <xi:include href="section_hypervisor-selection.xml"/>
+    <xi:include href="section_hardening-the-virtualization-layers.xml"/>
     <xi:include href="section_compute-how-to-select-virtual-consoles.xml"/>
+    <xi:include href="section_case-studies-instance-isolation.xml"/>
+
   </chapter>

@@ -116,7 +116,6 @@
     <xi:include href="ch_data_processing.xml"/>
     <xi:include href="ch_databases.xml"/>
     <xi:include href="ch_tenant-data.xml"/>
-    <xi:include href="ch_hypervisor.xml"/>
     <xi:include href="ch_instance-management.xml"/>
     <xi:include href="ch_monitoring-logging.xml"/>
     <xi:include href="ch_compliance.xml"/>

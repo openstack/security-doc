@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-06-13 08:56+0000\n"
-"PO-Revision-Date: 2015-06-15 05:47+0000\n"
+"POT-Creation-Date: 2015-06-15 06:30+0000\n"
+"PO-Revision-Date: 2015-06-16 00:04+0000\n"
 "Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -2665,6 +2665,9 @@ msgstr "暗号化アルゴリズム、暗号モード、プロトコル"
 
 msgid "Cryptography standards"
 msgstr "暗号標準"
+
+msgid "Custom network topologies"
+msgstr "カスタムネットワークトポロジー"
 
 msgid ""
 "DEB packages: <link href=\"http://wiki.debian.org/HardeningWalkthrough"
@@ -6813,6 +6816,9 @@ msgstr "PCI パススルーの保護に必要です"
 msgid "Required to allow secure sharing of PCI Express devices"
 msgstr "PCI Express デバイスをセキュアに共有するために必要です"
 
+msgid "Resource based filters"
+msgstr "リソースベースのフィルター"
+
 msgid "Restart Apache:"
 msgstr "Apache を再起動します。"
 
@@ -9013,6 +9019,15 @@ msgstr ""
 "これらのコントロールマッピングは、認証間で共通の統制基準を特定します。また、"
 "監査人と被監査者両方にとって問題となる、特定のコンプライアンス認証、認定に必"
 "要なコントロールセットを可視化するのに役立ちます。"
+
+msgid ""
+"These filters will create an instance based on the utilizations of the "
+"hypervisor host sets and can trigger on free or used properties such as RAM, "
+"IO, or CPU utilization"
+msgstr ""
+"これらのフィルターは、ハイパーバイザーホストの使用状況に基づきインスタンスを"
+"作成します。メモリー、I/O、CPU の使用状況などの、空きまたは使用中のプロパ"
+"ティーを引き金にできます。"
 
 msgid "These include:"
 msgstr "これらは以下のものが含まれます。"

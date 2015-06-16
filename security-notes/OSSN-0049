@@ -1,0 +1,64 @@
+Nova ironic driver logs sensitive information while operating in debug mode
+---
+
+### Summary ###
+The password and authentication token configuration options for the
+ironic driver in nova are not marked as secret. The values of these
+options will be logged to the standard logging output when the
+controller is run in debug mode.
+
+### Affected Services / Software ###
+Nova, Ironic, Juno, Kilo
+
+### Discussion ###
+When using nova with the ironic driver, an operator will need to specify
+either the password or an authentication token for the ironic admin
+user's keystone credentials. Under normal circumstances this is not an
+issue, but when running the API server with logging levels set to
+include the DEBUG message level these credentials will be exposed in
+the logs.
+
+Logging of configuration values is controlled by the `secret` flag for
+any oslo configuration option. Without this flag set, the value for a
+configuration option will be displayed in the logs. In the case of the
+ironic credentials, these options are not marked as secret.
+
+This presents a challenge to any operator who might have increased the
+log verbosity for the purposes of debugging or extended log collection.
+Depending on permissions and log storage location, these values could
+be read by an intruder to the system. The credentials will provide
+anyone who controls them access to the ironic API server's
+administrative functions. Additionally, they could be used in conjuction
+with OpenStack Identity functions to issue new authentication tokens or
+perform further malicious activity depending on the scope of the
+administrative account access (for example, modifying account
+permissions).
+
+All nova installations that have values defined for the
+`admin_password` or `admin_auth_token` options in the `ironic` section,
+and have set `debug=true` in the `DEFAULT` section of their
+configuration file will be affected by this issue.
+
+### Recommended Actions ###
+As of the Liberty-1 release of nova, this issue has been resolved.
+It has also been backported to the Kilo and Juno stable releases, which
+can be expected in the 2015.1.1 and 2014.2.4 tags, respectively.
+
+Where possible, nova deployments should be updated to one of these
+releases: Liberty-1, 2015.1.1 (Kilo), or 2014.2.4 (Juno).
+
+If updating the nova deployment is not feasible, operators should
+turn off the debug logging level whenever it is not in use and ensure
+that log files produced from those debug sessions are stored securely.
+To disable the debug log level, the nova configuration file should be
+editted as follows:
+
+    [DEFAULT]
+    debug = False
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0049
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1451931
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Oslo Config Special Handling Instructions: http://docs.openstack.org/developer/oslo.config/cfg.html#special-handling-instructions

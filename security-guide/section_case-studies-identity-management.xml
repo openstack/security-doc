@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns="http://docbook.org/ns/docbook"
+<section xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
   xml:id="case-studies-identity-management">
-  <?dbhtml stop-chunking?>
     <title>Case studies: Identity management</title>
     <para>
       Earlier in <xref linkend="introduction-to-case-studies"/> we introduced
       the Alice and Bob case studies where Alice is deploying a private
       government cloud and Bob is deploying a public cloud each with
       different security requirements. Here we discuss how Alice and Bob would address
-      configuration of OpenStack core services. These include the
-      Identity service, dashboard, and Compute services. Alice will be
+      configuration of the OpenStack Identity service. Alice will be
       concerned with integration into the existing government
       directory services, while Bob will need to provide access to the
       public.
@@ -66,4 +64,4 @@
       <para>Bob decides to use VNC for his virtual console for its
       maturity and security features.</para>
     </section>
-  </chapter>
+  </section>

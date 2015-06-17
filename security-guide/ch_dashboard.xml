@@ -38,4 +38,6 @@
   <xi:include href="section_dashboard-horizon-image-upload.xml"/>
   <xi:include href="section_dashboard-upgrading.xml"/>
   <xi:include href="section_dashboard-debug.xml"/>
+  <xi:include href="section_case-studies-dashboard.xml"/>
+
 </chapter>

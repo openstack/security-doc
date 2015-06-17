@@ -6,6 +6,15 @@
   xml:id="identity-authentication">
   <?dbhtml stop-chunking?>
   <title>Authentication</title>
+  <para>Authentication is an integral part of any real world OpenStack
+    deployment and so careful thought should be given to this aspect
+    of system design.  A complete treatment of this topic is beyond
+    the scope of this guide however some key topics are presented in
+    the following sections.</para>
+  <para>At its most basic, authentication is the process of confirming
+    identity - that a user is actually who they claim to be. A familiar
+    example is providing a username and password when logging in to a
+    system.</para>
   <para>The OpenStack Identity service (keystone) supports multiple
     methods of authentication, including user name &amp; password,
     LDAP, and external authentication methods. Upon successful

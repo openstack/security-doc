@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-12 06:01+0000\n"
+"POT-Creation-Date: 2015-06-19 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -664,11 +664,15 @@ msgid "Session back end"
 msgstr ""
 
 #: ./security-guide/section_dashboard-session-back-end.xml:9(para)
-msgid "Horizon's default session back end (<literal>django.contrib.sessions.backends.signed_cookies</literal>) stores user data in <emphasis>signed</emphasis> but <emphasis>unencrypted </emphasis>cookies stored in the browser. This approach allows the most simple session back-end scaling since each dashboard instance is stateless, but it comes at the cost of <emphasis>storing sensitive access tokens in the client browser</emphasis> and transmitting them with every request. This back end ensures that session data has not been tampered with, but the data itself is not encrypted other than the encryption provided by HTTPS."
+msgid "The default session back end for horizon (<literal>django.contrib.sessions.backends.signed_cookies</literal>) saves user data in signed, but unencrypted cookies stored in the browser. Due to the fact that each dashboard instance is stateless, the previously mentioned methodology provides the ability to implement the most simple session back-end scaling."
+msgstr ""
+
+#: ./security-guide/section_dashboard-session-back-end.xml:15(para)
+msgid "It should be noted that with this type of implementation sensitive access tokens will be stored in the browser and will be transmitted with each request made. The back end ensures the integrity of session data, even though the transmitted data is only encrypted by HTTPS."
 msgstr ""
 
 #: ./security-guide/section_dashboard-session-back-end.xml:20(para)
-msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session back end with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies back end, refer to the Django documentation understand the security trade-offs."
+msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session back end with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies back end, refer to the Django documentation to understand the security trade-offs."
 msgstr ""
 
 #: ./security-guide/section_dashboard-session-back-end.xml:27(para) ./security-guide/section_dashboard-allowed-hosts.xml:15(para)
@@ -3243,7 +3247,7 @@ msgstr ""
 msgid "OpenStack embraces a modular architecture to provide a set of core services that facilitates scalability and elasticity as core design tenets. This chapter briefly reviews OpenStack components, their use cases and security considerations."
 msgstr ""
 
-#: ./security-guide/section_introduction-to-openstack.xml:122(title) ./security-guide/section_data-processing-deployment.xml:28(para) ./security-guide/ch_compute.xml:8(title)
+#: ./security-guide/section_introduction-to-openstack.xml:122(title) ./security-guide/section_data-processing-deployment.xml:28(para) ./security-guide/ch_compute.xml:7(title)
 msgid "Compute"
 msgstr ""
 
@@ -4093,18 +4097,6 @@ msgstr ""
 
 #: ./security-guide/section_dashboard-basic-web-server-configuration.xml:14(para)
 msgid "When using nginx, we recommend <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as the WSGI host with an appropriate number of synchronous workers. When using Apache, we recommend <literal>mod_wsgi</literal> to host the dashboard."
-msgstr ""
-
-#: ./security-guide/ch_hypervisor.xml:7(title)
-msgid "Hypervisor and virtualization layer"
-msgstr ""
-
-#: ./security-guide/ch_hypervisor.xml:9(para)
-msgid "Virtualization can provide flexibility, improved resource utilization, faster provisioning, and other benefits that enable cloud computing. The virtualization stack can also provide isolation between guest virtual machines, however, appropriate security measures must be considered to reduce the risks associated with hypervisor breakout attacks."
-msgstr ""
-
-#: ./security-guide/ch_hypervisor.xml:17(para)
-msgid "This chapter discusses the hypervisor selection process, hardening the virtualization layer, and how to improve instance isolation."
 msgstr ""
 
 #: ./security-guide/ch_case-studies-identity-management.xml:8(title)
@@ -6540,7 +6532,7 @@ msgid "2013-07-02"
 msgstr ""
 
 #: ./security-guide/bk-openstack-security-guide.xml:96(para)
-msgid "Initial creation..."
+msgid "Initial creation."
 msgstr ""
 
 #: ./security-guide/section_dashboard-static-media.xml:8(title)
@@ -6744,7 +6736,7 @@ msgid "Databases"
 msgstr ""
 
 #: ./security-guide/ch_databases.xml:9(para)
-msgid "The choice of database server is an important consideration in the security of an OpenStack deployment. Multiple factors should be considered when deciding on a database server, however for the scope of this book only security considerations will be discussed. OpenStack supports PostgreSQL and MySQL database types."
+msgid "The choice of database server is an important consideration in the security of an OpenStack deployment. Multiple factors should be considered when deciding on a database server, however for the scope of this book only security considerations will be discussed. OpenStack supports a variety of database types (see <link href=\"http://docs.openstack.org/admin-guide-cloud\"><citetitle>OpenStack Cloud Administrator Guide</citetitle></link> for more information). The Security Guide currently focuses on PostgreSQL and MySQL."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.

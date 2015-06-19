@@ -9,14 +9,13 @@
         subdomains of an overarching organization domain. It is natural
         for users to expect a domain of the form
           <uri>openstack.example.org</uri>. In this context, there are
-        often many other applications deployed in the same second-level
-        namespace, often serving user-controlled content. This name
-        structure is convenient and simplifies name server
-        maintenance.</para>
-      <para>We strongly recommend deploying horizon to a
+        often applications which are deployed in the same second-level
+        namespace. This name structure is convenient and simplifies name
+        server maintenance.</para>
+      <para>We strongly recommend deploying dashboard to a
         <emphasis>second-level domain</emphasis>, such as
-        <uri>https://example.com</uri>, and advise against deploying
-        horizon on a <emphasis>shared subdomain</emphasis> of any level,
+        <uri>https://example.com</uri>, rather than deploying
+        dashboard on a <emphasis>shared subdomain</emphasis> of any level,
         for example <uri>https://openstack.example.org</uri> or
         <uri>https://horizon.openstack.example.org</uri>. We also
         advise against deploying to bare internal domains like

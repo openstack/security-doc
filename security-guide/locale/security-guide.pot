@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-19 06:00+0000\n"
+"POT-Creation-Date: 2015-06-22 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ./security-guide/section_data-processing-case-studies.xml:8(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:8(title) ./security-guide/section_case-studies-system-documentation.xml:8(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:8(title) ./security-guide/section_case-studies-database.xml:8(title) ./security-guide/section_case-studies-tenant-data.xml:8(title) ./security-guide/section_case-studies-messaging.xml:8(title) ./security-guide/section_case-studies-instance-isolation.xml:8(title) ./security-guide/section_case-studies-management-interfaces.xml:8(title) ./security-guide/section_case-studies-compliance.xml:8(title) ./security-guide/section_case-studies-instance-management.xml:8(title) ./security-guide/section_case-studies-api-endpoints.xml:8(title) ./security-guide/section_case-studies-networking.xml:8(title)
+#: ./security-guide/section_data-processing-case-studies.xml:8(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:8(title) ./security-guide/section_case-studies-system-documentation.xml:8(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:8(title) ./security-guide/section_case-studies-database.xml:8(title) ./security-guide/section_case-studies-tenant-data.xml:8(title) ./security-guide/section_case-studies-messaging.xml:8(title) ./security-guide/section_case-studies-instance-isolation.xml:8(title) ./security-guide/section_case-studies-management-interfaces.xml:8(title) ./security-guide/section_case-studies-compliance.xml:8(title) ./security-guide/section_case-studies-instance-management.xml:8(title) ./security-guide/section_case-studies-api-endpoints.xml:8(title) ./security-guide/section_case-studies-networking.xml:8(title) ./security-guide/section_case-studies-dashboard.xml:7(title)
 msgid "Case studies"
 msgstr ""
 
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Alice is deploying the Data processing service for a group of users that are trusted members of a collaboration. They are all placed in a single project and share the clusters, jobs, and data within. She deploys the controller with TLS enabled, using a certificate signed by the organization's root certificate. She configures the controller to provide floating IP addresses to the cluster instances allowing for users to gain access to the instances in the event of errors. She enables the use of proxy domains to prevent the users from needing to enter their credentials into the Data processing service."
 msgstr ""
 
-#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:30(title) ./security-guide/section_case-studies-system-documentation.xml:38(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:44(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:71(title) ./security-guide/section_case-studies-compliance.xml:61(title) ./security-guide/section_case-studies-instance-management.xml:37(title) ./security-guide/section_case-studies-api-endpoints.xml:39(title) ./security-guide/section_case-studies-networking.xml:43(title)
+#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:30(title) ./security-guide/section_case-studies-system-documentation.xml:38(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:44(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:71(title) ./security-guide/section_case-studies-compliance.xml:61(title) ./security-guide/section_case-studies-instance-management.xml:37(title) ./security-guide/section_case-studies-api-endpoints.xml:39(title) ./security-guide/section_case-studies-networking.xml:43(title) ./security-guide/section_case-studies-dashboard.xml:43(title)
 msgid "Bob's public cloud"
 msgstr ""
 
@@ -5924,42 +5924,50 @@ msgid "Authentication"
 msgstr ""
 
 #: ./security-guide/section_identity-authentication.xml:9(para)
-msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity service provides the user with an authorization token used for subsequent service requests."
+msgid "Authentication is an integral part of any real world OpenStack deployment and so careful thought should be given to this aspect of system design. A complete treatment of this topic is beyond the scope of this guide however some key topics are presented in the following sections."
 msgstr ""
 
 #: ./security-guide/section_identity-authentication.xml:14(para)
+msgid "At its most basic, authentication is the process of confirming identity - that a user is actually who they claim to be. A familiar example is providing a username and password when logging in to a system."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:18(para)
+msgid "The OpenStack Identity service (keystone) supports multiple methods of authentication, including user name &amp; password, LDAP, and external authentication methods. Upon successful authentication, The Identity service provides the user with an authorization token used for subsequent service requests."
+msgstr ""
+
+#: ./security-guide/section_identity-authentication.xml:23(para)
 msgid "Transport Layer Security (TLS) provides authentication between services and persons using X.509 certificates. Although the default mode for TLS is server-side only authentication, certificates may also be used for client authentication."
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:20(title)
+#: ./security-guide/section_identity-authentication.xml:29(title)
 msgid "Invalid login attempts"
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:21(para)
+#: ./security-guide/section_identity-authentication.xml:30(para)
 msgid "The Identity service does not provide a method to limit access to accounts after repeated unsuccessful login attempts. A pattern of repetitive failed login attempts is generally an indicator of brute-force attacks (refer to <xref linkend=\"security-boundaries-and-threats-attack-types\"/>). This type of attack is more prevalent in public cloud deployments."
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:28(para)
+#: ./security-guide/section_identity-authentication.xml:37(para)
 msgid "Prevention is possible by using an external authentication system that blocks out an account after some configured number of failed login attempts. The account then may only be unlocked with further side-channel intervention."
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:32(para)
+#: ./security-guide/section_identity-authentication.xml:41(para)
 msgid "If prevention is not an option, detection can be used to mitigate damage. Detection involves frequent review of access control logs to identify unauthorized attempts to access accounts. Possible remediation would include reviewing the strength of the user password, or blocking the network source of the attack through firewall rules. Firewall rules on the keystone server that restrict the number of connections could be used to reduce the attack effectiveness, and thus dissuade the attacker."
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:41(para)
+#: ./security-guide/section_identity-authentication.xml:50(para)
 msgid "In addition, it is useful to examine account activity for unusual login times and suspicious actions, and take corrective actions such as disabling the account. Oftentimes this approach is taken by credit card providers for fraud detection and alert."
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:49(title)
+#: ./security-guide/section_identity-authentication.xml:58(title)
 msgid "Multi-factor authentication"
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:50(para)
+#: ./security-guide/section_identity-authentication.xml:59(para)
 msgid "Employ multi-factor authentication for network access to privileged user accounts. The Identity service supports external authentication services through the Apache web server that can provide this functionality. Servers may also enforce client-side authentication using certificates."
 msgstr ""
 
-#: ./security-guide/section_identity-authentication.xml:55(para)
+#: ./security-guide/section_identity-authentication.xml:64(para)
 msgid "This recommendation provides insulation from brute force, social engineering, and both spear and mass phishing attacks that may compromise administrator passwords."
 msgstr ""
 
@@ -7094,18 +7102,18 @@ msgid "Domain names"
 msgstr ""
 
 #: ./security-guide/section_dashboard-domain-names.xml:8(para)
-msgid "Many organizations typically deploy web applications at subdomains of an overarching organization domain. It is natural for users to expect a domain of the form <uri>openstack.example.org</uri>. In this context, there are often many other applications deployed in the same second-level namespace, often serving user-controlled content. This name structure is convenient and simplifies name server maintenance."
+msgid "Many organizations typically deploy web applications at subdomains of an overarching organization domain. It is natural for users to expect a domain of the form <uri>openstack.example.org</uri>. In this context, there are often applications which are deployed in the same second-level namespace. This name structure is convenient and simplifies name server maintenance."
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:16(para)
-msgid "We strongly recommend deploying horizon to a <emphasis>second-level domain</emphasis>, such as <uri>https://example.com</uri>, and advise against deploying horizon on a <emphasis>shared subdomain</emphasis> of any level, for example <uri>https://openstack.example.org</uri> or <uri>https://horizon.openstack.example.org</uri>. We also advise against deploying to bare internal domains like <uri>https://horizon/</uri>. These recommendations are based on the limitations of browser same-origin-policy."
+#: ./security-guide/section_dashboard-domain-names.xml:15(para)
+msgid "We strongly recommend deploying dashboard to a <emphasis>second-level domain</emphasis>, such as <uri>https://example.com</uri>, rather than deploying dashboard on a <emphasis>shared subdomain</emphasis> of any level, for example <uri>https://openstack.example.org</uri> or <uri>https://horizon.openstack.example.org</uri>. We also advise against deploying to bare internal domains like <uri>https://horizon/</uri>. These recommendations are based on the limitations of browser same-origin-policy."
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:25(para)
+#: ./security-guide/section_dashboard-domain-names.xml:24(para)
 msgid "Recommendations given in this guide cannot effectively guard against known attacks if you deploy the dashboard in a domain that also hosts user-generated content, even when this content resides on a separate sub-domain. User-generated content can consist of scripts, images, or uploads of any type. Most major web presences, including googleusercontent.com, fbcdn.com, github.io, and twimg.co, use this approach to segregate user-generated content from cookies and security tokens."
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:32(para)
+#: ./security-guide/section_dashboard-domain-names.xml:31(para)
 msgid "If you do not follow this recommendation regarding second-level domains, avoid a cookie-backed session store and employ HTTP Strict Transport Security (HSTS). When deployed on a subdomain, the dashboard's security is equivalent to the least secure application deployed on the same second-level domain."
 msgstr ""
 
@@ -7397,6 +7405,26 @@ msgstr ""
 
 #: ./security-guide/section_introduction-to-case-studies.xml:36(para)
 msgid "Bob is a lead architect for a company that deploys a large greenfield public cloud. This cloud provides IaaS for the masses and enables any consumer with a valid credit card access to utility computing and storage, but the primary focus is enterprise customers. Data privacy concerns are a big priority for Bob as they are seen as a major barrier to large-scale adoption of the cloud by organizations."
+msgstr ""
+
+#: ./security-guide/section_case-studies-dashboard.xml:8(para)
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address dashboard configuration to secure their private and public clouds. Alice's dashboard is not publicly accessible, but she is still concerned about securing the administrative dashboard against improper use. Bob's dashboard, being public, must take measures to reduce the risk of attacks by external adversaries."
+msgstr ""
+
+#: ./security-guide/section_case-studies-dashboard.xml:19(title)
+msgid "Alice's cloud running a public application"
+msgstr ""
+
+#: ./security-guide/section_case-studies-dashboard.xml:20(para)
+msgid "On the new installation, Alice deploys Apache as the Web Service Gateway Interface (WSGI) so that she can take advantage of the health monitoring and clustering features of HAProxy, and keep a homogeneous deployment in her environment. She modifies the <literal>SECURE_PROXY_SSL_HEADER</literal> variable and disables front end caching with with the session cookies set to httponly to apply HSTS protections, which decreases the risk of communication being downgraded from TLS to HTTP. Such a downgrade would be more vulnerable to a 'man in the middle' (MITM) attack. As her application is public facing, Alice creates an internal domain for the dashboard access and issues internal PKI certificates."
+msgstr ""
+
+#: ./security-guide/section_case-studies-dashboard.xml:31(para)
+msgid "Alice disables image uploading in the OpenStack dashboard (horizon) as application users will not need this feature, and management users will be uploading purpose-built images. As these images will be sufficiently large, using the OpenStack Image service (glance) upload features directly will be more efficient than doing so through the dashboard, and her team has the required access to the Image service. She uploads her divisions logo into the dashboard page, but leaves the rest of the dashboard default taking care not to add additional programs or features that may introduce additional vulnerabilities."
+msgstr ""
+
+#: ./security-guide/section_case-studies-dashboard.xml:44(para)
+msgid "In this case Bob takes the same precautions Alice does, except that Bob deploys his dashboard as public facing."
 msgstr ""
 
 #: ./security-guide/ch_messaging.xml:7(title)

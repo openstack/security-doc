@@ -25,5 +25,6 @@
   <xi:include href="section_identity-future.xml"/>
   <xi:include href="section_identity-federated-keystone.xml"/>
   <xi:include href="section_identity-checklist.xml"/>
+  <xi:include href="section_case-studies-identity-management.xml"/>
 
 </chapter>

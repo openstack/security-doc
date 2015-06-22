@@ -110,7 +110,6 @@
     <xi:include href="ch_dashboard.xml"/>
     <xi:include href="ch_compute.xml"/>
     <xi:include href="ch_object-storage.xml"/>
-    <xi:include href="ch_case-studies-identity-management.xml"/>
     <xi:include href="ch_networking.xml"/>
     <xi:include href="ch_messaging.xml"/>
     <xi:include href="ch_data_processing.xml"/>

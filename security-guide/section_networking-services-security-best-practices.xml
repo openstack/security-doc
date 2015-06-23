@@ -69,7 +69,7 @@
         </listitem>
       </itemizedlist>
       <para>A security group is a container for security group rules. Security groups and their rules allow administrators and tenants the ability to specify the type of traffic and direction (ingress/egress) that is allowed to pass through a virtual interface port. When a virtual interface port is created in OpenStack Networking it is associated with a security group. If a security group is not specified, the port will be associated with a 'default' security group. By default this group will drop all ingress traffic and allow all egress. Rules can be added to this group in order to change the behaviour.</para>
-      <para>When using the security group API through OpenStack Compute, security groups are applied to all virtual interface ports on an instance. The reason for this is that OpenStack Compute security group APIs are instance based and not virtual interface port based as OpenStack Networking.</para>
+      <para>When using the OpenStack Compute API to modify security groups, the updated security group applies to all virtual interface ports on an instance. This is due to the OpenStack Compute security group APIs being instance-based rather than port-based, as found in OpenStack Networking.</para>
     </section>
     <section xml:id="networking-services-security-best-practices-quotas">
       <title>Quotas</title>

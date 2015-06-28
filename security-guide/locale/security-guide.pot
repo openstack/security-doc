@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-22 06:01+0000\n"
+"POT-Creation-Date: 2015-06-28 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "Continuing with the studies described in <xref linkend=\"introduction-to-case-studies\"/>, we present Alice and Bob's approaches to deploying the Data processing service for their users."
 msgstr ""
 
-#: ./security-guide/section_data-processing-case-studies.xml:16(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:13(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:14(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/ch_case-studies-identity-management.xml:21(title) ./security-guide/section_case-studies-management-interfaces.xml:26(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:15(title)
+#: ./security-guide/section_data-processing-case-studies.xml:16(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:11(title) ./security-guide/section_case-studies-system-documentation.xml:11(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:11(title) ./security-guide/section_case-studies-database.xml:13(title) ./security-guide/section_case-studies-tenant-data.xml:17(title) ./security-guide/section_case-studies-messaging.xml:14(title) ./security-guide/section_case-studies-identity-management.xml:19(title) ./security-guide/section_case-studies-instance-isolation.xml:11(title) ./security-guide/section_case-studies-management-interfaces.xml:26(title) ./security-guide/section_case-studies-compliance.xml:11(title) ./security-guide/section_case-studies-instance-management.xml:11(title) ./security-guide/section_case-studies-api-endpoints.xml:11(title) ./security-guide/section_case-studies-networking.xml:15(title)
 msgid "Alice's private cloud"
 msgstr ""
 
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Alice is deploying the Data processing service for a group of users that are trusted members of a collaboration. They are all placed in a single project and share the clusters, jobs, and data within. She deploys the controller with TLS enabled, using a certificate signed by the organization's root certificate. She configures the controller to provide floating IP addresses to the cluster instances allowing for users to gain access to the instances in the event of errors. She enables the use of proxy domains to prevent the users from needing to enter their credentials into the Data processing service."
 msgstr ""
 
-#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:30(title) ./security-guide/section_case-studies-system-documentation.xml:38(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:44(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/ch_case-studies-identity-management.xml:46(title) ./security-guide/section_case-studies-management-interfaces.xml:71(title) ./security-guide/section_case-studies-compliance.xml:61(title) ./security-guide/section_case-studies-instance-management.xml:37(title) ./security-guide/section_case-studies-api-endpoints.xml:39(title) ./security-guide/section_case-studies-networking.xml:43(title) ./security-guide/section_case-studies-dashboard.xml:43(title)
+#: ./security-guide/section_data-processing-case-studies.xml:30(title) ./security-guide/section_case-studies-pki-and-certificate-management.xml:30(title) ./security-guide/section_case-studies-system-documentation.xml:38(title) ./security-guide/section_case-studies-monitoring-and-logging.xml:44(title) ./security-guide/section_case-studies-database.xml:27(title) ./security-guide/section_case-studies-tenant-data.xml:50(title) ./security-guide/section_case-studies-messaging.xml:18(title) ./security-guide/section_case-studies-identity-management.xml:44(title) ./security-guide/section_case-studies-instance-isolation.xml:17(title) ./security-guide/section_case-studies-management-interfaces.xml:71(title) ./security-guide/section_case-studies-compliance.xml:61(title) ./security-guide/section_case-studies-instance-management.xml:37(title) ./security-guide/section_case-studies-api-endpoints.xml:39(title) ./security-guide/section_case-studies-networking.xml:43(title) ./security-guide/section_case-studies-dashboard.xml:43(title)
 msgid "Bob's public cloud"
 msgstr ""
 
@@ -47,18 +47,6 @@ msgstr ""
 
 #: ./security-guide/ch_management.xml:25(para)
 msgid "Finally, administrators must perform command and control over the cloud for various operational functions. It is important these command and control facilities are understood and secured."
-msgstr ""
-
-#: ./security-guide/section_dashboard-cross-site-scripting-xss.xml:8(title)
-msgid "Cross Site Scripting (XSS)"
-msgstr ""
-
-#: ./security-guide/section_dashboard-cross-site-scripting-xss.xml:9(para)
-msgid "Unlike many similar systems, the OpenStack dashboard allows the entire Unicode character set in most fields. This means developers have less latitude to make escaping mistakes that open attack vectors for cross-site scripting (XSS)."
-msgstr ""
-
-#: ./security-guide/section_dashboard-cross-site-scripting-xss.xml:13(para)
-msgid "Dashboard provides tools for developers to avoid creating XSS vulnerabilities, but they only work if developers use them correctly. Audit any custom dashboards, paying particular attention to use of the <literal>mark_safe</literal> function, use of <literal>is_safe</literal> with custom template tags, the <literal>safe</literal> template tag, anywhere auto escape is turned off, and any JavaScript which might evaluate improperly escaped data."
 msgstr ""
 
 #: ./security-guide/section_database-transport-security.xml:8(title)
@@ -587,14 +575,6 @@ msgstr ""
 msgid "Identity service (keystone) provides identity, token, catalog, and policy services for use specifically by services in the OpenStack family. Identity service is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the frontend, for example an authenticate call will validate user/project credentials with the identity service and, upon success, create and return a token with the token service. Further information can be found by reading the <link href=\"http://docs.openstack.org/developer/keystone/index.html\"> Keystone Developer Documentation</link>."
 msgstr ""
 
-#: ./security-guide/section_dashboard-front-end-caching.xml:8(title)
-msgid "Front end caching"
-msgstr ""
-
-#: ./security-guide/section_dashboard-front-end-caching.xml:9(para)
-msgid "Since the dashboard is rendering dynamic content passed directly from OpenStack API requests, we do not recommend front end caching layers such as varnish. In Django, static media is directly served from Apache or nginx and already benefits from web host caching."
-msgstr ""
-
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:9(para)
 msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case study where Alice is deploying a government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address deployment of PKI certification authorities (CA) and certificate management."
 msgstr ""
@@ -639,14 +619,6 @@ msgstr ""
 msgid "When it comes to logging, as a public cloud provider, Bob is interested in the activities for situational awareness as well as compliance. In the aspect of compliance, as a provider, Bob is subject to adherence to various rules and regulations to include activities such as providing timely, relevant logs or reports to customers to meet the requirements of their compliance programs. With that in mind, Bob configures all of his instances, nodes, and infrastructure devices to perform time synchronization with an external, validated time device. Additionally, Bob's team has built a Django based web application for his customers to perform self-service log retrieval from the SIEM tool. Bob also uses this SIEM tool along with a robust set of alerts and integration with his CMDB to provide operational awareness to both customers and cloud administrators."
 msgstr ""
 
-#: ./security-guide/section_dashboard-upgrading.xml:8(title)
-msgid "Upgrading"
-msgstr ""
-
-#: ./security-guide/section_dashboard-upgrading.xml:9(para)
-msgid "Django security releases are generally well tested and aggressively backwards compatible. In almost all cases, new major releases of Django are also fully backwards compatible with previous releases. Dashboard implementers are strongly encouraged to run the latest stable release of Django with up-to-date security releases."
-msgstr ""
-
 #: ./security-guide/section_case-studies-database.xml:9(para)
 msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address database selection and configuration for their respective private and public clouds."
 msgstr ""
@@ -657,26 +629,6 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-database.xml:28(para)
 msgid "Bob is concerned about strong separation of his tenants' data, so he has elected to use the PostgreSQL database, known for its stronger security features. The database resides on the Management network and uses SSL/TLS with mutual authentication with the services. Since the database is on the Management network, the database uses certificates signed with the company's self-signed root certificate. Bob creates separate user accounts for each database user, and configures the database to use both passwords and X.509 certificates for authentication. He elects not to use the <systemitem class=\"service\">nova-conductor</systemitem> sub-service due to a desire for fine-grained access control."
-msgstr ""
-
-#: ./security-guide/section_dashboard-session-back-end.xml:8(title)
-msgid "Session back end"
-msgstr ""
-
-#: ./security-guide/section_dashboard-session-back-end.xml:9(para)
-msgid "The default session back end for horizon (<literal>django.contrib.sessions.backends.signed_cookies</literal>) saves user data in signed, but unencrypted cookies stored in the browser. Due to the fact that each dashboard instance is stateless, the previously mentioned methodology provides the ability to implement the most simple session back-end scaling."
-msgstr ""
-
-#: ./security-guide/section_dashboard-session-back-end.xml:15(para)
-msgid "It should be noted that with this type of implementation sensitive access tokens will be stored in the browser and will be transmitted with each request made. The back end ensures the integrity of session data, even though the transmitted data is only encrypted by HTTPS."
-msgstr ""
-
-#: ./security-guide/section_dashboard-session-back-end.xml:20(para)
-msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session back end with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies back end, refer to the Django documentation to understand the security trade-offs."
-msgstr ""
-
-#: ./security-guide/section_dashboard-session-back-end.xml:27(para) ./security-guide/section_dashboard-allowed-hosts.xml:15(para)
-msgid "For further details, see the <link href=\"https://docs.djangoproject.com/\">Django documentation</link>."
 msgstr ""
 
 #: ./security-guide/section_database-backend-considerations.xml:8(title)
@@ -737,6 +689,62 @@ msgstr ""
 
 #: ./security-guide/ch_monitoring-logging.xml:16(para)
 msgid "The basics of logging: configuration, setting log level, location of the log files, and how to use and customize logs, as well as how to do centralized collections of logs is well covered in the <link href=\"http://docs.openstack.org/ops/\"><citetitle>OpenStack Operations Guide</citetitle></link>."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:8(title)
+msgid "Domain names, dashboard upgrades, and basic web server configuration"
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:10(title)
+msgid "Domain names"
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:11(para)
+msgid "Many organizations typically deploy web applications at subdomains of an overarching organization domain. It is natural for users to expect a domain of the form <uri>openstack.example.org</uri>. In this context, there are often applications which are deployed in the same second-level namespace. This name structure is convenient and simplifies name server maintenance."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:18(para)
+msgid "We strongly recommend deploying dashboard to a <emphasis>second-level domain</emphasis>, such as <uri>https://example.com</uri>, rather than deploying dashboard on a <emphasis>shared subdomain</emphasis> of any level, for example <uri>https://openstack.example.org</uri> or <uri>https://horizon.openstack.example.org</uri>. We also advise against deploying to bare internal domains like <uri>https://horizon/</uri>. These recommendations are based on the limitations of browser same-origin-policy."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:27(para)
+msgid "Recommendations given in this guide cannot effectively guard against known attacks if you deploy the dashboard in a domain that also hosts user-generated content, even when this content resides on a separate sub-domain. User-generated content can consist of scripts, images, or uploads of any type. Most major web presences, including googleusercontent.com, fbcdn.com, github.io, and twimg.co, use this approach to segregate user-generated content from cookies and security tokens."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:34(para)
+msgid "If you do not follow this recommendation regarding second-level domains, avoid a cookie-backed session store and employ HTTP Strict Transport Security (HSTS). When deployed on a subdomain, the dashboard's security is equivalent to the least secure application deployed on the same second-level domain."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:41(title)
+msgid "Basic web server configuration"
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:42(para)
+msgid "The dashboard should be deployed as a Web Services Gateway Interface (WSGI) application behind an HTTPS proxy such as Apache or nginx. If Apache is not already in use, we recommend nginx since it is lightweight and easier to configure correctly."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:47(para)
+msgid "When using nginx, we recommend <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as the WSGI host with an appropriate number of synchronous workers. When using Apache, we recommend <literal>mod_wsgi</literal> to host the dashboard."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:54(title)
+msgid "Allowed hosts"
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:55(para)
+msgid "Configure the <placeholder-1/> setting with the domain or domains where the dashboard is available. Failure to configure this setting (especially if not following the recommendation above regarding second level domains) opens the dashboard to a number of serious attacks. Wild card domains should be avoided."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:61(para) ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:37(para)
+msgid "For further details, see the <link href=\"https://docs.djangoproject.com/\">Django documentation</link>."
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:66(title)
+msgid "Horizon image upload"
+msgstr ""
+
+#: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:67(para)
+msgid "We recommend that implementers <link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads\">disable HORIZON_IMAGES_ALLOW_UPLOAD</link> unless they have implemented a plan to prevent resource exhaustion and denial of service."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
@@ -1043,14 +1051,6 @@ msgstr ""
 
 #: ./security-guide/section_hardening-the-virtualization-layers.xml:433(para)
 msgid "Allow virtual machine to interact with the X Window System."
-msgstr ""
-
-#: ./security-guide/section_dashboard-horizon-image-upload.xml:8(title)
-msgid "Horizon image upload"
-msgstr ""
-
-#: ./security-guide/section_dashboard-horizon-image-upload.xml:9(para)
-msgid "We recommend that implementers <link href=\"http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads\">disable HORIZON_IMAGES_ALLOW_UPLOAD</link> unless they have implemented a plan to prevent resource exhaustion and denial of service."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
@@ -1471,6 +1471,62 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-messaging.xml:20(para)
 msgid "Additionally, Bob adds strong network ACL rulesets to enforce which endpoints can communicate with the message servers. This second control provides some additional assurance should the other protections fail."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:8(title)
+msgid "HTTPS, HSTS, XSS, and SSRF"
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:10(title)
+msgid "Cross Site Scripting (XSS)"
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:11(para)
+msgid "Unlike many similar systems, the OpenStack dashboard allows the entire Unicode character set in most fields. This means developers have less latitude to make escaping mistakes that open attack vectors for cross-site scripting (XSS)."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:15(para)
+msgid "Dashboard provides tools for developers to avoid creating XSS vulnerabilities, but they only work if developers use them correctly. Audit any custom dashboards, paying particular attention to use of the <literal>mark_safe</literal> function, use of <literal>is_safe</literal> with custom template tags, the <literal>safe</literal> template tag, anywhere auto escape is turned off, and any JavaScript which might evaluate improperly escaped data."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:26(title)
+msgid "Cross Site Request Forgery (CSRF)"
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:27(para)
+msgid "Django has dedicated middleware for cross-site request forgery (CSRF). For further details, see the <link href=\"https://docs.djangoproject.com/\"> Django documentation</link>."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:30(para)
+msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are JavaScript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:39(title)
+msgid "HTTPS"
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:40(para)
+msgid "Deploy the dashboard behind a secure <glossterm>HTTPS</glossterm> server by using a valid, trusted certificate from a recognized certificate authority (CA). Private organization-issued certificates are only appropriate when the root of trust is pre-installed in all user browsers."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:47(para)
+msgid "Configure HTTP requests to the dashboard domain to redirect to the fully qualified HTTPS URL."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:51(title)
+msgid "HTTP Strict Transport Security (HSTS)"
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:52(para)
+msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:55(para)
+msgid "If you are using an HTTPS proxy in front of your web server, rather than using an HTTP server with HTTPS functionality, modify the <literal>SECURE_PROXY_SSL_HEADER</literal> variable. Refer to the <link href=\"https://docs.djangoproject.com/\">Django documentation</link> for information about modifying the <literal>SECURE_PROXY_SSL_HEADER</literal> variable."
+msgstr ""
+
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:63(para)
+msgid "See the chapter on PKI/SSL Everywhere for more specific recommendations and server configurations for HTTPS configurations, including the configuration of HSTS."
 msgstr ""
 
 #: ./security-guide/ch_tenant-data.xml:7(title)
@@ -2865,6 +2921,38 @@ msgstr ""
 msgid "The OpenStack Security Guide is the result of a five day sprint of collaborative work of many individuals. The purpose of this document is to provide the best practice guidelines for deploying a secure OpenStack cloud. It is a living document that is updated as new changes are merged into the repository, and is meant to reflect the current state of security within the OpenStack community and provide frameworks for decision making where listing specific security controls are not feasible due to complexity or other environment specific details."
 msgstr ""
 
+#: ./security-guide/section_case-studies-identity-management.xml:7(title)
+msgid "Case studies: Identity management"
+msgstr ""
+
+#: ./security-guide/section_case-studies-identity-management.xml:8(para)
+msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address configuration of the OpenStack Identity service. Alice will be concerned with integration into the existing government directory services, while Bob will need to provide access to the public."
+msgstr ""
+
+#: ./security-guide/section_case-studies-identity-management.xml:20(para)
+msgid "Alice's enterprise has a well-established directory service with two-factor authentication for all users. She configures the Identity service to support an external authentication service supporting authentication with government-issued access cards. She also uses an external LDAP server to provide role information for the roles that are integrated with the access control policy. Due to FedRAMP compliance requirements, Alice implements two-factor authentication on the management network for all administrator access."
+msgstr ""
+
+#: ./security-guide/section_case-studies-identity-management.xml:31(para)
+msgid "Alice also deploys the dashboard to manage many aspects of the cloud. She deploys the dashboard with HSTS to ensure that only HTTPS is used. The dashboard resides within an internal subdomain of the private network domain name system."
+msgstr ""
+
+#: ./security-guide/section_case-studies-identity-management.xml:37(para)
+msgid "Alice decides to use SPICE instead of VNC for the virtual console. She wants to take advantage of the emerging capabilities in SPICE."
+msgstr ""
+
+#: ./security-guide/section_case-studies-identity-management.xml:45(para)
+msgid "Because Bob must support authentication for the general public, he decides to use authentication based on a user name and password. He has concerns about brute force attacks attempting to crack user passwords, so he also uses an external authentication extension that throttles the number of failed login attempts. Bob's management network is separate from the other networks within his cloud, but can be reached from his corporate network through ssh. As recommended earlier, Bob requires administrators to use two-factor authentication on the Management network to reduce the risk of compromised administrator passwords."
+msgstr ""
+
+#: ./security-guide/section_case-studies-identity-management.xml:57(para)
+msgid "Bob also deploys the dashboard to manage many aspects of the cloud. He deploys the dashboard with HSTS to ensure that only HTTPS is used. He has ensured that the dashboard is deployed on a second-level domain due to the limitations of the same-origin policy. He also disables <placeholder-1/> to prevent resource exhaustion."
+msgstr ""
+
+#: ./security-guide/section_case-studies-identity-management.xml:64(para)
+msgid "Bob decides to use VNC for his virtual console for its maturity and security features."
+msgstr ""
+
 #: ./security-guide/ch_dashboard.xml:9(para)
 msgid "Horizon is the OpenStack dashboard that provides users a self-service portal to provision their own resources within the limits set by administrators. These include provisioning users, defining instance flavors, uploading VM images, managing networks, setting up security groups, starting instances, and accessing the instances through a console."
 msgstr ""
@@ -3047,14 +3135,6 @@ msgstr ""
 
 #: ./security-guide/section_tls-proxies-and-http-services.xml:291(para)
 msgid "Configuring TLS servers for perfect forward secrecy requires careful planning around key size, session IDs, and session tickets. In addition, for multi-server deployments, shared state is also an important consideration. The example configurations for Apache and Nginx above disable the session tickets options to help mitigate some of these concerns. Real-world deployments may desire to enable this feature for improved performance. This can be done securely, but would require special consideration around key management. Such configurations are beyond the scope of this guide. We suggest reading <link href=\"https://www.imperialviolet.org/2013/06/27/botchingpfs.html\"> How to botch TLS forward secrecy by ImperialViolet</link> as a starting place for understanding the problem space."
-msgstr ""
-
-#: ./security-guide/section_dashboard-allowed-hosts.xml:8(title)
-msgid "Allowed hosts"
-msgstr ""
-
-#: ./security-guide/section_dashboard-allowed-hosts.xml:9(para)
-msgid "Configure the <placeholder-1/> setting with the domain or domains where the dashboard is available. Failure to configure this setting (especially if not following the recommendation above regarding second level domains) opens the dashboard to a number of serious attacks. Wild card domains should be avoided."
 msgstr ""
 
 #: ./security-guide/ch_api-endpoints.xml:7(title)
@@ -4087,50 +4167,6 @@ msgstr ""
 msgid "These should be put in place to monitor and report on changes to system, hypervisor, and application configuration files such as <filename>/etc/pam.d/system-auth</filename> and <filename> /etc/keystone.conf</filename>, as well as kernel modules (such as virtio). Best practice is to use the <placeholder-1/> command to show what is regularly being loaded on a system to help determine what should or should not be included in FIM checks."
 msgstr ""
 
-#: ./security-guide/section_dashboard-basic-web-server-configuration.xml:8(title)
-msgid "Basic web server configuration"
-msgstr ""
-
-#: ./security-guide/section_dashboard-basic-web-server-configuration.xml:9(para)
-msgid "The dashboard should be deployed as a Web Services Gateway Interface (WSGI) application behind an HTTPS proxy such as Apache or nginx. If Apache is not already in use, we recommend nginx since it is lightweight and easier to configure correctly."
-msgstr ""
-
-#: ./security-guide/section_dashboard-basic-web-server-configuration.xml:14(para)
-msgid "When using nginx, we recommend <link href=\"http://docs.gunicorn.org/en/latest/deploy.html\">gunicorn</link> as the WSGI host with an appropriate number of synchronous workers. When using Apache, we recommend <literal>mod_wsgi</literal> to host the dashboard."
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:8(title)
-msgid "Case studies: Identity management"
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:9(para)
-msgid "Earlier in <xref linkend=\"introduction-to-case-studies\"/> we introduced the Alice and Bob case studies where Alice is deploying a private government cloud and Bob is deploying a public cloud each with different security requirements. Here we discuss how Alice and Bob would address configuration of OpenStack core services. These include the Identity service, dashboard, and Compute services. Alice will be concerned with integration into the existing government directory services, while Bob will need to provide access to the public."
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:22(para)
-msgid "Alice's enterprise has a well-established directory service with two-factor authentication for all users. She configures the Identity service to support an external authentication service supporting authentication with government-issued access cards. She also uses an external LDAP server to provide role information for the roles that are integrated with the access control policy. Due to FedRAMP compliance requirements, Alice implements two-factor authentication on the management network for all administrator access."
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:33(para)
-msgid "Alice also deploys the dashboard to manage many aspects of the cloud. She deploys the dashboard with HSTS to ensure that only HTTPS is used. The dashboard resides within an internal subdomain of the private network domain name system."
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:39(para)
-msgid "Alice decides to use SPICE instead of VNC for the virtual console. She wants to take advantage of the emerging capabilities in SPICE."
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:47(para)
-msgid "Because Bob must support authentication for the general public, he decides to use authentication based on a user name and password. He has concerns about brute force attacks attempting to crack user passwords, so he also uses an external authentication extension that throttles the number of failed login attempts. Bob's management network is separate from the other networks within his cloud, but can be reached from his corporate network through ssh. As recommended earlier, Bob requires administrators to use two-factor authentication on the Management network to reduce the risk of compromised administrator passwords."
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:59(para)
-msgid "Bob also deploys the dashboard to manage many aspects of the cloud. He deploys the dashboard with HSTS to ensure that only HTTPS is used. He has ensured that the dashboard is deployed on a second-level domain due to the limitations of the same-origin policy. He also disables <placeholder-1/> to prevent resource exhaustion."
-msgstr ""
-
-#: ./security-guide/ch_case-studies-identity-management.xml:66(para)
-msgid "Bob decides to use VNC for his virtual console for its maturity and security features."
-msgstr ""
-
 #: ./security-guide/section_hypervisor-selection.xml:12(title)
 msgid "Hypervisor selection"
 msgstr ""
@@ -5121,18 +5157,6 @@ msgstr ""
 msgid "Introduce privacy considerations specific to OpenStack and cloud environments."
 msgstr ""
 
-#: ./security-guide/section_dashboard-https.xml:8(title)
-msgid "HTTPS"
-msgstr ""
-
-#: ./security-guide/section_dashboard-https.xml:9(para)
-msgid "Deploy the dashboard behind a secure <glossterm>HTTPS</glossterm> server by using a valid, trusted certificate from a recognized certificate authority (CA). Private organization-issued certificates are only appropriate when the root of trust is pre-installed in all user browsers."
-msgstr ""
-
-#: ./security-guide/section_dashboard-https.xml:16(para)
-msgid "Configure HTTP requests to the dashboard domain to redirect to the fully qualified HTTPS URL."
-msgstr ""
-
 #: ./security-guide/section_identity-policies.xml:8(title)
 msgid "Policies"
 msgstr ""
@@ -6052,7 +6076,7 @@ msgid "A security group is a container for security group rules. Security groups
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:72(para)
-msgid "When using the security group API through OpenStack Compute, security groups are applied to all virtual interface ports on an instance. The reason for this is that OpenStack Compute security group APIs are instance based and not virtual interface port based as OpenStack Networking."
+msgid "When using the OpenStack Compute API to modify security groups, the updated security group applies to all virtual interface ports on an instance. This is due to the OpenStack Compute security group APIs being instance-based rather than port-based, as found in OpenStack Networking."
 msgstr ""
 
 #: ./security-guide/section_networking-services-security-best-practices.xml:75(title)
@@ -6433,34 +6457,6 @@ msgstr ""
 
 #: ./security-guide/section_key-management.xml:21(para)
 msgid "PyKMIP library https://github.com/OpenKMIP/PyKMIP"
-msgstr ""
-
-#: ./security-guide/section_dashboard-cross-site-request-forgery-csrf.xml:8(title)
-msgid "Cross Site Request Forgery (CSRF)"
-msgstr ""
-
-#: ./security-guide/section_dashboard-cross-site-request-forgery-csrf.xml:9(para)
-msgid "Django has dedicated middleware for cross-site request forgery (CSRF). For further details, see the <link href=\"https://docs.djangoproject.com/\"> Django documentation</link>."
-msgstr ""
-
-#: ./security-guide/section_dashboard-cross-site-request-forgery-csrf.xml:12(para)
-msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are JavaScript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
-msgstr ""
-
-#: ./security-guide/section_dashboard-http-strict-transport-security-hsts.xml:8(title)
-msgid "HTTP Strict Transport Security (HSTS)"
-msgstr ""
-
-#: ./security-guide/section_dashboard-http-strict-transport-security-hsts.xml:9(para)
-msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
-msgstr ""
-
-#: ./security-guide/section_dashboard-http-strict-transport-security-hsts.xml:12(para)
-msgid "If you are using an HTTPS proxy in front of your web server, rather than using an HTTP server with HTTPS functionality, modify the <literal>SECURE_PROXY_SSL_HEADER</literal> variable. Refer to the <link href=\"https://docs.djangoproject.com/\">Django documentation</link> for information about modifying the <literal>SECURE_PROXY_SSL_HEADER</literal> variable."
-msgstr ""
-
-#: ./security-guide/section_dashboard-http-strict-transport-security-hsts.xml:20(para)
-msgid "See the chapter on PKI/SSL Everywhere for more specific recommendations and server configurations for HTTPS configurations, including the configuration of HSTS."
 msgstr ""
 
 #: ./security-guide/bk-openstack-security-guide.xml:7(title)
@@ -7097,24 +7093,32 @@ msgstr ""
 msgid "Hacking servers that are turned off"
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:7(title)
-msgid "Domain names"
+#: ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:8(title)
+msgid "Front-end caching and session back end"
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:8(para)
-msgid "Many organizations typically deploy web applications at subdomains of an overarching organization domain. It is natural for users to expect a domain of the form <uri>openstack.example.org</uri>. In this context, there are often applications which are deployed in the same second-level namespace. This name structure is convenient and simplifies name server maintenance."
+#: ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:10(title)
+msgid "Front-end caching"
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:15(para)
-msgid "We strongly recommend deploying dashboard to a <emphasis>second-level domain</emphasis>, such as <uri>https://example.com</uri>, rather than deploying dashboard on a <emphasis>shared subdomain</emphasis> of any level, for example <uri>https://openstack.example.org</uri> or <uri>https://horizon.openstack.example.org</uri>. We also advise against deploying to bare internal domains like <uri>https://horizon/</uri>. These recommendations are based on the limitations of browser same-origin-policy."
+#: ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:11(para)
+msgid "Since the dashboard is rendering dynamic content passed directly from OpenStack API requests, we do not recommend front-end caching layers such as varnish. In Django, static media is directly served from Apache or nginx and already benefits from web host caching."
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:24(para)
-msgid "Recommendations given in this guide cannot effectively guard against known attacks if you deploy the dashboard in a domain that also hosts user-generated content, even when this content resides on a separate sub-domain. User-generated content can consist of scripts, images, or uploads of any type. Most major web presences, including googleusercontent.com, fbcdn.com, github.io, and twimg.co, use this approach to segregate user-generated content from cookies and security tokens."
+#: ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:18(title)
+msgid "Session back end"
 msgstr ""
 
-#: ./security-guide/section_dashboard-domain-names.xml:31(para)
-msgid "If you do not follow this recommendation regarding second-level domains, avoid a cookie-backed session store and employ HTTP Strict Transport Security (HSTS). When deployed on a subdomain, the dashboard's security is equivalent to the least secure application deployed on the same second-level domain."
+#: ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:19(para)
+msgid "The default session back end for horizon (<literal>django.contrib.sessions.backends.signed_cookies</literal>) saves user data in signed, but unencrypted cookies stored in the browser. Due to the fact that each dashboard instance is stateless, the previously mentioned methodology provides the ability to implement the most simple session back-end scaling."
+msgstr ""
+
+#: ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:25(para)
+msgid "It should be noted that with this type of implementation sensitive access tokens will be stored in the browser and will be transmitted with each request made. The back end ensures the integrity of session data, even though the transmitted data is only encrypted by HTTPS."
+msgstr ""
+
+#: ./security-guide/section_dashboard-front-end-caching-session-back-end.xml:30(para)
+msgid "If your architecture allows it, we recommend using <literal>django.contrib.sessions.backends.cache</literal> as your session back end with memcache as the cache. Memcache must not be exposed publicly, and should communicate over a secured private channel. If you choose to use the signed cookies back end, refer to the Django documentation to understand the security trade-offs."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.

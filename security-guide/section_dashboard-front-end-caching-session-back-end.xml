@@ -8,11 +8,12 @@
     <title>Front-end caching and session back end</title>
     <section xml:id="dashboard-front-end-caching">
         <title>Front-end caching</title>
-        <para>Since the dashboard is rendering dynamic content passed directly
-          from OpenStack API requests, we do not recommend front-end
-          caching layers such as varnish. In Django, static media is
-          directly served from Apache or nginx and already benefits from
-          web host caching.</para>
+        <para>We do not recommend using front-end caching tools with the
+          dashboard. The dashboard is rendering dynamic content resulting
+          directly from OpenStack API requests and front-end caching layers
+          such as varnish can prevent the correct content from being
+          displayed. In Django, static media is directly served from Apache
+          or nginx and already benefits from web host caching.</para>
     </section>
     <section xml:id="dashboard-session-back-end">
         <title>Session back end</title>

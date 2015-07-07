@@ -28,11 +28,11 @@ log verbosity for the purposes of debugging or extended log collection.
 Depending on permissions and log storage location, these values could
 be read by an intruder to the system. The credentials will provide
 anyone who controls them access to the ironic API server's
-administrative functions. Additionally, they could be used in conjuction
-with OpenStack Identity functions to issue new authentication tokens or
-perform further malicious activity depending on the scope of the
-administrative account access (for example, modifying account
-permissions).
+administrative functions. Additionally, they could be used in
+conjunction with OpenStack Identity functions to issue new
+authentication tokens or perform further malicious activity depending
+on the scope of the administrative account access (for example,
+modifying account permissions).
 
 All nova installations that have values defined for the
 `admin_password` or `admin_auth_token` options in the `ironic` section,

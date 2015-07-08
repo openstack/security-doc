@@ -3,9 +3,9 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="5.0"
-  xml:id="identity-future">
+  xml:id="identity-domains">
   <?dbhtml stop-chunking?>
-    <title>Future</title>
+    <title>Domains</title>
     <para>Domains are high-level containers for projects, users and
       groups. As such, they can be used to centrally manage all
       keystone-based identity components. With the introduction of
@@ -19,10 +19,20 @@
       different domains may be represented in different authentication
       back ends and even have different attributes that must be mapped
       to a single set of roles and privileges, that are used in the
-      policy definitions to access the various service
-      resources.</para>
+      policy definitions to access the various service resources.</para>
     <para>Where a rule may specify access to only admin users and
       users belonging to the tenant, the mapping may be trivial. In
       other scenarios the cloud administrator may need to approve the
       mapping routines per tenant.</para>
+    <para>Domain-specific authentication drivers allow the Identity service
+      to be configured for multiple domains using domain-specific configuration
+      files. Enabling the drivers and setting the domain-specific
+      configuration file location occur in the <literal>[identity]</literal>
+      section of the <filename>keystone.conf</filename> file:</para>
+    <programlisting>[identity]
+domain_specific_drivers_enabled = <replaceable>True</replaceable>
+domain_config_dir = /etc/keystone/domains</programlisting>
+    <para>Any domains without a domain-specific configuration file
+      will use options in the primary <filename>keystone.conf</filename>
+      file.</para>
 </section>

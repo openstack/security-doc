@@ -27,13 +27,14 @@
       <para>Django has dedicated middleware for cross-site request forgery (CSRF).
         For further details, see the <link xlink:href="https://docs.djangoproject.com/">
         Django documentation</link>.</para>
-      <para>Dashboard is designed to discourage developers from
-        introducing cross-site scripting vulnerabilities with custom
-        dashboards. However, it is important to audit custom dashboards,
-        especially ones that are JavaScript-heavy for inappropriate use
-        of the <literal>@csrf_exempt</literal> decorator. Dashboards
-        which do not follow these recommended security settings should
-        be carefully evaluated before restrictions are relaxed.</para>
+      <para>The OpenStack dashboard is designed to discourage
+      developers from introducing cross-site scripting vulnerabilities
+      with custom dashboards as threads can be introduced. Dashboards
+      that utilize multiple instances of JavaScript should be audited
+      for vulnerabilities such as inappropriate use of the
+      <literal>@csrf_exempt</literal> decorator. Any dashboard that
+      does not follow these recommended security settings should be
+      carefully evaluated before restrictions are relaxed.</para>
   </section>
   <section xml:id="dashboard-https">
       <title>HTTPS</title>

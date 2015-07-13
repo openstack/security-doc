@@ -65,11 +65,12 @@
     <section xml:id="object-storage-first-thing-to-secure-the-network">
         <title>First thing to secure: the network</title>
         <para>Securing the Object Storage service begins with securing the
-            networking component. The rsync protocol is used between storage
-            service nodes to replicate data for high availability. In addition,
-            the proxy service communicates with the storage service when
-            relaying data back and forth between the client end-point and the
-            cloud environment.</para>
+            networking component. If you skipped the networking chapter,
+            go back to <xref linkend="networking"/>.</para>
+        <para>The rsync protocol is used between storage service nodes to
+            replicate data for high availability. In addition, the proxy
+            service communicates with the storage service when relaying data
+            back and forth between the client end-point and the cloud environment.</para>
         <caution>
             <para>Object Storage does not employ encryption or authentication
             with inter-node communications. This is why you see a

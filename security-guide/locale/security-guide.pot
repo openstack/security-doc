@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-09 06:08+0000\n"
+"POT-Creation-Date: 2015-07-15 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2616,34 +2616,34 @@ msgid "Django has dedicated middleware for cross-site request forgery (CSRF). Fo
 msgstr ""
 
 #: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:30(para)
-msgid "Dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards. However, it is important to audit custom dashboards, especially ones that are JavaScript-heavy for inappropriate use of the <literal>@csrf_exempt</literal> decorator. Dashboards which do not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
+msgid "The OpenStack dashboard is designed to discourage developers from introducing cross-site scripting vulnerabilities with custom dashboards as threads can be introduced. Dashboards that utilize multiple instances of JavaScript should be audited for vulnerabilities such as inappropriate use of the <literal>@csrf_exempt</literal> decorator. Any dashboard that does not follow these recommended security settings should be carefully evaluated before restrictions are relaxed."
 msgstr ""
 
-#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:39(title)
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:40(title)
 msgid "HTTPS"
 msgstr ""
 
-#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:40(para)
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:41(para)
 msgid "Deploy the dashboard behind a secure <glossterm>HTTPS</glossterm> server by using a valid, trusted certificate from a recognized certificate authority (CA). Private organization-issued certificates are only appropriate when the root of trust is pre-installed in all user browsers."
 msgstr ""
 
-#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:47(para)
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:48(para)
 msgid "Configure HTTP requests to the dashboard domain to redirect to the fully qualified HTTPS URL."
 msgstr ""
 
-#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:51(title)
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:52(title)
 msgid "HTTP Strict Transport Security (HSTS)"
 msgstr ""
 
-#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:52(para)
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:53(para)
 msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
 msgstr ""
 
-#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:55(para)
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:56(para)
 msgid "If you are using an HTTPS proxy in front of your web server, rather than using an HTTP server with HTTPS functionality, modify the <literal>SECURE_PROXY_SSL_HEADER</literal> variable. Refer to the <link xlink:href=\"https://docs.djangoproject.com/\">Django documentation</link> for information about modifying the <literal>SECURE_PROXY_SSL_HEADER</literal> variable."
 msgstr ""
 
-#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:63(para)
+#: ./security-guide/section_dashboard-https-hsts-xss-ssrf.xml:64(para)
 msgid "See the chapter on PKI/SSL Everywhere for more specific recommendations and server configurations for HTTPS configurations, including the configuration of HSTS."
 msgstr ""
 
@@ -4541,7 +4541,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ./security-guide/ch_object-storage.xml:109(None) ./security-guide/ch_object-storage.xml:114(None)
+#: ./security-guide/ch_object-storage.xml:110(None) ./security-guide/ch_object-storage.xml:115(None)
 msgid "@@image: 'static/swift_network_diagram-2.png'; md5=69f8effe3f5d0f3cbccfb8c5a5dd299e"
 msgstr ""
 
@@ -4569,15 +4569,15 @@ msgstr ""
 msgid "Storage services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:37(para) ./security-guide/ch_object-storage.xml:169(td)
+#: ./security-guide/ch_object-storage.xml:37(para) ./security-guide/ch_object-storage.xml:170(td)
 msgid "Account service"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:40(para) ./security-guide/ch_object-storage.xml:174(td)
+#: ./security-guide/ch_object-storage.xml:40(para) ./security-guide/ch_object-storage.xml:175(td)
 msgid "Container service"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:43(para) ./security-guide/ch_object-storage.xml:179(td)
+#: ./security-guide/ch_object-storage.xml:43(para) ./security-guide/ch_object-storage.xml:180(td)
 msgid "Object service"
 msgstr ""
 
@@ -4594,226 +4594,230 @@ msgid "First thing to secure: the network"
 msgstr ""
 
 #: ./security-guide/ch_object-storage.xml:67(para)
-msgid "Securing the Object Storage service begins with securing the networking component. The rsync protocol is used between storage service nodes to replicate data for high availability. In addition, the proxy service communicates with the storage service when relaying data back and forth between the client end-point and the cloud environment."
+msgid "Securing the Object Storage service begins with securing the networking component. If you skipped the networking chapter, go back to <xref linkend=\"networking\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:74(para)
+#: ./security-guide/ch_object-storage.xml:70(para)
+msgid "The rsync protocol is used between storage service nodes to replicate data for high availability. In addition, the proxy service communicates with the storage service when relaying data back and forth between the client end-point and the cloud environment."
+msgstr ""
+
+#: ./security-guide/ch_object-storage.xml:75(para)
 msgid "Object Storage does not employ encryption or authentication with inter-node communications. This is why you see a \"Private Switch\" or private network ([V]LAN) in the architecture diagrams. This data domain should be separate from other OpenStack data networks as well. For further discussion on security domains please see <xref linkend=\"security-boundaries-and-threats\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:84(para)
+#: ./security-guide/ch_object-storage.xml:85(para)
 msgid "<emphasis>Rule:</emphasis> Use a private (V)LAN network segment for your storage nodes in the data domain."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:88(para)
+#: ./security-guide/ch_object-storage.xml:89(para)
 msgid "This necessitates that the proxy nodes have dual interfaces (physical or virtual):"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:92(para)
+#: ./security-guide/ch_object-storage.xml:93(para)
 msgid "One as a \"public\" interface for consumers to reach"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:96(para)
+#: ./security-guide/ch_object-storage.xml:97(para)
 msgid "Another as a \"private\" interface with access to the storage nodes"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:100(para)
+#: ./security-guide/ch_object-storage.xml:101(para)
 msgid "The following figure demonstrates one possible network architecture."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:103(title)
+#: ./security-guide/ch_object-storage.xml:104(title)
 msgid "Object Storage network architecture with a management node (OSAM)"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:121(title)
+#: ./security-guide/ch_object-storage.xml:122(title)
 msgid "Securing services: general"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:123(title)
+#: ./security-guide/ch_object-storage.xml:124(title)
 msgid "Run services as non-root user"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:124(para)
+#: ./security-guide/ch_object-storage.xml:125(para)
 msgid "It is recommended that you configure each Object Storage service to run under a non-root (UID 0) service account. One recommendation is the user name \"swift\" with the primary group \"swift.\" Object Storage services include, for example, 'proxy-server', 'container-server', 'account-server'. Detailed steps for setup and configuration can be found in the <link xlink:href=\"http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_swift.html\">Add Object Storage chapter</link> of the <citetitle>Installation Guide</citetitle> in the <link xlink:href=\"http://docs.openstack.org\">OpenStack Documentation index</link>. (The link defaults to the Ubuntu version.)"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:140(title)
+#: ./security-guide/ch_object-storage.xml:141(title)
 msgid "File permissions"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:141(para)
+#: ./security-guide/ch_object-storage.xml:142(para)
 msgid "The <filename>/etc/swift</filename> directory contains information about the ring topology and environment configuration. The following permissions are recommended:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:148(para)
+#: ./security-guide/ch_object-storage.xml:149(para)
 msgid "This restricts only root to be able to modify configuration files while allowing the services to read them through their group membership in the 'swift' group."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:156(title)
+#: ./security-guide/ch_object-storage.xml:157(title)
 msgid "Securing storage services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:157(para)
+#: ./security-guide/ch_object-storage.xml:158(para)
 msgid "The following are the default listening ports for the various storage services:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:162(td)
+#: ./security-guide/ch_object-storage.xml:163(td)
 msgid "Service name"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:163(td)
+#: ./security-guide/ch_object-storage.xml:164(td)
 msgid "Port"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:164(td)
+#: ./security-guide/ch_object-storage.xml:165(td)
 msgid "Type"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:170(td)
+#: ./security-guide/ch_object-storage.xml:171(td)
 msgid "6002"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:171(td) ./security-guide/ch_object-storage.xml:176(td) ./security-guide/ch_object-storage.xml:181(td) ./security-guide/ch_object-storage.xml:189(td)
+#: ./security-guide/ch_object-storage.xml:172(td) ./security-guide/ch_object-storage.xml:177(td) ./security-guide/ch_object-storage.xml:182(td) ./security-guide/ch_object-storage.xml:190(td)
 msgid "TCP"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:175(td)
+#: ./security-guide/ch_object-storage.xml:176(td)
 msgid "6001"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:180(td)
+#: ./security-guide/ch_object-storage.xml:181(td)
 msgid "6000"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:184(para)
+#: ./security-guide/ch_object-storage.xml:185(para)
 msgid "If ssync is used instead of rsync, the Object service port is used for maintaining durability."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:184(td)
+#: ./security-guide/ch_object-storage.xml:185(td)
 msgid "Rsync<placeholder-1/>"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:188(td)
+#: ./security-guide/ch_object-storage.xml:189(td)
 msgid "873"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:193(para)
+#: ./security-guide/ch_object-storage.xml:194(para)
 msgid "Authentication does not take place at the storage nodes. If someone was able to connect to a storage node on one of these ports they could access or modify data without authentication. In order to secure against this issue you should follow the recommendations given previously about using a private storage network."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:201(title)
+#: ./security-guide/ch_object-storage.xml:202(title)
 msgid "Object Storage \"account\" terminology"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:202(para)
+#: ./security-guide/ch_object-storage.xml:203(para)
 msgid "An Object Storage \"account\" is not a user account or credential. The following explains the relations:"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:208(td)
+#: ./security-guide/ch_object-storage.xml:209(td)
 msgid "OpenStack Object Storage account"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:209(td)
+#: ./security-guide/ch_object-storage.xml:210(td)
 msgid "Collection of containers; not user accounts or authentication. Which users are associated with the account and how they may access it depends on the authentication system used. See <xref linkend=\"object-storage-object-storage-authentication\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:218(td)
+#: ./security-guide/ch_object-storage.xml:219(td)
 msgid "OpenStack Object Storage containers"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:219(td)
+#: ./security-guide/ch_object-storage.xml:220(td)
 msgid "Collection of objects. Metadata on the container is available for ACLs. The meaning of ACLs is dependent on the authentication system used."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:225(td)
+#: ./security-guide/ch_object-storage.xml:226(td)
 msgid "OpenStack Object Storage objects"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:226(td)
+#: ./security-guide/ch_object-storage.xml:227(td)
 msgid "The actual data objects. ACLs at the object level are also possible with metadata and are dependent on the authentication system used."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:234(para)
+#: ./security-guide/ch_object-storage.xml:235(para)
 msgid "<?dbhtml bgcolor=\"#DDFADE\" ?><?dbfo bgcolor=\"#DDFADE\" ?> Another way of thinking about the above would be: A single shelf (account) holds zero or more buckets (containers) which each hold zero or more objects. A garage (Object Storage cluster) may have multiple shelves (accounts) with each shelf belonging to zero or more users."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:243(para)
+#: ./security-guide/ch_object-storage.xml:244(para)
 msgid "At each level you may have ACLs that dictate who has what type of access. ACLs are interpreted based on what authentication system is in use. The two most common types of authentication providers used are Identity service (keystone) and TempAuth. Custom authentication providers are also possible. Please see <xref linkend=\"object-storage-object-storage-authentication\"/> for more information."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:255(title)
+#: ./security-guide/ch_object-storage.xml:256(title)
 msgid "Securing proxy services"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:256(para)
+#: ./security-guide/ch_object-storage.xml:257(para)
 msgid "A proxy node should have at least two interfaces (physical or virtual): one public and one private. Firewalls or service binding might protect the public interface. The public facing service is an HTTP web server that processes end-point client requests, authenticates them, and performs the appropriate action. The private interface does not require any listening services but is instead used to establish outgoing connections to storage nodes on the private storage network."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:267(title)
+#: ./security-guide/ch_object-storage.xml:268(title)
 msgid "HTTP listening port"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:268(para)
+#: ./security-guide/ch_object-storage.xml:269(para)
 msgid "You should configure your web service as a non-root (no UID 0) user such as \"swift\" mentioned before. The use of a port greater than 1024 is required to make this easy and avoid running any part of the web container as root. Doing so is not a burden as end-point clients are not typically going to type in the URL manually into a web browser to browse around in the object storage. Additionally, for clients using the HTTP REST API and performing authentication they will normally automatically grab the full REST API URL they are to use as provided by the authentication response. OpenStack's REST API allows for a client to authenticate to one URL and then be told to use a completely different URL for the actual service. Example: Client authenticates to <uri>https://identity.cloud.example.org:55443/v1/auth</uri> and gets a response with their authentication key and Storage URL (the URL of the proxy nodes or load balancer) of <uri>https://swift.cloud.example.org:44443/v1/AUTH_8980</uri>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:288(para)
+#: ./security-guide/ch_object-storage.xml:289(para)
 msgid "The method for configuring your web server to start and run as a non-root user varies by web server and OS."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:293(title)
+#: ./security-guide/ch_object-storage.xml:294(title)
 msgid "Load balancer"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:294(para)
+#: ./security-guide/ch_object-storage.xml:295(para)
 msgid "If the option of using Apache is not feasible or for performance you wish to offload your TLS work you may employ a dedicated network device load balancer. This is also the common way to provide redundancy and load balancing when using multiple proxy nodes."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:299(para)
+#: ./security-guide/ch_object-storage.xml:300(para)
 msgid "If you choose to offload your TLS, ensure that the network link between the load balancer and your proxy nodes are on a private (V)LAN segment such that other nodes on the network (possibly compromised) cannot wiretap (sniff) the unencrypted traffic. If such a breach were to occur the attacker could gain access to end-point client or cloud administrator credentials and access the cloud data."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:307(para)
+#: ./security-guide/ch_object-storage.xml:308(para)
 msgid "The authentication service you use, such as Identity service (keystone) or TempAuth, will determine how you configure a different URL in the responses to end-point clients so they use your load balancer instead of an individual proxy node."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:316(title)
+#: ./security-guide/ch_object-storage.xml:317(title)
 msgid "Object Storage authentication"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:317(para)
+#: ./security-guide/ch_object-storage.xml:318(para)
 msgid "Object Storage uses a WSGI model to provide for a middleware capability that not only provides general extensibility but is also used for authentication of end-point clients. The authentication provider defines what roles and user types exist. Some use traditional user name and password credentials while others may leverage API key tokens or even client-side x.509 certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:325(para)
+#: ./security-guide/ch_object-storage.xml:326(para)
 msgid "Object Storage comes with two authentication middleware modules by default, either of which can be used as sample code for developing a custom authentication middleware."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:329(title)
+#: ./security-guide/ch_object-storage.xml:330(title)
 msgid "TempAuth"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:330(para)
+#: ./security-guide/ch_object-storage.xml:331(para)
 msgid "TempAuth is the default authentication for Object Storage. In contrast to Identity it stores the user accounts, credentials, and metadata in object storage itself. More information can be found in the section <link xlink:href=\"http://docs.openstack.org/developer/swift/overview_auth.html\">The Auth System</link> of the Object Storage (swift) documentation."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:338(title)
+#: ./security-guide/ch_object-storage.xml:339(title)
 msgid "Keystone"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:339(para)
+#: ./security-guide/ch_object-storage.xml:340(para)
 msgid "Keystone is the commonly used Identity provider in OpenStack. It may also be used for authentication in Object Storage. Coverage of securing keystone is already provided in <xref linkend=\"identity\"/>."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:348(title)
+#: ./security-guide/ch_object-storage.xml:349(title)
 msgid "Other notable items"
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:349(para)
+#: ./security-guide/ch_object-storage.xml:350(para)
 msgid "In <filename>/etc/swift/swift.conf</filename> on every node there is a <placeholder-1/> setting and a <placeholder-2/> setting. These are provided to reduce the chance of hash collisions for objects being stored and avert one user overwriting the data of another user."
 msgstr ""
 
-#: ./security-guide/ch_object-storage.xml:356(para)
+#: ./security-guide/ch_object-storage.xml:357(para)
 msgid "This value should be initially set with a cryptographically secure random number generator and consistent across all nodes. Ensure that it is protected with proper ACLs and that you have a backup copy to avoid data loss."
 msgstr ""
 

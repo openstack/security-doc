@@ -25,6 +25,7 @@
 
     <xi:include href="section_hypervisor-selection.xml"/>
     <xi:include href="section_hardening-the-virtualization-layers.xml"/>
+    <xi:include href="section_compute-hardening-deployments.xml"/>
     <xi:include href="section_compute-how-to-select-virtual-consoles.xml"/>
     <xi:include href="section_case-studies-instance-isolation.xml"/>
 

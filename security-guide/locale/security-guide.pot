@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-15 06:01+0000\n"
+"POT-Creation-Date: 2015-07-20 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5961,6 +5961,30 @@ msgstr ""
 
 #: ./security-guide/ch_documentation.xml:9(para)
 msgid "The system documentation for an OpenStack cloud deployment should follow the templates and best practices for the Enterprise Information Technology System in your organization. Organizations often have compliance requirements which may require an overall System Security Plan to inventory and document the architecture of a given system. There are common challenges across the industry related to documenting the dynamic cloud infrastructure and keeping the information up-to-date."
+msgstr ""
+
+#: ./security-guide/section_compute-hardening-deployments.xml:8(title)
+msgid "Hardening Compute deployments"
+msgstr ""
+
+#: ./security-guide/section_compute-hardening-deployments.xml:9(para)
+msgid "One of the main security concerns with any OpenStack deployment is the security and controls around sensitive files, such as the <filename>nova.conf</filename> file. Normally contained in the <filename>/etc</filename> directory, this configuration file contains many sensitive options including configuration details and service passwords. All such sensitive files should be given strict file level permissions, and monitored for changes through file integrity monitoring (FIM) tools such as iNotify or Samhain. These utilities will take a hash of the target file in a known good state, and then periodically take a new hash of the file and compare it to the known good hash. An alert can be created if it was found to have been modified unexpectedly."
+msgstr ""
+
+#: ./security-guide/section_compute-hardening-deployments.xml:23(para)
+msgid "The permissions of a file can be examined my moving into the directory the file is contained in and running the <placeholder-1/> command. This will show the permissions, owner, and group that have access to the file, as well as other information such as the last time the file was modified and when it was created."
+msgstr ""
+
+#: ./security-guide/section_compute-hardening-deployments.xml:31(para)
+msgid "The <filename>/var/lib/nova</filename> directory is used to hold details about the instances on a given Compute host. This directory should be considered sensitive as well, with strictly enforced file permissions. Additionally, it should be backed up regularly as it contains information and metadata for the instances associated with that host."
+msgstr ""
+
+#: ./security-guide/section_compute-hardening-deployments.xml:39(para)
+msgid "If your deployment does not require full virtual machine backups, we recommend excluding the <filename>/var/lib/nova/instances </filename> directory as it will be as large as the combined space of each vm running on that node. If your deployment does require full vm backups, you will need to ensure this directory is backed up successfully."
+msgstr ""
+
+#: ./security-guide/section_compute-hardening-deployments.xml:47(para)
+msgid "Monitoring is a critical component of IT infrastructure, and we recommend the <link xlink:href=\"http://docs.openstack.org/kilo/config-reference/content/section_nova-logs.html\"> Compute logfiles</link> be monitored and analyzed so that meaningful alerts can be created."
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.

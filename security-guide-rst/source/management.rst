@@ -1,3 +1,20 @@
 ==========
 Management
 ==========
+
+A cloud deployment is a living system. Machines age and fail, software
+becomes outdated, vulnerabilities are discovered. When errors or
+omissions are made in configuration, or when software fixes must be
+applied, these changes must be made in a secure, but convenient,
+fashion. These changes are typically solved through configuration
+management.
+
+Likewise, it is important to protect the cloud deployment from being
+configured or manipulated by malicious entities. With many systems in a
+cloud employing compute and networking virtualization, there are
+distinct challenges applicable to OpenStack which must be addressed
+through integrity lifecycle management.
+
+Finally, administrators must perform command and control over the cloud
+for various operational functions. It is important these command and
+control facilities are understood and secured.

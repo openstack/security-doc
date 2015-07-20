@@ -21,6 +21,24 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   introduction.rst
+   documentation.rst
+   management.rst
+   secure-communication.rst
+   api-endpoints.rst
+   identity.rst
+   dashboard.rst
+   compute.rst
+   block-storage.rst
+   networking.rst
+   object-storage.rst
+   messaging.rst
+   data-processing.rst
+   databases.rst
+   tenant-data.rst
+   instance-management.rst
+   monitoring-logging.rst
+   compliance.rst
    imported/app_support.rst
    imported/glossary.rst
 

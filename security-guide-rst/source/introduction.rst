@@ -10,3 +10,8 @@ into the repository, and is meant to reflect the current state of
 security within the OpenStack community and provide frameworks for
 decision making where listing specific security controls are not
 feasible due to complexity or other environment specific details.
+
+.. toctree::
+   :maxdepth: 2
+
+   introduction/acknowledgements.rst

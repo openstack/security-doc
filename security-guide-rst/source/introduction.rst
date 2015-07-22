@@ -15,3 +15,7 @@ feasible due to complexity or other environment specific details.
    :maxdepth: 2
 
    introduction/acknowledgements.rst
+   introduction/why-and-how-we-wrote-this-book.rst
+   introduction/introduction-to-openstack.rst
+   introduction/security-boundaries-and-threats.rst
+   introduction/introduction-to-case-studies.rst

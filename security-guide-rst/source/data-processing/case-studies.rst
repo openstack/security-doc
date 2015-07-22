@@ -2,7 +2,8 @@
 Case studies
 ============
 
-.. TODO (elmiko) fixup the introduction chapter link to point to case studies intro
+.. TODO (elmiko) fixup the introduction chapter link to point to case studies
+   intro
 
 Continuing with the studies described in :doc:`../introduction`, we
 present Alice and Bob's approaches to deploying the Data

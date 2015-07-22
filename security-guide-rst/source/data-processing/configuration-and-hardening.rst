@@ -15,7 +15,8 @@ TLS
 The Data processing service controller, like many other OpenStack
 controllers, can be configured to require TLS connections.
 
-.. TODO (elmiko) fixup secure communication chapter link to point to tls proxies section
+.. TODO (elmiko) fixup secure communication chapter link to point to tls
+   proxies section
 
 Pre-Kilo releases will require a TLS proxy as the controller does not
 allow direct TLS connections. Configuring TLS proxies is
@@ -90,7 +91,8 @@ used if requested, or an automated option exists which instructs the
 service to create a security group based on ports specified by the
 framework being accessed.
 
-.. TODO (elmiko) fixup networking chapter link to point to security groups section
+.. TODO (elmiko) fixup networking chapter link to point to security groups
+   section
 
 For production environments we recommend controlling the security
 groups manually and creating a set of group rules that are appropriate

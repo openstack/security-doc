@@ -286,7 +286,8 @@ following lines to the nova :file:`policy.json` file:
 Migration network
 -----------------
 
-.. TODO (elmiko) fixup introduction doc link to point to the security boundaries and threats section
+.. TODO (elmiko) fixup introduction doc link to point to the security
+   boundaries and threats section
 
 As a general practice, live migration traffic should be restricted
 to the management security domain, see :doc:`../introduction`.

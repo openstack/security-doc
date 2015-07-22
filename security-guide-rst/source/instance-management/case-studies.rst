@@ -2,7 +2,8 @@
 Case studies
 ============
 
-.. TODO (elmiko) fixup the introduction chapter link to point to case studies intro
+.. TODO (elmiko) fixup the introduction chapter link to point to case studies
+   intro
 
 Earlier in :doc:`../introduction` we introduced the Alice and Bob case
 studies where Alice is deploying a private government cloud and Bob is
@@ -14,7 +15,8 @@ instance migrations.
 Alice's private cloud
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO (elmiko) fixup the management chapter link to point to case studies section
+.. TODO (elmiko) fixup the management chapter link to point to case studies
+   section
 
 Earlier in :doc:`../management`,
 Alice issued a Request for Product (or RFP) to major hardware

@@ -11,3 +11,16 @@ validate user/project credentials with the identity service and, upon
 success, create and return a token with the token service. Further
 information can be found by reading the `Keystone Developer
 Documentation <http://docs.openstack.org/developer/keystone/index.html>`__.
+
+.. toctree::
+   :maxdepth: 2
+
+   identity/authentication.rst
+   identity/authentication-methods.rst
+   identity/authorization.rst
+   identity/policies.rst
+   identity/tokens.rst
+   identity/future.rst
+   identity/federated-keystone.rst
+   identity/checklist.rst
+   identity/case-studies.rst

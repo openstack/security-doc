@@ -10,3 +10,11 @@ supports a variety of database types (see `OpenStack Cloud Administrator
 Guide <http://docs.openstack.org/admin-guide-cloud>`__ for more
 information). The Security Guide currently focuses on PostgreSQL and
 MySQL.
+
+.. toctree::
+   :maxdepth: 2
+
+   databases/database-backend-considerations.rst
+   databases/database-access-control.rst
+   databases/database-transport-security.rst
+   databases/case-studies.rst

@@ -1,3 +1,50 @@
 ============
 Case studies
 ============
+
+Earlier in :doc:`../introduction/introduction-to-case-studies` we introduced
+the Alice and Bob case studies where Alice is deploying a private government
+cloud and Bob is deploying a public cloud each with different security
+requirements. Here we discuss how Alice and Bob would address providing
+networking services to the user.
+
+Alice's private cloud
+~~~~~~~~~~~~~~~~~~~~~
+
+Alice picks nova-network due to its stability. She understands a migration from
+nova-network to OpenStack Networking (neutron) will not be easy, and keeps a
+blueprint for the migration that is refreshed every OpenStack release. This
+will ensure that Alice and her team are up-to-date with OpenStack Networking
+features even though they are focusing on nova-network, and will allow the
+migration plan to mature with Alice's experience with OpenStack to help enable
+a smooth transition.
+
+Alice configures nova-network with the VLAN network manager so that each tenant
+will have its own virtual network, keeping in mind the VLAN trunking will
+stress the environment and the scaling limit of 4096 tenants. She is aware that
+all traffic will pass through the virtual networking appliance, however she is
+comfortable with this given the hardware positioned to support the VLAN
+trunking across the entire environment. Additionally, as the nova-network
+hypervisor enforces the security group rules with iptables, invalid traffic
+will not be an issue. To ensure this, she designates a quarterly review of the
+security group rules for each VLAN. She understands there is no overlapping IP
+space and has ensured the deployment systems have separate IP ranges with room
+for growth until the migration to OpenStack Networking occurs.
+
+Bob's public cloud
+~~~~~~~~~~~~~~~~~~
+
+A major business driver for Bob is to provide an advanced networking services
+to his customers. Bob's customers would like to deploy multi-tiered
+application stacks. This multi-tiered application are either existing
+enterprise application or newly deployed applications. Since Bob's public cloud
+is a multi-tenancy enterprise service, the choice to use for L2 isolation in
+this environment is to use overlay networking. Another aspect of Bob's cloud is
+the self-service aspect where the customer can provision available networking
+services as needed. These networking services encompass L2 networks, L3
+Routing, Network :term:`ACL` and NAT. It is important that per-tenant quota's
+be implemented in this environment.
+
+An added benefit with utilizing OpenStack Networking is when new advanced
+networking services become available, these new features can be easily provided
+to the end customers.

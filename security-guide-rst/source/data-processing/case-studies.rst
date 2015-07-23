@@ -2,12 +2,10 @@
 Case studies
 ============
 
-.. TODO (elmiko) fixup the introduction chapter link to point to case studies
-   intro
-
-Continuing with the studies described in :doc:`../introduction`, we
-present Alice and Bob's approaches to deploying the Data
-processing service for their users.
+Continuing with the studies described in
+:doc:`../introduction/introduction-to-case-studies` present Alice and
+Bob's approaches to deploying the Data processing service for their
+users.
 
 Alice's private cloud
 ~~~~~~~~~~~~~~~~~~~~~

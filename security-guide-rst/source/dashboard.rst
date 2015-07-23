@@ -16,3 +16,16 @@ reading the `Django documentation <https://docs.djangoproject.com/>`__.
 The dashboard ships with reasonable default security settings, and has good
 `deployment and configuration documentation
 <http://docs.openstack.org/developer/horizon/topics/deployment.html>`__.
+
+.. toctree::
+   :maxdepth: 2
+
+   dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst
+   dashboard/https-hsts-xss-ssrf.rst
+   dashboard/front-end-caching-session-back-end.rst
+   dashboard/static-media.rst
+   dashboard/secret-key.rst
+   dashboard/cookies.rst
+   dashboard/cross-origin-resource-sharing-cors.rst
+   dashboard/debug.rst
+   dashboard/case-studies.rst

@@ -39,8 +39,9 @@ Contents
    instance-management.rst
    monitoring-logging.rst
    compliance.rst
-   imported/app_support.rst
-   imported/glossary.rst
+
+   common/app_support.rst
+   common/glossary.rst
 
 Search in this guide
 ~~~~~~~~~~~~~~~~~~~~

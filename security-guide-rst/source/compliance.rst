@@ -23,3 +23,13 @@ This chapter has several objectives:
 
 -  Introduce privacy considerations specific to OpenStack and cloud
    environments.
+
+.. toctree::
+  :maxdepth: 2
+
+  compliance/overview.rst
+  compliance/understanding-the-audit-process.rst
+  compliance/compliance-activities.rst
+  compliance/certification-and-compliance-statements.rst
+  compliance/privacy.rst
+  compliance/case-studies.rst

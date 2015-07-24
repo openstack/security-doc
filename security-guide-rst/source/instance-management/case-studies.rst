@@ -2,15 +2,12 @@
 Case studies
 ============
 
-.. TODO (elmiko) fixup the introduction chapter link to point to case studies
-   intro
-
-Earlier in :doc:`../introduction` we introduced the Alice and Bob case
-studies where Alice is deploying a private government cloud and Bob is
-deploying a public cloud each with different security requirements.
-Here we discuss how Alice and Bob would architect their clouds with
-respect to instance entropy, scheduling instances, trusted images, and
-instance migrations.
+Earlier in :doc:`../introduction/introduction-to-case-studies` we
+introduced the Alice and Bob case studies where Alice is deploying
+a private government cloud and Bob is deploying a public cloud each
+with different security requirements. Here we discuss how Alice and
+Bob would architect their clouds with respect to instance entropy,
+scheduling instances, trusted images, and instance migrations.
 
 Alice's private cloud
 ~~~~~~~~~~~~~~~~~~~~~

@@ -2,14 +2,12 @@
 Case studies
 ============
 
-.. TODO (elmiko) fixup link to introduction chapter to point to case studies
-   section
-
-Earlier in :doc:`../introduction` we introduced the Alice and Bob case
-study where Alice is deploying a government cloud and Bob is deploying
-a public cloud each with different security requirements. Here we
-discuss how Alice and Bob would address deployment of PKI certification
-authorities (CA) and certificate management.
+Earlier in :doc:`../introduction/introduction-to-case-studies` we
+introduced the Alice and Bob case study where Alice is deploying a
+government cloud and Bob is deploying a public cloud each with
+different security requirements. Here we discuss how Alice and Bob
+would address deployment of PKI certification authorities (CA) and
+certificate management.
 
 Alice's private cloud
 ~~~~~~~~~~~~~~~~~~~~~

@@ -18,6 +18,8 @@ into how both Alice and Bob will address:
 
 -  SLA and security monitoring
 
+.. _management-case-study-alice:
+
 Alice's private cloud
 ~~~~~~~~~~~~~~~~~~~~~
 

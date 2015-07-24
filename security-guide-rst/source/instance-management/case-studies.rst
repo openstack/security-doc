@@ -12,10 +12,7 @@ scheduling instances, trusted images, and instance migrations.
 Alice's private cloud
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO (elmiko) fixup the management chapter link to point to case studies
-   section
-
-Earlier in :doc:`../management`,
+Earlier in :ref:`management-case-study-alice`
 Alice issued a Request for Product (or RFP) to major hardware
 vendors that outlined her performance and form factor needs.
 This RFP includes the requirement for a processor architecture

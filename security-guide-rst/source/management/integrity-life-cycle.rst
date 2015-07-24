@@ -9,6 +9,8 @@ secure bootstrapping and is maintained through configuration management
 and security monitoring. This chapter provides recommendations on how to
 approach the integrity life-cycle process.
 
+.. _management-secure-bootstrapping:
+
 Secure bootstrapping
 ~~~~~~~~~~~~~~~~~~~~
 

@@ -45,16 +45,13 @@ This is a significant breach as it is harder to reset the state of physical
 hardware than virtual hardware, and can lead to additional exposure such as
 access to the management network.
 
-.. TODO (elmiko) fixup link to management chapter to point to integrity
-   life cycle secure bootstrapping
-
 Solutions to the hardware infection problem are domain specific. The strategy
 is to identify how an instance can modify hardware state then determine how to
 reset any modifications when the instance is done using the hardware. For
 example, one option could be to re-flash the firmware after use. Clearly there
 is a need to balance hardware longevity with security as some firmwares will
 fail after a large number of writes. TPM technology, described in
-:doc:`../management` a solution for detecting
+:ref:`management-secure-bootstrapping`, is a solution for detecting
 unauthorized firmware changes. Regardless of the strategy selected, it is
 important to understand the risks associated with this kind of hardware sharing
 so that they can be properly mitigated for a given deployment scenario.

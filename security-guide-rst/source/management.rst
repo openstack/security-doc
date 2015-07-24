@@ -18,3 +18,11 @@ through integrity lifecycle management.
 Finally, administrators must perform command and control over the cloud
 for various operational functions. It is important these command and
 control facilities are understood and secured.
+
+.. toctree::
+   :maxdepth: 2
+
+   management/continuous-systems-management.rst
+   management/integrity-life-cycle.rst
+   management/management-interfaces.rst
+   management/case-studies.rst

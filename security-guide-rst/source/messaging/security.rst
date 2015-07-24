@@ -69,6 +69,8 @@ The Apache Foundation has a messaging security guide for Qpid. See:
 -  `Apache Qpid
    SSL <http://qpid.apache.org/releases/qpid-0.32/cpp-broker/book/chap-Messaging_User_Guide-Security.html#sect-Messaging_User_Guide-Security-Encryption_using_SSL>`__
 
+.. _queue-authentication-and-access-control:
+
 Queue authentication and access control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

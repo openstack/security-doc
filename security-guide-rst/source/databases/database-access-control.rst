@@ -51,6 +51,8 @@ We strongly recommend:
 
 .. image:: ../figures/databaseusernamessl.png
 
+.. _database-authentication-and-access-control:
+
 Database authentication and access control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

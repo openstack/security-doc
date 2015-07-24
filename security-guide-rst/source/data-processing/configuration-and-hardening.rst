@@ -15,13 +15,11 @@ TLS
 The Data processing service controller, like many other OpenStack
 controllers, can be configured to require TLS connections.
 
-.. TODO (elmiko) fixup secure communication chapter link to point to tls
-   proxies section
-
 Pre-Kilo releases will require a TLS proxy as the controller does not
 allow direct TLS connections. Configuring TLS proxies is
-covered in :doc:`../secure-communication`, and we recommend following the
-advice there to create this type of installation.
+covered in :doc:`../secure-communication/tls-proxies-and-http-services`,
+and we recommend following the advice there to create this type of
+installation.
 
 From the Kilo release onward the data processing controller allows
 direct TLS connections. Enabling this behavior requires some small
@@ -43,11 +41,9 @@ the controller configuration.
 Role-based access control policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO (elmiko) fixup identity chapter link to point to policy section
-
 The Data processing service uses a policy file, as described in
-:doc:`../identity`, to configure role-based access control. Using the
-policy file an operator can restrict a group’s access to specific
+:doc:`../identity/policies`, to configure role-based access control. Using
+the policy file an operator can restrict a group’s access to specific
 data processing functionality.
 
 The reasons for doing this will change depending on the organizational
@@ -91,14 +87,12 @@ used if requested, or an automated option exists which instructs the
 service to create a security group based on ports specified by the
 framework being accessed.
 
-.. TODO (elmiko) fixup networking chapter link to point to security groups
-   section
-
 For production environments we recommend controlling the security
 groups manually and creating a set of group rules that are appropriate
 for the installation. In this manner the operator can ensure that the
 default security group will contain all the appropriate rules. For an
-expanded discussion of security groups please see :doc:`../networking`.
+expanded discussion of security groups please see
+:ref:`networking-security-groups`.
 
 .. _data-processing-proxy-domains:
 

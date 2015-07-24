@@ -43,6 +43,8 @@ utilizing the host aggregates functionality provided by OpenStack
 Compute or through splitting the tenant VMs into multiple tenant
 projects with different virtual network configurations.
 
+.. _networking-security-groups:
+
 Security groups
 ~~~~~~~~~~~~~~~
 

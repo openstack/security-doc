@@ -33,3 +33,9 @@ perform queue-to-queue authentication and encryption.
 With ZeroMQ messaging, IPC sockets are used on individual machines.
 Because these sockets are vulnerable to attack, ensure that the cloud
 operator has secured them.
+
+.. toctree::
+   :maxdepth: 2
+
+   messaging/security.rst
+   messaging/case-studies.rst

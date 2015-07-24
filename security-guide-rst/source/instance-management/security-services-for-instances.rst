@@ -286,11 +286,9 @@ following lines to the nova :file:`policy.json` file:
 Migration network
 -----------------
 
-.. TODO (elmiko) fixup introduction doc link to point to the security
-   boundaries and threats section
-
 As a general practice, live migration traffic should be restricted
-to the management security domain, see :doc:`../introduction`.
+to the management security domain, see
+:doc:`../introduction/security-boundaries-and-threats`.
 With live migration traffic, due to its plain text nature and the fact
 that you are transferring the contents of disk and memory of a running
 instance, it is recommended you further separate live migration traffic
@@ -387,8 +385,6 @@ combination of users, policies and security contexts to
 compartmentalize the resources needed for an application to run,
 and segmenting it from other system resources that are not needed.
 
-.. TODO (elmiko) fixup networking doc link to point to security groups section
-
 OpenStack provides security groups for both hosts and the
 network to add defense in depth to the virtual machines in a
 given project. These are similar to host-based firewalls as
@@ -399,5 +395,5 @@ able to be applied to both incoming and outgoing traffic. It
 is also possible for host and network security group rules to
 conflict and deny legitimate traffic. We recommend ensuring
 that security groups are configured correctly for the
-networking being used. See :doc:`../networking`
+networking being used. See :ref:`networking-security-groups`
 in this guide for more detail.

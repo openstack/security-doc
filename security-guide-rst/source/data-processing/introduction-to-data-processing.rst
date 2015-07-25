@@ -104,13 +104,11 @@ decisions will help guide the process of configuring user access to
 the service. For an expanded discussion on data privacy see
 :doc:`../tenant-data`.
 
-.. TODO (elmiko) fixup identity chapter link to point to policy section
-
 The default assumption for a data processing installation is that
 users will have access to all functionality within their projects. In
 the event that more granular control is required the Data processing
 service provides a policy file (as described in
-:doc:`../identity`). These configurations will be
+:doc:`../identity/policies`). These configurations will be
 highly dependent on the needs of the installing organization, and as
 such there is no general advice on their usage: see
 :ref:`data-processing-rbac-policies` for details.

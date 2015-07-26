@@ -2,15 +2,14 @@
 Case studies
 ============
 
-.. TODO (pdesai) fix link to introduction-to-case-studies
-
-Earlier in :doc:`../introduction` we introduced the Alice and Bob case
-studies where Alice is deploying a private government cloud and Bob is
-deploying a public cloud each with different security requirements. Here
-we discuss how Alice and Bob would address configuration of the
-OpenStack Identity service. Alice will be concerned with integration
-into the existing government directory services, while Bob will need to
-provide access to the public.
+Earlier in :doc:`../introduction/introduction-to-case-studies` we
+introduced the Alice and Bob case studies where Alice is deploying a
+private government cloud and Bob is deploying a public cloud each with
+different security requirements. Here we discuss how Alice and Bob
+would address configuration of the OpenStack Identity service. Alice
+will be concerned with integration into the existing government
+directory services, while Bob will need to provide access to the
+public.
 
 Alice's private cloud
 ~~~~~~~~~~~~~~~~~~~~~

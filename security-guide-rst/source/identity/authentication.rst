@@ -26,13 +26,12 @@ client authentication.
 Invalid login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO (pdesai) fix link to introduction by adding link to Attack Types
-
 The Identity service does not provide a method to limit access to
 accounts after repeated unsuccessful login attempts. A pattern of
 repetitive failed login attempts is generally an indicator of
-brute-force attacks (refer to :doc:`../introduction`). This type of
-attack is more prevalent in public cloud deployments.
+brute-force attacks (refer to
+:doc:`../introduction/security-boundaries-and-threats`). This type
+of attack is more prevalent in public cloud deployments.
 
 Prevention is possible by using an external authentication system that
 blocks out an account after some configured number of failed login

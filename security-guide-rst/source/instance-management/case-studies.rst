@@ -53,3 +53,11 @@ he allows users to upload their own images. However, users generally
 cannot share their images. This helps prevent a user from sharing a
 malicious image, which could negatively impact the security of other
 users in the cloud.
+
+For migrations, Bob wants to enable secure instance migrations
+in order to support rolling upgrades with minimal user
+downtime. Bob ensures that all migrations occur on an isolated
+VLAN. He plans to defer implementing encrypted migrations
+until this is better supported in ``nova``
+client tools. As a result, he makes a note to track this carefully
+and switch to encrypted migrations as soon as possible.

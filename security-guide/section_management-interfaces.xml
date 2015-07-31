@@ -161,8 +161,8 @@
       </section>
       <section xml:id="management-interfaces-management-utilities-references">
         <title>References</title>
-        <para><citetitle>OpenStack End User Guide</citetitle> section <link xlink:href="http://docs.openstack.org/user-guide/content/section_cli_overview.html">command-line clients overview</link></para>
-        <para><citetitle>OpenStack End User Guide</citetitle> section <link xlink:href="http://docs.openstack.org/user-guide/content/cli_openrc.html">Download and source the OpenStack RC file</link></para>
+        <para><citetitle>OpenStack End User Guide</citetitle> section <link xlink:href="http://docs.openstack.org/user-guide/cli.html">command-line clients overview</link></para>
+        <para><citetitle>OpenStack End User Guide</citetitle> section <link xlink:href="http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html">Download and source the OpenStack RC file</link></para>
       </section>
     </section>
     <section xml:id="management-interfaces-out-of-band-management-interface">

@@ -220,6 +220,9 @@ hosting malicious software or launching attacks on other networks. Methods of
 prevention include egress security groups, outbound traffic inspection,
 customer education and awareness, and fraud and abuse mitigation strategies.
 
+
+.. _introduction_attack_types:
+
 Attack types
 ------------
 

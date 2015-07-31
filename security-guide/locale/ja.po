@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-07-27 18:24+0000\n"
-"PO-Revision-Date: 2015-07-28 08:22+0000\n"
+"POT-Creation-Date: 2015-07-29 14:00+0000\n"
+"PO-Revision-Date: 2015-07-31 02:03+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -6585,6 +6585,9 @@ msgstr "リソースベースのフィルター"
 msgid "Restart Apache:"
 msgstr "Apache を再起動します。"
 
+msgid "Restart the Shibboleth daemon:"
+msgstr "Shibboleth デーモンを再起動します。"
+
 msgid "Restrict DB and RPC communication of the OpenStack Networking services"
 msgstr "OpenStack Networking サービス群の DB と RPC 通信の制限"
 
@@ -7047,6 +7050,9 @@ msgstr "セッションクッキーは HTTPONLY に設定すべきです。"
 
 msgid "Session back end"
 msgstr "セッションバックエンド"
+
+msgid "Setting Identity service as Identity Provider"
+msgstr "認証プロバイダーとしての Identity の設定"
 
 msgid ""
 "Several cryptography algorithms are available within OpenStack for "
@@ -8082,6 +8088,10 @@ msgid ""
 "services:"
 msgstr "以下はさまざまなストレージサービスのデフォルトのリッスンポートです。"
 
+msgid ""
+"The following compiler options are recommend for GCC when compiling QEMU:"
+msgstr "以下のコンパイラーオプションは、QEMU コンパイル時の GCC の推奨です。"
+
 msgid "The following figure demonstrates one possible network architecture."
 msgstr "以下の図はある実現可能なネットワークアーキテクチャを説明します。"
 
@@ -8815,6 +8825,13 @@ msgstr ""
 "ます。<placeholder-1/> 行は必要に応じて変更可能ですが、しかしながらこの例の値"
 "は合理的な初期値です。"
 
+msgid ""
+"This path is Ubuntu-specific. For other distributions, replace with "
+"appropriate path."
+msgstr ""
+"このパスは Ubuntu 固有です。他のディストリビューションは、適切なパスに置き換"
+"えてください。"
+
 msgid "This process is broken apart into three primary categories:"
 msgstr "このプロセスは三つの主要カテゴリに分割されています。"
 
@@ -9256,6 +9273,14 @@ msgstr ""
 msgid "Unscoped token"
 msgstr "スコープなしトークン"
 
+msgid "Updates and patches"
+msgstr "更新および"
+
+msgid "Upload your Service Provider’s metadata file to your Identity Provider."
+msgstr ""
+"サービスプロバイダーのメタデータファイルをお使いの認証プロバイダーにアップ"
+"ロードします。"
+
 msgid ""
 "Use a dedicated and hardened backup servers. The logs for the backup server "
 "must be monitored daily and accessible by only few individuals."
@@ -9332,6 +9357,9 @@ msgstr ""
 "されます。このネットワーク上の IP アドレスはインターネット上の誰もが通信可能"
 "です。このネットワークは、パブリックセキュリティドメインにあるとみなされま"
 "す。"
+
+msgid "User access to resources"
+msgstr "リソースへのユーザーアクセス"
 
 msgid "User's \"Real Name\""
 msgstr "ユーザの「実名」"
@@ -9453,6 +9481,9 @@ msgstr "iSCSI パケットに含まれるボリュームデータは暗号化さ
 
 msgid "Volume encryption"
 msgstr "ボリューム暗号化"
+
+msgid "Vulnerability awareness"
+msgstr "脆弱性の認識"
 
 msgid "Vulnerability management"
 msgstr "脆弱性管理"

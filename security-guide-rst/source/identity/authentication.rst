@@ -30,7 +30,7 @@ The Identity service does not provide a method to limit access to
 accounts after repeated unsuccessful login attempts. A pattern of
 repetitive failed login attempts is generally an indicator of
 brute-force attacks (refer to
-:doc:`../introduction/security-boundaries-and-threats`). This type
+:ref:`introduction_attack_types`). This type
 of attack is more prevalent in public cloud deployments.
 
 Prevention is possible by using an external authentication system that

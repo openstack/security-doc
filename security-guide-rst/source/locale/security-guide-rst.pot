@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-03 06:01+0000\n"
+"POT-Creation-Date: 2015-08-05 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1758,8 +1758,8 @@ msgid ""
 "migration. The following in-exhaustive list details some of these risks:"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:224
-#: ../introduction/security-boundaries-and-threats.rst:233
+#: ../introduction/security-boundaries-and-threats.rst:227
+#: ../introduction/security-boundaries-and-threats.rst:236
 msgid "Attack types"
 msgstr ""
 
@@ -9039,8 +9039,8 @@ msgid ""
 "The Identity service does not provide a method to limit access to accounts "
 "after repeated unsuccessful login attempts. A pattern of repetitive failed "
 "login attempts is generally an indicator of brute-force attacks (refer to :"
-"doc:`../introduction/security-boundaries-and-threats`). This type of attack "
-"is more prevalent in public cloud deployments."
+"ref:`introduction_attack_types`). This type of attack is more prevalent in "
+"public cloud deployments."
 msgstr ""
 
 #: ../identity/authorization.rst:46
@@ -9661,7 +9661,7 @@ msgid ""
 "propagating through to the management domain."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:226
+#: ../introduction/security-boundaries-and-threats.rst:229
 msgid ""
 "The diagram shows the types of attacks that may be expected from the actors "
 "described in the previous section. Note that there will always be exceptions "
@@ -9995,7 +9995,7 @@ msgid ""
 "tasks."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:235
+#: ../introduction/security-boundaries-and-threats.rst:238
 msgid ""
 "The prescriptive defense for each form of attack is beyond the scope of this "
 "document. The above diagram can assist you in making an informed decision "

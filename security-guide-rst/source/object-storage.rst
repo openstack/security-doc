@@ -94,6 +94,12 @@ File permissions
 The :file:`/etc/swift` directory contains information about the ring topology
 and environment configuration. The following permissions are recommended:
 
+.. code-block:: console
+
+   # chown -R root:swift /etc/swift/*
+   # find /etc/swift/ -type f -exec chmod 640 {} \;
+   # find /etc/swift/ -type d -exec chmod 750 {} \;
+
 This restricts only root to be able to modify configuration files while
 allowing the services to read them through their group membership in the
 'swift' group.

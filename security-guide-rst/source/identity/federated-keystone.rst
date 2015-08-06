@@ -107,250 +107,250 @@ Enabling Federation
 
 To enable Federation, perform the following steps:
 
-Run the Identity service under Apache, instead of using
-``keystone-all``.
+#. Run the Identity service under Apache, instead of using
+   ``keystone-all``.
 
-Enable TLS support. Install ``mod_nss`` according to your distribution,
-then apply the following patch and restart HTTPD:
+   #. Enable TLS support. Install ``mod_nss`` according to your distribution,
+      then apply the following patch and restart HTTPD:
 
-.. code:: console
+      .. code:: diff
 
-    --- /etc/httpd/conf.d/nss.conf.orig 2012-03-29 12:59:06.319470425 -0400
-    +++ /etc/httpd/conf.d/nss.conf      2012-03-29 12:19:38.862721465 -0400
-    @@ -17,7 +17,7 @@
-    # Note: Configurations that use IPv6 but not IPv4-mapped addresses need two
-    #       Listen directives: "Listen [::]:8443" and "Listen 0.0.0.0:443"
-    #
-    -Listen 8443
-    +Listen 443
+         --- /etc/httpd/conf.d/nss.conf.orig 2012-03-29 12:59:06.319470425 -0400
+         +++ /etc/httpd/conf.d/nss.conf      2012-03-29 12:19:38.862721465 -0400
+         @@ -17,7 +17,7 @@
+         # Note: Configurations that use IPv6 but not IPv4-mapped addresses need two
+         #       Listen directives: "Listen [::]:8443" and "Listen 0.0.0.0:443"
+         #
+         -Listen 8443
+         +Listen 443
 
-    ##
-    ##  SSL Global Context
-    @@ -81,7 +81,7 @@
-    ## SSL Virtual Host Context
-    ##
+         ##
+         ##  SSL Global Context
+         @@ -81,7 +81,7 @@
+         ## SSL Virtual Host Context
+         ##
 
-    -<virtualhost _default_:8443="">
-    +<virtualhost _default_:443="">
+         -<virtualhost _default_:8443="">
+         +<virtualhost _default_:443="">
 
-    #   General setup for the virtual host
-     #DocumentRoot "/etc/httpd/htdocs"
-    </virtualhost></virtualhost>
+         #   General setup for the virtual host
+          #DocumentRoot "/etc/httpd/htdocs"
+         </virtualhost></virtualhost>
 
-If you have a firewall in place, configure it to allow TLS traffic. For
-example:
+   #. If you have a firewall in place, configure it to allow TLS traffic. For
+      example:
 
-.. code:: console
+      .. code:: console
 
-    -A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+         -A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 
-Note this needs to be added before your reject all rule which might be:
+      Note this needs to be added before your reject all rule which might be:
 
-.. code:: console
+      .. code:: console
 
-    -A INPUT -j REJECT --reject-with icmp-host-prohibited
+         -A INPUT -j REJECT --reject-with icmp-host-prohibited
 
-Copy the :file:`httpd/wsgi-keystone.conf` file to the appropriate location
-for your Apache server, for example,
-:file:`/etc/httpd/conf.d/wsgi-keystone.conf` file.
+   #. Copy the :file:`httpd/wsgi-keystone.conf` file to the appropriate location
+      for your Apache server, for example,
+      :file:`/etc/httpd/conf.d/wsgi-keystone.conf` file.
 
-Create the directory ``/var/www/cgi-bin/keystone/``. Then link the files
-``main`` and ``admin`` to the :file:`keystone.py` file in this directory.
+   #. Create the directory ``/var/www/cgi-bin/keystone/``. Then link the files
+      ``main`` and ``admin`` to the :file:`keystone.py` file in this directory.
 
-For a distribution appropriate place, it should probably be copied to
-:file:`/usr/share/openstack/keystone/httpd/keystone.py`.
+      For a distribution appropriate place, it should probably be copied to
+      :file:`/usr/share/openstack/keystone/httpd/keystone.py`.
 
-.. note::
+      .. note::
 
-    This path is Ubuntu-specific. For other distributions, replace with
-    appropriate path.
+         This path is Ubuntu-specific. For other distributions, replace with
+         appropriate path.
 
-If you are running with SELinux enabled ensure that the file has the
-appropriate SELinux context to access the linked file. For example, if
-you have the file in ``/var/www/cgi-bin`` location, you can do this by
-running:
+   #. If you are running with SELinux enabled ensure that the file has the
+      appropriate SELinux context to access the linked file. For example, if
+      you have the file in ``/var/www/cgi-bin`` location, you can do this by
+      running:
 
-.. code:: console
+      .. code:: console
 
-    # restorecon /var/www/cgi-bin
+         # restorecon /var/www/cgi-bin
 
-Adding it in a different location requires you set up your SELinux
-policy accordingly.
+      Adding it in a different location requires you set up your SELinux
+      policy accordingly.
 
-Make sure you use either the SQL or the ``memcached`` driver for tokens,
-otherwise the tokens will not be shared between the processes of the
-Apache HTTPD server.
+   #. Make sure you use either the SQL or the ``memcached`` driver for tokens,
+      otherwise the tokens will not be shared between the processes of the
+      Apache HTTPD server.
 
-For SQL, in :file:`/etc/keystone/keystone.conf` , set:
+      For SQL, in :file:`/etc/keystone/keystone.conf` , set:
 
-.. code:: ini
+      .. code:: ini
 
-    [token]
-    driver = keystone.token.backends.sql.Token
+         [token]
+         driver = keystone.token.backends.sql.Token
 
-For ``memcached``, in :file:`/etc/keystone/keystone.conf`, set:
+      For ``memcached``, in :file:`/etc/keystone/keystone.conf`, set:
 
-.. code:: ini
+      .. code:: ini
 
-    [token]
-    driver = keystone.token.backends.memcache.Token
+         [token]
+         driver = keystone.token.backends.memcache.Token
 
-In both cases, all servers that are storing tokens need a shared back
-end. This means either that both point to the same database server, or
-both point to a common memcached instance.
+      In both cases, all servers that are storing tokens need a shared back
+      end. This means either that both point to the same database server, or
+      both point to a common memcached instance.
 
-Install Shibboleth:
+   #. Install Shibboleth:
 
-.. code:: console
+      .. code:: console
 
-    # apt-get install libapache2-mod-shib2
+         # apt-get install libapache2-mod-shib2
 
-.. note::
+      .. note::
 
-    The ``apt-get`` command is Ubuntu specific. For other distributions,
-    replace with appropriate command.
+         The ``apt-get`` command is Ubuntu specific. For other distributions,
+         replace with appropriate command.
 
-Configure the Identity service virtual host and adjust the config to
-properly handle SAML2 workflow.
+   #. Configure the Identity service virtual host and adjust the config to
+      properly handle SAML2 workflow.
 
-Add ``WSGIScriptAlias`` directive to your vhost configuration:
+      Add ``WSGIScriptAlias`` directive to your vhost configuration:
 
-.. code:: console
+      .. code:: ini
 
-    WSGIScriptAliasMatch ^(/v3/OS-FEDERATION/identity_providers/.*?/protocols/.*?/auth)$ /var/www/keystone/main/$1
+         WSGIScriptAliasMatch ^(/v3/OS-FEDERATION/identity_providers/.*?/protocols/.*?/auth)$ /var/www/keystone/main/$1
 
-Add two ``<Location>`` directives to the :file:`wsgi-keystone.conf` file:
+   #. Add two ``<Location>`` directives to the :file:`wsgi-keystone.conf` file:
 
-.. code:: console
+      .. code:: ini
 
-    <Location /Shibboleth.sso>
-    SetHandler shib
-    </Location>
+         <Location /Shibboleth.sso>
+         SetHandler shib
+         </Location>
 
-    <LocationMatch /v3/OS-FEDERATION/identity_providers/.*?/protocols/saml2/auth>
-    ShibRequestSetting requireSession 1
-    AuthType shibboleth
-    ShibRequireAll On
-    ShibRequireSession On
-    ShibExportAssertion Off
-    Require valid-user
-    </LocationMatch>
+         <LocationMatch /v3/OS-FEDERATION/identity_providers/.*?/protocols/saml2/auth>
+         ShibRequestSetting requireSession 1
+         AuthType shibboleth
+         ShibRequireAll On
+         ShibRequireSession On
+         ShibExportAssertion Off
+         Require valid-user
+         </LocationMatch>
 
-.. note::
+      .. note::
 
-    The option ``saml2`` may be different in your deployment, but do not
-    use a wildcard value. Otherwise every Federated protocol will be
-    handled by Shibboleth.
+         The option ``saml2`` may be different in your deployment, but do not
+         use a wildcard value. Otherwise every Federated protocol will be
+         handled by Shibboleth.
 
-    The ``ShibRequireSession`` rule is invalid in Apache 2.4 or newer
-    and should be dropped in that specific setup.
+         The ``ShibRequireSession`` rule is invalid in Apache 2.4 or newer
+         and should be dropped in that specific setup.
 
-Enable the Identity service virtual host:
+   #. Enable the Identity service virtual host:
 
-.. code:: console
+      .. code:: console
 
-    # a2ensite wsgi-keystone.conf
+         # a2ensite wsgi-keystone.conf
 
-Enable the ``ssl`` and ``shib2`` modules:
+   #. Enable the ``ssl`` and ``shib2`` modules:
 
-.. code:: console
+      .. code:: console
 
-    # a2enmod ssl
-    # a2enmod shib2
+         # a2enmod ssl
+         # a2enmod shib2
 
-Restart Apache:
+   #. Restart Apache:
 
-.. code:: console
+      .. code:: console
 
-    # service apache2 restart
+         # service apache2 restart
 
-.. note::
+      .. note::
 
-    The ``service apache2 restart`` command is Ubuntu-specific. For
-    other distributions, replace with appropriate command.
+         The ``service apache2 restart`` command is Ubuntu-specific. For
+         other distributions, replace with appropriate command.
 
-Configure Apache to use a Federation capable authentication method.
+#. Configure Apache to use a Federation capable authentication method.
 
-Once you have your Identity service virtual host ready, configure
-Shibboleth and upload your metadata to the Identity Provider.
+   #. Once you have your Identity service virtual host ready, configure
+      Shibboleth and upload your metadata to the Identity Provider.
 
-If new certificates are required, they can be easily created by
-executing:
+      If new certificates are required, they can be easily created by
+      executing:
 
-.. code:: console
+      .. code:: console
 
-    $ shib-keygen -y NUMBER_OF_YEARS
+         $ shib-keygen -y NUMBER_OF_YEARS
 
-The newly created file will be stored under
-:file:`/etc/shibboleth/sp-key.pem`
+      The newly created file will be stored under
+      :file:`/etc/shibboleth/sp-key.pem`
 
-Upload your Service Provider’s metadata file to your Identity Provider.
+   #. Upload your Service Provider’s metadata file to your Identity Provider.
 
-Configure your Service Provider by editing
-:file:`/etc/shibboleth/shibboleth2.xml`.
+   #. Configure your Service Provider by editing
+      :file:`/etc/shibboleth/shibboleth2.xml`.
 
-For more information, see `Shibboleth Service Provider
-Configuration <https://wiki.shibboleth.net/confluence/display/SHIB2/Configuration>`__.
+      For more information, see `Shibboleth Service Provider Configuration
+      <https://wiki.shibboleth.net/confluence/display/SHIB2/Configuration>`__.
 
-Identity service enforces ``external`` authentication when environment
-variable ``REMOTE_USER`` is present so make sure Shibboleth does not set
-the ``REMOTE_USER`` environment variable. To do so, scan through the
-:file:`/etc/shibboleth/shibboleth2.xml` configuration file and remove
-the ``REMOTE_USER`` directives.
+   #. Identity service enforces ``external`` authentication when environment
+      variable ``REMOTE_USER`` is present so make sure Shibboleth does not set
+      the ``REMOTE_USER`` environment variable. To do so, scan through the
+      :file:`/etc/shibboleth/shibboleth2.xml` configuration file and remove
+      the ``REMOTE_USER`` directives.
 
-Examine your attributes map in the
-:file:`/etc/shibboleth/attributes-map.xml` file and adjust your
-requirements if needed. For more information see `Shibboleth
-Attributes <https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAddAttribute>`__.
+   #. Examine your attributes map in the
+      :file:`/etc/shibboleth/attributes-map.xml` file and adjust your
+      requirements if needed. For more information see `Shibboleth Attributes
+      <https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAddAttribute>`__.
 
-Restart the Shibboleth daemon:
+   #. Restart the Shibboleth daemon:
 
-.. code:: console
+      .. code:: console
 
-    # service shibd restart
-    # service apache2 restart
+         # service shibd restart
+         # service apache2 restart
 
-Enable ``OS-FEDERATION`` extension:
+#. Enable ``OS-FEDERATION`` extension:
 
-Add the Federation extension driver to the ``[federation]`` section in
-the :file:`keystone.conf` file. For example:
+   #. Add the Federation extension driver to the ``[federation]`` section in
+      the :file:`keystone.conf` file. For example:
 
-.. code:: ini
+      .. code:: ini
 
-    [federation]
-    driver = keystone.contrib.federation.backends.sql.Federation
+         [federation]
+         driver = keystone.contrib.federation.backends.sql.Federation
 
-Add the saml2 authentication method to the ``[auth]`` section in
-:file:`keystone.conf` file:
+   #. Add the saml2 authentication method to the ``[auth]`` section in
+      :file:`keystone.conf` file:
 
-.. code:: ini
+      .. code:: ini
 
-    [auth]
-    methods = external,password,token,saml2
-    saml2 = keystone.auth.plugins.saml2.Saml2
+         [auth]
+         methods = external,password,token,saml2
+         saml2 = keystone.auth.plugins.saml2.Saml2
 
-.. note::
+      .. note::
 
-    The ``external`` method should be dropped to avoid any interference
-    with some Apache and Shibboleth SP setups, where a ``REMOTE_USER``
-    environment variable is always set, even as an empty value.
+         The ``external`` method should be dropped to avoid any interference
+         with some Apache and Shibboleth SP setups, where a ``REMOTE_USER``
+         environment variable is always set, even as an empty value.
 
-Add the ``federation_extension`` middleware to the ``api_v3`` pipeline
-in the :file:`keystone-paste.ini` file. For example:
+   #. Add the ``federation_extension`` middleware to the ``api_v3`` pipeline
+      in the :file:`keystone-paste.ini` file. For example:
 
-.. code:: ini
+      .. code:: ini
 
-    [pipeline:api_v3]
-    pipeline = access_log sizelimit url_normalize token_auth admin_token_auth
-    xml_body json_body ec2_extension s3_extension federation_extension
-    service_v3
+         [pipeline:api_v3]
+         pipeline = access_log sizelimit url_normalize token_auth
+         admin_token_auth xml_body json_body ec2_extension s3_extension
+         federation_extension service_v3
 
-Create the Federation extension tables if using the provided SQL back
-end. For example:
+   #. Create the Federation extension tables if using the provided SQL back
+      end. For example:
 
-.. code:: console
+      .. code:: console
 
-    $ keystone-manage db_sync --extension federation
+         $ keystone-manage db_sync --extension federation
 
 Ideally, to test that the Identity Provider and the Identity service are
 communicating, navigate to the protected URL and attempt to sign in. If
@@ -363,103 +363,106 @@ Configuring Federation
 Now that the Identity Provider and Identity service are communicating,
 you can start to configure the ``OS-FEDERATION`` extension.
 
-Create Identity groups and assign roles.
+#. Create Identity groups and assign roles.
 
-No new users will be added to the Identity back end, but the Identity
-service requires group-based role assignments to authorize federated
-users. The Federation mapping function will map the user into local
-Identity service groups objects, and hence to local role assignments.
+   No new users will be added to the Identity back end, but the Identity
+   service requires group-based role assignments to authorize federated
+   users. The Federation mapping function will map the user into local
+   Identity service groups objects, and hence to local role assignments.
 
-Thus, it is required to create the necessary Identity service groups
-that correspond to the Identity Provider’s groups; additionally, these
-groups should be assigned roles on one or more projects or domains. For
-example, groups here refers to the Identity service groups that should
-be created so that when mapping from the SAML attribute ``Employees``,
-you can map it to a Identity service group ``devs``.
+   Thus, it is required to create the necessary Identity service groups
+   that correspond to the Identity Provider’s groups; additionally, these
+   groups should be assigned roles on one or more projects or domains. For
+   example, groups here refers to the Identity service groups that should
+   be created so that when mapping from the SAML attribute ``Employees``,
+   you can map it to a Identity service group ``devs``.
 
-The Identity service administrator can create as many groups as there
-are SAML attributes, whatever the mapping calls for.
+   The Identity service administrator can create as many groups as there
+   are SAML attributes, whatever the mapping calls for.
 
-Add Identity Providers, Mappings and Protocols.
+#. Add Identity Providers, Mappings and Protocols.
 
-To utilize Federation, create the following in the Identity service:
-Identity Provider, Mapping, Protocol.
+   To utilize Federation, create the following in the Identity service:
+   Identity Provider, Mapping, Protocol.
 
 Performing Federation authentication
 ------------------------------------
 
-Authenticate externally and generate an unscoped token in Identity
-service.
+#. Authenticate externally and generate an unscoped token in Identity
+   service.
 
-To start Federated authentication a user must access the dedicated URL
-with Identity Provider’s and Protocol’s identifiers stored within a
-protected URL. The URL has a format of:
-``/v3/OS-FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/auth``.
+   To start Federated authentication a user must access the dedicated URL
+   with Identity Provider’s and Protocol’s identifiers stored within a
+   protected URL. The URL has a format of:
+   ``/v3/OS-FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/auth``.
 
-This instance follows a standard SAML2 authentication procedure, that
-is, the user will be redirected to the Identity Provider’s
-authentication webpage and be prompted for credentials. After
-successfully authenticating the user will be redirected to the Service
-Provider’s endpoint. If using a web browser, a token will be returned in
-XML format. As an alternative to using a web browser, you can use
-Enhanced Client or Proxy (ECP), which is available in the
-``keystoneclient`` in the Identity service API.
+   This instance follows a standard SAML2 authentication procedure, that
+   is, the user will be redirected to the Identity Provider’s
+   authentication webpage and be prompted for credentials. After
+   successfully authenticating the user will be redirected to the Service
+   Provider’s endpoint. If using a web browser, a token will be returned in
+   XML format. As an alternative to using a web browser, you can use
+   Enhanced Client or Proxy (ECP), which is available in the
+   ``keystoneclient`` in the Identity service API.
 
-In the returned unscoped token, a list of Identity service groups the
-user belongs to will be included.
+   In the returned unscoped token, a list of Identity service groups the
+   user belongs to will be included.
 
-For example, the following URL would be considered protected by
-``mod_shib`` and Apache, as such a request made to the URL would be
-redirected to the Identity Provider, to start the SAML authentication
-procedure.
+   For example, the following URL would be considered protected by
+   ``mod_shib`` and Apache, as such a request made to the URL would be
+   redirected to the Identity Provider, to start the SAML authentication
+   procedure.
 
-.. code:: console
+   .. code:: console
 
-    # curl -X GET \
-    -D - http://localhost:5000/v3/OS-FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/auth
+      # curl -X GET \
+      -D - http://localhost:5000/v3/OS-FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/auth
 
-.. note::
+   .. note::
 
-    It is assumed that the ``keystone`` service is running on port
-    ``5000``.
+      It is assumed that the ``keystone`` service is running on port
+      ``5000``.
 
-Determine accessible resources.
+#. Determine accessible resources.
 
-By using the previously returned token, the user can issue requests to
-the list projects and domains that are accessible.
+   By using the previously returned token, the user can issue requests to
+   the list projects and domains that are accessible.
 
--  List projects a federated user can access:
-   ``GET /OS-FEDERATION/projects``
+   -  List projects a federated user can access:
+      ``GET /OS-FEDERATION/projects``
 
--  List domains a federated user can access:
-   ``GET /OS-FEDERATION/domains``
+   -  List domains a federated user can access:
+      ``GET /OS-FEDERATION/domains``
 
-For example,
+   For example,
 
-.. code:: console
+   .. code:: console
 
-    # curl -X GET \
-    -H "X-Auth-Token: <unscoped token>" http://localhost:5000/v3/OS-FEDERATION/projects
+      # curl -X GET \
+      -H "X-Auth-Token: <unscoped token>"
+      http://localhost:5000/v3/OS-FEDERATION/projects
 
-or
+   or
 
-.. code:: console
+   .. code:: console
 
-    # curl -X GET \
-    -H "X-Auth-Token: <unscoped token>" http://localhost:5000/v3/OS-FEDERATION/domains
+      # curl -X GET \
+      -H "X-Auth-Token: <unscoped token>" http://localhost:5000/v3/OS-FEDERATION/domains
 
-Get a scoped token.
+#. Get a scoped token.
 
-A federated user may request a scoped token, by using the unscoped
-token. A project or domain may be specified by either ID or name. An ID
-is sufficient to uniquely identify a project or domain. For example,
+   A federated user may request a scoped token, by using the unscoped
+   token. A project or domain may be specified by either ID or name. An ID
+   is sufficient to uniquely identify a project or domain. For example,
 
-.. code:: console
+   .. code:: console
 
-    # curl -X POST \
-    -H "Content-Type: application/json" \
-    -d '{"auth":{"identity":{"methods":["saml2"],"saml2":{"id":"<unscoped_token_id>"}},"scope":{"project":{"domain": {"name": "Default"},"name":"service"}}}}' \
-    -D - http://localhost:5000/v3/auth/tokens
+      # curl -X POST \
+      -H "Content-Type: application/json" \
+      -d '{"auth":{"identity":{"methods":["saml2"],"saml2":{"id":
+      "<unscoped_token_id>"}},"scope":{"project":{"domain": {"name":
+      "Default"},"name":"service"}}}}' \
+      -D - http://localhost:5000/v3/auth/tokens
 
 Setting Identity service as Identity Provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -172,8 +172,8 @@ explains the relations:
 At each level you may have ACLs that dictate who has what type of access. ACLs
 are interpreted based on what authentication system is in use. The two most
 common types of authentication providers used are Identity service (keystone)
-and TempAuth. Custom authentication providers are also possible. Please see ?
-for more information.
+and TempAuth. Custom authentication providers are also possible. Please see
+:ref:`object_storage_authentication` for more information.
 
 Securing proxy services
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -226,7 +226,7 @@ TempAuth, will determine how you configure a different URL in the responses to
 end-point clients so they use your load balancer instead of an individual proxy
 node.
 
-.. _Object_Storage_authentication:
+.. _object_storage_authentication:
 
 Object Storage authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

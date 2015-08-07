@@ -53,7 +53,7 @@ Run the following commands:
 
 **Pass:** If permissions are set to 640 or stricter.
 
-**Fail:** If permissions are not set to atleast 640.
+**Fail:** If permissions are not set to at least 640.
 
 Recommended in: :ref:`internally-implemented-authentication-methods`.
 

@@ -54,7 +54,7 @@
              <para><emphasis role="bold">Pass:</emphasis> If permissions
              are set to 640 or stricter.</para>
              <para><emphasis role="bold">Fail:</emphasis> If permissions
-             are not set to atleast 640.</para>
+             are not set to at least 640.</para>
              <para>Recommended in:
              <xref linkend="identity-authentication-methods-internally-implemented-authentication-methods"/>
              </para>

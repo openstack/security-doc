@@ -43,9 +43,9 @@ Capabilities
    For example, the dashboard now implements all of the main Networking
    features.
 
--  It is an extensible Django web application that allows easy plug-in
-   of third-party products and services, such as billing, monitoring,
-   and additional management tools.
+-  It is an extensible :term:`Django` web application that
+   allows easy plug-in of third-party products and services, such as
+   billing, monitoring, and additional management tools.
 
 -  The dashboard can also be branded for service providers and other
    commercial vendors.
@@ -76,8 +76,8 @@ Security considerations
 References
 ----------
 
-`Icehouse Release
-Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse>`__
+`Kilo Release
+Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Kilo>`__
 
 OpenStack API
 ~~~~~~~~~~~~~
@@ -190,11 +190,12 @@ Security considerations
    private(management or a separate) network. Segregate management
    domains with firewalls or other network gear.
 
--  If you use a web interface to interact with the BMC/IPMI, always use
-   the TLS interface, such as HTTPS or port 443. This TLS interface
-   should **NOT** use self-signed certificates, as is often default, but
-   should have trusted certificates using the correctly defined fully
-   qualified domain names (FQDNs).
+-  If you use a web interface to interact with the
+   :term:`BMC`/IPMI, always use the TLS interface, such as HTTPS
+   or port 443. This TLS interface should **NOT** use self-signed
+   certificates, as is often default, but should have trusted
+   certificates using the correctly defined fully qualified domain names
+   (FQDNs).
 
 -  Monitor the traffic on the management network. The anomalies might be
    easier to track than on the busier compute nodes.

@@ -187,8 +187,8 @@ use it.
 
 There are many configuration management solutions; at the time of this
 writing there are two in the marketplace that are robust in their
-support of OpenStack environments: Chef and Puppet. A non-exhaustive
-listing of tools in this space is provided below:
+support of OpenStack environments: :term:`Chef` and :term:`Puppet`. A
+non-exhaustive listing of tools in this space is provided below:
 
 -  Chef
 

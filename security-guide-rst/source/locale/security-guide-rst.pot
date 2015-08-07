@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-05 06:01+0000\n"
+"POT-Creation-Date: 2015-08-07 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -258,19 +258,19 @@ msgstr ""
 msgid "168 bits"
 msgstr ""
 
-#: ../object-storage.rst:120
+#: ../object-storage.rst:126
 msgid "6000"
 msgstr ""
 
-#: ../object-storage.rst:117
+#: ../object-storage.rst:123
 msgid "6001"
 msgstr ""
 
-#: ../object-storage.rst:114
+#: ../object-storage.rst:120
 msgid "6002"
 msgstr ""
 
-#: ../object-storage.rst:123
+#: ../object-storage.rst:129
 msgid "873"
 msgstr ""
 
@@ -389,7 +389,7 @@ msgid ""
 "authentication tokens (e.g. passwords) at an identity provider."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:453
+#: ../identity/federated-keystone.rst:454
 msgid ""
 "A federated user may request a scoped token, by using the unscoped token. A "
 "project or domain may be specified by either ID or name. An ID is sufficient "
@@ -505,7 +505,7 @@ msgid ""
 "testing."
 msgstr ""
 
-#: ../object-storage.rst:175
+#: ../object-storage.rst:181
 msgid ""
 "A proxy node should have at least two interfaces (physical or virtual): one "
 "public and one private. Firewalls or service binding might protect the "
@@ -644,7 +644,7 @@ msgid ""
 "well as protecting management infrastructure from external attacks."
 msgstr ""
 
-#: ../object-storage.rst:25 ../object-storage.rst:113
+#: ../object-storage.rst:25 ../object-storage.rst:119
 msgid "Account service"
 msgstr ""
 
@@ -1260,7 +1260,7 @@ msgid ""
 "measuring and evaluating how well an organization's ISMS is performing."
 msgstr ""
 
-#: ../object-storage.rst:140
+#: ../object-storage.rst:146
 msgid ""
 "An Object Storage \"account\" is not a user account or credential. The "
 "following explains the relations:"
@@ -1388,7 +1388,7 @@ msgid ""
 "as well as provide a good foundation."
 msgstr ""
 
-#: ../object-storage.rst:161
+#: ../object-storage.rst:167
 msgid ""
 "Another way of thinking about the above would be: A single shelf (account) "
 "holds zero or more buckets (containers) which each hold zero or more "
@@ -1671,13 +1671,13 @@ msgid ""
 "the OpenStack summit in Portland, Oregon."
 msgstr ""
 
-#: ../object-storage.rst:166
+#: ../object-storage.rst:172
 msgid ""
 "At each level you may have ACLs that dictate who has what type of access. "
 "ACLs are interpreted based on what authentication system is in use. The two "
 "most common types of authentication providers used are Identity service "
 "(keystone) and TempAuth. Custom authentication providers are also possible. "
-"Please see ? for more information."
+"Please see :ref:`object_storage_authentication` for more information."
 msgstr ""
 
 #: ../identity/authentication.rst:11
@@ -1724,7 +1724,7 @@ msgid ""
 "to date."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:555
+#: ../identity/federated-keystone.rst:558
 msgid ""
 "At this point the SAML Assertion can be sent to the Service Provider "
 "keystone, and a valid OpenStack token, issued by a Service Provider "
@@ -1807,7 +1807,7 @@ msgstr ""
 msgid "Authentication configuration example: RabbitMQ"
 msgstr ""
 
-#: ../object-storage.rst:131
+#: ../object-storage.rst:137
 msgid ""
 "Authentication does not take place at the storage nodes. If someone was able "
 "to connect to a storage node on one of these ports they could access or "
@@ -1902,7 +1902,7 @@ msgid ""
 "determines how to dispatch compute and volume requests."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:470
+#: ../identity/federated-keystone.rst:473
 msgid ""
 "Before attempting to federate multiple Identity service deployments, you "
 "must setup certain configuration options in the :file:`keystone.conf` file."
@@ -2439,14 +2439,14 @@ msgid ""
 "automation."
 msgstr ""
 
-#: ../object-storage.rst:147
+#: ../object-storage.rst:153
 msgid ""
 "Collection of containers; not user accounts or authentication. Which users "
 "are associated with the account and how they may access it depends on the "
 "authentication system used. See :ref:`Object_Storage_authentication`."
 msgstr ""
 
-#: ../object-storage.rst:152
+#: ../object-storage.rst:158
 msgid ""
 "Collection of objects. Metadata on the container is available for ACLs. The "
 "meaning of ACLs is dependent on the authentication system used."
@@ -2660,7 +2660,7 @@ msgid ""
 "is beyond the scope of this guide."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:468
+#: ../identity/federated-keystone.rst:471
 msgid "Configuration options"
 msgstr ""
 
@@ -2741,7 +2741,7 @@ msgid ""
 "controls in place, both human and technical."
 msgstr ""
 
-#: ../object-storage.rst:26 ../object-storage.rst:116
+#: ../object-storage.rst:26 ../object-storage.rst:122
 msgid "Container service"
 msgstr ""
 
@@ -2814,7 +2814,7 @@ msgstr ""
 msgid "Create Identity groups and assign roles."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:527
+#: ../identity/federated-keystone.rst:530
 msgid ""
 "Create a new region for the service provider, for example, create a new "
 "region with an ``ID`` of BETA, and ``URL`` of https://beta.com/Shibboleth."
@@ -2822,7 +2822,7 @@ msgid ""
 "BETA, and signed by the current keystone Identity Provider."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:525
+#: ../identity/federated-keystone.rst:528
 msgid "Create a region for the Service Provider"
 msgstr ""
 
@@ -2899,7 +2899,7 @@ msgstr ""
 msgid "Cryptography standards"
 msgstr ""
 
-#: ../identity/federated-keystone.rst:562
+#: ../identity/federated-keystone.rst:565
 msgid ""
 "Currently, the CLI supports the Enhanced Client or Proxy (ECP), (the non-"
 "browser) support for ``keystoneclient`` from an API perspective. So, if you "
@@ -4273,7 +4273,7 @@ msgid ""
 "technologies are important from a security perspective."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:560 ../identity/future.rst:3
+#: ../identity/federated-keystone.rst:563 ../identity/future.rst:3
 msgid "Future"
 msgstr ""
 
@@ -4283,11 +4283,11 @@ msgid ""
 "recommended security controls. Cloud operators should:"
 msgstr ""
 
-#: ../identity/federated-keystone.rst:507
+#: ../identity/federated-keystone.rst:510
 msgid "Generate metadata"
 msgstr ""
 
-#: ../identity/federated-keystone.rst:451
+#: ../identity/federated-keystone.rst:452
 msgid "Get a scoped token."
 msgstr ""
 
@@ -4361,7 +4361,7 @@ msgstr ""
 msgid "HTTP Strict Transport Security (HSTS)"
 msgstr ""
 
-#: ../object-storage.rst:184
+#: ../object-storage.rst:190
 msgid "HTTP listening port"
 msgstr ""
 
@@ -4737,7 +4737,7 @@ msgid ""
 "effectiveness, and thus dissuade the attacker."
 msgstr ""
 
-#: ../object-storage.rst:127
+#: ../object-storage.rst:133
 msgid ""
 "If ssync is used instead of rsync, the Object service port is used for "
 "maintaining durability."
@@ -4753,7 +4753,7 @@ msgid ""
 "on Image Provenance."
 msgstr ""
 
-#: ../object-storage.rst:206
+#: ../object-storage.rst:212
 msgid ""
 "If the option of using Apache is not feasible or for performance you wish to "
 "offload your TLS work you may employ a dedicated network device load "
@@ -4787,7 +4787,7 @@ msgid ""
 "``SECURE_PROXY_SSL_HEADER`` variable."
 msgstr ""
 
-#: ../object-storage.rst:211
+#: ../object-storage.rst:217
 msgid ""
 "If you choose to offload your TLS, ensure that the network link between the "
 "load balancer and your proxy nodes are on a private (V)LAN segment such that "
@@ -4912,7 +4912,7 @@ msgstr ""
 msgid "Improves performance of network I/O on hypervisors"
 msgstr ""
 
-#: ../object-storage.rst:258
+#: ../object-storage.rst:264
 msgid ""
 "In :file:`/etc/swift` on every node there is a ``swift_hash_path_prefix`` "
 "setting and a ``swift_hash_path_suffix`` setting. These are provided to "
@@ -5020,7 +5020,7 @@ msgid ""
 "this domain. See :ref:`Bridging_security_domains` for more information."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:509
+#: ../identity/federated-keystone.rst:512
 msgid ""
 "In order to create a trust between the Identity Provider and the Service "
 "Provider, metadata must be exchanged. To create metadata for your Identity "
@@ -5341,7 +5341,7 @@ msgid ""
 "to access many different services on the Internet."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:495
+#: ../identity/federated-keystone.rst:498
 msgid "It is also recommended the following ``Contact`` options are set."
 msgstr ""
 
@@ -5452,7 +5452,7 @@ msgid ""
 "certificates issued to one are not recognized by another."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:486
+#: ../identity/federated-keystone.rst:489
 msgid ""
 "It is recommended that the following ``Organization`` configuration options "
 "be setup."
@@ -5563,11 +5563,11 @@ msgid ""
 "disk encryption keys on a per-tenant basis"
 msgstr ""
 
-#: ../object-storage.rst:249
+#: ../object-storage.rst:255
 msgid "Keystone"
 msgstr ""
 
-#: ../object-storage.rst:251
+#: ../object-storage.rst:257
 msgid ""
 "Keystone is the commonly used Identity provider in OpenStack. It may also be "
 "used for authentication in Object Storage. Coverage of securing keystone is "
@@ -5621,7 +5621,7 @@ msgstr ""
 msgid "Labels and categories"
 msgstr ""
 
-#: ../identity/federated-keystone.rst:544
+#: ../identity/federated-keystone.rst:547
 msgid ""
 "Lastly, if a scoped token and a Service Provider region are presented to "
 "keystone, the result will be a full SAML Assertion, signed by the IdP "
@@ -5685,7 +5685,7 @@ msgstr ""
 msgid "Live migration risks"
 msgstr ""
 
-#: ../object-storage.rst:204
+#: ../object-storage.rst:210
 msgid "Load balancer"
 msgstr ""
 
@@ -6403,7 +6403,7 @@ msgstr ""
 msgid "Object Reuse"
 msgstr ""
 
-#: ../object-storage.rst:119
+#: ../object-storage.rst:125
 msgid "Object Service"
 msgstr ""
 
@@ -6415,15 +6415,15 @@ msgstr ""
 msgid "Object Storage"
 msgstr ""
 
-#: ../object-storage.rst:138
+#: ../object-storage.rst:144
 msgid "Object Storage \"account\" terminology"
 msgstr ""
 
-#: ../object-storage.rst:226
+#: ../object-storage.rst:232
 msgid "Object Storage authentication"
 msgstr ""
 
-#: ../object-storage.rst:235
+#: ../object-storage.rst:241
 msgid ""
 "Object Storage comes with two authentication middleware modules by default, "
 "either of which can be used as sample code for developing a custom "
@@ -6449,7 +6449,7 @@ msgstr ""
 msgid "Object Storage objects"
 msgstr ""
 
-#: ../object-storage.rst:228
+#: ../object-storage.rst:234
 msgid ""
 "Object Storage uses a WSGI model to provide for a middleware capability that "
 "not only provides general extensibility but is also used for authentication "
@@ -6885,15 +6885,15 @@ msgid ""
 "token-based authentication mechanisms implemented via middleware."
 msgstr ""
 
-#: ../object-storage.rst:146
+#: ../object-storage.rst:152
 msgid "OpenStack Object Storage account"
 msgstr ""
 
-#: ../object-storage.rst:151
+#: ../object-storage.rst:157
 msgid "OpenStack Object Storage containers"
 msgstr ""
 
-#: ../object-storage.rst:155
+#: ../object-storage.rst:161
 msgid "OpenStack Object Storage objects"
 msgstr ""
 
@@ -7218,7 +7218,7 @@ msgid ""
 "instances resulting in unhappy customers."
 msgstr ""
 
-#: ../object-storage.rst:256
+#: ../object-storage.rst:262
 msgid "Other notable items"
 msgstr ""
 
@@ -7394,7 +7394,7 @@ msgstr ""
 msgid "Policy changes"
 msgstr ""
 
-#: ../object-storage.rst:111
+#: ../object-storage.rst:117
 msgid "Port"
 msgstr ""
 
@@ -7941,7 +7941,7 @@ msgstr ""
 msgid "Rootwrap"
 msgstr ""
 
-#: ../object-storage.rst:122
+#: ../object-storage.rst:128
 msgid "Rsync [1]_"
 msgstr ""
 
@@ -8132,7 +8132,7 @@ msgstr ""
 msgid "Securing communications using TLS"
 msgstr ""
 
-#: ../object-storage.rst:173
+#: ../object-storage.rst:179
 msgid "Securing proxy services"
 msgstr ""
 
@@ -8140,7 +8140,7 @@ msgstr ""
 msgid "Securing services: general"
 msgstr ""
 
-#: ../object-storage.rst:102
+#: ../object-storage.rst:108
 msgid "Securing storage services"
 msgstr ""
 
@@ -8384,7 +8384,7 @@ msgstr ""
 msgid "Service authorization"
 msgstr ""
 
-#: ../object-storage.rst:110
+#: ../object-storage.rst:116
 msgid "Service name"
 msgstr ""
 
@@ -8408,7 +8408,7 @@ msgstr ""
 msgid "Session back end"
 msgstr ""
 
-#: ../identity/federated-keystone.rst:465
+#: ../identity/federated-keystone.rst:468
 msgid "Setting Identity service as Identity Provider"
 msgstr ""
 
@@ -8648,8 +8648,8 @@ msgid ""
 "accomplish this goal."
 msgstr ""
 
-#: ../object-storage.rst:115 ../object-storage.rst:118
 #: ../object-storage.rst:121 ../object-storage.rst:124
+#: ../object-storage.rst:127 ../object-storage.rst:130
 msgid "TCP"
 msgstr ""
 
@@ -8690,11 +8690,11 @@ msgstr ""
 msgid "Technology"
 msgstr ""
 
-#: ../object-storage.rst:240
+#: ../object-storage.rst:246
 msgid "TempAuth"
 msgstr ""
 
-#: ../object-storage.rst:242
+#: ../object-storage.rst:248
 msgid ""
 "TempAuth is the default authentication for Object Storage. In contrast to "
 "Identity it stores the user accounts, credentials, and metadata in object "
@@ -8745,7 +8745,7 @@ msgstr ""
 msgid "Test sanitation equipment and procedures to verify proper performance."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:542
+#: ../identity/federated-keystone.rst:545
 msgid "Testing it all out"
 msgstr ""
 
@@ -9429,7 +9429,7 @@ msgid ""
 "following services:"
 msgstr ""
 
-#: ../object-storage.rst:156
+#: ../object-storage.rst:162
 msgid ""
 "The actual data objects. ACLs at the object level are also possible with "
 "metadata and are dependent on the authentication system used."
@@ -9441,7 +9441,7 @@ msgid ""
 "should be minimized."
 msgstr ""
 
-#: ../object-storage.rst:218
+#: ../object-storage.rst:224
 msgid ""
 "The authentication service you use, such as Identity service (keystone) or "
 "TempAuth, will determine how you configure a different URL in the responses "
@@ -9673,7 +9673,7 @@ msgstr ""
 msgid "The endpoint that is trusting that the CA is valid."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:520
+#: ../identity/federated-keystone.rst:523
 msgid ""
 "The file location should match the value of the configuration option "
 "``idp_metadata_path`` that was assigned in the list of ``[saml]`` updates."
@@ -9710,7 +9710,7 @@ msgid ""
 "networks."
 msgstr ""
 
-#: ../object-storage.rst:104
+#: ../object-storage.rst:110
 msgid ""
 "The following are the default listening ports for the various storage "
 "services:"
@@ -9884,7 +9884,7 @@ msgid ""
 "OpenStack development process."
 msgstr ""
 
-#: ../object-storage.rst:200
+#: ../object-storage.rst:206
 msgid ""
 "The method for configuring your web server to start and run as a non-root "
 "user varies by web server and OS."
@@ -10596,7 +10596,7 @@ msgid ""
 "cloud operators."
 msgstr ""
 
-#: ../object-storage.rst:97
+#: ../object-storage.rst:103
 msgid ""
 "This restricts only root to be able to modify configuration files while "
 "allowing the services to read them through their group membership in the "
@@ -10641,7 +10641,7 @@ msgid ""
 "privileges as the root user on the node."
 msgstr ""
 
-#: ../object-storage.rst:263
+#: ../object-storage.rst:269
 msgid ""
 "This value should be initially set with a cryptographically secure random "
 "number generator and consistent across all nodes. Ensure that it is "
@@ -10918,7 +10918,7 @@ msgstr ""
 msgid "Twofish"
 msgstr ""
 
-#: ../object-storage.rst:112
+#: ../object-storage.rst:118
 msgid "Type"
 msgstr ""
 
@@ -11839,7 +11839,7 @@ msgid ""
 "for auto vacuuming and periodic free-space wiping."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:474
+#: ../identity/federated-keystone.rst:477
 msgid ""
 "Within the :file:`keystone.conf` assign values to the ``[saml]`` related "
 "fields, for example:"
@@ -11918,7 +11918,7 @@ msgid ""
 "endpoint."
 msgstr ""
 
-#: ../object-storage.rst:186
+#: ../object-storage.rst:192
 msgid ""
 "You should configure your web service as a non-root (no UID 0) user such as "
 "\"swift\" mentioned before. The use of a port greater than 1024 is required "
@@ -12443,7 +12443,7 @@ msgstr ""
 
 # #-#-#-#-#  identity.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  secure-communication.pot (Security Guide 0.0.1)  #-#-#-#-#
-#: ../identity/federated-keystone.rst:444
+#: ../identity/federated-keystone.rst:445
 #: ../secure-communication/tls-proxies-and-http-services.rst:38
 msgid "or"
 msgstr ""

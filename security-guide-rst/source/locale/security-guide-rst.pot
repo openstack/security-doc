@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-07 06:01+0000\n"
+"POT-Creation-Date: 2015-08-08 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1931,8 +1931,7 @@ msgid ""
 msgstr ""
 
 #: ../identity/policies.rst:15
-msgid ""
-"Below is a snippet of the Block Storage service :file:`policy.json` file."
+msgid "Below is a snippet of the :file:`policy.json` file."
 msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:26
@@ -2299,7 +2298,7 @@ msgid ""
 msgstr ""
 
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:40
-msgid "Certification Authority (CA)"
+msgid "Certification Authority (:term:`CA`)"
 msgstr ""
 
 #: ../compliance/certification-and-compliance-statements.rst:3
@@ -2566,6 +2565,12 @@ msgstr ""
 msgid "Compute"
 msgstr ""
 
+#: ../secure-communication/tls-proxies-and-http-services.rst:263
+msgid ""
+"Compute API SSL endpoint in Apache, which you must pair with a short WSGI "
+"script."
+msgstr ""
+
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:145
 msgid "Compute API endpoints"
 msgstr ""
@@ -2717,7 +2722,7 @@ msgstr ""
 msgid "Configuring Identity service for Federation"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:287
+#: ../secure-communication/tls-proxies-and-http-services.rst:314
 msgid ""
 "Configuring TLS servers for perfect forward secrecy requires careful "
 "planning around key size, session IDs, and session tickets. In addition, for "
@@ -4365,7 +4370,7 @@ msgstr ""
 msgid "HTTP listening port"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:264
+#: ../secure-communication/tls-proxies-and-http-services.rst:291
 msgid "HTTP strict transport security"
 msgstr ""
 
@@ -4814,11 +4819,11 @@ msgstr ""
 
 #: ../management/management-interfaces.rst:193
 msgid ""
-"If you use a web interface to interact with the BMC/IPMI, always use the TLS "
-"interface, such as HTTPS or port 443. This TLS interface should **NOT** use "
-"self-signed certificates, as is often default, but should have trusted "
-"certificates using the correctly defined fully qualified domain names "
-"(FQDNs)."
+"If you use a web interface to interact with the :term:`BMC`/IPMI, always use "
+"the TLS interface, such as HTTPS or port 443. This TLS interface should "
+"**NOT** use self-signed certificates, as is often default, but should have "
+"trusted certificates using the correctly defined fully qualified domain "
+"names (FQDNs)."
 msgstr ""
 
 #: ../dashboard/front-end-caching-session-back-end.rst:31
@@ -5347,9 +5352,9 @@ msgstr ""
 
 #: ../management/management-interfaces.rst:46
 msgid ""
-"It is an extensible Django web application that allows easy plug-in of third-"
-"party products and services, such as billing, monitoring, and additional "
-"management tools."
+"It is an extensible :term:`Django` web application that allows easy plug-in "
+"of third-party products and services, such as billing, monitoring, and "
+"additional management tools."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:423
@@ -5956,7 +5961,7 @@ msgstr ""
 msgid "Minimizing the QEMU code base"
 msgstr ""
 
-#: ../management/management-interfaces.rst:199
+#: ../management/management-interfaces.rst:200
 msgid ""
 "Monitor the traffic on the management network. The anomalies might be easier "
 "to track than on the busier compute nodes."
@@ -6320,12 +6325,13 @@ msgid ""
 "keystone.conf`` file maps LDAP attributes to Identity attributes."
 msgstr ""
 
-#: ../identity/policies.rst:22
+#: ../identity/policies.rst:53
 msgid ""
-"Note the **default** rule specifies that the user must be either an admin or "
-"the owner of the volume. It essentially says only the owner of a volume or "
-"the admin may create/delete/update volumes. Certain other operations such as "
-"managing volume types are accessible only to admin users."
+"Note the **cloud_admin** rule specifies that the user must be an admin on a "
+"certain domain. It essentially says only the cloud admin may create/delete/"
+"update services and their endpoints. Certain other operations such as "
+"listing/retrieving details of services and endpoints are accessible only to "
+"admin users."
 msgstr ""
 
 #: ../databases/database-access-control.rst:102
@@ -7231,7 +7237,7 @@ msgstr ""
 msgid "Others (KVM, and more):"
 msgstr ""
 
-#: ../management/management-interfaces.rst:202
+#: ../management/management-interfaces.rst:203
 msgid ""
 "Out of band management interfaces also often include graphical machine "
 "console access. It is often possible, although not necessarily default, that "
@@ -7341,7 +7347,7 @@ msgid ""
 "implementors make a best-effort in encrypting tenant data."
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:285
+#: ../secure-communication/tls-proxies-and-http-services.rst:312
 msgid "Perfect forward secrecy"
 msgstr ""
 
@@ -7782,7 +7788,7 @@ msgstr ""
 #: ../management/continuous-systems-management.rst:236
 #: ../management/management-interfaces.rst:77
 #: ../management/management-interfaces.rst:166
-#: ../management/management-interfaces.rst:208
+#: ../management/management-interfaces.rst:209
 msgid "References"
 msgstr ""
 
@@ -8555,7 +8561,7 @@ msgstr ""
 msgid "Start the guest"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:277
+#: ../secure-communication/tls-proxies-and-http-services.rst:304
 msgid ""
 "Start with a short timeout of 1 day during testing, and raise it to one year "
 "after testing has shown that you have not introduced problems for users. "
@@ -9064,7 +9070,7 @@ msgid ""
 "access is allowed to the requested resource."
 msgstr ""
 
-#: ../identity/tokens.rst:28
+#: ../identity/tokens.rst:40
 msgid ""
 "The Identity service supports token revocation. This manifests as an API to "
 "revoke a token, to list revoked tokens and individual OpenStack services "
@@ -10154,7 +10160,7 @@ msgstr ""
 msgid "The team included:"
 msgstr ""
 
-#: ../identity/tokens.rst:23
+#: ../identity/tokens.rst:35
 msgid ""
 "The token is often passed within the structure of a larger context of an "
 "Identity service response. These responses also provide a catalog of the "
@@ -10241,8 +10247,8 @@ msgstr ""
 msgid ""
 "There are many configuration management solutions; at the time of this "
 "writing there are two in the marketplace that are robust in their support of "
-"OpenStack environments: Chef and Puppet. A non-exhaustive listing of tools "
-"in this space is provided below:"
+"OpenStack environments: :term:`Chef` and :term:`Puppet`. A non-exhaustive "
+"listing of tools in this space is provided below:"
 msgstr ""
 
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:93
@@ -11378,7 +11384,7 @@ msgid ""
 "privileged accounts."
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:266
+#: ../secure-communication/tls-proxies-and-http-services.rst:293
 msgid ""
 "We recommend that all production deployments use HTTP strict transport "
 "security (HSTS). This header prevents browsers from making insecure "
@@ -12029,7 +12035,7 @@ msgid ""
 "HdfsUserGuide.html>`_"
 msgstr ""
 
-#: ../management/management-interfaces.rst:210
+#: ../management/management-interfaces.rst:211
 msgid ""
 "`Hacking servers that are turned off <https://isc.sans.edu/diary/IPMI%3A"
 "+Hacking+servers+that+are+turned+%22off%22/13399>`__"
@@ -12075,8 +12081,7 @@ msgstr ""
 
 #: ../management/management-interfaces.rst:79
 msgid ""
-"`Icehouse Release Notes <https://wiki.openstack.org/wiki/ReleaseNotes/"
-"Icehouse>`__"
+"`Kilo Release Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Kilo>`__"
 msgstr ""
 
 #: ../data-processing/introduction-to-data-processing.rst:87

@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-06 17:20+0000\n"
-"PO-Revision-Date: 2015-08-06 22:37+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
+"POT-Creation-Date: 2015-08-08 03:56+0000\n"
+"PO-Revision-Date: 2015-08-08 03:57+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/openstack/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -104,7 +104,7 @@ msgstr "**例. \"db_proxy\" という名前のプロキシードメインの設�
 
 #: ../data-processing/configuration-and-hardening.rst:66
 msgid "**Example. Disallow image registry manipulations to non-admin users**"
-msgstr ""
+msgstr "**例。管理ユーザー以外のイメージレジストリーの操作を無効化します**"
 
 #: ../data-processing/configuration-and-hardening.rst:177
 msgid "**Example. Enabling rootwrap usage and showing the default command**"
@@ -1946,8 +1946,7 @@ msgid ""
 msgstr "OpenStack サーバ群の負荷を検知可能にする事はまた、高可用化対応の為に負荷分散用追加サーバを導入する為の対応を可能にする事でもあります。"
 
 #: ../identity/policies.rst:15
-msgid ""
-"Below is a snippet of the Block Storage service :file:`policy.json` file."
+msgid "Below is a snippet of the :file:`policy.json` file."
 msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:26
@@ -2012,7 +2011,7 @@ msgid ""
 "ensured that the dashboard is deployed on a second-level domain due to the "
 "limitations of the same-origin policy. He also disables "
 "``HORIZON_IMAGES_ALLOW_UPLOAD`` to prevent resource exhaustion."
-msgstr ""
+msgstr "ボブはクラウドのさまざまな観点を管理するために dashboard も導入します。必ず HTTPS のみを使用するために HSTS と共に dashboard を導入します。dashboard が同一オリジンポリシーの制限のため必ず第 2 レベルドメインに導入されるようにしました。また、リソース枯渇を防ぐために ``HORIZON_IMAGES_ALLOW_UPLOAD`` を無効化します。"
 
 #: ../messaging/case-studies.rst:33
 msgid ""
@@ -2079,7 +2078,7 @@ msgid ""
 "database user, and configures the database to use both passwords and X.509 "
 "certificates for authentication. He elects not to use the nova-conductor "
 "sub-service due to a desire for fine-grained access control."
-msgstr ""
+msgstr "ボブはプロジェクトのデータの確実な分離に関心があります。そのため、彼はより強力なセキュリティ機能が知られている PostgreSQL データベースを使用することにしました。データベースは管理ネットワークに置かれ、サービス間の相互認証とともに SSL/TLS を使用します。データベースは管理ネットワークにあるので、組織の自己署名ルート証明書で署名した証明書を使用します。ボブは各データベースユーザーに対して別々のユーザーアカウントを作成し、認証のためにパスワードと X.509 証明書の両方を使用するようデータベースを設定します。高精細なアクセス制御をしたいので、nova-conductor サブサービスを使用しないことにします。"
 
 #: ../instance-management/case-studies.rst:47
 msgid ""
@@ -2211,7 +2210,7 @@ msgid ""
 "<http://en.wikipedia.org/wiki/Forward_secrecy>`_. See :ref:`secure-"
 "communication-perfect-forward-secrecy` for additional discussion on properly"
 " configuring PFS."
-msgstr ""
+msgstr "どちらの方法も `Perfect Forward Secrecy (PFS) <http://en.wikipedia.org/wiki/Forward_secrecy>`_ を提供します。PFS の適切な設定に関する議論は :ref:`secure-communication-perfect-forward-secrecy` を参照してください。"
 
 #: ../management/management-interfaces.rst:62
 msgid ""
@@ -2237,7 +2236,7 @@ msgid ""
 "By default, the remote desktop traffic is not encrypted. TLS can be enabled "
 "to encrypt the VNC traffic. Please refer to `Introduction to TLS and SSL "
 "<introduction-to-ssl-tls>`__ for appropriate recommendations."
-msgstr ""
+msgstr "リモートデスクトップ通信はデフォルトで暗号化されません。TLS は、VNC 通信の暗号化を有効化できます。適切な推奨事項は  `TLS および SSL の概要 <introduction-to-ssl-tls>`__ を参照してください。"
 
 #: ../identity/federated-keystone.rst:428
 msgid ""
@@ -2316,8 +2315,8 @@ msgid ""
 msgstr "インターネットに面したクラウドのエンドポイント(あるいは証明書をバンドルした標準的なOS以外の何かがインストールされていると顧客が想定していない顧客インターフェース)上のTLSに対応に使用される証明書はOSの証明書バンドル中にインストールされるCAを用いてプロビジョニングされるべきです。通常、有名ベンダーにはベリサインやThawteを含みますが、他の多くのベンダーもあります。"
 
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:40
-msgid "Certification Authority (CA)"
-msgstr "認証局 (CA)"
+msgid "Certification Authority (:term:`CA`)"
+msgstr ""
 
 #: ../compliance/certification-and-compliance-statements.rst:3
 msgid "Certification and compliance statements"
@@ -2587,6 +2586,12 @@ msgstr "包括的なプライバシー管理には、十分な準備、考慮と
 msgid "Compute"
 msgstr "Compute"
 
+#: ../secure-communication/tls-proxies-and-http-services.rst:263
+msgid ""
+"Compute API SSL endpoint in Apache, which you must pair with a short WSGI "
+"script."
+msgstr "Apache 中の Compute API SSL エンドポイント (短い WSGI スクリプトと組み合わせる必要あり)"
+
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:145
 msgid "Compute API endpoints"
 msgstr "Compute APIエンドポイント"
@@ -2626,7 +2631,7 @@ msgstr ""
 
 #: ../documentation/system-documentation-requirements.rst:17
 msgid "Compute, storage, or other resource nodes"
-msgstr ""
+msgstr "コンピュート、ストレージ、他のリソースのノード"
 
 #: ../compute/hypervisor-selection.rst:498
 msgid ""
@@ -2634,7 +2639,7 @@ msgid ""
 " Technologies. 2011. "
 "`http://csrc.nist.gov/publications/nistpubs/800-125/SP800-125-final.pdf "
 "<http://csrc.nist.gov/publications/nistpubs/800-125/SP800-125-final.pdf>`__"
-msgstr ""
+msgstr "Computer Security Resource Centre. Guide to Security for Full Virtualization Technologies. 2011. `http://csrc.nist.gov/publications/nistpubs/800-125/SP800-125-final.pdf <http://csrc.nist.gov/publications/nistpubs/800-125/SP800-125-final.pdf>`__"
 
 #: ../data-processing/configuration-and-hardening.rst:3
 msgid "Configuration and hardening"
@@ -2738,7 +2743,7 @@ msgstr ""
 msgid "Configuring Identity service for Federation"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:287
+#: ../secure-communication/tls-proxies-and-http-services.rst:314
 msgid ""
 "Configuring TLS servers for perfect forward secrecy requires careful "
 "planning around key size, session IDs, and session tickets. In addition, for"
@@ -4392,7 +4397,7 @@ msgstr "HTTP Strict Transport Security (HSTS)"
 msgid "HTTP listening port"
 msgstr "HTTP リッスンポート"
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:264
+#: ../secure-communication/tls-proxies-and-http-services.rst:291
 msgid "HTTP strict transport security"
 msgstr "HTTP Strict Transport Security"
 
@@ -4844,12 +4849,12 @@ msgstr ""
 
 #: ../management/management-interfaces.rst:193
 msgid ""
-"If you use a web interface to interact with the BMC/IPMI, always use the TLS"
-" interface, such as HTTPS or port 443. This TLS interface should **NOT** use"
-" self-signed certificates, as is often default, but should have trusted "
-"certificates using the correctly defined fully qualified domain names "
-"(FQDNs)."
-msgstr "Web インターフェースを使用して BMC/IPMI と対話する場合、常に TLS インターフェースを使用するようにしてください (例: HTTPS またはポート 443)。この TLS インターフェースは自己署名証明書を使用*しない*ようにしてください。通常、これがデフォルトとなっていますが、正しく定義された完全修飾ドメイン名 (FQDN) を使用して信頼済みの証明書を使用するようにしてください。"
+"If you use a web interface to interact with the :term:`BMC`/IPMI, always use"
+" the TLS interface, such as HTTPS or port 443. This TLS interface should "
+"**NOT** use self-signed certificates, as is often default, but should have "
+"trusted certificates using the correctly defined fully qualified domain "
+"names (FQDNs)."
+msgstr ""
 
 #: ../dashboard/front-end-caching-session-back-end.rst:31
 msgid ""
@@ -5379,8 +5384,8 @@ msgstr "以下の ``Contact`` オプションも設定することを推奨し�
 
 #: ../management/management-interfaces.rst:46
 msgid ""
-"It is an extensible Django web application that allows easy plug-in of "
-"third-party products and services, such as billing, monitoring, and "
+"It is an extensible :term:`Django` web application that allows easy plug-in "
+"of third-party products and services, such as billing, monitoring, and "
 "additional management tools."
 msgstr ""
 
@@ -5990,7 +5995,7 @@ msgstr "マイグレーションネットワーク"
 msgid "Minimizing the QEMU code base"
 msgstr "QEMU コードベースの最小化"
 
-#: ../management/management-interfaces.rst:199
+#: ../management/management-interfaces.rst:200
 msgid ""
 "Monitor the traffic on the management network. The anomalies might be easier"
 " to track than on the busier compute nodes."
@@ -6355,13 +6360,14 @@ msgid ""
 "attributes."
 msgstr "LDAP システムがユーザーに対して定義された、幹部社員、経理、人事などのような属性を持っている場合、これらはさまざまな OpenStack サービスにより使用するために Identity の中でロールとグループにマッピングされる必要があります。``/etc/keystone/keystone.conf`` ファイルは、LDAP の属性をIdentity の属性にマッピングします。"
 
-#: ../identity/policies.rst:22
+#: ../identity/policies.rst:53
 msgid ""
-"Note the **default** rule specifies that the user must be either an admin or"
-" the owner of the volume. It essentially says only the owner of a volume or "
-"the admin may create/delete/update volumes. Certain other operations such as"
-" managing volume types are accessible only to admin users."
-msgstr "**デフォルト** のルールは、ユーザーが管理者であるか、ボリュームの所有者である必要があることを指定しています。つまり、ボリュームの所有者と管理者のみがボリュームを作成、削除、更新できます。ボリューム形式の管理など、他の特定の操作は管理ユーザーのみがアクセス可能です。"
+"Note the **cloud_admin** rule specifies that the user must be an admin on a "
+"certain domain. It essentially says only the cloud admin may "
+"create/delete/update services and their endpoints. Certain other operations "
+"such as listing/retrieving details of services and endpoints are accessible "
+"only to admin users."
+msgstr ""
 
 #: ../databases/database-access-control.rst:102
 msgid ""
@@ -7269,7 +7275,7 @@ msgstr "その他の支援技術"
 msgid "Others (KVM, and more):"
 msgstr "その他 (KVM など):"
 
-#: ../management/management-interfaces.rst:202
+#: ../management/management-interfaces.rst:203
 msgid ""
 "Out of band management interfaces also often include graphical machine "
 "console access. It is often possible, although not necessarily default, that"
@@ -7379,7 +7385,7 @@ msgid ""
 "implementors make a best-effort in encrypting tenant data."
 msgstr "暗号化の単位は、好ましい方から順にインスタンス単位又はオブジェクト単位、プロジェクト単位、テナント単位、ホスト単位、クラウド集合単位です。この推奨順は、実装の複雑さと困難さの順序の逆です。現在、いくつかのプロジェクトでは、テナント単位ですら粒度の荒い暗号化の実装が困難又は不可能です。実装者がテナントデータの暗号化を最善策とする事をお勧めします。"
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:285
+#: ../secure-communication/tls-proxies-and-http-services.rst:312
 msgid "Perfect forward secrecy"
 msgstr "Perfect forward secrecy"
 
@@ -7822,7 +7828,7 @@ msgstr "Redhat.com/solutions, Using SSL Encryption with OpenStack nova-novacprox
 #: ../management/continuous-systems-management.rst:236
 #: ../management/management-interfaces.rst:77
 #: ../management/management-interfaces.rst:166
-#: ../management/management-interfaces.rst:208
+#: ../management/management-interfaces.rst:209
 msgid "References"
 msgstr "参考資料"
 
@@ -8597,7 +8603,7 @@ msgstr "目的先ホストでインスタンスを起動"
 msgid "Start the guest"
 msgstr "ゲストを起動"
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:277
+#: ../secure-communication/tls-proxies-and-http-services.rst:304
 msgid ""
 "Start with a short timeout of 1 day during testing, and raise it to one year"
 " after testing has shown that you have not introduced problems for users. "
@@ -9109,7 +9115,7 @@ msgid ""
 "if access is allowed to the requested resource."
 msgstr "Identity はグループとロールの概念をサポートします。ユーザーはグループに所属します。グループはロールの一覧を持ちます。OpenStack サービスはユーザーがサービスにアクセスしようとしているロールを参照します。OpenStack ポリシー判定ミドルウェアにより、各リソースに関連付けられたポリシールール、ユーザーのグループとロール、関連性を考慮して、要求されたリソースへのアクセスが許可されるかを判断されます。"
 
-#: ../identity/tokens.rst:28
+#: ../identity/tokens.rst:40
 msgid ""
 "The Identity service supports token revocation. This manifests as an API to "
 "revoke a token, to list revoked tokens and individual OpenStack services "
@@ -9805,13 +9811,13 @@ msgstr "以下の行をシステム全体の MySQL 設定ファイルに追加�
 msgid ""
 "The following lines should be added in the system-wide PostgreSQL "
 "configuration file, :file:`postgresql.conf`."
-msgstr ""
+msgstr "以下の行をシステム全体の PostgreSQL 設定ファイル :file:`postgresql.conf` に追加する必要があります。"
 
 #: ../messaging/security.rst:37
 msgid ""
 "The following lines should be added to the system-wide RabbitMQ "
 "configuration file, typically :file:`/etc/rabbitmq/rabbitmq.config`:"
-msgstr ""
+msgstr "下記の設定を RabbitMQ のシステム設定ファイルに追加します。通常、:file:`/etc/rabbitmq/rabbitmq.config` に保存されています。"
 
 #: ../compute/hypervisor-selection.rst:423
 msgid ""
@@ -9857,7 +9863,7 @@ msgid ""
 "The information system will receive a security category as defined in "
 "Federal Information Processing Standards Publication 199 (FIPS 199). These "
 "categories reflect the potential impact of system compromise."
-msgstr ""
+msgstr "情報システムは連邦情報処理規格( Federal Information Processing Standards Publication 199, FIPS 199)で定められたセキュリティカテゴリに分類されます。これらのカテゴリはシステムの情報漏洩の潜在的な影響を反映しています。"
 
 #: ../management/integrity-life-cycle.rst:177
 msgid ""
@@ -9981,7 +9987,7 @@ msgid ""
 "The nodes that run the cloud related services such as the OpenStack Identity"
 " service, the message queuing service, storage, networking, and other "
 "services required to support the operation of the cloud."
-msgstr ""
+msgstr "OpenStack Identity、メッセージキューサービス、ストレージ、ネットワーク、およびクラウドの運用をサポートするために必要なその他のサービスなどのクラウド関連サービスを実行するノードです。"
 
 #: ../compute/how-to-select-virtual-consoles.rst:62
 msgid ""
@@ -10052,7 +10058,7 @@ msgid ""
 "including carefully protected facilities and supply chains.  In contrast "
 "those standing up basic development or test environments will likely require"
 " less restrictive controls (middle of the spectrum)."
-msgstr ""
+msgstr "攻撃の形式ごとの規範的な防御については、本書の対象範囲外となっています。上記の図は、対策を行うべき脅威の種類、脅威のアクターについて詳細な情報を得た状態で意思決定ができるように支援します。商業的なパブリッククラウドのデプロイに関しては重大な犯罪の防止などが含まれる場合があります。 政府で使用するプライベートクラウドをデプロイする方は、細心の注意を払って設置された対策施設やサプライチェーンなど、より厳密な保護メカニズムを設置する必要があります。反対に、基本的なデプロイメントやテスト環境を設定する方は、制御に関する制約が少なくて済むでしょう。"
 
 #: ../tenant-data/data-privacy-concerns.rst:8
 msgid ""
@@ -10071,7 +10077,7 @@ msgid ""
 " This should be in done in addition to other security monitoring tools. "
 "Remember that the goal is both security *and* compliance. Failing on either "
 "of these fronts will significantly complicate future audits."
-msgstr ""
+msgstr "このプロセスは一度の外部監査で終わることがありません。多くの認証は継続的なコンプライアンス活動、すなわち、定期的な監査を要求します。わたしたちは、常に準拠を確実にするために、自動化されたコンプライアンス検証ツールをクラウド内に作ることをおすすめします。これは他のセキュリティ監視ツールに加え実装されるべきです。このゴールがセキュリティ *かつ* コンプライアンスであることを忘れないでください。これらのどちらかに不具合があれば、将来の監査において非常に面倒なことになります。"
 
 #: ../api-endpoints.rst:5
 msgid ""
@@ -10126,7 +10132,7 @@ msgid ""
 "want to follow your organizations OS hardening guidelines or those provided "
 "by a trusted third-party such as the `Linux STIGs "
 "<http://iase.disa.mil/stigs/os/unix-linux/Pages/index.aspx>`_."
-msgstr ""
+msgstr "次の選択肢は、`OpenStack 仮想マシンイメージガイド <http://docs.openstack.org/ja/image-guide/>`_ の活用です。こちらの場合、あなたの所属する組織の OS 強化ガイドラインや `Linux STIGs <http://iase.disa.mil/stigs/os/unix-linux/Pages/index.aspx>`_ のような信頼性の高い第三者団体が提供するガイドラインに従うことを推奨します。"
 
 #: ../introduction/introduction-to-openstack.rst:121
 msgid ""
@@ -10134,7 +10140,7 @@ msgid ""
 "techniques should include support for strong instance isolation, secure "
 "communication between Compute sub-components, and resiliency of public-"
 "facing API endpoints."
-msgstr ""
+msgstr "OpenStack のデプロイメントでは、Compute のセキュリティが極めて重要となります。セキュリティ強化のテクニックには、頑強なインスタンスの隔離、Compute のサブコンポーネント間におけるセキュアな通信、一般向けの API エンドポイントの弾力性などがあげられます。"
 
 #: ../management/integrity-life-cycle.rst:278
 msgid ""
@@ -10200,7 +10206,7 @@ msgstr "チームは、グループの主要なメンバーが集まるために
 msgid "The team included:"
 msgstr "チームメンバーは以下のとおりです。"
 
-#: ../identity/tokens.rst:23
+#: ../identity/tokens.rst:35
 msgid ""
 "The token is often passed within the structure of a larger context of an "
 "Identity service response. These responses also provide a catalog of the "
@@ -10287,9 +10293,9 @@ msgstr "OpenStack Networking と交信する主要なサービスが４つあり
 msgid ""
 "There are many configuration management solutions; at the time of this "
 "writing there are two in the marketplace that are robust in their support of"
-" OpenStack environments: Chef and Puppet. A non-exhaustive listing of tools "
-"in this space is provided below:"
-msgstr "構成管理ソリューションは多数存在しますが、本書の作成時点で市場にあるソリューションで OpenStack 環境のサポートが強力なものは Chef と Puppet の 2 種類となっています。以下に完全ではありませんが、ツールのリストを示しています。"
+" OpenStack environments: :term:`Chef` and :term:`Puppet`. A non-exhaustive "
+"listing of tools in this space is provided below:"
+msgstr ""
 
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:93
 msgid ""
@@ -10750,13 +10756,13 @@ msgid ""
 "recommended that OpenStack architects review the NIST publication 800-122, "
 "titled \"*Guide to Protecting the Confidentiality of Personally Identifiable"
 " Information (PII)*.\" This guide steps through the process of protecting:"
-msgstr ""
+msgstr "個人情報の保護に取り組むOpenStackアーキテクトを支援するため、OpenStackアーキテクトには、NIST刊行 800-122 \"*Guide to Protecting the Confidentiality of Personally Identifiable Information (PII)*\" をおすすめします。このガイドは以下を保護するプロセスについて述べています。"
 
 #: ../databases/database-access-control.rst:200
 msgid ""
 "To disable the nova-conductor, place the following into your "
 ":file:`nova.conf` file (on your compute hosts):"
-msgstr ""
+msgstr "nova-conductor を無効化するために、以下の事項を (コンピュートホストの) :file:`nova.conf` ファイルに記入します。"
 
 #: ../management/case-studies.rst:74
 msgid ""
@@ -10847,7 +10853,7 @@ msgid ""
 "To restrict the interface or IP address on which the OpenStack Networking "
 "API service binds a network socket for incoming client connections, specify "
 "the bind\\_host and bind\\_port in the neutron.conf file as shown:"
-msgstr ""
+msgstr "OpenStack Networking API サービスが外からのクライアント通信用にネットワークソケットをバインドするネットワークインターフェース又は IP アドレスを制限する為、neutron.conf ファイル中の bind\\_host と bind\\_port を以下のように指定します。"
 
 #: ../networking/securing-services.rst:5
 msgid ""
@@ -11046,7 +11052,7 @@ msgid ""
 "of improving the security of messaging. Any node with access to the message "
 "queue may execute these methods provided by the nova-conductor and "
 "effectively modifying the database."
-msgstr ""
+msgstr "残念なことに、このソリューションはより詳細なアクセス制御とデータアクセスの監査機能を複雑にします。nova-conductor サービスは RPC 経由でリクエストを受信するため、メッセージングのセキュリティを改善する重要性を強調させます。メッセージキューにアクセスするすべてのノードは、nova-conductor により提供されるこれらの方式を実行し、データベースを効率的に変更するかもしれません。"
 
 #: ../dashboard/https-hsts-xss-ssrf.rst:8
 msgid ""
@@ -11335,7 +11341,7 @@ msgid ""
 " the file permissions are restricted, for example using ``chmod 0600``, and "
 "the ownership is restricted to the messaging server daemon user to prevent "
 "unauthorized access by other processes and users on the messaging server."
-msgstr ""
+msgstr "メッセージキューには、通信路レベルでの暗号化を強く推奨します。メッセージクライアントとの接続に TLS を用いることで、メッセージサーバとの通信路における通信の改ざんや傍受を防ぐことが可能です。以下、よく使われる 2 種類のメッセージサーバ Qpid、および、RabbitMQ における一般的な TLS の設定について説明します。クライアント接続の正当性を保証する目的でメッセージサーバに証明機関 (CA) バンドルを設定する場合、該当ノードに限定した CA の使用を、またなるべくなら組織内部で管理している CA の使用を推奨します。信頼された CA バンドルは許可を与えるクライアント接続証明書を決定し、TLS 接続を張るためのクライアントサーバ検証のステップを通過させます。証明書とキーのファイルをインストールする際は、``chmod 0600`` などでファイルのパーミッションを限定させ、所有者をメッセージサーバのデーモンユーザに限定させるようにしてください。こうすることで、メッセージサーバ上の許可を与えていない他プロセスやユーザによるアクセスを防ぐことできます。"
 
 #: ../instance-management/security-services-for-instances.rst:222
 msgid ""
@@ -11430,7 +11436,7 @@ msgid ""
 "privileged accounts."
 msgstr "管理ユーザーは Identity や証明書のような 2 要素認証をサポートする外部認証サービスを使用して認証することを推奨します。これにより、パスワード推測によるリスクを減らすことができます。この推奨事項は特権アカウントへのネットワークアクセスに多要素認証を使用するという NIST 800-53 IA-2(1) ガイドに適合しています。"
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:266
+#: ../secure-communication/tls-proxies-and-http-services.rst:293
 msgid ""
 "We recommend that all production deployments use HTTP strict transport "
 "security (HSTS). This header prevents browsers from making insecure "
@@ -12084,7 +12090,7 @@ msgid ""
 "hdfs/HdfsUserGuide.html>`_"
 msgstr "`HDFS <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html>`_"
 
-#: ../management/management-interfaces.rst:210
+#: ../management/management-interfaces.rst:211
 msgid ""
 "`Hacking servers that are turned off "
 "<https://isc.sans.edu/diary/IPMI%3A+Hacking+servers+that+are+turned+%22off%22/13399>`__"
@@ -12131,9 +12137,8 @@ msgstr "`ISO 27001/2:2013 <http://www.27000.org/iso-27001.htm>`__"
 
 #: ../management/management-interfaces.rst:79
 msgid ""
-"`Icehouse Release Notes "
-"<https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse>`__"
-msgstr "`Icehouse Release Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse>`__"
+"`Kilo Release Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Kilo>`__"
+msgstr ""
 
 #: ../data-processing/introduction-to-data-processing.rst:87
 msgid ""

@@ -18,7 +18,19 @@ typically 3500 bytes. In this example, the value has been truncated.
 
 .. code:: json
 
-   http://git.openstack.org/cgit/openstack/openstack-manuals/plain/doc/common/samples/token.json
+   {
+       "token": {
+           "expires": "2013-06-26T16:52:50Z",
+           "id": "MIIKXAY...",
+           "issued_at": "2013-06-25T16:52:50.622502",
+           "tenant": {
+               "description": null,
+               "enabled": true,
+               "id": "912426c8f4c04fb0a07d2547b0704185",
+               "name": "demo"
+           }
+       }
+   }
 
 The token is often passed within the structure of a larger context of an
 Identity service response. These responses also provide a catalog of the

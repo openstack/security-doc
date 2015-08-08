@@ -36,7 +36,7 @@ the identities of the parties. The core components of PKI are:
 End entity
     User, process, or system that is the subject of a certificate.
 
-Certification Authority (CA)
+Certification Authority (:term:`CA`)
     Defines certificate policies, management, and issuance of certificates.
 
 Registration Authority (RA)

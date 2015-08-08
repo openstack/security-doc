@@ -260,6 +260,33 @@ Apache
       </Directory>
     </VirtualHost>
 
+Compute API SSL endpoint in Apache, which you must pair with a short
+WSGI script.
+
+.. code::
+
+    <VirtualHost <ip address>:8447>
+      ServerName <site FQDN>
+      SSLEngine On
+      SSLProtocol +TLSv1 +TLSv1.1 +TLSv1.2
+      SSLCipherSuite HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM
+      SSLCertificateFile    /path/<site FQDN>.crt
+      SSLCACertificateFile  /path/<site FQDN>.crt
+      SSLCertificateKeyFile /path/<site FQDN>.key
+      SSLSessionTickets Off
+      WSGIScriptAlias / <WSGI script location>
+      WSGIDaemonProcess osapi user=<user> group=<group> processes=3 threads=10
+      <Directory <WSGI dir>>
+        # For http server 2.2 and earlier:
+        Order allow,deny
+        Allow from all
+
+        # Or, in Apache http server 2.4 and later:
+        # Require all granted
+      </Directory>
+    </VirtualHost>
+
+
 HTTP strict transport security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

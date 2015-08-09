@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-08 03:56+0000\n"
-"PO-Revision-Date: 2015-08-08 03:57+0000\n"
-"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"POT-Creation-Date: 2015-08-09 05:52+0000\n"
+"PO-Revision-Date: 2015-08-08 10:07+0000\n"
+"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/openstack/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2810,11 +2810,11 @@ msgstr "制御プレーン"
 
 #: ../compliance/certification-and-compliance-statements.rst:226
 msgid "Control selection:"
-msgstr ""
+msgstr "コントロールの選択:"
 
 #: ../compliance/certification-and-compliance-statements.rst:230
 msgid "Control tailoring:"
-msgstr ""
+msgstr "コントロールのカスタマイズ:"
 
 #: ../data-processing/deployment.rst:51
 msgid "Controller network access to clusters"
@@ -4750,7 +4750,7 @@ msgstr "ネットワークネームスペースサポートがない場合、L3�
 #: ../identity/federated-keystone.rst:277
 msgid ""
 "If new certificates are required, they can be easily created by executing:"
-msgstr ""
+msgstr "新しい証明書が必要な場合、次のとおり簡単に作成できます。"
 
 #: ../networking/services.rst:187
 msgid ""

@@ -109,27 +109,27 @@ Securing storage services
 
 The following are the default listening ports for the various storage services:
 
-   .. list-table::
-      :header-rows: 1
-      :widths: 30 10 10
+.. list-table::
+   :header-rows: 1
+   :widths: 30 10 10
 
-      * - Service name
-        - Port
-        - Type
-      * - Account service
-        - 6002
-        - TCP
-      * - Container service
-        - 6001
-        - TCP
-      * - Object Service
-        - 6000
-        - TCP
-      * - Rsync [1]_
-        - 873
-        - TCP
+   * - Service name
+     - Port
+     - Type
+   * - Account service
+     - 6002
+     - TCP
+   * - Container service
+     - 6001
+     - TCP
+   * - Object Service
+     - 6000
+     - TCP
+   * - Rsync [1]_
+     - 873
+     - TCP
 
-  .. [1]
+.. [1]
    If ssync is used instead of rsync, the Object service port is used for
    maintaining durability.
 
@@ -146,21 +146,21 @@ Object Storage "account" terminology
 An Object Storage "account" is not a user account or credential. The following
 explains the relations:
 
-   .. list-table::
-      :widths: 30 30
+.. list-table::
+   :widths: 30 30
 
-      * - OpenStack Object Storage account
-        - Collection of containers; not user accounts or authentication. Which
-          users are associated with the account and how they may access it
-          depends on the authentication system used. See
-          :ref:`Object_Storage_authentication`.
-      * - OpenStack Object Storage containers
-        - Collection of objects. Metadata on the container is available for
-          ACLs. The meaning of ACLs is dependent on the authentication system
-          used.
-      * - OpenStack Object Storage objects
-        - The actual data objects. ACLs at the object level are also possible
-          with metadata and are dependent on the authentication system used.
+   * - OpenStack Object Storage account
+     - Collection of containers; not user accounts or authentication. Which
+       users are associated with the account and how they may access it
+       depends on the authentication system used. See
+       :ref:`Object_Storage_authentication`.
+   * - OpenStack Object Storage containers
+     - Collection of objects. Metadata on the container is available for
+       ACLs. The meaning of ACLs is dependent on the authentication system
+       used.
+   * - OpenStack Object Storage objects
+     - The actual data objects. ACLs at the object level are also possible
+       with metadata and are dependent on the authentication system used.
 
 .. tip::
 

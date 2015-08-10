@@ -22,7 +22,7 @@
   <xi:include href="section_identity-authorization.xml"/>
   <xi:include href="section_identity-policies.xml"/>
   <xi:include href="section_identity-tokens.xml"/>
-  <xi:include href="section_identity-future.xml"/>
+  <xi:include href="section_identity-domains.xml"/>
   <xi:include href="section_identity-federated-keystone.xml"/>
   <xi:include href="section_identity-checklist.xml"/>
   <xi:include href="section_case-studies-identity-management.xml"/>

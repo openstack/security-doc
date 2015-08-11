@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-23 06:01+0000\n"
+"POT-Creation-Date: 2015-08-11 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,22 +175,6 @@ msgstr ""
 
 #: ./security-guide/section_introduction-to-ssl-tls.xml:148(para) ./security-guide/ch_dashboard.xml:8(title) ./security-guide/section_introduction-to-openstack.xml:190(title) ./security-guide/section_management-interfaces.xml:33(title)
 msgid "Dashboard"
-msgstr ""
-
-#: ./security-guide/section_identity-future.xml:8(title) ./security-guide/section_identity-federated-keystone.xml:460(title)
-msgid "Future"
-msgstr ""
-
-#: ./security-guide/section_identity-future.xml:9(para)
-msgid "Domains are high-level containers for projects, users and groups. As such, they can be used to centrally manage all keystone-based identity components. With the introduction of account domains, server, storage and other resources can now be logically grouped into multiple projects (previously called tenants) which can themselves be grouped under a master account-like container. In addition, multiple users can be managed within an account domain and assigned roles that vary for each project."
-msgstr ""
-
-#: ./security-guide/section_identity-future.xml:18(para)
-msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
-msgstr ""
-
-#: ./security-guide/section_identity-future.xml:24(para)
-msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
 msgstr ""
 
 #: ./security-guide/section_dashboard-domains-dashboard-upgrades-basic-web-server-configuration.xml:8(title)
@@ -1750,7 +1734,7 @@ msgid "<emphasis role=\"bold\">Pass:</emphasis> If permissions are set to 640 or
 msgstr ""
 
 #: ./security-guide/section_identity-checklist.xml:56(para)
-msgid "<emphasis role=\"bold\">Fail:</emphasis> If permissions are not set to atleast 640."
+msgid "<emphasis role=\"bold\">Fail:</emphasis> If permissions are not set to at least 640."
 msgstr ""
 
 #: ./security-guide/section_identity-checklist.xml:63(title)
@@ -1855,6 +1839,34 @@ msgstr ""
 
 #: ./security-guide/section_case-studies-identity-management.xml:64(para)
 msgid "Bob decides to use VNC for his virtual console for its maturity and security features."
+msgstr ""
+
+#: ./security-guide/section_identity-domains.xml:8(title)
+msgid "Domains"
+msgstr ""
+
+#: ./security-guide/section_identity-domains.xml:9(para)
+msgid "Domains are high-level containers for projects, users and groups. As such, they can be used to centrally manage all keystone-based identity components. With the introduction of account domains, server, storage and other resources can now be logically grouped into multiple projects (previously called tenants) which can themselves be grouped under a master account-like container. In addition, multiple users can be managed within an account domain and assigned roles that vary for each project."
+msgstr ""
+
+#: ./security-guide/section_identity-domains.xml:18(para)
+msgid "The Identity V3 API supports multiple domains. Users of different domains may be represented in different authentication back ends and even have different attributes that must be mapped to a single set of roles and privileges, that are used in the policy definitions to access the various service resources."
+msgstr ""
+
+#: ./security-guide/section_identity-domains.xml:23(para)
+msgid "Where a rule may specify access to only admin users and users belonging to the tenant, the mapping may be trivial. In other scenarios the cloud administrator may need to approve the mapping routines per tenant."
+msgstr ""
+
+#: ./security-guide/section_identity-domains.xml:27(para)
+msgid "Domain-specific authentication drivers allow the Identity service to be configured for multiple domains using domain-specific configuration files. Enabling the drivers and setting the domain-specific configuration file location occur in the <literal>[identity]</literal> section of the <filename>keystone.conf</filename> file:"
+msgstr ""
+
+#: ./security-guide/section_identity-domains.xml:33(replaceable)
+msgid "True"
+msgstr ""
+
+#: ./security-guide/section_identity-domains.xml:35(para)
+msgid "Any domains without a domain-specific configuration file will use options in the primary <filename>keystone.conf</filename> file."
 msgstr ""
 
 #: ./security-guide/section_case-studies-pki-and-certificate-management.xml:9(para)
@@ -3593,6 +3605,10 @@ msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:454(para)
 msgid "At this point the SAML Assertion can be sent to the Service Provider keystone, and a valid OpenStack token, issued by a Service Provider keystone, will be returned."
+msgstr ""
+
+#: ./security-guide/section_identity-federated-keystone.xml:460(title)
+msgid "Future"
 msgstr ""
 
 #: ./security-guide/section_identity-federated-keystone.xml:461(para)
@@ -6794,11 +6810,11 @@ msgid "Ensure that the .rc file which has your credential information is secured
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:164(para)
-msgid "<citetitle>OpenStack End User Guide</citetitle> section <link xlink:href=\"http://docs.openstack.org/user-guide/content/section_cli_overview.html\">command-line clients overview</link>"
+msgid "<citetitle>OpenStack End User Guide</citetitle> section <link xlink:href=\"http://docs.openstack.org/user-guide/cli.html\">command-line clients overview</link>"
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:165(para)
-msgid "<citetitle>OpenStack End User Guide</citetitle> section <link xlink:href=\"http://docs.openstack.org/user-guide/content/cli_openrc.html\">Download and source the OpenStack RC file</link>"
+msgid "<citetitle>OpenStack End User Guide</citetitle> section <link xlink:href=\"http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html\">Download and source the OpenStack RC file</link>"
 msgstr ""
 
 #: ./security-guide/section_management-interfaces.xml:169(title)

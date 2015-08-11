@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
-"POT-Creation-Date: 2015-08-09 05:52+0000\n"
-"PO-Revision-Date: 2015-08-08 10:07+0000\n"
+"POT-Creation-Date: 2015-08-10 17:35+0000\n"
+"PO-Revision-Date: 2015-08-10 17:36+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/openstack/openstack-"
 "manuals-i18n/language/ja/)\n"
@@ -2954,6 +2954,9 @@ msgstr "ドメイン名"
 
 msgid "Domain names, dashboard upgrades, and basic web server configuration"
 msgstr "ドメイン名、ダッシュボードの更新、基本的な Web サーバーの設定"
+
+msgid "Domains"
+msgstr "ドメイン"
 
 msgid ""
 "Domains are high-level containers for projects, users and groups. As such, "
@@ -9285,6 +9288,9 @@ msgstr "トリアージ"
 
 msgid "Tripwire"
 msgstr "Tripwire"
+
+msgid "True"
+msgstr "正しい"
 
 msgid "Trusted images"
 msgstr "信頼されたイメージ"

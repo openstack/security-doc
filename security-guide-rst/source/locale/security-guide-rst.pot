@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-08 06:01+0000\n"
+"POT-Creation-Date: 2015-08-11 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,7 +118,7 @@ msgid ""
 msgstr ""
 
 #: ../identity/checklist.rst:56
-msgid "**Fail:** If permissions are not set to atleast 640."
+msgid "**Fail:** If permissions are not set to at least 640."
 msgstr ""
 
 #: ../identity/checklist.rst:31
@@ -1398,6 +1398,12 @@ msgstr ""
 
 #: ../management/continuous-systems-management.rst:199
 msgid "Ansible"
+msgstr ""
+
+#: ../identity/domains.rst:35
+msgid ""
+"Any domains without a domain-specific configuration file will use options in "
+"the primary :file:`keystone.conf` file."
 msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:234
@@ -3290,7 +3296,20 @@ msgstr ""
 msgid "Domain names, dashboard upgrades, and basic web server configuration"
 msgstr ""
 
-#: ../identity/future.rst:5
+#: ../identity/domains.rst:24
+msgid ""
+"Domain-specific authentication drivers allow the Identity service to be "
+"configured for multiple domains using domain-specific configuration files. "
+"Enabling the drivers and setting the domain-specific configuration file "
+"location occur in the ``[identity]`` section of the :file:`keystone.conf` "
+"file:"
+msgstr ""
+
+#: ../identity/domains.rst:3
+msgid "Domains"
+msgstr ""
+
+#: ../identity/domains.rst:5
 msgid ""
 "Domains are high-level containers for projects, users and groups. As such, "
 "they can be used to centrally manage all keystone-based identity components. "
@@ -4278,7 +4297,7 @@ msgid ""
 "technologies are important from a security perspective."
 msgstr ""
 
-#: ../identity/federated-keystone.rst:563 ../identity/future.rst:3
+#: ../identity/federated-keystone.rst:563
 msgid "Future"
 msgstr ""
 
@@ -6749,13 +6768,14 @@ msgstr ""
 #: ../management/management-interfaces.rst:171
 msgid ""
 "OpenStack End User Guide section `Download and source the OpenStack RC file "
-"<http://docs.openstack.org/user-guide/content/cli_openrc.html>`__"
+"<http://docs.openstack.org/user-guide/common/"
+"cli_set_environment_variables_using_openstack_rc.html>`__"
 msgstr ""
 
 #: ../management/management-interfaces.rst:168
 msgid ""
 "OpenStack End User Guide section `command-line clients overview <http://docs."
-"openstack.org/user-guide/content/section_cli_overview.html>`__"
+"openstack.org/user-guide/cli.html>`__"
 msgstr ""
 
 #: ../networking/securing-services.rst:15
@@ -8991,7 +9011,7 @@ msgid ""
 "this book."
 msgstr ""
 
-#: ../identity/future.rst:14
+#: ../identity/domains.rst:14
 msgid ""
 "The Identity V3 API supports multiple domains. Users of different domains "
 "may be represented in different authentication back ends and even have "
@@ -11717,7 +11737,7 @@ msgid ""
 "such as Git."
 msgstr ""
 
-#: ../identity/future.rst:20
+#: ../identity/domains.rst:20
 msgid ""
 "Where a rule may specify access to only admin users and users belonging to "
 "the tenant, the mapping may be trivial. In other scenarios the cloud "

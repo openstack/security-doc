@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenStack Manuals\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 05:52+0000\n"
-"PO-Revision-Date: 2015-08-08 10:07+0000\n"
-"Last-Translator: Tomoyuki KATO <tomo@dream.daynight.jp>\n"
+"POT-Creation-Date: 2015-08-10 17:35+0000\n"
+"PO-Revision-Date: 2015-08-10 17:36+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/openstack/openstack-manuals-i18n/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,7 +123,7 @@ msgid ""
 msgstr ""
 
 #: ../identity/checklist.rst:56
-msgid "**Fail:** If permissions are not set to atleast 640."
+msgid "**Fail:** If permissions are not set to at least 640."
 msgstr ""
 
 #: ../identity/checklist.rst:31
@@ -1409,6 +1409,12 @@ msgstr ""
 #: ../management/continuous-systems-management.rst:199
 msgid "Ansible"
 msgstr "Ansible"
+
+#: ../identity/domains.rst:35
+msgid ""
+"Any domains without a domain-specific configuration file will use options in"
+" the primary :file:`keystone.conf` file."
+msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:234
 msgid "Apache"
@@ -3313,7 +3319,20 @@ msgstr "ドメイン名"
 msgid "Domain names, dashboard upgrades, and basic web server configuration"
 msgstr "ドメイン名、ダッシュボードの更新、基本的な Web サーバーの設定"
 
-#: ../identity/future.rst:5
+#: ../identity/domains.rst:24
+msgid ""
+"Domain-specific authentication drivers allow the Identity service to be "
+"configured for multiple domains using domain-specific configuration files. "
+"Enabling the drivers and setting the domain-specific configuration file "
+"location occur in the ``[identity]`` section of the :file:`keystone.conf` "
+"file:"
+msgstr ""
+
+#: ../identity/domains.rst:3
+msgid "Domains"
+msgstr "ドメイン"
+
+#: ../identity/domains.rst:5
 msgid ""
 "Domains are high-level containers for projects, users and groups. As such, "
 "they can be used to centrally manage all keystone-based identity components."
@@ -4305,7 +4324,7 @@ msgid ""
 "technologies are important from a security perspective."
 msgstr "さらに、ハイパーバイザープラットフォームの評価時、ハイパーバイザーを実行するハイパーバイザーを考慮すべきです。加えて、ハードウェアで利用可能な追加機能を評価します。また、それらの機能が OpenStack 環境の一部として選択したハイパーバイザーによりどのようにサポートされるかを考慮します。そのためにも、ハイパーバイザーはそれぞれ自身のハードウェア互換性リスト (HCL) を持つでしょう。互換性のあるハードウェアの選択時、まずどのハードウェア仮想化技術がセキュリティの観点から重要であるかを理解することが重要です。"
 
-#: ../identity/federated-keystone.rst:563 ../identity/future.rst:3
+#: ../identity/federated-keystone.rst:563
 msgid "Future"
 msgstr "将来"
 
@@ -6786,13 +6805,14 @@ msgstr "OpenStack Configuration Reference - Havana. SPICE Console. `SPICE Consol
 #: ../management/management-interfaces.rst:171
 msgid ""
 "OpenStack End User Guide section `Download and source the OpenStack RC file "
-"<http://docs.openstack.org/user-guide/content/cli_openrc.html>`__"
+"<http://docs.openstack.org/user-"
+"guide/common/cli_set_environment_variables_using_openstack_rc.html>`__"
 msgstr ""
 
 #: ../management/management-interfaces.rst:168
 msgid ""
 "OpenStack End User Guide section `command-line clients overview "
-"<http://docs.openstack.org/user-guide/content/section_cli_overview.html>`__"
+"<http://docs.openstack.org/user-guide/cli.html>`__"
 msgstr ""
 
 #: ../networking/securing-services.rst:15
@@ -9036,7 +9056,7 @@ msgid ""
 " this book."
 msgstr "ISO/IEC 27001/2はBS7799-2の後継標準で、Information Security Management System (ISMS)の要件です。ISMSは組織が情報資産のリスクを管理するために作成、維持する、ポリシーとプロセスの包括的なセットです。それらのリスクはユーザー情報のConfidentiality - 機密性、Integrity - 完全性、および Availability - 可用性 (CIA)に深く関係しています。CIAセキュリティの三要素は、このガイドの多くの章で基本となっています。"
 
-#: ../identity/future.rst:14
+#: ../identity/domains.rst:14
 msgid ""
 "The Identity V3 API supports multiple domains. Users of different domains "
 "may be represented in different authentication back ends and even have "
@@ -11770,7 +11790,7 @@ msgid ""
 "such as Git."
 msgstr "ポリシーや構成管理が変更されると、そのアクティビティをロギングして、新しいセットのコピーをバックアップすると慣習として良いでしょう。通常、このようなポリシーや設定は Git などのバージョン管理リポジトリに保存されています。"
 
-#: ../identity/future.rst:20
+#: ../identity/domains.rst:20
 msgid ""
 "Where a rule may specify access to only admin users and users belonging to "
 "the tenant, the mapping may be trivial. In other scenarios the cloud "

@@ -187,8 +187,11 @@ Overlapping IP addresses
     If nodes that run either neutron-l3-agent or neutron-dhcp-agent use
     overlapping IP addresses, those nodes must use Linux network
     namespaces. By default, the DHCP and L3 agents use Linux network
-    namespaces. However, if the host does not support these namespaces,
-    run the DHCP and L3 agents on different hosts.
+    namespaces and run in their own respective namespaces. However,
+    if the host does not support multiple namespaces, the DHCP and L3
+    agents should be run on separate hosts. This is due to the fact that
+    there is no isloation between the IP addresses created by the L3
+    agent and the DHCP agent.
 
     If network namespace support is not present, a further limitation of
     the L3 agent is that only a single logical router is supported.
@@ -196,7 +199,9 @@ Overlapping IP addresses
 Multi-host DHCP-agent
     OpenStack Networking supports multiple L3 and DHCP agents with load
     balancing. However, tight coupling of the location of the virtual
-    machine is not supported.
+    machine is not supported. In other words, the default Virtual Machine
+    scheduler will not take the location of the agents into account when
+    creating virtual machines.
 
 No IPv6 support for L3 agents
     The neutron-l3-agent, used by many plug-ins to implement L3

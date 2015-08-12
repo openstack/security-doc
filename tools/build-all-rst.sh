@@ -2,5 +2,5 @@
 
 mkdir -p publish-docs
 
-tools/build-rst.sh security-guide-rst --build build \
-        --target draft/security-guide-rst
+tools/build-rst.sh security-guide --build build \
+        --target security-guide

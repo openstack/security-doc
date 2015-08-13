@@ -1,5 +1,5 @@
 ===================
-Compliance Overview
+Compliance overview
 ===================
 
 Security principles

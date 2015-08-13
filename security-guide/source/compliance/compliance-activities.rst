@@ -1,5 +1,5 @@
 =====================
-Compliance Activities
+Compliance activities
 =====================
 
 There are a number of standard activities that will greatly assist with
@@ -65,7 +65,7 @@ perspective, however the need for security reviews is still a critical
 consideration for service providers, as deployments vary, and security
 is not always the primary concern for contributors. A comprehensive
 security review process may include architectural review, threat
-modelling, source code analysis and penetration testing. There are many
+modeling, source code analysis and penetration testing. There are many
 techniques and recommendations for conducting security reviews that can
 be found publicly posted. A well-tested example is the `Microsoft
 SDL <http://www.microsoft.com/security/sdl/process/release.aspx>`__,

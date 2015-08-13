@@ -44,7 +44,7 @@ interface can be encrypted with TLS for both textual and GUI access. She
 ensures that a network intrusion detection system (NIDS) will be
 monitoring the management security domain that the IPMI traffic will be
 using. Depending on usage, which may vary throughout the year, Alice may
-set the NIDS to do passive anomoly detection so that packets are not
+set the NIDS to do passive anomaly detection so that packets are not
 missed by the NIDS while it is processing.
 
 Alice also creates 'golden images' of various systems that will be used

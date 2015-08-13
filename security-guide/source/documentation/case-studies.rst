@@ -38,4 +38,4 @@ and into the database.
 Bob's public cloud
 ~~~~~~~~~~~~~~~~~~
 
-In this case, Bob will approach these steps the same as Alice.
+In this case, Bob will take the same steps as Alice.

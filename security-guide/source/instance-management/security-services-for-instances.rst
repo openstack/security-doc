@@ -345,7 +345,7 @@ Updates and patches
 A hypervisor runs independent virtual machines. This
 hypervisor can run in an operating system or directly on the
 hardware (called baremetal). Updates to the hypervisor are not
-propogated down to the virtual machines. For example, if a
+propagated down to the virtual machines. For example, if a
 deployment is using XenServer and has a set of Debian virtual
 machines, an update to XenServer will not update anything
 running on the Debian virtual machines.

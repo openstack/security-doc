@@ -84,8 +84,8 @@ flexible, cost-effective fashion.  Once a customer begins to process their
 order, they are transferred to the more secure private cloud back end that is
 PCI compliant.
 
-For the purposes of this document, we treat Community and Hybrid similarly,
-dealing explicitly only with the extremes of Public and Private clouds from a
+For the purposes of this document, we treat community and hybrid similarly,
+dealing explicitly only with the extremes of public and private clouds from a
 security perspective. Your security measures depend where your deployment falls
 upon the private public continuum.
 

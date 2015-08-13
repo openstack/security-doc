@@ -87,7 +87,7 @@ Why use Federated Identity?
 
 -  Removes a blocker to cloud brokering and multi-cloud workload
    management. There is no need to build additional authentication
-   mechanisms ito authenticate users, since the IdPs take care of
+   mechanisms to authenticate users, since the IdPs take care of
    authenticating their own users using whichever technologies they deem
    to be appropriate. In most organizations, multiple authentication
    technologies are already in use.

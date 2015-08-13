@@ -145,7 +145,7 @@ to decide where the balance lies for their deployment / usage.
 
 Intelligence services
    Considered by this guide as the most capable
-   adversary. Intelligence Services and other state actors can bring tremendous
+   adversary. Intelligence services and other state actors can bring tremendous
    resources to bear on a target. They have capabilities beyond that of any
    other actor. It is very difficult to defend against these actors without
    incredibly stringent controls in place, both human and technical.
@@ -241,6 +241,6 @@ which types of threats, and threat actors, should be protected against. For
 commercial public cloud deployments this might include prevention against
 serious crime. For those deploying private clouds for government use, more
 stringent protective mechanisms should be in place, including carefully
-protected facilities and supply chains.  In contrast those standing up basic
+protected facilities and supply chains. In contrast those standing up basic
 development or test environments will likely require less restrictive controls
 (middle of the spectrum).

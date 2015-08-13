@@ -2,7 +2,7 @@
 Cookies
 =======
 
-Session Cookies should be set to HTTPONLY:
+Session cookies should be set to HTTPONLY:
 
 .. code:: python
 

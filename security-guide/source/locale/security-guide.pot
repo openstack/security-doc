@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-11 06:01+0000\n"
+"POT-Creation-Date: 2015-08-13 06:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -4730,7 +4730,7 @@ msgid ""
 "consider disabling TPS and KSM memory optimizations."
 msgstr ""
 
-#: ../networking/services.rst:193
+#: ../networking/services.rst:196
 msgid ""
 "If network namespace support is not present, a further limitation of the L3 "
 "agent is that only a single logical router is supported."
@@ -4745,9 +4745,11 @@ msgstr ""
 msgid ""
 "If nodes that run either neutron-l3-agent or neutron-dhcp-agent use "
 "overlapping IP addresses, those nodes must use Linux network namespaces. By "
-"default, the DHCP and L3 agents use Linux network namespaces. However, if "
-"the host does not support these namespaces, run the DHCP and L3 agents on "
-"different hosts."
+"default, the DHCP and L3 agents use Linux network namespaces and run in "
+"their own respective namespaces. However, if the host does not support "
+"multiple namespaces, the DHCP and L3 agents should be run on separate hosts. "
+"This is due to the fact that there is no isloation between the IP addresses "
+"created by the L3 agent and the DHCP agent."
 msgstr ""
 
 #: ../identity/authentication.rst:41
@@ -6084,7 +6086,7 @@ msgid ""
 "password."
 msgstr ""
 
-#: ../networking/services.rst:199
+#: ../networking/services.rst:204
 msgid "Multi-host DHCP-agent"
 msgstr ""
 
@@ -6285,7 +6287,7 @@ msgstr ""
 msgid "Never eXecute (NX)"
 msgstr ""
 
-#: ../networking/services.rst:202
+#: ../networking/services.rst:207
 msgid "No IPv6 support for L3 agents"
 msgstr ""
 
@@ -6884,11 +6886,13 @@ msgstr ""
 msgid "OpenStack Networking service placement on physical servers"
 msgstr ""
 
-#: ../networking/services.rst:197
+#: ../networking/services.rst:200
 msgid ""
 "OpenStack Networking supports multiple L3 and DHCP agents with load "
 "balancing. However, tight coupling of the location of the virtual machine is "
-"not supported."
+"not supported. In other words, the default Virtual Machine scheduler will "
+"not take the location of the agents into account when creating virtual "
+"machines."
 msgstr ""
 
 #: ../networking.rst:13
@@ -7277,7 +7281,7 @@ msgstr ""
 msgid "Outbound attacks and reputational risk"
 msgstr ""
 
-#: ../networking/services.rst:194
+#: ../networking/services.rst:197
 msgid "Overlapping IP addresses"
 msgstr ""
 
@@ -9934,7 +9938,7 @@ msgid ""
 "the following additional steps for production nodes:"
 msgstr ""
 
-#: ../networking/services.rst:202
+#: ../networking/services.rst:207
 msgid ""
 "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, "
 "supports only IPv4 forwarding."

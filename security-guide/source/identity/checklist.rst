@@ -7,8 +7,8 @@ Check-Identity-01: Is user/group ownership of config files set to keystone?
 
 Configuration files contain critical parameters and information required
 for smooth functioning of the component. If an unprivileged user, either
-intentionally or accidently modifies or deletes any of the parameters or
-the file itself then it would cause severe availability issue causing
+intentionally or accidentally modifies or deletes any of the parameters or
+the file itself then it would cause severe availability issues causing a
 denial of service to the other end users. Thus user and group ownership
 of such critical configuration files must be set to that component
 owner.
@@ -36,7 +36,7 @@ Recommended in: :ref:`internally-implemented-authentication-methods`.
 Check-Identity-02: Are strict permissions set for Identity configuration files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Similar to previous check, it is recommended to set strict access
+Similar to the previous check, it is recommended to set strict access
 permissions for such configuration files.
 
 Run the following commands:
@@ -78,7 +78,7 @@ Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 MD5 is a weak and depreciated hashing algorithm. It can be cracked using
-bruteforce attack. Identity tokens are sensitive and need to be
+brute force attack. Identity tokens are sensitive and need to be
 protected with a stronger hashing algorithm to prevent unauthorized
 disclosure and subsequent access.
 
@@ -95,7 +95,7 @@ Check-Identity-05: Is ``max_request_body_size`` set to default (114688)?
 
 The parameter ``max_request_body_size`` defines the maximum body size
 per request in bytes. If the maximum size is not defined, the attacker
-could craft an arbitary request of large size causing the service to
+could craft an arbitrary request of large size causing the service to
 crash and finally resulting in Denial Of Service attack. Assigning the
 maximum value ensures that any malicious oversized request gets blocked
 ensuring continued availability of the component.
@@ -109,7 +109,7 @@ reasonable value based on your environment.
 Check-Identity-06: Disable admin token in :file:`/etc/keystone/keystone.conf`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Admin token is generally used to bootstrap Identity. This token is the
+The admin token is generally used to bootstrap Identity. This token is the
 most valuable Identity asset, which could be used to gain cloud admin
 privileges.
 

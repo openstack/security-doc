@@ -75,7 +75,7 @@ release, the following ephemeral disk encryption features are supported:
       ephemeral disk encryption keys on a per-tenant basis
    -  Ephemeral disk encryption is supported by back-end key storage for
       enhanced security (for example, an HSM or a KMIP server can be
-      used as a Barbican back-end secret store)
+      used as a barbican back-end secret store)
    -  With the Key management service, when an ephemeral disk is no
       longer needed, simply deleting the key may take the place of
       overwriting the ephemeral disk storage area

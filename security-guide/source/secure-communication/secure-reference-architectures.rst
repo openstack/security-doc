@@ -128,7 +128,7 @@ straight through to the API endpoint systems in this case:
 
 .. image:: ../figures/secure-arch-ref-3.png
 
-Cryptographic seperation of external and internal environments
+Cryptographic separation of external and internal environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What if you want cryptographic separation of your external and

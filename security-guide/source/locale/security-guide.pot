@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-13 06:03+0000\n"
+"POT-Creation-Date: 2015-08-14 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -425,7 +425,7 @@ msgstr ""
 msgid ""
 "A hypervisor runs independent virtual machines. This hypervisor can run in "
 "an operating system or directly on the hardware (called baremetal). Updates "
-"to the hypervisor are not propogated down to the virtual machines. For "
+"to the hypervisor are not propagated down to the virtual machines. For "
 "example, if a deployment is using XenServer and has a set of Debian virtual "
 "machines, an update to XenServer will not update anything running on the "
 "Debian virtual machines."
@@ -801,12 +801,6 @@ msgstr ""
 msgid ""
 "Adds a set of rules to map Federation protocol attributes to Identity API "
 "objects. An Identity Provider has exactly one mapping specified per protocol."
-msgstr ""
-
-#: ../identity/checklist.rst:112
-msgid ""
-"Admin token is generally used to bootstrap Identity. This token is the most "
-"valuable Identity asset, which could be used to gain cloud admin privileges."
 msgstr ""
 
 #: ../identity/authorization.rst:77
@@ -1505,7 +1499,7 @@ msgid ""
 "however the need for security reviews is still a critical consideration for "
 "service providers, as deployments vary, and security is not always the "
 "primary concern for contributors. A comprehensive security review process "
-"may include architectural review, threat modelling, source code analysis and "
+"may include architectural review, threat modeling, source code analysis and "
 "penetration testing. There are many techniques and recommendations for "
 "conducting security reviews that can be found publicly posted. A well-tested "
 "example is the `Microsoft SDL <http://www.microsoft.com/security/sdl/process/"
@@ -2529,11 +2523,7 @@ msgid "Compliance"
 msgstr ""
 
 #: ../compliance/compliance-activities.rst:3
-msgid "Compliance Activities"
-msgstr ""
-
-#: ../compliance/overview.rst:3
-msgid "Compliance Overview"
+msgid "Compliance activities"
 msgstr ""
 
 #: ../compliance/certification-and-compliance-statements.rst:5
@@ -2547,6 +2537,10 @@ msgstr ""
 
 #: ../compliance/understanding-the-audit-process.rst:122
 msgid "Compliance maintenance"
+msgstr ""
+
+#: ../compliance/overview.rst:3
+msgid "Compliance overview"
 msgstr ""
 
 #: ../compliance/privacy.rst:33
@@ -2652,10 +2646,10 @@ msgstr ""
 msgid ""
 "Configuration files contain critical parameters and information required for "
 "smooth functioning of the component. If an unprivileged user, either "
-"intentionally or accidently modifies or deletes any of the parameters or the "
-"file itself then it would cause severe availability issue causing denial of "
-"service to the other end users. Thus user and group ownership of such "
-"critical configuration files must be set to that component owner."
+"intentionally or accidentally modifies or deletes any of the parameters or "
+"the file itself then it would cause severe availability issues causing a "
+"denial of service to the other end users. Thus user and group ownership of "
+"such critical configuration files must be set to that component owner."
 msgstr ""
 
 #: ../management/continuous-systems-management.rst:157
@@ -2746,7 +2740,7 @@ msgstr ""
 #: ../introduction/security-boundaries-and-threats.rst:147
 msgid ""
 "Considered by this guide as the most capable adversary. Intelligence "
-"Services and other state actors can bring tremendous resources to bear on a "
+"services and other state actors can bring tremendous resources to bear on a "
 "target. They have capabilities beyond that of any other actor. It is very "
 "difficult to defend against these actors without incredibly stringent "
 "controls in place, both human and technical."
@@ -4153,7 +4147,7 @@ msgid ""
 "a network intrusion detection system (NIDS) will be monitoring the "
 "management security domain that the IPMI traffic will be using. Depending on "
 "usage, which may vary throughout the year, Alice may set the NIDS to do "
-"passive anomoly detection so that packets are not missed by the NIDS while "
+"passive anomaly detection so that packets are not missed by the NIDS while "
 "it is processing."
 msgstr ""
 
@@ -4219,8 +4213,8 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:87
 msgid ""
-"For the purposes of this document, we treat Community and Hybrid similarly, "
-"dealing explicitly only with the extremes of Public and Private clouds from "
+"For the purposes of this document, we treat community and hybrid similarly, "
+"dealing explicitly only with the extremes of public and private clouds from "
 "a security perspective. Your security measures depend where your deployment "
 "falls upon the private public continuum."
 msgstr ""
@@ -5140,7 +5134,7 @@ msgid ""
 msgstr ""
 
 #: ../documentation/case-studies.rst:41
-msgid "In this case, Bob will approach these steps the same as Alice."
+msgid "In this case, Bob will take the same steps as Alice."
 msgstr ""
 
 #: ../data-processing/introduction-to-data-processing.rst:23
@@ -5757,7 +5751,7 @@ msgstr ""
 #: ../identity/checklist.rst:80
 msgid ""
 "MD5 is a weak and depreciated hashing algorithm. It can be cracked using "
-"bruteforce attack. Identity tokens are sensitive and need to be protected "
+"brute force attack. Identity tokens are sensitive and need to be protected "
 "with a stronger hashing algorithm to prevent unauthorized disclosure and "
 "subsequent access."
 msgstr ""
@@ -7846,7 +7840,7 @@ msgstr ""
 #: ../identity/federated-keystone.rst:88
 msgid ""
 "Removes a blocker to cloud brokering and multi-cloud workload management. "
-"There is no need to build additional authentication mechanisms ito "
+"There is no need to build additional authentication mechanisms to "
 "authenticate users, since the IdPs take care of authenticating their own "
 "users using whichever technologies they deem to be appropriate. In most "
 "organizations, multiple authentication technologies are already in use."
@@ -8430,12 +8424,12 @@ msgstr ""
 msgid "Services, protocols and ports"
 msgstr ""
 
-#: ../dashboard/cookies.rst:5
-msgid "Session Cookies should be set to HTTPONLY:"
-msgstr ""
-
 #: ../dashboard/front-end-caching-session-back-end.rst:16
 msgid "Session back end"
+msgstr ""
+
+#: ../dashboard/cookies.rst:5
+msgid "Session cookies should be set to HTTPONLY:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:468
@@ -8479,7 +8473,7 @@ msgstr ""
 
 #: ../identity/checklist.rst:39
 msgid ""
-"Similar to previous check, it is recommended to set strict access "
+"Similar to the previous check, it is recommended to set strict access "
 "permissions for such configuration files."
 msgstr ""
 
@@ -9465,6 +9459,13 @@ msgid ""
 "metadata and are dependent on the authentication system used."
 msgstr ""
 
+#: ../identity/checklist.rst:112
+msgid ""
+"The admin token is generally used to bootstrap Identity. This token is the "
+"most valuable Identity asset, which could be used to gain cloud admin "
+"privileges."
+msgstr ""
+
 #: ../compliance/overview.rst:52
 msgid ""
 "The amount of information that can be gathered about a system and its users "
@@ -9993,7 +9994,7 @@ msgstr ""
 msgid ""
 "The parameter ``max_request_body_size`` defines the maximum body size per "
 "request in bytes. If the maximum size is not defined, the attacker could "
-"craft an arbitary request of large size causing the service to crash and "
+"craft an arbitrary request of large size causing the service to crash and "
 "finally resulting in Denial Of Service attack. Assigning the maximum value "
 "ensures that any malicious oversized request gets blocked ensuring continued "
 "availability of the component."
@@ -10033,7 +10034,7 @@ msgid ""
 "against. For commercial public cloud deployments this might include "
 "prevention against serious crime. For those deploying private clouds for "
 "government use, more stringent protective mechanisms should be in place, "
-"including carefully protected facilities and supply chains.  In contrast "
+"including carefully protected facilities and supply chains. In contrast "
 "those standing up basic development or test environments will likely require "
 "less restrictive controls (middle of the spectrum)."
 msgstr ""

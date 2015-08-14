@@ -25,11 +25,11 @@ allowing authenticated access for service and architecture teams to reference.
 Additionally, the security domains are clearly highlighted on each document,
 and asset groups are categorized per the NIST Risk Management Framework.
 Specifically, Alice will call out the fact that several services cross security
-domains, such as the API endpoints crossing the Public and Management domains,
-the Identity data being served from a Federated entity crossing from a system
-she does not manage to her Management domain, the Database service crossing
-both Data and Guest domains, and hypervisor crossing Management, Guest, and
-Public domains. She will then be able to dictate additional controls that
+domains. The API endpoints cross the public and management domains,
+the Identity data served from a federated entity crosses an external system
+to her management domain, the database service crosses
+data and guest domains, and the hypervisor crosses management, guest, and
+public domains. Alice will then be able to dictate additional controls that
 ensure and reinforce the trust level of each domain. For example, the
 application will be exposed to the Internet, and therefore data coming through
 that will initially be untrusted before it is moved through to the data domain

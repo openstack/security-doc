@@ -20,7 +20,7 @@ This can help reduce a provider's liability when handling tenant data during an
 incident investigation in multi-tenant public clouds.
 
 The volume encryption and ephemeral disk encryption features rely on a key
-management service (for example, Barbican) for the creation and secure storage
+management service (for example, barbican) for the creation and secure storage
 of keys. The key manager is pluggable to facilitate deployments that need a
 third-party Hardware Security Module (HSM) or the use of the Key Management
 Interchange Protocol (KMIP), which is supported by an open-source project

@@ -225,7 +225,7 @@ machine data files or other VMs.
 .. image:: ../figures/sVirt_Diagram_1.png
 
 As shown above, sVirt isolation is provided regardless of the guest Operating
-System running inside the virtual machine&mdash;Linux or Windows VMs can be
+System running inside the virtual machine. Linux or Windows VMs can be
 used. Additionally, many Linux distributions provide SELinux within the
 operating system, allowing the virtual machine to protect internal virtual
 resources from threats.

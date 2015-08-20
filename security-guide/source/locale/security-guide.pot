@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-14 06:01+0000\n"
+"POT-Creation-Date: 2015-08-20 06:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -274,7 +274,7 @@ msgstr ""
 msgid "873"
 msgstr ""
 
-#: ../index.rst:49
+#: ../index.rst:45
 msgid ":ref:`search`"
 msgstr ""
 
@@ -768,15 +768,15 @@ msgid ""
 "Additionally, the security domains are clearly highlighted on each document, "
 "and asset groups are categorized per the NIST Risk Management Framework. "
 "Specifically, Alice will call out the fact that several services cross "
-"security domains, such as the API endpoints crossing the Public and "
-"Management domains, the Identity data being served from a Federated entity "
-"crossing from a system she does not manage to her Management domain, the "
-"Database service crossing both Data and Guest domains, and hypervisor "
-"crossing Management, Guest, and Public domains. She will then be able to "
-"dictate additional controls that ensure and reinforce the trust level of "
-"each domain. For example, the application will be exposed to the Internet, "
-"and therefore data coming through that will initially be untrusted before it "
-"is moved through to the data domain and into the database."
+"security domains. The API endpoints cross the public and management domains, "
+"the Identity data served from a federated entity crosses an external system "
+"to her management domain, the database service crosses data and guest "
+"domains, and the hypervisor crosses management, guest, and public domains. "
+"Alice will then be able to dictate additional controls that ensure and "
+"reinforce the trust level of each domain. For example, the application will "
+"be exposed to the Internet, and therefore data coming through that will "
+"initially be untrusted before it is moved through to the data domain and "
+"into the database."
 msgstr ""
 
 #: ../management/continuous-systems-management.rst:176
@@ -1597,10 +1597,10 @@ msgstr ""
 #: ../compute/hardening-the-virtualization-layers.rst:227
 msgid ""
 "As shown above, sVirt isolation is provided regardless of the guest "
-"Operating System running inside the virtual machine&mdash;Linux or Windows "
-"VMs can be used. Additionally, many Linux distributions provide SELinux "
-"within the operating system, allowing the virtual machine to protect "
-"internal virtual resources from threats."
+"Operating System running inside the virtual machine. Linux or Windows VMs "
+"can be used. Additionally, many Linux distributions provide SELinux within "
+"the operating system, allowing the virtual machine to protect internal "
+"virtual resources from threats."
 msgstr ""
 
 #: ../tenant-data/case-studies.rst:16
@@ -2764,7 +2764,7 @@ msgid ""
 "OAuth."
 msgstr ""
 
-#: ../index.rst:19
+#: ../index.rst:15
 msgid "Contents"
 msgstr ""
 
@@ -2897,7 +2897,7 @@ msgid "Cryptographic algorithms, cipher modes, and protocols"
 msgstr ""
 
 #: ../secure-communication/secure-reference-architectures.rst:132
-msgid "Cryptographic seperation of external and internal environments"
+msgid "Cryptographic separation of external and internal environments"
 msgstr ""
 
 #: ../compute/hypervisor-selection.rst:217
@@ -3697,7 +3697,7 @@ msgstr ""
 #: ../tenant-data/data-encryption.rst:76
 msgid ""
 "Ephemeral disk encryption is supported by back-end key storage for enhanced "
-"security (for example, an HSM or a KMIP server can be used as a Barbican "
+"security (for example, an HSM or a KMIP server can be used as a barbican "
 "back-end secret store)"
 msgstr ""
 
@@ -8111,7 +8111,7 @@ msgstr ""
 msgid "Script kiddies"
 msgstr ""
 
-#: ../index.rst:47
+#: ../index.rst:43
 msgid "Search in this guide"
 msgstr ""
 
@@ -10208,7 +10208,7 @@ msgstr ""
 #: ../tenant-data/key-management.rst:22
 msgid ""
 "The volume encryption and ephemeral disk encryption features rely on a key "
-"management service (for example, Barbican) for the creation and secure "
+"management service (for example, barbican) for the creation and secure "
 "storage of keys. The key manager is pluggable to facilitate deployments that "
 "need a third-party Hardware Security Module (HSM) or the use of the Key "
 "Management Interchange Protocol (KMIP), which is supported by an open-source "
@@ -10513,8 +10513,8 @@ msgstr ""
 
 #: ../index.rst:11
 msgid ""
-"This guide documents OpenStack Liberty, OpenStack Kilo, OpenStack Juno, and "
-"OpenStack Icehouse releases."
+"This guide documents OpenStack Kilo, OpenStack Juno, and OpenStack Icehouse "
+"releases."
 msgstr ""
 
 #: ../networking/architecture.rst:47
@@ -10522,13 +10522,6 @@ msgid ""
 "This guide focuses on a standard architecture that includes a *cloud "
 "controller* host, a *network* host, and a set of *compute* hypervisors for "
 "running VMs."
-msgstr ""
-
-#: ../index.rst:14
-msgid ""
-"This guide is a work-in-progress and changing rapidly while we continue to "
-"test and enhance the guidance. Please note where there are open \"to do\" "
-"items and help where you are able."
 msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:5

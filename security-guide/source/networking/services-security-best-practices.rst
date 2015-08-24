@@ -70,10 +70,11 @@ groups and their rules allow administrators and tenants the ability to
 specify the type of traffic and direction (ingress/egress) that is
 allowed to pass through a virtual interface port. When a virtual
 interface port is created in OpenStack Networking it is associated with
-a security group. If a security group is not specified, the port will be
-associated with a 'default' security group. By default this group will
-drop all ingress traffic and allow all egress. Rules can be added to
-this group in order to change the behaviour.
+a security group. For further details on the default behavior of port
+security groups, reference the `Networking Security Group Behavior
+<https://wiki.openstack.org/wiki/Neutron/SecurityGroups#Behavior>`__
+documentation. Rules can be added to the default security group in order
+to change the behavior on a per-deployment basis.
 
 When using the OpenStack Compute API to modify security groups, the
 updated security group applies to all virtual interface ports on an

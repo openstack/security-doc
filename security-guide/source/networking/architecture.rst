@@ -82,4 +82,4 @@ API network
    IP block. This network is considered the Public Security Domain.
 
 For additional information see the `OpenStack Cloud Administrator Guide
-<http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html>`__.
+<http://docs.openstack.org/admin-guide-cloud/networking.html>`__.

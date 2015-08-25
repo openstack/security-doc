@@ -53,7 +53,7 @@ closer look at the elements in the above sample strings.
     field groups.
 
     Both approaches provide
-    `Perfect Forward Secrecy (PFS) <http://en.wikipedia.org/wiki/Forward_secrecy>`_.
+    `Perfect Forward Secrecy (PFS) <https://en.wikipedia.org/wiki/Forward_secrecy>`_.
     See :ref:`secure-communication-perfect-forward-secrecy` for
     additional discussion on properly configuring PFS.
 
@@ -65,7 +65,7 @@ closer look at the elements in the above sample strings.
 
 ``kRSA``
     Cipher suites using the
-    `RSA <http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29>`_
+    `RSA <https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29>`_
     exchange, authentication or either respectively.
 
 ``HIGH``

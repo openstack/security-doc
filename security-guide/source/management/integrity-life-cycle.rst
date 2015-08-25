@@ -61,7 +61,7 @@ Note that the node boot process begins with two insecure operations:
 DHCP and TFTP. Then the boot process uses TLS to download the remaining
 information required to deploy the node. This may be an operating system
 installer, a basic install managed by
-`Chef <http://www.opscode.com/chef/>`__ or
+`Chef <https://www.chef.io/chef/>`__ or
 `Puppet <https://puppetlabs.com/>`__, or even a complete file system
 image that is written directly to disk.
 
@@ -205,7 +205,7 @@ the scope of this book. We recommend following the guidance from a
 hardening guide specific to your operating system. For example, the
 `security technical implementation
 guides <http://iase.disa.mil/stigs/>`__ (STIG) and the `NSA
-guides <http://www.nsa.gov/ia/mitigation_guidance/security_configuration_guides/>`__
+guides <https://www.nsa.gov/ia/mitigation_guidance/security_configuration_guides/>`__
 are useful starting places.
 
 The nature of the nodes makes additional hardening possible. We
@@ -298,7 +298,7 @@ VPN between the VMs.
 
 Similar to host-based tools, the selection and configuration of a
 network-based intrusion detection tool is deployment specific.
-`Snort <http://www.snort.org/>`__ is the leading open source networking
+`Snort <https://www.snort.org/>`__ is the leading open source networking
 intrusion detection tool, and a good starting place to learn more.
 
 There are a few important security considerations for network and

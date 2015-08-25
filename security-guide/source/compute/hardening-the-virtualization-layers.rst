@@ -165,7 +165,7 @@ references below provide some additional details on applying compiler hardening
 options to existing packages.
 
 DEB packages:
-     `Hardening Walkthrough <http://wiki.debian.org/HardeningWalkthrough>`__
+     `Hardening Walkthrough <https://wiki.debian.org/HardeningWalkthrough>`__
 RPM packages:
      `How to create an RPM package
      <http://fedoraproject.org/wiki/How_to_create_an_RPM_package>`__

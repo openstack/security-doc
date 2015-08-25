@@ -38,4 +38,4 @@ PostgreSQL:
    Hardening <https://www.owasp.org/index.php/OWASP_Backend_Security_Project_PostgreSQL_Hardening>`__
 
 -  `Total security in a PostgreSQL
-   database <http://www.ibm.com/developerworks/opensource/library/os-postgresecurity>`__
+   database <https://www.ibm.com/developerworks/opensource/library/os-postgresecurity>`__

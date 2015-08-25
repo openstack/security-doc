@@ -324,7 +324,7 @@ environment. Ideally, you can configure these logs to export to
 a log aggregator that collects log events, correlates them for
 analysis, and stores them for reference or further action. One
 common tool to do this is an
-`ELK stack, or Elasticsearch, Logstash, and Kibana <http://www.elasticsearch.com>`_.
+`ELK stack, or Elasticsearch, Logstash, and Kibana <https://www.elastic.co/>`_.
 
 These logs should be reviewed at a regular cadence such as
 a live view by a network operations center (NOC), or if the
@@ -336,7 +336,7 @@ sent to a responder for action. Frequently this alert takes the
 form of an email with the messages of interest. An interesting
 event could be a significant failure, or known health indicator
 of a pending failure. Two common utilities for managing alerts
-are `Nagios <http://www.nagios.org>`_ and
+are `Nagios <https://www.nagios.org>`_ and
 `Zabbix <http://www.zabbix.com>`_.
 
 Updates and patches

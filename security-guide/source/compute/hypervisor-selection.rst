@@ -262,8 +262,8 @@ implementation standards to ensure the virtualization layer supports:
      - 128, 192, or 256 bit
      - Encryption / decryption
      - Protection of data at rest
-     - `http://www.schneier.com/paper-twofish-paper.html
-       <http://www.schneier.com/paper-twofish-paper.html>`__
+     - `https://www.schneier.com/paper-twofish-paper.html
+       <https://www.schneier.com/paper-twofish-paper.html>`__
    * - SHA-1
      - -
      - Message Digest

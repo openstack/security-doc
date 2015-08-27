@@ -36,7 +36,7 @@ Least privilege
 ---------------
 Only the minimum level of access for users and system services is
 granted. This access is based upon role, responsibility and job
-function. This security principal of least privilege is written into
+function. This security principle of least privilege is written into
 several international government security policies, such as NIST 800-53
 Section AC-6 within the United States.
 

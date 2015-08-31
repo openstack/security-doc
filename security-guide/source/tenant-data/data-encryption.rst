@@ -64,21 +64,51 @@ encryption, sensitive user information could be accessed on this disk, and
 vestigial information could remain after the disk is unmounted. As of the Kilo
 release, the following ephemeral disk encryption features are supported:
 
--  Creation and usage of encrypted LVM ephemeral disks
+-  Creation and usage of encrypted LVM ephemeral disks (note: At this time
+   OpenStack Compute service only supports encrypting ephemeral disks in the
+   LVM format)
 
-   -  Compute configuration enables encryption and specifies encryption
-      parameters such as algorithm and key size
+   -  The compute configuration, :file:'nova.conf', has the following default
+      parameters within the "[ephemeral_storage_encryption]" section
+
+      - **option**: 'cipher = aes-xts-plain64'
+
+        - This field sets the cipher and mode used to encrypt ephemeral
+          storage. AES-XTS is recommended by NIST_ specifically for disk
+          storage, and the name is shorthand for AES encryption using the
+          XTS encryption mode.  Available ciphers depend on kernel support.
+          At the command line, type 'cyrptsetup benchmark' to determine the
+          available options (and see benchmark results), or go to
+          */proc/crypto*
+
+      - **option**: 'enabled = false'
+
+        - To use ephemeral disk encryption, set **option**: 'enabled = true'
+
+      - **option**: 'key_size = 512'
+
+        - Note that there may be a key size limitation from the backend key
+          manager that could require the use of 'key_size = 256', which would
+          only provide an AES key size of 128-bits. XTS requires it's own
+          "tweak key" in addition to the encryption key AES requires.
+          This is typically expressed as a single large key.  In this case,
+          using the 512-bit setting, 256 bits will be used by AES and 256 bits
+          by XTS. (see NIST_)
 
 -  Interface with the Key management service through a secure wrapper
 
    -  Key management service will support data isolation by providing
       ephemeral disk encryption keys on a per-tenant basis
+
    -  Ephemeral disk encryption is supported by back-end key storage for
       enhanced security (for example, an HSM or a KMIP server can be
       used as a barbican back-end secret store)
+
    -  With the Key management service, when an ephemeral disk is no
       longer needed, simply deleting the key may take the place of
       overwriting the ephemeral disk storage area
+
+.. _NIST: http://csrc.nist.gov/publications/nistpubs/800-38E/nist-sp-800-38E.pdf
 
 Object Storage objects
 ~~~~~~~~~~~~~~~~~~~~~~

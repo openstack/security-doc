@@ -42,7 +42,7 @@ Section AC-6 within the United States.
 
 Compartmentalize
 ----------------
-Systems should be segregated in a such way that if one machine, or
+Systems should be segregated in such a way that if one machine, or
 system-level service, is compromised the security of the other systems
 will remain intact. Practically, the enablement and proper usage of
 SELinux helps accomplish this goal.

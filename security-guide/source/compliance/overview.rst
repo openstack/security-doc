@@ -14,7 +14,7 @@ Layered defenses
 
 Identify where risks exist in a cloud architecture and apply controls
 to mitigate the risks. In areas of significant concern, layered
-defences provide multiple complementary controls to manage risk down to
+defenses provide multiple complementary controls to manage risk down to
 an acceptable level. For example, to ensure adequate isolation between
 cloud tenants, we recommend hardening QEMU, using a hypervisor with
 SELinux support, enforcing mandatory access control policies, and

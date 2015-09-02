@@ -1,0 +1,49 @@
+Potential Denial of Service in Horizon login
+---
+
+### Summary ###
+Horizon uses the Python based Django web framework. Older versions of
+this framework allow an unauthorized user to fill up the session store
+database causing a Horizon denial of service. A fix for Django is
+available but works only with Kilo and later versions of Horizon.
+
+### Affected Services / Software ###
+Horizon, Django, Essex, Folsom, Grizzly, Havana, Icehouse, Juno
+
+### Discussion ###
+Django will record the session ID of web requests even when the request
+is from an unauthorized user. This allows an attacker to populate the
+session store database with invalid session information, potentially
+causing a denial of service condition by filling the database with
+useless session information.
+
+### Recommended Actions ###
+The Django developers have released a fix for this issue which is
+included in software versions 1.4.21, 1.7.9 and 1.8.3. Horizon
+administrators should ensure that they are using an up to date version
+of Django to avoid being affected by this vulnerability.
+
+Versions of Horizon prior to Kilo cannot run with the fixed version of
+Django, and may require updating to a newer version of OpenStack.
+Administrators can test if their deployment is affected by attempting to
+inject invalid sessions into the session store database using the
+following script and then querying the session store database to check
+if multiple 'aaaaa' session ID's were recorded.
+
+---- begin example ----
+for i in {1..100}
+do
+  curl -b "sessionid=aaaaa;" http://HORIZON__IP/auth/login/ &> /dev/null
+done
+---- end example ----
+
+If possible, affected users should upgrade to the Kilo or newer release
+of Horizon, allowing them to use the fixed version of Django.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0054
+Django fix : https://www.djangoproject.com/weblog/2015/jul/08/security-releases/
+Django CVE : CVE-2015-5143
+Original LaunchPad Bug : https://bugs.launchpad.net/horizon/+bug/1457551
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

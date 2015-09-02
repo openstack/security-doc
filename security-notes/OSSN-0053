@@ -1,0 +1,66 @@
+Keystone token disclosure may result in malicious trust creation
+---
+
+### Summary ###
+Keystone tokens are the foundation of authentication and authorization
+in OpenStack. When a service node is compromised, it is possible that
+an attacker would have access to all tokens passing through that node.
+With a valid token an attacker will be able to issue new tokens that
+may be used to create trusts between the originating user and a new
+user.
+
+#### Affected Services / Software ###
+Keystone, Grizzly, Havana, Icehouse, Juno, Kilo
+
+#### Discussion ###
+If a service node is compromised, an attacker now has access to every
+token that passes through that node. By default, a Keystone token can
+be exchanged for another token, and there is no restriction on scoping
+of the new token. With the trust API, these tokens can be used to
+delegate roles between the original user and a new user.
+
+Trusts allow a user to set up a long term delegation that permits
+another user to perform operations on their behalf. While tokens
+created through trusts are limited in what they can do, the
+limitations are only on things like changing passwords or creating
+new tokens. This would grant an attacker access to all the operations
+available to the originating user in their projects, and the roles that
+are delegated through the trust.
+
+There are other ways that a compromised token can be misused beyond the
+methods described here. This note addresses one possible path for
+vulnerabilities based on the unintended access that could be gained
+from trusts created through intercepted tokens.
+
+This behavior is intrinsic to the bearer token model used within
+Keystone / OpenStack.
+
+#### Recommended Actions ###
+The following steps are recommended to reduce exposure, based on the
+granularity and accepted level of risk in a given environment:
+
+1. Monitor and audit trust creation events within your environment.
+Keystone emits notifications on trust creation and deletion that are
+accessible through system logs or, if configured, the CADF
+data/security/trust resource extension.
+
+2. Offer roles that cannot create trusts / delegate permissions /
+assign new roles via Keystone to users. This limits the vector of
+attack to compromising Keystone directly or man-in-the-middle capture
+of a separate token that has the authorization to create
+trusts/delegate/assign roles.
+
+3. Retain the default token lifespan of 1 hour.  Many workloads require
+a single token for the whole workload, and take more than one hour, so
+installations have increased token lifespans back to the old value of
+24 hours - increasing their exposure to this issue.
+
+#### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0053
+Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1455582
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Hierarchical Roles : https://review.openstack.org/#/c/125704
+Policy by URL : https://review.openstack.org/#/c/192422
+unified policy file : https://review.openstack.org/#/c/134656
+Endpoint_ID from URL : https://review.openstack.org/#/c/199844

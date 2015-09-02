@@ -1,0 +1,37 @@
+Python-swiftclient exposes raw token values in debug logs
+---
+
+### Summary ###
+The password and authentication token configuration options for the
+python-swiftclient are not marked as secret. The values of these options
+will be logged to the standard logging output when the controller is run
+in debug mode.
+
+### Affected Services / Software ###
+Python-swiftclient, Swift, Glance, Juno, Kilo
+
+### Discussion ###
+When using the python-swiftclient to connect to Glance, and the
+:glance-api.conf: has set the value of the debug option to True, the
+requests sent through the API, including user and token details, will be
+captured in the local log mechanism.
+
+### Recommended Actions ###
+It is recommended to use the debug level in configurations only when
+necessary to troubleshoot an issue. When the debug flag is set, the
+resulting logs should be treated as having sensitive information and as
+such should have strict permissions around the file and containing
+directory set in the operating system. Additionally, the logs should
+not be transported off the system in plaintext such as through syslog.
+
+The debug level can be turned off by setting the following option in
+the `glance-api.conf` file:
+
+    [DEFAULT]
+    debug = false
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0052
+Original LaunchPad Bug : https://bugs.launchpad.net/python-swiftclient/+bug/1470740
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

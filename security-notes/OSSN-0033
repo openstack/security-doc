@@ -38,6 +38,13 @@ projects they require have updated.
 
 ### Contacts / References ###
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0033
-Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1188189
+Launchpad Bugs :
+
+  - https://bugs.launchpad.net/ossn/+bug/1188189
+  - https://bugs.launchpad.net/ossn/+bug/1436082
+  - https://bugs.launchpad.net/nova/+bug/1276207
+  - https://bugs.launchpad.net/vmware-nsx/+bug/1487962
+  - https://bugs.launchpad.net/vmware-nsx/+bug/1488265
+
 OpenStack Security ML : openstack-security@lists.openstack.org
 OpenStack Security Group : https://launchpad.net/~openstack-ossg

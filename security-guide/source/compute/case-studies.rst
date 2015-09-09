@@ -30,6 +30,13 @@ and device domains) to provide stronger isolation between the instances. Alice
 also uses the Intel TXT support in Xen to measure the hypervisor launch in the
 TPM.
 
+She then ensures there are restrictive file permissions, such as 640, on all
+sensitive files, such as :file:`nova.conf`, and directories. After outlining
+a process for creating and updating 'golden images' that will be the templates
+for images, she also tests and then configures the ``AvailabilityZoneFilter``
+to enable regional zones, and the ``ServerGroupAffinityFilter`` with the
+``AggregateIoOps`` filters to distribute load across systems.
+
 
 Bob's public cloud
 ~~~~~~~~~~~~~~~~~~

@@ -229,7 +229,7 @@ necessary link from the boot validation process to validating the entire
 system. The steps for doing this will be deployment specific. As an
 example, a kernel module could verify a hash over the blocks comprising
 the file system before mounting it using
-`dm-verity <https://code.google.com/p/cryptsetup/wiki/DMVerity>`__.
+`dm-verity <https://gitlab.com/cryptsetup/cryptsetup/wikis/DMVerity>`__.
 
 Runtime verification
 ~~~~~~~~~~~~~~~~~~~~

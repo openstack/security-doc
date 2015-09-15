@@ -106,7 +106,7 @@ On the RabbitMQ server, delete the default ``guest`` user:
 
 .. code:: console
 
-    # rabbitmqctl delete_user quest
+    # rabbitmqctl delete_user guest
 
 On the RabbitMQ server, for each OpenStack service or node that
 communicates with the message queue set up user accounts and privileges:

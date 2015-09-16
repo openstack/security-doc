@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-20 06:27+0000\n"
+"POT-Creation-Date: 2015-09-16 19:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -431,7 +431,7 @@ msgid ""
 "Debian virtual machines."
 msgstr ""
 
-#: ../networking/services.rst:176
+#: ../networking/services.rst:177
 msgid ""
 "A list of known plug-ins provided by the open source community or by SDN "
 "companies that work with OpenStack Networking is available at `OpenStack "
@@ -493,8 +493,7 @@ msgid ""
 "administration of network resources. For a more detailed explanation of "
 "OpenStack Networking policy definition, please refer to the `Authentication "
 "and authorization section <http://docs.openstack.org/admin-guide-cloud/"
-"content/section_networking_auth.html>`__ in the OpenStack Cloud "
-"Administrator Guide."
+"networking_auth.html>`__ in the OpenStack Cloud Administrator Guide."
 msgstr ""
 
 #: ../management/continuous-systems-management.rst:159
@@ -542,11 +541,11 @@ msgid ""
 "and their rules allow administrators and tenants the ability to specify the "
 "type of traffic and direction (ingress/egress) that is allowed to pass "
 "through a virtual interface port. When a virtual interface port is created "
-"in OpenStack Networking it is associated with a security group. If a "
-"security group is not specified, the port will be associated with a "
-"'default' security group. By default this group will drop all ingress "
-"traffic and allow all egress. Rules can be added to this group in order to "
-"change the behaviour."
+"in OpenStack Networking it is associated with a security group. For further "
+"details on the default behavior of port security groups, reference the "
+"`Networking Security Group Behavior <https://wiki.openstack.org/wiki/Neutron/"
+"SecurityGroups#Behavior>`__ documentation. Rules can be added to the default "
+"security group in order to change the behavior on a per-deployment basis."
 msgstr ""
 
 #: ../databases/database-access-control.rst:73
@@ -1552,8 +1551,8 @@ msgid ""
 "environment. Ideally, you can configure these logs to export to a log "
 "aggregator that collects log events, correlates them for analysis, and "
 "stores them for reference or further action. One common tool to do this is "
-"an `ELK stack, or Elasticsearch, Logstash, and Kibana <http://www."
-"elasticsearch.com>`_."
+"an `ELK stack, or Elasticsearch, Logstash, and Kibana <https://www.elastic."
+"co/>`_."
 msgstr ""
 
 #: ../compute/how-to-select-virtual-consoles.rst:53
@@ -1739,7 +1738,7 @@ msgid ""
 "this book. We recommend following the guidance from a hardening guide "
 "specific to your operating system. For example, the `security technical "
 "implementation guides <http://iase.disa.mil/stigs/>`__ (STIG) and the `NSA "
-"guides <http://www.nsa.gov/ia/mitigation_guidance/"
+"guides <https://www.nsa.gov/ia/mitigation_guidance/"
 "security_configuration_guides/>`__ are useful starting places."
 msgstr ""
 
@@ -2095,7 +2094,7 @@ msgid ""
 "activities are regularly conducted for a typical audit period (~6-12 months)."
 msgstr ""
 
-#: ../compute/case-studies.rst:37
+#: ../compute/case-studies.rst:44
 msgid ""
 "Bob is very concerned about instance isolation since the users in a public "
 "cloud represent anyone with a credit card, meaning they are inherently "
@@ -2123,7 +2122,7 @@ msgid ""
 "endpoints with a host-based IDS."
 msgstr ""
 
-#: ../compute/case-studies.rst:47
+#: ../compute/case-studies.rst:54
 msgid ""
 "Bob weighs the added cost of repackaging QEMU and decides that he cannot "
 "commit those resources to the project. Fortunately, his Linux distribution "
@@ -2148,7 +2147,7 @@ msgstr ""
 # #-#-#-#-#  secure-communication.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  tenant-data.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../api-endpoints/case-studies.rst:39 ../compliance/case-studies.rst:57
-#: ../compute/case-studies.rst:35 ../dashboard/case-studies.rst:42
+#: ../compute/case-studies.rst:42 ../dashboard/case-studies.rst:42
 #: ../databases/case-studies.rst:29 ../data-processing/case-studies.rst:24
 #: ../documentation/case-studies.rst:39 ../identity/case-studies.rst:35
 #: ../instance-management/case-studies.rst:38
@@ -2190,7 +2189,7 @@ msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:55
 msgid ""
-"Both approaches provide `Perfect Forward Secrecy (PFS) <http://en.wikipedia."
+"Both approaches provide `Perfect Forward Secrecy (PFS) <https://en.wikipedia."
 "org/wiki/Forward_secrecy>`_. See :ref:`secure-communication-perfect-forward-"
 "secrecy` for additional discussion on properly configuring PFS."
 msgstr ""
@@ -2367,7 +2366,7 @@ msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:67
 msgid ""
-"Cipher suites using the `RSA <http://en.wikipedia.org/wiki/RSA_"
+"Cipher suites using the `RSA <https://en.wikipedia.org/wiki/RSA_"
 "%28cryptosystem%29>`_ exchange, authentication or either respectively."
 msgstr ""
 
@@ -2397,8 +2396,8 @@ msgstr ""
 msgid ""
 "Cloud administrators must define a user with the role of admin for each "
 "service, as described in the `OpenStack Cloud Administrator Guide <http://"
-"docs.openstack.org/admin-guide-cloud/content/index.html>`__. This service "
-"account provides the service with the authorization to authenticate users."
+"docs.openstack.org/admin-guide-cloud/index.html>`__. This service account "
+"provides the service with the authorization to authenticate users."
 msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:27
@@ -2695,11 +2694,14 @@ msgstr ""
 
 #: ../dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst:58
 msgid ""
-"Configure the ``ALLOWED_HOSTS`` setting with the domain or domains where the "
-"dashboard is available. Failure to configure this setting (especially if not "
-"following the recommendation above regarding second level domains) opens the "
-"dashboard to a number of serious attacks. Wild card domains should be "
-"avoided."
+"Configure the ``ALLOWED_HOSTS`` setting with the fully qualified host "
+"name(s) that are served by the OpenStack dashboard.  Once this setting is "
+"provided, if the value in the \"Host:\" header of an incoming HTTP request "
+"does not match any of the values in this list an error will be raised and "
+"the requestor will not be able to proceed.  Failing to configure this "
+"option, or the use of wild card characters in the specified host names, will "
+"cause the dashboard to be vulnerable to security breaches associated with "
+"fake HTTP Host headers."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:289
@@ -3331,7 +3333,7 @@ msgid ""
 "browsers or libraries is required."
 msgstr ""
 
-#: ../networking/services.rst:167
+#: ../networking/services.rst:168
 msgid ""
 "During the design of an OpenStack Networking infrastructure it is important "
 "that you understand the current features and limitations of available "
@@ -3823,7 +3825,8 @@ msgid ""
 "provided by security groups. Both Freescale and Intel developed third-party "
 "plug-ins as extensions in OpenStack Networking to support this component in "
 "the Kilo release. Documentation for administration of FWaaS is located at "
-"http://docs.openstack.org/admin-guide-cloud/content/fwaas.html"
+"http://docs.openstack.org/admin-guide-cloud/networking_introduction.html "
+"#firewall-as-a-service-fwaas-overview"
 msgstr ""
 
 #: ../compliance/overview.rst:27
@@ -3986,7 +3989,7 @@ msgstr ""
 #: ../networking/architecture.rst:84
 msgid ""
 "For additional information see the `OpenStack Cloud Administrator Guide "
-"<http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html>`__."
+"<http://docs.openstack.org/admin-guide-cloud/networking.html>`__."
 msgstr ""
 
 #: ../management/continuous-systems-management.rst:14
@@ -4023,7 +4026,7 @@ msgid ""
 "Identity Provider, to start the SAML authentication procedure."
 msgstr ""
 
-#: ../dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst:65
+#: ../dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst:66
 #: ../dashboard/front-end-caching-session-back-end.rst:39
 msgid ""
 "For further details, see the `Django documentation <https://docs."
@@ -4489,7 +4492,7 @@ msgstr ""
 msgid "Hive `https://hive.apache.org <https://hive.apache.org>`_"
 msgstr ""
 
-#: ../dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst:69
+#: ../dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst:70
 msgid "Horizon image upload"
 msgstr ""
 
@@ -4647,7 +4650,7 @@ msgstr ""
 #: ../compliance/overview.rst:15
 msgid ""
 "Identify where risks exist in a cloud architecture and apply controls to "
-"mitigate the risks. In areas of significant concern, layered defences "
+"mitigate the risks. In areas of significant concern, layered defenses "
 "provide multiple complementary controls to manage risk down to an acceptable "
 "level. For example, to ensure adequate isolation between cloud tenants, we "
 "recommend hardening QEMU, using a hypervisor with SELinux support, enforcing "
@@ -4724,7 +4727,7 @@ msgid ""
 "consider disabling TPS and KSM memory optimizations."
 msgstr ""
 
-#: ../networking/services.rst:196
+#: ../networking/services.rst:197
 msgid ""
 "If network namespace support is not present, a further limitation of the L3 "
 "agent is that only a single logical router is supported."
@@ -4735,7 +4738,7 @@ msgid ""
 "If new certificates are required, they can be easily created by executing:"
 msgstr ""
 
-#: ../networking/services.rst:187
+#: ../networking/services.rst:188
 msgid ""
 "If nodes that run either neutron-l3-agent or neutron-dhcp-agent use "
 "overlapping IP addresses, those nodes must use Linux network namespaces. By "
@@ -5891,7 +5894,7 @@ msgid ""
 "for action. Frequently this alert takes the form of an email with the "
 "messages of interest. An interesting event could be a significant failure, "
 "or known health indicator of a pending failure. Two common utilities for "
-"managing alerts are `Nagios <http://www.nagios.org>`_ and `Zabbix <http://"
+"managing alerts are `Nagios <https://www.nagios.org>`_ and `Zabbix <http://"
 "www.zabbix.com>`_."
 msgstr ""
 
@@ -6080,7 +6083,7 @@ msgid ""
 "password."
 msgstr ""
 
-#: ../networking/services.rst:204
+#: ../networking/services.rst:205
 msgid "Multi-host DHCP-agent"
 msgstr ""
 
@@ -6210,7 +6213,7 @@ msgstr ""
 msgid "Network services"
 msgstr ""
 
-#: ../networking/services.rst:174
+#: ../networking/services.rst:175
 msgid "Network services extensions"
 msgstr ""
 
@@ -6258,7 +6261,7 @@ msgstr ""
 msgid "Networking services"
 msgstr ""
 
-#: ../networking/services.rst:182
+#: ../networking/services.rst:183
 msgid "Networking services limitations"
 msgstr ""
 
@@ -6281,7 +6284,7 @@ msgstr ""
 msgid "Never eXecute (NX)"
 msgstr ""
 
-#: ../networking/services.rst:207
+#: ../networking/services.rst:208
 msgid "No IPv6 support for L3 agents"
 msgstr ""
 
@@ -6694,7 +6697,7 @@ msgstr ""
 msgid ""
 "Only the minimum level of access for users and system services is granted. "
 "This access is based upon role, responsibility and job function. This "
-"security principal of least privilege is written into several international "
+"security principle of least privilege is written into several international "
 "government security policies, such as NIST 800-53 Section AC-6 within the "
 "United States."
 msgstr ""
@@ -6810,7 +6813,7 @@ msgid ""
 "network traffic isolation, availability, integrity and confidentiality."
 msgstr ""
 
-#: ../networking/services-security-best-practices.rst:117
+#: ../networking/services-security-best-practices.rst:118
 msgid ""
 "OpenStack Networking also supports per-tenant quotas limit through a quota "
 "extension API. To enable per-tenant quotas, you must set the "
@@ -6842,7 +6845,7 @@ msgid ""
 "physical and virtual network infrastructure and services."
 msgstr ""
 
-#: ../networking/services.rst:184
+#: ../networking/services.rst:185
 msgid "OpenStack Networking has the following known limitations:"
 msgstr ""
 
@@ -6880,7 +6883,7 @@ msgstr ""
 msgid "OpenStack Networking service placement on physical servers"
 msgstr ""
 
-#: ../networking/services.rst:200
+#: ../networking/services.rst:201
 msgid ""
 "OpenStack Networking supports multiple L3 and DHCP agents with load "
 "balancing. However, tight coupling of the location of the virtual machine is "
@@ -7275,7 +7278,7 @@ msgstr ""
 msgid "Outbound attacks and reputational risk"
 msgstr ""
 
-#: ../networking/services.rst:197
+#: ../networking/services.rst:198
 msgid "Overlapping IP addresses"
 msgstr ""
 
@@ -7723,11 +7726,11 @@ msgid ""
 "policy."
 msgstr ""
 
-#: ../networking/services-security-best-practices.rst:84
+#: ../networking/services-security-best-practices.rst:85
 msgid "Quotas"
 msgstr ""
 
-#: ../networking/services-security-best-practices.rst:86
+#: ../networking/services-security-best-practices.rst:87
 msgid ""
 "Quotas provide the ability to limit the number of network resources "
 "available to tenants. You can enforce default quotas for all tenants. The :"
@@ -8463,10 +8466,21 @@ msgid ""
 "utilizing large distributed computing infrastructures."
 msgstr ""
 
+#: ../compute/case-studies.rst:33
+msgid ""
+"She then ensures there are restrictive file permissions, such as 640, on all "
+"sensitive files, such as :file:`nova.conf`, and directories. After outlining "
+"a process for creating and updating 'golden images' that will be the "
+"templates for images, she also tests and then configures the "
+"``AvailabilityZoneFilter`` to enable regional zones, and the "
+"``ServerGroupAffinityFilter`` with the ``AggregateIoOps`` filters to "
+"distribute load across systems."
+msgstr ""
+
 #: ../management/integrity-life-cycle.rst:299
 msgid ""
 "Similar to host-based tools, the selection and configuration of a network-"
-"based intrusion detection tool is deployment specific. `Snort <http://www."
+"based intrusion detection tool is deployment specific. `Snort <https://www."
 "snort.org/>`__ is the leading open source networking intrusion detection "
 "tool, and a good starting place to learn more."
 msgstr ""
@@ -8666,7 +8680,7 @@ msgstr ""
 
 #: ../compliance/overview.rst:45
 msgid ""
-"Systems should be segregated in a such way that if one machine, or system-"
+"Systems should be segregated in such a way that if one machine, or system-"
 "level service, is compromised the security of the other systems will remain "
 "intact. Practically, the enablement and proper usage of SELinux helps "
 "accomplish this goal."
@@ -9939,7 +9953,7 @@ msgid ""
 "the following additional steps for production nodes:"
 msgstr ""
 
-#: ../networking/services.rst:207
+#: ../networking/services.rst:208
 msgid ""
 "The neutron-l3-agent, used by many plug-ins to implement L3 forwarding, "
 "supports only IPv4 forwarding."
@@ -11412,7 +11426,7 @@ msgid ""
 "this with all requests:"
 msgstr ""
 
-#: ../dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst:71
+#: ../dashboard/domains-dashboard-upgrades-basic-web-server-configuration.rst:72
 msgid ""
 "We recommend that implementers `disable HORIZON_IMAGES_ALLOW_UPLOAD <http://"
 "docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads>`_ "
@@ -11449,7 +11463,7 @@ msgid ""
 "node boot process begins with two insecure operations: DHCP and TFTP. Then "
 "the boot process uses TLS to download the remaining information required to "
 "deploy the node. This may be an operating system installer, a basic install "
-"managed by `Chef <http://www.opscode.com/chef/>`__ or `Puppet <https://"
+"managed by `Chef <https://www.chef.io/chef/>`__ or `Puppet <https://"
 "puppetlabs.com/>`__, or even a complete file system image that is written "
 "directly to disk."
 msgstr ""
@@ -11710,7 +11724,7 @@ msgid ""
 "domain for the proxy users."
 msgstr ""
 
-#: ../networking/services-security-best-practices.rst:78
+#: ../networking/services-security-best-practices.rst:79
 msgid ""
 "When using the OpenStack Compute API to modify security groups, the updated "
 "security group applies to all virtual interface ports on an instance. This "
@@ -12070,7 +12084,8 @@ msgid ""
 msgstr ""
 
 #: ../compute/hardening-the-virtualization-layers.rst:168
-msgid "`Hardening Walkthrough <http://wiki.debian.org/HardeningWalkthrough>`__"
+msgid ""
+"`Hardening Walkthrough <https://wiki.debian.org/HardeningWalkthrough>`__"
 msgstr ""
 
 #: ../data-processing/introduction-to-data-processing.rst:74
@@ -12252,7 +12267,7 @@ msgstr ""
 
 #: ../databases/database-backend-considerations.rst:40
 msgid ""
-"`Total security in a PostgreSQL database <http://www.ibm.com/developerworks/"
+"`Total security in a PostgreSQL database <https://www.ibm.com/developerworks/"
 "opensource/library/os-postgresecurity>`__"
 msgstr ""
 
@@ -12370,15 +12385,15 @@ msgid ""
 "~rja14/Papers/serpent.pdf>`__"
 msgstr ""
 
-#: ../compute/hypervisor-selection.rst:265
-msgid ""
-"`http://www.schneier.com/paper-twofish-paper.html <http://www.schneier.com/"
-"paper-twofish-paper.html>`__"
-msgstr ""
-
 #: ../compute/hardening-deployments.rst:99
 #: ../compute/vulnerability-awareness.rst:58
 msgid "`http://xenbits.xen.org/xsa/ <http://xenbits.xen.org/xsa/>`__"
+msgstr ""
+
+#: ../compute/hypervisor-selection.rst:265
+msgid ""
+"`https://www.schneier.com/paper-twofish-paper.html <https://www.schneier.com/"
+"paper-twofish-paper.html>`__"
 msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:15

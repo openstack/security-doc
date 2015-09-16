@@ -35,7 +35,7 @@ Nova-conductor
 --------------
 
 The compute nodes are the least trusted of the services in OpenStack
-because they host tenant instances. The nova-conductor service has been
+because they host tenant instances. The ``nova-conductor`` service has been
 introduced to serve as a database proxy, acting as an intermediary
 between the compute nodes and the database. We discuss its ramifications
 later in this chapter.

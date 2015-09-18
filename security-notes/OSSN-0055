@@ -50,7 +50,7 @@ unexpectedly.  In particular, pay attention to unusual IPs using the
 service account.
 
 ### Contacts / References ###
-This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0054
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0055
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1464750
 OpenStack Security ML : openstack-security@lists.openstack.org
 OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -1,0 +1,49 @@
+Cached keystone tokens may be accepted after revocation
+---
+
+### Summary ###
+Keystone auth_token middleware token and revocation list caching is used
+to reduce the load on the keystone service. The default token cache time
+is set to 300 seconds and the default token revocation list cache time
+is set to 10 seconds. This creates a misleading expectation that revoked
+tokens will not be accepted more than 10 seconds after revocation,
+however the maximum validity of a cached token must be assumed to be the
+cache duration. System owners should make a risk based decision to
+balance token lifespan with performance requirements and if the use of
+revoked tokens is an unacceptable risk then caching should be disabled.
+
+### Affected Services / Software ###
+OpenStack Services that use Keystone middleware: Juno, Kilo, Liberty
+
+### Discussion ###
+There are multiple options for configuring token caching in the keystone
+auth_token middleware. These options include token_cache_time,
+revocation_cache_time and check_revocations_for_cached, with each option
+affecting the different stages of token caching and revocation.
+Depending on the configuration the previously mentioned options, an
+attacker could use a compromised token for up to token_cache_time seconds
+before the token becomes disabled. To mitigate this vulnerability, a
+change was issued in Juno where the default Token Revocation List (TRL)
+cache time was reduced to 10 seconds and the
+check_revocations_for_cached option was added. The addition of a token
+to a TRL does not guarantee that cached tokens will be rejected
+considering the operational nature of token caching. For instance, if
+the check_revocations_for_cached is disabled then tokens are valid after
+caching token_cache_time or the designated expiration given to the
+token. Otherwise (if check_revocations_for_cached is enabled) then
+tokens are rejected after the revocation_cache_time.
+
+System owners should weigh the risk of an attacker using a revoked token
+versus the performance implications of reducing the token cache time.
+
+### Recommended Actions ###
+Review the implications of the default 300 second token cache time and
+any risks associated with the use of revoked tokens for up to that cache
+time. If this is unacceptable, reduce the cache time to reduce the
+attack window or disable token caching entirely.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0056
+Original LaunchPad Bug : https://bugs.launchpad.net/python-keystoneclient/+bug/1287301
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-16 19:05+0000\n"
+"POT-Creation-Date: 2015-09-19 06:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,6 +210,18 @@ msgstr ""
 
 #: ../introduction/why-and-how-we-wrote-this-book.rst:132
 msgid "**Vibha Fauver**"
+msgstr ""
+
+#: ../tenant-data/data-encryption.rst:74
+msgid "**option**: 'cipher = aes-xts-plain64'"
+msgstr ""
+
+#: ../tenant-data/data-encryption.rst:84
+msgid "**option**: 'enabled = false'"
+msgstr ""
+
+#: ../tenant-data/data-encryption.rst:88
+msgid "**option**: 'key_size = 512'"
 msgstr ""
 
 #: ../instance-management/security-services-for-instances.rst:260
@@ -1562,7 +1574,7 @@ msgid ""
 "Environments (SPICE) protocol."
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:109
+#: ../tenant-data/data-encryption.rst:139
 msgid ""
 "As both block storage and compute support LVM backed storage, we can easily "
 "provide an example applicable to both systems. In deployments using LVM, "
@@ -1970,7 +1982,7 @@ msgstr ""
 msgid "Block Storage (optional)"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:99
+#: ../tenant-data/data-encryption.rst:129
 msgid ""
 "Block Storage supports a variety of mechanisms for supplying mountable "
 "volumes. The ability to encrypt volumes on the storage host depends on the "
@@ -1984,7 +1996,7 @@ msgstr ""
 msgid "Block Storage volume data"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:97
+#: ../tenant-data/data-encryption.rst:127
 msgid "Block Storage volumes and instance ephemeral filesystems"
 msgstr ""
 
@@ -2574,12 +2586,6 @@ msgstr ""
 msgid "Compute API endpoints"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:69
-msgid ""
-"Compute configuration enables encryption and specifies encryption parameters "
-"such as algorithm and key size"
-msgstr ""
-
 #: ../tenant-data/data-privacy-concerns.rst:19
 msgid "Compute instance ephemeral filesystem storage"
 msgstr ""
@@ -2859,7 +2865,10 @@ msgid ""
 msgstr ""
 
 #: ../tenant-data/data-encryption.rst:67
-msgid "Creation and usage of encrypted LVM ephemeral disks"
+msgid ""
+"Creation and usage of encrypted LVM ephemeral disks (note: At this time "
+"OpenStack Compute service only supports encrypting ephemeral disks in the "
+"LVM format)"
 msgstr ""
 
 #: ../tenant-data/data-encryption.rst:41
@@ -3696,7 +3705,7 @@ msgstr ""
 msgid "Ephemeral disk encryption"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:76
+#: ../tenant-data/data-encryption.rst:103
 msgid ""
 "Ephemeral disk encryption is supported by back-end key storage for enhanced "
 "security (for example, an HSM or a KMIP server can be used as a barbican "
@@ -4207,7 +4216,7 @@ msgid ""
 "usage in :doc:`configuration-and-hardening`."
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:105
+#: ../tenant-data/data-encryption.rst:135
 msgid ""
 "For the purpose of performance, many storage protocols are unencrypted.  "
 "Some protocols such as iSCSI can provide authentication and encrypted "
@@ -5277,7 +5286,7 @@ msgid ""
 "processed by the system."
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:52 ../tenant-data/data-encryption.rst:72
+#: ../tenant-data/data-encryption.rst:52 ../tenant-data/data-encryption.rst:98
 msgid "Interface with the Key management service through a secure wrapper"
 msgstr ""
 
@@ -5580,7 +5589,7 @@ msgstr ""
 msgid "Key management"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:74
+#: ../tenant-data/data-encryption.rst:100
 msgid ""
 "Key management service will support data isolation by providing ephemeral "
 "disk encryption keys on a per-tenant basis"
@@ -5671,7 +5680,7 @@ msgstr ""
 msgid "Least privilege"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:124
+#: ../tenant-data/data-encryption.rst:154
 msgid ""
 "Likewise, encrypted data will remain encrypted as it is transferred over the "
 "network."
@@ -6181,7 +6190,7 @@ msgid "Network connectivity of physical servers"
 msgstr ""
 
 #: ../tenant-data/data-encryption.rst:33
-#: ../tenant-data/data-encryption.rst:118
+#: ../tenant-data/data-encryption.rst:148
 msgid "Network data"
 msgstr ""
 
@@ -6343,6 +6352,16 @@ msgid ""
 "keystone.conf`` file maps LDAP attributes to Identity attributes."
 msgstr ""
 
+#: ../tenant-data/data-encryption.rst:90
+msgid ""
+"Note that there may be a key size limitation from the backend key manager "
+"that could require the use of 'key_size = 256', which would only provide an "
+"AES key size of 128-bits. XTS requires it's own \"tweak key\" in addition to "
+"the encryption key AES requires. This is typically expressed as a single "
+"large key.  In this case, using the 512-bit setting, 256 bits will be used "
+"by AES and 256 bits by XTS. (see NIST_)"
+msgstr ""
+
 #: ../identity/policies.rst:53
 msgid ""
 "Note the **cloud_admin** rule specifies that the user must be an admin on a "
@@ -6468,7 +6487,8 @@ msgstr ""
 msgid "Object Storage network architecture with a management node (OSAM)"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:32 ../tenant-data/data-encryption.rst:84
+#: ../tenant-data/data-encryption.rst:32
+#: ../tenant-data/data-encryption.rst:114
 #: ../tenant-data/data-privacy-concerns.rst:18
 msgid "Object Storage objects"
 msgstr ""
@@ -8741,7 +8761,7 @@ msgid ""
 "the Object Storage (swift) documentation."
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:120
+#: ../tenant-data/data-encryption.rst:150
 msgid ""
 "Tenant data for compute could be encrypted over IPsec or other tunnels.  "
 "This is not functionality common or standard in OpenStack, but is an option "
@@ -9446,7 +9466,7 @@ msgid ""
 "distributions, replace with appropriate command."
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:86
+#: ../tenant-data/data-encryption.rst:116
 msgid ""
 "The ability to encrypt objects in Object Storage is presently limited to "
 "disk-level encryption per node. However, there does exist third-party "
@@ -9544,6 +9564,12 @@ msgid ""
 "unauthorized modification. This can be achieved with mandatory access "
 "control frameworks such as SELinux, including ``/etc/keystone/keystone."
 "conf`` and X.509 certificates."
+msgstr ""
+
+#: ../tenant-data/data-encryption.rst:71
+msgid ""
+"The compute configuration, :file:'nova.conf', has the following default "
+"parameters within the \"[ephemeral_storage_encryption]\" section"
 msgstr ""
 
 #: ../databases/database-access-control.rst:37
@@ -10505,6 +10531,16 @@ msgstr ""
 msgid "This example shows the sVirt category identifier:"
 msgstr ""
 
+#: ../tenant-data/data-encryption.rst:76
+msgid ""
+"This field sets the cipher and mode used to encrypt ephemeral storage. AES-"
+"XTS is recommended by NIST_ specifically for disk storage, and the name is "
+"shorthand for AES encryption using the XTS encryption mode.  Available "
+"ciphers depend on kernel support. At the command line, type 'cyrptsetup "
+"benchmark' to determine the available options (and see benchmark results), "
+"or go to */proc/crypto*"
+msgstr ""
+
 #: ../instance-management/security-services-for-instances.rst:75
 msgid ""
 "This filter will create an instance based on external details such as in a "
@@ -10860,6 +10896,10 @@ msgid ""
 "state of the cloud deployment and allows the creation of users, tenants/"
 "projects, assigning users to tenants/projects, and specifying resource "
 "quotas on a per tenant/project basis."
+msgstr ""
+
+#: ../tenant-data/data-encryption.rst:86
+msgid "To use ephemeral disk encryption, set **option**: 'enabled = true'"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:385
@@ -11376,15 +11416,15 @@ msgid ""
 "are published. The `OpenStack Security Portal <https://security.openstack."
 "org/>`__ is the central portal where advisories, notices, meetings, and "
 "processes can be coordinated. Additionally, the `OpenStack Vulnerability "
-"Management Team (VMT) portal <https://security.openstack.org/#openstack-"
-"vulnerability-management-team>`__ coordinates remediation within the "
-"OpenStack project, as well as the process of investigating reported bugs "
-"which are responsibly disclosed (privately) to the VMT, by marking the bug "
-"as 'This bug is a security vulnerability'. Further detail is outlined in the "
-"`VMT process page <https://security.openstack.org/vmt-process."
-"html#process>`__ and results in an OpenStack Security Advisory or OSSA. This "
-"OSSA outlines the issue and the fix, as well as linking to both the original "
-"bug, and the location where the where the patch is hosted."
+"Management Team (VMT) portal <https://security.openstack.org/#vulnerability-"
+"management>`__ coordinates remediation within the OpenStack project, as well "
+"as the process of investigating reported bugs which are responsibly "
+"disclosed (privately) to the VMT, by marking the bug as 'This bug is a "
+"security vulnerability'. Further detail is outlined in the `VMT process page "
+"<https://security.openstack.org/vmt-process.html#process>`__ and results in "
+"an OpenStack Security Advisory or OSSA. This OSSA outlines the issue and the "
+"fix, as well as linking to both the original bug, and the location where the "
+"where the patch is hosted."
 msgstr ""
 
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:112
@@ -11849,7 +11889,7 @@ msgid ""
 "for OpenStack's message queue service."
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:79
+#: ../tenant-data/data-encryption.rst:107
 msgid ""
 "With the Key management service, when an ephemeral disk is no longer needed, "
 "simply deleting the key may take the place of overwriting the ephemeral disk "
@@ -12436,7 +12476,7 @@ msgstr ""
 msgid "cgroups"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:94
+#: ../tenant-data/data-encryption.rst:124
 msgid ""
 "http://www.mirantis.com/blog/on-disk-encryption-prototype-for-openstack-"
 "swift/"
@@ -12448,7 +12488,7 @@ msgid ""
 "enterprise-level-backups_515"
 msgstr ""
 
-#: ../tenant-data/data-encryption.rst:92
+#: ../tenant-data/data-encryption.rst:122
 msgid "https://github.com/Mirantis/swift-encrypt"
 msgstr ""
 

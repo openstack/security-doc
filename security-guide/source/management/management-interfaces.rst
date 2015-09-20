@@ -166,10 +166,10 @@ References
 ----------
 
 OpenStack End User Guide section `command-line clients
-overview <http://docs.openstack.org/user-guide/cli.html>`__
+overview <http://docs.openstack.org/user-guide/common/cli_overview.html>`__
 
 OpenStack End User Guide section `Download and source the OpenStack RC
-file <http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html>`__
+file <http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html#download-and-source-the-openstack-rc-file>`__
 
 Out-of-band management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

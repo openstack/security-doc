@@ -14,17 +14,18 @@
 # Toru Makabe <t.makabe@gmail.com>, 2013-2014
 # ykatabam <ykatabam@redhat.com>, 2013-2014
 # Akihiro Motoki <amotoki@gmail.com>, 2015. #zanata
+# KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>, 2015. #zanata
 # OpenStack Infra <zanata@openstack.org>, 2015. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-18 00:53+0000\n"
+"POT-Creation-Date: 2015-09-23 19:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-09-18 07:18+0000\n"
-"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"PO-Revision-Date: 2015-09-28 01:12+0000\n"
+"Last-Translator: KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/openstack/openstack-"
 "manuals-i18n/language/ja/)\n"
 "Language: ja\n"
@@ -225,6 +226,15 @@ msgstr "**Shawn Wells**, Red Hat"
 
 msgid "**Vibha Fauver**"
 msgstr "**Vibha Fauver**"
+
+msgid "**option**: 'cipher = aes-xts-plain64'"
+msgstr "**オプション**: 'cipher = aes-xts-plain64'"
+
+msgid "**option**: 'enabled = false'"
+msgstr "**オプション**: 'enabled = false'"
+
+msgid "**option**: 'key_size = 512'"
+msgstr "**オプション**: 'key_size = 512'"
 
 msgid ""
 "*Code injection*: If memory or disk transfers are not handled securely, then "
@@ -7581,17 +7591,6 @@ msgstr ""
 "クラウド管理者は権限のない変更から重要な設定ファイルを保護すべきです。これは "
 "SELinux のような強制アクセス制御のフレームワークで実現できます。これらには "
 "``/etc/keystone/keystone.conf`` や X.509 証明書などがあります。"
-
-msgid ""
-"The compute nodes are the least trusted of the services in OpenStack because "
-"they host tenant instances. The nova-conductor service has been introduced "
-"to serve as a database proxy, acting as an intermediary between the compute "
-"nodes and the database. We discuss its ramifications later in this chapter."
-msgstr ""
-"コンピュートノードは、プロジェクトのインスタンスをホストするため、OpenStack "
-"で最も信頼できないサービスです。nova-conductor サービスは、コンピュートノード"
-"とデータベースの中継役として動作する、データベースプロキシとして処理するため"
-"に導入されました。その結果について本章で後ほど議論します。"
 
 msgid ""
 "The creation and destruction of ephemeral storage will be somewhat dependent "

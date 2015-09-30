@@ -23,3 +23,4 @@ functionality is desired for your cloud.
    compute/vulnerability-awareness.rst
    compute/how-to-select-virtual-consoles.rst
    compute/case-studies.rst
+   compute/checklist.rst

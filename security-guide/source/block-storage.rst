@@ -21,6 +21,11 @@ OpenStack native standard HTTP RESTful API. For more details on the
 API see the `OpenStack Block Storage documentation
 <http://developer.openstack.org/api-ref-blockstorage-v2.html>`__.
 
+.. toctree::
+   :maxdepth: 2
+
+   block-storage/checklist.rst
+
 .. note::
 
    Whilst this chapter is currently sparse on specific

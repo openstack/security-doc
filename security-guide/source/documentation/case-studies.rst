@@ -38,4 +38,25 @@ and into the database.
 Bob's public cloud
 ~~~~~~~~~~~~~~~~~~
 
-In this case, Bob will take the same steps as Alice.
+Bob will also need detailed documentation to satisfy PCI compliance.
+Looking forward, he realizes that many controls are duplicated across
+compliance requirements, but may be under different categories. He
+assigns a compliance manager who maps the PCI certification process and
+necessary controls to similar certifications such as FedRAMP and HIPAA
+so that there is a documented assessment of other audit frameworks, as
+well as what artifacts can be duplicated, if an additional certification
+needs to be obtained. Architecture documentation similar to Alice's are
+created and secured.
+
+With documentation created, security domains called out, and it all
+stored where the service teams also have authenticated access, Bob looks
+at system management. He outlines a :term:`configuration management
+database (CMDB)<CMDB>` that will work with the PXE imaging system so
+that whenever a device calls in for an image, the MAC address will be
+used as the unique identifier in the CMDB entry. A script will report
+back on the hardware and software configuration of the system so that
+the CMDB will be populated on each system creation. He configures this
+script to report to the CMDB once a week so that the information is
+consistently refreshed, and schedules a manual audit of the information
+on an annual basis to ensure the script is pulling information
+accurately.

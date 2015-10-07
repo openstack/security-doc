@@ -41,5 +41,33 @@ introduce additional vulnerabilities.
 Bob's public cloud
 ~~~~~~~~~~~~~~~~~~
 
-In this case Bob takes the same precautions Alice does, except
-that Bob deploys his dashboard as public facing.
+Bob expects the dashboard to be one of the main methods of interaction
+users will have with their cloud, and as such he deploys the latest
+version of Nginx that has integrated active-passive high-availability
+based on keepalived. He makes sure that his networking configuration is
+configured to handle VRRP (used by keepalived), sets unique values
+for the `virtual_router_id` in the Nginx configuration file, determines
+which instance will start as master, and upates the proper values for
+the `unicast_src_ip` and `unicast_peer` setttings. He makes sure that
+both instances have their own copy of the configuration file and the
+`chk_nginx_service` script is configured to ensure the instances are
+validating the local node's priority.
+
+Bob then enables HSTS by adding a new response header in the Nginx
+server block, substituting applicable values for <NAME> and <TIME>:
+
+.. code:: console
+
+   server{
+   listen 443 ssl;
+   sever_name <NAME>
+   add_header Strict-Transport-Security "max-age=<TIME>; includeSubdomains";
+
+Bob also disables image uploading in the Dashboard as well as the Image
+service, as customers with custom images will go through Bob's service
+team for additional assurance. He updates the Dashboard with the
+company logo, and includes several additional scripts to add
+functionality, such as the ability to start a conversation with the help
+desk. Bob also adds IDS rules to trigger on log messages that may
+indicate security issues such as login bruteforcing or attempted
+CSRF/XSS injections.

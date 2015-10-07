@@ -38,14 +38,17 @@ applied to the services.
 Bob's public cloud
 ~~~~~~~~~~~~~~~~~~
 
-Bob must also protect the access to the public and private endpoints, so he
-elects to use the Apache TLS proxy on both public and internal services. On
-the public services, he has configured the certificate key files with
-certificates signed by a well-known Certificate Authority. He has used his
-organization's self-signed CA to sign certificates in the internal services on
-the Management network. Bob has registered his services in the Identity
-service's catalog, using the internal URLs for access by internal services.
-Bob's public cloud runs services on SELinux, which he has configured with a
-mandatory access control policy to reduce the impact of any publicly accessible
-services that may be compromised. He has also configured the endpoints with a
-host-based IDS.
+Bob must also protect the access to the public and private endpoints, so
+he elects to use the more lightweight Nginx web server on both public
+and internal services. On the public services, he has configured Nginx
+for high availability and has installed the certificate key files with
+certificates signed by a well-known Certificate Authority. He has used
+his organization's self-signed CA to sign certificates in the internal
+services on the Management network. Bob has registered his services in
+the Identity service's catalog, using the internal URLs for access by
+internal services. Bob has also installed and configured AppArmor to
+secure the API and prevent the API processes from having access to other
+system resources. He adds an additional level of assurance by installing
+a host-based IDS system that will forward all system-level log events as
+well as the API logs. He then ensures a dashboard has been created to
+monitor and correlate events that may indicate a security issue.

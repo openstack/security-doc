@@ -8,8 +8,8 @@ Abstract
 This book provides best practices and conceptual information about
 securing an OpenStack cloud.
 
-This guide documents OpenStack Kilo, OpenStack Juno,
-and OpenStack Icehouse releases.
+This guide documents OpenStack Liberty, OpenStack Kilo, and OpenStack
+Juno releases.
 
 Contents
 ~~~~~~~~

@@ -76,8 +76,8 @@ Security considerations
 References
 ----------
 
-`Kilo Release
-Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Kilo>`__
+`Liberty Release
+Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Liberty>`__
 
 OpenStack API
 ~~~~~~~~~~~~~

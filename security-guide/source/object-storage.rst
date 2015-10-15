@@ -84,7 +84,7 @@ non-root (UID 0) service account. One recommendation is the user name "swift"
 with the primary group "swift." Object Storage services include, for example,
 'proxy-server', 'container-server', 'account-server'. Detailed steps for setup
 and configuration can be found in the `Add Object Storage chapter
-<http://docs.openstack.org/kilo/install-guide/install/apt/content/ch_swift.html>`__
+<http://docs.openstack.org/liberty/install-guide-ubuntu/swift.html>`__
 of the Installation Guide in the `OpenStack Documentation index
 <http://docs.openstack.org>`__. (The link defaults to the Ubuntu version.)
 

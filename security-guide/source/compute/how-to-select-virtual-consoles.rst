@@ -84,7 +84,7 @@ Security considerations
 Bibliography
 ------------
 
-#. OpenStack Configuration Reference - Havana. SPICE Console. `SPICE Console
-   <http://docs.openstack.org/havana/config-reference/content/spice-console.html>`__.
+#. OpenStack Admin Guide. SPICE Console. `SPICE Console
+   <http://docs.openstack.org/admin-guide-cloud/compute-remote-console-access.html>`__.
 #. bugzilla.redhat.com, Bug 913607 - RFE: Support Tunnelling SPICE over
    websockets. 2013. `RedHat bug 913607 <https://bugzilla.redhat.com/show_bug.cgi?id=913607>`_.

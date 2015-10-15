@@ -22,10 +22,8 @@ and we recommend following the advice there to create this type of
 installation.
 
 From the Kilo release onward the data processing controller allows
-direct TLS connections. Enabling this behavior requires some small
-adjustments to the controller configuration file. For any post-Juno
-installation we recommend enabling the direct TLS connections in
-the controller configuration.
+direct TLS connections, which we recommend. Enabling this behavior
+requires some small adjustments to the controller configuration file.
 
 **Example. Configuring TLS access to the controller**
 

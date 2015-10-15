@@ -4,11 +4,10 @@ Tokens
 
 Once a user is authenticated a token is generated for authorization and
 access to an OpenStack environment. A token can have a variable life
-span; however since the release of OpenStack Icehouse, the default value
-for expiry has been reduced to one hour. The recommended expiry value
-should be set to a lower value that allows enough time for internal
-services to complete tasks. In the event that the token expires before
-tasks complete, the cloud may become unresponsive or stop providing
+span; however the default value for expiry is one hour. The recommended
+expiry value should be set to a lower value that allows enough time for
+internal services to complete tasks. In the event that the token expires
+before tasks complete, the cloud may become unresponsive or stop providing
 services. An example of expended time during use would be the time
 needed by the Compute service to transfer a disk image onto the
 hypervisor for local caching.
@@ -20,9 +19,9 @@ typically 3500 bytes. In this example, the value has been truncated.
 
    {
        "token": {
-           "expires": "2013-06-26T16:52:50Z",
+           "expires": "2015-10-15T16:52:50Z",
            "id": "MIIKXAY...",
-           "issued_at": "2013-06-25T16:52:50.622502",
+           "issued_at": "2015-10-15T16:52:50.622502",
            "tenant": {
                "description": null,
                "enabled": true,

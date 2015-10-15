@@ -124,7 +124,7 @@ application of QoS for traffic shaping and rate-limiting at the physical
 network edge device is insufficient due to the dynamic nature of
 workloads in an OpenStack deployment and can not be leveraged in the
 traditional way. QoS-as-a-Service (QoSaaS) is currently in development
-for the OpenStack Networking Icehouse release as an experimental
+for the OpenStack Networking Liberty release as an experimental
 feature. QoSaaS is planning to provide the following services:
 
 -  Traffic shaping through DSCP markings

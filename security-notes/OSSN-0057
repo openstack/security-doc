@@ -1,0 +1,55 @@
+DoS attack on Glance service can lead to interruption or disruption
+---
+
+### Summary ###
+The typical Glance workflow allows authenticated users to create an
+image and upload the image content in a separate step. This can be
+abused by malicious users to flood the Glance database with entries
+for zero sized images.
+
+### Affected Services / Software ###
+Glance, Icehouse, Juno, Kilo, Liberty
+
+### Discussion ###
+Glance by default allows an authenticated user to create zero size
+images. Those images do not consume resources on the storage backend
+and do not hit any limits for size, but do take up space in the
+database.
+
+Malicious users can potentially cause database resource depletion with
+an endless flood of 'image-create' requests.
+
+### Recommended Actions ###
+For current stable OpenStack releases, users can workaround this
+vulnerability by using rate-limiting proxies to cover access to the
+Glance API.  Rate-limiting is a common mechanism to prevent DoS and
+Brute-Force attacks.  Rate limiting on the API requests allows a delay
+in the consequences of the attack, but does not prevent it.
+
+For example, if you are using a proxy such as Repose, enable the rate
+limiting feature by following these steps:
+
+  https://repose.atlassian.net/wiki/display/REPOSE/Rate+Limiting+Filter
+
+An alternative approach to mitigate this issue would be to restrict
+image creates to trusted administrators within your deployed Glance
+policy.json file.
+
+  "add_image": "role:admin",
+
+Another preventative action would be to monitor the logs to identify
+excessive image create requests.  One example of such a log message
+is as follows (single line, wrapped):
+
+---- begin example glance-api.log snippet ----
+DEBUG glance.registry.client.v1.api [req-da1cafc0-f41f-4587-a484-672ba7f3546e
+admin 8b04efc28055428c940505838314f262 - - -]
+Adding image metadata... add_image_metadata
+/usr/lib/python2.7/dist-packages/glance/registry/client/v1/api.py:161
+---- end example glance-api.log snippet ----
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0057
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1401170
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

@@ -42,16 +42,17 @@ purposes, or that specific events trigger the proper SEIM workflows.
 Bob's public cloud
 ~~~~~~~~~~~~~~~~~~
 
-When it comes to logging, as a public cloud provider, Bob is interested
-in the activities for situational awareness as well as compliance. In
-the aspect of compliance, as a provider, Bob is subject to adherence to
-various rules and regulations to include activities such as providing
-timely, relevant logs or reports to customers to meet the requirements
-of their compliance programs. With that in mind, Bob configures all of
-his instances, nodes, and infrastructure devices to perform time
-synchronization with an external, validated time device. Additionally,
-Bob's team has built a Django based web application for his customers to
-perform self-service log retrieval from the SIEM tool. Bob also uses
-this SIEM tool along with a robust set of alerts and integration with
-his CMDB to provide operational awareness to both customers and cloud
-administrators.
+Bob is also building out a new cloud group, and outlines both a Security
+Operations Center (SOC), as well as the processes and procedures for
+responding to security events. As Bob's cloud will be able to be used by
+"anyone with a credit card" he wants to have a well-defined policy in
+place for issues that may arise. He outlines how SOC analysts can
+respond to malicious traffic detection, instances being compromised,
+external requests, and more. To aid the SOC he configures an
+Elasticsearch, Logstash, and Kibana (ELK) cluster to collect, correlate
+and identify security events. Bob also builds a Django based web
+application for his customers to perform self-service log retrieval from
+the Logstash systems. He does not allow user requests and ensures tenant
+validation so that tenants only have access to their own log events.
+Finally, Bob configures an NTP server to ensure all events maintain a
+consistent timeline.

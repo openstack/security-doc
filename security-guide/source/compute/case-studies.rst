@@ -41,18 +41,29 @@ to enable regional zones, and the ``ServerGroupAffinityFilter`` with the
 Bob's public cloud
 ~~~~~~~~~~~~~~~~~~
 
-Bob is very concerned about instance isolation since the users in a public
-cloud represent anyone with a credit card, meaning they are inherently
-untrusted. Bob has just started hiring the team that will deploy the cloud, so
-he can tailor his candidate search for specific areas of expertise. With this
-in mind, Bob chooses a hypervisor based on its technical features,
-certifications, and community support. KVM has an EAL 4+ common criteria
-rating, with a labeled security protection profile (LSPP) to provide added
-assurance for instance isolation. This, combined with the strong support for
-KVM within the OpenStack community drives Bob's decision to use KVM.
+Bob is very concerned about instance isolation since the users in a
+public cloud represent anyone with a credit card, meaning they are
+inherently untrusted. Bob has just started hiring the team that will
+deploy the cloud, so he can tailor his candidate search for specific
+areas of expertise. With this in mind, Bob chooses a hypervisor based on
+its technical features, certifications, and community support. KVM has
+an EAL 4+ common criteria rating, with a labeled security protection
+profile (LSPP) to provide added assurance for instance isolation. This,
+combined with the strong support for KVM within the OpenStack community
+drives Bob's decision to use KVM. Bob weighs the added cost of
+repackaging QEMU and decides that he cannot commit those resources to
+the project. Fortunately, his Linux distribution has already enabled the
+compiler hardening options, so he decides to use this QEMU package. Bob
+decides to use AppArmor to secure the hypervisor images due to their
+ease of use in a significantly large fleet. Bob considered using
+GRSecurity; however, it would have required significant time to tune all
+his applications to be properly covered by GRSecurity. Then, any
+applications he wanted to use in the future would need to be
+compatible as well.
 
-Bob weighs the added cost of repackaging QEMU and decides that he cannot commit
-those resources to the project. Fortunately, his Linux distribution has already
-enabled the compiler hardening options. So he decides to use this QEMU package.
-Finally, Bob leverages sVirt to manage the SELinux polices associated with the
-virtualization stack.
+Bob also ensures that sensitive files and folders on hypervisors are
+owned by their respective services and have 640 permissions. Finally,
+Bob uses the ``AvailabilityZoneFilter`` to enable his regional zones and
+``JsonFilter`` to be able to add tenants through a JSON file as needed.
+He also tests his scheduler filters at scale so that he does not run
+into resource or filter issues.

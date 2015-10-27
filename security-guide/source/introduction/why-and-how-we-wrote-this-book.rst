@@ -171,15 +171,6 @@ book in 3-5 days. It is a strongly facilitated process with a specific
 methodology founded and developed by Adam Hyde.  For more information visit the
 book sprint web page at http://www.booksprints.net.
 
-After initial publication, the following added new content:
-
--  **Rodney D. Beede**, Seagate Technology
-
-   Rodney D. Beede is the Cloud Security Engineer for Seagate Technology. He
-   contributed the missing chapter on securing OpenStack Object Storage
-   (swift).  He holds a M.S. in Computer Science from the University of
-   Colorado.
-
 How to contribute to this book
 ------------------------------
 

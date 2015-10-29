@@ -31,8 +31,9 @@ Security considerations
 #. The *nova-novncproxy* and *nova-xvpvncproxy* services by default open
    public-facing ports that are token authenticated.
 #. By default, the remote desktop traffic is not encrypted. TLS can be enabled
-   to encrypt the VNC traffic. Please refer to `Introduction to TLS and SSL
-   <introduction-to-ssl-tls>`__ for appropriate recommendations.
+   to encrypt the VNC traffic. Please refer to
+   :doc:`../secure-communication/introduction-to-ssl-and-tls`
+   for appropriate recommendations.
 
 Bibliography
 ------------

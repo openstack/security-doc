@@ -29,3 +29,4 @@ The dashboard ships with reasonable default security settings, and has good
    dashboard/cross-origin-resource-sharing-cors.rst
    dashboard/debug.rst
    dashboard/case-studies.rst
+   dashboard/checklist.rst

@@ -31,3 +31,4 @@ implemented, and the current limitations in this project.
    networking/securing-services.rst
    networking/services-security-best-practices.rst
    networking/case-studies.rst
+   networking/checklist.rst

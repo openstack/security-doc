@@ -85,7 +85,58 @@ conflicts, security remediation areas, and compliance become easier to maintain
 when concise information is available. An example of this type of table is
 provided below:
 
-.. image:: ../figures/services-protocols-ports.png
+.. list-table::
+   :header-rows: 1
+   :widths: 10 20 20 20 20 20
+
+   * - Service
+     - Protocols
+     - Ports
+     - Purpose
+     - Used by
+     - Security domains(s)
+
+   * - beam.smp
+     - AMQP
+     - 5672/tcp
+     - AMQP message service
+     - RabbitMQ
+     - MGMT
+
+   * - tgtd
+     - iSCSI
+     - 3260/tcp
+     - iSCSI initiator service
+     - iSCSI
+     - PRIVATE(data network)
+
+   * - sshd
+     - ssh
+     - 22/tcp
+     - allows secure login to nodes and guest VMs
+     - Various
+     - MGMT, GUEST, and PUBLIC as configured
+
+   * - mysqld
+     - mysql
+     - 3306/tcp
+     - MySQL database service
+     - Various
+     - MGMT
+
+   * - apache2
+     - http
+     - 443/tcp
+     - Dashboard
+     - Tenants
+     - PUBLIC
+
+   * - dnsmasq
+     - dns
+     - 53/tcp
+     - DNS services
+     - Guest VMs
+     - GUEST
 
 Referencing a table of services, protocols and ports can help in understanding
 the relationship between OpenStack components. It is highly recommended that

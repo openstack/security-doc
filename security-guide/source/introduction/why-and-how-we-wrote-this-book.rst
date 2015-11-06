@@ -53,7 +53,8 @@ The team included:
    he worked at Sandia National Labs, the National Security Agency, BAE
    Systems, and IBM Research. He graduated with a Ph.D. in Computer Science
    from the Georgia Tech College of Computing, specializing in systems
-   security.
+   security. Bryan was the editor and lead for the OpenStack Security Guide,
+   responsible for its continued growth for the two years after it was written.
 
 -  **Robert Clark**, HP
 

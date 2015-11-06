@@ -30,8 +30,8 @@ SOC 1 (SSAE 16) / ISAE 3402
 Service Organization Controls (SOC) criteria are defined by the
 `American Institute of Certified Public
 Accountants <http://www.aicpa.org/>`__ (AICPA). SOC controls assess
-relevant financial statements and assertions of a service provider, such
-as compliance with the Sarbanes-Oxley Act. SOC 1 is a replacement for
+relevant financial statements and assertions of a :term:`service provider`,
+such as compliance with the Sarbanes-Oxley Act. SOC 1 is a replacement for
 Statement on Auditing Standards No. 70 (SAS 70) Type II report. These
 controls commonly include physical data centers in scope.
 

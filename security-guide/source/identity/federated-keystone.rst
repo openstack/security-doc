@@ -2,9 +2,10 @@
 Federated keystone
 ==================
 
-Federated Identity is a mechanism to establish trusts between Identity
-Providers and Service Providers (SP), in this case, between Identity
-Providers and the services provided by an OpenStack Cloud.
+:term:`Federated Identity<federated identity>` is a mechanism to
+establish trusts between Identity Providers and Service Providers (SP),
+in this case, between Identity Providers and the services provided by an
+OpenStack Cloud.
 
 Federated Identity provides a way to securely use existing credentials
 to access cloud resources such as servers, volumes, and databases,
@@ -23,7 +24,7 @@ Identity Provider (IdP)
     A directory service, such as LDAP, RADIUS and Active Directory,
     which allows users to login with a user name and password, is a
     typical source of authentication tokens (e.g. passwords) at an
-    identity provider.
+    :term:`identity provider`.
 
 SAML assertion
     Contains information about a user as provided by an IdP. It is an
@@ -37,13 +38,13 @@ Mapping
 Protocol
     Contains information that dictates which Mapping rules to use for an
     incoming request made by an IdP. An IdP may support multiple
-    protocols. There are three major protocols for federated identity:
-    OpenID, SAML, and OAuth.
+    protocols. There are three major protocols for
+    :term:`federated identity`: OpenID, SAML, and OAuth.
 
 Unscoped token
     Allows a user to authenticate with the Identity service to exchange
-    the unscoped token for a scoped token, by providing a project ID or
-    a domain ID.
+    the :term:`unscoped token` for a :term:`scoped token`, by providing
+    a project ID or a domain ID.
 
 Scoped token
     Allows a user to use all OpenStack services apart from the Identity
@@ -388,8 +389,8 @@ you can start to configure the ``OS-FEDERATION`` extension.
 Performing Federation authentication
 ------------------------------------
 
-#. Authenticate externally and generate an unscoped token in Identity
-   service.
+#. Authenticate externally and generate an :term:`unscoped token` in
+   Identity service.
 
    To start Federated authentication a user must access the dedicated URL
    with Identity Provider’s and Protocol’s identifiers stored within a
@@ -451,7 +452,7 @@ Performing Federation authentication
 
 #. Get a scoped token.
 
-   A federated user may request a scoped token, by using the unscoped
+   A federated user may request a :term:`scoped token`, by using the unscoped
    token. A project or domain may be specified by either ID or name. An ID
    is sufficient to uniquely identify a project or domain. For example,
 
@@ -527,11 +528,11 @@ output to a file. For example:
 Create a region for the Service Provider
 ----------------------------------------
 
-Create a new region for the service provider, for example, create a new
-region with an ``ID`` of BETA, and ``URL`` of
+Create a new region for the :term:`service provider`, for example, create a
+new region with an ``ID`` of BETA, and ``URL`` of
 https://beta.com/Shibboleth.sso/SAML2/POST. This URL will be used when
-creating a SAML assertion for BETA, and signed by the current keystone
-Identity Provider.
+creating a :term:`SAML assertion` for BETA, and signed by the current
+keystone Identity Provider.
 
 .. code:: console
 

@@ -38,16 +38,16 @@ Public cloud
 
 According to NIST, a public cloud is one in which the infrastructure is open to
 the general public for consumption. OpenStack public clouds are typically run
-by a service provider and can be consumed by individuals, corporations, or any
-paying customer. A public cloud provider may expose a full set of features such
-as software-defined networking, block storage, in addition to multiple instance
-types. Due to the nature of public clouds, they are exposed to a higher degree
-of risk. As a consumer of a public cloud you should validate that your selected
-provider has the necessary certifications, attestations, and other regulatory
-considerations. As a public cloud provider, depending on your target customers,
-you may be subject to one or more regulations.  Additionally, even if not
-required to meet regulatory requirements, a provider should ensure tenant
-isolation as well as protecting management infrastructure from external
+by a :term:`service provider` and can be consumed by individuals, corporations,
+or any paying customer. A public cloud provider may expose a full set of
+features such as software-defined networking, block storage, in addition to
+multiple instance types. Due to the nature of public clouds, they are exposed
+to a higher degree of risk. As a consumer of a public cloud you should validate
+that your selected provider has the necessary certifications, attestations, and
+other regulatory considerations. As a public cloud provider, depending on your
+target customers, you may be subject to one or more regulations.  Additionally,
+even if not required to meet regulatory requirements, a provider should ensure
+tenant isolation as well as protecting management infrastructure from external
 attacks.
 
 Private cloud

@@ -102,10 +102,10 @@ considerations.
 Compute
 -------
 
-OpenStack Compute service (nova) provides services to support the management of
-virtual machine instances at scale, instances that host multi-tiered
-applications, dev/test environments, "Big Data" crunching Hadoop clusters,
-and/or high performance computing.
+OpenStack :term:`Compute` service (nova) provides services to support the
+management of virtual machine instances at scale, instances that host
+multi-tiered applications, dev/test environments, "Big Data" crunching
+Hadoop clusters, and/or high performance computing.
 
 The Compute service facilitates this management through an abstraction layer
 that interfaces with supported hypervisors, which we address later on in more
@@ -126,11 +126,11 @@ API endpoints.
 Object Storage
 --------------
 
-The OpenStack Object Storage service (swift) provides support for storing and
-retrieving arbitrary data in the cloud. The Object Storage service provides
-both a native API and an Amazon Web Services S3 compatible API. The service
-provides a high degree of resiliency through data replication and can handle
-petabytes of data.
+The OpenStack :term:`Object Storage` service (swift) provides support for
+storing and retrieving arbitrary data in the cloud. The Object Storage
+service provides both a native API and an Amazon Web Services S3 compatible
+API. The service provides a high degree of resiliency through data replication
+and can handle petabytes of data.
 
 It is important to understand that object storage differs from traditional file
 system storage. It is best used for static data such as media files (MP3s,
@@ -143,10 +143,10 @@ malicious content storage, and cross authentication attack vectors.
 Block Storage
 -------------
 
-The OpenStack Block Storage service (cinder) provides persistent block storage
-for compute instances. The Block Storage service is responsible for managing
-the life-cycle of block devices, from the creation and attachment of volumes to
-instances, to their release.
+The OpenStack :term:`Block Storage` service (cinder) provides persistent block
+storage for compute instances. The Block Storage service is responsible for
+managing the life-cycle of block devices, from the creation and attachment of
+volumes to instances, to their release.
 
 Security considerations for block storage are similar to that of object
 storage.
@@ -154,12 +154,12 @@ storage.
 Networking
 ----------
 
-The OpenStack Networking service (neutron, previously called quantum) provides
-various networking services to cloud users (tenants) such as IP address
-management, DNS, DHCP, load balancing, and security groups (network access
-rules, like firewall policies). It provides a framework for software defined
-networking (SDN) that allows for pluggable integration with various networking
-solutions.
+The OpenStack :term:`Networking` service (neutron, previously called quantum)
+provides various networking services to cloud users (tenants) such as
+IP address management, DNS, DHCP, load balancing, and security groups
+(network access rules, like firewall policies). It provides a framework for
+software defined networking (SDN) that allows for pluggable integration with
+various networking solutions.
 
 OpenStack Networking allows cloud tenants to manage their guest network
 configurations. Security concerns with the networking service include network
@@ -168,11 +168,11 @@ traffic isolation, availability, integrity and confidentiality.
 Dashboard
 ---------
 
-The OpenStack dashboard (horizon) provides a web-based interface for both cloud
-administrators and cloud tenants. Through this interface administrators and
-tenants can provision, manage, and monitor cloud resources. Horizon is commonly
-deployed in a public facing manner with all the usual security concerns of
-public web portals.
+The OpenStack :term:`dashboard` (horizon) provides a web-based interface for
+both cloud administrators and cloud tenants. Through this interface
+administrators and tenants can provision, manage, and monitor cloud resources.
+Horizon is commonly deployed in a public facing manner with all the usual
+security concerns of public web portals.
 
 Identity service
 ----------------

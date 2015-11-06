@@ -14,8 +14,8 @@ Security domains
 
 A security domain comprises users, applications, servers or networks that share
 common trust requirements and expectations within a system.  Typically they
-have the same authentication and authorization (AuthN/Z) requirements and
-users.
+have the same :term:`authentication` and :term:`authorization` (AuthN/Z)
+requirements and users.
 
 Although you may desire to break these domains down further (we later discuss
 where this may be appropriate), we generally refer to four distinct security
@@ -198,11 +198,11 @@ cloud.
 
 Privacy concerns for public and private cloud users are typically diametrically
 opposed. The data generated and stored in private clouds is normally owned by
-the operator of the cloud, who is able to deploy technologies such as data loss
-prevention (DLP) protection, file inspection, deep packet inspection and
-prescriptive firewalling. In contrast, privacy is one of the primary barriers
-for the adoption of public cloud infrastructures, as many of the previously
-mentioned controls do not exist.
+the operator of the cloud, who is able to deploy technologies such as
+data loss prevention (DLP) protection, file inspection, deep packet
+inspection and prescriptive firewalling. In contrast, privacy is one of
+the primary barriers for the adoption of public cloud infrastructures, as many
+of the previously mentioned controls do not exist.
 
 Outbound attacks and reputational risk
 --------------------------------------

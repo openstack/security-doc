@@ -26,6 +26,7 @@ Contents
    dashboard.rst
    compute.rst
    block-storage.rst
+   shared-file-systems.rst
    networking.rst
    object-storage.rst
    messaging.rst

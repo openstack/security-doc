@@ -151,6 +151,16 @@ instances, to their release.
 Security considerations for block storage are similar to that of object
 storage.
 
+Shared File Systems
+-------------------
+
+The Shared File Systems service (manila) provides a set of services for
+management of shared file systems in a multi-tenant cloud environment, similar
+to how OpenStack provides for block-based storage management through the
+OpenStack Block Storage service project. With the Shared File Systems service,
+you can create a remote file system, mount the file system on your instances,
+and then read and write data from your instances to and from your file system.
+
 Networking
 ----------
 

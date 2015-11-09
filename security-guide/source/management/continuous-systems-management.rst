@@ -240,10 +240,6 @@ References
 
 -  http://www.sans.org/reading_room/whitepapers/backup/security-considerations-enterprise-level-backups_515
 
--  `OpenStack Security Primer <http://www.music-piracy.com/?p=494>`__,
-   an entry in the music piracy blog by a former member of the original
-   NASA project team that created nova
-
 Security auditing tools
 ~~~~~~~~~~~~~~~~~~~~~~~
 

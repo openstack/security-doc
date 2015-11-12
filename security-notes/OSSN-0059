@@ -1,0 +1,41 @@
+Trusted VM can be powered on untrusted hosts
+---
+
+### Summary ###
+A trusted VM that has been launched earlier on a trusted host can
+still be powered on from the same host even after the trusted host is
+compromised.
+
+### Affected Services / Software ###
+Nova, Trusted Computing Pools
+
+### Discussion ###
+Trusted Computing Pools aim to ensure the trustworthiness of the hosts
+leveraging hardware-based security features. When an instance is
+scheduled, the scheduler finds a trusted host by calling the remote
+Attestation API for each host to check whether it is trusted or not.
+Then, the scheduler calls the corresponding compute node to launch
+the VM. Once the VM is launched, the scheduler is no longer involved
+unless a migration, a resize or an evacuation is asked for that VM.
+
+Malicious users can bypass the trust check by the Attestation API using
+these steps: 1) Launch a trusted VM on a trusted host; 2) Stop the
+VM on the trusted host; 3) Compromise the host; 4) Power on the VM from
+the compromised host. There is no check by the Attestation API for
+powering on the VM in this case.
+
+### Recommended Actions ###
+We recommend investigating further if the trust check by Attestation
+API fails but the VM still boots. Another approach is to combine
+secure boot with trusted boot. At the same time, Nova team has
+discussed deprecating Trusted Filter.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0059
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1456228
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Nova Team Email Proposing Deprecation:
+http://lists.openstack.org/pipermail/openstack-dev/2015-June/067766.html
+CR Demoting TrustedFilter to "experimental":
+https://review.openstack.org/#/c/194592

@@ -13,7 +13,7 @@ tenants:
 
 -  OpenStack API
 
--  Secure shell (SSH)
+-  :term:`Secure shell (SSH)<secure shell (SSH)>`
 
 -  OpenStack management utilities such as nova-manage and glance-manage
 

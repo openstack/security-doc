@@ -179,4 +179,4 @@ The initial work on this book was conducted in an overly air-conditioned room
 that served as our group office for the entirety of the documentation sprint.
 
 Learn more about how to contribute to the OpenStack docs:
-http://wiki.openstack.org/Documentation/HowTo.
+http://docs.openstack.org/contributor-guide/index.html.

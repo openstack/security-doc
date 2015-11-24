@@ -12,7 +12,9 @@ and then read and write data from your instances to and from your file system.
 A large amount of existing software is designed around file-based storage. The
 Shared File Systems service provides the management of file shares and works
 with various storage providers that use following shared file system protocols:
-NFS, CIFS, GlusterFS, and HDFS.
+:term:`NFS <Network File System (NFS)>`,
+:term:`CIFS <Common Internet File System (CIFS)>`, :term:`GlusterFS`, and
+:term:`HDFS <Hadoop Distributed File System (HDFS)>`.
 
 The Shared File Systems serves the same purpose as the Amazon Elastic File
 System (EFS) offering does.

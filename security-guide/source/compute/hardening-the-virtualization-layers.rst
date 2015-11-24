@@ -69,14 +69,14 @@ provides the hardware interface for the virtual machine. Instances use this
 functionality to provide network, storage, video, and other devices that may be
 needed. With this in mind, most instances in your environment will exclusively
 use virtual hardware, with a minority that will require direct hardware access.
-The major open source hypervisors use QEMU for this functionality. While QEMU
-fills an important need for virtualization platforms, it has proven to be a
-very challenging software project to write and maintain. Much of the
-functionality in QEMU is implemented with low-level code that is difficult for
-most developers to comprehend. Furthermore, the hardware virtualized by QEMU
-includes many legacy devices that have their own set of quirks. Putting all of
-this together, QEMU has been the source of many security problems, including
-hypervisor breakout attacks.
+The major open source hypervisors use :term:`QEMU <Quick EMUlator (QEMU)>` for
+this functionality. While QEMU fills an important need for virtualization
+platforms, it has proven to be a very challenging software project to write
+and maintain. Much of the functionality in QEMU is implemented with low-level
+code that is difficult for most developers to comprehend. Furthermore, the
+hardware virtualized by QEMU includes many legacy devices that have their own
+set of quirks. Putting all of this together, QEMU has been the source of many
+security problems, including hypervisor breakout attacks.
 
 Therefore, it is important to take proactive steps to harden QEMU. Three
 specific steps are recommended: minimizing the code base, using compiler

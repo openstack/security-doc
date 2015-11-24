@@ -54,7 +54,7 @@ One of the primary tasks of the data processing controller is to
 communicate with the instances it spawns. These instances are
 provisioned and then configured depending on the framework being
 used. The communication between the controller and the instances uses
-secure shell (SSH) and HTTP protocols.
+:term:`secure shell (SSH)` and HTTP protocols.
 
 When provisioning clusters each instance will be given an IP address in
 the networks provided by the user. The first network is often referred

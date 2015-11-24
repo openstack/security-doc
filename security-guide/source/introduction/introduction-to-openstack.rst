@@ -154,12 +154,13 @@ storage.
 Shared File Systems
 -------------------
 
-The Shared File Systems service (manila) provides a set of services for
-management of shared file systems in a multi-tenant cloud environment, similar
-to how OpenStack provides for block-based storage management through the
-OpenStack Block Storage service project. With the Shared File Systems service,
-you can create a remote file system, mount the file system on your instances,
-and then read and write data from your instances to and from your file system.
+The :term:`Shared File Systems service` (manila) provides a set of services
+for management of shared file systems in a multi-tenant cloud environment,
+similar to how OpenStack provides for block-based storage management through
+the OpenStack Block Storage service project. With the Shared File Systems
+service, you can create a remote file system, mount the file system on your
+instances, and then read and write data from your instances to and from your
+file system.
 
 Networking
 ----------
@@ -187,8 +188,8 @@ security concerns of public web portals.
 Identity service
 ----------------
 
-The OpenStack Identity service (keystone) is a **shared service** that provides
-authentication and authorization services throughout the entire cloud
+The OpenStack :term:`Identity` service (keystone) is a **shared service** that
+provides authentication and authorization services throughout the entire cloud
 infrastructure. The Identity service has pluggable support for multiple forms
 of authentication.
 
@@ -198,9 +199,9 @@ authorization tokens, and secure communication.
 Image service
 -------------
 
-The OpenStack Image service (glance) provides disk image management services.
-The Image service provides image discovery, registration, and delivery services
-to the Compute service, as needed.
+The OpenStack :term:`Image service` (glance) provides disk image management
+services. The Image service provides image discovery, registration, and
+delivery services to the Compute service, as needed.
 
 Trusted processes for managing the life cycle of disk images are required, as
 are all the previously mentioned issues with respect to data security.
@@ -208,9 +209,9 @@ are all the previously mentioned issues with respect to data security.
 Data processing service
 -----------------------
 
-The Data processing service for OpenStack (sahara) provides a platform for the
-provisioning, management, and usage of clusters running popular processing
-frameworks.
+The :term:`Data processing service` for OpenStack (sahara) provides a platform
+for the provisioning, management, and usage of clusters running popular
+processing frameworks.
 
 Security considerations for data processing should focus on data privacy and
 secure communications to provisioned clusters.
@@ -218,11 +219,11 @@ secure communications to provisioned clusters.
 Other supporting technology
 ---------------------------
 
-OpenStack relies on messaging for internal communication between several of its
-services. By default, OpenStack uses message queues based on the Advanced
-Message Queue Protocol (AMQP). Similar to most OpenStack services, it supports
-pluggable components. Today the implementation back end could be RabbitMQ,
-Qpid, or ZeroMQ.
+OpenStack relies on messaging for internal communication between several of
+its services. By default, OpenStack uses message queues based on the
+:term:`Advanced Message Queue Protocol (AMQP)`. Similar to most OpenStack
+services, it supports pluggable components. Today the implementation back end
+could be RabbitMQ, Qpid, or ZeroMQ.
 
 As most management commands flow through the message queuing system, it is a
 primary security concern for any OpenStack deployment. Message queuing security

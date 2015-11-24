@@ -136,7 +136,7 @@ The first option is to obtain boot media from a trusted source.
 
 
 The second option is to use the
-`OpenStack Virtual Machine Image Guide <http://docs.openstack.org/image-guide/content/>`_.
+`OpenStack Virtual Machine Image Guide <http://docs.openstack.org/image-guide/>`_.
 In this case, you will want to follow your organizations OS hardening
 guidelines or those provided by a trusted third-party such as the
 `Linux STIGs <http://iase.disa.mil/stigs/os/unix-linux/Pages/index.aspx>`_.

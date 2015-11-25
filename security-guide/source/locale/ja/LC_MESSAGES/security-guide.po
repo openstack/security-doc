@@ -20,15 +20,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-16 07:39+0000\n"
+"POT-Creation-Date: 2015-11-24 13:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-10-16 02:04+0000\n"
+"PO-Revision-Date: 2015-11-24 08:22+0000\n"
 "Last-Translator: KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Zanata 3.7.1\n"
+"X-Generator: Zanata 3.7.3\n"
 "Language-Team: Japanese\n"
 
 msgid ""
@@ -217,9 +217,6 @@ msgstr ""
 msgid "**Robert Clark**, HP"
 msgstr "**Robert Clark**, HP"
 
-msgid "**Rodney D. Beede**, Seagate Technology"
-msgstr "**Rodney D. Beede**, Seagate Technology"
-
 msgid "**Shawn Wells**, Red Hat"
 msgstr "**Shawn Wells**, Red Hat"
 
@@ -234,6 +231,9 @@ msgstr "**オプション**: 'enabled = false'"
 
 msgid "**option**: 'key_size = 512'"
 msgstr "**オプション**: 'key_size = 512'"
+
+msgid "**share servers mode**"
+msgstr "**共有サーバーモード**"
 
 msgid ""
 "*Code injection*: If memory or disk transfers are not handled securely, then "
@@ -279,6 +279,24 @@ msgstr "128、196、256 ビット"
 
 msgid "168 bits"
 msgstr "168 ビット"
+
+msgid "22/tcp"
+msgstr "22/tcp"
+
+msgid "3260/tcp"
+msgstr "3260/tcp"
+
+msgid "3306/tcp"
+msgstr "3306/tcp"
+
+msgid "443/tcp"
+msgstr "443/tcp"
+
+msgid "53/tcp"
+msgstr "53/tcp"
+
+msgid "5672/tcp"
+msgstr "5672/tcp"
 
 msgid "6000"
 msgstr "6000"
@@ -415,14 +433,8 @@ msgstr ""
 "す。実ネットワークを保護するための管理技術が仮想マシン環境にそのまま適用でき"
 "ないため、この仮想ネットワークへの攻撃はおもな関心事です。"
 
-msgid ""
-"A directory service, such as LDAP, RADIUS and Active Directory, which allows "
-"users to login with a user name and password, is a typical source of "
-"authentication tokens (e.g. passwords) at an identity provider."
-msgstr ""
-"ユーザーがユーザー名とパスワードを用いてログインできるようにする、ディレクト"
-"リーサービス。LDAP、RADIUS、Active Directory など。認証プロバイダーにおいて認"
-"証トークン (パスワードなど) の一般的な情報源になる。"
+msgid "A domain of a security service."
+msgstr "セキュリティーサービスのドメイン"
 
 msgid ""
 "A hybrid cloud is defined by NIST as a composition of two or more distinct "
@@ -558,17 +570,6 @@ msgstr ""
 "ている統制のギャップを含みます。"
 
 msgid ""
-"A security domain comprises users, applications, servers or networks that "
-"share common trust requirements and expectations within a system.  Typically "
-"they have the same authentication and authorization (AuthN/Z) requirements "
-"and users."
-msgstr ""
-"セキュリティドメインは、システム内の信頼性に関する共通の要件や期待を共有する"
-"ユーザー、アプリケーション、サーバー、ネットワークのいずれかで構成されていま"
-"す。通常、これらのドメインには、同じ認証と承認  (AuthN/Z) 要件およびユーザー"
-"が指定されています。"
-
-msgid ""
 "A separate database administrator (DBA) account should be created and "
 "protected that has full privileges to create/drop databases, create user "
 "accounts, and update user privileges. This simple means of separation of "
@@ -612,6 +613,9 @@ msgstr ""
 "ウドをデプロイする方は、デプロイメントと用途の間でバランスが確保できるポイン"
 "トを決定する必要が出てきます。"
 
+msgid "A user or group name that is used by the tenant."
+msgstr "テナントにより使用されるユーザー名またはグループ名。"
+
 msgid ""
 "A volume encryption feature in OpenStack supports privacy on a per-tenant "
 "basis. As of the Kilo release, the following features are supported:"
@@ -622,6 +626,9 @@ msgstr ""
 msgid "AES"
 msgstr "AES"
 
+msgid "AMQP"
+msgstr "AMQP"
+
 msgid ""
 "AMQP based solutions (Qpid and RabbitMQ) support transport-level security "
 "using TLS. ZeroMQ messaging does not natively support TLS, but transport-"
@@ -631,6 +638,9 @@ msgstr ""
 "対応しています。ZeroMQ はTLSをネイティブでサポートしていませんが、ラベル付き "
 "IPsec や CIPSO ネットワークラベルを用いた通信路レベルのセキュア化に対応してい"
 "ます。"
+
+msgid "AMQP message service"
+msgstr "AMQP メッセージサービス"
 
 msgid "API endpoint configuration recommendations"
 msgstr "APIエンドポイント構成に関する推奨事項"
@@ -653,35 +663,6 @@ msgstr "アクセスとログのレビュー"
 msgid "Access control lists"
 msgstr "アクセス制御リスト"
 
-msgid ""
-"According to NIST, a public cloud is one in which the infrastructure is open "
-"to the general public for consumption. OpenStack public clouds are typically "
-"run by a service provider and can be consumed by individuals, corporations, "
-"or any paying customer. A public cloud provider may expose a full set of "
-"features such as software-defined networking, block storage, in addition to "
-"multiple instance types. Due to the nature of public clouds, they are "
-"exposed to a higher degree of risk. As a consumer of a public cloud you "
-"should validate that your selected provider has the necessary "
-"certifications, attestations, and other regulatory considerations. As a "
-"public cloud provider, depending on your target customers, you may be "
-"subject to one or more regulations.  Additionally, even if not required to "
-"meet regulatory requirements, a provider should ensure tenant isolation as "
-"well as protecting management infrastructure from external attacks."
-msgstr ""
-"NIST によると、パブリッククラウドは、一般市民が利用できるようにインフラストラ"
-"クチャーが公開されているクラウドと定義されています。OpenStack のパブリックク"
-"ラウドは、通常サービスプロバイダーによって運用され、個人、法人、または料金を"
-"支払っている顧客が利用することができます。パブリッククラウドプロバイダーは、"
-"複数のインスタンスタイプに加えて、ソフトウェア定義ネットワーク、ブロックスト"
-"レージなどの各種機能を公開することができます。パブリッククラウドはその性質"
-"上、より高いレベルのリスクにさらされます。パブリッククラウドの利用者は、選択"
-"したプロバイダーが必要な認定および認証を取得しているか、その他の法規制に関す"
-"る考慮事項に対応しているかなどの点を確認しておく必要があります。パブリックク"
-"ラウドプロバイダーは、ターゲット顧客に応じて、1 つまたは複数の法規制の影響を"
-"受ける場合があります。また、プロバイダーは、法規制の要件を満たす必要がない場"
-"合でも、管理インフラストラクチャーを外部の攻撃から保護するために、テナントの"
-"分離を確実に行う必要があります。"
-
 msgid "Account service"
 msgstr "アカウントサービス"
 
@@ -698,6 +679,9 @@ msgid ""
 msgstr ""
 "一人で行動するこれらの攻撃者は、詐欺師または悪意のある従業員、不満を持った顧"
 "客、小規模の産業スパイなど多くのものに扮して攻撃します。"
+
+msgid "Active Directory"
+msgstr "Active Directory"
 
 msgid "Active developer and user communities"
 msgstr "活発な開発者とユーザーのコミュニティ"
@@ -783,9 +767,6 @@ msgstr ""
 "クラウドがクレジットカードのトランザクションを扱うのであればPCI-DSSが必要です"
 "し、ヘルスケア情報を保持するならHIPPAが、連邦政府向けにはFedRAMP/FISMA、ITAR"
 "認証が必要となるでしょう。"
-
-msgid "After initial publication, the following added new content:"
-msgstr "初版の発行後、以下の内容を追加しました。"
 
 msgid ""
 "After you are notified of a security update, the next step is to determine "
@@ -994,6 +975,9 @@ msgstr ""
 "OpenStack クラウドをセキュアにデプロイしていく上で最低限必要な部分を構成す"
 "る、4 つの異なるセキュリティドメインのことを指します。以下に、これらのセキュ"
 "リティドメインを示しています。"
+
+msgid "An IP address or host name of a security service."
+msgstr "セキュリティーサービスの IP アドレスまたはホスト名"
 
 msgid ""
 "An Object Storage \"account\" is not a user account or credential. The "
@@ -1280,18 +1264,6 @@ msgstr ""
 "る強い規制上の要件を持っています。アリスは、以下の方法でこれを提供します："
 
 msgid ""
-"As stated during the introduction to Bob's case study, tenant privacy is of "
-"an extremely high priority. In addition to the requirements and actions Bob "
-"will take to isolate tenants from one another at the infrastructure layer, "
-"Bob also needs to provide assurances for tenant data privacy. Bob does this "
-"using the following:"
-msgstr ""
-"ボブのケーススタディの最初で説明したように、テナントのプライバシーは非常に重"
-"要です。ボブはインフラレイヤーで相互にテナントを分離する要件およびアクション"
-"に加えて、ボブはまたテナントデータのプライバシーを保する必要があります。 ボブ"
-"は以下を用いて、これを提供します："
-
-msgid ""
 "As the U.S. Department of Defense is involved, Security Technical "
 "Implementation Guides (STIGs) will come into play, which are the "
 "configuration standards for DOD IA and IA-enabled devices and systems. Alice "
@@ -1435,11 +1407,6 @@ msgstr "監査参照"
 msgid "Auth services"
 msgstr "認証サービス"
 
-msgid ""
-"Authenticate externally and generate an unscoped token in Identity service."
-msgstr ""
-"外部的に認証して、Identity サービスにおいてスコープなしトークンを生成します。"
-
 msgid "Authentication"
 msgstr "認証"
 
@@ -1463,6 +1430,9 @@ msgstr ""
 
 msgid "Authentication methods"
 msgstr "認証方式"
+
+msgid "Authentication service"
+msgstr "認証サービス"
 
 msgid "Authentication with X.509 certificates"
 msgstr "X.509 証明書を用いた認証"
@@ -1756,40 +1726,6 @@ msgstr ""
 "バーとともに、それらのセキュリティ統制と活動が一般的な監査期間(〜6-12ヶ月)に"
 "おいて、定期的に、確実に機能するようにします。"
 
-msgid ""
-"Bob is very concerned about instance isolation since the users in a public "
-"cloud represent anyone with a credit card, meaning they are inherently "
-"untrusted. Bob has just started hiring the team that will deploy the cloud, "
-"so he can tailor his candidate search for specific areas of expertise. With "
-"this in mind, Bob chooses a hypervisor based on its technical features, "
-"certifications, and community support. KVM has an EAL 4+ common criteria "
-"rating, with a labeled security protection profile (LSPP) to provide added "
-"assurance for instance isolation. This, combined with the strong support for "
-"KVM within the OpenStack community drives Bob's decision to use KVM."
-msgstr ""
-"パブリッククラウドではクレジットカードを所持していればユーザーになれるため、"
-"本質的に信頼性が低いことからボブはインスタンス分離に非常に気を遣っています。"
-"ボブはクラウドを配備するチームのメンバーの採用を開始したばかりなので、メン"
-"バー候補の検索条件として任意の特定スキルを指定できます。それを踏まえ、ボブは"
-"技術的な特徴、所持する証明等、コミュニティサポートを基準にハイパーバイザーを"
-"選択します。KVMはEAL 4+共通項目評価とラベル化されたセキュリティ保護プロフィー"
-"ル(LSPP)によってインスタンス分離を保証しています。これらの強みとOpenStackコ"
-"ミュニティのKVMへの豊富なサポートを総合して考えた結果、ボブはKVMを採用するこ"
-"とにします。"
-
-msgid ""
-"Bob weighs the added cost of repackaging QEMU and decides that he cannot "
-"commit those resources to the project. Fortunately, his Linux distribution "
-"has already enabled the compiler hardening options. So he decides to use "
-"this QEMU package. Finally, Bob leverages sVirt to manage the SELinux "
-"polices associated with the virtualization stack."
-msgstr ""
-"ボブはQEMUを再パッケージするために発生するコストを検討し、そのためのリソース"
-"をプロジェクトに割くことはできないと判断します。幸い、彼の使用しているLinuxの"
-"ディストリビューションではコンパイラ強化オプションが有効になっているため、そ"
-"のQEMUパッケージを採用します。最後に、仮想スタックに関わるSELinuxポリシーを管"
-"理するためにsVirtを利用します。"
-
 # #-#-#-#-#  api-endpoints.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  compliance.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
@@ -1845,15 +1781,6 @@ msgstr ""
 "使用してデータベースにアクセスします。これにより、データベース操作の監査およ"
 "び、サービスとそのプロセスからデータベースへのアクセス権の剥奪が特に難しくな"
 "ります。"
-
-msgid ""
-"By default, the remote desktop traffic is not encrypted. TLS can be enabled "
-"to encrypt the VNC traffic. Please refer to `Introduction to TLS and SSL "
-"<introduction-to-ssl-tls>`__ for appropriate recommendations."
-msgstr ""
-"リモートデスクトップ通信はデフォルトで暗号化されません。TLS は、VNC 通信の暗"
-"号化を有効化できます。適切な推奨事項は  `TLS および SSL の概要 <introduction-"
-"to-ssl-tls>`__ を参照してください。"
 
 # #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  management.pot (Security Guide 0.0.1)  #-#-#-#-#
@@ -2203,6 +2130,9 @@ msgstr ""
 "SP800-125-final.pdf <http://csrc.nist.gov/publications/nistpubs/800-125/"
 "SP800-125-final.pdf>`__"
 
+msgid "Config option"
+msgstr "設定オプション"
+
 msgid "Configuration and hardening"
 msgstr "設定およびセキュリティ強化"
 
@@ -2380,6 +2310,9 @@ msgstr "DEB パッケージ:"
 
 msgid "DHCP agent (*neutron-dhcp-agent*)"
 msgstr "DHCP エージェント (*neutron-dhcp-agent*)"
+
+msgid "DNS services"
+msgstr "DNS サービス"
 
 msgid "DSA"
 msgstr "DSA"
@@ -2734,19 +2667,6 @@ msgstr ""
 "ロジェクトで変化するロールを割り当てられます。"
 
 msgid ""
-"Dr. Bryan D. Payne is the Director of Security Research at Nebula and co-"
-"founder of the OpenStack Security Group (OSSG). Prior to joining Nebula, he "
-"worked at Sandia National Labs, the National Security Agency, BAE Systems, "
-"and IBM Research. He graduated with a Ph.D. in Computer Science from the "
-"Georgia Tech College of Computing, specializing in systems security."
-msgstr ""
-"Dr. Bryan D. Payne は、Nebula の Security Research の Director です。また、"
-"OpenStack Security Group (OSSG) の共同創設者です。Nebula に参加する前は、"
-"Sandia National Labs、National Security Agency、BAE Systems、IBM Research に"
-"勤務していました。Georgia Tech College of Computing でシステムセキュリティを"
-"専攻し、コンピューターサイエンスの Ph.D. を取得しました。"
-
-msgid ""
 "During the sprint we also had help from Anne Gentle, Warren Wang, Paul "
 "McMillan, Brian Schott and Lorin Hochstein."
 msgstr ""
@@ -2991,11 +2911,6 @@ msgstr ""
 
 msgid "Establish formal access control policies"
 msgstr "公式なアクセス制御ポリシーの確立"
-
-msgid ""
-"Establishing procedures to sanitize customer data when a customer churns."
-msgstr ""
-"顧客が不適切な顧客データを大量生産する時に、削除するための手順を確立する。"
 
 msgid ""
 "Establishing procedures to sanitize tenant data when a program or project "
@@ -3323,6 +3238,9 @@ msgstr ""
 msgid "Future"
 msgstr "将来"
 
+msgid "GUEST"
+msgstr "ゲスト"
+
 msgid ""
 "General data disposal and sanitization guidelines as adopted from NIST "
 "recommended security controls. Cloud operators should:"
@@ -3389,6 +3307,9 @@ msgstr ""
 
 msgid "Guest"
 msgstr "ゲスト"
+
+msgid "Guest VMs"
+msgstr "ゲスト仮想マシン"
 
 msgid "Guest network"
 msgstr "ゲストネットワーク"
@@ -3866,6 +3787,11 @@ msgstr ":file:`my.cnf` の場合:"
 
 msgid "In :file:`postgresql.conf`:"
 msgstr ":file:`postgresql.conf` の場合:"
+
+msgid ""
+"In ``/etc/manila/`` directory you can find the environment configuration "
+"files:"
+msgstr "環境設定ファイルが ``/etc/manila/`` にあります。"
 
 msgid ""
 "In addition to restricting database communications to the management "
@@ -4350,6 +4276,9 @@ msgstr "L3 ルーティングおよび NAT"
 msgid "L=1024, N=160 bits"
 msgstr "L=1024、N=160 ビット"
 
+msgid "LDAP"
+msgstr "LDAP"
+
 msgid ""
 "LDAP simplifies integration of Identity authentication into an "
 "organization's existing directory service and user account management "
@@ -4446,6 +4375,12 @@ msgid ""
 msgstr ""
 "MAC ポリシー: 強制アクセス制御は SELinux または他のオペレーティングシステムを"
 "用いて実装されます"
+
+msgid "MGMT"
+msgstr "管理"
+
+msgid "MGMT, GUEST, and PUBLIC as configured"
+msgstr "設定により、管理、ゲスト、パブリック"
 
 msgid "Machine snapshots"
 msgstr "マシンのスナップショット"
@@ -4619,6 +4554,9 @@ msgstr "マイグレーションネットワーク"
 msgid "Minimizing the QEMU code base"
 msgstr "QEMU コードベースの最小化"
 
+msgid "Mode"
+msgstr "モード"
+
 msgid ""
 "Monitor the traffic on the management network. The anomalies might be easier "
 "to track than on the busier compute nodes."
@@ -4712,6 +4650,9 @@ msgstr "マルチホスト DHCP エージェント"
 msgid "MySQL SSL configuration"
 msgstr "MySQL SSL 設定"
 
+msgid "MySQL database service"
+msgstr "MySQL データベースサービス"
+
 msgid ""
 "MySQL has a large community, widespread adoption, and provides high "
 "availability options. MySQL also has the ability to provide enhanced client "
@@ -4785,6 +4726,9 @@ msgstr ""
 "www.niap-ccevs.org/cc-scheme/nstissp_11_revised_factsheet.pdf <http://www."
 "niap-ccevs.org/cc-scheme/nstissp_11_revised_factsheet.pdf>`__"
 
+msgid "Network and security models"
+msgstr "ネットワークおよびセキュリティーモデル"
+
 msgid "Network connectivity of physical servers"
 msgstr "物理サーバのネットワーク接続性"
 
@@ -4814,6 +4758,9 @@ msgstr ""
 "ネットワーク名前空間の設定は、OpenStack コンピュートハイパーバイザを動作させ"
 "る全てのサービスで強く推奨します。ネットワーク名前空間を用いることで、VM ゲス"
 "トと管理ネットワークのトラフィックがブリッジングされることを防ぎます。"
+
+msgid "Network plug-ins"
+msgstr "Networking プラグイン"
 
 # #-#-#-#-#  api-endpoints.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  messaging.pot (Security Guide 0.0.1)  #-#-#-#-#
@@ -5209,17 +5156,6 @@ msgstr ""
 
 msgid "OpenStack API"
 msgstr "OpenStack API"
-
-msgid ""
-"OpenStack Compute service (nova) provides services to support the management "
-"of virtual machine instances at scale, instances that host multi-tiered "
-"applications, dev/test environments, \"Big Data\" crunching Hadoop clusters, "
-"and/or high performance computing."
-msgstr ""
-"OpenStack Compute サービス (Nova) は、多層アプリケーション、開発/テスト環境、"
-"「ビッグデータ」を処理する Hadoop のクラスター、ハイパフォーマンスコンピュー"
-"ティングなどをホストする、大規模な仮想マシンインスタンスの管理をサポートする"
-"サービスを提供します。"
 
 msgid ""
 "OpenStack Compute supports tenant network traffic access controls directly "
@@ -5757,6 +5693,12 @@ msgstr ""
 "理や保護のチャレンジはこれらの制御の必要性を削減したり、その重要性を失ったり"
 "はしません。"
 
+msgid "PRIVATE(data network)"
+msgstr "プライベート (データネットワーク)"
+
+msgid "PUBLIC"
+msgstr "パブリック"
+
 msgid ""
 "Password policy enforcement: Requires user passwords to conform to minimum "
 "standards for length, diversity of characters, expiration, or failed login "
@@ -5834,6 +5776,9 @@ msgstr "ポート"
 
 msgid "Port mirroring (through open source or third-party plug-ins)"
 msgstr "ポートミラーリング (オープンソースのサードパーティ製プラグイン使用)"
+
+msgid "Ports"
+msgstr "ポート"
 
 msgid "Position Independent Executable (PIE)"
 msgstr "Position Independent Executable (PIE)"
@@ -5944,6 +5889,9 @@ msgstr "保存データの保護、保護されたデータ転送"
 msgid "Protocol"
 msgstr "プロトコル"
 
+msgid "Protocols"
+msgstr "プロトコル"
+
 msgid "Provide guidance to secure your OpenStack deployment"
 msgstr "OpenStack をセキュア化するガイドの提供"
 
@@ -5967,6 +5915,9 @@ msgstr "Comptue アクセス用パブリックキー"
 
 msgid "Puppet"
 msgstr "Puppet"
+
+msgid "Purpose"
+msgstr "目的"
 
 msgid "PyKMIP library https://github.com/OpenKMIP/PyKMIP"
 msgstr "PyKMIP library https://github.com/OpenKMIP/PyKMIP"
@@ -6137,17 +6088,6 @@ msgstr ""
 "は、UK Intelligence Community に勤務していました。脅威モデリング、セキュリ"
 "ティアーキテクチャ、仮想化技術に関する強固なバックグラウンドを持ちます。"
 "University of Wales のソフトウェアエンジニアリングの修士号を持っています。"
-
-msgid ""
-"Rodney D. Beede is the Cloud Security Engineer for Seagate Technology. He "
-"contributed the missing chapter on securing OpenStack Object Storage "
-"(swift).  He holds a M.S. in Computer Science from the University of "
-"Colorado."
-msgstr ""
-"Rodney D. Beede は Seagate Technology の Cloud Security Engineer です。彼は "
-"OpenStack Object Storage (swift) のセキュア化に関する不足していた章に貢献しま"
-"した。University of Colorado の Computer Science に関する M.S. を保持していま"
-"す。"
 
 msgid "Role-Based Access Control"
 msgstr "ロールベースアクセス制御"
@@ -6388,6 +6328,9 @@ msgstr "メモリ最適化に関するセキュリティの課題"
 msgid "Security domains"
 msgstr "セキュリティドメイン"
 
+msgid "Security domains(s)"
+msgstr "セキュリティードメイン"
+
 msgid "Security function"
 msgstr "セキュリティ機能"
 
@@ -6509,6 +6452,9 @@ msgstr "Serpent"
 msgid "Server hardening"
 msgstr "サーバーのセキュリティ強化"
 
+msgid "Service"
+msgstr "サービス"
+
 msgid ""
 "Service Organization Controls (SOC) 2 is a self attestation of controls that "
 "affect the security, availability, and processing integrity of the systems a "
@@ -6596,6 +6542,9 @@ msgstr ""
 "一部のコンポーネントは、間接的にデータベースを使用します。データベースおよび"
 "そのコンテンツへのアクセスのセキュリティ保護は、もう一つのセキュリティ課題で"
 "あるため、本ガイドの後半でさらに詳しく説明します。"
+
+msgid "Share back ends modes"
+msgstr "共有バックエンドモード"
 
 msgid ""
 "Shawn Wells is the Director, Innovation Programs at Red Hat, focused on "
@@ -6750,6 +6699,9 @@ msgstr "ストレージAPIエンドポイント"
 msgid "Storage Encryption"
 msgstr "ストレージ暗号化"
 
+msgid "Storage controller"
+msgstr "ストレージコントローラー"
+
 msgid "Storage services"
 msgstr "ストレージサービス"
 
@@ -6864,6 +6816,9 @@ msgstr ""
 "ナント単位でポートミラーリングを行うサードパーティ製のプラグイン拡張がありま"
 "す。ハイパーバイザー上で Open vSwitch を使用する場合、sFlow とポートミラーリ"
 "ングを有効にできますが、実装には幾つかの運用操作が必要になるでしょう。"
+
+msgid "Tenants"
+msgstr "テナント"
 
 msgid ""
 "Test data recovery options regularly. One of the things that can be restored "
@@ -7166,17 +7121,6 @@ msgstr ""
 "ライブラリ、またはサードパーティのツールで API にアクセスします。"
 
 msgid ""
-"The OpenStack Block Storage service (cinder) provides persistent block "
-"storage for compute instances. The Block Storage service is responsible for "
-"managing the life-cycle of block devices, from the creation and attachment "
-"of volumes to instances, to their release."
-msgstr ""
-"OpenStack Block Storage Service (cinder) は、Compute インスタンス用に永続的な"
-"ブロックストレージを提供します。Block Storage Service はブロックデバイスの作"
-"成からインスタンスへのボリュームの接続、それらの解放にいたるまでのライフサイ"
-"クルを管理する役割を果たします。"
-
-msgid ""
 "The OpenStack Documentation provides guidance on how to create and upload an "
 "image to the Image service. Additionally it is assumed that you have a "
 "process by which you install and harden operating systems. Thus, the "
@@ -7241,20 +7185,6 @@ msgid "The OpenStack Networking components are:"
 msgstr "OpenStack Networking のコンポーネントは以下のとおりです。"
 
 msgid ""
-"The OpenStack Networking service (neutron, previously called quantum) "
-"provides various networking services to cloud users (tenants) such as IP "
-"address management, DNS, DHCP, load balancing, and security groups (network "
-"access rules, like firewall policies). It provides a framework for software "
-"defined networking (SDN) that allows for pluggable integration with various "
-"networking solutions."
-msgstr ""
-"OpenStack Networking (neutron、旧称 quantum) はIP アドレス管理、DNS、DHCP、負"
-"荷分散、セキュリティグループ (ファイアウォールのポリシーなど、ネットワークの"
-"アクセスルール) など、さまざまなネットワークサービスをクラウドユーザー (テナ"
-"ント) に提供します。また、各種ネットワークソリューションとのプラグ可能な統合"
-"を可能にするソフトウェア定義ネットワーク(SDN) のフレームワークを提供します。"
-
-msgid ""
 "The OpenStack Networking service provides security group functionality using "
 "a mechanism that is more flexible and powerful than the security group "
 "capabilities built into OpenStack Compute. Thus, :file:`nova.conf` should "
@@ -7272,19 +7202,6 @@ msgstr ""
 "キュリティポリシーが両サービスに同時に適用されて衝突を起こす結果となります。"
 "OpenStack Networking にセキュリティグループをプロキシする為に、以下の設定値を"
 "用いて下さい。"
-
-msgid ""
-"The OpenStack Object Storage service (swift) provides support for storing "
-"and retrieving arbitrary data in the cloud. The Object Storage service "
-"provides both a native API and an Amazon Web Services S3 compatible API. The "
-"service provides a high degree of resiliency through data replication and "
-"can handle petabytes of data."
-msgstr ""
-"OpenStack Object Storage Service (swift) は、クラウド内の任意データの保管/取"
-"得機能のサポートを提供します。Object Storage Service  はネイティブ API およ"
-"び Amazon Web Services S3 互換の API の両方を提供します。このサービスは、デー"
-"タレプリケーションにより高度な回復性を提供し、ペタバイト規模のデータの処理が"
-"可能です。"
 
 msgid ""
 "The OpenStack Security Group would like to acknowledge contributions from "
@@ -7338,19 +7255,6 @@ msgstr ""
 "ブページから直接インスタンスの VNC コンソールを提供できます。これには、*nova-"
 "novncproxy* サービスがパブリックネットワークから管理ネットワークにブリッジす"
 "る必要があります。"
-
-msgid ""
-"The OpenStack dashboard (horizon) provides a web-based interface for both "
-"cloud administrators and cloud tenants. Through this interface "
-"administrators and tenants can provision, manage, and monitor cloud "
-"resources. Horizon is commonly deployed in a public facing manner with all "
-"the usual security concerns of public web portals."
-msgstr ""
-"OpenStack ダッシュボードサービス (Horizon) は、クラウド管理者とクラウドテナン"
-"トの両方に向けた Web ベースのインターフェースを提供します。このインターフェー"
-"スにより、管理者およびテナントは、クラウドリソースのプロビジョニング、管理、"
-"監視を行うことができます。Horizon は通常、一般i向けにデプロイされ、パブリッ"
-"ク Web ポータルの一般的なセキュリティ問題が伴います。"
 
 msgid ""
 "The OpenStack dashboard (horizon) provides administrators and tenants with a "
@@ -7907,6 +7811,13 @@ msgstr ""
 "サポートしています。"
 
 msgid ""
+"The newly created file will be stored under :file:`/etc/shibboleth/sp-key."
+"pem`"
+msgstr ""
+"新しく作成されたファイルは :file:`/etc/shibboleth/sp-key.pem` に保存されま"
+"す。"
+
+msgid ""
 "The next step is to harden QEMU using compiler hardening options. Modern "
 "compilers provide a variety of compile time options to improve the security "
 "of the resulting binaries. These features, which we will describe in more "
@@ -7948,6 +7859,9 @@ msgstr ""
 "スクに保存する箇所やデータをネットワーク経由で転送する箇所でテナントデータを"
 "暗号化する実装者用です。ユーザが自分自身のデータをプロバイダに送信する前に"
 "データを暗号化するという一般的な推奨の上またはその先にあるものです。"
+
+msgid "The password for the user, if you specify a user name."
+msgstr "ユーザー名が指定された場合、ユーザーのパスワード。"
 
 msgid ""
 "The policies can be updated by the cloud administrator to further control "
@@ -8034,19 +7948,6 @@ msgstr ""
 "る必要があります。"
 
 msgid ""
-"The second option is to use the `OpenStack Virtual Machine Image Guide "
-"<http://docs.openstack.org/image-guide/content/>`_. In this case, you will "
-"want to follow your organizations OS hardening guidelines or those provided "
-"by a trusted third-party such as the `Linux STIGs <http://iase.disa.mil/"
-"stigs/os/unix-linux/Pages/index.aspx>`_."
-msgstr ""
-"次の選択肢は、`OpenStack 仮想マシンイメージガイド <http://docs.openstack.org/"
-"ja/image-guide/>`_ の活用です。こちらの場合、あなたの所属する組織の OS 強化ガ"
-"イドラインや `Linux STIGs <http://iase.disa.mil/stigs/os/unix-linux/Pages/"
-"index.aspx>`_ のような信頼性の高い第三者団体が提供するガイドラインに従うこと"
-"を推奨します。"
-
-msgid ""
 "The security of Compute is critical for an OpenStack deployment.  Hardening "
 "techniques should include support for strong instance isolation, secure "
 "communication between Compute sub-components, and resiliency of public-"
@@ -8073,6 +7974,13 @@ msgid ""
 msgstr ""
 "サーバー証明書、鍵、認証局 (CA) のファイルを $PGDATA ディレクトリの以下のファ"
 "イルに置く必要があります。"
+
+msgid ""
+"The share driver creates the share server and manages, or handles, the share "
+"server life cycle."
+msgstr ""
+"共有ドライバーが、共有サーバーを作成し、共有サーバーのライフサイクルを管理、"
+"取り扱います。"
 
 msgid ""
 "The system documentation for an OpenStack cloud deployment should follow the "
@@ -8666,13 +8574,6 @@ msgstr ""
 "のファイルを実装しています。"
 
 msgid ""
-"To provide secure ephemeral instance storage, Bob implements qcow2 files on "
-"an encrypted filesystems."
-msgstr ""
-"安全な一時ディスクを提供するために、ボブは暗号化ファイルシステム上に qcow2 の"
-"ファイルを実装しています。"
-
-msgid ""
 "To reduce security risks from orphan instances on a user, tenant, or domain "
 "deletion in the Identity service there is discussion to generate "
 "notifications in the system and have OpenStack components respond to these "
@@ -8726,13 +8627,6 @@ msgstr ""
 
 msgid "Tokens"
 msgstr "トークン"
-
-msgid ""
-"Track the destruction of both the customer data and metadata through "
-"ticketing in a CMDB."
-msgstr ""
-"CMDBのチケット発行を使用して、顧客データとメタデータの両方の破壊を追跡しま"
-"す。"
 
 msgid ""
 "Track the destruction of both the tenant data and metadata through ticketing "
@@ -8949,6 +8843,9 @@ msgstr ""
 "強力なパスワードを使用してセーフガードするか、クライアント側の TLS 認証を使用"
 "してください。"
 
+msgid "Used by"
+msgstr "使用サービス"
+
 msgid ""
 "Used for VM data communication within the cloud deployment. The IP "
 "addressing requirements of this network depend on the OpenStack Networking "
@@ -9044,6 +8941,9 @@ msgstr "VT-c"
 
 msgid "VT-d / AMD-Vi"
 msgstr "VT-d / AMD-Vi"
+
+msgid "Various"
+msgstr "各種"
 
 msgid ""
 "Various components of the OpenStack Networking services use either the "
@@ -9903,15 +9803,6 @@ msgid ""
 msgstr ""
 "`OpenSSL and FIPS 140-2 <http://www.openssl.org/docs/fips/fipsnotes.html>`_"
 
-msgid ""
-"`OpenStack Security Primer <http://www.music-piracy.com/?p=494>`__, an entry "
-"in the music piracy blog by a former member of the original NASA project "
-"team that created nova"
-msgstr ""
-"`OpenStack Security Primer <http://www.music-piracy.com/?p=494>`__、nova を作"
-"成した元々の NASA のプロジェクトチームの元メンバーによる、音楽著作権侵害ブロ"
-"グにおけるエントリー。"
-
 msgid "`Pig <https://pig.apache.org>`_"
 msgstr "`Pig <https://pig.apache.org>`_"
 
@@ -10071,6 +9962,15 @@ msgstr "``kEECDH:kEDH``"
 msgid "``kRSA``"
 msgstr "``kRSA``"
 
+msgid "``manila-api``"
+msgstr "``manila-api``"
+
+msgid "``manila-scheduler``"
+msgstr "``manila-scheduler``"
+
+msgid "``manila-share``"
+msgstr "``manila-share``"
+
 msgid ""
 "``security_group_api`` must be set to ``neutron`` so that all security group "
 "requests are proxied to the OpenStack Networking service."
@@ -10098,6 +9998,15 @@ msgstr "`http://xenbits.xen.org/xsa/ <http://xenbits.xen.org/xsa/>`__"
 
 msgid "`nginx <http://nginx.org/>`_"
 msgstr "`nginx <http://nginx.org/>`_"
+
+msgid "allows secure login to nodes and guest VMs"
+msgstr "ノードおよびゲスト仮想マシンへのセキュアログインの許可"
+
+msgid "apache2"
+msgstr "apache2"
+
+msgid "beam.smp"
+msgstr "beam.smp"
 
 msgid ""
 "blog.malchuk.ru, OpenStack VNC Security. 2013. `Secure Connections to VNC "
@@ -10141,6 +10050,21 @@ msgstr ""
 msgid "cgroups"
 msgstr "cgroups"
 
+msgid "dns"
+msgstr "dns"
+
+msgid "dnsmasq"
+msgstr "dnsmasq"
+
+msgid "driver_handles_share_servers = False"
+msgstr "driver_handles_share_servers = False"
+
+msgid "driver_handles_share_servers = True"
+msgstr "driver_handles_share_servers = True"
+
+msgid "http"
+msgstr "http"
+
 msgid ""
 "http://www.mirantis.com/blog/on-disk-encryption-prototype-for-openstack-"
 "swift/"
@@ -10158,6 +10082,18 @@ msgstr ""
 msgid "https://github.com/Mirantis/swift-encrypt"
 msgstr "https://github.com/Mirantis/swift-encrypt"
 
+msgid "iSCSI"
+msgstr "iSCSI"
+
+msgid "iSCSI initiator service"
+msgstr "iSCSI イニシエーターサービス"
+
+msgid "mysql"
+msgstr "mysql"
+
+msgid "mysqld"
+msgstr "mysqld"
+
 msgid "n/a"
 msgstr "なし"
 
@@ -10169,6 +10105,9 @@ msgstr "neutron サーバー (*neutron-server* and *neutron-\\*-plugin*)"
 
 msgid "nginx"
 msgstr "nginx"
+
+msgid "no share servers"
+msgstr "共有サーバーなし"
 
 msgid ""
 "oasis-open.org, OASIS Key Management Interoperability Protocol (KMIP). 2014. "
@@ -10185,6 +10124,9 @@ msgstr "または"
 msgid "plugin agent (*neutron-\\*-agent*)"
 msgstr "プラグインエージェント (*neutron-\\*-agent*)"
 
+msgid "python-manilaclient"
+msgstr "python-manilaclient"
+
 msgid "sVirt"
 msgstr "sVirt"
 
@@ -10193,6 +10135,18 @@ msgstr "sVirt SELinux ブーリアン"
 
 msgid "sVirt: SELinux and virtualization"
 msgstr "sVirt: SELinux と 仮想化"
+
+msgid "share servers"
+msgstr "共有サーバー"
+
+msgid "ssh"
+msgstr "ssh"
+
+msgid "sshd"
+msgstr "sshd"
+
+msgid "tgtd"
+msgstr "tgtd"
 
 msgid "virt_use_common"
 msgstr "virt_use_common"

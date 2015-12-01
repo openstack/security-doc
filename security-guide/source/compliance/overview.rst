@@ -16,10 +16,10 @@ Identify where risks exist in a cloud architecture and apply controls
 to mitigate the risks. In areas of significant concern, layered
 defenses provide multiple complementary controls to manage risk down to
 an acceptable level. For example, to ensure adequate isolation between
-cloud tenants, we recommend hardening QEMU, using a hypervisor with
-SELinux support, enforcing mandatory access control policies, and
-reducing the overall attack surface. The foundational principle is to
-harden an area of concern with multiple layers of defense such that if
+cloud tenants, we recommend hardening :term:`QEMU <Quick EMUlator (QEMU)>`,
+using a hypervisor with SELinux support, enforcing mandatory access control
+policies, and reducing the overall attack surface. The foundational principle
+is to harden an area of concern with multiple layers of defense such that if
 any one layer is compromised, other layers will exist to offer
 protection and minimize exposure.
 

@@ -13,9 +13,9 @@ OpenStack-supported hypervisor technologies, there are significant differences
 in the security architecture and features for each hypervisor, particularly
 when considering the security threat vectors which are unique to elastic
 OpenStack environments. As applications consolidate into single
-Infrastructure-as-a-Service (IaaS) platforms, instance isolation at the
-hypervisor level becomes paramount. The requirement for secure isolation holds
-true across commercial, government, and military communities.
+Infrastructure-as-a-Service (:term:`IaaS`) platforms, instance isolation at
+the hypervisor level becomes paramount. The requirement for secure isolation
+holds true across commercial, government, and military communities.
 
 Within the OpenStack framework, you can choose among many hypervisor platforms
 and corresponding OpenStack plug-ins to optimize your cloud environment. In the

@@ -29,8 +29,8 @@ location occur in the ``[identity]`` section of the :file:`keystone.conf` file:
 .. code:: ini
 
    [identity]
-   domain_specific_drivers_enabled = <replaceable>True</replaceable>
-   domain_config_dir = /etc/keystone/domains</programlisting>
+   domain_specific_drivers_enabled = True
+   domain_config_dir = /etc/keystone/domains
 
 Any domains without a domain-specific configuration file
 will use options in the primary :file:`keystone.conf` file.

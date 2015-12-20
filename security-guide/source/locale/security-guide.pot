@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 06:11+0000\n"
+"POT-Creation-Date: 2015-12-20 06:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1322,11 +1322,12 @@ msgid ""
 "mitigate the risks. In areas of significant concern, layered defenses "
 "provide multiple complementary controls to manage risk down to an acceptable "
 "level. For example, to ensure adequate isolation between cloud tenants, we "
-"recommend hardening QEMU, using a hypervisor with SELinux support, enforcing "
-"mandatory access control policies, and reducing the overall attack surface. "
-"The foundational principle is to harden an area of concern with multiple "
-"layers of defense such that if any one layer is compromised, other layers "
-"will exist to offer protection and minimize exposure."
+"recommend hardening :term:`QEMU <Quick EMUlator (QEMU)>`, using a hypervisor "
+"with SELinux support, enforcing mandatory access control policies, and "
+"reducing the overall attack surface. The foundational principle is to harden "
+"an area of concern with multiple layers of defense such that if any one "
+"layer is compromised, other layers will exist to offer protection and "
+"minimize exposure."
 msgstr ""
 
 #: ../compliance/overview.rst:27
@@ -2213,14 +2214,15 @@ msgid ""
 "functionality to provide network, storage, video, and other devices that may "
 "be needed. With this in mind, most instances in your environment will "
 "exclusively use virtual hardware, with a minority that will require direct "
-"hardware access. The major open source hypervisors use QEMU for this "
-"functionality. While QEMU fills an important need for virtualization "
-"platforms, it has proven to be a very challenging software project to write "
-"and maintain. Much of the functionality in QEMU is implemented with low-"
-"level code that is difficult for most developers to comprehend. Furthermore, "
-"the hardware virtualized by QEMU includes many legacy devices that have "
-"their own set of quirks. Putting all of this together, QEMU has been the "
-"source of many security problems, including hypervisor breakout attacks."
+"hardware access. The major open source hypervisors use :term:`QEMU <Quick "
+"EMUlator (QEMU)>` for this functionality. While QEMU fills an important need "
+"for virtualization platforms, it has proven to be a very challenging "
+"software project to write and maintain. Much of the functionality in QEMU is "
+"implemented with low-level code that is difficult for most developers to "
+"comprehend. Furthermore, the hardware virtualized by QEMU includes many "
+"legacy devices that have their own set of quirks. Putting all of this "
+"together, QEMU has been the source of many security problems, including "
+"hypervisor breakout attacks."
 msgstr ""
 
 #: ../compute/hardening-the-virtualization-layers.rst:81
@@ -2788,8 +2790,8 @@ msgid ""
 "differences in the security architecture and features for each hypervisor, "
 "particularly when considering the security threat vectors which are unique "
 "to elastic OpenStack environments. As applications consolidate into single "
-"Infrastructure-as-a-Service (IaaS) platforms, instance isolation at the "
-"hypervisor level becomes paramount. The requirement for secure isolation "
+"Infrastructure-as-a-Service (:term:`IaaS`) platforms, instance isolation at "
+"the hypervisor level becomes paramount. The requirement for secure isolation "
 "holds true across commercial, government, and military communities."
 msgstr ""
 
@@ -3648,7 +3650,7 @@ msgstr ""
 # #-#-#-#-#  secure-communication.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../dashboard.rst:3
 #: ../documentation/system-documentation-requirements.rst:130
-#: ../introduction/introduction-to-openstack.rst:179
+#: ../introduction/introduction-to-openstack.rst:180
 #: ../management/management-interfaces.rst:23
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:151
 msgid "Dashboard"
@@ -4675,7 +4677,7 @@ msgstr ""
 # #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  networking.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../data-processing/deployment.rst:21
-#: ../introduction/introduction-to-openstack.rst:165 ../networking.rst:3
+#: ../introduction/introduction-to-openstack.rst:166 ../networking.rst:3
 msgid "Networking"
 msgstr ""
 
@@ -4739,7 +4741,8 @@ msgid ""
 "One of the primary tasks of the data processing controller is to communicate "
 "with the instances it spawns. These instances are provisioned and then "
 "configured depending on the framework being used. The communication between "
-"the controller and the instances uses secure shell (SSH) and HTTP protocols."
+"the controller and the instances uses :term:`secure shell (SSH)` and HTTP "
+"protocols."
 msgstr ""
 
 #: ../data-processing/deployment.rst:59
@@ -8079,13 +8082,10 @@ msgstr ""
 msgid "Shared File Systems"
 msgstr ""
 
-# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
-# #-#-#-#-#  shared-file-systems.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../introduction/introduction-to-openstack.rst:157
-#: ../shared-file-systems.rst:5
 msgid ""
-"The Shared File Systems service (manila) provides a set of services for "
-"management of shared file systems in a multi-tenant cloud environment, "
+"The :term:`Shared File Systems service` (manila) provides a set of services "
+"for management of shared file systems in a multi-tenant cloud environment, "
 "similar to how OpenStack provides for block-based storage management through "
 "the OpenStack Block Storage service project. With the Shared File Systems "
 "service, you can create a remote file system, mount the file system on your "
@@ -8093,7 +8093,7 @@ msgid ""
 "file system."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:167
+#: ../introduction/introduction-to-openstack.rst:168
 msgid ""
 "The OpenStack :term:`Networking` service (neutron, previously called "
 "quantum) provides various networking services to cloud users (tenants) such "
@@ -8103,14 +8103,14 @@ msgid ""
 "various networking solutions."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:174
+#: ../introduction/introduction-to-openstack.rst:175
 msgid ""
 "OpenStack Networking allows cloud tenants to manage their guest network "
 "configurations. Security concerns with the networking service include "
 "network traffic isolation, availability, integrity and confidentiality."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:181
+#: ../introduction/introduction-to-openstack.rst:182
 msgid ""
 "The OpenStack :term:`dashboard` (horizon) provides a web-based interface for "
 "both cloud administrators and cloud tenants. Through this interface "
@@ -8119,79 +8119,79 @@ msgid ""
 "the usual security concerns of public web portals."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:188
+#: ../introduction/introduction-to-openstack.rst:189
 msgid "Identity service"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:190
+#: ../introduction/introduction-to-openstack.rst:191
 msgid ""
-"The OpenStack Identity service (keystone) is a **shared service** that "
-"provides authentication and authorization services throughout the entire "
-"cloud infrastructure. The Identity service has pluggable support for "
+"The OpenStack :term:`Identity` service (keystone) is a **shared service** "
+"that provides authentication and authorization services throughout the "
+"entire cloud infrastructure. The Identity service has pluggable support for "
 "multiple forms of authentication."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:195
+#: ../introduction/introduction-to-openstack.rst:196
 msgid ""
 "Security concerns here pertain to trust in authentication, management of "
 "authorization tokens, and secure communication."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:199
+#: ../introduction/introduction-to-openstack.rst:200
 msgid "Image service"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:201
+#: ../introduction/introduction-to-openstack.rst:202
 msgid ""
-"The OpenStack Image service (glance) provides disk image management "
+"The OpenStack :term:`Image service` (glance) provides disk image management "
 "services. The Image service provides image discovery, registration, and "
 "delivery services to the Compute service, as needed."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:205
+#: ../introduction/introduction-to-openstack.rst:206
 msgid ""
 "Trusted processes for managing the life cycle of disk images are required, "
 "as are all the previously mentioned issues with respect to data security."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:209
+#: ../introduction/introduction-to-openstack.rst:210
 msgid "Data processing service"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:211
+#: ../introduction/introduction-to-openstack.rst:212
 msgid ""
-"The Data processing service for OpenStack (sahara) provides a platform for "
-"the provisioning, management, and usage of clusters running popular "
-"processing frameworks."
+"The :term:`Data processing service` for OpenStack (sahara) provides a "
+"platform for the provisioning, management, and usage of clusters running "
+"popular processing frameworks."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:215
+#: ../introduction/introduction-to-openstack.rst:216
 msgid ""
 "Security considerations for data processing should focus on data privacy and "
 "secure communications to provisioned clusters."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:219
+#: ../introduction/introduction-to-openstack.rst:220
 msgid "Other supporting technology"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:221
+#: ../introduction/introduction-to-openstack.rst:222
 msgid ""
 "OpenStack relies on messaging for internal communication between several of "
-"its services. By default, OpenStack uses message queues based on the "
-"Advanced Message Queue Protocol (AMQP). Similar to most OpenStack services, "
-"it supports pluggable components. Today the implementation back end could be "
-"RabbitMQ, Qpid, or ZeroMQ."
+"its services. By default, OpenStack uses message queues based on the :term:"
+"`Advanced Message Queue Protocol (AMQP)`. Similar to most OpenStack "
+"services, it supports pluggable components. Today the implementation back "
+"end could be RabbitMQ, Qpid, or ZeroMQ."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:227
+#: ../introduction/introduction-to-openstack.rst:228
 msgid ""
 "As most management commands flow through the message queuing system, it is a "
 "primary security concern for any OpenStack deployment. Message queuing "
 "security is discussed in detail later in this guide."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:231
+#: ../introduction/introduction-to-openstack.rst:232
 msgid ""
 "Several of the components use databases though it is not explicitly called "
 "out. Securing the access to the databases and their contents is yet another "
@@ -8838,8 +8838,8 @@ msgstr ""
 
 #: ../introduction/why-and-how-we-wrote-this-book.rst:181
 msgid ""
-"Learn more about how to contribute to the OpenStack docs: http://wiki."
-"openstack.org/Documentation/HowTo."
+"Learn more about how to contribute to the OpenStack docs: http://docs."
+"openstack.org/contributor-guide/index.html."
 msgstr ""
 
 #: ../management.rst:5
@@ -9690,7 +9690,7 @@ msgid ""
 "from the boot validation process to validating the entire system. The steps "
 "for doing this will be deployment specific. As an example, a kernel module "
 "could verify a hash over the blocks comprising the file system before "
-"mounting it using `dm-verity <https://code.google.com/p/cryptsetup/wiki/"
+"mounting it using `dm-verity <https://gitlab.com/cryptsetup/cryptsetup/wikis/"
 "DMVerity>`__."
 msgstr ""
 
@@ -9882,8 +9882,7 @@ msgid "OpenStack API"
 msgstr ""
 
 #: ../management/management-interfaces.rst:16
-#: ../management/management-interfaces.rst:111
-msgid "Secure shell (SSH)"
+msgid ":term:`Secure shell (SSH)<secure shell (SSH)>`"
 msgstr ""
 
 #: ../management/management-interfaces.rst:18
@@ -10006,6 +10005,10 @@ msgstr ""
 msgid ""
 "As a web service, OpenStack API is susceptible to familiar web site attack "
 "vectors such as denial of service attacks."
+msgstr ""
+
+#: ../management/management-interfaces.rst:111
+msgid "Secure shell (SSH)"
 msgstr ""
 
 #: ../management/management-interfaces.rst:113
@@ -12796,15 +12799,28 @@ msgid ""
 "for understanding the problem space."
 msgstr ""
 
+#: ../shared-file-systems.rst:5
+msgid ""
+"The Shared File Systems service (manila) provides a set of services for "
+"management of shared file systems in a multi-tenant cloud environment, "
+"similar to how OpenStack provides for block-based storage management through "
+"the OpenStack Block Storage service project. With the Shared File Systems "
+"service, you can create a remote file system, mount the file system on your "
+"instances, and then read and write data from your instances to and from your "
+"file system."
+msgstr ""
+
 #: ../shared-file-systems.rst:12
 msgid ""
 "A large amount of existing software is designed around file-based storage. "
 "The Shared File Systems service provides the management of file shares and "
 "works with various storage providers that use following shared file system "
-"protocols: NFS, CIFS, GlusterFS, and HDFS."
+"protocols: :term:`NFS <Network File System (NFS)>`, :term:`CIFS <Common "
+"Internet File System (CIFS)>`, :term:`GlusterFS`, and :term:`HDFS <Hadoop "
+"Distributed File System (HDFS)>`."
 msgstr ""
 
-#: ../shared-file-systems.rst:17
+#: ../shared-file-systems.rst:19
 msgid ""
 "The Shared File Systems serves the same purpose as the Amazon Elastic File "
 "System (EFS) offering does."

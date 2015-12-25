@@ -24,7 +24,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-12-23 01:18+0000\n"
+"PO-Revision-Date: 2015-12-25 05:58+0000\n"
 "Last-Translator: KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -140,6 +140,13 @@ msgstr ""
 "合。keystone 以外のユーザーに設定されている可能性があります。"
 
 msgid ""
+"**Fail:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in :file:`/etc/"
+"openstack-dashboard/local_settings.py` is set to ``False``."
+msgstr ""
+"**成功:** :file:`/etc/openstack-dashboard/local_settings.py` の "
+"``SESSION_COOKIE_HTTPONLY`` パラメーターが ``False`` に設定されている場合。"
+
+msgid ""
 "**Fail:** If value of parameter ``enable`` under ``[ssl]`` section is not "
 "set to ``True``."
 msgstr ""
@@ -190,6 +197,13 @@ msgstr ""
 "**成功:** これらのすべての設定ファイルのユーザーおよびグループ所有者が "
 "keystone に設定されている場合。上のコマンドは keystone keystone を表示しま"
 "す。"
+
+msgid ""
+"**Pass:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in :file:`/etc/"
+"openstack-dashboard/local_settings.py` is set to ``True``."
+msgstr ""
+"**成功:** :file:`/etc/openstack-dashboard/local_settings.py` の "
+"``SESSION_COOKIE_HTTPONLY`` パラメーターが ``True`` に設定されている場合。"
 
 msgid ""
 "**Pass:** If value of parameter ``enable`` under ``[ssl]`` section in :file:"
@@ -1865,6 +1879,20 @@ msgstr "認証局(CA)"
 
 msgid "Certifications and attestations"
 msgstr "証明書"
+
+msgid "Check-Block-07: Is NAS operating in secure enviornment?"
+msgstr "Check-Block-07: NAS が安全な環境で運用されていますか?"
+
+msgid ""
+"Check-Dashboard-05: Is ``SESSION_COOKIE_SECURE`` parameter set to ``True``?"
+msgstr ""
+"Check-Dashboard-05: ``SESSION_COOKIE_SECURE`` パラメーターが ``True`` に設定"
+"されていますか?"
+
+msgid "Check-Dashboard-07: Is ``password_autocomplete`` set to ``False``?"
+msgstr ""
+"Check-Dashboard-07: ``password_autocomplete`` が ``False`` に設定されています"
+"か?"
 
 msgid ""
 "Check-Identity-01: Is user/group ownership of config files set to keystone?"
@@ -5954,6 +5982,9 @@ msgstr "ポート・ネットワーク・テナント単位のレートリミッ
 
 msgid "Recommended in: :doc:`../secure-communication`."
 msgstr ":doc:`../secure-communication` に推奨事項があります。"
+
+msgid "Recommended in: :doc:`cookies`."
+msgstr "推奨事項: :doc:`cookies`."
 
 msgid "Recommended in: :doc:`tokens`."
 msgstr ":doc:`tokens` に推奨事項があります。"

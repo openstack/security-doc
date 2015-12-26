@@ -221,7 +221,7 @@ Other supporting technology
 
 OpenStack relies on messaging for internal communication between several of
 its services. By default, OpenStack uses message queues based on the
-:term:`Advanced Message Queue Protocol (AMQP)`. Similar to most OpenStack
+:term:`Advanced Message Queuing Protocol (AMQP)`. Similar to most OpenStack
 services, it supports pluggable components. Today the implementation back end
 could be RabbitMQ, Qpid, or ZeroMQ.
 

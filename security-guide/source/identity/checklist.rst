@@ -57,7 +57,7 @@ Run the following commands:
 
 Recommended in: :ref:`internally-implemented-authentication-methods`.
 
-Check-Identity-03: is SSL enabled for Identity?
+Check-Identity-03: is TLS enabled for Identity?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack components communicate with each other using various protocols
@@ -66,11 +66,22 @@ attacker may try to eavesdrop on the channel in order to get access to
 sensitive information. Thus all the components must communicate with
 each other using a secured communication protocol like HTTPS.
 
-**Pass:** If value of parameter ``enable`` under ``[ssl]`` section in
-:file:`/etc/keystone/keystone.conf` is set to ``True``.
+If you use the HTTP/WSGI server for Identity,
+you should enable TLS on the HTTP/WSGI server.
 
-**Fail:** If value of parameter ``enable`` under ``[ssl]`` section is
-not set to ``True``.
+When you use eventlet:
+
+**Pass:** If value of parameter ``enable`` under ``[eventlet_server_ssl]``
+section in :file:`/etc/keystone/keystone.conf` is set to ``True``.
+
+**Fail:** If value of parameter ``enable`` under ``[eventlet_server_ssl]``
+section is not set to ``True``.
+
+When you use the HTTP/WSGI server:
+
+**Pass:** If TLS is enabled on the HTTP server.
+
+**Fail:** If TLS is not enabled on the HTTP server.
 
 Recommended in: :doc:`../secure-communication`.
 

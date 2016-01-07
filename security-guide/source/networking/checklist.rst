@@ -111,7 +111,7 @@ set to Identity API endpoint starting with ``https://``.
 
 .. _check_neutron_05:
 
-Check-Neutron-05: Is SSL enabled on Neutron API server?
+Check-Neutron-05: Is TLS enabled on Neutron API server?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to the previous check, it is recommended to enable secure communication

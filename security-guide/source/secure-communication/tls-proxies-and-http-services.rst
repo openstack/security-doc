@@ -109,6 +109,8 @@ Pound
 This Pound example enables ``AES-NI`` acceleration,
 which helps to improve performance on systems with processors that
 support this feature.
+The default configuration file is ``/etc/pound/pound.cfg`` on Ubuntu,
+``/etc/pound.cfg`` on RHEL, CentOS, openSUSE, and SUSE Linux Enterprise.
 
 .. code::
 
@@ -167,6 +169,8 @@ Stud
 
 The *ciphers* line can be tweaked based on your needs, however this is
 a reasonable starting place.
+The default configuration file is located in the ``/etc/stud`` directory.
+However, it is not provided by default.
 
 .. code::
 
@@ -211,6 +215,7 @@ nginx
 This nginx example requires TLS v1.1 or v1.2 for maximum security. The
 ``ssl_ciphers`` line can be tweaked based on your needs, however this
 is a reasonable starting place.
+The default configuration file is ``/etc/nginx/nginx.conf``.
 
 .. code::
 
@@ -232,6 +237,10 @@ is a reasonable starting place.
 
 Apache
 ------
+
+The default configuration file is ``/etc/apache2/apache2.conf`` on Ubuntu,
+``/etc/httpd/conf/httpd.conf`` on RHEL and CentOS,
+``/etc/apache2/httpd.conf`` on openSUSE and SUSE Linux Enterprise.
 
 .. code::
 

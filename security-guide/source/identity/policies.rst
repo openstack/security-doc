@@ -2,17 +2,25 @@
 Policies
 ========
 
-Each OpenStack service has a policy file in JSON format, called
-:file:`policy.json`. The policy file specifies rules, and the rule that
-governs each resource. A resource could be API access, the ability to
-attach to a volume, or to fire up instances.
+Each OpenStack service defines the access policies for its resources in an
+associated policy file. A resource, for example, could be API access, the
+ability to attach to a volume, or to fire up instances. The policy rules are
+specified in JSON format and the file is called :file:`policy.json`.  The
+syntax and format of this file is discussed in the `Configuration Reference
+<http://docs.openstack.org/liberty/config-reference/content/policy-json-file.html>`__.
 
-The policies can be updated by the cloud administrator to further
-control access to the various resources. The middleware could also be
-further customized. Note that your users must be assigned to
-groups/roles that you refer to in your policies.
+These policies can be modified or updated by the cloud administrator to
+control the access to the various resources. Ensure that any changes to the
+access control policies do not unintentionally weaken the security of any
+resource. Also note that changes to the ``policy.json`` file become effective
+immediately and do not require the service to be restarted.
 
-Below is a snippet of the :file:`policy.json` file.
+The following example shows how the service can restrict access to create,
+update and delete resources to only those users which have the role of
+``cloud_admin``, which has been defined as being the conjunction of
+``role = admin`` and ``domain_id = admin_domain_id``, while the get and list
+resources are made available to users which have the role of ``cloud_admin``
+or ``admin``.
 
 .. code:: json
 
@@ -41,17 +49,6 @@ Below is a snippet of the :file:`policy.json` file.
        "identity:update_endpoint": "rule:cloud_admin",
        "identity:delete_endpoint": "rule:cloud_admin",
 
-       "identity:get_domain": "rule:cloud_admin",
-       "identity:list_domains": "rule:cloud_admin",
-       "identity:create_domain": "rule:cloud_admin",
-       "identity:update_domain": "rule:cloud_admin",
-       "identity:delete_domain": "rule:cloud_admin",
-
        ...
    }
 
-Note the **cloud_admin** rule specifies that the user must be an admin
-on a certain domain. It essentially says only the cloud admin may
-create/delete/update services and their endpoints. Certain other
-operations such as listing/retrieving details of services and endpoints
-are accessible only to admin users.

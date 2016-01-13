@@ -38,8 +38,8 @@ HTTPS
 ~~~~~
 
 Deploy the dashboard behind a secure
-:term:`HTTPS <Hypertext Transfer Protocol Secure (HTTPS)>` server by
-using a valid, trusted certificate from a recognized certificate authority
+:term:`HTTPS <Hypertext Transfer Protocol Secure (HTTPS)>` server by using a
+valid, trusted certificate from a recognized certificate authority
 (CA). Private organization-issued certificates are only
 appropriate when the root of trust is pre-installed in all user
 browsers.

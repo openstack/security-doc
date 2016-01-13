@@ -183,6 +183,21 @@ similar functionality. We provide more details on sVirt and instance isolation
 in the section below
 :ref:`hardening-the-virtualization-layers-svirt-selinux-and-virtualization`.
 
+Specific SELinux policies are available for many OpenStack services. CentOS
+users can review these policies by `installing the selinux-policy source
+package`_. The most up to date policies appear in `Fedora's selinux-policy`_
+repository. The `rawhide-contrib`_ branch has files that end in ``.te``, such
+as ``cinder.te``, that can be used on systems running SELinux.
+
+AppArmor profiles for OpenStack services don't currently exist, but the
+OpenStack-Ansible project handles this by `applying AppArmor profiles to each
+container`_ that runs an OpenStack service.
+
+.. _installing the selinux-policy source package: https://wiki.centos.org/HowTos/RebuildSRPM
+.. _Fedora's selinux-policy: https://github.com/fedora-selinux/selinux-policy
+.. _rawhide-contrib: https://github.com/fedora-selinux/selinux-policy/tree/rawhide-contrib
+.. _applying AppArmor profiles to each container: http://docs.openstack.org/developer/openstack-ansible/install-guide/overview-security.html#apparmor
+
 .. _hardening-the-virtualization-layers-svirt-selinux-and-virtualization:
 
 sVirt: SELinux and virtualization

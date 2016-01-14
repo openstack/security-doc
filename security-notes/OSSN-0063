@@ -1,0 +1,53 @@
+Nova and Cinder key manager for Barbican misuses cached credentials
+---
+
+### Summary ###
+During the Icehouse release the Cinder and Nova projects added a
+feature that supports storage volume encryption using keys stored in
+Barbican. The Barbican key manager, that is part of Nova and
+Cinder, had a bug that could cause an authorized user to lose access to an
+encryption key or allow the wrong user to gain access to an encryption key.
+
+### Affected Services / Software ###
+Cinder: Icehouse, Juno, Kilo, Liberty
+Nova: Juno, Kilo, Liberty
+
+### Discussion ###
+The Barbican key manager is a feature that is part of Nova and Cinder to
+allow those projects to create and retrieve keys in Barbican. The key
+manager includes a cache function that allows for a copy_key() operation
+to work while only validating the token once with Keystone.
+
+This cache function had a bug such that the cached token was used for
+operations where it was no longer valid. The symptoms of this error vary, but
+include a user not being able to access their key or the wrong user being
+able to access a key.
+
+An affected user would see an error similar to this in their cinder log.
+
+---- begin cinder.log sample snippet ----
+2015-12-03 09:09:03.648 TRACE cinder.volume.api Unauthorized: The request you
+have made requires authentication. (Disable debug mode to suppress these
+details.) (HTTP 401) (Request-ID: req-d2c52e0b-c16d-43ec-a7a0-7611113f1270)
+---- end cinder.log sample snippet ----
+
+### Recommended Actions ###
+Users wishing to use the Barbican key manager to provided keys for volume
+encryption with Nova and Cinder should ensure they are using a patched
+version.
+
+A specification for a fix has been merged for the Mitaka
+release of both Nova and Cinder. Additionally these patches have been
+backported to stable/kilo and stable/liberty.
+
+### Contacts / References ###
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0063
+Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1523646
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Nova patch for Mitaka : https://review.openstack.org/254358/
+Nova patch for stable/liberty: https://review.openstack.org/288490
+Cinder patch for Mitaka : https://review.openstack.org/254357/
+Cinder patch for stable/liberty: https://review.openstack.org/266678
+Cinder patch for stable/kilo: https://review.openstack.org/266680
+CVE : N/A

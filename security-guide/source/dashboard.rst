@@ -24,6 +24,7 @@ The dashboard ships with reasonable default security settings, and has good
    dashboard/https-hsts-xss-ssrf.rst
    dashboard/front-end-caching-session-back-end.rst
    dashboard/static-media.rst
+   dashboard/passwords.rst
    dashboard/secret-key.rst
    dashboard/cookies.rst
    dashboard/cross-origin-resource-sharing-cors.rst

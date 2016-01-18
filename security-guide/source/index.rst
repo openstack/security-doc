@@ -17,6 +17,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   common/conventions.rst
    introduction.rst
    documentation.rst
    management.rst

@@ -39,7 +39,7 @@ Bibliography
 ------------
 
 #. blog.malchuk.ru, OpenStack VNC Security. 2013. `Secure Connections to VNC
-   ports <"http://blog.malchuk.ru/2013/05/21/47>`__
+   ports <http://blog.malchuk.ru/2013/05/21/47>`__
 #. OpenStack Mailing List, [OpenStack] nova-novnc SSL configuration - Havana.
    2014.
    `OpenStack nova-novnc SSL Configuration

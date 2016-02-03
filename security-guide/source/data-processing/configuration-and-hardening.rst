@@ -201,47 +201,47 @@ an output file.**
     verbose = true
     log_file = /var/log/data-processing.log
 
-References
-~~~~~~~~~~
+Bibliography
+~~~~~~~~~~~~
 
-Sahara project documentation:
-`http://docs.openstack.org/developer/sahara <http://docs.openstack.org/developer/sahara>`_
+OpenStack.org, Welcome to Sahara!. 2016.
+`Sahara project documentation <http://docs.openstack.org/developer/sahara/>`__
 
-Hadoop project:
-`https://hadoop.apache.org <https://hadoop.apache.org>`_
+The Apache Software Foundation, Welcome to Apache Hadoop!. 2016.
+`Apache Hadoop project <https://hadoop.apache.org>`__
 
-Hadoop secure mode docs:
-`https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SecureMode.html <https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SecureMode.html>`_
+The Apache Software Foundation, Hadoop in Secure Mode. 2016.
+`Hadoop secure mode docs <https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SecureMode.html>`__
 
-Hadoop HDFS documentation:
-`https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html>`_
+The Apache Software Foundation, HDFS User Guide. 2016.
+`Hadoop HDFS documentation <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html>`__
 
-Spark project:
-`https://spark.apache.org <https://spark.apache.org>`_
+The Apache Software Foundation, Spark. 2016.
+`Spark project <https://spark.apache.org>`__
 
-Spark security documentation:
-`https://spark.apache.org/docs/latest/security.html <https://spark.apache.org/docs/latest/security.html>`_
+The Apache Software Foundation, Spark Security. 2016.
+`Spark security documentation <https://spark.apache.org/docs/latest/security.html>`__
 
-Storm project:
-`https://storm.apache.org <https://storm.apache.org>`_
+The Apache Software Foundation, Apache Storm. 2016.
+`Storm project  <https://storm.apache.org>`__
 
-Zookeeper project:
-`https://zookeeper.apache.org <https://zookeeper.apache.org>`_
+The Apache Software Foundation, Apache Zookeeper. 2016.
+`Zookeeper project <https://zookeeper.apache.org>`__
 
-Oozie project:
-`https://oozie.apache.org <https://oozie.apache.org>`_
+The Apache Software Foundation, Apache Oozie Workflow Scheduler for Hadoop.
+2016. `Oozie project <https://oozie.apache.org>`__
 
-Hive
-`https://hive.apache.org <https://hive.apache.org>`_
+The Apache Software Foundation, Apache Hive. 2016.
+`Hive <https://hive.apache.org>`__
 
-Pig
-`https://pig.apache.org <https://pig.apache.org>`_
+The Apache Software Foundation, Welcome to Apache Pig. 2016.
+`Pig <https://pig.apache.org>`__
 
-Cloudera CDH documentation:
-`https://www.cloudera.com/content/cloudera/en/documentation.html#CDH <https://www.cloudera.com/content/cloudera/en/documentation.html#CDH>`_
+The Apache Software Foundation, Cloudera Product Documentation. 2016.
+`Cloudera CDH documentation <https://www.cloudera.com/content/cloudera/en/documentation.html#CDH>`__
 
-Hortonworks Data Platform documentation:
-`http://docs.hortonworks.com <http://docs.hortonworks.com>`_
+Hortonworks, Hortonworks. 2016.
+`Hortonworks Data Platform documentation <http://docs.hortonworks.com>`__
 
-MapR project:
-`https://www.mapr.com/products/mapr-distribution-including-apache-hadoop <https://www.mapr.com/products/mapr-distribution-including-apache-hadoop>`_
+MapR Technologies, Apache Hadoop for the MapR Converged Data Platform. 2016.
+`MapR project <https://www.mapr.com/products/mapr-distribution-including-apache-hadoop>`__

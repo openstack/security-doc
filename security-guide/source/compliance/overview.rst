@@ -100,7 +100,7 @@ a risk management process and gives confidence to interested parties
 that risks are adequately managed.
 
 `Trusted Security
-Principles <http://www.aicpa.org/InterestAreas/InformationTechnology/Resources/TrustServices/Pages/Trust%20Services%20Principles%E2%80%94An%20Overview.aspx>`__
+Principles <http://www.aicpa.org/interestareas/informationtechnology/resources/soc/trustservices/pages/trust%20services%20principles—an%20overview.aspx>`__
 
 Trust Services are a set of professional attestation and advisory
 services based on a core set of principles and criteria that address

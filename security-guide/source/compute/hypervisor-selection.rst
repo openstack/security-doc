@@ -493,8 +493,8 @@ Bibliography
   `http://wiki.apparmor.net/index.php/Main_Page
   <http://wiki.apparmor.net/index.php/Main_Page>`__
 * Kernel.org, CGroups. 2004.
-  `https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt
-  <https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt>`__
+  `https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt
+  <https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt>`__
 * Computer Security Resource Centre. Guide to Security for Full Virtualization
   Technologies. 2011.
   `http://csrc.nist.gov/publications/nistpubs/800-125/SP800-125-final.pdf

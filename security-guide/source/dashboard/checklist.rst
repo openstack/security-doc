@@ -66,7 +66,7 @@ will only be available on your system if it supports ACLs.
 Check-Dashboard-03: Is ``USE_SSL`` parameter set to ``True``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Openstack services communicate with each other using various protocols and the
+OpenStack services communicate with each other using various protocols and the
 communication might involve sensitive/confidential information. An attacker
 may try to eavesdrop on the channel in order to get access to sensitive
 information. Thus all the services must communicate with each other using a

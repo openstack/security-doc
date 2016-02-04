@@ -73,11 +73,11 @@ Security considerations
    groups allows L3-L4 packet filtering for security policies to protect
    virtual machines.
 
-References
-----------
+Bibliography
+------------
 
-`Liberty Release
-Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Liberty>`__
+OpenStack.org, ReleaseNotes/Liberty. 2015.
+`OpenStack Liberty Release Notes <https://wiki.openstack.org/wiki/ReleaseNotes/Liberty>`__
 
 OpenStack API
 ~~~~~~~~~~~~~
@@ -162,14 +162,14 @@ Security considerations
 -  Ensure that the .rc file which has your credential information is
    secured.
 
-References
-----------
+Bibliography
+------------
 
-OpenStack End User Guide section `command-line clients
-overview <http://docs.openstack.org/user-guide/common/cli_overview.html>`__
+OpenStack.org, OpenStack End User Guide section. 2016.
+`OpenStack command-line clients overview  <http://docs.openstack.org/user-guide/common/cli_overview.html>`__
 
-OpenStack End User Guide section `Download and source the OpenStack RC
-file <http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html#download-and-source-the-openstack-rc-file>`__
+OpenStack.org, Set environment variables using the OpenStack RC file. 2016.
+`Download and source the OpenStack RC file <http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html#download-and-source-the-openstack-rc-file>`__
 
 Out-of-band management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -205,8 +205,8 @@ console access. It is often possible, although not necessarily default,
 that these interfaces are encrypted. Consult with your system software
 documentation for encrypting these interfaces.
 
-References
-----------
+Bibliography
+------------
 
-`Hacking servers that are turned
-off <https://isc.sans.edu/diary/IPMI%3A+Hacking+servers+that+are+turned+%22off%22/13399>`__
+SANS Technology Institute, InfoSec Handlers Diary Blog. 2012.
+`Hacking servers that are turned off <https://isc.sans.edu/diary/IPMI%3A+Hacking+servers+that+are+turned+%22off%22/13399>`__

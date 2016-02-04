@@ -87,7 +87,7 @@ introduced by the addition of non-standard software components to their HTTP
 request pipeline.
 
 For more information about Paste Deploy, see
-`http://pythonpaste.org/deploy <http://pythonpaste.org/deploy/>`__.
+`Python Paste Deployment documentation <http://pythonpaste.org/deploy/>`__.
 
 
 API endpoint process isolation and policy

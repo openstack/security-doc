@@ -35,8 +35,8 @@ Recommended in: :doc:`../compute`.
 
 .. _check_compute_02:
 
-Check-Compute-02: Are strict permissions set for Compute configuration files?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check-Compute-02: Are strict permissions set for configuration files?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to the previous check, it is recommended to set strict access
 permissions for such configuration files.

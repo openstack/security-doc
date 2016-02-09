@@ -33,8 +33,8 @@ other than cinder.
 
 .. _check_block_02:
 
-Check-Block-02: Are strict permissions set for Compute configuration files?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check-Block-02: Are strict permissions set for configuration files?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to the previous check, it is recommended to set strict access
 permissions for such configuration files.

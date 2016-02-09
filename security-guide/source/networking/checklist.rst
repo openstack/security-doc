@@ -34,8 +34,8 @@ other than neutron.
 
 .. _check_neutron_02:
 
-Check-Neutron-02: Are strict permissions set for Compute configuration files?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check-Neutron-02: Are strict permissions set for configuration files?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to the previous check, it is recommended to set strict access
 permissions for such configuration files.

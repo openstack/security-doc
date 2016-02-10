@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-20 06:11+0000\n"
+"POT-Creation-Date: 2016-02-10 06:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,8 +125,8 @@ msgstr ""
 
 #: ../api-endpoints/api-endpoint-configuration-recommendations.rst:89
 msgid ""
-"For more information about Paste Deploy, see `http://pythonpaste.org/deploy "
-"<http://pythonpaste.org/deploy/>`__."
+"For more information about Paste Deploy, see `Python Paste Deployment "
+"documentation <http://pythonpaste.org/deploy/>`__."
 msgstr ""
 
 #: ../api-endpoints/api-endpoint-configuration-recommendations.rst:94
@@ -435,8 +435,7 @@ msgid ""
 msgstr ""
 
 #: ../block-storage/checklist.rst:37
-msgid ""
-"Check-Block-02: Are strict permissions set for Compute configuration files?"
+msgid "Check-Block-02: Are strict permissions set for configuration files?"
 msgstr ""
 
 # #-#-#-#-#  block-storage.pot (Security Guide 0.0.1)  #-#-#-#-#
@@ -1452,9 +1451,9 @@ msgstr ""
 
 #: ../compliance/overview.rst:102
 msgid ""
-"`Trusted Security Principles <http://www.aicpa.org/InterestAreas/"
-"InformationTechnology/Resources/TrustServices/Pages/Trust%20Services"
-"%20Principles%E2%80%94An%20Overview.aspx>`__"
+"`Trusted Security Principles <http://www.aicpa.org/interestareas/"
+"informationtechnology/resources/soc/trustservices/pages/trust%20services"
+"%20principles—an%20overview.aspx>`__"
 msgstr ""
 
 #: ../compliance/overview.rst:105
@@ -1877,8 +1876,7 @@ msgid "Recommended in: :doc:`../compute`."
 msgstr ""
 
 #: ../compute/checklist.rst:39
-msgid ""
-"Check-Compute-02: Are strict permissions set for Compute configuration files?"
+msgid "Check-Compute-02: Are strict permissions set for configuration files?"
 msgstr ""
 
 #: ../compute/checklist.rst:53
@@ -2391,11 +2389,27 @@ msgid ""
 "virtualization-layers-svirt-selinux-and-virtualization`."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:189
+#: ../compute/hardening-the-virtualization-layers.rst:186
+msgid ""
+"Specific SELinux policies are available for many OpenStack services. CentOS "
+"users can review these policies by `installing the selinux-policy source "
+"package`_. The most up to date policies appear in `Fedora's selinux-policy`_ "
+"repository. The `rawhide-contrib`_ branch has files that end in ``.te``, "
+"such as ``cinder.te``, that can be used on systems running SELinux."
+msgstr ""
+
+#: ../compute/hardening-the-virtualization-layers.rst:192
+msgid ""
+"AppArmor profiles for OpenStack services don't currently exist, but the "
+"OpenStack-Ansible project handles this by `applying AppArmor profiles to "
+"each container`_ that runs an OpenStack service."
+msgstr ""
+
+#: ../compute/hardening-the-virtualization-layers.rst:204
 msgid "sVirt: SELinux and virtualization"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:191
+#: ../compute/hardening-the-virtualization-layers.rst:206
 msgid ""
 "With unique kernel-level architecture and National Security Agency (NSA) "
 "developed security mechanisms, KVM provides foundational isolation "
@@ -2407,13 +2421,13 @@ msgid ""
 "processes acting upon their behalf."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:200
+#: ../compute/hardening-the-virtualization-layers.rst:215
 msgid ""
 "OpenStack's sVirt implementation aspires to protect hypervisor hosts and "
 "virtual machines against two primary threat vectors:"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:204
+#: ../compute/hardening-the-virtualization-layers.rst:219
 msgid ""
 "A compromised application running within a virtual machine attacks the "
 "hypervisor to access underlying resources. For example, when a virtual "
@@ -2423,11 +2437,11 @@ msgid ""
 "exposing other virtual machines and network segments."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:208
+#: ../compute/hardening-the-virtualization-layers.rst:223
 msgid "Hypervisor threats"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:211
+#: ../compute/hardening-the-virtualization-layers.rst:226
 msgid ""
 "A compromised application running within a VM attacks the hypervisor to "
 "access or control another virtual machine and its resources. This is a "
@@ -2438,11 +2452,11 @@ msgid ""
 "do not directly apply to the virtual environment."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:217
+#: ../compute/hardening-the-virtualization-layers.rst:232
 msgid "Virtual Machine (multi-tenant) threats"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:219
+#: ../compute/hardening-the-virtualization-layers.rst:234
 msgid ""
 "Each KVM-based virtual machine is a process which is labeled by SELinux, "
 "effectively establishing a security boundary around each virtual machine. "
@@ -2451,7 +2465,7 @@ msgid ""
 "boundary such as host machine data files or other VMs."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:227
+#: ../compute/hardening-the-virtualization-layers.rst:242
 msgid ""
 "As shown above, sVirt isolation is provided regardless of the guest "
 "Operating System running inside the virtual machine. Linux or Windows VMs "
@@ -2460,11 +2474,11 @@ msgid ""
 "virtual resources from threats."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:234
+#: ../compute/hardening-the-virtualization-layers.rst:249
 msgid "Labels and categories"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:236
+#: ../compute/hardening-the-virtualization-layers.rst:251
 msgid ""
 "KVM-based virtual machine instances are labelled with their own SELinux data "
 "type, known as svirt_image_t. Kernel level protections prevent unauthorized "
@@ -2473,7 +2487,7 @@ msgid ""
 "stored as svirt_image_t as shown below:"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:249
+#: ../compute/hardening-the-virtualization-layers.rst:264
 msgid ""
 "The *svirt_image_t* label uniquely identifies image files on disk, allowing "
 "for the SELinux policy to restrict access. When a KVM-based Compute image is "
@@ -2483,15 +2497,15 @@ msgid ""
 "unlikely to encounter this limitation."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:256
+#: ../compute/hardening-the-virtualization-layers.rst:271
 msgid "This example shows the sVirt category identifier:"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:264
+#: ../compute/hardening-the-virtualization-layers.rst:279
 msgid "SELinux users and roles"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:266
+#: ../compute/hardening-the-virtualization-layers.rst:281
 msgid ""
 "SELinux can also manage user roles. These can be viewed through the *-Z* "
 "flag, or with the ``semanage`` command. On the hypervisor, only "
@@ -2500,107 +2514,107 @@ msgid ""
 "that are on the system."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:272
+#: ../compute/hardening-the-virtualization-layers.rst:287
 msgid ""
 "`SELinux.org Users and Roles Overview <http://selinuxproject.org/page/"
 "BasicConcepts#Users>`__"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:273
+#: ../compute/hardening-the-virtualization-layers.rst:288
 msgid "SELinux users documentation:"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:276
+#: ../compute/hardening-the-virtualization-layers.rst:291
 msgid "Booleans"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:278
+#: ../compute/hardening-the-virtualization-layers.rst:293
 msgid ""
 "To ease the administrative burden of managing SELinux, many enterprise Linux "
 "platforms utilize SELinux Booleans to quickly change the security posture of "
 "sVirt."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:282
+#: ../compute/hardening-the-virtualization-layers.rst:297
 msgid ""
 "Red Hat Enterprise Linux-based KVM deployments utilize the following sVirt "
 "booleans:"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:289
+#: ../compute/hardening-the-virtualization-layers.rst:304
 msgid "sVirt SELinux Boolean"
 msgstr ""
 
 # #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  shared-file-systems.pot (Security Guide 0.0.1)  #-#-#-#-#
-#: ../compute/hardening-the-virtualization-layers.rst:290
+#: ../compute/hardening-the-virtualization-layers.rst:305
 #: ../compute/hypervisor-selection.rst:323
 #: ../shared-file-systems/network-and-security-models.rst:44
 #: ../shared-file-systems/security-services.rst:58
 msgid "Description"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:291
+#: ../compute/hardening-the-virtualization-layers.rst:306
 msgid "virt_use_common"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:292
+#: ../compute/hardening-the-virtualization-layers.rst:307
 msgid "Allow virt to use serial/parallel communication ports."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:293
+#: ../compute/hardening-the-virtualization-layers.rst:308
 msgid "virt_use_fusefs"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:294
+#: ../compute/hardening-the-virtualization-layers.rst:309
 msgid "Allow virt to read FUSE mounted files."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:295
+#: ../compute/hardening-the-virtualization-layers.rst:310
 msgid "virt_use_nfs"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:296
+#: ../compute/hardening-the-virtualization-layers.rst:311
 msgid "Allow virt to manage NFS mounted files."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:297
+#: ../compute/hardening-the-virtualization-layers.rst:312
 msgid "virt_use_samba"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:298
+#: ../compute/hardening-the-virtualization-layers.rst:313
 msgid "Allow virt to manage CIFS mounted files."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:299
+#: ../compute/hardening-the-virtualization-layers.rst:314
 msgid "virt_use_sanlock"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:300
+#: ../compute/hardening-the-virtualization-layers.rst:315
 msgid "Allow confined virtual guests to interact with the sanlock."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:301
+#: ../compute/hardening-the-virtualization-layers.rst:316
 msgid "virt_use_sysfs"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:302
+#: ../compute/hardening-the-virtualization-layers.rst:317
 msgid "Allow virt to manage device configuration (PCI)."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:303
+#: ../compute/hardening-the-virtualization-layers.rst:318
 msgid "virt_use_usb"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:304
+#: ../compute/hardening-the-virtualization-layers.rst:319
 msgid "Allow virt to use USB devices."
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:305
+#: ../compute/hardening-the-virtualization-layers.rst:320
 msgid "virt_use_xserver"
 msgstr ""
 
-#: ../compute/hardening-the-virtualization-layers.rst:306
+#: ../compute/hardening-the-virtualization-layers.rst:321
 msgid "Allow virtual machine to interact with the X Window System."
 msgstr ""
 
@@ -2677,10 +2691,17 @@ msgid ""
 msgstr ""
 
 # #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  data-processing.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  management.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  monitoring-logging.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/how-to-select-virtual-consoles.rst:39
 #: ../compute/how-to-select-virtual-consoles.rst:86
 #: ../compute/hypervisor-selection.rst:471
+#: ../data-processing/configuration-and-hardening.rst:205
+#: ../management/continuous-systems-management.rst:236
+#: ../management/management-interfaces.rst:77
+#: ../management/management-interfaces.rst:166
+#: ../management/management-interfaces.rst:209
 #: ../monitoring-logging/forensics-and-incident-response.rst:87
 msgid "Bibliography"
 msgstr ""
@@ -2688,7 +2709,7 @@ msgstr ""
 #: ../compute/how-to-select-virtual-consoles.rst:41
 msgid ""
 "blog.malchuk.ru, OpenStack VNC Security. 2013. `Secure Connections to VNC "
-"ports <\"http://blog.malchuk.ru/2013/05/21/47>`__"
+"ports <http://blog.malchuk.ru/2013/05/21/47>`__"
 msgstr ""
 
 #: ../compute/how-to-select-virtual-consoles.rst:43
@@ -3591,8 +3612,9 @@ msgstr ""
 
 #: ../compute/hypervisor-selection.rst:495
 msgid ""
-"Kernel.org, CGroups. 2004. `https://www.kernel.org/doc/Documentation/cgroups/"
-"cgroups.txt <https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt>`__"
+"Kernel.org, CGroups. 2004. `https://www.kernel.org/doc/Documentation/cgroup-"
+"v1/cgroups.txt <https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups."
+"txt>`__"
 msgstr ""
 
 #: ../compute/hypervisor-selection.rst:498
@@ -3808,7 +3830,7 @@ msgstr ""
 
 #: ../dashboard/checklist.rst:69
 msgid ""
-"Openstack services communicate with each other using various protocols and "
+"OpenStack services communicate with each other using various protocols and "
 "the communication might involve sensitive/confidential information. An "
 "attacker may try to eavesdrop on the channel in order to get access to "
 "sensitive information. Thus all the services must communicate with each "
@@ -4208,10 +4230,11 @@ msgstr ""
 
 #: ../dashboard/https-hsts-xss-ssrf.rst:40
 msgid ""
-"Deploy the dashboard behind a secure :term:`HTTPS` server by using a valid, "
-"trusted certificate from a recognized certificate authority (CA). Private "
-"organization-issued certificates are only appropriate when the root of trust "
-"is pre-installed in all user browsers."
+"Deploy the dashboard behind a secure :term:`HTTPS <Hypertext Transfer "
+"Protocol Secure (HTTPS)>` server by using a valid, trusted certificate from "
+"a recognized certificate authority (CA). Private organization-issued "
+"certificates are only appropriate when the root of trust is pre-installed in "
+"all user browsers."
 msgstr ""
 
 #: ../dashboard/https-hsts-xss-ssrf.rst:47
@@ -4242,6 +4265,43 @@ msgid ""
 "See the chapter on :doc:`../secure-communication` for more specific "
 "recommendations and server configurations for HTTPS configurations, "
 "including the configuration of HSTS."
+msgstr ""
+
+#: ../dashboard/passwords.rst:3
+msgid "Passwords"
+msgstr ""
+
+#: ../dashboard/passwords.rst:5
+msgid ""
+"Password management should be an integral part of your cloud administration "
+"plan. A definitive tutorial about passwords is beyond the scope of this "
+"book; however, cloud administrators should refer to the best practices "
+"recommended in Chapter 4 of NIST Special Publication `Guide to Enterprise "
+"Password Management <http://csrc.nist.gov/publications/drafts/800-118/draft-"
+"sp800-118.pdf>`_."
+msgstr ""
+
+#: ../dashboard/passwords.rst:11
+msgid ""
+"Browser-based access to the OpenStack cloud, whether through the dashboard "
+"or other applications, introduces additional considerations. Modern browsers "
+"all support some form of password storage and autofilling of credentials for "
+"remembered sites. This can be useful when using strong passwords that cannot "
+"be easily remembered or typed, but may cause the browser to become the weak "
+"link if the physical security of the client is compromised. If the browser's "
+"password store itself is not protected by a strong password, or if the "
+"password store is allowed to remain unlocked for the duration of the "
+"session, unauthorized access to your system can be easily obtained."
+msgstr ""
+
+#: ../dashboard/passwords.rst:21
+msgid ""
+"Password management applications such as `KeePassX <http://www.keepassx."
+"org>`_ and `Password Safe <http://www.pwsafe.org>`_ can be useful as most "
+"support the generation of strong passwords and periodic reminders to "
+"generate new passwords. Most importantly, the password store remains "
+"unlocked only briefly, which reduces the risk of password exposure and "
+"unauthorized resource access through browser or system compromise."
 msgstr ""
 
 #: ../dashboard/secret-key.rst:3
@@ -4558,91 +4618,92 @@ msgid ""
 "output file.**"
 msgstr ""
 
-# #-#-#-#-#  data-processing.pot (Security Guide 0.0.1)  #-#-#-#-#
-# #-#-#-#-#  management.pot (Security Guide 0.0.1)  #-#-#-#-#
-#: ../data-processing/configuration-and-hardening.rst:205
-#: ../management/continuous-systems-management.rst:236
-#: ../management/management-interfaces.rst:77
-#: ../management/management-interfaces.rst:166
-#: ../management/management-interfaces.rst:209
-msgid "References"
-msgstr ""
-
 #: ../data-processing/configuration-and-hardening.rst:207
 msgid ""
-"Sahara project documentation: `http://docs.openstack.org/developer/sahara "
-"<http://docs.openstack.org/developer/sahara>`_"
+"OpenStack.org, Welcome to Sahara!. 2016. `Sahara project documentation "
+"<http://docs.openstack.org/developer/sahara/>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:210
 msgid ""
-"Hadoop project: `https://hadoop.apache.org <https://hadoop.apache.org>`_"
+"The Apache Software Foundation, Welcome to Apache Hadoop!. 2016. `Apache "
+"Hadoop project <https://hadoop.apache.org>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:213
 msgid ""
-"Hadoop secure mode docs: `https://hadoop.apache.org/docs/current/hadoop-"
-"project-dist/hadoop-common/SecureMode.html <https://hadoop.apache.org/docs/"
-"current/hadoop-project-dist/hadoop-common/SecureMode.html>`_"
+"The Apache Software Foundation, Hadoop in Secure Mode. 2016. `Hadoop secure "
+"mode docs <https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-"
+"common/SecureMode.html>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:216
 msgid ""
-"Hadoop HDFS documentation: `https://hadoop.apache.org/docs/stable/hadoop-"
-"project-dist/hadoop-hdfs/HdfsUserGuide.html <https://hadoop.apache.org/docs/"
-"stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html>`_"
+"The Apache Software Foundation, HDFS User Guide. 2016. `Hadoop HDFS "
+"documentation <https://hadoop.apache.org/docs/stable/hadoop-project-dist/"
+"hadoop-hdfs/HdfsUserGuide.html>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:219
-msgid "Spark project: `https://spark.apache.org <https://spark.apache.org>`_"
+msgid ""
+"The Apache Software Foundation, Spark. 2016. `Spark project <https://spark."
+"apache.org>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:222
 msgid ""
-"Spark security documentation: `https://spark.apache.org/docs/latest/security."
-"html <https://spark.apache.org/docs/latest/security.html>`_"
+"The Apache Software Foundation, Spark Security. 2016. `Spark security "
+"documentation <https://spark.apache.org/docs/latest/security.html>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:225
-msgid "Storm project: `https://storm.apache.org <https://storm.apache.org>`_"
+msgid ""
+"The Apache Software Foundation, Apache Storm. 2016. `Storm project  <https://"
+"storm.apache.org>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:228
 msgid ""
-"Zookeeper project: `https://zookeeper.apache.org <https://zookeeper.apache."
-"org>`_"
+"The Apache Software Foundation, Apache Zookeeper. 2016. `Zookeeper project "
+"<https://zookeeper.apache.org>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:231
-msgid "Oozie project: `https://oozie.apache.org <https://oozie.apache.org>`_"
+msgid ""
+"The Apache Software Foundation, Apache Oozie Workflow Scheduler for Hadoop. "
+"2016. `Oozie project <https://oozie.apache.org>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:234
-msgid "Hive `https://hive.apache.org <https://hive.apache.org>`_"
+msgid ""
+"The Apache Software Foundation, Apache Hive. 2016. `Hive <https://hive."
+"apache.org>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:237
-msgid "Pig `https://pig.apache.org <https://pig.apache.org>`_"
+msgid ""
+"The Apache Software Foundation, Welcome to Apache Pig. 2016. `Pig <https://"
+"pig.apache.org>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:240
 msgid ""
-"Cloudera CDH documentation: `https://www.cloudera.com/content/cloudera/en/"
-"documentation.html#CDH <https://www.cloudera.com/content/cloudera/en/"
-"documentation.html#CDH>`_"
+"The Apache Software Foundation, Cloudera Product Documentation. 2016. "
+"`Cloudera CDH documentation <https://www.cloudera.com/content/cloudera/en/"
+"documentation.html#CDH>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:243
 msgid ""
-"Hortonworks Data Platform documentation: `http://docs.hortonworks.com "
-"<http://docs.hortonworks.com>`_"
+"Hortonworks, Hortonworks. 2016. `Hortonworks Data Platform documentation "
+"<http://docs.hortonworks.com>`__"
 msgstr ""
 
 #: ../data-processing/configuration-and-hardening.rst:246
 msgid ""
-"MapR project: `https://www.mapr.com/products/mapr-distribution-including-"
-"apache-hadoop <https://www.mapr.com/products/mapr-distribution-including-"
-"apache-hadoop>`_"
+"MapR Technologies, Apache Hadoop for the MapR Converged Data Platform. 2016. "
+"`MapR project <https://www.mapr.com/products/mapr-distribution-including-"
+"apache-hadoop>`__"
 msgstr ""
 
 #: ../data-processing/deployment.rst:3
@@ -7076,31 +7137,32 @@ msgstr ""
 
 #: ../identity/policies.rst:5
 msgid ""
-"Each OpenStack service has a policy file in JSON format, called :file:"
-"`policy.json`. The policy file specifies rules, and the rule that governs "
-"each resource. A resource could be API access, the ability to attach to a "
-"volume, or to fire up instances."
+"Each OpenStack service defines the access policies for its resources in an "
+"associated policy file. A resource, for example, could be API access, the "
+"ability to attach to a volume, or to fire up instances. The policy rules are "
+"specified in JSON format and the file is called :file:`policy.json`.  The "
+"syntax and format of this file is discussed in the `Configuration Reference "
+"<http://docs.openstack.org/liberty/config-reference/content/policy-json-file."
+"html>`__."
 msgstr ""
 
-#: ../identity/policies.rst:10
+#: ../identity/policies.rst:12
 msgid ""
-"The policies can be updated by the cloud administrator to further control "
-"access to the various resources. The middleware could also be further "
-"customized. Note that your users must be assigned to groups/roles that you "
-"refer to in your policies."
+"These policies can be modified or updated by the cloud administrator to "
+"control the access to the various resources. Ensure that any changes to the "
+"access control policies do not unintentionally weaken the security of any "
+"resource. Also note that changes to the ``policy.json`` file become "
+"effective immediately and do not require the service to be restarted."
 msgstr ""
 
-#: ../identity/policies.rst:15
-msgid "Below is a snippet of the :file:`policy.json` file."
-msgstr ""
-
-#: ../identity/policies.rst:53
+#: ../identity/policies.rst:18
 msgid ""
-"Note the **cloud_admin** rule specifies that the user must be an admin on a "
-"certain domain. It essentially says only the cloud admin may create/delete/"
-"update services and their endpoints. Certain other operations such as "
-"listing/retrieving details of services and endpoints are accessible only to "
-"admin users."
+"The following example shows how the service can restrict access to create, "
+"update and delete resources to only those users which have the role of "
+"``cloud_admin``, which has been defined as being the conjunction of ``role = "
+"admin`` and ``domain_id = admin_domain_id``, while the get and list "
+"resources are made available to users which have the role of ``cloud_admin`` "
+"or ``admin``."
 msgstr ""
 
 #: ../identity/tokens.rst:3
@@ -7165,11 +7227,11 @@ msgstr ""
 msgid "Contents"
 msgstr ""
 
-#: ../index.rst:44
+#: ../index.rst:45
 msgid "Search in this guide"
 msgstr ""
 
-#: ../index.rst:46
+#: ../index.rst:47
 msgid ":ref:`search`"
 msgstr ""
 
@@ -8179,7 +8241,7 @@ msgstr ""
 msgid ""
 "OpenStack relies on messaging for internal communication between several of "
 "its services. By default, OpenStack uses message queues based on the :term:"
-"`Advanced Message Queue Protocol (AMQP)`. Similar to most OpenStack "
+"`AMQP <Advanced Message Queuing Protocol (AMQP)>`. Similar to most OpenStack "
 "services, it supports pluggable components. Today the implementation back "
 "end could be RabbitMQ, Qpid, or ZeroMQ."
 msgstr ""
@@ -9295,21 +9357,24 @@ msgstr ""
 
 #: ../management/continuous-systems-management.rst:238
 msgid ""
-"OpenStack Operations Guide on `backup and recovery <http://docs.openstack."
-"org/openstack-ops/content/backup_and_recovery.html>`__"
+"OpenStack.org, Chapter 14. Backup and Recovery. 2016. `OpenStack Operations "
+"Guide on backup and recovery <http://docs.openstack.org/openstack-ops/"
+"content/backup_and_recovery.html>`__"
 msgstr ""
 
 #: ../management/continuous-systems-management.rst:241
 msgid ""
-"http://www.sans.org/reading_room/whitepapers/backup/security-considerations-"
-"enterprise-level-backups_515"
+"SANS Institute, Security Considerations for Enterprise Level Backups. 2002. "
+"`Interested in learning more about security? <http://www.sans.org/"
+"reading_room/whitepapers/backup/security-considerations-enterprise-level-"
+"backups_515>`__"
 msgstr ""
 
-#: ../management/continuous-systems-management.rst:244
+#: ../management/continuous-systems-management.rst:245
 msgid "Security auditing tools"
 msgstr ""
 
-#: ../management/continuous-systems-management.rst:246
+#: ../management/continuous-systems-management.rst:247
 msgid ""
 "Security auditing tools can complement the configuration management tools. "
 "Security auditing tools automate the process of verifying that a large "
@@ -9322,7 +9387,7 @@ msgid ""
 "which ones failed, and which ones were not checked."
 msgstr ""
 
-#: ../management/continuous-systems-management.rst:257
+#: ../management/continuous-systems-management.rst:258
 msgid ""
 "Combining configuration management and security auditing tools creates a "
 "powerful combination. The auditing tools will highlight deployment concerns. "
@@ -9332,7 +9397,7 @@ msgid ""
 "from basic hardening to compliance validation."
 msgstr ""
 
-#: ../management/continuous-systems-management.rst:265
+#: ../management/continuous-systems-management.rst:266
 msgid ""
 "Configuration management and security auditing tools will introduce another "
 "layer of complexity into the cloud. This complexity brings additional "
@@ -9970,8 +10035,8 @@ msgstr ""
 
 #: ../management/management-interfaces.rst:79
 msgid ""
-"`Liberty Release Notes <https://wiki.openstack.org/wiki/ReleaseNotes/"
-"Liberty>`__"
+"OpenStack.org, ReleaseNotes/Liberty. 2015. `OpenStack Liberty Release Notes "
+"<https://wiki.openstack.org/wiki/ReleaseNotes/Liberty>`__"
 msgstr ""
 
 #: ../management/management-interfaces.rst:85
@@ -10086,16 +10151,17 @@ msgstr ""
 
 #: ../management/management-interfaces.rst:168
 msgid ""
-"OpenStack End User Guide section `command-line clients overview <http://docs."
-"openstack.org/user-guide/common/cli_overview.html>`__"
+"OpenStack.org, OpenStack End User Guide section. 2016. `OpenStack command-"
+"line clients overview  <http://docs.openstack.org/user-guide/common/"
+"cli_overview.html>`__"
 msgstr ""
 
 #: ../management/management-interfaces.rst:171
 msgid ""
-"OpenStack End User Guide section `Download and source the OpenStack RC file "
-"<http://docs.openstack.org/user-guide/common/"
-"cli_set_environment_variables_using_openstack_rc.html#download-and-source-"
-"the-openstack-rc-file>`__"
+"OpenStack.org, Set environment variables using the OpenStack RC file. 2016. "
+"`Download and source the OpenStack RC file <http://docs.openstack.org/user-"
+"guide/common/cli_set_environment_variables_using_openstack_rc.html#download-"
+"and-source-the-openstack-rc-file>`__"
 msgstr ""
 
 #: ../management/management-interfaces.rst:175
@@ -10148,8 +10214,9 @@ msgstr ""
 
 #: ../management/management-interfaces.rst:211
 msgid ""
-"`Hacking servers that are turned off <https://isc.sans.edu/diary/IPMI%3A"
-"+Hacking+servers+that+are+turned+%22off%22/13399>`__"
+"SANS Technology Institute, InfoSec Handlers Diary Blog. 2012. `Hacking "
+"servers that are turned off <https://isc.sans.edu/diary/IPMI%3A+Hacking"
+"+servers+that+are+turned+%22off%22/13399>`__"
 msgstr ""
 
 #: ../messaging.rst:3
@@ -11018,8 +11085,7 @@ msgid ""
 msgstr ""
 
 #: ../networking/checklist.rst:38
-msgid ""
-"Check-Neutron-02: Are strict permissions set for Compute configuration files?"
+msgid "Check-Neutron-02: Are strict permissions set for configuration files?"
 msgstr ""
 
 #: ../networking/checklist.rst:52
@@ -12724,45 +12790,56 @@ msgstr ""
 #: ../secure-communication/tls-proxies-and-http-services.rst:109
 msgid ""
 "This Pound example enables ``AES-NI`` acceleration, which helps to improve "
-"performance on systems with processors that support this feature."
-msgstr ""
-
-#: ../secure-communication/tls-proxies-and-http-services.rst:166
-msgid "Stud"
+"performance on systems with processors that support this feature. The "
+"default configuration file is ``/etc/pound/pound.cfg`` on Ubuntu, ``/etc/"
+"pound.cfg`` on RHEL, CentOS, openSUSE, and SUSE Linux Enterprise."
 msgstr ""
 
 #: ../secure-communication/tls-proxies-and-http-services.rst:168
-msgid ""
-"The *ciphers* line can be tweaked based on your needs, however this is a "
-"reasonable starting place."
+msgid "Stud"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:209
+#: ../secure-communication/tls-proxies-and-http-services.rst:170
+msgid ""
+"The *ciphers* line can be tweaked based on your needs, however this is a "
+"reasonable starting place. The default configuration file is located in the "
+"``/etc/stud`` directory. However, it is not provided by default."
+msgstr ""
+
+#: ../secure-communication/tls-proxies-and-http-services.rst:213
 msgid "nginx"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:211
+#: ../secure-communication/tls-proxies-and-http-services.rst:215
 msgid ""
 "This nginx example requires TLS v1.1 or v1.2 for maximum security. The "
 "``ssl_ciphers`` line can be tweaked based on your needs, however this is a "
-"reasonable starting place."
+"reasonable starting place. The default configuration file is ``/etc/nginx/"
+"nginx.conf``."
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:234
+#: ../secure-communication/tls-proxies-and-http-services.rst:239
 msgid "Apache"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:263
+#: ../secure-communication/tls-proxies-and-http-services.rst:241
+msgid ""
+"The default configuration file is ``/etc/apache2/apache2.conf`` on Ubuntu, "
+"``/etc/httpd/conf/httpd.conf`` on RHEL and CentOS, ``/etc/apache2/httpd."
+"conf`` on openSUSE and SUSE Linux Enterprise."
+msgstr ""
+
+#: ../secure-communication/tls-proxies-and-http-services.rst:272
 msgid ""
 "Compute API SSL endpoint in Apache, which you must pair with a short WSGI "
 "script."
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:291
+#: ../secure-communication/tls-proxies-and-http-services.rst:300
 msgid "HTTP strict transport security"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:293
+#: ../secure-communication/tls-proxies-and-http-services.rst:302
 msgid ""
 "We recommend that all production deployments use HTTP strict transport "
 "security (HSTS). This header prevents browsers from making insecure "
@@ -12772,7 +12849,7 @@ msgid ""
 "this with all requests:"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:304
+#: ../secure-communication/tls-proxies-and-http-services.rst:313
 msgid ""
 "Start with a short timeout of 1 day during testing, and raise it to one year "
 "after testing has shown that you have not introduced problems for users. "
@@ -12780,11 +12857,11 @@ msgid ""
 "difficult to disable."
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:312
+#: ../secure-communication/tls-proxies-and-http-services.rst:321
 msgid "Perfect forward secrecy"
 msgstr ""
 
-#: ../secure-communication/tls-proxies-and-http-services.rst:314
+#: ../secure-communication/tls-proxies-and-http-services.rst:323
 msgid ""
 "Configuring TLS servers for perfect forward secrecy requires careful "
 "planning around key size, session IDs, and session tickets. In addition, for "

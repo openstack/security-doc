@@ -20,12 +20,15 @@ neutron server (*neutron-server* and *neutron-\*-plugin*)
 plugin agent (*neutron-\*-agent*)
    Runs on each compute node to manage local virtual switch (vswitch)
    configuration. The plug-in that you use determine which agents run. This
-   service requires message queue access and depends on the plugin used.
+   service requires message queue access and depends on the plugin used. *Some
+   plugins like OpenDaylight(ODL) and Open Virtual Network (OVN) do not
+   require any python agents on compute nodes.*
 
 DHCP agent (*neutron-dhcp-agent*)
    Provides DHCP services to tenant networks. This agent is the same across all
    plug-ins and is responsible for maintaining DHCP configuration. The
-   *neutron-dhcp-agent* requires message queue access.
+   *neutron-dhcp-agent* requires message queue access. *Optional depending on
+   plug-in.*
 
 L3 agent (*neutron-l3-agent*)
    Provides L3/NAT forwarding for external network access of VMs on tenant

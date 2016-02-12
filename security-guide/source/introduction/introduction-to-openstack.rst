@@ -30,8 +30,8 @@ OpenStack is a key enabler in adoption of cloud technology and has several
 common deployment use cases. These are commonly known as Public, Private, and
 Hybrid models. The following sections use the National Institute of Standards
 and Technology (NIST) `definition of cloud
-<http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf>`__ to
-introduce these different types of cloud as they apply to OpenStack.
+<http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf>`__
+to introduce these different types of cloud as they apply to OpenStack.
 
 Public cloud
 ------------

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-10 06:54+0000\n"
+"POT-Creation-Date: 2016-02-13 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6328,7 +6328,7 @@ msgid "**Pass:** If permissions are set to 640 or stricter."
 msgstr ""
 
 #: ../identity/checklist.rst:61
-msgid "Check-Identity-03: is SSL enabled for Identity?"
+msgid "Check-Identity-03: is TLS enabled for Identity?"
 msgstr ""
 
 #: ../identity/checklist.rst:63
@@ -6342,27 +6342,49 @@ msgstr ""
 
 #: ../identity/checklist.rst:69
 msgid ""
-"**Pass:** If value of parameter ``enable`` under ``[ssl]`` section in :file:"
-"`/etc/keystone/keystone.conf` is set to ``True``."
+"If you use the HTTP/WSGI server for Identity, you should enable TLS on the "
+"HTTP/WSGI server."
 msgstr ""
 
 #: ../identity/checklist.rst:72
-msgid ""
-"**Fail:** If value of parameter ``enable`` under ``[ssl]`` section is not "
-"set to ``True``."
+msgid "When you use eventlet:"
 msgstr ""
 
-#: ../identity/checklist.rst:75
+#: ../identity/checklist.rst:74
+msgid ""
+"**Pass:** If value of parameter ``enable`` under ``[eventlet_server_ssl]`` "
+"section in :file:`/etc/keystone/keystone.conf` is set to ``True``."
+msgstr ""
+
+#: ../identity/checklist.rst:77
+msgid ""
+"**Fail:** If value of parameter ``enable`` under ``[eventlet_server_ssl]`` "
+"section is not set to ``True``."
+msgstr ""
+
+#: ../identity/checklist.rst:80
+msgid "When you use the HTTP/WSGI server:"
+msgstr ""
+
+#: ../identity/checklist.rst:82
+msgid "**Pass:** If TLS is enabled on the HTTP server."
+msgstr ""
+
+#: ../identity/checklist.rst:84
+msgid "**Fail:** If TLS is not enabled on the HTTP server."
+msgstr ""
+
+#: ../identity/checklist.rst:86
 msgid "Recommended in: :doc:`../secure-communication`."
 msgstr ""
 
-#: ../identity/checklist.rst:78
+#: ../identity/checklist.rst:89
 msgid ""
 "Check-Identity-04: Does Identity use strong hashing algorithms for PKI "
 "tokens?"
 msgstr ""
 
-#: ../identity/checklist.rst:80
+#: ../identity/checklist.rst:91
 msgid ""
 "MD5 is a weak and depreciated hashing algorithm. It can be cracked using "
 "brute force attack. Identity tokens are sensitive and need to be protected "
@@ -6370,28 +6392,28 @@ msgid ""
 "subsequent access."
 msgstr ""
 
-#: ../identity/checklist.rst:85
+#: ../identity/checklist.rst:96
 msgid ""
 "**Pass:** If value of parameter ``hash_algorithm`` under ``[token]`` section "
 "in :file:`/etc/keystone/keystone.conf` is set to SHA256."
 msgstr ""
 
-#: ../identity/checklist.rst:88
+#: ../identity/checklist.rst:99
 msgid ""
 "**Fail:** If value of parameter ``hash_algorithm`` under ``[token]``\\ "
 "section is set to MD5."
 msgstr ""
 
-#: ../identity/checklist.rst:91
+#: ../identity/checklist.rst:102
 msgid "Recommended in: :doc:`tokens`."
 msgstr ""
 
-#: ../identity/checklist.rst:94
+#: ../identity/checklist.rst:105
 msgid ""
 "Check-Identity-05: Is ``max_request_body_size`` set to default (114688)?"
 msgstr ""
 
-#: ../identity/checklist.rst:96
+#: ../identity/checklist.rst:107
 msgid ""
 "The parameter ``max_request_body_size`` defines the maximum body size per "
 "request in bytes. If the maximum size is not defined, the attacker could "
@@ -6401,30 +6423,30 @@ msgid ""
 "availability of the component."
 msgstr ""
 
-#: ../identity/checklist.rst:103
+#: ../identity/checklist.rst:114
 msgid ""
 "**Pass:** If value of parameter ``max_request_body_size`` in :file:`/etc/"
 "keystone/keystone.conf` is set to default (114688) or some reasonable value "
 "based on your environment."
 msgstr ""
 
-#: ../identity/checklist.rst:107
+#: ../identity/checklist.rst:118
 msgid "**Fail:** If value of parameter ``max_request_body_size`` is not set."
 msgstr ""
 
-#: ../identity/checklist.rst:110
+#: ../identity/checklist.rst:121
 msgid ""
 "Check-Identity-06: Disable admin token in :file:`/etc/keystone/keystone.conf`"
 msgstr ""
 
-#: ../identity/checklist.rst:112
+#: ../identity/checklist.rst:123
 msgid ""
 "The admin token is generally used to bootstrap Identity. This token is the "
 "most valuable Identity asset, which could be used to gain cloud admin "
 "privileges."
 msgstr ""
 
-#: ../identity/checklist.rst:116
+#: ../identity/checklist.rst:127
 msgid ""
 "**Pass:** If ``admin_token`` under ``[DEFAULT]`` section in :file:`/etc/"
 "keystone/keystone.conf` is disabled. And, AdminTokenAuthMiddleware under "
@@ -6432,7 +6454,7 @@ msgid ""
 "paste.ini`"
 msgstr ""
 
-#: ../identity/checklist.rst:121
+#: ../identity/checklist.rst:132
 msgid ""
 "**Fail:** If ``admin_token`` under [DEFAULT] section is set and "
 "AdminTokenAuthMiddleware exists in :file:`keystone-paste.ini`."
@@ -10876,84 +10898,86 @@ msgstr ""
 msgid ""
 "Runs on each compute node to manage local virtual switch (vswitch) "
 "configuration. The plug-in that you use determine which agents run. This "
-"service requires message queue access and depends on the plugin used."
+"service requires message queue access and depends on the plugin used. *Some "
+"plugins like OpenDaylight(ODL) and Open Virtual Network (OVN) do not require "
+"any python agents on compute nodes.*"
 msgstr ""
 
-#: ../networking/architecture.rst:23
+#: ../networking/architecture.rst:25
 msgid "plugin agent (*neutron-\\*-agent*)"
 msgstr ""
 
-#: ../networking/architecture.rst:26
+#: ../networking/architecture.rst:28
 msgid ""
 "Provides DHCP services to tenant networks. This agent is the same across all "
 "plug-ins and is responsible for maintaining DHCP configuration. The *neutron-"
-"dhcp-agent* requires message queue access."
-msgstr ""
-
-#: ../networking/architecture.rst:28
-msgid "DHCP agent (*neutron-dhcp-agent*)"
+"dhcp-agent* requires message queue access. *Optional depending on plug-in.*"
 msgstr ""
 
 #: ../networking/architecture.rst:31
+msgid "DHCP agent (*neutron-dhcp-agent*)"
+msgstr ""
+
+#: ../networking/architecture.rst:34
 msgid ""
 "Provides L3/NAT forwarding for external network access of VMs on tenant "
 "networks. Requires message queue access. *Optional depending on plug-in.*"
 msgstr ""
 
-#: ../networking/architecture.rst:32
+#: ../networking/architecture.rst:35
 msgid "L3 agent (*neutron-l3-agent*)"
 msgstr ""
 
-#: ../networking/architecture.rst:35
+#: ../networking/architecture.rst:38
 msgid ""
 "Provides additional networking services to tenant networks. These SDN "
 "services may interact with *neutron-server*, *neutron-plugin*, and plugin-"
 "agents through communication channels such as REST APIs."
 msgstr ""
 
-#: ../networking/architecture.rst:37
+#: ../networking/architecture.rst:40
 msgid "network provider services (SDN server/services)"
 msgstr ""
 
-#: ../networking/architecture.rst:39
+#: ../networking/architecture.rst:42
 msgid ""
 "The following figure shows an architectural and networking flow diagram of "
 "the OpenStack Networking components:"
 msgstr ""
 
-#: ../networking/architecture.rst:45
+#: ../networking/architecture.rst:48
 msgid "OpenStack Networking service placement on physical servers"
 msgstr ""
 
-#: ../networking/architecture.rst:47
+#: ../networking/architecture.rst:50
 msgid ""
 "This guide focuses on a standard architecture that includes a *cloud "
 "controller* host, a *network* host, and a set of *compute* hypervisors for "
 "running VMs."
 msgstr ""
 
-#: ../networking/architecture.rst:52
+#: ../networking/architecture.rst:55
 msgid "Network connectivity of physical servers"
 msgstr ""
 
-#: ../networking/architecture.rst:56
+#: ../networking/architecture.rst:59
 msgid ""
 "A standard OpenStack Networking setup has up to four distinct physical data "
 "center networks:"
 msgstr ""
 
-#: ../networking/architecture.rst:60
+#: ../networking/architecture.rst:63
 msgid ""
 "Used for internal communication between OpenStack Components. The IP "
 "addresses on this network should be reachable only within the data center "
 "and is considered the Management Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:62
+#: ../networking/architecture.rst:65
 msgid "Management network"
 msgstr ""
 
-#: ../networking/architecture.rst:65
+#: ../networking/architecture.rst:68
 msgid ""
 "Used for VM data communication within the cloud deployment. The IP "
 "addressing requirements of this network depend on the OpenStack Networking "
@@ -10961,22 +10985,22 @@ msgid ""
 "made by the tenant. This network is considered the Guest Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:69
+#: ../networking/architecture.rst:72
 msgid "Guest network"
 msgstr ""
 
-#: ../networking/architecture.rst:72
+#: ../networking/architecture.rst:75
 msgid ""
 "Used to provide VMs with Internet access in some deployment scenarios. The "
 "IP addresses on this network should be reachable by anyone on the Internet. "
 "This network is considered to be in the Public Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:74
+#: ../networking/architecture.rst:77
 msgid "External network"
 msgstr ""
 
-#: ../networking/architecture.rst:77
+#: ../networking/architecture.rst:80
 msgid ""
 "Exposes all OpenStack APIs, including the OpenStack Networking API, to "
 "tenants. The IP addresses on this network should be reachable by anyone on "
@@ -10986,11 +11010,11 @@ msgid ""
 "This network is considered the Public Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:82
+#: ../networking/architecture.rst:85
 msgid "API network"
 msgstr ""
 
-#: ../networking/architecture.rst:84
+#: ../networking/architecture.rst:87
 msgid ""
 "For additional information see the `OpenStack Cloud Administrator Guide "
 "<http://docs.openstack.org/admin-guide-cloud/networking.html>`__."
@@ -11132,7 +11156,7 @@ msgid ""
 msgstr ""
 
 #: ../networking/checklist.rst:115
-msgid "Check-Neutron-05: Is SSL enabled on Neutron API server?"
+msgid "Check-Neutron-05: Is TLS enabled on Neutron API server?"
 msgstr ""
 
 #: ../networking/checklist.rst:117

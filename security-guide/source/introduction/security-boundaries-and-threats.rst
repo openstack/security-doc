@@ -60,8 +60,9 @@ services that support the operation of the cloud, such as API calls.
 Public and private cloud providers that do not have stringent controls on
 instance use or allow unrestricted internet access to VMs should consider this
 domain to be *untrusted*. Private cloud providers may want to consider this
-network as internal and *trusted*, only if the proper controls are implemented
-to assert that the instances and all associated tenants are to be trusted.
+network as internal and *trusted* only if the proper controls are
+implemented to assert that the instances and all associated tenants are to
+be trusted.
 
 Management
 ----------
@@ -107,7 +108,7 @@ should be a primary concern due to the likelihood of attack.
 .. image:: ../figures/bridging_security_domains_1.png
 
 The diagram above shows a compute node bridging the data and management
-domains, as such the compute node should be configured to meet the security
+domains; as such, the compute node should be configured to meet the security
 requirements of the management domain. Similarly, the API Endpoint in this
 diagram is bridging the untrusted public domain and the management domain,
 which should be configured to protect against attacks from the public domain
@@ -122,8 +123,8 @@ the public domain, leveraging it in the hopes of compromising or gaining access
 to the management domain.
 
 The design of OpenStack is such that separation of security domains is
-difficult - as core services will usually bridge at least two domains, special
-consideration must be given when applying security controls to them.
+difficult. Because core services will usually bridge at least two domains,
+special consideration must be given when applying security controls to them.
 
 Threat classification, actors and attack vectors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,8 +141,8 @@ attempt to defend against. The more capable the actor, the more expensive the
 security controls that are required for successful attack mitigation and
 prevention. Security is a tradeoff between cost, usability and defense. In some
 cases it will not be possible to secure a cloud deployment against all of the
-threat actors we describe here.  Those deploying an OpenStack cloud will have
-to decide where the balance lies for their deployment / usage.
+threat actors we describe here. Those deploying an OpenStack cloud will have
+to decide where the balance lies for their deployment/usage.
 
 Intelligence services
    Considered by this guide as the most capable
@@ -154,7 +155,7 @@ Serious organized crime
   Highly capable and financially driven groups
   of attackers. Able to fund in-house exploit development and target research.
   In recent years the rise of organizations such as the Russian Business
-  Network, a massive cyber-criminal enterprise has demonstrated how cyber
+  Network, a massive cyber-criminal enterprise, has demonstrated how cyber
   attacks have become a commodity. Industrial espionage falls within the
   serious organized crime group.
 
@@ -184,7 +185,7 @@ policies on what data is allowed to exit their network and may even have
 different clouds for specific purposes. Users of a private cloud are typically
 employees of the organization that owns the cloud and are able to be held
 accountable for their actions. Employees often attend training sessions before
-accessing the cloud and will likely take part in regular scheduled security
+accessing the cloud and will likely take part in regularly scheduled security
 awareness training. Public clouds by contrast cannot make any assertions about
 their users, cloud use-cases or user motivations. This immediately pushes the
 guest security domain into a completely *untrusted* state for public cloud
@@ -226,10 +227,9 @@ customer education and awareness, and fraud and abuse mitigation strategies.
 Attack types
 ------------
 
-The diagram shows the types of attacks that may be expected from the actors
-described in the previous section. Note that there will always be exceptions to
-this diagram but in general, this describes the sorts of attack that could be
-typical for each actor.
+The diagram shows the typical types of attacks that may be expected from the
+actors described in the previous section. Note that there will always be
+exceptions to this diagram.
 
 .. figure:: ../figures/high-capability.png
 
@@ -241,6 +241,6 @@ which types of threats, and threat actors, should be protected against. For
 commercial public cloud deployments this might include prevention against
 serious crime. For those deploying private clouds for government use, more
 stringent protective mechanisms should be in place, including carefully
-protected facilities and supply chains. In contrast those standing up basic
+protected facilities and supply chains. In contrast, those standing up basic
 development or test environments will likely require less restrictive controls
 (middle of the spectrum).

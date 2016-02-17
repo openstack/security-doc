@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-13 06:06+0000\n"
+"POT-Creation-Date: 2016-02-17 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -7993,9 +7993,9 @@ msgid ""
 "OpenStack is a key enabler in adoption of cloud technology and has several "
 "common deployment use cases. These are commonly known as Public, Private, "
 "and Hybrid models. The following sections use the National Institute of "
-"Standards and Technology (NIST) `definition of cloud <http://csrc.nist.gov/"
-"publications/nistpubs/800-145/SP800-145.pdf>`__ to introduce these different "
-"types of cloud as they apply to OpenStack."
+"Standards and Technology (NIST) `definition of cloud <http://nvlpubs.nist."
+"gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf>`__ to introduce "
+"these different types of cloud as they apply to OpenStack."
 msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:37
@@ -8330,12 +8330,12 @@ msgstr ""
 # #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  management.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../introduction/security-boundaries-and-threats.rst:27
-#: ../introduction/security-boundaries-and-threats.rst:67 ../management.rst:3
+#: ../introduction/security-boundaries-and-threats.rst:68 ../management.rst:3
 msgid "Management"
 msgstr ""
 
 #: ../introduction/security-boundaries-and-threats.rst:28
-#: ../introduction/security-boundaries-and-threats.rst:83
+#: ../introduction/security-boundaries-and-threats.rst:84
 msgid "Data"
 msgstr ""
 
@@ -8377,12 +8377,12 @@ msgid ""
 "Public and private cloud providers that do not have stringent controls on "
 "instance use or allow unrestricted internet access to VMs should consider "
 "this domain to be *untrusted*. Private cloud providers may want to consider "
-"this network as internal and *trusted*, only if the proper controls are "
+"this network as internal and *trusted* only if the proper controls are "
 "implemented to assert that the instances and all associated tenants are to "
 "be trusted."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:69
+#: ../introduction/security-boundaries-and-threats.rst:70
 msgid ""
 "The management security domain is where services interact. Sometimes "
 "referred to as the \"control plane\", the networks in this domain transport "
@@ -8394,7 +8394,7 @@ msgid ""
 "guide."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:77
+#: ../introduction/security-boundaries-and-threats.rst:78
 msgid ""
 "In most deployments this domain is considered *trusted*. However, when "
 "considering an OpenStack deployment, there are many systems that bridge this "
@@ -8402,7 +8402,7 @@ msgid ""
 "this domain. See :ref:`Bridging_security_domains` for more information."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:85
+#: ../introduction/security-boundaries-and-threats.rst:86
 msgid ""
 "The data security domain is concerned primarily with information pertaining "
 "to the storage services within OpenStack. Most of the data transmitted "
@@ -8411,17 +8411,17 @@ msgid ""
 "availability requirements."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:91
+#: ../introduction/security-boundaries-and-threats.rst:92
 msgid ""
 "The trust level of this network is heavily dependent on deployment decisions "
 "and as such we do not assign this any default level of trust."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:97
+#: ../introduction/security-boundaries-and-threats.rst:98
 msgid "Bridging security domains"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:99
+#: ../introduction/security-boundaries-and-threats.rst:100
 msgid ""
 "A *bridge* is a component that exists inside more than one security domain. "
 "Any component that bridges security domains with different trust levels or "
@@ -8432,17 +8432,17 @@ msgid ""
 "bridges should be a primary concern due to the likelihood of attack."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:109
+#: ../introduction/security-boundaries-and-threats.rst:110
 msgid ""
 "The diagram above shows a compute node bridging the data and management "
-"domains, as such the compute node should be configured to meet the security "
+"domains; as such, the compute node should be configured to meet the security "
 "requirements of the management domain. Similarly, the API Endpoint in this "
 "diagram is bridging the untrusted public domain and the management domain, "
 "which should be configured to protect against attacks from the public domain "
 "propagating through to the management domain."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:118
+#: ../introduction/security-boundaries-and-threats.rst:119
 msgid ""
 "In some cases deployers may want to consider securing a bridge to a higher "
 "standard than any of the domains in which it resides. Given the above "
@@ -8451,41 +8451,41 @@ msgid ""
 "or gaining access to the management domain."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:124
+#: ../introduction/security-boundaries-and-threats.rst:125
 msgid ""
 "The design of OpenStack is such that separation of security domains is "
-"difficult - as core services will usually bridge at least two domains, "
+"difficult. Because core services will usually bridge at least two domains, "
 "special consideration must be given when applying security controls to them."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:129
+#: ../introduction/security-boundaries-and-threats.rst:130
 msgid "Threat classification, actors and attack vectors"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:131
+#: ../introduction/security-boundaries-and-threats.rst:132
 msgid ""
 "Most types of cloud deployment, public or private, are exposed to some form "
 "of attack. In this chapter we categorize attackers and summarize potential "
 "types of attacks in each security domain."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:136
+#: ../introduction/security-boundaries-and-threats.rst:137
 msgid "Threat actors"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:138
+#: ../introduction/security-boundaries-and-threats.rst:139
 msgid ""
 "A threat actor is an abstract way to refer to a class of adversary that you "
 "may attempt to defend against. The more capable the actor, the more "
 "expensive the security controls that are required for successful attack "
 "mitigation and prevention. Security is a tradeoff between cost, usability "
 "and defense. In some cases it will not be possible to secure a cloud "
-"deployment against all of the threat actors we describe here.  Those "
+"deployment against all of the threat actors we describe here. Those "
 "deploying an OpenStack cloud will have to decide where the balance lies for "
-"their deployment / usage."
+"their deployment/usage."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:147
+#: ../introduction/security-boundaries-and-threats.rst:148
 msgid ""
 "Considered by this guide as the most capable adversary. Intelligence "
 "services and other state actors can bring tremendous resources to bear on a "
@@ -8494,61 +8494,61 @@ msgid ""
 "controls in place, both human and technical."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:151
+#: ../introduction/security-boundaries-and-threats.rst:152
 msgid "Intelligence services"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:154
+#: ../introduction/security-boundaries-and-threats.rst:155
 msgid ""
 "Highly capable and financially driven groups of attackers. Able to fund in-"
 "house exploit development and target research. In recent years the rise of "
 "organizations such as the Russian Business Network, a massive cyber-criminal "
-"enterprise has demonstrated how cyber attacks have become a commodity. "
+"enterprise, has demonstrated how cyber attacks have become a commodity. "
 "Industrial espionage falls within the serious organized crime group."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:159
+#: ../introduction/security-boundaries-and-threats.rst:160
 msgid "Serious organized crime"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:162
+#: ../introduction/security-boundaries-and-threats.rst:163
 msgid ""
 "This refers to 'Hacktivist' type organizations who are not typically "
 "commercially funded but can pose a serious threat to service providers and "
 "cloud operators."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:164
+#: ../introduction/security-boundaries-and-threats.rst:165
 msgid "Highly capable groups"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:167
+#: ../introduction/security-boundaries-and-threats.rst:168
 msgid ""
 "Acting alone, these attackers come in many guises, such as rogue or "
 "malicious employees, disaffected customers, or small-scale industrial "
 "espionage."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:169
+#: ../introduction/security-boundaries-and-threats.rst:170
 msgid "Motivated individuals"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:172
+#: ../introduction/security-boundaries-and-threats.rst:173
 msgid ""
 "Automated vulnerability scanning/exploitation. Non-targeted attacks. Often "
 "only a nuisance, compromise by one of these actors presents a major risk to "
 "an organization's reputation."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:174
+#: ../introduction/security-boundaries-and-threats.rst:175
 msgid "Script kiddies"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:179
+#: ../introduction/security-boundaries-and-threats.rst:180
 msgid "Public and private cloud considerations"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:181
+#: ../introduction/security-boundaries-and-threats.rst:182
 msgid ""
 "Private clouds are typically deployed by enterprises or institutions inside "
 "their networks and behind their firewalls. Enterprises will have strict "
@@ -8556,14 +8556,14 @@ msgid ""
 "different clouds for specific purposes. Users of a private cloud are "
 "typically employees of the organization that owns the cloud and are able to "
 "be held accountable for their actions. Employees often attend training "
-"sessions before accessing the cloud and will likely take part in regular "
+"sessions before accessing the cloud and will likely take part in regularly "
 "scheduled security awareness training. Public clouds by contrast cannot make "
 "any assertions about their users, cloud use-cases or user motivations. This "
 "immediately pushes the guest security domain into a completely *untrusted* "
 "state for public cloud providers."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:193
+#: ../introduction/security-boundaries-and-threats.rst:194
 msgid ""
 "A notable difference in the attack surface of public clouds is that they "
 "must provide internet access to their services. Instance connectivity, "
@@ -8572,7 +8572,7 @@ msgid ""
 "for the public cloud."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:199
+#: ../introduction/security-boundaries-and-threats.rst:200
 msgid ""
 "Privacy concerns for public and private cloud users are typically "
 "diametrically opposed. The data generated and stored in private clouds is "
@@ -8583,11 +8583,11 @@ msgid ""
 "infrastructures, as many of the previously mentioned controls do not exist."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:208
+#: ../introduction/security-boundaries-and-threats.rst:209
 msgid "Outbound attacks and reputational risk"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:210
+#: ../introduction/security-boundaries-and-threats.rst:211
 msgid ""
 "Careful consideration should be given to potential outbound abuse from a "
 "cloud deployment. Whether public or private, clouds tend to have lots of "
@@ -8604,17 +8604,16 @@ msgid ""
 "abuse mitigation strategies."
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:227
+#: ../introduction/security-boundaries-and-threats.rst:228
 #: ../introduction/security-boundaries-and-threats.rst:236
 msgid "Attack types"
 msgstr ""
 
-#: ../introduction/security-boundaries-and-threats.rst:229
+#: ../introduction/security-boundaries-and-threats.rst:230
 msgid ""
-"The diagram shows the types of attacks that may be expected from the actors "
-"described in the previous section. Note that there will always be exceptions "
-"to this diagram but in general, this describes the sorts of attack that "
-"could be typical for each actor."
+"The diagram shows the typical types of attacks that may be expected from the "
+"actors described in the previous section. Note that there will always be "
+"exceptions to this diagram."
 msgstr ""
 
 #: ../introduction/security-boundaries-and-threats.rst:238
@@ -8625,7 +8624,7 @@ msgid ""
 "against. For commercial public cloud deployments this might include "
 "prevention against serious crime. For those deploying private clouds for "
 "government use, more stringent protective mechanisms should be in place, "
-"including carefully protected facilities and supply chains. In contrast "
+"including carefully protected facilities and supply chains. In contrast, "
 "those standing up basic development or test environments will likely require "
 "less restrictive controls (middle of the spectrum)."
 msgstr ""

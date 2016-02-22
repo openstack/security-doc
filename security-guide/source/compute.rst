@@ -8,8 +8,8 @@ variety of internal services. The OpenStack Compute service offers a variety
 of configuration options which may be deployment specific. In this chapter
 we will call out general best practice around Compute security as well as
 specific known configurations that can lead to security issues. In general,
-the :file:`nova.conf` file and the :file:`/var/lib/nova` locations should be
-secured. Controls like centralized logging, the :file:`policy.json` file, and
+the ``nova.conf`` file and the ``/var/lib/nova`` locations should be
+secured. Controls like centralized logging, the ``policy.json`` file, and
 a mandatory access control framework should be implemented. Additionally,
 there are environmental considerations to keep in mind, depending on what
 functionality is desired for your cloud.

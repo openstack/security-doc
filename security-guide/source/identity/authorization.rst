@@ -70,7 +70,7 @@ deployers may use self-signed certificates. In this case, the validity
 check must be disabled or the certificate should be marked as trusted.
 To disable validation of self-signed certificates, set
 ``insecure=False`` in the ``[filter:authtoken]`` section in the
-:file:`/etc/nova/api.paste.ini` file. This setting also disables
+``/etc/nova/api.paste.ini`` file. This setting also disables
 certificates for other components.
 
 Administrative users

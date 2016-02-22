@@ -81,7 +81,7 @@ strongly recommended that all services must be authenticated with keystone
 using their service accounts.
 
 **Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
-in :file:`/etc/neutron/neutron.conf` is set to ``keystone``.
+in ``/etc/neutron/neutron.conf`` is set to ``keystone``.
 
 **Fail:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
 is set to ``noauth`` or ``noauth2``.
@@ -98,15 +98,15 @@ information. Thus all the components must communicate with each other using a
 secured communication protocol.
 
 **Pass:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is set to
+``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is set to
 ``https``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is set to
+``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is set to
 Identity API endpoint starting with ``https://``.
 
 **Fail:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is set to
+``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is set to
 ``http```, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is not
+``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is not
 set to Identity API endpoint starting with ``https://``.
 
 .. _check_neutron_05:
@@ -118,7 +118,7 @@ Similar to the previous check, it is recommended to enable secure communication
 on API server.
 
 **Pass:** If value of parameter ``use_ssl`` under ``[DEFAULT]``
-section in :file:`/etc/neutron/neutron.conf` is set to ``True``.
+section in ``/etc/neutron/neutron.conf`` is set to ``True``.
 
 **Fail:** If value of parameter ``use_ssl`` under ``[DEFAULT]``
-section in :file:`/etc/neutron/neutron.conf` is set to ``False``.
+section in ``/etc/neutron/neutron.conf`` is set to ``False``.

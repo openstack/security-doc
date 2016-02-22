@@ -72,7 +72,7 @@ you should enable TLS on the HTTP/WSGI server.
 When you use eventlet:
 
 **Pass:** If value of parameter ``enable`` under ``[eventlet_server_ssl]``
-section in :file:`/etc/keystone/keystone.conf` is set to ``True``.
+section in ``/etc/keystone/keystone.conf`` is set to ``True``.
 
 **Fail:** If value of parameter ``enable`` under ``[eventlet_server_ssl]``
 section is not set to ``True``.
@@ -94,7 +94,7 @@ protected with a stronger hashing algorithm to prevent unauthorized
 disclosure and subsequent access.
 
 **Pass:** If value of parameter ``hash_algorithm`` under ``[token]``
-section in :file:`/etc/keystone/keystone.conf` is set to SHA256.
+section in ``/etc/keystone/keystone.conf`` is set to SHA256.
 
 **Fail:** If value of parameter ``hash_algorithm`` under
 ``[token]``\ section is set to MD5.
@@ -112,12 +112,12 @@ maximum value ensures that any malicious oversized request gets blocked
 ensuring continued availability of the component.
 
 **Pass:** If value of parameter ``max_request_body_size`` in
-:file:`/etc/keystone/keystone.conf` is set to default (114688) or some
+``/etc/keystone/keystone.conf`` is set to default (114688) or some
 reasonable value based on your environment.
 
 **Fail:** If value of parameter ``max_request_body_size`` is not set.
 
-Check-Identity-06: Disable admin token in :file:`/etc/keystone/keystone.conf`
+Check-Identity-06: Disable admin token in ``/etc/keystone/keystone.conf``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The admin token is generally used to bootstrap Identity. This token is the
@@ -125,9 +125,9 @@ most valuable Identity asset, which could be used to gain cloud admin
 privileges.
 
 **Pass:** If ``admin_token`` under ``[DEFAULT]`` section in
-:file:`/etc/keystone/keystone.conf` is disabled. And,
+``/etc/keystone/keystone.conf`` is disabled. And,
 AdminTokenAuthMiddleware under ``[filter:admin_token_auth]`` is deleted
-from :file:`/etc/keystone/keystone-paste.ini`
+from ``/etc/keystone/keystone-paste.ini``
 
 **Fail:** If ``admin_token`` under [DEFAULT] section is set and
-AdminTokenAuthMiddleware exists in :file:`keystone-paste.ini`.
+AdminTokenAuthMiddleware exists in ``keystone-paste.ini``.

@@ -23,7 +23,7 @@ sufficient entropy and the ability to feed that entropy to
 instances. She also enables 'trusted compute pools' for boot
 time attestation of the image that will be compared to a hash
 from the 'golden images.' She configures the
-:file:`.bash_profile` to log all commands, and
+``.bash_profile`` to log all commands, and
 sends those to the event monitoring collector. As users are
 expected to only have access to the application, and not the
 instance behind it, Alice installs a host intrusion detection

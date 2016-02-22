@@ -12,8 +12,8 @@ access to a specified share, and list the permissions for a specified share.
 The share can be *public* and *private*. This is a level of visibility for the
 share that defines whether other tenants can or cannot see the share. By
 default, the shares are created as private. While creating a share, use a key
-``--public`` to make your share public for other tenants to see it in a list
-of shares and see its detailed information.
+:option:`--public` to make your share public for other tenants to see it in a
+list of shares and see its detailed information.
 
 According to a :ref:`policy.json <shared_fs_policies>` file, an administrator
 and the users as share owners can manage the access to the shares by means of
@@ -100,7 +100,7 @@ to mount it on the host with ``10.254.0.4`` IP address, you'll get the
  mount.nfs: access denied by server while mounting 10.254.0.3:/shares/share-b2874f8d-...
 
 As an administrator, you can connect through SSH to a host with ``10.254.0.3``
-IP address, check the :file:`/etc/exports` file on it and see that it is empty:
+IP address, check the ``/etc/exports`` file on it and see that it is empty:
 
 .. code:: console
 
@@ -126,7 +126,7 @@ through the IP address:
  +--------------+--------------------------------------+
 
 After the rule has status ``active`` we can connect to the ``10.254.0.3`` host
-again and check the :file:`/etc/exports` file and see that the line with rule
+again and check the ``/etc/exports`` file and see that the line with rule
 was added:
 
 .. code:: console

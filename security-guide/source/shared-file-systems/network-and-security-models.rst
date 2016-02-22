@@ -10,7 +10,7 @@ service. There are big number of the share drivers created by different vendors
 in the Shared File Systems service. Each share driver supports one or more back
 end modes: *share servers* and *no share servers*, but the administrator
 chooses which mode is used by specifying it in the configuration file
-:file:`manila.conf`.
+``manila.conf``.
 
 The *share servers* mode can be configured with flat network, or with segmented
 network. This depends on the network provider.
@@ -31,7 +31,7 @@ back ends. Initially there are two driver modes for the back ends:
 * **share servers mode**
 * **no share servers mode**
 
-The configuration option in the :file:`manila.conf` file that set the share
+The configuration option in the ``manila.conf`` file that set the share
 servers mode or no share servers mode is the ``driver_handles_share_servers``
 option, that defines the driver mode for share storage life cycle management:
 

@@ -93,7 +93,7 @@ Configuration example #1: (MySQL)
 Configuration example #2: (PostgreSQL)
 --------------------------------------
 
-In file :file:`pg_hba.conf`:
+In the file ``pg_hba.conf``:
 
 ::
 
@@ -198,7 +198,7 @@ operation of other OpenStack components such as Telemetry (ceilometer),
 Networking, and Block Storage.
 
 To disable the nova-conductor, place the following into your
-:file:`nova.conf` file (on your compute hosts):
+``nova.conf`` file (on your compute hosts):
 
 .. code:: ini
 

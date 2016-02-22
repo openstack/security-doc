@@ -73,10 +73,10 @@ information. Thus all the services must communicate with each other using a
 secured communication protocol like HTTPS.
 
 **Pass:** If value of parameter ``USE_SSL`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``True``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
 
 **Fail:** If value of parameter ``USE_SSL`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``False``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
 
 Recommended in: :doc:`https-hsts-xss-ssrf`.
 
@@ -92,10 +92,10 @@ operations in case of normal user. If the targeted end user has admin
 privileges, this can compromise the entire web application.
 
 **Pass:** If value of parameter ``CSRF_COOKIE_SECURE`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``True``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
 
 **Fail:** If value of parameter ``CSRF_COOKIE_SECURE`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``False``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
 
 Recommended in: :doc:`cookies`.
 
@@ -111,10 +111,10 @@ MitM (Man-in-the-Middle) attacks. It ensures that an attacker cannot simply
 capture the session ID from web browser traffic.
 
 **Pass:** If value of parameter ``SESSION_COOKIE_SECURE`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``True``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
 
 **Fail:** If value of parameter ``SESSION_COOKIE_SECURE`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``False``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
 
 Recommended in: :doc:`cookies`.
 
@@ -130,10 +130,10 @@ The “HTTPONLY” cookie attribute instructs web browsers not to allow scripts
 session ID stealing through XSS attacks.
 
 **Pass:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``True``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
 
 **Fail:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``False``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
 
 Recommended in: :doc:`cookies`.
 
@@ -151,10 +151,10 @@ same account on the client machine and thus may lead to compromise of the user
 account.
 
 **Pass:** If value of parameter ``password_autocomplete`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``off``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``off``.
 
 **Fail:** If value of parameter ``password_autocomplete`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``on``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``on``.
 
 .. _check_dashboard_08:
 
@@ -164,10 +164,10 @@ Check-Dashboard-08: Is ``disable_password_reveal`` set to ``True``?
 Similar to the previous check, it is recommended not to reveal password fields.
 
 **Pass:** If value of parameter ``disable_password_reveal`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``True``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
 
 **Fail:** If value of parameter ``disable_password_reveal`` in
-:file:`/etc/openstack-dashboard/local_settings.py` is set to ``False``.
+``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
 
 .. Note::
 

@@ -3,8 +3,8 @@ Hardening Compute deployments
 =============================
 
 One of the main security concerns with any OpenStack deployment is the security
-and controls around sensitive files, such as the :file:`nova.conf` file.
-Normally contained in the :file:`/etc` directory, this configuration file
+and controls around sensitive files, such as the ``nova.conf`` file.
+Normally contained in the ``/etc`` directory, this configuration file
 contains many sensitive options including configuration details and service
 passwords. All such sensitive files should be given strict file level
 permissions, and monitored for changes through file integrity monitoring (FIM)
@@ -19,14 +19,14 @@ permissions, owner, and group that have access to the file, as well as other
 information such as the last time the file was modified and when it was
 created.
 
-The :file:`/var/lib/nova` directory is used to hold details about the instances
+The ``/var/lib/nova`` directory is used to hold details about the instances
 on a given Compute host. This directory should be considered sensitive as well,
 with strictly enforced file permissions. Additionally, it should be backed up
 regularly as it contains information and metadata for the instances associated
 with that host.
 
 If your deployment does not require full virtual machine backups, we recommend
-excluding the :file:`/var/lib/nova/instances` directory as it will be as large
+excluding the ``/var/lib/nova/instances`` directory as it will be as large
 as the combined space of each vm running on that node. If your deployment does
 require full vm backups, you will need to ensure this directory is backed up
 successfully.

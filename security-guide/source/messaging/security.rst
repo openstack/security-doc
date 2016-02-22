@@ -35,7 +35,7 @@ RabbitMQ server SSL configuration
 ---------------------------------
 
 The following lines should be added to the system-wide RabbitMQ
-configuration file, typically :file:`/etc/rabbitmq/rabbitmq.config`:
+configuration file, typically ``/etc/rabbitmq/rabbitmq.config``:
 
 ::
 

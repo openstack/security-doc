@@ -65,7 +65,7 @@ Security considerations
 
 -  It is now possible (though there are numerous deployment/security
    implications) to upload an image file directly from a user's hard
-   disk to OpenStack Image Service through the dashboard. For
+   disk to OpenStack Image service through the dashboard. For
    multi-gigabyte images it is still strongly recommended that the
    upload be done using the ``glance`` CLI.
 

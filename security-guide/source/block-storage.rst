@@ -25,10 +25,11 @@ API see the `OpenStack Block Storage documentation
    :maxdepth: 2
 
    block-storage/checklist.rst
+   block-storage/volume_wiping.rst
 
 .. note::
 
    Whilst this chapter is currently sparse on specific
    guidance, it is expected that standard hardening practices
-   will be followed.  This section will be expanded with relevant
+   will be followed. This section will be expanded with relevant
    information.

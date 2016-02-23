@@ -14,7 +14,7 @@ file and compare it to the known good hash. An alert can be created if it was
 found to have been modified unexpectedly.
 
 The permissions of a file can be examined my moving into the directory the file
-is contained in and running the ``ls -lh`` command. This will show the
+is contained in and running the :command:`ls -lh` command. This will show the
 permissions, owner, and group that have access to the file, as well as other
 information such as the last time the file was modified and when it was
 created.

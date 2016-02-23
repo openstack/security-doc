@@ -111,7 +111,7 @@ the share creation:
  +----+--------+-----------+-----------+-----------------------------------+-----------------------+
 
 To deny access for a specified project, use
-**manila type-access-remove <share_type> <project_id>** command.
+:command:`manila type-access-remove <share_type> <project_id>` command.
 
 .. tip::
     A **real production use case** that shows the purpose of a share types and

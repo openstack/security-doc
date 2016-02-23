@@ -344,5 +344,5 @@ These should be put in place to monitor and report on changes to system,
 hypervisor, and application configuration files such as
 ``/etc/pam.d/system-auth`` and ``/etc/keystone/keystone.conf``,
 as well as kernel modules (such as virtio). Best practice is to use
-the ``lsmod`` command to show what is regularly being loaded on a system
-to help determine what should or should not be included in FIM checks.
+the :command:`lsmod` command to show what is regularly being loaded on a
+system to help determine what should or should not be included in FIM checks.

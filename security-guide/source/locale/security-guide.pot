@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-17 06:07+0000\n"
+"POT-Creation-Date: 2016-02-23 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -495,7 +495,7 @@ msgstr ""
 #: ../block-storage/checklist.rst:82
 msgid ""
 "**Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` "
-"section in :file:`/etc/cinder/cinder.conf` is set to ``keystone``."
+"section in ``/etc/cinder/cinder.conf`` is set to ``keystone``."
 msgstr ""
 
 # #-#-#-#-#  block-storage.pot (Security Guide 0.0.1)  #-#-#-#-#
@@ -527,23 +527,23 @@ msgstr ""
 #: ../block-storage/checklist.rst:99
 msgid ""
 "**Pass:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is set "
-"to ``https``, or if value of parameter ``identity_uri`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is set "
-"to Identity API endpoint starting with ``https://`` and value of parameter "
-"``insecure`` under the same ``[keystone_authtoken]`` section in the same :"
-"file:`/etc/cinder/cinder.conf` is set to ``False``."
+"``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is set to "
+"``https``, or if value of parameter ``identity_uri`` under "
+"``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is set to "
+"Identity API endpoint starting with ``https://`` and value of parameter "
+"``insecure`` under the same ``[keystone_authtoken]`` section in the same ``/"
+"etc/cinder/cinder.conf`` is set to ``False``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:107
 msgid ""
 "**Fail:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is set "
-"to ``http``, or if value of parameter ``identity_uri`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is not "
-"set to Identity API endpoint starting with ``https://`` or value of "
-"parameter ``insecure`` under the same ``[keystone_authtoken]`` section in "
-"the same :file:`/etc/cinder/cinder.conf` is set to ``True``."
+"``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is set to "
+"``http``, or if value of parameter ``identity_uri`` under "
+"``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is not set "
+"to Identity API endpoint starting with ``https://`` or value of parameter "
+"``insecure`` under the same ``[keystone_authtoken]`` section in the same ``/"
+"etc/cinder/cinder.conf`` is set to ``True``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:118
@@ -553,13 +553,13 @@ msgstr ""
 #: ../block-storage/checklist.rst:126
 msgid ""
 "**Pass:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`/etc/cinder/cinder.conf` is set to ``False``."
+"section in ``/etc/cinder/cinder.conf`` is set to ``False``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:129
 msgid ""
 "**Fail:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`/etc/cinder/cinder.conf` is set to ``True``."
+"section in ``/etc/cinder/cinder.conf`` is set to ``True``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:135
@@ -576,13 +576,13 @@ msgstr ""
 #: ../block-storage/checklist.rst:141
 msgid ""
 "**Pass:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`/etc/cinder/cinder.conf` is set to ``False``."
+"section in ``/etc/cinder/cinder.conf`` is set to ``False``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:144
 msgid ""
 "**Fail:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`/etc/cinder/cinder.conf` is set to ``True``."
+"section in ``/etc/cinder/cinder.conf`` is set to ``True``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:150
@@ -604,29 +604,28 @@ msgstr ""
 #: ../block-storage/checklist.rst:160
 msgid ""
 "**Pass:** If value of parameter ``nas_secure_file_permissions`` under "
-"``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to ``auto``. "
+"``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``auto``. "
 "When set to ``auto``, a check is done during cinder startup to determine if "
 "there are existing cinder volumes, no volumes will set the option to "
 "``True``, and use secure file permissions. The detection of existing volumes "
 "will set the option to ``False``, and use the current insecure method of "
 "handling file permissions. If value of parameter "
-"``nas_secure_file_operations`` under ``[DEFAULT]`` section in :file:`/etc/"
-"cinder/cinder.conf` is set to ``auto``. When set to \"auto\", a check is "
-"done during cinder startup to determine if there are existing cinder "
-"volumes, no volumes will set the option to ``True``, be secure and do NOT "
-"run as the ``root`` user. The detection of existing volumes will set the "
-"option to ``False``, and use the current method of running operations as the "
-"``root`` user. For new installations, a \"marker file\" is written so that "
-"subsequent restarts of cinder will know what the original determination had "
-"been."
+"``nas_secure_file_operations`` under ``[DEFAULT]`` section in ``/etc/cinder/"
+"cinder.conf`` is set to ``auto``. When set to \"auto\", a check is done "
+"during cinder startup to determine if there are existing cinder volumes, no "
+"volumes will set the option to ``True``, be secure and do NOT run as the "
+"``root`` user. The detection of existing volumes will set the option to "
+"``False``, and use the current method of running operations as the ``root`` "
+"user. For new installations, a \"marker file\" is written so that subsequent "
+"restarts of cinder will know what the original determination had been."
 msgstr ""
 
 #: ../block-storage/checklist.rst:176
 msgid ""
 "**Fail:** If value of parameter ``nas_secure_file_permissions`` under "
-"``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to ``False`` "
-"and if value of parameter ``nas_secure_file_operations`` under ``[DEFAULT]`` "
-"section in :file:`/etc/cinder/cinder.conf` is set to ``False``."
+"``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``False`` and "
+"if value of parameter ``nas_secure_file_operations`` under ``[DEFAULT]`` "
+"section in ``/etc/cinder/cinder.conf`` is set to ``False``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:185
@@ -647,19 +646,18 @@ msgstr ""
 #: ../block-storage/checklist.rst:193
 msgid ""
 "**Pass:** If value of parameter ``osapi_max_request_body_size`` under "
-"``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to "
-"``114688`` or if value of parameter ``max_request_body_size`` under "
-"``[oslo_middleware]`` section in :file:`/etc/cinder/cinder.conf` is set to "
-"``114688``."
+"``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``114688`` or "
+"if value of parameter ``max_request_body_size`` under ``[oslo_middleware]`` "
+"section in ``/etc/cinder/cinder.conf`` is set to ``114688``."
 msgstr ""
 
 #: ../block-storage/checklist.rst:198
 msgid ""
 "**Fail:** If value of parameter ``osapi_max_request_body_size`` under "
-"``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is not set to "
+"``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is not set to "
 "``114688`` or if value of parameter ``max_request_body_size`` under "
-"``[oslo_middleware]`` section in :file:`/etc/cinder/cinder.conf` is not set "
-"to ``114688``."
+"``[oslo_middleware]`` section in ``/etc/cinder/cinder.conf`` is not set to "
+"``114688``."
 msgstr ""
 
 #: ../compliance.rst:3
@@ -1757,11 +1755,11 @@ msgid ""
 "variety of configuration options which may be deployment specific. In this "
 "chapter we will call out general best practice around Compute security as "
 "well as specific known configurations that can lead to security issues. In "
-"general, the :file:`nova.conf` file and the :file:`/var/lib/nova` locations "
-"should be secured. Controls like centralized logging, the :file:`policy."
-"json` file, and a mandatory access control framework should be implemented. "
-"Additionally, there are environmental considerations to keep in mind, "
-"depending on what functionality is desired for your cloud."
+"general, the ``nova.conf`` file and the ``/var/lib/nova`` locations should "
+"be secured. Controls like centralized logging, the ``policy.json`` file, and "
+"a mandatory access control framework should be implemented. Additionally, "
+"there are environmental considerations to keep in mind, depending on what "
+"functionality is desired for your cloud."
 msgstr ""
 
 #: ../compute/case-studies.rst:5
@@ -1802,9 +1800,9 @@ msgstr ""
 #: ../compute/case-studies.rst:33
 msgid ""
 "She then ensures there are restrictive file permissions, such as 640, on all "
-"sensitive files, such as :file:`nova.conf`, and directories. After outlining "
-"a process for creating and updating 'golden images' that will be the "
-"templates for images, she also tests and then configures the "
+"sensitive files, such as ``nova.conf``, and directories. After outlining a "
+"process for creating and updating 'golden images' that will be the templates "
+"for images, she also tests and then configures the "
 "``AvailabilityZoneFilter`` to enable regional zones, and the "
 "``ServerGroupAffinityFilter`` with the ``AggregateIoOps`` filters to "
 "distribute load across systems."
@@ -1896,7 +1894,7 @@ msgstr ""
 #: ../compute/checklist.rst:86
 msgid ""
 "**Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` "
-"section in :file:`/etc/nova/nova.conf` is set to ``keystone``."
+"section in ``/etc/nova/nova.conf`` is set to ``keystone``."
 msgstr ""
 
 # #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
@@ -1914,19 +1912,19 @@ msgstr ""
 #: ../compute/checklist.rst:103
 msgid ""
 "**Pass:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/nova/nova.conf` is set to "
+"``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is set to "
 "``https``, or if value of parameter ``identity_uri`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/nova/nova.conf` is set to "
+"``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is set to "
 "Identity API endpoint starting with ``https://``."
 msgstr ""
 
 #: ../compute/checklist.rst:109
 msgid ""
 "**Fail:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/nova/nova.conf` is set to "
+"``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is set to "
 "``http```, or if value of parameter ``identity_uri`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/nova/nova.conf` is not set "
-"to Identity API endpoint starting with ``https://``."
+"``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is not set to "
+"Identity API endpoint starting with ``https://``."
 msgstr ""
 
 #: ../compute/checklist.rst:118
@@ -1936,17 +1934,17 @@ msgstr ""
 #: ../compute/checklist.rst:126
 msgid ""
 "**Pass:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`/etc/nova/nova.conf` is set to ``False``, or if value of "
-"parameter ``api_insecure`` under ``[glance]`` section in :file:`/etc/nova/"
-"nova.conf` is set to ``False``."
+"section in ``/etc/nova/nova.conf`` is set to ``False``, or if value of "
+"parameter ``api_insecure`` under ``[glance]`` section in ``/etc/nova/nova."
+"conf`` is set to ``False``."
 msgstr ""
 
 #: ../compute/checklist.rst:131
 msgid ""
 "**Fail:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`/etc/nova/nova.conf` is set to ``True``, or if value of "
-"parameter ``api_insecure`` under ``[glance]`` section in :file:`/etc/nova/"
-"nova.conf` is set to ``True``."
+"section in ``/etc/nova/nova.conf`` is set to ``True``, or if value of "
+"parameter ``api_insecure`` under ``[glance]`` section in ``/etc/nova/nova."
+"conf`` is set to ``True``."
 msgstr ""
 
 #: ../compute/hardening-deployments.rst:3
@@ -1956,15 +1954,15 @@ msgstr ""
 #: ../compute/hardening-deployments.rst:5
 msgid ""
 "One of the main security concerns with any OpenStack deployment is the "
-"security and controls around sensitive files, such as the :file:`nova.conf` "
-"file. Normally contained in the :file:`/etc` directory, this configuration "
-"file contains many sensitive options including configuration details and "
-"service passwords. All such sensitive files should be given strict file "
-"level permissions, and monitored for changes through file integrity "
-"monitoring (FIM) tools such as iNotify or Samhain. These utilities will take "
-"a hash of the target file in a known good state, and then periodically take "
-"a new hash of the file and compare it to the known good hash. An alert can "
-"be created if it was found to have been modified unexpectedly."
+"security and controls around sensitive files, such as the ``nova.conf`` "
+"file. Normally contained in the ``/etc`` directory, this configuration file "
+"contains many sensitive options including configuration details and service "
+"passwords. All such sensitive files should be given strict file level "
+"permissions, and monitored for changes through file integrity monitoring "
+"(FIM) tools such as iNotify or Samhain. These utilities will take a hash of "
+"the target file in a known good state, and then periodically take a new hash "
+"of the file and compare it to the known good hash. An alert can be created "
+"if it was found to have been modified unexpectedly."
 msgstr ""
 
 #: ../compute/hardening-deployments.rst:16
@@ -1978,18 +1976,18 @@ msgstr ""
 
 #: ../compute/hardening-deployments.rst:22
 msgid ""
-"The :file:`/var/lib/nova` directory is used to hold details about the "
-"instances on a given Compute host. This directory should be considered "
-"sensitive as well, with strictly enforced file permissions. Additionally, it "
-"should be backed up regularly as it contains information and metadata for "
-"the instances associated with that host."
+"The ``/var/lib/nova`` directory is used to hold details about the instances "
+"on a given Compute host. This directory should be considered sensitive as "
+"well, with strictly enforced file permissions. Additionally, it should be "
+"backed up regularly as it contains information and metadata for the "
+"instances associated with that host."
 msgstr ""
 
 #: ../compute/hardening-deployments.rst:28
 msgid ""
 "If your deployment does not require full virtual machine backups, we "
-"recommend excluding the :file:`/var/lib/nova/instances` directory as it will "
-"be as large as the combined space of each vm running on that node. If your "
+"recommend excluding the ``/var/lib/nova/instances`` directory as it will be "
+"as large as the combined space of each vm running on that node. If your "
 "deployment does require full vm backups, you will need to ensure this "
 "directory is backed up successfully."
 msgstr ""
@@ -3839,14 +3837,14 @@ msgstr ""
 
 #: ../dashboard/checklist.rst:75
 msgid ""
-"**Pass:** If value of parameter ``USE_SSL`` in :file:`/etc/openstack-"
-"dashboard/local_settings.py` is set to ``True``."
+"**Pass:** If value of parameter ``USE_SSL`` in ``/etc/openstack-dashboard/"
+"local_settings.py`` is set to ``True``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:78
 msgid ""
-"**Fail:** If value of parameter ``USE_SSL`` in :file:`/etc/openstack-"
-"dashboard/local_settings.py` is set to ``False``."
+"**Fail:** If value of parameter ``USE_SSL`` in ``/etc/openstack-dashboard/"
+"local_settings.py`` is set to ``False``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:81
@@ -3869,14 +3867,14 @@ msgstr ""
 
 #: ../dashboard/checklist.rst:94
 msgid ""
-"**Pass:** If value of parameter ``CSRF_COOKIE_SECURE`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``True``."
+"**Pass:** If value of parameter ``CSRF_COOKIE_SECURE`` in ``/etc/openstack-"
+"dashboard/local_settings.py`` is set to ``True``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:97
 msgid ""
-"**Fail:** If value of parameter ``CSRF_COOKIE_SECURE`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``False``."
+"**Fail:** If value of parameter ``CSRF_COOKIE_SECURE`` in ``/etc/openstack-"
+"dashboard/local_settings.py`` is set to ``False``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:100 ../dashboard/checklist.rst:119
@@ -3900,14 +3898,14 @@ msgstr ""
 
 #: ../dashboard/checklist.rst:113
 msgid ""
-"**Pass:** If value of parameter ``SESSION_COOKIE_SECURE`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``True``."
+"**Pass:** If value of parameter ``SESSION_COOKIE_SECURE`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``True``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:116
 msgid ""
-"**Fail:** If value of parameter ``SESSION_COOKIE_SECURE`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``False``."
+"**Fail:** If value of parameter ``SESSION_COOKIE_SECURE`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``False``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:125
@@ -3925,14 +3923,14 @@ msgstr ""
 
 #: ../dashboard/checklist.rst:132
 msgid ""
-"**Pass:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``True``."
+"**Pass:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``True``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:135
 msgid ""
-"**Fail:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``False``."
+"**Fail:** If value of parameter ``SESSION_COOKIE_HTTPONLY`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``False``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:143
@@ -3952,14 +3950,14 @@ msgstr ""
 
 #: ../dashboard/checklist.rst:153
 msgid ""
-"**Pass:** If value of parameter ``password_autocomplete`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``off``."
+"**Pass:** If value of parameter ``password_autocomplete`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``off``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:156
 msgid ""
-"**Fail:** If value of parameter ``password_autocomplete`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``on``."
+"**Fail:** If value of parameter ``password_autocomplete`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``on``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:162
@@ -3974,14 +3972,14 @@ msgstr ""
 
 #: ../dashboard/checklist.rst:166
 msgid ""
-"**Pass:** If value of parameter ``disable_password_reveal`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``True``."
+"**Pass:** If value of parameter ``disable_password_reveal`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``True``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:169
 msgid ""
-"**Fail:** If value of parameter ``disable_password_reveal`` in :file:`/etc/"
-"openstack-dashboard/local_settings.py` is set to ``False``."
+"**Fail:** If value of parameter ``disable_password_reveal`` in ``/etc/"
+"openstack-dashboard/local_settings.py`` is set to ``False``."
 msgstr ""
 
 #: ../dashboard/checklist.rst:174
@@ -5197,7 +5195,7 @@ msgid "Configuration example #2: (PostgreSQL)"
 msgstr ""
 
 #: ../databases/database-access-control.rst:96
-msgid "In file :file:`pg_hba.conf`:"
+msgid "In the file ``pg_hba.conf``:"
 msgstr ""
 
 #: ../databases/database-access-control.rst:102
@@ -5302,8 +5300,8 @@ msgstr ""
 
 #: ../databases/database-access-control.rst:200
 msgid ""
-"To disable the nova-conductor, place the following into your :file:`nova."
-"conf` file (on your compute hosts):"
+"To disable the nova-conductor, place the following into your ``nova.conf`` "
+"file (on your compute hosts):"
 msgstr ""
 
 #: ../databases/database-backend-considerations.rst:3
@@ -5408,7 +5406,7 @@ msgstr ""
 
 #: ../databases/database-transport-security.rst:22
 #: ../databases/database-transport-security.rst:66
-msgid "In :file:`my.cnf`:"
+msgid "In ``my.cnf``:"
 msgstr ""
 
 #: ../databases/database-transport-security.rst:31
@@ -5416,7 +5414,7 @@ msgid "Restricting listen address for PostgreSQL"
 msgstr ""
 
 #: ../databases/database-transport-security.rst:33
-msgid "In :file:`postgresql.conf`:"
+msgid "In ``postgresql.conf``:"
 msgstr ""
 
 #: ../databases/database-transport-security.rst:40
@@ -5468,7 +5466,7 @@ msgstr ""
 #: ../databases/database-transport-security.rst:87
 msgid ""
 "The following lines should be added in the system-wide PostgreSQL "
-"configuration file, :file:`postgresql.conf`."
+"configuration file, ``postgresql.conf``."
 msgstr ""
 
 #: ../databases/database-transport-security.rst:102
@@ -6193,8 +6191,8 @@ msgid ""
 "certificates. In this case, the validity check must be disabled or the "
 "certificate should be marked as trusted. To disable validation of self-"
 "signed certificates, set ``insecure=False`` in the ``[filter:authtoken]`` "
-"section in the :file:`/etc/nova/api.paste.ini` file. This setting also "
-"disables certificates for other components."
+"section in the ``/etc/nova/api.paste.ini`` file. This setting also disables "
+"certificates for other components."
 msgstr ""
 
 #: ../identity/authorization.rst:77
@@ -6353,7 +6351,7 @@ msgstr ""
 #: ../identity/checklist.rst:74
 msgid ""
 "**Pass:** If value of parameter ``enable`` under ``[eventlet_server_ssl]`` "
-"section in :file:`/etc/keystone/keystone.conf` is set to ``True``."
+"section in ``/etc/keystone/keystone.conf`` is set to ``True``."
 msgstr ""
 
 #: ../identity/checklist.rst:77
@@ -6395,7 +6393,7 @@ msgstr ""
 #: ../identity/checklist.rst:96
 msgid ""
 "**Pass:** If value of parameter ``hash_algorithm`` under ``[token]`` section "
-"in :file:`/etc/keystone/keystone.conf` is set to SHA256."
+"in ``/etc/keystone/keystone.conf`` is set to SHA256."
 msgstr ""
 
 #: ../identity/checklist.rst:99
@@ -6425,9 +6423,9 @@ msgstr ""
 
 #: ../identity/checklist.rst:114
 msgid ""
-"**Pass:** If value of parameter ``max_request_body_size`` in :file:`/etc/"
-"keystone/keystone.conf` is set to default (114688) or some reasonable value "
-"based on your environment."
+"**Pass:** If value of parameter ``max_request_body_size`` in ``/etc/keystone/"
+"keystone.conf`` is set to default (114688) or some reasonable value based on "
+"your environment."
 msgstr ""
 
 #: ../identity/checklist.rst:118
@@ -6436,7 +6434,7 @@ msgstr ""
 
 #: ../identity/checklist.rst:121
 msgid ""
-"Check-Identity-06: Disable admin token in :file:`/etc/keystone/keystone.conf`"
+"Check-Identity-06: Disable admin token in ``/etc/keystone/keystone.conf``"
 msgstr ""
 
 #: ../identity/checklist.rst:123
@@ -6448,16 +6446,15 @@ msgstr ""
 
 #: ../identity/checklist.rst:127
 msgid ""
-"**Pass:** If ``admin_token`` under ``[DEFAULT]`` section in :file:`/etc/"
-"keystone/keystone.conf` is disabled. And, AdminTokenAuthMiddleware under "
-"``[filter:admin_token_auth]`` is deleted from :file:`/etc/keystone/keystone-"
-"paste.ini`"
+"**Pass:** If ``admin_token`` under ``[DEFAULT]`` section in ``/etc/keystone/"
+"keystone.conf`` is disabled. And, AdminTokenAuthMiddleware under ``[filter:"
+"admin_token_auth]`` is deleted from ``/etc/keystone/keystone-paste.ini``"
 msgstr ""
 
 #: ../identity/checklist.rst:132
 msgid ""
 "**Fail:** If ``admin_token`` under [DEFAULT] section is set and "
-"AdminTokenAuthMiddleware exists in :file:`keystone-paste.ini`."
+"AdminTokenAuthMiddleware exists in ``keystone-paste.ini``."
 msgstr ""
 
 #: ../identity/domains.rst:3
@@ -6496,14 +6493,13 @@ msgid ""
 "Domain-specific authentication drivers allow the Identity service to be "
 "configured for multiple domains using domain-specific configuration files. "
 "Enabling the drivers and setting the domain-specific configuration file "
-"location occur in the ``[identity]`` section of the :file:`keystone.conf` "
-"file:"
+"location occur in the ``[identity]`` section of the ``keystone.conf`` file:"
 msgstr ""
 
 #: ../identity/domains.rst:35
 msgid ""
 "Any domains without a domain-specific configuration file will use options in "
-"the primary :file:`keystone.conf` file."
+"the primary ``keystone.conf`` file."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:3
@@ -6707,21 +6703,21 @@ msgstr ""
 
 #: ../identity/federated-keystone.rst:154
 msgid ""
-"Copy the :file:`httpd/wsgi-keystone.conf` file to the appropriate location "
-"for your Apache server, for example, :file:`/etc/httpd/conf.d/wsgi-keystone."
-"conf` file."
+"Copy the ``httpd/wsgi-keystone.conf`` file to the appropriate location for "
+"your Apache server, for example, ``/etc/httpd/conf.d/wsgi-keystone.conf`` "
+"file."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:158
 msgid ""
 "Create the directory ``/var/www/cgi-bin/keystone/``. Then link the files "
-"``main`` and ``admin`` to the :file:`keystone.py` file in this directory."
+"``main`` and ``admin`` to the ``keystone.py`` file in this directory."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:161
 msgid ""
-"For a distribution appropriate place, it should probably be copied to :file:"
-"`/usr/share/openstack/keystone/httpd/keystone.py`."
+"For a distribution appropriate place, it should probably be copied to ``/usr/"
+"share/openstack/keystone/httpd/keystone.py``."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:166
@@ -6751,11 +6747,11 @@ msgid ""
 msgstr ""
 
 #: ../identity/federated-keystone.rst:185
-msgid "For SQL, in :file:`/etc/keystone/keystone.conf` , set:"
+msgid "For SQL, in ``/etc/keystone/keystone.conf`` , set:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:192
-msgid "For ``memcached``, in :file:`/etc/keystone/keystone.conf`, set:"
+msgid "For ``memcached``, in ``/etc/keystone/keystone.conf``, set:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:199
@@ -6786,8 +6782,7 @@ msgid "Add ``WSGIScriptAlias`` directive to your vhost configuration:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:223
-msgid ""
-"Add two ``<Location>`` directives to the :file:`wsgi-keystone.conf` file:"
+msgid "Add two ``<Location>`` directives to the ``wsgi-keystone.conf`` file:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:242
@@ -6838,8 +6833,7 @@ msgstr ""
 
 #: ../identity/federated-keystone.rst:285
 msgid ""
-"The newly created file will be stored under :file:`/etc/shibboleth/sp-key."
-"pem`"
+"The newly created file will be stored under ``/etc/shibboleth/sp-key.pem``"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:288
@@ -6848,8 +6842,8 @@ msgstr ""
 
 #: ../identity/federated-keystone.rst:290
 msgid ""
-"Configure your Service Provider by editing :file:`/etc/shibboleth/"
-"shibboleth2.xml`."
+"Configure your Service Provider by editing ``/etc/shibboleth/shibboleth2."
+"xml``."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:293
@@ -6862,15 +6856,15 @@ msgstr ""
 msgid ""
 "Identity service enforces ``external`` authentication when environment "
 "variable ``REMOTE_USER`` is present so make sure Shibboleth does not set the "
-"``REMOTE_USER`` environment variable. To do so, scan through the :file:`/etc/"
-"shibboleth/shibboleth2.xml` configuration file and remove the "
+"``REMOTE_USER`` environment variable. To do so, scan through the ``/etc/"
+"shibboleth/shibboleth2.xml`` configuration file and remove the "
 "``REMOTE_USER`` directives."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:302
 msgid ""
-"Examine your attributes map in the :file:`/etc/shibboleth/attributes-map."
-"xml` file and adjust your requirements if needed. For more information see "
+"Examine your attributes map in the ``/etc/shibboleth/attributes-map.xml`` "
+"file and adjust your requirements if needed. For more information see "
 "`Shibboleth Attributes <https://wiki.shibboleth.net/confluence/display/SHIB2/"
 "NativeSPAddAttribute>`__."
 msgstr ""
@@ -6885,14 +6879,14 @@ msgstr ""
 
 #: ../identity/federated-keystone.rst:316
 msgid ""
-"Add the Federation extension driver to the ``[federation]`` section in the :"
-"file:`keystone.conf` file. For example:"
+"Add the Federation extension driver to the ``[federation]`` section in the "
+"``keystone.conf`` file. For example:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:324
 msgid ""
-"Add the saml2 authentication method to the ``[auth]`` section in :file:"
-"`keystone.conf` file:"
+"Add the saml2 authentication method to the ``[auth]`` section in ``keystone."
+"conf`` file:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:335
@@ -6905,7 +6899,7 @@ msgstr ""
 #: ../identity/federated-keystone.rst:339
 msgid ""
 "Add the ``federation_extension`` middleware to the ``api_v3`` pipeline in "
-"the :file:`keystone-paste.ini` file. For example:"
+"the ``keystone-paste.ini`` file. For example:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:349
@@ -7070,13 +7064,13 @@ msgstr ""
 #: ../identity/federated-keystone.rst:474
 msgid ""
 "Before attempting to federate multiple Identity service deployments, you "
-"must setup certain configuration options in the :file:`keystone.conf` file."
+"must setup certain configuration options in the ``keystone.conf`` file."
 msgstr ""
 
 #: ../identity/federated-keystone.rst:478
 msgid ""
-"Within the :file:`keystone.conf` assign values to the ``[saml]`` related "
-"fields, for example:"
+"Within the ``keystone.conf`` assign values to the ``[saml]`` related fields, "
+"for example:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:490
@@ -7162,9 +7156,9 @@ msgid ""
 "Each OpenStack service defines the access policies for its resources in an "
 "associated policy file. A resource, for example, could be API access, the "
 "ability to attach to a volume, or to fire up instances. The policy rules are "
-"specified in JSON format and the file is called :file:`policy.json`.  The "
-"syntax and format of this file is discussed in the `Configuration Reference "
-"<http://docs.openstack.org/liberty/config-reference/content/policy-json-file."
+"specified in JSON format and the file is called ``policy.json``.  The syntax "
+"and format of this file is discussed in the `Configuration Reference <http://"
+"docs.openstack.org/liberty/config-reference/content/policy-json-file."
 "html>`__."
 msgstr ""
 
@@ -7344,8 +7338,8 @@ msgid ""
 "entropy-gathering daemon (egd) in libvirt to ensure sufficient entropy and "
 "the ability to feed that entropy to instances. She also enables 'trusted "
 "compute pools' for boot time attestation of the image that will be compared "
-"to a hash from the 'golden images.' She configures the :file:`.bash_profile` "
-"to log all commands, and sends those to the event monitoring collector. As "
+"to a hash from the 'golden images.' She configures the ``.bash_profile`` to "
+"log all commands, and sends those to the event monitoring collector. As "
 "users are expected to only have access to the application, and not the "
 "instance behind it, Alice installs a host intrusion detection system (HIDS) "
 "agent on the instance as well to monitor and export system events, and also "
@@ -7421,10 +7415,10 @@ msgstr ""
 
 #: ../instance-management/security-services-for-instances.rst:33
 msgid ""
-"The Virtio RNG is a random number generator that uses :file:`/dev/random` as "
-"the source of entropy by default, however can be configured to use a "
-"hardware RNG or a tool such as the entropy gathering daemon (`EGD <http://"
-"egd.sourceforge.net>`_) to provide a way to fairly and securely distribute "
+"The Virtio RNG is a random number generator that uses ``/dev/random`` as the "
+"source of entropy by default, however can be configured to use a hardware "
+"RNG or a tool such as the entropy gathering daemon (`EGD <http://egd."
+"sourceforge.net>`_) to provide a way to fairly and securely distribute "
 "entropy through a distributed system. The Virtio RNG is enabled using the "
 "``hw_rng`` property of the metadata used to create the instance."
 msgstr ""
@@ -7727,8 +7721,8 @@ msgstr ""
 #: ../instance-management/security-services-for-instances.rst:277
 msgid ""
 "At this time, live migration is enabled in OpenStack by default. Live "
-"migrations can be disabled by adding the following lines to the nova :file:"
-"`policy.json` file:"
+"migrations can be disabled by adding the following lines to the nova "
+"``policy.json`` file:"
 msgstr ""
 
 #: ../instance-management/security-services-for-instances.rst:287
@@ -9295,8 +9289,8 @@ msgstr ""
 msgid ""
 "Additionally, when combined with a version control system such as Git or "
 "SVN, you can track changes to your environment over time and re-mediate "
-"unauthorized changes that may occur. For example, a :file:`nova.conf` file "
-"or other configuration file falls out of compliance with your standard, your "
+"unauthorized changes that may occur. For example, a ``nova.conf`` file or "
+"other configuration file falls out of compliance with your standard, your "
 "configuration management tool can revert or replace the file and bring your "
 "configuration back into a known state. Finally a configuration management "
 "tool can also be used to deploy updates; simplifying the security patch "
@@ -9936,10 +9930,10 @@ msgstr ""
 msgid ""
 "These should be put in place to monitor and report on changes to system, "
 "hypervisor, and application configuration files such as ``/etc/pam.d/system-"
-"auth`` and :file:`/etc/keystone/keystone.conf`, as well as kernel modules "
-"(such as virtio). Best practice is to use the ``lsmod`` command to show what "
-"is regularly being loaded on a system to help determine what should or "
-"should not be included in FIM checks."
+"auth`` and ``/etc/keystone/keystone.conf``, as well as kernel modules (such "
+"as virtio). Best practice is to use the ``lsmod`` command to show what is "
+"regularly being loaded on a system to help determine what should or should "
+"not be included in FIM checks."
 msgstr ""
 
 #: ../management/management-interfaces.rst:3
@@ -10042,7 +10036,7 @@ msgstr ""
 msgid ""
 "It is now possible (though there are numerous deployment/security "
 "implications) to upload an image file directly from a user's hard disk to "
-"OpenStack Image Service through the dashboard. For multi-gigabyte images it "
+"OpenStack Image service through the dashboard. For multi-gigabyte images it "
 "is still strongly recommended that the upload be done using the ``glance`` "
 "CLI."
 msgstr ""
@@ -10390,7 +10384,7 @@ msgstr ""
 #: ../messaging/security.rst:37
 msgid ""
 "The following lines should be added to the system-wide RabbitMQ "
-"configuration file, typically :file:`/etc/rabbitmq/rabbitmq.config`:"
+"configuration file, typically ``/etc/rabbitmq/rabbitmq.config``:"
 msgstr ""
 
 #: ../messaging/security.rst:54
@@ -11129,7 +11123,7 @@ msgstr ""
 #: ../networking/checklist.rst:83
 msgid ""
 "**Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` "
-"section in :file:`/etc/neutron/neutron.conf` is set to ``keystone``."
+"section in ``/etc/neutron/neutron.conf`` is set to ``keystone``."
 msgstr ""
 
 #: ../networking/checklist.rst:92
@@ -11139,19 +11133,19 @@ msgstr ""
 #: ../networking/checklist.rst:100
 msgid ""
 "**Pass:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is set "
-"to ``https``, or if value of parameter ``identity_uri`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is set "
-"to Identity API endpoint starting with ``https://``."
+"``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is set to "
+"``https``, or if value of parameter ``identity_uri`` under "
+"``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is set to "
+"Identity API endpoint starting with ``https://``."
 msgstr ""
 
 #: ../networking/checklist.rst:106
 msgid ""
 "**Fail:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is set "
-"to ``http```, or if value of parameter ``identity_uri`` under "
-"``[keystone_authtoken]`` section in :file:`/etc/neutron/neutron.conf` is not "
-"set to Identity API endpoint starting with ``https://``."
+"``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is set to "
+"``http```, or if value of parameter ``identity_uri`` under "
+"``[keystone_authtoken]`` section in ``/etc/neutron/neutron.conf`` is not set "
+"to Identity API endpoint starting with ``https://``."
 msgstr ""
 
 #: ../networking/checklist.rst:115
@@ -11166,14 +11160,14 @@ msgstr ""
 
 #: ../networking/checklist.rst:120
 msgid ""
-"**Pass:** If value of parameter ``use_ssl`` under ``[DEFAULT]`` section in :"
-"file:`/etc/neutron/neutron.conf` is set to ``True``."
+"**Pass:** If value of parameter ``use_ssl`` under ``[DEFAULT]`` section in "
+"``/etc/neutron/neutron.conf`` is set to ``True``."
 msgstr ""
 
 #: ../networking/checklist.rst:123
 msgid ""
-"**Fail:** If value of parameter ``use_ssl`` under ``[DEFAULT]`` section in :"
-"file:`/etc/neutron/neutron.conf` is set to ``False``."
+"**Fail:** If value of parameter ``use_ssl`` under ``[DEFAULT]`` section in "
+"``/etc/neutron/neutron.conf`` is set to ``False``."
 msgstr ""
 
 #: ../networking/securing-services.rst:3
@@ -11292,7 +11286,7 @@ msgstr ""
 
 #: ../networking/services-security-best-practices.rst:20
 msgid ""
-"A policy engine and its configuration file, :file:`policy.json`, within "
+"A policy engine and its configuration file, ``policy.json``, within "
 "OpenStack Networking provides a method to provide finer grained "
 "authorization of users on tenant networking methods and objects. The "
 "OpenStack Networking policy definitions affect network availability, network "
@@ -11326,11 +11320,11 @@ msgstr ""
 msgid ""
 "The OpenStack Networking service provides security group functionality using "
 "a mechanism that is more flexible and powerful than the security group "
-"capabilities built into OpenStack Compute. Thus, :file:`nova.conf` should "
-"always disable built-in security groups and proxy all security group calls "
-"to the OpenStack Networking API when using OpenStack Networking. Failure to "
-"do so results in conflicting security policies being simultaneously applied "
-"by both services. To proxy security groups to OpenStack Networking, use the "
+"capabilities built into OpenStack Compute. Thus, ``nova.conf`` should always "
+"disable built-in security groups and proxy all security group calls to the "
+"OpenStack Networking API when using OpenStack Networking. Failure to do so "
+"results in conflicting security policies being simultaneously applied by "
+"both services. To proxy security groups to OpenStack Networking, use the "
 "following configuration values:"
 msgstr ""
 
@@ -11374,15 +11368,15 @@ msgstr ""
 #: ../networking/services-security-best-practices.rst:87
 msgid ""
 "Quotas provide the ability to limit the number of network resources "
-"available to tenants. You can enforce default quotas for all tenants. The :"
-"file:`/etc/neutron/neutron.conf` includes these options for quota:"
+"available to tenants. You can enforce default quotas for all tenants. The ``/"
+"etc/neutron/neutron.conf`` includes these options for quota:"
 msgstr ""
 
 #: ../networking/services-security-best-practices.rst:118
 msgid ""
 "OpenStack Networking also supports per-tenant quotas limit through a quota "
 "extension API. To enable per-tenant quotas, you must set the "
-"``quota_driver`` option in :file:`neutron.conf`."
+"``quota_driver`` option in ``neutron.conf``."
 msgstr ""
 
 #: ../networking/services.rst:3
@@ -11839,9 +11833,8 @@ msgstr ""
 
 #: ../object-storage.rst:94
 msgid ""
-"The :file:`/etc/swift` directory contains information about the ring "
-"topology and environment configuration. The following permissions are "
-"recommended:"
+"The ``/etc/swift`` directory contains information about the ring topology "
+"and environment configuration. The following permissions are recommended:"
 msgstr ""
 
 #: ../object-storage.rst:103
@@ -12099,7 +12092,7 @@ msgstr ""
 
 #: ../object-storage.rst:264
 msgid ""
-"In :file:`/etc/swift` on every node there is a ``swift_hash_path_prefix`` "
+"In ``/etc/swift`` on every node there is a ``swift_hash_path_prefix`` "
 "setting and a ``swift_hash_path_suffix`` setting. These are provided to "
 "reduce the chance of hash collisions for objects being stored and avert one "
 "user overwriting the data of another user."
@@ -12986,7 +12979,7 @@ msgstr ""
 #: ../shared-file-systems/checklist.rst:84
 msgid ""
 "**Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``keystone``."
+"section in ``manila.conf`` is set to ``keystone``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:93
@@ -13006,22 +12999,22 @@ msgstr ""
 #: ../shared-file-systems/checklist.rst:101
 msgid ""
 "**Pass:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`manila.conf` is set to ``https``, "
-"or if value of parameter ``identity_uri`` under ``[keystone_authtoken]`` "
-"section in :file:`manila.conf` is set to Identity API endpoint starting with "
+"``[keystone_authtoken]`` section in ``manila.conf`` is set to ``https``, or "
+"if value of parameter ``identity_uri`` under ``[keystone_authtoken]`` "
+"section in ``manila.conf`` is set to Identity API endpoint starting with "
 "``https://`` and value of parameter ``insecure`` under the same "
-"``[keystone_authtoken]`` section in the same :file:`manila.conf` is set to "
+"``[keystone_authtoken]`` section in the same ``manila.conf`` is set to "
 "``False``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:109
 msgid ""
 "**Fail:** If value of parameter ``auth_protocol`` under "
-"``[keystone_authtoken]`` section in :file:`manila.conf` is set to ``http``, "
-"or if value of parameter ``identity_uri`` under ``[keystone_authtoken]`` "
-"section in :file:`manila.conf` is not set to Identity API endpoint starting "
-"with ``https://`` or value of parameter ``insecure`` under the same "
-"``[keystone_authtoken]`` section in the same :file:`manila.conf` is set to "
+"``[keystone_authtoken]`` section in ``manila.conf`` is set to ``http``, or "
+"if value of parameter ``identity_uri`` under ``[keystone_authtoken]`` "
+"section in ``manila.conf`` is not set to Identity API endpoint starting with "
+"``https://`` or value of parameter ``insecure`` under the same "
+"``[keystone_authtoken]`` section in the same ``manila.conf`` is set to "
 "``True``."
 msgstr ""
 
@@ -13033,13 +13026,13 @@ msgstr ""
 #: ../shared-file-systems/checklist.rst:128
 msgid ""
 "**Pass:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``False``."
+"section in ``manila.conf`` is set to ``False``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:131
 msgid ""
 "**Fail:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``True``."
+"section in ``manila.conf`` is set to ``True``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:137
@@ -13058,13 +13051,13 @@ msgstr ""
 #: ../shared-file-systems/checklist.rst:143
 msgid ""
 "**Pass:** If value of parameter ``neutron_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``False``."
+"section in ``manila.conf`` is set to ``False``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:146
 msgid ""
 "**Fail:** If value of parameter ``neutron_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``True``."
+"section in ``manila.conf`` is set to ``True``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:152
@@ -13076,13 +13069,13 @@ msgstr ""
 #: ../shared-file-systems/checklist.rst:158
 msgid ""
 "**Pass:** If value of parameter ``cinder_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``False``."
+"section in ``manila.conf`` is set to ``False``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:161
 msgid ""
 "**Fail:** If value of parameter ``cinder_api_insecure`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``True``."
+"section in ``manila.conf`` is set to ``True``."
 msgstr ""
 
 #: ../shared-file-systems/checklist.rst:167
@@ -13102,9 +13095,9 @@ msgstr ""
 #: ../shared-file-systems/checklist.rst:175
 msgid ""
 "**Pass:** If value of parameter ``max_request_body_size`` under "
-"``[oslo_middleware]`` section in :file:`manila.conf` is set to ``114688``, "
-"or if value of parameter ``osapi_max_request_body_size`` under ``[DEFAULT]`` "
-"section in :file:`manila.conf` is set to ``114688``. The parameter "
+"``[oslo_middleware]`` section in ``manila.conf`` is set to ``114688``, or if "
+"value of parameter ``osapi_max_request_body_size`` under ``[DEFAULT]`` "
+"section in ``manila.conf`` is set to ``114688``. The parameter "
 "``osapi_max_request_body_size`` under ``[DEFAULT]`` is deprecated and it is "
 "better to use [oslo_middleware]/``max_request_body_size``."
 msgstr ""
@@ -13112,9 +13105,9 @@ msgstr ""
 #: ../shared-file-systems/checklist.rst:182
 msgid ""
 "**Fail:** If value of parameter ``max_request_body_size`` under "
-"``[oslo_middleware]`` section in :file:`manila.conf` is not set to "
-"``114688``, or if value of parameter ``osapi_max_request_body_size`` under "
-"``[DEFAULT]`` section in :file:`manila.conf` is not set to ``114688``."
+"``[oslo_middleware]`` section in ``manila.conf`` is not set to ``114688``, "
+"or if value of parameter ``osapi_max_request_body_size`` under ``[DEFAULT]`` "
+"section in ``manila.conf`` is not set to ``114688``."
 msgstr ""
 
 #: ../shared-file-systems/intro.rst:5
@@ -13375,7 +13368,7 @@ msgid ""
 "different vendors in the Shared File Systems service. Each share driver "
 "supports one or more back end modes: *share servers* and *no share servers*, "
 "but the administrator chooses which mode is used by specifying it in the "
-"configuration file :file:`manila.conf`."
+"configuration file ``manila.conf``."
 msgstr ""
 
 #: ../shared-file-systems/network-and-security-models.rst:15
@@ -13412,7 +13405,7 @@ msgstr ""
 
 #: ../shared-file-systems/network-and-security-models.rst:34
 msgid ""
-"The configuration option in the :file:`manila.conf` file that set the share "
+"The configuration option in the ``manila.conf`` file that set the share "
 "servers mode or no share servers mode is the "
 "``driver_handles_share_servers`` option, that defines the driver mode for "
 "share storage life cycle management:"
@@ -13702,7 +13695,7 @@ msgstr ""
 msgid ""
 "Shared File Systems service has its own role-based access policies. They "
 "determine which user can access which objects in which way, and are defined "
-"in the service's :file:`policy.json` file."
+"in the service's ``policy.json`` file."
 msgstr ""
 
 #: ../shared-file-systems/policies.rst:11
@@ -13721,10 +13714,10 @@ msgstr ""
 #: ../shared-file-systems/policies.rst:18
 msgid ""
 "The policy rule determines under which circumstances the API call is "
-"permitted. The :file:`/etc/manila/policy.json` file has rules where action "
-"is always permitted, when the rule is an empty string: ``\"\"``; the rules "
+"permitted. The ``/etc/manila/policy.json`` file has rules where action is "
+"always permitted, when the rule is an empty string: ``\"\"``; the rules "
 "based on the user role or rules; rules with boolean expressions. Below is a "
-"snippet of the :file:`policy.json` file for the Shared File Systems service. "
+"snippet of the ``policy.json`` file for the Shared File Systems service. "
 "From one OpenStack release to another it can be changed."
 msgstr ""
 
@@ -13736,11 +13729,11 @@ msgstr ""
 
 #: ../shared-file-systems/policies.rst:75
 msgid ""
-"Any changes to :file:`/etc/manila/policy.json` are effective immediately, "
-"which allows new policies to be implemented while the Shared File Systems "
-"service is running. Modifying the policy can have unexpected side effects "
-"and is not encouraged. For details, see `The policy.json file <http://docs. "
-"openstack.org/trunk/config-reference/content/policy-json-file.html>`_."
+"Any changes to ``/etc/manila/policy.json`` are effective immediately, which "
+"allows new policies to be implemented while the Shared File Systems service "
+"is running. Modifying the policy can have unexpected side effects and is not "
+"encouraged. For details, see `The policy.json file <http://docs. openstack."
+"org/trunk/config-reference/content/policy-json-file.html>`_."
 msgstr ""
 
 #: ../shared-file-systems/security-services.rst:5
@@ -14011,8 +14004,8 @@ msgid ""
 "The share can be *public* and *private*. This is a level of visibility for "
 "the share that defines whether other tenants can or cannot see the share. By "
 "default, the shares are created as private. While creating a share, use a "
-"key ``--public`` to make your share public for other tenants to see it in a "
-"list of shares and see its detailed information."
+"key :option:`--public` to make your share public for other tenants to see it "
+"in a list of shares and see its detailed information."
 msgstr ""
 
 #: ../shared-file-systems/share-acl.rst:18
@@ -14128,7 +14121,7 @@ msgstr ""
 #: ../shared-file-systems/share-acl.rst:102
 msgid ""
 "As an administrator, you can connect through SSH to a host with "
-"``10.254.0.3`` IP address, check the :file:`/etc/exports` file on it and see "
+"``10.254.0.3`` IP address, check the ``/etc/exports`` file on it and see "
 "that it is empty:"
 msgstr ""
 
@@ -14142,8 +14135,8 @@ msgstr ""
 #: ../shared-file-systems/share-acl.rst:128
 msgid ""
 "After the rule has status ``active`` we can connect to the ``10.254.0.3`` "
-"host again and check the :file:`/etc/exports` file and see that the line "
-"with rule was added:"
+"host again and check the ``/etc/exports`` file and see that the line with "
+"rule was added:"
 msgstr ""
 
 #: ../shared-file-systems/share-acl.rst:138
@@ -14198,9 +14191,9 @@ msgstr ""
 #: ../shared-file-systems/share-type-acl.rst:23
 msgid ""
 "By default, the share types are created as public. While creating a share "
-"type, use ``--is_public`` parameter set to ``False`` to make your share type "
-"private for other tenants not to see it in a list of share types and create "
-"new share with it."
+"type, use :option:`--is_public` parameter set to ``False`` to make your "
+"share type private for other tenants not to see it in a list of share types "
+"and create new share with it."
 msgstr ""
 
 #: ../shared-file-systems/share-type-acl.rst:28
@@ -14471,7 +14464,7 @@ msgstr ""
 
 #: ../tenant-data/data-encryption.rst:71
 msgid ""
-"The compute configuration, :file:'nova.conf', has the following default "
+"The compute configuration, ``nova.conf``, has the following default "
 "parameters within the \"[ephemeral_storage_encryption]\" section"
 msgstr ""
 
@@ -14846,8 +14839,8 @@ msgstr ""
 msgid ""
 "OpenStack Image service has a delayed delete feature, which will pend the "
 "deletion of an image for a defined time period. It is recommended to disable "
-"this feature if it is a security concern, by editing the :file:`etc/glance/"
-"glance-api.conf` file and setting the ``delayed_delete`` option as False."
+"this feature if it is a security concern, by editing the ``etc/glance/glance-"
+"api.conf`` file and setting the ``delayed_delete`` option as False."
 msgstr ""
 
 #: ../tenant-data/data-privacy-concerns.rst:140
@@ -14859,7 +14852,7 @@ msgid ""
 "OpenStack Compute has a soft-delete feature, which enables an instance that "
 "is deleted to be in a soft-delete state for a defined time period.  The "
 "instance can be restored during this time period. To disable the soft-delete "
-"feature, edit the :file:`etc/nova/nova.conf` file and leave the "
+"feature, edit the ``etc/nova/nova.conf`` file and leave the "
 "``reclaim_instance_interval`` option empty."
 msgstr ""
 

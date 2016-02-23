@@ -17,7 +17,7 @@ create, update, and destroy available network resources.
 Networking resource policy engine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A policy engine and its configuration file, :file:`policy.json`, within
+A policy engine and its configuration file, ``policy.json``, within
 OpenStack Networking provides a method to provide finer grained
 authorization of users on tenant networking methods and objects. The
 OpenStack Networking policy definitions affect network availability,
@@ -50,7 +50,7 @@ Security groups
 
 The OpenStack Networking service provides security group functionality
 using a mechanism that is more flexible and powerful than the security
-group capabilities built into OpenStack Compute. Thus, :file:`nova.conf`
+group capabilities built into OpenStack Compute. Thus, ``nova.conf``
 should always disable built-in security groups and proxy all security
 group calls to the OpenStack Networking API when using OpenStack
 Networking. Failure to do so results in conflicting security policies
@@ -86,7 +86,7 @@ Quotas
 
 Quotas provide the ability to limit the number of network resources
 available to tenants. You can enforce default quotas for all tenants.
-The :file:`/etc/neutron/neutron.conf` includes these options for quota:
+The ``/etc/neutron/neutron.conf`` includes these options for quota:
 
 .. code:: ini
 
@@ -117,7 +117,7 @@ The :file:`/etc/neutron/neutron.conf` includes these options for quota:
 
 OpenStack Networking also supports per-tenant quotas limit through a
 quota extension API. To enable per-tenant quotas, you must set the
-``quota_driver`` option in :file:`neutron.conf`.
+``quota_driver`` option in ``neutron.conf``.
 
 .. code:: ini
 

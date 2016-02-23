@@ -91,7 +91,7 @@ of the Installation Guide in the `OpenStack Documentation index
 File permissions
 ----------------
 
-The :file:`/etc/swift` directory contains information about the ring topology
+The ``/etc/swift`` directory contains information about the ring topology
 and environment configuration. The following permissions are recommended:
 
 .. code-block:: console
@@ -261,7 +261,7 @@ already provided in :doc:`identity`.
 Other notable items
 ~~~~~~~~~~~~~~~~~~~
 
-In :file:`/etc/swift` on every node there is a ``swift_hash_path_prefix``
+In ``/etc/swift`` on every node there is a ``swift_hash_path_prefix``
 setting and a ``swift_hash_path_suffix`` setting. These are provided to reduce
 the chance of hash collisions for objects being stored and avert one user
 overwriting the data of another user.

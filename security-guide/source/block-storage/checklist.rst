@@ -80,7 +80,7 @@ strongly recommended that all services must be authenticated with keystone
 using their service accounts.
 
 **Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
-in :file:`/etc/cinder/cinder.conf` is set to ``keystone``.
+in ``/etc/cinder/cinder.conf`` is set to ``keystone``.
 
 **Fail:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
 is set to ``noauth``.
@@ -97,20 +97,20 @@ information. Thus all the components must communicate with each other using a
 secured communication protocol.
 
 **Pass:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is set to
+``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is set to
 ``https``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is set to
+``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is set to
 Identity API endpoint starting with ``https://`` and value of parameter
 ``insecure`` under the same ``[keystone_authtoken]`` section in the same
-:file:`/etc/cinder/cinder.conf` is set to ``False``.
+``/etc/cinder/cinder.conf`` is set to ``False``.
 
 **Fail:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is set to
+``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is set to
 ``http``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in :file:`/etc/cinder/cinder.conf` is not set
+``[keystone_authtoken]`` section in ``/etc/cinder/cinder.conf`` is not set
 to Identity API endpoint starting with ``https://`` or value of parameter
 ``insecure`` under the same ``[keystone_authtoken]`` section in the same
-:file:`/etc/cinder/cinder.conf` is set to ``True``.
+``/etc/cinder/cinder.conf`` is set to ``True``.
 
 .. _check_block_05:
 
@@ -124,10 +124,10 @@ information. Thus all the components must communicate with each other using a
 secured communication protocol.
 
 **Pass:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]``
-section in :file:`/etc/cinder/cinder.conf` is set to ``False``.
+section in ``/etc/cinder/cinder.conf`` is set to ``False``.
 
 **Fail:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]``
-section in :file:`/etc/cinder/cinder.conf` is set to ``True``.
+section in ``/etc/cinder/cinder.conf`` is set to ``True``.
 
 .. _check_block_06:
 
@@ -139,10 +139,10 @@ all the components must communicate with each other using a secured
 communication protocol.
 
 **Pass:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]``
-section in :file:`/etc/cinder/cinder.conf` is set to ``False``.
+section in ``/etc/cinder/cinder.conf`` is set to ``False``.
 
 **Fail:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]``
-section in :file:`/etc/cinder/cinder.conf` is set to ``True``.
+section in ``/etc/cinder/cinder.conf`` is set to ``True``.
 
 .. _check_block_07:
 
@@ -158,13 +158,13 @@ volumes are created. Cinder configuration can also control whether file
 operations are run as the root user or the current OpenStack process user.
 
 **Pass:** If value of parameter ``nas_secure_file_permissions`` under
-``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to ``auto``.
+``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``auto``.
 When set to ``auto``, a check is done during cinder startup to determine if
 there are existing cinder volumes, no volumes will set the option to ``True``,
 and use secure file permissions. The detection of existing volumes will set the
 option to ``False``, and use the current insecure method of handling file
 permissions. If value of parameter ``nas_secure_file_operations`` under
-``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to ``auto``.
+``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``auto``.
 When set to "auto", a check is done during cinder startup to determine if there
 are existing cinder volumes, no volumes will set the option to ``True``, be
 secure and do NOT run as the ``root`` user. The detection of existing volumes
@@ -174,9 +174,9 @@ written so that subsequent restarts of cinder will know what the original
 determination had been.
 
 **Fail:** If value of parameter ``nas_secure_file_permissions`` under
-``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to ``False``
+``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``False``
 and if value of parameter ``nas_secure_file_operations`` under
-``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to ``False``.
+``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``False``.
 
 
 .. _check_block_08:
@@ -191,12 +191,12 @@ any malicious oversized request gets blocked ensuring continued availability of
 the service.
 
 **Pass:** If value of parameter ``osapi_max_request_body_size`` under
-``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is set to ``114688``
+``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is set to ``114688``
 or if value of parameter ``max_request_body_size`` under ``[oslo_middleware]``
-section in :file:`/etc/cinder/cinder.conf` is set to ``114688``.
+section in ``/etc/cinder/cinder.conf`` is set to ``114688``.
 
 **Fail:** If value of parameter ``osapi_max_request_body_size`` under
-``[DEFAULT]`` section in :file:`/etc/cinder/cinder.conf` is not set to
+``[DEFAULT]`` section in ``/etc/cinder/cinder.conf`` is not set to
 ``114688`` or if value of parameter ``max_request_body_size`` under
-``[oslo_middleware]`` section in :file:`/etc/cinder/cinder.conf` is not set to
+``[oslo_middleware]`` section in ``/etc/cinder/cinder.conf`` is not set to
 ``114688``.

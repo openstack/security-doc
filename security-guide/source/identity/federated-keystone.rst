@@ -151,15 +151,15 @@ To enable Federation, perform the following steps:
 
          -A INPUT -j REJECT --reject-with icmp-host-prohibited
 
-   #. Copy the :file:`httpd/wsgi-keystone.conf` file to the appropriate location
+   #. Copy the ``httpd/wsgi-keystone.conf`` file to the appropriate location
       for your Apache server, for example,
-      :file:`/etc/httpd/conf.d/wsgi-keystone.conf` file.
+      ``/etc/httpd/conf.d/wsgi-keystone.conf`` file.
 
    #. Create the directory ``/var/www/cgi-bin/keystone/``. Then link the files
-      ``main`` and ``admin`` to the :file:`keystone.py` file in this directory.
+      ``main`` and ``admin`` to the ``keystone.py`` file in this directory.
 
       For a distribution appropriate place, it should probably be copied to
-      :file:`/usr/share/openstack/keystone/httpd/keystone.py`.
+      ``/usr/share/openstack/keystone/httpd/keystone.py``.
 
       .. note::
 
@@ -182,14 +182,14 @@ To enable Federation, perform the following steps:
       otherwise the tokens will not be shared between the processes of the
       Apache HTTPD server.
 
-      For SQL, in :file:`/etc/keystone/keystone.conf` , set:
+      For SQL, in ``/etc/keystone/keystone.conf`` , set:
 
       .. code:: ini
 
          [token]
          driver = keystone.token.backends.sql.Token
 
-      For ``memcached``, in :file:`/etc/keystone/keystone.conf`, set:
+      For ``memcached``, in ``/etc/keystone/keystone.conf``, set:
 
       .. code:: ini
 
@@ -220,7 +220,7 @@ To enable Federation, perform the following steps:
 
          WSGIScriptAliasMatch ^(/v3/OS-FEDERATION/identity_providers/.*?/protocols/.*?/auth)$ /var/www/keystone/main/$1
 
-   #. Add two ``<Location>`` directives to the :file:`wsgi-keystone.conf` file:
+   #. Add two ``<Location>`` directives to the ``wsgi-keystone.conf`` file:
 
       .. code:: ini
 
@@ -283,12 +283,12 @@ To enable Federation, perform the following steps:
          $ shib-keygen -y NUMBER_OF_YEARS
 
       The newly created file will be stored under
-      :file:`/etc/shibboleth/sp-key.pem`
+      ``/etc/shibboleth/sp-key.pem``
 
    #. Upload your Service Provider’s metadata file to your Identity Provider.
 
    #. Configure your Service Provider by editing
-      :file:`/etc/shibboleth/shibboleth2.xml`.
+      ``/etc/shibboleth/shibboleth2.xml``.
 
       For more information, see `Shibboleth Service Provider Configuration
       <https://wiki.shibboleth.net/confluence/display/SHIB2/Configuration>`__.
@@ -296,11 +296,11 @@ To enable Federation, perform the following steps:
    #. Identity service enforces ``external`` authentication when environment
       variable ``REMOTE_USER`` is present so make sure Shibboleth does not set
       the ``REMOTE_USER`` environment variable. To do so, scan through the
-      :file:`/etc/shibboleth/shibboleth2.xml` configuration file and remove
+      ``/etc/shibboleth/shibboleth2.xml`` configuration file and remove
       the ``REMOTE_USER`` directives.
 
    #. Examine your attributes map in the
-      :file:`/etc/shibboleth/attributes-map.xml` file and adjust your
+      ``/etc/shibboleth/attributes-map.xml`` file and adjust your
       requirements if needed. For more information see `Shibboleth Attributes
       <https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAddAttribute>`__.
 
@@ -314,7 +314,7 @@ To enable Federation, perform the following steps:
 #. Enable ``OS-FEDERATION`` extension:
 
    #. Add the Federation extension driver to the ``[federation]`` section in
-      the :file:`keystone.conf` file. For example:
+      the ``keystone.conf`` file. For example:
 
       .. code:: ini
 
@@ -322,7 +322,7 @@ To enable Federation, perform the following steps:
          driver = keystone.contrib.federation.backends.sql.Federation
 
    #. Add the saml2 authentication method to the ``[auth]`` section in
-      :file:`keystone.conf` file:
+      ``keystone.conf`` file:
 
       .. code:: ini
 
@@ -337,7 +337,7 @@ To enable Federation, perform the following steps:
          environment variable is always set, even as an empty value.
 
    #. Add the ``federation_extension`` middleware to the ``api_v3`` pipeline
-      in the :file:`keystone-paste.ini` file. For example:
+      in the ``keystone-paste.ini`` file. For example:
 
       .. code:: ini
 
@@ -472,10 +472,10 @@ Configuration options
 ---------------------
 
 Before attempting to federate multiple Identity service deployments, you
-must setup certain configuration options in the :file:`keystone.conf`
+must setup certain configuration options in the ``keystone.conf``
 file.
 
-Within the :file:`keystone.conf` assign values to the ``[saml]`` related
+Within the ``keystone.conf`` assign values to the ``[saml]`` related
 fields, for example:
 
 .. code:: ini

@@ -5,7 +5,7 @@ Policies
 Each OpenStack service defines the access policies for its resources in an
 associated policy file. A resource, for example, could be API access, the
 ability to attach to a volume, or to fire up instances. The policy rules are
-specified in JSON format and the file is called :file:`policy.json`.  The
+specified in JSON format and the file is called ``policy.json``.  The
 syntax and format of this file is discussed in the `Configuration Reference
 <http://docs.openstack.org/liberty/config-reference/content/policy-json-file.html>`__.
 

@@ -82,7 +82,7 @@ Thus it is strongly recommended that all services must be authenticated with
 keystone using their service accounts.
 
 **Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
-in :file:`manila.conf` is set to ``keystone``.
+in ``manila.conf`` is set to ``keystone``.
 
 **Fail:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
 is set to ``noauth``.
@@ -99,20 +99,20 @@ information. Thus all the components must communicate with each other using a
 secured communication protocol.
 
 **Pass:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in :file:`manila.conf` is set to
+``[keystone_authtoken]`` section in ``manila.conf`` is set to
 ``https``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in :file:`manila.conf` is set to
+``[keystone_authtoken]`` section in ``manila.conf`` is set to
 Identity API endpoint starting with ``https://`` and value of parameter
 ``insecure`` under the same ``[keystone_authtoken]`` section in the same
-:file:`manila.conf` is set to ``False``.
+``manila.conf`` is set to ``False``.
 
 **Fail:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in :file:`manila.conf` is set to
+``[keystone_authtoken]`` section in ``manila.conf`` is set to
 ``http``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in :file:`manila.conf` is not set
+``[keystone_authtoken]`` section in ``manila.conf`` is not set
 to Identity API endpoint starting with ``https://`` or value of parameter
 ``insecure`` under the same ``[keystone_authtoken]`` section in the same
-:file:`manila.conf` is set to ``True``.
+``manila.conf`` is set to ``True``.
 
 .. _check_shared_fs_05:
 
@@ -126,10 +126,10 @@ information. Thus all the components must communicate with each other using a
 secured communication protocol.
 
 **Pass:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]``
-section in :file:`manila.conf` is set to ``False``.
+section in ``manila.conf`` is set to ``False``.
 
 **Fail:** If value of parameter ``nova_api_insecure`` under ``[DEFAULT]``
-section in :file:`manila.conf` is set to ``True``.
+section in ``manila.conf`` is set to ``True``.
 
 .. _check_shared_fs_06:
 
@@ -141,10 +141,10 @@ all the components must communicate with each other using a secured
 communication protocol.
 
 **Pass:** If value of parameter ``neutron_api_insecure`` under ``[DEFAULT]``
-section in :file:`manila.conf` is set to ``False``.
+section in ``manila.conf`` is set to ``False``.
 
 **Fail:** If value of parameter ``neutron_api_insecure`` under ``[DEFAULT]``
-section in :file:`manila.conf` is set to ``True``.
+section in ``manila.conf`` is set to ``True``.
 
 .. _check_shared_fs_07:
 
@@ -156,10 +156,10 @@ all the components must communicate with each other using a secured
 communication protocol.
 
 **Pass:** If value of parameter ``cinder_api_insecure`` under ``[DEFAULT]``
-section in :file:`manila.conf` is set to ``False``.
+section in ``manila.conf`` is set to ``False``.
 
 **Fail:** If value of parameter ``cinder_api_insecure`` under ``[DEFAULT]``
-section in :file:`manila.conf` is set to ``True``.
+section in ``manila.conf`` is set to ``True``.
 
 .. _check_shared_fs_08:
 
@@ -173,13 +173,13 @@ any malicious oversized request gets blocked ensuring continued availability of
 the service.
 
 **Pass:** If value of parameter ``max_request_body_size`` under
-``[oslo_middleware]`` section in :file:`manila.conf` is set to ``114688``, or
+``[oslo_middleware]`` section in ``manila.conf`` is set to ``114688``, or
 if value of parameter ``osapi_max_request_body_size`` under ``[DEFAULT]``
-section in :file:`manila.conf` is set to ``114688``. The parameter
+section in ``manila.conf`` is set to ``114688``. The parameter
 ``osapi_max_request_body_size`` under ``[DEFAULT]`` is deprecated and it is
 better to use [oslo_middleware]/``max_request_body_size``.
 
 **Fail:** If value of parameter ``max_request_body_size`` under
-``[oslo_middleware]`` section in :file:`manila.conf` is not set to ``114688``,
+``[oslo_middleware]`` section in ``manila.conf`` is not set to ``114688``,
 or if value of parameter ``osapi_max_request_body_size`` under ``[DEFAULT]``
-section in :file:`manila.conf` is not set to ``114688``.
+section in ``manila.conf`` is not set to ``114688``.

@@ -175,7 +175,7 @@ known state in a DR event or given a compromise.
 
 Additionally, when combined with a version control system such as Git or
 SVN, you can track changes to your environment over time and re-mediate
-unauthorized changes that may occur. For example, a :file:`nova.conf`
+unauthorized changes that may occur. For example, a ``nova.conf``
 file or other configuration file falls out of compliance with your
 standard, your configuration management tool can revert or replace the
 file and bring your configuration back into a known state. Finally a

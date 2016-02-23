@@ -19,7 +19,7 @@ socket for incoming client connections.
 Restricting bind address for MySQL
 ----------------------------------
 
-In :file:`my.cnf`:
+In ``my.cnf``:
 
 .. code:: ini
 
@@ -30,7 +30,7 @@ In :file:`my.cnf`:
 Restricting listen address for PostgreSQL
 -----------------------------------------
 
-In :file:`postgresql.conf`:
+In ``postgresql.conf``:
 
 .. code:: ini
 
@@ -63,7 +63,7 @@ MySQL SSL configuration
 The following lines should be added in the system-wide MySQL
 configuration file:
 
-In :file:`my.cnf`:
+In ``my.cnf``:
 
 .. code:: ini
 
@@ -85,7 +85,7 @@ PostgreSQL SSL configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following lines should be added in the system-wide PostgreSQL
-configuration file, :file:`postgresql.conf`.
+configuration file, ``postgresql.conf``.
 
 .. code:: ini
 

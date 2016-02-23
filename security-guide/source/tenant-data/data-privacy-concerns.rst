@@ -133,7 +133,7 @@ Image service delay delete feature
 OpenStack Image service has a delayed delete feature, which will pend the
 deletion of an image for a defined time period. It is recommended to disable
 this feature if it is a security concern, by editing the
-:file:`etc/glance/glance-api.conf` file and setting the ``delayed_delete``
+``etc/glance/glance-api.conf`` file and setting the ``delayed_delete``
 option as False.
 
 Compute soft delete feature
@@ -142,7 +142,7 @@ Compute soft delete feature
 OpenStack Compute has a soft-delete feature, which enables an instance that is
 deleted to be in a soft-delete state for a defined time period.  The instance
 can be restored during this time period. To disable the soft-delete feature,
-edit the :file:`etc/nova/nova.conf` file and leave the
+edit the ``etc/nova/nova.conf`` file and leave the
 ``reclaim_instance_interval`` option empty.
 
 Compute instance ephemeral storage

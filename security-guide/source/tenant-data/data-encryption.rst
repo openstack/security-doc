@@ -68,7 +68,7 @@ release, the following ephemeral disk encryption features are supported:
    OpenStack Compute service only supports encrypting ephemeral disks in the
    LVM format)
 
-   -  The compute configuration, :file:'nova.conf', has the following default
+   -  The compute configuration, ``nova.conf``, has the following default
       parameters within the "[ephemeral_storage_encryption]" section
 
       - **option**: 'cipher = aes-xts-plain64'

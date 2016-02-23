@@ -31,7 +31,7 @@ given cloud, an architect needs to understand the application
 requirements to ensure that sufficient entropy is available.
 
 The Virtio RNG is a random number generator that uses
-:file:`/dev/random` as the source of entropy by default, however can be
+``/dev/random`` as the source of entropy by default, however can be
 configured to use a hardware RNG or a tool such as the entropy
 gathering daemon (`EGD <http://egd.sourceforge.net>`_) to provide
 a way to fairly and securely distribute entropy through a
@@ -276,7 +276,7 @@ Disable live migration
 
 At this time, live migration is enabled in OpenStack
 by default. Live migrations can be disabled by adding the
-following lines to the nova :file:`policy.json` file:
+following lines to the nova ``policy.json`` file:
 
 .. code:: json
 

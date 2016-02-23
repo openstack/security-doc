@@ -24,7 +24,7 @@ administrator may need to approve the mapping routines per tenant.
 Domain-specific authentication drivers allow the Identity service
 to be configured for multiple domains using domain-specific configuration
 files. Enabling the drivers and setting the domain-specific configuration file
-location occur in the ``[identity]`` section of the :file:`keystone.conf` file:
+location occur in the ``[identity]`` section of the ``keystone.conf`` file:
 
 .. code:: ini
 
@@ -33,4 +33,4 @@ location occur in the ``[identity]`` section of the :file:`keystone.conf` file:
    domain_config_dir = /etc/keystone/domains
 
 Any domains without a domain-specific configuration file
-will use options in the primary :file:`keystone.conf` file.
+will use options in the primary ``keystone.conf`` file.

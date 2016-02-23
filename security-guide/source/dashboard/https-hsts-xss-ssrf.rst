@@ -55,13 +55,13 @@ Security (HSTS).
 
 .. note::
 
-        If you are using an HTTPS proxy in front of your web
-        server, rather than using an HTTP server with HTTPS
-        functionality, modify the ``SECURE_PROXY_SSL_HEADER``
-        variable. Refer to the
-        `Django documentation <https://docs.djangoproject.com/>`_
-        for information about modifying the
-        ``SECURE_PROXY_SSL_HEADER`` variable.
+   If you are using an HTTPS proxy in front of your web
+   server, rather than using an HTTP server with HTTPS
+   functionality, modify the ``SECURE_PROXY_SSL_HEADER``
+   variable. Refer to the
+   `Django documentation <https://docs.djangoproject.com/>`_
+   for information about modifying the
+   ``SECURE_PROXY_SSL_HEADER`` variable.
 
 See the chapter on :doc:`../secure-communication` for more specific
 recommendations and server configurations for HTTPS

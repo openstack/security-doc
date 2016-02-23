@@ -43,10 +43,10 @@ each compute node physical switch port into a VLAN trunk port.
 
 .. note::
 
-    NOTE: If you intend for your network to support more than 4094
-    tenants VLAN is probably not the correct option for you as multiple
-    'hacks' are required to extend the VLAN tags to more than 4094
-    tenants.
+   If you intend for your network to support more than 4094
+   tenants VLAN is probably not the correct option for you as multiple
+   'hacks' are required to extend the VLAN tags to more than 4094
+   tenants.
 
 L2 tunneling
 ------------

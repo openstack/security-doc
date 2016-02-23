@@ -73,6 +73,7 @@ No share servers mode
    needed at share creation time and must not be provided.
 
 .. note::
+
    In *no share servers mode* the Shared File Systems service will assume that
    the network interfaces through which any shares are exported are already
    reachable by all tenants.
@@ -118,6 +119,7 @@ network:
 * ``VXLAN``
 
 .. note::
+
     The Shared File Systems service is just keeping the information about the
     networks in the database, and the real networks are available due to the
     network provider. In OpenStack it can be Legacy networking (nova-network)
@@ -143,6 +145,7 @@ networking without Legacy networking and Networking services. The
 the network parameters in its configuration file.
 
 .. tip::
+
    All the share drivers that use the OpenStack Compute service do not use the
    network plug-ins. In Liberty release it is Windows and Generic drivers, so
    these share drives have other options and use different approach.
@@ -183,6 +186,7 @@ The security aspects of the configured networks depends on the configuration
 itself and the network provider.
 
 .. note::
+
     The share drivers may not support every type of segmentation, for details
     see the specification for each driver.
 

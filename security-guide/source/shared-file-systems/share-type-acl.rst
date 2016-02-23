@@ -32,6 +32,7 @@ access to the *private* share types for some certain tenants. You also can get
 information about access for a specified private share type.
 
 .. tip::
+
     Since the share types due to their extra specifications help to filter or
     choose back ends before users create a share, using access to the share
     types you can limit clients that can choose definite back end.
@@ -114,6 +115,7 @@ To deny access for a specified project, use
 :command:`manila type-access-remove <share_type> <project_id>` command.
 
 .. tip::
+
     A **real production use case** that shows the purpose of a share types and
     access to them is a situation when you have two back ends: cheap LVM as a
     public storage and expensive Ceph as a private storage. In this case you

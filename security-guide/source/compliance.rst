@@ -25,11 +25,11 @@ This chapter has several objectives:
    environments.
 
 .. toctree::
-  :maxdepth: 2
+   :maxdepth: 2
 
-  compliance/overview.rst
-  compliance/understanding-the-audit-process.rst
-  compliance/compliance-activities.rst
-  compliance/certification-and-compliance-statements.rst
-  compliance/privacy.rst
-  compliance/case-studies.rst
+   compliance/overview.rst
+   compliance/understanding-the-audit-process.rst
+   compliance/compliance-activities.rst
+   compliance/certification-and-compliance-statements.rst
+   compliance/privacy.rst
+   compliance/case-studies.rst

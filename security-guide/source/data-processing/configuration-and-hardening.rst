@@ -57,22 +57,22 @@ example, provisioning clusters).
 
 .. code-block:: json
 
-      {
-          "default": ""
-      }
+   {
+       "default": ""
+   }
 
 **Example. Disallow image registry manipulations to non-admin users**
 
 .. code-block:: json
 
-      {
-          "default": "",
+   {
+       "default": "",
 
-          "data-processing:images:register": "role:admin",
-          "data-processing:images:unregister": "role:admin",
-          "data-processing:images:add_tags": "role:admin",
-          "data-processing:images:remove_tags": "role:admin"
-      }
+       "data-processing:images:register": "role:admin",
+       "data-processing:images:unregister": "role:admin",
+       "data-processing:images:add_tags": "role:admin",
+       "data-processing:images:remove_tags": "role:admin"
+   }
 
 Security groups
 ~~~~~~~~~~~~~~~

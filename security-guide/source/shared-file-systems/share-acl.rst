@@ -17,9 +17,9 @@ list of shares and see its detailed information.
 
 According to a :ref:`policy.json <shared_fs_policies>` file, an administrator
 and the users as share owners can manage the access to the shares by means of
-creating access rules. Using **manila access-allow**, **manila access-deny**
-and **manila access-list** commands, you can grant, deny and list access to a
-specified share correspondingly.
+creating access rules. Using :command:`manila access-allow`,
+:command:`manila access-deny` and :command:`manila access-list` commands,
+you can grant, deny and list access to a specified share correspondingly.
 
 .. tip::
     By default, when a share is created and has its export location, the Shared

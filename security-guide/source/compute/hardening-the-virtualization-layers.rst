@@ -109,7 +109,7 @@ A cloud architect should decide what devices to make available to cloud users.
 Anything that is not needed should be removed from QEMU. This step requires
 recompiling QEMU after modifying the options passed to the QEMU configure
 script. For a complete list of up-to-date options simply run
-``command:./configure --help`` from within the QEMU source directory. Decide
+:command:`./configure --help` from within the QEMU source directory. Decide
 what is needed for your deployment, and disable the remaining options.
 
 Compiler hardening

@@ -512,7 +512,7 @@ Generate metadata
 
 In order to create a trust between the Identity Provider and the Service
 Provider, metadata must be exchanged. To create metadata for your
-Identity service, run the ``keystone-manage`` command and pipe the
+Identity service, run the :command:`keystone-manage` command and pipe the
 output to a file. For example:
 
 .. code:: console

@@ -23,6 +23,7 @@ exist and are supported by the drivers and back ends. These authentication
 services also can be configured without the Shared File Systems service.
 
 .. note::
+
     In some cases, it is required to add one of the security services. For
     example, NetApp, EMC and Windows drivers require Active Directory for the
     creation of shares with CIFS protocol.
@@ -104,6 +105,7 @@ authentication service can operate with clients without the Shared File System
 and the Identity service.
 
 .. note::
+
     Different authentication services are supported by different share drivers.
     For details of supporting of features by different drivers, see
     `Manila share features support mapping <http://docs.openstack.org/developer

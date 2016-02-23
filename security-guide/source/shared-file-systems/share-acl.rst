@@ -22,6 +22,7 @@ and **manila access-list** commands, you can grant, deny and list access to a
 specified share correspondingly.
 
 .. tip::
+
     By default, when a share is created and has its export location, the Shared
     File Systems service expects that nobody can access the share by mounting
     it. Pay attention that the share driver you use can change this
@@ -47,6 +48,7 @@ by specifying one of these supported share access levels:
 - **ro**. Read-only (RO) access.
 
 .. tip::
+
     The RO access level can be helpful in the public shares when the
     administrator gives read and write (RW) access for some certain editors or
     contributors and gives read-only (RO) access for the rest of users
@@ -66,6 +68,7 @@ You must also specify one of these supported authentication methods:
   to 32 characters long.
 
 .. note::
+
     The supported authentication methods depend on which share driver, security
     service and shared file system protocol you configure and use. Supported
     shared file system protocols are NFS, CIFS, GlusterFS, and HDFS. Supported
@@ -79,6 +82,7 @@ To verify that the access rules (ACL) were configured correctly for a share,
 you can list permissions for a share.
 
 .. tip::
+
     You also can choose and add the :ref:`security service
     <shared_fs_security_services>` that is supported by the share driver to
     create access rules with authentication methods for clients that are
@@ -152,6 +156,7 @@ You also can list the access rules to each share and deny the access using the
 Shared File Systems service CLI.
 
 .. tip::
+
     To ensure that the granted or denied access with Shared File Systems
     service CLI is correct, check the mount config file on the storage before
     releasing a share to the production.

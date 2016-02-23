@@ -82,6 +82,7 @@ authentication methods depend on which share driver and security service you
 configure and use.
 
 .. note::
+
     Different access features are supported by different share drivers with
     taking into consideration the shared file system protocol. The supported
     shared file system protocols are NFS, CIFS, GlusterFS, or HDFS. As the
@@ -178,11 +179,13 @@ them. For details, see :ref:`check_shared_fs_01` and :ref:`check_shared_fs_02`
 in a checklist.
 
 .. note::
+
     The configuration for manila-rootwrap in file ``rootwrap.conf`` and the
     manila-rootwrap command filters for share nodes in file
     ``rootwrap.d/share.filters`` should be owned by, and only-writeable by, the
     root user.
 
 .. tip::
+
     Manila configuration file ``manila.conf`` may be used from different places.
     The path ``/etc/manila/manila.conf`` is one of expected paths by default.

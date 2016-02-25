@@ -114,7 +114,7 @@ Identity API endpoint starting with ``https://``.
 
 .. _check_compute_05:
 
-Check-Compute-05: Does Nova communicates with Glance securely?
+Check-Compute-05: Does Nova communicate with Glance securely?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack components communicate with each other using various protocols and

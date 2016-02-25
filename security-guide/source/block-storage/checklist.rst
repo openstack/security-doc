@@ -114,7 +114,7 @@ to Identity API endpoint starting with ``https://`` or value of parameter
 
 .. _check_block_05:
 
-Check-Block-05: Does cinder communicates with nova over TLS?
+Check-Block-05: Does cinder communicate with nova over TLS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack components communicate with each other using various protocols and
@@ -131,7 +131,7 @@ section in ``/etc/cinder/cinder.conf`` is set to ``True``.
 
 .. _check_block_06:
 
-Check-Block-06: Does cinder communicates with glance over TLS?
+Check-Block-06: Does cinder communicate with glance over TLS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to previous check (:ref:`check_block_05`), it is recommended

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-23 06:07+0000\n"
+"POT-Creation-Date: 2016-02-26 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -370,10 +370,10 @@ msgid ""
 "html>`__."
 msgstr ""
 
-#: ../block-storage.rst:31
+#: ../block-storage.rst:32
 msgid ""
 "Whilst this chapter is currently sparse on specific guidance, it is expected "
-"that standard hardening practices will be followed.  This section will be "
+"that standard hardening practices will be followed. This section will be "
 "expanded with relevant information."
 msgstr ""
 
@@ -658,6 +658,48 @@ msgid ""
 "``114688`` or if value of parameter ``max_request_body_size`` under "
 "``[oslo_middleware]`` section in ``/etc/cinder/cinder.conf`` is not set to "
 "``114688``."
+msgstr ""
+
+#: ../block-storage/volume_wiping.rst:3
+msgid "Volume Wiping"
+msgstr ""
+
+#: ../block-storage/volume_wiping.rst:5
+msgid ""
+"There are several ways to wipe a block storage device. The recommended way "
+"is to set the ``lvm_type`` to ``thin``, and then use the ``volume_clear`` "
+"parameter."
+msgstr ""
+
+#: ../block-storage/volume_wiping.rst:11
+msgid ""
+"In older OpenStack releases, ``lvm_type=default`` was used to signify a "
+"wipe. While this method still works, ``lvm_type=default`` is not recommended "
+"for setting secure delete."
+msgstr ""
+
+#: ../block-storage/volume_wiping.rst:15
+msgid ""
+"The ``volume_clear`` parameter can accept either ``zero`` or ``shred`` "
+"arguments. The ``zero`` argument will write a single pass of zeroes to the "
+"device. The ``shred`` argument will write three passes of predetermined bit "
+"patterns."
+msgstr ""
+
+#: ../block-storage/volume_wiping.rst:20
+msgid ""
+"For more information about the ``lvm_type`` parameter, see the "
+"`Configuration Reference <http://docs.openstack.org/liberty/config-reference/"
+"content/lvm-volume-driver.html>__` and the `Cloud Administration Guide "
+"<http://docs.openstack.org/admin-guide-cloud/blockstorage_over_subscription."
+"html>__`."
+msgstr ""
+
+#: ../block-storage/volume_wiping.rst:26
+msgid ""
+"For more information about the ``volume_clear`` parameter, see the "
+"`OpenStack Configuration Reference <http://docs.openstack.org/liberty/config-"
+"reference/content/section_cinder.conf.html>`__."
 msgstr ""
 
 #: ../compliance.rst:3
@@ -1968,10 +2010,10 @@ msgstr ""
 #: ../compute/hardening-deployments.rst:16
 msgid ""
 "The permissions of a file can be examined my moving into the directory the "
-"file is contained in and running the ``ls -lh`` command. This will show the "
-"permissions, owner, and group that have access to the file, as well as other "
-"information such as the last time the file was modified and when it was "
-"created."
+"file is contained in and running the :command:`ls -lh` command. This will "
+"show the permissions, owner, and group that have access to the file, as well "
+"as other information such as the last time the file was modified and when it "
+"was created."
 msgstr ""
 
 #: ../compute/hardening-deployments.rst:22
@@ -2255,8 +2297,8 @@ msgid ""
 "A cloud architect should decide what devices to make available to cloud "
 "users. Anything that is not needed should be removed from QEMU. This step "
 "requires recompiling QEMU after modifying the options passed to the QEMU "
-"configure script. For a complete list of up-to-date options simply run "
-"``command:./configure --help`` from within the QEMU source directory. Decide "
+"configure script. For a complete list of up-to-date options simply run :"
+"command:`./configure --help` from within the QEMU source directory. Decide "
 "what is needed for your deployment, and disable the remaining options."
 msgstr ""
 
@@ -2548,7 +2590,7 @@ msgstr ""
 #: ../compute/hardening-the-virtualization-layers.rst:305
 #: ../compute/hypervisor-selection.rst:323
 #: ../shared-file-systems/network-and-security-models.rst:44
-#: ../shared-file-systems/security-services.rst:58
+#: ../shared-file-systems/security-services.rst:59
 msgid "Description"
 msgstr ""
 
@@ -5997,7 +6039,7 @@ msgstr ""
 # #-#-#-#-#  identity.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  shared-file-systems.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../identity/authentication-methods.rst:79
-#: ../shared-file-systems/security-services.rst:65
+#: ../shared-file-systems/security-services.rst:66
 msgid "Kerberos"
 msgstr ""
 
@@ -7091,8 +7133,8 @@ msgstr ""
 msgid ""
 "In order to create a trust between the Identity Provider and the Service "
 "Provider, metadata must be exchanged. To create metadata for your Identity "
-"service, run the ``keystone-manage`` command and pipe the output to a file. "
-"For example:"
+"service, run the :command:`keystone-manage` command and pipe the output to a "
+"file. For example:"
 msgstr ""
 
 #: ../identity/federated-keystone.rst:524
@@ -9931,9 +9973,9 @@ msgid ""
 "These should be put in place to monitor and report on changes to system, "
 "hypervisor, and application configuration files such as ``/etc/pam.d/system-"
 "auth`` and ``/etc/keystone/keystone.conf``, as well as kernel modules (such "
-"as virtio). Best practice is to use the ``lsmod`` command to show what is "
-"regularly being loaded on a system to help determine what should or should "
-"not be included in FIM checks."
+"as virtio). Best practice is to use the :command:`lsmod` command to show "
+"what is regularly being loaded on a system to help determine what should or "
+"should not be included in FIM checks."
 msgstr ""
 
 #: ../management/management-interfaces.rst:3
@@ -11438,9 +11480,9 @@ msgstr ""
 
 #: ../networking/services.rst:46
 msgid ""
-"NOTE: If you intend for your network to support more than 4094 tenants VLAN "
-"is probably not the correct option for you as multiple 'hacks' are required "
-"to extend the VLAN tags to more than 4094 tenants."
+"If you intend for your network to support more than 4094 tenants VLAN is "
+"probably not the correct option for you as multiple 'hacks' are required to "
+"extend the VLAN tags to more than 4094 tenants."
 msgstr ""
 
 #: ../networking/services.rst:52
@@ -13244,7 +13286,7 @@ msgid ""
 "configure and use."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:85
+#: ../shared-file-systems/intro.rst:86
 msgid ""
 "Different access features are supported by different share drivers with "
 "taking into consideration the shared file system protocol. The supported "
@@ -13257,7 +13299,7 @@ msgid ""
 "share_back_ends_feature_support_mapping.html>`_."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:95
+#: ../shared-file-systems/intro.rst:96
 msgid ""
 "As administrator, you can create the share types that enable the scheduler "
 "to filter the back ends before you create a share. The share types have the "
@@ -13269,45 +13311,45 @@ msgid ""
 "see available share types and create shares using them."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:104
+#: ../shared-file-systems/intro.rst:105
 msgid ""
 "The shares and share types can be created as public or private. This level "
 "of visibility defines whether other tenants are able to see these objects "
 "and operate with them, or not."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:108
+#: ../shared-file-systems/intro.rst:109
 msgid ""
 "The permissions of API calls for different users and their roles are "
 "determined by :ref:`policies <shared_fs_policies>` as well as other "
 "OpenStack services."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:111
+#: ../shared-file-systems/intro.rst:112
 msgid ""
 "The Identity service with different back ends, for example, LDAP, Active "
 "Directory, can be used for the authentication in the Shared File Systems. "
 "See details of the identity service security in :doc:`../identity` section."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:116
+#: ../shared-file-systems/intro.rst:117
 msgid "General security information"
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:118
+#: ../shared-file-systems/intro.rst:119
 msgid ""
 "Similar to other OpenStack projects, the Shared File Systems service is "
 "registered with the Identity service, so you can find the API endpoints of "
 "the share service v1 and v2 using **manila endpoints** command:"
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:144
+#: ../shared-file-systems/intro.rst:145
 msgid ""
 "By default, the Shared File Systems API service listens only on the port "
 "``8786`` with ``tcp6`` type that supports both IPv4 and IPv6."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:148
+#: ../shared-file-systems/intro.rst:149
 msgid ""
 "The port ``8786`` is the default port for the Shared File Systems service. "
 "It may be changed to any other port, but this change should also be made in "
@@ -13315,13 +13357,13 @@ msgid ""
 "defaults to ``8786``."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:153
+#: ../shared-file-systems/intro.rst:154
 msgid ""
 "In ``/etc/manila/`` directory you can find the environment configuration "
 "files:"
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:166
+#: ../shared-file-systems/intro.rst:167
 msgid ""
 "It is recommended that you configure the Shared File Systems service to run "
 "under a non-root service account, for example, ``manila`` and change file "
@@ -13333,7 +13375,7 @@ msgid ""
 "services."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:174
+#: ../shared-file-systems/intro.rst:175
 msgid ""
 "Thus, for the configuration files it is recommended to set ownership to "
 "``root/manila`` and access permissions to ``640`` allowing only root to "
@@ -13342,14 +13384,14 @@ msgid ""
 "`check_shared_fs_02` in a checklist."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:181
+#: ../shared-file-systems/intro.rst:183
 msgid ""
 "The configuration for manila-rootwrap in file ``rootwrap.conf`` and the "
 "manila-rootwrap command filters for share nodes in file ``rootwrap.d/share."
 "filters`` should be owned by, and only-writeable by, the root user."
 msgstr ""
 
-#: ../shared-file-systems/intro.rst:187
+#: ../shared-file-systems/intro.rst:190
 msgid ""
 "Manila configuration file ``manila.conf`` may be used from different places. "
 "The path ``/etc/manila/manila.conf`` is one of expected paths by default."
@@ -13474,14 +13516,14 @@ msgstr ""
 msgid "No share servers mode"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:76
+#: ../shared-file-systems/network-and-security-models.rst:77
 msgid ""
 "In *no share servers mode* the Shared File Systems service will assume that "
 "the network interfaces through which any shares are exported are already "
 "reachable by all tenants."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:80
+#: ../shared-file-systems/network-and-security-models.rst:81
 msgid ""
 "In the *no share servers* mode the share driver does not handle the storage "
 "life cycle. The administrator is expected to handle the storage, network "
@@ -13497,18 +13539,18 @@ msgid ""
 "OpenStack tools."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:93
+#: ../shared-file-systems/network-and-security-models.rst:94
 msgid ""
 "In this mode, the driver is able to create share servers and join them to an "
 "existing network. When providing a new share server, the drivers expect an "
 "IP address and subnet from the Shared File Systems service."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:95
+#: ../shared-file-systems/network-and-security-models.rst:96
 msgid "Share servers mode"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:97
+#: ../shared-file-systems/network-and-security-models.rst:98
 msgid ""
 "Unlike the no share servers mode, in the *share servers* mode the users have "
 "the share network and the share server that is created for each share "
@@ -13516,7 +13558,7 @@ msgid ""
 "capacity and throughput."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:102
+#: ../shared-file-systems/network-and-security-models.rst:103
 msgid ""
 "You also can configure the :ref:`security services "
 "<shared_fs_security_services>` in both *share servers* and *no share "
@@ -13527,33 +13569,33 @@ msgid ""
 "security services supported by the share driver."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:111
+#: ../shared-file-systems/network-and-security-models.rst:112
 msgid "Flat vs segmented networking"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:112
+#: ../shared-file-systems/network-and-security-models.rst:113
 msgid ""
 "The Shared File Systems service allows to work with different types of a "
 "network:"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:115
+#: ../shared-file-systems/network-and-security-models.rst:116
 msgid "``flat``"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:116
+#: ../shared-file-systems/network-and-security-models.rst:117
 msgid "``GRE``"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:117
+#: ../shared-file-systems/network-and-security-models.rst:118
 msgid "``VLAN``"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:118
+#: ../shared-file-systems/network-and-security-models.rst:119
 msgid "``VXLAN``"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:121
+#: ../shared-file-systems/network-and-security-models.rst:123
 msgid ""
 "The Shared File Systems service is just keeping the information about the "
 "networks in the database, and the real networks are available due to the "
@@ -13566,22 +13608,22 @@ msgid ""
 "configuration file."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:131
+#: ../shared-file-systems/network-and-security-models.rst:133
 msgid ""
 "In the :ref:`share servers <share-servers-vs-no-share-servers>` back-end "
 "mode the share driver creates and manages the share server for each share "
 "network. This mode can be divided on two variations:"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:135
+#: ../shared-file-systems/network-and-security-models.rst:137
 msgid "Flat network in *share servers* back-end mode"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:136
+#: ../shared-file-systems/network-and-security-models.rst:138
 msgid "Segmented network in *share servers* back-end mode"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:138
+#: ../shared-file-systems/network-and-security-models.rst:140
 msgid ""
 "Initially, while creating the share network, you can set up either a network "
 "and subnet of the OpenStack Networking (neutron) or a network of Legacy "
@@ -13591,14 +13633,14 @@ msgid ""
 "set the network parameters in its configuration file."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:146
+#: ../shared-file-systems/network-and-security-models.rst:149
 msgid ""
 "All the share drivers that use the OpenStack Compute service do not use the "
 "network plug-ins. In Liberty release it is Windows and Generic drivers, so "
 "these share drives have other options and use different approach."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:150
+#: ../shared-file-systems/network-and-security-models.rst:153
 msgid ""
 "After the share network is created, the Shared File Systems service "
 "retrieves the network information determined by the network provider, for "
@@ -13607,17 +13649,17 @@ msgid ""
 "from which to allocate the network."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:156
+#: ../shared-file-systems/network-and-security-models.rst:159
 msgid ""
 "Below you can see the comparison of the flat network with segmented network "
 "in *share servers* back-end mode."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:159
+#: ../shared-file-systems/network-and-security-models.rst:162
 msgid "**Flat network in share servers back-end mode**"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:161
+#: ../shared-file-systems/network-and-security-models.rst:164
 msgid ""
 "In this mode, some storage controllers can create share servers but due to "
 "various limitations of the physical or logical network all of the share "
@@ -13627,7 +13669,7 @@ msgid ""
 "reachable by all tenants."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:167
+#: ../shared-file-systems/network-and-security-models.rst:170
 msgid ""
 "In this mode, the :ref:`security service part <shared_fs_security_services>` "
 "of the share networks is important because it allows tenants to specify "
@@ -13637,11 +13679,11 @@ msgid ""
 "created, which limits the situations where this mode makes sense."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:174
+#: ../shared-file-systems/network-and-security-models.rst:177
 msgid "**Segmented network in share servers back-end mode**"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:176
+#: ../shared-file-systems/network-and-security-models.rst:179
 msgid ""
 "In this mode, the share driver is able to create share servers and join them "
 "to an existing segmented network. The share drivers expect the Shared File "
@@ -13650,23 +13692,23 @@ msgid ""
 "other info relevant to the segmentation type."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:182
+#: ../shared-file-systems/network-and-security-models.rst:185
 msgid ""
 "The security aspects of the configured networks depends on the configuration "
 "itself and the network provider."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:186
+#: ../shared-file-systems/network-and-security-models.rst:190
 msgid ""
 "The share drivers may not support every type of segmentation, for details "
 "see the specification for each driver."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:192
+#: ../shared-file-systems/network-and-security-models.rst:196
 msgid "Network plug-ins"
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:194
+#: ../shared-file-systems/network-and-security-models.rst:198
 msgid ""
 "The Shared File Systems service architecture defines an abstraction layer "
 "for network resource provisioning and allowing administrators to choose from "
@@ -13676,7 +13718,7 @@ msgid ""
 "available with OpenStack."
 msgstr ""
 
-#: ../shared-file-systems/network-and-security-models.rst:201
+#: ../shared-file-systems/network-and-security-models.rst:205
 msgid ""
 "The network plug-ins allow to use any functions, configurations of the "
 "OpenStack Networking and Legacy networking services, for example, you can "
@@ -13698,20 +13740,20 @@ msgid ""
 "in the service's ``policy.json`` file."
 msgstr ""
 
-#: ../shared-file-systems/policies.rst:11
+#: ../shared-file-systems/policies.rst:12
 msgid ""
 "The configuration file ``policy.json`` may be used from different places. "
 "The path ``/etc/manila/policy.json`` is one of expected paths by default."
 msgstr ""
 
-#: ../shared-file-systems/policies.rst:14
+#: ../shared-file-systems/policies.rst:15
 msgid ""
 "Whenever an API call to the Shared File Systems service is made, the policy "
 "engine uses the appropriate policy definitions to determine if the call can "
 "be accepted."
 msgstr ""
 
-#: ../shared-file-systems/policies.rst:18
+#: ../shared-file-systems/policies.rst:19
 msgid ""
 "The policy rule determines under which circumstances the API call is "
 "permitted. The ``/etc/manila/policy.json`` file has rules where action is "
@@ -13721,13 +13763,13 @@ msgid ""
 "From one OpenStack release to another it can be changed."
 msgstr ""
 
-#: ../shared-file-systems/policies.rst:71
+#: ../shared-file-systems/policies.rst:72
 msgid ""
 "Note that your users must be assigned to groups and roles that you refer to "
 "in your policies."
 msgstr ""
 
-#: ../shared-file-systems/policies.rst:75
+#: ../shared-file-systems/policies.rst:77
 msgid ""
 "Any changes to ``/etc/manila/policy.json`` are effective immediately, which "
 "allows new policies to be implemented while the Shared File Systems service "
@@ -13770,18 +13812,18 @@ msgid ""
 "Systems service."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:26
+#: ../shared-file-systems/security-services.rst:27
 msgid ""
 "In some cases, it is required to add one of the security services. For "
 "example, NetApp, EMC and Windows drivers require Active Directory for the "
 "creation of shares with CIFS protocol."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:31
+#: ../shared-file-systems/security-services.rst:32
 msgid "Security services management"
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:32
+#: ../shared-file-systems/security-services.rst:33
 msgid ""
 "A *security service* is the Shared File Systems service (manila) term that "
 "means a set of options that defines a security domain for a particular "
@@ -13791,100 +13833,100 @@ msgid ""
 "given domain."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:38
+#: ../shared-file-systems/security-services.rst:39
 msgid ""
 "Using the API users can create, update, view, delete a security service. The "
 "security services are realized in the Shared File Systems API with such key "
 "concepts:"
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:42
+#: ../shared-file-systems/security-services.rst:43
 msgid "Tenants provide the details for the security service."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:43
+#: ../shared-file-systems/security-services.rst:44
 msgid ""
 "Administrators care about security services: they configure the server side "
 "of such security services."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:45
+#: ../shared-file-systems/security-services.rst:46
 msgid ""
 "Inside The Shared File Systems API, a ``security_service`` is associated "
 "with the ``share_networks``."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:47
+#: ../shared-file-systems/security-services.rst:48
 msgid ""
 "The share drivers use the information in the security service to configure "
 "newly created share servers."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:50
+#: ../shared-file-systems/security-services.rst:51
 msgid ""
 "While creating a security service, you can select one of these "
 "authentication services:"
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:57
+#: ../shared-file-systems/security-services.rst:58
 msgid "Authentication service"
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:60
+#: ../shared-file-systems/security-services.rst:61
 msgid "LDAP"
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:61
+#: ../shared-file-systems/security-services.rst:62
 msgid ""
 "The Lightweight Directory Access Protocol. An application protocol for "
 "accessing and maintaining distributed directory information services over an "
 "IP network."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:66
+#: ../shared-file-systems/security-services.rst:67
 msgid ""
 "The network authentication protocol which works on the basis of tickets to "
 "allow nodes communicating over a non-secure network to prove their identity "
 "to one another in a secure manner."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:70
+#: ../shared-file-systems/security-services.rst:71
 msgid "Active Directory"
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:71
+#: ../shared-file-systems/security-services.rst:72
 msgid ""
 "A directory service that Microsoft developed for Windows domain networks. "
 "Uses LDAP, Microsoft's version of Kerberos, and DNS."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:74
+#: ../shared-file-systems/security-services.rst:75
 msgid ""
 "The Shared File Systems allows you to configure a security service with "
 "these options:"
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:77
+#: ../shared-file-systems/security-services.rst:78
 msgid "A DNS IP address that is used inside the tenant network."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:78
+#: ../shared-file-systems/security-services.rst:79
 msgid "An IP address or host name of a security service."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:79
+#: ../shared-file-systems/security-services.rst:80
 msgid "A domain of a security service."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:80
+#: ../shared-file-systems/security-services.rst:81
 msgid "A user or group name that is used by the tenant."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:81
+#: ../shared-file-systems/security-services.rst:82
 msgid "The password for the user, if you specify a user name."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:83
+#: ../shared-file-systems/security-services.rst:84
 msgid ""
 "An existing security service entity can be associated with the share network "
 "entities that inform the Shared File Systems service about the security and "
@@ -13893,7 +13935,7 @@ msgid ""
 "from a share network."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:89
+#: ../shared-file-systems/security-services.rst:90
 msgid ""
 "For details of managing the security services via API, see the `Security "
 "services API <http://developer.openstack.org/api-ref-share-v2.html#share-"
@@ -13902,7 +13944,7 @@ msgid ""
 "admin-guide- cloud/shared_file_systems_security_services.html>`_."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:95
+#: ../shared-file-systems/security-services.rst:96
 msgid ""
 "An administrator and the users as share owners can manage the :ref:`access "
 "to the shares <shared_fs_share_acl>` by means of creating access rules with "
@@ -13911,7 +13953,7 @@ msgid ""
 "configure and use."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:101
+#: ../shared-file-systems/security-services.rst:102
 msgid ""
 "Thus as an administrator you can configure the backend to use the definite "
 "authentication service via network and it will store the users. The "
@@ -13919,7 +13961,7 @@ msgid ""
 "System and the Identity service."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:107
+#: ../shared-file-systems/security-services.rst:109
 msgid ""
 "Different authentication services are supported by different share drivers. "
 "For details of supporting of features by different drivers, see `Manila "
@@ -13932,48 +13974,48 @@ msgid ""
 "security services."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:117
+#: ../shared-file-systems/security-services.rst:119
 msgid ""
 "Some drivers support the security services and other drivers do not support "
 "any of the hereinabove security services."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:120
+#: ../shared-file-systems/security-services.rst:122
 msgid ""
 "The Generic Driver with NFS or CIFS shared file system protocol supports "
 "only authentication method through the IP address."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:125
+#: ../shared-file-systems/security-services.rst:127
 msgid ""
 "Those drivers that support CIFS shared file system protocol in most cases "
 "can be configured to use Active Directory and manage access through user "
 "authentication."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:128
+#: ../shared-file-systems/security-services.rst:130
 msgid ""
 "Drivers that support GlusterFS protocol can be used with authentication via "
 "TLS certificates."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:130
+#: ../shared-file-systems/security-services.rst:132
 msgid ""
 "With drivers that support NFS protocol the authentication via IP address is "
 "the only supported."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:132
+#: ../shared-file-systems/security-services.rst:134
 msgid ""
 "Since the HDFS shared file system protocol uses NFS access it also can be "
 "configured to authenticate via IP address."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:135
+#: ../shared-file-systems/security-services.rst:137
 msgid "The authentication via IP is the most weak."
 msgstr ""
 
-#: ../shared-file-systems/security-services.rst:137
+#: ../shared-file-systems/security-services.rst:139
 msgid ""
 "The recommended configuration for the Shared File Systems service real usage "
 "is to create a share with CIFS share protocol and add to it the Microsoft "
@@ -14012,12 +14054,13 @@ msgstr ""
 msgid ""
 "According to a :ref:`policy.json <shared_fs_policies>` file, an "
 "administrator and the users as share owners can manage the access to the "
-"shares by means of creating access rules. Using **manila access-allow**, "
-"**manila access-deny** and **manila access-list** commands, you can grant, "
-"deny and list access to a specified share correspondingly."
+"shares by means of creating access rules. Using :command:`manila access-"
+"allow`, :command:`manila access-deny` and :command:`manila access-list` "
+"commands, you can grant, deny and list access to a specified share "
+"correspondingly."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:25
+#: ../shared-file-systems/share-acl.rst:26
 msgid ""
 "By default, when a share is created and has its export location, the Shared "
 "File Systems service expects that nobody can access the share by mounting "
@@ -14026,7 +14069,7 @@ msgid ""
 "the access to the share, check the mounting config for the export protocol."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:32
+#: ../shared-file-systems/share-acl.rst:33
 msgid ""
 "When the share is just created there are no created access rules and "
 "expected permission to mount a share. This is obtained by the mounting "
@@ -14039,52 +14082,52 @@ msgid ""
 "hosts are denied to mount the share."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:42
+#: ../shared-file-systems/share-acl.rst:43
 msgid ""
 "Using the Shared File Systems service, you can grant or deny access to a "
 "share by specifying one of these supported share access levels:"
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:45
+#: ../shared-file-systems/share-acl.rst:46
 msgid "**rw**. Read and write (RW) access. This is the default value."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:47
+#: ../shared-file-systems/share-acl.rst:48
 msgid "**ro**. Read-only (RO) access."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:50
+#: ../shared-file-systems/share-acl.rst:52
 msgid ""
 "The RO access level can be helpful in the public shares when the "
 "administrator gives read and write (RW) access for some certain editors or "
 "contributors and gives read-only (RO) access for the rest of users (viewers)."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:55
+#: ../shared-file-systems/share-acl.rst:57
 msgid "You must also specify one of these supported authentication methods:"
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:57
+#: ../shared-file-systems/share-acl.rst:59
 msgid ""
 "**ip**. Authenticates an instance through its IP address. A valid format is "
 "XX.XX.XX.XX or XX.XX.XX.XX/XX. For example 0.0.0.0/0."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:60
+#: ../shared-file-systems/share-acl.rst:62
 msgid ""
 "**cert**. Authenticates an instance through a TLS certificate. Specify the "
 "TLS identity as the IDENTKEY. A valid value is any string up to 64 "
 "characters long in the common name (CN) of the certificate."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:64
+#: ../shared-file-systems/share-acl.rst:66
 msgid ""
 "**user**. Authenticates by a specified user or group name. A valid value is "
 "an alphanumeric string that can contain some special characters and is from "
 "4 to 32 characters long."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:69
+#: ../shared-file-systems/share-acl.rst:72
 msgid ""
 "The supported authentication methods depend on which share driver, security "
 "service and shared file system protocol you configure and use. Supported "
@@ -14095,13 +14138,13 @@ msgid ""
 "org/developer/manila/devref/share_back_ends_feature_support_ mapping.html>`_."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:78
+#: ../shared-file-systems/share-acl.rst:81
 msgid ""
 "To verify that the access rules (ACL) were configured correctly for a share, "
 "you can list permissions for a share."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:82
+#: ../shared-file-systems/share-acl.rst:86
 msgid ""
 "You also can choose and add the :ref:`security service "
 "<shared_fs_security_services>` that is supported by the share driver to "
@@ -14110,7 +14153,7 @@ msgid ""
 "Kerberos and Microsoft Active Directory."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:88
+#: ../shared-file-systems/share-acl.rst:92
 msgid ""
 "Below is an example of the NFS share with the Generic driver. After the "
 "share was created it has export location ``10.254.0.3:/shares/share-b2874f8d-"
@@ -14118,40 +14161,40 @@ msgid ""
 "``10.254.0.4`` IP address, you'll get the *\"Permission denied\"* message."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:102
+#: ../shared-file-systems/share-acl.rst:106
 msgid ""
 "As an administrator, you can connect through SSH to a host with "
 "``10.254.0.3`` IP address, check the ``/etc/exports`` file on it and see "
 "that it is empty:"
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:110
+#: ../shared-file-systems/share-acl.rst:114
 msgid ""
 "The Generic driver we use in example does not support any of the security "
 "services, thus with NFS shared file system protocol we can grant access only "
 "through the IP address:"
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:128
+#: ../shared-file-systems/share-acl.rst:132
 msgid ""
 "After the rule has status ``active`` we can connect to the ``10.254.0.3`` "
 "host again and check the ``/etc/exports`` file and see that the line with "
 "rule was added:"
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:138
+#: ../shared-file-systems/share-acl.rst:142
 msgid ""
 "Now we can mount a share on the host with IP address ``10.254.0.4`` and have "
 "``rw`` permissions to the share:"
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:151
+#: ../shared-file-systems/share-acl.rst:155
 msgid ""
 "You also can list the access rules to each share and deny the access using "
 "the Shared File Systems service CLI."
 msgstr ""
 
-#: ../shared-file-systems/share-acl.rst:155
+#: ../shared-file-systems/share-acl.rst:160
 msgid ""
 "To ensure that the granted or denied access with Shared File Systems service "
 "CLI is correct, check the mount config file on the storage before releasing "
@@ -14207,14 +14250,14 @@ msgid ""
 "get information about access for a specified private share type."
 msgstr ""
 
-#: ../shared-file-systems/share-type-acl.rst:35
+#: ../shared-file-systems/share-type-acl.rst:36
 msgid ""
 "Since the share types due to their extra specifications help to filter or "
 "choose back ends before users create a share, using access to the share "
 "types you can limit clients that can choose definite back end."
 msgstr ""
 
-#: ../shared-file-systems/share-type-acl.rst:39
+#: ../shared-file-systems/share-type-acl.rst:40
 msgid ""
 "As an example, being an administrator user in admin tenant, you can create a "
 "private share type named ``my_type`` and see it in the list. In the console "
@@ -14222,31 +14265,31 @@ msgid ""
 "provided to show the current logged in user."
 msgstr ""
 
-#: ../shared-file-systems/share-type-acl.rst:59
+#: ../shared-file-systems/share-type-acl.rst:60
 msgid ""
 "The demo user in demo tenant can list the types and the private share type "
 "named ``my_type`` is not visible for him."
 msgstr ""
 
-#: ../shared-file-systems/share-type-acl.rst:76
+#: ../shared-file-systems/share-type-acl.rst:77
 msgid ""
 "The administrator can grant the access to the private share type for the "
 "demo tenant with the tenant ID equal to df29a37db5ae48d19b349fe947fada46:"
 msgstr ""
 
-#: ../shared-file-systems/share-type-acl.rst:95
+#: ../shared-file-systems/share-type-acl.rst:96
 msgid ""
 "Thus now the users in demo tenant can see the private share type and use it "
 "in the share creation:"
 msgstr ""
 
-#: ../shared-file-systems/share-type-acl.rst:113
+#: ../shared-file-systems/share-type-acl.rst:114
 msgid ""
-"To deny access for a specified project, use **manila type-access-remove "
-"<share_type> <project_id>** command."
+"To deny access for a specified project, use :command:`manila type-access-"
+"remove <share_type> <project_id>` command."
 msgstr ""
 
-#: ../shared-file-systems/share-type-acl.rst:117
+#: ../shared-file-systems/share-type-acl.rst:119
 msgid ""
 "A **real production use case** that shows the purpose of a share types and "
 "access to them is a situation when you have two back ends: cheap LVM as a "

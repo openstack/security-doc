@@ -43,6 +43,7 @@ The following figure shows an architectural and networking flow diagram of the
 OpenStack Networking components:
 
 .. image:: ../figures/sdn-connections.png
+   :width: 100%
 
 OpenStack Networking service placement on physical servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,6 +56,7 @@ Network connectivity of physical servers
 ----------------------------------------
 
 .. image:: ../figures/1aa-network-domains-diagram.png
+   :width: 100%
 
 A standard OpenStack Networking setup has up to four distinct physical data
 center networks:

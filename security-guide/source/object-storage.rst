@@ -27,6 +27,7 @@ groups:
    -  Object service
 
 .. figure:: figures/swift_network_diagram-1.png
+   :width: 100%
 
    An example diagram from the OpenStack Object Storage Administration Guide
    (2013)
@@ -70,6 +71,7 @@ virtual):
 The following figure demonstrates one possible network architecture.
 
 .. figure:: figures/swift_network_diagram-2.png
+   :width: 100%
 
    Object Storage network architecture with a management node (OSAM)
 

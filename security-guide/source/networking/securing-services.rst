@@ -23,6 +23,7 @@ security domains:
    upon product used.
 
 .. image:: ../figures/1aa-logical-neutron-flow.png
+   :width: 100%
 
 To isolate sensitive data communication between the OpenStack Networking
 services and other OpenStack core services, configure these

@@ -109,16 +109,20 @@ the OpenSSL libraries.
 Cryptographic algorithms, cipher modes, and protocols
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for
-broad client compatibility but we recommend using caution and only
-enabling these protocols if you have a strong requirement to do so.
-Other TLS versions, explicitly older versions, should not be used.
-These older versions include SSLv2 which is deprecated, and SSLv3 which
-suffers from the attack known as POODLE. When using TLS v1.2 and in
-control of both the clients and the server, the cipher suite should be
-limited to ``ECDHE-ECDSA-AES256-GCM-SHA384``. Where you don't control
-both ends and are using TLS v1+, the more general
-``HIGH:!aNULL:!eNULL:!DES:!3DES`` is a reasonable cipher selection.
+We recommend that only TLS 1.2 is used. Other versions such as
+TLS 1.0 and 1.1 are vulnerable to multiple attacks. TLS 1.0 should be
+disabled completely in your environment. TLS 1.1 may be used for broad
+client compatibility, however, excercise caution when enabling this
+protocol. Only enable TLS version 1.1 if there is a mandatory
+requirement and you are aware of the risks involved. Older versions
+of TLS should not be used as these versions include SSLv2 which is
+deprecated, and SSLv3 which suffers from the attack known as POODLE.
+When you are using TLS 1.2 and in control of both the clients and
+the server, the cipher suite should be limited to
+``ECDHE-ECDSA-AES256-GCM-SHA384``. In circumstances where you don’t
+control both ends and are using TLS 1.1 or 1.2 the more general
+``HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA`` is a
+reasonable cipher selection.
 
 However, as this book does not intend to be a thorough reference on
 cryptography we do not wish to be prescriptive about what specific

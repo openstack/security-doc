@@ -146,8 +146,8 @@ section in ``/etc/cinder/cinder.conf`` is set to ``True``.
 
 .. _check_block_07:
 
-Check-Block-07: Is NAS operating in secure enviornment?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check-Block-07: Is NAS operating in a secure environment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Cinder supports an NFS driver which works differently than a traditional block
 storage driver. The NFS driver does not actually allow an instance to access a

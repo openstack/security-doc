@@ -23,6 +23,12 @@ We briefly introduce the kinds of clouds: private, public, and hybrid before
 presenting an overview of the OpenStack components and their related security
 concerns in the remainder of the chapter.
 
+Throughout the book, we refer to several types of OpenStack cloud users:
+:term:`administrator`, :term:`operator`, and :term:`user`. We use these
+terms to identify the level of security access each role has, although, in
+reality, we understand that varying roles are often held by the same
+individual.
+
 Cloud types
 ~~~~~~~~~~~
 

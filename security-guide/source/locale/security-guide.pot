@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-26 06:07+0000\n"
+"POT-Creation-Date: 2016-03-07 06:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -547,7 +547,7 @@ msgid ""
 msgstr ""
 
 #: ../block-storage/checklist.rst:118
-msgid "Check-Block-05: Does cinder communicates with nova over TLS?"
+msgid "Check-Block-05: Does cinder communicate with nova over TLS?"
 msgstr ""
 
 #: ../block-storage/checklist.rst:126
@@ -563,7 +563,7 @@ msgid ""
 msgstr ""
 
 #: ../block-storage/checklist.rst:135
-msgid "Check-Block-06: Does cinder communicates with glance over TLS?"
+msgid "Check-Block-06: Does cinder communicate with glance over TLS?"
 msgstr ""
 
 #: ../block-storage/checklist.rst:137
@@ -1970,7 +1970,7 @@ msgid ""
 msgstr ""
 
 #: ../compute/checklist.rst:118
-msgid "Check-Compute-05: Does Nova communicates with Glance securely?"
+msgid "Check-Compute-05: Does Nova communicate with Glance securely?"
 msgstr ""
 
 #: ../compute/checklist.rst:126
@@ -3714,7 +3714,7 @@ msgstr ""
 #: ../documentation/system-documentation-requirements.rst:130
 #: ../introduction/introduction-to-openstack.rst:180
 #: ../management/management-interfaces.rst:23
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:151
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:156
 msgid "Dashboard"
 msgstr ""
 
@@ -12384,18 +12384,25 @@ msgstr ""
 
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:112
 msgid ""
-"We recommend only using TLSv1.2. TLSv1.0 and TLSv1.1 may be used for broad "
-"client compatibility but we recommend using caution and only enabling these "
-"protocols if you have a strong requirement to do so. Other TLS versions, "
-"explicitly older versions, should not be used. These older versions include "
-"SSLv2 which is deprecated, and SSLv3 which suffers from the attack known as "
-"POODLE. When using TLS v1.2 and in control of both the clients and the "
-"server, the cipher suite should be limited to ``ECDHE-ECDSA-AES256-GCM-"
-"SHA384``. Where you don't control both ends and are using TLS v1+, the more "
-"general ``HIGH:!aNULL:!eNULL:!DES:!3DES`` is a reasonable cipher selection."
+"We recommend that only TLS 1.2 is used. Other versions such as TLS 1.0 and "
+"1.1 are vulnerable to multiple attacks. TLS 1.0 should be disabled "
+"completely in your environment. TLS 1.1 may be used for broad client "
+"compatibility, however exercise caution when enabling this protocol. Only "
+"enable TLS version 1.1 if there is a mandatory compatibility requirement and "
+"you are aware of the risks involved. All versions of SSL, the predecessor to "
+"TLS, must not be used due to multiple public vulnerabilities."
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:123
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:121
+msgid ""
+"When you are using TLS 1.2 and control both the clients and the server, the "
+"cipher suite should be limited to ``ECDHE-ECDSA-AES256-GCM-SHA384``. In "
+"circumstances where you do not control both endpoints and are using TLS 1.1 "
+"or 1.2 the more general ``HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!"
+"CAMELLIA`` is a reasonable cipher selection."
+msgstr ""
+
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:128
 msgid ""
 "However, as this book does not intend to be a thorough reference on "
 "cryptography we do not wish to be prescriptive about what specific "
@@ -12404,47 +12411,47 @@ msgid ""
 "recommend for further information:"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:129
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:134
 msgid ""
 "`National Security Agency, Suite B Cryptography <http://www.nsa.gov/ia/"
 "programs/suiteb_cryptography/index.shtml>`_"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:130
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:135
 msgid ""
 "`OWASP Guide to Cryptography <https://www.owasp.org/index.php/"
 "Guide_to_Cryptography>`_"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:131
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:136
 msgid ""
 "`OWASP Transport Layer Protection Cheat Sheet <https://www.owasp.org/index."
 "php/Transport_Layer_Protection_Cheat_Sheet>`_"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:132
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:137
 msgid ""
 "`SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate "
 "trust model enhancements <http://www.ieee-security.org/TC/SP2013/"
 "papers/4977a511.pdf>`_"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:133
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:138
 msgid ""
 "`The Most Dangerous Code in the World: Validating SSL Certificates in Non-"
 "Browser Software <http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf>`_"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:134
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:139
 msgid ""
 "`OpenSSL and FIPS 140-2 <http://www.openssl.org/docs/fips/fipsnotes.html>`_"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:137
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:142
 msgid "Summary"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:139
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:144
 msgid ""
 "Given the complexity of the OpenStack components and the number of "
 "deployment possibilities, you must take care to ensure that each component "
@@ -12452,27 +12459,27 @@ msgid ""
 "Subsequent sections discuss the following services:"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:145
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:150
 msgid "Compute API endpoints"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:146
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:151
 msgid "Identity API endpoints"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:147
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:152
 msgid "Networking API endpoints"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:148
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:153
 msgid "Storage API endpoints"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:149
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:154
 msgid "Messaging server"
 msgstr ""
 
-#: ../secure-communication/introduction-to-ssl-and-tls.rst:150
+#: ../secure-communication/introduction-to-ssl-and-tls.rst:155
 msgid "Database server"
 msgstr ""
 

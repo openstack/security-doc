@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-07 06:29+0000\n"
+"POT-Creation-Date: 2016-03-10 06:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -342,7 +342,7 @@ msgstr ""
 
 # #-#-#-#-#  block-storage.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
-#: ../block-storage.rst:3 ../introduction/introduction-to-openstack.rst:144
+#: ../block-storage.rst:3 ../introduction/introduction-to-openstack.rst:150
 msgid "Block Storage"
 msgstr ""
 
@@ -586,7 +586,7 @@ msgid ""
 msgstr ""
 
 #: ../block-storage/checklist.rst:150
-msgid "Check-Block-07: Is NAS operating in secure enviornment?"
+msgid "Check-Block-07: Is NAS operating in a secure environment?"
 msgstr ""
 
 #: ../block-storage/checklist.rst:152
@@ -1785,7 +1785,7 @@ msgstr ""
 # #-#-#-#-#  data-processing.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute.rst:3 ../data-processing/deployment.rst:19
-#: ../introduction/introduction-to-openstack.rst:103
+#: ../introduction/introduction-to-openstack.rst:109
 msgid "Compute"
 msgstr ""
 
@@ -3712,7 +3712,7 @@ msgstr ""
 # #-#-#-#-#  secure-communication.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../dashboard.rst:3
 #: ../documentation/system-documentation-requirements.rst:130
-#: ../introduction/introduction-to-openstack.rst:180
+#: ../introduction/introduction-to-openstack.rst:186
 #: ../management/management-interfaces.rst:23
 #: ../secure-communication/introduction-to-ssl-and-tls.rst:156
 msgid "Dashboard"
@@ -4778,7 +4778,7 @@ msgstr ""
 # #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  networking.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../data-processing/deployment.rst:21
-#: ../introduction/introduction-to-openstack.rst:166 ../networking.rst:3
+#: ../introduction/introduction-to-openstack.rst:172 ../networking.rst:3
 msgid "Networking"
 msgstr ""
 
@@ -4786,7 +4786,7 @@ msgstr ""
 # #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  object-storage.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../data-processing/deployment.rst:22
-#: ../introduction/introduction-to-openstack.rst:127 ../object-storage.rst:3
+#: ../introduction/introduction-to-openstack.rst:133 ../object-storage.rst:3
 msgid "Object Storage"
 msgstr ""
 
@@ -8020,11 +8020,20 @@ msgid ""
 "security concerns in the remainder of the chapter."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:27
+#: ../introduction/introduction-to-openstack.rst:26
+msgid ""
+"Throughout the book, we refer to several types of OpenStack cloud users: :"
+"term:`administrator`, :term:`operator`, and :term:`user`. We use these terms "
+"to identify the level of security access each role has, although, in "
+"reality, we understand that varying roles are often held by the same "
+"individual."
+msgstr ""
+
+#: ../introduction/introduction-to-openstack.rst:33
 msgid "Cloud types"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:29
+#: ../introduction/introduction-to-openstack.rst:35
 msgid ""
 "OpenStack is a key enabler in adoption of cloud technology and has several "
 "common deployment use cases. These are commonly known as Public, Private, "
@@ -8034,11 +8043,11 @@ msgid ""
 "these different types of cloud as they apply to OpenStack."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:37
+#: ../introduction/introduction-to-openstack.rst:43
 msgid "Public cloud"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:39
+#: ../introduction/introduction-to-openstack.rst:45
 msgid ""
 "According to NIST, a public cloud is one in which the infrastructure is open "
 "to the general public for consumption. OpenStack public clouds are typically "
@@ -8055,11 +8064,11 @@ msgid ""
 "well as protecting management infrastructure from external attacks."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:54
+#: ../introduction/introduction-to-openstack.rst:60
 msgid "Private cloud"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:56
+#: ../introduction/introduction-to-openstack.rst:62
 msgid ""
 "At the opposite end of the spectrum is the private cloud. As NIST defines "
 "it, a private cloud is provisioned for exclusive use by a single "
@@ -8069,11 +8078,11 @@ msgid ""
 "cases are diverse, as such, their individual security concerns vary."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:64
+#: ../introduction/introduction-to-openstack.rst:70
 msgid "Community cloud"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:66
+#: ../introduction/introduction-to-openstack.rst:72
 msgid ""
 "NIST defines a community cloud as one whose infrastructure is provisioned "
 "for the exclusive use by a specific community of consumers from "
@@ -8084,11 +8093,11 @@ msgid ""
 "premises."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:74
+#: ../introduction/introduction-to-openstack.rst:80
 msgid "Hybrid cloud"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:76
+#: ../introduction/introduction-to-openstack.rst:82
 msgid ""
 "A hybrid cloud is defined by NIST as a composition of two or more distinct "
 "cloud infrastructures, such as private, community, or public, that remain "
@@ -8102,7 +8111,7 @@ msgid ""
 "back end that is PCI compliant."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:87
+#: ../introduction/introduction-to-openstack.rst:93
 msgid ""
 "For the purposes of this document, we treat community and hybrid similarly, "
 "dealing explicitly only with the extremes of public and private clouds from "
@@ -8110,11 +8119,11 @@ msgid ""
 "falls upon the private public continuum."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:93
+#: ../introduction/introduction-to-openstack.rst:99
 msgid "OpenStack service overview"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:95
+#: ../introduction/introduction-to-openstack.rst:101
 msgid ""
 "OpenStack embraces a modular architecture to provide a set of core services "
 "that facilitates scalability and elasticity as core design tenets. This "
@@ -8122,7 +8131,7 @@ msgid ""
 "considerations."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:105
+#: ../introduction/introduction-to-openstack.rst:111
 msgid ""
 "OpenStack :term:`Compute` service (nova) provides services to support the "
 "management of virtual machine instances at scale, instances that host multi-"
@@ -8130,27 +8139,27 @@ msgid ""
 "clusters, and/or high performance computing."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:110
+#: ../introduction/introduction-to-openstack.rst:116
 msgid ""
 "The Compute service facilitates this management through an abstraction layer "
 "that interfaces with supported hypervisors, which we address later on in "
 "more detail."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:114
+#: ../introduction/introduction-to-openstack.rst:120
 msgid ""
 "Later in the guide, we focus generically on the virtualization stack as it "
 "relates to hypervisors."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:117
+#: ../introduction/introduction-to-openstack.rst:123
 msgid ""
 "For information about the current state of feature support, see `OpenStack "
 "Hypervisor Support Matrix <https://wiki.openstack.org/wiki/"
 "HypervisorSupportMatrix>`__."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:121
+#: ../introduction/introduction-to-openstack.rst:127
 msgid ""
 "The security of Compute is critical for an OpenStack deployment.  Hardening "
 "techniques should include support for strong instance isolation, secure "
@@ -8158,7 +8167,7 @@ msgid ""
 "facing API endpoints."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:129
+#: ../introduction/introduction-to-openstack.rst:135
 msgid ""
 "The OpenStack :term:`Object Storage` service (swift) provides support for "
 "storing and retrieving arbitrary data in the cloud. The Object Storage "
@@ -8167,21 +8176,21 @@ msgid ""
 "replication and can handle petabytes of data."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:135
+#: ../introduction/introduction-to-openstack.rst:141
 msgid ""
 "It is important to understand that object storage differs from traditional "
 "file system storage. It is best used for static data such as media files "
 "(MP3s, images, videos), virtual machine images, and backup files."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:139
+#: ../introduction/introduction-to-openstack.rst:145
 msgid ""
 "Object security should focus on access control and encryption of data in "
 "transit and at rest. Other concerns may relate to system abuse, illegal or "
 "malicious content storage, and cross authentication attack vectors."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:146
+#: ../introduction/introduction-to-openstack.rst:152
 msgid ""
 "The OpenStack :term:`Block Storage` service (cinder) provides persistent "
 "block storage for compute instances. The Block Storage service is "
@@ -8189,7 +8198,7 @@ msgid ""
 "and attachment of volumes to instances, to their release."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:151
+#: ../introduction/introduction-to-openstack.rst:157
 msgid ""
 "Security considerations for block storage are similar to that of object "
 "storage."
@@ -8197,12 +8206,12 @@ msgstr ""
 
 # #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 # #-#-#-#-#  shared-file-systems.pot (Security Guide 0.0.1)  #-#-#-#-#
-#: ../introduction/introduction-to-openstack.rst:155
+#: ../introduction/introduction-to-openstack.rst:161
 #: ../shared-file-systems.rst:3
 msgid "Shared File Systems"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:157
+#: ../introduction/introduction-to-openstack.rst:163
 msgid ""
 "The :term:`Shared File Systems service` (manila) provides a set of services "
 "for management of shared file systems in a multi-tenant cloud environment, "
@@ -8213,7 +8222,7 @@ msgid ""
 "file system."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:168
+#: ../introduction/introduction-to-openstack.rst:174
 msgid ""
 "The OpenStack :term:`Networking` service (neutron, previously called "
 "quantum) provides various networking services to cloud users (tenants) such "
@@ -8223,14 +8232,14 @@ msgid ""
 "various networking solutions."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:175
+#: ../introduction/introduction-to-openstack.rst:181
 msgid ""
 "OpenStack Networking allows cloud tenants to manage their guest network "
 "configurations. Security concerns with the networking service include "
 "network traffic isolation, availability, integrity and confidentiality."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:182
+#: ../introduction/introduction-to-openstack.rst:188
 msgid ""
 "The OpenStack :term:`dashboard` (horizon) provides a web-based interface for "
 "both cloud administrators and cloud tenants. Through this interface "
@@ -8239,11 +8248,11 @@ msgid ""
 "the usual security concerns of public web portals."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:189
+#: ../introduction/introduction-to-openstack.rst:195
 msgid "Identity service"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:191
+#: ../introduction/introduction-to-openstack.rst:197
 msgid ""
 "The OpenStack :term:`Identity` service (keystone) is a **shared service** "
 "that provides authentication and authorization services throughout the "
@@ -8251,51 +8260,51 @@ msgid ""
 "multiple forms of authentication."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:196
+#: ../introduction/introduction-to-openstack.rst:202
 msgid ""
 "Security concerns here pertain to trust in authentication, management of "
 "authorization tokens, and secure communication."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:200
+#: ../introduction/introduction-to-openstack.rst:206
 msgid "Image service"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:202
+#: ../introduction/introduction-to-openstack.rst:208
 msgid ""
 "The OpenStack :term:`Image service` (glance) provides disk image management "
 "services. The Image service provides image discovery, registration, and "
 "delivery services to the Compute service, as needed."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:206
+#: ../introduction/introduction-to-openstack.rst:212
 msgid ""
 "Trusted processes for managing the life cycle of disk images are required, "
 "as are all the previously mentioned issues with respect to data security."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:210
+#: ../introduction/introduction-to-openstack.rst:216
 msgid "Data processing service"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:212
+#: ../introduction/introduction-to-openstack.rst:218
 msgid ""
 "The :term:`Data processing service` for OpenStack (sahara) provides a "
 "platform for the provisioning, management, and usage of clusters running "
 "popular processing frameworks."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:216
+#: ../introduction/introduction-to-openstack.rst:222
 msgid ""
 "Security considerations for data processing should focus on data privacy and "
 "secure communications to provisioned clusters."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:220
+#: ../introduction/introduction-to-openstack.rst:226
 msgid "Other supporting technology"
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:222
+#: ../introduction/introduction-to-openstack.rst:228
 msgid ""
 "OpenStack relies on messaging for internal communication between several of "
 "its services. By default, OpenStack uses message queues based on the :term:"
@@ -8304,14 +8313,14 @@ msgid ""
 "end could be RabbitMQ, Qpid, or ZeroMQ."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:228
+#: ../introduction/introduction-to-openstack.rst:234
 msgid ""
 "As most management commands flow through the message queuing system, it is a "
 "primary security concern for any OpenStack deployment. Message queuing "
 "security is discussed in detail later in this guide."
 msgstr ""
 
-#: ../introduction/introduction-to-openstack.rst:232
+#: ../introduction/introduction-to-openstack.rst:238
 msgid ""
 "Several of the components use databases though it is not explicitly called "
 "out. Securing the access to the databases and their contents is yet another "
@@ -10980,39 +10989,39 @@ msgid ""
 "the OpenStack Networking components:"
 msgstr ""
 
-#: ../networking/architecture.rst:48
+#: ../networking/architecture.rst:49
 msgid "OpenStack Networking service placement on physical servers"
 msgstr ""
 
-#: ../networking/architecture.rst:50
+#: ../networking/architecture.rst:51
 msgid ""
 "This guide focuses on a standard architecture that includes a *cloud "
 "controller* host, a *network* host, and a set of *compute* hypervisors for "
 "running VMs."
 msgstr ""
 
-#: ../networking/architecture.rst:55
+#: ../networking/architecture.rst:56
 msgid "Network connectivity of physical servers"
 msgstr ""
 
-#: ../networking/architecture.rst:59
+#: ../networking/architecture.rst:61
 msgid ""
 "A standard OpenStack Networking setup has up to four distinct physical data "
 "center networks:"
 msgstr ""
 
-#: ../networking/architecture.rst:63
+#: ../networking/architecture.rst:65
 msgid ""
 "Used for internal communication between OpenStack Components. The IP "
 "addresses on this network should be reachable only within the data center "
 "and is considered the Management Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:65
+#: ../networking/architecture.rst:67
 msgid "Management network"
 msgstr ""
 
-#: ../networking/architecture.rst:68
+#: ../networking/architecture.rst:70
 msgid ""
 "Used for VM data communication within the cloud deployment. The IP "
 "addressing requirements of this network depend on the OpenStack Networking "
@@ -11020,22 +11029,22 @@ msgid ""
 "made by the tenant. This network is considered the Guest Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:72
+#: ../networking/architecture.rst:74
 msgid "Guest network"
 msgstr ""
 
-#: ../networking/architecture.rst:75
+#: ../networking/architecture.rst:77
 msgid ""
 "Used to provide VMs with Internet access in some deployment scenarios. The "
 "IP addresses on this network should be reachable by anyone on the Internet. "
 "This network is considered to be in the Public Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:77
+#: ../networking/architecture.rst:79
 msgid "External network"
 msgstr ""
 
-#: ../networking/architecture.rst:80
+#: ../networking/architecture.rst:82
 msgid ""
 "Exposes all OpenStack APIs, including the OpenStack Networking API, to "
 "tenants. The IP addresses on this network should be reachable by anyone on "
@@ -11045,11 +11054,11 @@ msgid ""
 "This network is considered the Public Security Domain."
 msgstr ""
 
-#: ../networking/architecture.rst:85
+#: ../networking/architecture.rst:87
 msgid "API network"
 msgstr ""
 
-#: ../networking/architecture.rst:87
+#: ../networking/architecture.rst:89
 msgid ""
 "For additional information see the `OpenStack Cloud Administrator Guide "
 "<http://docs.openstack.org/admin-guide-cloud/networking.html>`__."
@@ -11253,47 +11262,47 @@ msgid ""
 "product used."
 msgstr ""
 
-#: ../networking/securing-services.rst:27
+#: ../networking/securing-services.rst:28
 msgid ""
 "To isolate sensitive data communication between the OpenStack Networking "
 "services and other OpenStack core services, configure these communication "
 "channels to only allow communication over an isolated management network."
 msgstr ""
 
-#: ../networking/securing-services.rst:33
+#: ../networking/securing-services.rst:34
 msgid "OpenStack Networking service configuration"
 msgstr ""
 
-#: ../networking/securing-services.rst:36
+#: ../networking/securing-services.rst:37
 msgid "Restrict bind address of the API server: neutron-server"
 msgstr ""
 
-#: ../networking/securing-services.rst:38
+#: ../networking/securing-services.rst:39
 msgid ""
 "To restrict the interface or IP address on which the OpenStack Networking "
 "API service binds a network socket for incoming client connections, specify "
 "the bind\\_host and bind\\_port in the neutron.conf file as shown:"
 msgstr ""
 
-#: ../networking/securing-services.rst:52
+#: ../networking/securing-services.rst:53
 msgid "Restrict DB and RPC communication of the OpenStack Networking services"
 msgstr ""
 
-#: ../networking/securing-services.rst:54
+#: ../networking/securing-services.rst:55
 msgid ""
 "Various components of the OpenStack Networking services use either the "
 "messaging queue or database connections to communicate with other components "
 "in OpenStack Networking."
 msgstr ""
 
-#: ../networking/securing-services.rst:58
+#: ../networking/securing-services.rst:59
 msgid ""
 "It is recommended that you follow the guidelines provided in :ref:`database-"
 "authentication-and-access-control` for all components which require direct "
 "DB connections."
 msgstr ""
 
-#: ../networking/securing-services.rst:62
+#: ../networking/securing-services.rst:63
 msgid ""
 "It is recommended that you follow the guidelines provided in :ref:`queue-"
 "authentication-and-access-control` for all components which require RPC "
@@ -11766,11 +11775,11 @@ msgstr ""
 msgid "Storage services"
 msgstr ""
 
-#: ../object-storage.rst:25 ../object-storage.rst:119
+#: ../object-storage.rst:25 ../object-storage.rst:121
 msgid "Account service"
 msgstr ""
 
-#: ../object-storage.rst:26 ../object-storage.rst:122
+#: ../object-storage.rst:26 ../object-storage.rst:124
 msgid "Container service"
 msgstr ""
 
@@ -11778,31 +11787,31 @@ msgstr ""
 msgid "Object service"
 msgstr ""
 
-#: ../object-storage.rst:31
+#: ../object-storage.rst:32
 msgid ""
 "An example diagram from the OpenStack Object Storage Administration Guide "
 "(2013)"
 msgstr ""
 
-#: ../object-storage.rst:36
+#: ../object-storage.rst:37
 msgid ""
 "An Object Storage installation does not have to necessarily be on the "
 "Internet and could also be a private cloud with the \"Public Switch\" being "
 "part of the organization's internal network infrastructure."
 msgstr ""
 
-#: ../object-storage.rst:41
+#: ../object-storage.rst:42
 msgid "First thing to secure: the network"
 msgstr ""
 
-#: ../object-storage.rst:43
+#: ../object-storage.rst:44
 msgid ""
 "Securing the Object Storage service begins with securing the networking "
 "component. If you skipped the networking chapter, go back to :doc:"
 "`networking`."
 msgstr ""
 
-#: ../object-storage.rst:46
+#: ../object-storage.rst:47
 msgid ""
 "The rsync protocol is used between storage service nodes to replicate data "
 "for high availability. In addition, the proxy service communicates with the "
@@ -11810,7 +11819,7 @@ msgid ""
 "point and the cloud environment."
 msgstr ""
 
-#: ../object-storage.rst:53
+#: ../object-storage.rst:54
 msgid ""
 "Object Storage does not employ encryption or authentication with inter-node "
 "communications. This is why you see a \"Private Switch\" or private network "
@@ -11820,43 +11829,43 @@ msgid ""
 "threats`."
 msgstr ""
 
-#: ../object-storage.rst:61
+#: ../object-storage.rst:62
 msgid ""
 "*Rule:* Use a private (V)LAN network segment for your storage nodes in the "
 "data domain."
 msgstr ""
 
-#: ../object-storage.rst:64
+#: ../object-storage.rst:65
 msgid ""
 "This necessitates that the proxy nodes have dual interfaces (physical or "
 "virtual):"
 msgstr ""
 
-#: ../object-storage.rst:67
+#: ../object-storage.rst:68
 msgid "One as a \"public\" interface for consumers to reach"
 msgstr ""
 
-#: ../object-storage.rst:68
+#: ../object-storage.rst:69
 msgid "Another as a \"private\" interface with access to the storage nodes"
 msgstr ""
 
-#: ../object-storage.rst:70
+#: ../object-storage.rst:71
 msgid "The following figure demonstrates one possible network architecture."
 msgstr ""
 
-#: ../object-storage.rst:74
+#: ../object-storage.rst:76
 msgid "Object Storage network architecture with a management node (OSAM)"
 msgstr ""
 
-#: ../object-storage.rst:77
+#: ../object-storage.rst:79
 msgid "Securing services: general"
 msgstr ""
 
-#: ../object-storage.rst:80
+#: ../object-storage.rst:82
 msgid "Run services as non-root user"
 msgstr ""
 
-#: ../object-storage.rst:82
+#: ../object-storage.rst:84
 msgid ""
 "It is recommended that you configure each Object Storage service to run "
 "under a non-root (UID 0) service account. One recommendation is the user "
@@ -11869,81 +11878,81 @@ msgid ""
 "version.)"
 msgstr ""
 
-#: ../object-storage.rst:92
+#: ../object-storage.rst:94
 msgid "File permissions"
 msgstr ""
 
-#: ../object-storage.rst:94
+#: ../object-storage.rst:96
 msgid ""
 "The ``/etc/swift`` directory contains information about the ring topology "
 "and environment configuration. The following permissions are recommended:"
 msgstr ""
 
-#: ../object-storage.rst:103
+#: ../object-storage.rst:105
 msgid ""
 "This restricts only root to be able to modify configuration files while "
 "allowing the services to read them through their group membership in the "
 "'swift' group."
 msgstr ""
 
-#: ../object-storage.rst:108
+#: ../object-storage.rst:110
 msgid "Securing storage services"
 msgstr ""
 
-#: ../object-storage.rst:110
+#: ../object-storage.rst:112
 msgid ""
 "The following are the default listening ports for the various storage "
 "services:"
 msgstr ""
 
-#: ../object-storage.rst:116
+#: ../object-storage.rst:118
 msgid "Service name"
 msgstr ""
 
-#: ../object-storage.rst:117
+#: ../object-storage.rst:119
 msgid "Port"
 msgstr ""
 
-#: ../object-storage.rst:118
+#: ../object-storage.rst:120
 msgid "Type"
 msgstr ""
 
-#: ../object-storage.rst:120
+#: ../object-storage.rst:122
 msgid "6002"
 msgstr ""
 
-#: ../object-storage.rst:121 ../object-storage.rst:124
-#: ../object-storage.rst:127 ../object-storage.rst:130
+#: ../object-storage.rst:123 ../object-storage.rst:126
+#: ../object-storage.rst:129 ../object-storage.rst:132
 msgid "TCP"
 msgstr ""
 
-#: ../object-storage.rst:123
+#: ../object-storage.rst:125
 msgid "6001"
 msgstr ""
 
-#: ../object-storage.rst:125
+#: ../object-storage.rst:127
 msgid "Object Service"
 msgstr ""
 
-#: ../object-storage.rst:126
+#: ../object-storage.rst:128
 msgid "6000"
 msgstr ""
 
-#: ../object-storage.rst:128
+#: ../object-storage.rst:130
 msgid "Rsync [1]_"
 msgstr ""
 
-#: ../object-storage.rst:129
+#: ../object-storage.rst:131
 msgid "873"
 msgstr ""
 
-#: ../object-storage.rst:133
+#: ../object-storage.rst:135
 msgid ""
 "If ssync is used instead of rsync, the Object service port is used for "
 "maintaining durability."
 msgstr ""
 
-#: ../object-storage.rst:137
+#: ../object-storage.rst:139
 msgid ""
 "Authentication does not take place at the storage nodes. If someone was able "
 "to connect to a storage node on one of these ports they could access or "
@@ -11952,48 +11961,48 @@ msgid ""
 "storage network."
 msgstr ""
 
-#: ../object-storage.rst:144
+#: ../object-storage.rst:146
 msgid "Object Storage \"account\" terminology"
 msgstr ""
 
-#: ../object-storage.rst:146
+#: ../object-storage.rst:148
 msgid ""
 "An Object Storage \"account\" is not a user account or credential. The "
 "following explains the relations:"
 msgstr ""
 
-#: ../object-storage.rst:152
+#: ../object-storage.rst:154
 msgid "OpenStack Object Storage account"
 msgstr ""
 
-#: ../object-storage.rst:153
+#: ../object-storage.rst:155
 msgid ""
 "Collection of containers; not user accounts or authentication. Which users "
 "are associated with the account and how they may access it depends on the "
 "authentication system used. See :ref:`Object_Storage_authentication`."
 msgstr ""
 
-#: ../object-storage.rst:157
+#: ../object-storage.rst:159
 msgid "OpenStack Object Storage containers"
 msgstr ""
 
-#: ../object-storage.rst:158
+#: ../object-storage.rst:160
 msgid ""
 "Collection of objects. Metadata on the container is available for ACLs. The "
 "meaning of ACLs is dependent on the authentication system used."
 msgstr ""
 
-#: ../object-storage.rst:161
+#: ../object-storage.rst:163
 msgid "OpenStack Object Storage objects"
 msgstr ""
 
-#: ../object-storage.rst:162
+#: ../object-storage.rst:164
 msgid ""
 "The actual data objects. ACLs at the object level are also possible with "
 "metadata and are dependent on the authentication system used."
 msgstr ""
 
-#: ../object-storage.rst:167
+#: ../object-storage.rst:169
 msgid ""
 "Another way of thinking about the above would be: A single shelf (account) "
 "holds zero or more buckets (containers) which each hold zero or more "
@@ -12001,7 +12010,7 @@ msgid ""
 "(accounts) with each shelf belonging to zero or more users."
 msgstr ""
 
-#: ../object-storage.rst:172
+#: ../object-storage.rst:174
 msgid ""
 "At each level you may have ACLs that dictate who has what type of access. "
 "ACLs are interpreted based on what authentication system is in use. The two "
@@ -12010,11 +12019,11 @@ msgid ""
 "Please see :ref:`object_storage_authentication` for more information."
 msgstr ""
 
-#: ../object-storage.rst:179
+#: ../object-storage.rst:181
 msgid "Securing proxy services"
 msgstr ""
 
-#: ../object-storage.rst:181
+#: ../object-storage.rst:183
 msgid ""
 "A proxy node should have at least two interfaces (physical or virtual): one "
 "public and one private. Firewalls or service binding might protect the "
@@ -12025,11 +12034,11 @@ msgid ""
 "nodes on the private storage network."
 msgstr ""
 
-#: ../object-storage.rst:190
+#: ../object-storage.rst:192
 msgid "HTTP listening port"
 msgstr ""
 
-#: ../object-storage.rst:192
+#: ../object-storage.rst:194
 msgid ""
 "You should configure your web service as a non-root (no UID 0) user such as "
 "\"swift\" mentioned before. The use of a port greater than 1024 is required "
@@ -12047,17 +12056,17 @@ msgid ""
 "AUTH_8980."
 msgstr ""
 
-#: ../object-storage.rst:206
+#: ../object-storage.rst:208
 msgid ""
 "The method for configuring your web server to start and run as a non-root "
 "user varies by web server and OS."
 msgstr ""
 
-#: ../object-storage.rst:210
+#: ../object-storage.rst:212
 msgid "Load balancer"
 msgstr ""
 
-#: ../object-storage.rst:212
+#: ../object-storage.rst:214
 msgid ""
 "If the option of using Apache is not feasible or for performance you wish to "
 "offload your TLS work you may employ a dedicated network device load "
@@ -12065,7 +12074,7 @@ msgid ""
 "balancing when using multiple proxy nodes."
 msgstr ""
 
-#: ../object-storage.rst:217
+#: ../object-storage.rst:219
 msgid ""
 "If you choose to offload your TLS, ensure that the network link between the "
 "load balancer and your proxy nodes are on a private (V)LAN segment such that "
@@ -12075,7 +12084,7 @@ msgid ""
 "cloud data."
 msgstr ""
 
-#: ../object-storage.rst:224
+#: ../object-storage.rst:226
 msgid ""
 "The authentication service you use, such as Identity service (keystone) or "
 "TempAuth, will determine how you configure a different URL in the responses "
@@ -12083,11 +12092,11 @@ msgid ""
 "proxy node."
 msgstr ""
 
-#: ../object-storage.rst:232
+#: ../object-storage.rst:234
 msgid "Object Storage authentication"
 msgstr ""
 
-#: ../object-storage.rst:234
+#: ../object-storage.rst:236
 msgid ""
 "Object Storage uses a WSGI model to provide for a middleware capability that "
 "not only provides general extensibility but is also used for authentication "
@@ -12097,18 +12106,18 @@ msgid ""
 "certificates. Custom providers can be integrated in using custom middleware."
 msgstr ""
 
-#: ../object-storage.rst:241
+#: ../object-storage.rst:243
 msgid ""
 "Object Storage comes with two authentication middleware modules by default, "
 "either of which can be used as sample code for developing a custom "
 "authentication middleware."
 msgstr ""
 
-#: ../object-storage.rst:246
+#: ../object-storage.rst:248
 msgid "TempAuth"
 msgstr ""
 
-#: ../object-storage.rst:248
+#: ../object-storage.rst:250
 msgid ""
 "TempAuth is the default authentication for Object Storage. In contrast to "
 "Identity it stores the user accounts, credentials, and metadata in object "
@@ -12117,22 +12126,22 @@ msgid ""
 "the Object Storage (swift) documentation."
 msgstr ""
 
-#: ../object-storage.rst:255
+#: ../object-storage.rst:257
 msgid "Keystone"
 msgstr ""
 
-#: ../object-storage.rst:257
+#: ../object-storage.rst:259
 msgid ""
 "Keystone is the commonly used Identity provider in OpenStack. It may also be "
 "used for authentication in Object Storage. Coverage of securing keystone is "
 "already provided in :doc:`identity`."
 msgstr ""
 
-#: ../object-storage.rst:262
+#: ../object-storage.rst:264
 msgid "Other notable items"
 msgstr ""
 
-#: ../object-storage.rst:264
+#: ../object-storage.rst:266
 msgid ""
 "In ``/etc/swift`` on every node there is a ``swift_hash_path_prefix`` "
 "setting and a ``swift_hash_path_suffix`` setting. These are provided to "
@@ -12140,7 +12149,7 @@ msgid ""
 "user overwriting the data of another user."
 msgstr ""
 
-#: ../object-storage.rst:269
+#: ../object-storage.rst:271
 msgid ""
 "This value should be initially set with a cryptographically secure random "
 "number generator and consistent across all nodes. Ensure that it is "

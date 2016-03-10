@@ -108,7 +108,7 @@ considerations.
 Compute
 -------
 
-OpenStack :term:`Compute` service (nova) provides services to support the
+OpenStack :term:`Compute service` (nova) provides services to support the
 management of virtual machine instances at scale, instances that host
 multi-tiered applications, dev/test environments, "Big Data" crunching
 Hadoop clusters, and/or high performance computing.
@@ -132,7 +132,7 @@ API endpoints.
 Object Storage
 --------------
 
-The OpenStack :term:`Object Storage` service (swift) provides support for
+The OpenStack :term:`Object Storage service` (swift) provides support for
 storing and retrieving arbitrary data in the cloud. The Object Storage
 service provides both a native API and an Amazon Web Services S3 compatible
 API. The service provides a high degree of resiliency through data replication
@@ -149,7 +149,7 @@ malicious content storage, and cross authentication attack vectors.
 Block Storage
 -------------
 
-The OpenStack :term:`Block Storage` service (cinder) provides persistent block
+The OpenStack :term:`Block Storage service` (cinder) provides persistent block
 storage for compute instances. The Block Storage service is responsible for
 managing the life-cycle of block devices, from the creation and attachment of
 volumes to instances, to their release.
@@ -171,7 +171,7 @@ file system.
 Networking
 ----------
 
-The OpenStack :term:`Networking` service (neutron, previously called quantum)
+The OpenStack :term:`Networking service` (neutron, previously called quantum)
 provides various networking services to cloud users (tenants) such as
 IP address management, DNS, DHCP, load balancing, and security groups
 (network access rules, like firewall policies). It provides a framework for
@@ -185,7 +185,7 @@ traffic isolation, availability, integrity and confidentiality.
 Dashboard
 ---------
 
-The OpenStack :term:`dashboard` (horizon) provides a web-based interface for
+The OpenStack :term:`Dashboard` (horizon) provides a web-based interface for
 both cloud administrators and cloud tenants. Through this interface
 administrators and tenants can provision, manage, and monitor cloud resources.
 Horizon is commonly deployed in a public facing manner with all the usual
@@ -194,7 +194,7 @@ security concerns of public web portals.
 Identity service
 ----------------
 
-The OpenStack :term:`Identity` service (keystone) is a **shared service** that
+The OpenStack :term:`Identity service` (keystone) is a **shared service** that
 provides authentication and authorization services throughout the entire cloud
 infrastructure. The Identity service has pluggable support for multiple forms
 of authentication.
@@ -215,7 +215,7 @@ are all the previously mentioned issues with respect to data security.
 Data processing service
 -----------------------
 
-The :term:`Data processing service` for OpenStack (sahara) provides a platform
+The :term:`Data Processing service` for OpenStack (sahara) provides a platform
 for the provisioning, management, and usage of clusters running popular
 processing frameworks.
 

@@ -204,26 +204,28 @@ refer to the following section on Image Provenance.
 Image provenance and validation
 -------------------------------
 
-Unfortunately, it is not currently possible to force Compute to
-validate an image hash immediately prior to starting an instance.
-To understand the situation, we begin with a brief overview of how
-images are handled around the time of image launch.
+As of the Mitaka release, the Compute service supports instance
+signature validation just before starting an instance. The following
+paragraph describes how images are typically handled (without
+signature validation) when an instance is launched.
 
-Images come from the glance service to the nova service on a node.
+Images come from the Image service to the Compute service on a node.
 This transfer should be protected by running over TLS. Once the image
-is on the node, it is verified with a basic checksum and then it's
+is on the node, it is verified with a basic checksum and then its
 disk is expanded based on the size of the instance being launched. If,
 at a later time, the same image is launched with the same instance
-size on this node, it will be launched from the same expanded image.
-Since this expanded image is not re-verified before launching, it
-could be tampered with and the user would not have any way of knowing,
-beyond a manual inspection of the files in the resulting image.
+size on this node, it is launched from the same expanded image.
+Since this expanded image is not re-verified by default before
+launching, it is possible that it has undergone tampering. The user
+would not be aware of tampering, unless a manual inspection of the
+files is performed in the resulting image.
 
-We hope that future versions of Compute and/or the Image service will
-offer support for validating the image hash before each instance
-launch. An alternative option that would be even more powerful would
-be allow users to sign an image and then have the signature validated
-when the instance is launched.
+For additional security of images, you can enable instance signature
+verification by setting the ``verify_glance_signatures`` flag to
+``True`` in the ``/etc/nova/nova.conf`` file. When enabled, the Compute
+service automatically validates the signed instance prior to its launch.
+For more information, see `Adding Signed Images <http://docs.openstack.org/openstack-ops/content/user_facing_images.html>`_
+in the Operations Guide.
 
 Instance migrations
 ~~~~~~~~~~~~~~~~~~~

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Security Guide 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-10 06:23+0000\n"
+"POT-Creation-Date: 2016-03-23 06:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2879,13 +2879,21 @@ msgid ""
 "must become familiar with these areas:"
 msgstr ""
 
+# #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/hypervisor-selection.rst:36
 #: ../compute/hypervisor-selection.rst:51
+#: ../introduction/selecting-supporting-software.rst:13
+#: ../introduction/selecting-supporting-software.rst:19
 msgid "Team expertise"
 msgstr ""
 
+# #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/hypervisor-selection.rst:37
 #: ../compute/hypervisor-selection.rst:62
+#: ../introduction/selecting-supporting-software.rst:14
+#: ../introduction/selecting-supporting-software.rst:28
 msgid "Product or project maturity"
 msgstr ""
 
@@ -2899,8 +2907,12 @@ msgstr ""
 msgid "Certifications and attestations"
 msgstr ""
 
+# #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/hypervisor-selection.rst:40
 #: ../compute/hypervisor-selection.rst:308
+#: ../introduction/selecting-supporting-software.rst:16
+#: ../introduction/selecting-supporting-software.rst:48
 msgid "Hardware concerns"
 msgstr ""
 
@@ -2941,19 +2953,31 @@ msgid ""
 "have deployed your cloud:"
 msgstr ""
 
+# #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/hypervisor-selection.rst:68
+#: ../introduction/selecting-supporting-software.rst:34
 msgid "Availability of expertise"
 msgstr ""
 
+# #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/hypervisor-selection.rst:69
+#: ../introduction/selecting-supporting-software.rst:35
 msgid "Active developer and user communities"
 msgstr ""
 
+# #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/hypervisor-selection.rst:70
+#: ../introduction/selecting-supporting-software.rst:36
 msgid "Timeliness and availability of updates"
 msgstr ""
 
+# #-#-#-#-#  compute.pot (Security Guide 0.0.1)  #-#-#-#-#
+# #-#-#-#-#  introduction.pot (Security Guide 0.0.1)  #-#-#-#-#
 #: ../compute/hypervisor-selection.rst:71
+#: ../introduction/selecting-supporting-software.rst:37
 msgid "Incidence response"
 msgstr ""
 
@@ -7341,22 +7365,22 @@ msgid "Trusted images"
 msgstr ""
 
 #: ../instance-management.rst:28
-#: ../instance-management/security-services-for-instances.rst:229
+#: ../instance-management/security-services-for-instances.rst:231
 msgid "Instance migrations"
 msgstr ""
 
 #: ../instance-management.rst:29
-#: ../instance-management/security-services-for-instances.rst:315
+#: ../instance-management/security-services-for-instances.rst:317
 msgid "Monitoring, alerting, and reporting"
 msgstr ""
 
 #: ../instance-management.rst:30
-#: ../instance-management/security-services-for-instances.rst:343
+#: ../instance-management/security-services-for-instances.rst:345
 msgid "Updates and patches"
 msgstr ""
 
 #: ../instance-management.rst:31
-#: ../instance-management/security-services-for-instances.rst:363
+#: ../instance-management/security-services-for-instances.rst:365
 msgid "Firewalls and other host-based security controls"
 msgstr ""
 
@@ -7643,35 +7667,36 @@ msgstr ""
 
 #: ../instance-management/security-services-for-instances.rst:207
 msgid ""
-"Unfortunately, it is not currently possible to force Compute to validate an "
-"image hash immediately prior to starting an instance. To understand the "
-"situation, we begin with a brief overview of how images are handled around "
-"the time of image launch."
+"As of the Mitaka release, the Compute service supports instance signature "
+"validation just before starting an instance. The following paragraph "
+"describes how images are typically handled (without signature validation) "
+"when an instance is launched."
 msgstr ""
 
 #: ../instance-management/security-services-for-instances.rst:212
 msgid ""
-"Images come from the glance service to the nova service on a node. This "
+"Images come from the Image service to the Compute service on a node. This "
 "transfer should be protected by running over TLS. Once the image is on the "
-"node, it is verified with a basic checksum and then it's disk is expanded "
+"node, it is verified with a basic checksum and then its disk is expanded "
 "based on the size of the instance being launched. If, at a later time, the "
-"same image is launched with the same instance size on this node, it will be "
+"same image is launched with the same instance size on this node, it is "
 "launched from the same expanded image. Since this expanded image is not re-"
-"verified before launching, it could be tampered with and the user would not "
-"have any way of knowing, beyond a manual inspection of the files in the "
-"resulting image."
+"verified by default before launching, it is possible that it has undergone "
+"tampering. The user would not be aware of tampering, unless a manual "
+"inspection of the files is performed in the resulting image."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:222
+#: ../instance-management/security-services-for-instances.rst:223
 msgid ""
-"We hope that future versions of Compute and/or the Image service will offer "
-"support for validating the image hash before each instance launch. An "
-"alternative option that would be even more powerful would be allow users to "
-"sign an image and then have the signature validated when the instance is "
-"launched."
+"For additional security of images, you can enable instance signature "
+"verification by setting the ``verify_glance_signatures`` flag to ``True`` in "
+"the ``/etc/nova/nova.conf`` file. When enabled, the Compute service "
+"automatically validates the signed instance prior to its launch. For more "
+"information, see `Adding Signed Images <http://docs.openstack.org/openstack-"
+"ops/content/user_facing_images.html>`_ in the Operations Guide."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:231
+#: ../instance-management/security-services-for-instances.rst:233
 msgid ""
 "OpenStack and the underlying virtualization layers provide for the live "
 "migration of images between OpenStack nodes, allowing you to seamlessly "
@@ -7681,31 +7706,31 @@ msgid ""
 "performed during a live migration:"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:239
+#: ../instance-management/security-services-for-instances.rst:241
 msgid "Start instance on destination host"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:240
+#: ../instance-management/security-services-for-instances.rst:242
 msgid "Transfer memory"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:241
+#: ../instance-management/security-services-for-instances.rst:243
 msgid "Stop the guest and sync disks"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:242
+#: ../instance-management/security-services-for-instances.rst:244
 msgid "Transfer state"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:243
+#: ../instance-management/security-services-for-instances.rst:245
 msgid "Start the guest"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:246
+#: ../instance-management/security-services-for-instances.rst:248
 msgid "Live migration risks"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:248
+#: ../instance-management/security-services-for-instances.rst:250
 msgid ""
 "At various stages of the live migration process the contents of an instances "
 "run time memory and disk are transmitted over the network in plain text. "
@@ -7713,65 +7738,65 @@ msgid ""
 "migration. The following in-exhaustive list details some of these risks:"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:254
+#: ../instance-management/security-services-for-instances.rst:256
 msgid ""
 "*Denial of Service (DoS)*: If something fails during the migration process, "
 "the instance could be lost."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:256
+#: ../instance-management/security-services-for-instances.rst:258
 msgid "*Data exposure*: Memory or disk transfers must be handled securely."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:257
+#: ../instance-management/security-services-for-instances.rst:259
 msgid ""
 "*Data manipulation*: If memory or disk transfers are not handled securely, "
 "then an attacker could manipulate user data during the migration."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:260
+#: ../instance-management/security-services-for-instances.rst:262
 msgid ""
 "*Code injection*: If memory or disk transfers are not handled securely, then "
 "an attacker could manipulate executables, either on disk or in memory, "
 "during the migration."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:265
+#: ../instance-management/security-services-for-instances.rst:267
 msgid "Live migration mitigations"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:267
+#: ../instance-management/security-services-for-instances.rst:269
 msgid ""
 "There are several methods to mitigate some of the risk associated with live "
 "migrations, the following list details some of these:"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:270
-#: ../instance-management/security-services-for-instances.rst:275
+#: ../instance-management/security-services-for-instances.rst:272
+#: ../instance-management/security-services-for-instances.rst:277
 msgid "Disable live migration"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:271
+#: ../instance-management/security-services-for-instances.rst:273
 msgid "Isolated migration network"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:272
-#: ../instance-management/security-services-for-instances.rst:299
+#: ../instance-management/security-services-for-instances.rst:274
+#: ../instance-management/security-services-for-instances.rst:301
 msgid "Encrypted live migration"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:277
+#: ../instance-management/security-services-for-instances.rst:279
 msgid ""
 "At this time, live migration is enabled in OpenStack by default. Live "
 "migrations can be disabled by adding the following lines to the nova "
 "``policy.json`` file:"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:287
+#: ../instance-management/security-services-for-instances.rst:289
 msgid "Migration network"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:289
+#: ../instance-management/security-services-for-instances.rst:291
 msgid ""
 "As a general practice, live migration traffic should be restricted to the "
 "management security domain, see :doc:`../introduction/security-boundaries-"
@@ -7782,7 +7807,7 @@ msgid ""
 "network can reduce the risk of exposure."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:301
+#: ../instance-management/security-services-for-instances.rst:303
 msgid ""
 "If there is a sufficient business case for keeping live migration enabled, "
 "then libvirtd can provide encrypted tunnels for the live migrations. "
@@ -7792,23 +7817,23 @@ msgid ""
 "following high-level steps:"
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:308
+#: ../instance-management/security-services-for-instances.rst:310
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:309
+#: ../instance-management/security-services-for-instances.rst:311
 msgid ""
 "An encrypted tunnel is created between libvirtd processes on both source and "
 "destination hosts."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:311
+#: ../instance-management/security-services-for-instances.rst:313
 msgid ""
 "Destination libvirtd host copies the instances back to an underlying "
 "hypervisor."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:317
+#: ../instance-management/security-services-for-instances.rst:319
 msgid ""
 "As an OpenStack virtual machine is a server image able to be replicated "
 "across hosts, best practice in logging applies similarly between physical "
@@ -7822,14 +7847,14 @@ msgid ""
 "co/>`_."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:329
+#: ../instance-management/security-services-for-instances.rst:331
 msgid ""
 "These logs should be reviewed at a regular cadence such as a live view by a "
 "network operations center (NOC), or if the environment is not large enough "
 "to necessitate a NOC, then logs should undergo a regular log review process."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:334
+#: ../instance-management/security-services-for-instances.rst:336
 msgid ""
 "Many times interesting events trigger an alert which is sent to a responder "
 "for action. Frequently this alert takes the form of an email with the "
@@ -7839,7 +7864,7 @@ msgid ""
 "www.zabbix.com>`_."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:345
+#: ../instance-management/security-services-for-instances.rst:347
 msgid ""
 "A hypervisor runs independent virtual machines. This hypervisor can run in "
 "an operating system or directly on the hardware (called baremetal). Updates "
@@ -7849,7 +7874,7 @@ msgid ""
 "Debian virtual machines."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:353
+#: ../instance-management/security-services-for-instances.rst:355
 msgid ""
 "Therefore, we recommend that clear ownership of virtual machines be "
 "assigned, and that those owners be responsible for the hardening, "
@@ -7860,7 +7885,7 @@ msgid ""
 "patch."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:365
+#: ../instance-management/security-services-for-instances.rst:367
 msgid ""
 "Most common operating systems include host-based firewalls for additional "
 "security. While we recommend that virtual machines run as few applications "
@@ -7875,7 +7900,7 @@ msgid ""
 "denied in the firewall configuration."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:379
+#: ../instance-management/security-services-for-instances.rst:381
 msgid ""
 "On Linux virtual machines, the application profile above can be used in "
 "conjunction with a tool like `audit2allow <http://wiki.centos.org/HowTos/"
@@ -7886,7 +7911,7 @@ msgid ""
 "and segmenting it from other system resources that are not needed."
 msgstr ""
 
-#: ../instance-management/security-services-for-instances.rst:388
+#: ../instance-management/security-services-for-instances.rst:390
 msgid ""
 "OpenStack provides security groups for both hosts and the network to add "
 "defense in depth to the virtual machines in a given project. These are "
@@ -8133,7 +8158,7 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:111
 msgid ""
-"OpenStack :term:`Compute` service (nova) provides services to support the "
+"OpenStack :term:`Compute service` (nova) provides services to support the "
 "management of virtual machine instances at scale, instances that host multi-"
 "tiered applications, dev/test environments, \"Big Data\" crunching Hadoop "
 "clusters, and/or high performance computing."
@@ -8169,7 +8194,7 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:135
 msgid ""
-"The OpenStack :term:`Object Storage` service (swift) provides support for "
+"The OpenStack :term:`Object Storage service` (swift) provides support for "
 "storing and retrieving arbitrary data in the cloud. The Object Storage "
 "service provides both a native API and an Amazon Web Services S3 compatible "
 "API. The service provides a high degree of resiliency through data "
@@ -8192,7 +8217,7 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:152
 msgid ""
-"The OpenStack :term:`Block Storage` service (cinder) provides persistent "
+"The OpenStack :term:`Block Storage service` (cinder) provides persistent "
 "block storage for compute instances. The Block Storage service is "
 "responsible for managing the life-cycle of block devices, from the creation "
 "and attachment of volumes to instances, to their release."
@@ -8224,7 +8249,7 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:174
 msgid ""
-"The OpenStack :term:`Networking` service (neutron, previously called "
+"The OpenStack :term:`Networking service` (neutron, previously called "
 "quantum) provides various networking services to cloud users (tenants) such "
 "as IP address management, DNS, DHCP, load balancing, and security groups "
 "(network access rules, like firewall policies). It provides a framework for "
@@ -8241,7 +8266,7 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:188
 msgid ""
-"The OpenStack :term:`dashboard` (horizon) provides a web-based interface for "
+"The OpenStack :term:`Dashboard` (horizon) provides a web-based interface for "
 "both cloud administrators and cloud tenants. Through this interface "
 "administrators and tenants can provision, manage, and monitor cloud "
 "resources. Horizon is commonly deployed in a public facing manner with all "
@@ -8254,7 +8279,7 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:197
 msgid ""
-"The OpenStack :term:`Identity` service (keystone) is a **shared service** "
+"The OpenStack :term:`Identity service` (keystone) is a **shared service** "
 "that provides authentication and authorization services throughout the "
 "entire cloud infrastructure. The Identity service has pluggable support for "
 "multiple forms of authentication."
@@ -8289,7 +8314,7 @@ msgstr ""
 
 #: ../introduction/introduction-to-openstack.rst:218
 msgid ""
-"The :term:`Data processing service` for OpenStack (sahara) provides a "
+"The :term:`Data Processing service` for OpenStack (sahara) provides a "
 "platform for the provisioning, management, and usage of clusters running "
 "popular processing frameworks."
 msgstr ""
@@ -8672,6 +8697,59 @@ msgid ""
 "including carefully protected facilities and supply chains. In contrast, "
 "those standing up basic development or test environments will likely require "
 "less restrictive controls (middle of the spectrum)."
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:3
+msgid "Selecting supporting software"
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:5
+msgid ""
+"Your selection of supporting software, such as messaging and load balancing, "
+"can have serious security impacts on your cloud. It is important that you "
+"make the proper choices for your organization. This section provides some "
+"general guidelines for selecting supporting software."
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:11
+msgid ""
+"In order to select the best supporting software, consider these factors:"
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:15
+#: ../introduction/selecting-supporting-software.rst:40
+msgid "Common Criteria"
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:21
+msgid ""
+"The more familiar your team is with a given product, its configuration, and "
+"its eccentricities, the fewer configuration mistakes are made. Additionally, "
+"having staff expertise spread across an organization increases availability "
+"of your systems, allows segregation of duties, and mitigates problems in the "
+"event that a team member is unavailable."
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:30
+msgid ""
+"The maturity of a given product or project is critical to your security "
+"posture. Product maturity has a number of effects after you deploy your "
+"cloud:"
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:42
+msgid ""
+"`Common Criteria <https://www.commoncriteriaportal.org/>`_ is an "
+"internationally standardized software evaluation process, used by "
+"governments and commercial companies to validate that software technologies "
+"perform as advertised."
+msgstr ""
+
+#: ../introduction/selecting-supporting-software.rst:50
+msgid ""
+"Consider the supportability of the hardware on which the software will run. "
+"Additionally, consider the additional features available in the hardware and "
+"how those features are supported by the software you choose."
 msgstr ""
 
 #: ../introduction/why-and-how-we-wrote-this-book.rst:3

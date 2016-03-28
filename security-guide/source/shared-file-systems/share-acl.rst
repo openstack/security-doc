@@ -7,16 +7,16 @@ The Shared File Systems service allows to grant or deny access to different
 entities of the service for other clients.
 
 Having a share as remote mountable instance of a file system, you can manage
-access to a specified share, and list the permissions for a specified share.
+access to a specified share, and list permissions for a specified share.
 
-The share can be *public* and *private*. This is a level of visibility for the
+A share can be *public* or *private*. This is a level of visibility for the
 share that defines whether other tenants can or cannot see the share. By
-default, the shares are created as private. While creating a share, use a key
+default, all shares are created as private. While creating a share, use key
 :option:`--public` to make your share public for other tenants to see it in a
 list of shares and see its detailed information.
 
 According to a :ref:`policy.json <shared_fs_policies>` file, an administrator
-and the users as share owners can manage the access to the shares by means of
+and the users as share owners can manage access to shares by means of
 creating access rules. Using :command:`manila access-allow`,
 :command:`manila access-deny` and :command:`manila access-list` commands,
 you can grant, deny and list access to a specified share correspondingly.
@@ -25,19 +25,19 @@ you can grant, deny and list access to a specified share correspondingly.
 
     By default, when a share is created and has its export location, the Shared
     File Systems service expects that nobody can access the share by mounting
-    it. Pay attention that the share driver you use can change this
+    it. Please note that the share driver you use can change this
     configuration, or it can be directly changed on the share storage. To
-    ensure the access to the share, check the mounting config for the export
+    ensure access to the share, check the mounting config for the export
     protocol.
 
-When the share is just created there are no created access rules and expected
-permission to mount a share. This is obtained by the mounting config for the
-certain export protocol. For example, for the NFS protocol there is
-``exportfs`` command or ``/etc/exports`` file on the storage which controls
-each remote share and the hosts that can access it. It is empty if nobody can
-mount a share. For the remote CIFS server there is ``net conf list`` command
-which shows the configuration. The parameter ``hosts deny`` should be set by
-the share driver to ``0.0.0.0/0`` which means that that hosts are denied to
+When a share is just created there are no default access rules associated with
+it and permission to mount it. This could be seen in mounting config for
+export protocol in use. For example, there is an NFS command ``exportfs`` or
+``/etc/exports`` file on the storage which controls each remote share and
+defines hosts that can access it. It is empty if nobody can mount a share.
+For a remote CIFS server there is ``net conf list`` command
+which shows the configuration. ``hosts deny`` parameter should be set by
+the share driver to ``0.0.0.0/0`` which means that any host is denied to
 mount the share.
 
 Using the Shared File Systems service, you can grant or deny access to a share
@@ -49,17 +49,17 @@ by specifying one of these supported share access levels:
 
 .. tip::
 
-    The RO access level can be helpful in the public shares when the
+    The RO access level can be helpful in public shares when the
     administrator gives read and write (RW) access for some certain editors or
     contributors and gives read-only (RO) access for the rest of users
     (viewers).
 
 You must also specify one of these supported authentication methods:
 
-* **ip**. Authenticates an instance through its IP address. A valid format is
+* **ip**. Authenticates an instance by its IP address. A valid format is
   XX.XX.XX.XX or XX.XX.XX.XX/XX. For example 0.0.0.0/0.
 
-* **cert**. Authenticates an instance through a TLS certificate. Specify the
+* **cert**. Authenticates an instance by a TLS certificate. Specify the
   TLS identity as the IDENTKEY. A valid value is any string up to 64 characters
   long in the common name (CN) of the certificate.
 
@@ -69,7 +69,7 @@ You must also specify one of these supported authentication methods:
 
 .. note::
 
-    The supported authentication methods depend on which share driver, security
+    Supported authentication methods depend on which share driver, security
     service and shared file system protocol you configure and use. Supported
     shared file system protocols are NFS, CIFS, GlusterFS, and HDFS. Supported
     security services are LDAP, Kerberos protocols, or Microsoft Active
@@ -78,21 +78,21 @@ You must also specify one of these supported authentication methods:
     org/developer/manila/devref/share_back_ends_feature_support_
     mapping.html>`_.
 
-To verify that the access rules (ACL) were configured correctly for a share,
-you can list permissions for a share.
+To verify that access rules (ACL) were configured correctly for a share,
+you can list its permissions.
 
 .. tip::
 
     You also can choose and add the :ref:`security service
     <shared_fs_security_services>` that is supported by the share driver to
     create access rules with authentication methods for clients that are
-    appropriate for your share. The supported security services are LDAP,
+    appropriate for your share. Supported security services are LDAP,
     Kerberos and Microsoft Active Directory.
 
-Below is an example of the NFS share with the Generic driver. After the share
+Below is an example of an NFS share with the Generic driver. After the share
 was created it has export location
 ``10.254.0.3:/shares/share-b2874f8d-d428-4a5c-b056-e6af80a995de``. If you try
-to mount it on the host with ``10.254.0.4`` IP address, you'll get the
+to mount it on the host with ``10.254.0.4`` IP address, you'll get a
 *"Permission denied"* message.
 
 .. code:: console
@@ -151,12 +151,3 @@ Now we can mount a share on the host with IP address ``10.254.0.4`` and have
  # ls -a /mnt
  .  ..  1.txt  lost+found
  #
-
-You also can list the access rules to each share and deny the access using the
-Shared File Systems service CLI.
-
-.. tip::
-
-    To ensure that the granted or denied access with Shared File Systems
-    service CLI is correct, check the mount config file on the storage before
-    releasing a share to the production.

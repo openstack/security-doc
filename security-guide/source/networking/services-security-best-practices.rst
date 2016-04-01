@@ -26,8 +26,8 @@ operators should carefully evaluate their policy towards user and tenant
 access to administration of network resources. For a more detailed
 explanation of OpenStack Networking policy definition, please refer to
 the `Authentication and authorization
-section <http://docs.openstack.org/admin-guide-cloud/networking_auth.html>`__
-in the OpenStack Cloud Administrator Guide.
+section <http://docs.openstack.org/admin-guide/networking_auth.html>`__
+in the OpenStack Administrator Guide.
 
 .. note::
 

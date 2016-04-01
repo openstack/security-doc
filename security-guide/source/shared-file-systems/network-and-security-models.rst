@@ -57,10 +57,11 @@ option, that defines the driver mode for share storage life cycle management:
 This is the share types which have the extra specifications that help scheduler
 to filter back ends and choose the appropriate back end for the user that
 requested to create a share. For details of managing the share types and
-configuration the back ends, see `Share types <http://docs.openstack.org/admin-
-guide-cloud/shared_file_systems_share_types.html>`_ and `Multi-storage
-configuration <http://docs.openstack.org/admin-guide-cloud/shared_file_systems_
-multi_backend.html>`_ documentation.
+configuration the back ends, see `Share types
+<http://docs.openstack.org/admin-guide/shared_file_systems_share_types.html>`_
+and `Multi-storage configuration
+<http://docs.openstack.org/admin-guide/shared_file_systems_multi_backend.html>`_
+documentation.
 
 No share servers mode
    In this mode, drivers have basically no network requirements whatsoever.
@@ -209,6 +210,7 @@ flat networks or VLAN-segmented networks of the Legacy networking
 (nova-network) service, or you can use the plug-in for specifying networks
 independently from OpenStack networking services. For more information of how
 to use different network plug-ins, see `Shared File Systems service Network
-plug-ins <http://docs.openstack.org/admin-guide-cloud/shared_file_systems_
-network_plugins.html#network-plug-ins>`_. The security in using different
+plug-ins
+<http://docs.openstack.org/admin-guide/shared_file_systems_network_plugins.html#network-plug-ins>`_.
+The security in using different
 network plug-ins depends on the specific network configuration.

@@ -20,8 +20,8 @@ Using SQL, the Shared File Systems service is similar to other OpenStack
 services and can be used with any OpenStack deployment. For more details on
 the API, see the `OpenStack Shared File Systems API <http://developer.
 openstack.org/api-ref-share-v2.html>`_ description. For mode details of the CLI
-using and configuring, see `Shared File Systems Cloud Administrative Guide
-<http://docs.openstack.org/admin-guide-cloud/shared_file_systems.html>`_.
+using and configuring, see `Shared File Systems Administrator Guide
+<http://docs.openstack.org/admin-guide/shared_file_systems.html>`_.
 
 Below is an explanation of the different components.
 

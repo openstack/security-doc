@@ -86,5 +86,5 @@ API network
    allocation ranges to use only less than the full range of IP addresses in an
    IP block. This network is considered the Public Security Domain.
 
-For additional information see the `OpenStack Cloud Administrator Guide
-<http://docs.openstack.org/admin-guide-cloud/networking.html>`__.
+For additional information see the `OpenStack Administrator Guide
+<http://docs.openstack.org/admin-guide/networking.html>`__.

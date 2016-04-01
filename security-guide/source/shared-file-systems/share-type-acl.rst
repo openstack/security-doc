@@ -13,8 +13,9 @@ specifications that give them meaning inside the Shared File Systems service.
 Tenants can list the share types and can use them to create new shares. For
 details of managing the share types, see `Shared File Systems API
 <http://developer.openstack.org/api-ref-share-v2.html#share-type>`_ and
-`Share types managing <http://docs.openstack.org/admin-guide-cloud/
-shared_file_systems_share_types.html>`_ documentation.
+`Share types managing
+<http://docs.openstack.org/admin-guide/shared_file_systems_share_types.html>`_
+documentation.
 
 The shares types can be created as *public* and *private*. This is the level of
 visibility for the share type that defines whether other tenants can or cannot

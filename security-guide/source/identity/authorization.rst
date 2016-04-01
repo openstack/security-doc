@@ -32,8 +32,8 @@ Service authorization
 ~~~~~~~~~~~~~~~~~~~~~
 
 Cloud administrators must define a user with the role of admin for each
-service, as described in the `OpenStack Cloud Administrator
-Guide <http://docs.openstack.org/admin-guide-cloud/index.html>`__.
+service, as described in the `OpenStack Administrator
+Guide <http://docs.openstack.org/admin-guide/index.html>`__.
 This service account provides the service with the authorization to
 authenticate users.
 

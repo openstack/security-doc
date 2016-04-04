@@ -10,10 +10,9 @@ rule associated with each resource then the user's group/roles and
 association to determine if access is allowed to the requested resource.
 
 The policy enforcement middleware enables fine-grained access control to
-OpenStack resources. Only admin users can provision new users and have
-access to various management functionality. The cloud users would only
-be able to spin up instances, attach volumes, and perform other
-operational tasks.
+OpenStack resources. The behaviour of the policy is discussed in depth
+in :ref:`policy-section`.
+
 
 Establish formal access control policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

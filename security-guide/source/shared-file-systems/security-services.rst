@@ -90,8 +90,8 @@ a share network.
 For details of managing the security services via API, see the `Security
 services API <http://developer.openstack.org/api-ref-share-v2.html#share-security-
 services>`_. You also can manage the security services via python-manilaclient,
-see `Security services CLI managing <http://docs.openstack.org/admin-guide-
-cloud/shared_file_systems_security_services.html>`_.
+see `Security services CLI managing <http://docs.openstack.org/admin-guide/
+shared_file_systems_security_services.html>`_.
 
 An administrator and the users as share owners can manage the
 :ref:`access to the shares <shared_fs_share_acl>` by means of creating access

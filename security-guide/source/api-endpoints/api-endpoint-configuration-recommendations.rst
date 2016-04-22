@@ -112,9 +112,7 @@ Network policy
 
 Because API endpoints typically bridge multiple security domains, you must pay
 particular attention to the compartmentalization of the API processes. See
-`Boundaries and threats bridging security domains
-<#boundaries-and-threats-bridging-security-domains>`__ for additional
-information in this area.
+:ref:`Bridging_security_domains` for additional information in this area.
 
 With careful modeling, you can use network ACLs and IDS technologies to enforce
 explicit point to point communication between network services. As a critical

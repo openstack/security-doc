@@ -103,14 +103,17 @@ by users or are able to be manipulated such as metadata.
 
 Trusted images
 ~~~~~~~~~~~~~~
-
 In a cloud environment, users work with either pre-installed images or
 images they upload themselves. In both cases, users should be able to
-ensure the image they are utilizing has not been tampered with. This
-requires a method of validation, such as a checksum for the known good
-image as well as verification of a running instance. While there are
-current best practices around these actions there are also several gaps
-in the process.
+ensure the image they are utilizing has not been tampered with. The
+ability to verify images is a fundamental imperative for security. A
+chain of trust is needed from the source of the image to the
+destination where it's used.  This can be accomplished by signing
+images obtained from trusted sources and by verifying the signature
+prior to use. Various ways to obtain and create verified images will
+be discussed below, followed by a description of the image signature
+verification feature.
+
 
 Image creation process
 ----------------------
@@ -199,15 +202,8 @@ cloud provider for an outline of the process used to produce their
 default images. If the provider allows you to upload your own images,
 you will want to ensure that you are able to verify that your image
 was not modified before using it to create an instance. To do this,
-refer to the following section on Image Provenance.
-
-Image provenance and validation
--------------------------------
-
-As of the Mitaka release, the Compute service supports instance
-signature validation just before starting an instance. The following
-paragraph describes how images are typically handled (without
-signature validation) when an instance is launched.
+refer to the following section on Image Signature Verification, or
+the following paragraph if signatures cannot be used.
 
 Images come from the Image service to the Compute service on a node.
 This transfer should be protected by running over TLS. Once the image
@@ -220,11 +216,26 @@ launching, it is possible that it has undergone tampering. The user
 would not be aware of tampering, unless a manual inspection of the
 files is performed in the resulting image.
 
-For additional security of images, you can enable instance signature
-verification by setting the ``verify_glance_signatures`` flag to
-``True`` in the ``/etc/nova/nova.conf`` file. When enabled, the Compute
-service automatically validates the signed instance prior to its launch.
-For more information, see `Adding Signed Images <http://docs.openstack.org/openstack-ops/content/user_facing_images.html>`_
+Image signature verification
+----------------------------
+Several features related to image signing are now available in
+OpenStack. As of the Mitaka release, the Image service can verify
+these signed images, and, to provide a full chain of trust, the
+Compute service has the option to perform image signature verification
+prior to image boot. Sucessful signature validation before image
+boot ensures the signed image hasn't changed. With this feature
+enabled, unauthorized modification of images (e.g., modifying the
+image to include malware or rootkits) can be detected.
+
+Administrators can enable instance signature verification by setting
+the ``verify_glance_signatures`` flag to ``True`` in the
+``/etc/nova/nova.conf`` file. When enabled, the Compute service
+automatically validates the signed instance when it is retreived from
+the Image service. If this verification fails, the boot won't occur.
+The OpenStack Operations Guide provides guidance on how to create and
+upload a signed image, and how to use this feature. For more
+information, see `Adding Signed Images
+<http://docs.openstack.org/openstack-ops/content/user_facing_images.html>`_
 in the Operations Guide.
 
 Instance migrations

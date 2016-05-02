@@ -12,6 +12,7 @@
 # Build directories
 publish-docs/
 security-guide/build
+security-threat-analysis/build
 
 # Transifex Client Setting
 .tx

@@ -1,0 +1,73 @@
+blockdiag {
+
+  // Set labels and shapes for components
+  api_access [label = "Api Access", shape = cloud];
+  component_1 [label = "Component Name"];
+  component_2 [label = "Component Name"];
+  multi_component [label = "Component Name (>200)", stacked];
+  node_in_cluster [label = "A node in a cluster"];
+  future_component [label = "Future component", style = dashed]
+  db [label = "Database name", shape = flowchart.database]
+  mq [label = "Message queue", shape = roundedbox]
+  thirdparty [label = "Database name"]
+
+
+  // Define groups
+  group {
+    orientation = landscape;
+    label = "Nova VM Network";
+    shape = line;
+    style = dotted;
+
+    group {
+      orientation = portrait;
+      label = "Name of subsystem";
+      shape = line;
+      style = dotted;
+
+      //components
+      component_1;
+      component_2;
+    }
+
+    group {
+      orientation = portrait;
+      label = "Name of cluster";
+      shape = line;
+      style = dotted;
+
+      //components
+      node_in_cluster;
+    }
+  }
+
+  group {
+    orientation = landscape;
+    label = "Production Network";
+    shape = line;
+    style = dotted;
+
+    //components
+    multi_component;
+    future_component;
+  }
+
+  group {
+    label = "3rdparty.com";
+    shape = line;
+    style = dashed;
+
+    //components
+    thirdparty;
+  }
+
+  //Add the components and draw the lines
+  api_access -> component_1 [label = "1. Interface label (HTTPS)"];
+  component_1 -> component_2 [label = "2. Label (HTTP)"];
+
+  component_2 -> multi_component [label = "3. Label (HTTPs)"];
+  node_in_cluster -> future_component [label = "9. Future Interface", style = dashed];
+  node_in_cluster -> thirdparty
+  db;
+  mq;
+}

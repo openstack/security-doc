@@ -11,7 +11,10 @@
 
 Project Description and Purpose
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Brief description of the purpose of the project; about a paragraph, can be cut/paste from wiki or other documentation. Include links to relevant presentations if available. Remove this comment>.
+
+<Brief description of the purpose of the project; about a paragraph,
+can be cut/paste from wiki or other documentation. Include links to
+relevant presentations if available. Remove this comment>.
 
 
 Primary Users

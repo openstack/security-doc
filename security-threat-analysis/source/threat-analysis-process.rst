@@ -41,8 +41,8 @@ Preparing artifacts for review
 Before the review
 ~~~~~~~~~~~~~~~~~
 
-- Verify that the service’s architecture page contains all the sections listed
-  in the Architecture Page Template <link>.
+- Verify that the service’s architecture page contains all the sections
+  listed in the Architecture Page Template <link>.
 - The architecture page should include diagrams as specified in the
   Architecture Diagram guidance <link>.
 - Send an email to the openstack-dev@lists.openstack.org mailing list with a
@@ -54,10 +54,12 @@ Before the review
 Running the threat analysis review
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Identify the “scribe” role, who will record the discussion and any findings
-  in the etherpad.
+- Identify the “scribe” role, who will record the discussion and any
+  findings in the etherpad.
 - Ask the project architect to briefly describe the purpose of the service,
-  typical uses cases, who will use it and how it will be deployed. Identify the data assets that might be at risk, eg peoples photos, cat videos, databases. Assets in flight and at rest.
+  typical uses cases, who will use it and how it will be deployed.
+  Identify the data assets that might be at risk, eg peoples photos, cat
+  videos, databases. Assets in flight and at rest.
 - Briefly consider potential abuse cases, what might an attacker want to use
   this service for? Could an attacker use this service as a stepping stone to
   attack other services? Do not spend too long on this section, as abuse cases
@@ -79,16 +81,16 @@ Running the threat analysis review
      vulnerabilities, is the implementation in use maintained? Is this protocol
      used as a security control to provide confidentiality, integrity or
      availability?
-  #. Can this interface be used as an entry point to the system, can an attacker
-     use it to attack a potentially vulnerable service? If so, consider what
-     additional controls should be applied to limit the exposure.
+  #. Can this interface be used as an entry point to the system, can an
+     attacker use it to attack a potentially vulnerable service? If so,
+     consider what additional controls should be applied to limit the exposure.
   #. If an attacker was able to compromise a given component, what would that
      enable them to do? Could they stepping-stone through the OpenStack cloud?
   #. How is the service administered? Is this a secure path, with appropriate
      authentication and authorization controls?
 
-- Once the reviewers are familiar with the service, re-consider abuse cases, are
-  there any other cases which should be considered and mitigated?
+- Once the reviewers are familiar with the service, re-consider abuse cases,
+  are there any other cases which should be considered and mitigated?
 - Step through typical use-case diagrams. Again consider if sensitive data is
   appropriately protected. Where an entry point is identified, consider how
   risks of malicious input data can be mitigated.

@@ -10,6 +10,7 @@ It includes these manuals:
 
  * Security Guide
  * Security Notes
+ * Security Threat Analysis
 
 The Security Notes are published by the OpenStack Security Project (OSSP) to
 advise users of security related issues. For more information refer
@@ -22,8 +23,12 @@ https://security.openstack.org/vmt-process.html.
 
 Directory Structure
 -------------------
+
 Security Guide is in the directory ``security-guide``, which source files in
 RST format in the directory ``security-guide/source``.
+
+Security Threat Analysis is in the directory ``security-guide``, which source
+files in RST format in the directory ``security-threat-analysis/source``.
 
 The security notes are in the directory ``security-notes``.
 

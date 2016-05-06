@@ -22,5 +22,5 @@ Documentation <http://docs.openstack.org/developer/keystone/index.html>`__.
    identity/tokens.rst
    identity/domains.rst
    identity/federated-keystone.rst
-   identity/checklist.rst
    identity/case-studies.rst
+   identity/checklist.rst

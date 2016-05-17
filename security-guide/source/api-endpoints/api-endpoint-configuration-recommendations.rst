@@ -29,9 +29,8 @@ To register an internal URL for an endpoint:
 
 .. code:: console
 
-   $ keystone endpoint-create \
+   $ openstack endpoint create identity \
      --region RegionOne \
-     --service-id=1ff4ece13c3e48d8a6461faebd9cd38f \
      --publicurl='https://public-ip:8776/v1/%(tenant_id)s' \
      --internalurl='https://management-ip:8776/v1/%(tenant_id)s' \
      --adminurl='https://management-ip:8776/v1/%(tenant_id)s'

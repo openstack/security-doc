@@ -18,7 +18,6 @@ Contents
    templates/architecture-page.rst
    architecture-diagram-guidance.rst
    todo.rst
-   
 
 
 Search in this guide

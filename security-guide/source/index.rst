@@ -44,6 +44,7 @@ Appendix
 .. toctree::
    :maxdepth: 1
 
+   checklist.rst
    common/app_support.rst
 
 Glossary

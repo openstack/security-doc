@@ -200,9 +200,10 @@ cloud.
 Privacy concerns for public and private cloud users are typically diametrically
 opposed. The data generated and stored in private clouds is normally owned by
 the operator of the cloud, who is able to deploy technologies such as
-data loss prevention (DLP) protection, file inspection, deep packet
-inspection and prescriptive firewalling. In contrast, privacy is one of
-the primary barriers for the adoption of public cloud infrastructures, as many
+:term:`data loss prevention (DLP) <Data loss prevention (DLP) software>`
+protection, file inspection, deep packet inspection and prescriptive
+firewalling. In contrast, privacy is one of the primary barriers for
+the adoption of public cloud infrastructures, as many
 of the previously mentioned controls do not exist.
 
 Outbound attacks and reputational risk

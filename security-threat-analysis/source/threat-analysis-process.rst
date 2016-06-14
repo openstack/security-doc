@@ -7,7 +7,6 @@ the following phases:
 
 - Preparing artifacts for review
 - Verifying readiness for a threat analysis review
-- Scheduling the threat analysis review
 - Running the threat analysis review
 - Follow-up from the threat analysis review
 
@@ -105,10 +104,6 @@ Running the threat analysis review
 Follow-up from the threat analysis review
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Create a Master Bug for the TA review. The summary and description should
-  both say "Threat Analysis Review for [ServiceName]. Include the PTL,
-  Service Architect, Security Architect, and Architecture page link in the
-  description.
 - Create a separate bug for each of the security findings listed in the TA
   Review notes.
 - Update the Threat Analysis Review Etherpad each of the new launchpad bug

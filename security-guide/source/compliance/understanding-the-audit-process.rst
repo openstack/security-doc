@@ -28,8 +28,8 @@ Determining audit scope, specifically what controls are needed and how
 to design or modify an OpenStack deployment to satisfy them, should be
 the initial planning step.
 
-When scoping OpenStack deployments for compliance purposes, consider
-prioritizing controls around sensitive services, such as command and
+When scoping OpenStack deployments for compliance purposes,
+prioritize controls around sensitive services, such as command and
 control functions and the base virtualization technology. Compromises of
 these facilities may impact an OpenStack environment in its entirety.
 
@@ -49,7 +49,7 @@ additionally a number of external entities provide comprehensive lists.
 The following are some examples:
 
 The `Cloud Security Alliance Cloud Controls
-Matrix <https://cloudsecurityalliance.org/research/ccm/>`__ (CCM)
+Matrix <https://cloudsecurityalliance.org/group/cloud-controls-matrix/>`__ (CCM)
 assists both cloud providers and consumers in assessing the overall
 security of a cloud provider. The CSA CMM provides a controls framework
 that map to many industry-accepted standards and regulations including
@@ -68,11 +68,60 @@ certifications, and provide visibility to both auditors and auditees on
 problem areas within control sets for particular compliance
 certifications and attestations.
 
+Phases of an audit
+~~~~~~~~~~~~~~~~~~
+
+An audit has four distinct phases, though most stakeholders and control owners
+will only participate in one or two.  The four phases are Planning, Fieldwork,
+Reporting and Wrap-up.  Each of these phases is discussed below.
+
+The Planning phase is typically performed two weeks to six months before
+Fieldwork begins.  In this phase audit items such as the timeframe, timeline,
+controls to be evaluated, and control owners are discussed and finalized.
+Concerns about resource availability, impartiality, and costs are also
+resolved.
+
+The Fieldwork phase is the most visible portion of the audit.  This is where
+the auditors are onsite, interviewing the control owners, documenting the
+controls that are in place, and identifying any issues.  It is important to
+note that the auditors will use a two part process for evaluating the controls
+in place.  The first part is evaluating the design effectiveness of the
+control.  This is where the auditor will evaluate whether the control is
+capable of effectively preventing or detecting and correcting weaknesses and
+deficiencies.  A control must "pass" this test to be evaluated in the second
+phase.  This is because with a control that is designed ineffectually, there
+is no point considering whether it is operating effectively. The second part
+is operational effectiveness. Operational effectiveness testing will determine
+how the control was applied, the consistency with which the control was
+applied and by whom or by what means the control was applied.  A control may
+depend upon other controls (indirect controls) and, if they do, additional
+evidence that demonstrates the operating effectiveness of those indirect
+controls may be required for the auditor to determine the overall operating
+effectiveness of the control.
+
+The Reporting phase is where any issues that were identified during the
+Fieldwork phase will be validated by management.  For logistics
+purposes, some activities such as issue validation may be performed during the
+Fieldwork phase.  Management will also need to provide remediation plans to
+address the issues and ensure that they do not reoccur.  A draft of the
+overall report will be circulated for review to the stakeholders and
+management.  Agreed upon changes are incorporated and the updated draft is
+sent to senior management for review and approval.  Once senior management
+approves the report, it is finalized and distributed to executive management.
+Any issues are entered into the issue tracking or risk tracking mechanism the
+organization uses.
+
+The Wrap-up phase is where the audit is officially spun down.  Management will
+begin remediation activities at this point. Processes and notifications are
+used to ensure that any audit related information is moved to a secure
+repository.
+
+
 Internal audit
 ~~~~~~~~~~~~~~
 
 Once a cloud is deployed, it is time for an internal audit. This is the
-time compare the controls you identified above with the design,
+time to compare the controls you identified above with the design,
 features, and deployment strategies utilized in your cloud. The goal is
 to understand how each control is handled and where gaps exist. Document
 all of the findings for future reference.

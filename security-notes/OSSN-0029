@@ -57,6 +57,7 @@ independently.
 This issue has been fixed in the Juno release of OpenStack.
 
 ### Contacts / References ###
+Author: Tim Kelsey, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0029
 Original LaunchPad Bug : https://bugs.launchpad.net/neutron/+bug/1365961
 OpenStack Security ML : openstack-security@lists.openstack.org

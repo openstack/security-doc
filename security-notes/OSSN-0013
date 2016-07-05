@@ -83,6 +83,7 @@ tested to ensure that CRUD actions are constrained in the way the administrator
 intended.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0013
 Original Launchpad Bug : https://bugs.launchpad.net/glance/+bug/1271426
 Original Report : http://lists.openstack.org/pipermail/openstack-dev/2014-January/024861.html

@@ -66,6 +66,8 @@ recommended that cloud administrators change any passwords, tokens, or
 other credentials that may have been communicated over SSL/TLS.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
+Author: Robert Clark, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0012
 OpenStack Security ML : openstack-security@lists.openstack.org
 OpenStack Security Group : https://launchpad.net/~openstack-ossg

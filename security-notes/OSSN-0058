@@ -50,6 +50,7 @@ the nodes exposing the volumes to only allow traffic through port 3260
 from nodes that will need to attach volumes.
 
 ### Contacts / References ###
+Author: Michael McCune, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0058
 Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1329214
 OpenStack Security ML : openstack-security@lists.openstack.org

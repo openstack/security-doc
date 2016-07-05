@@ -57,6 +57,7 @@ editted as follows:
     debug = False
 
 ### Contacts / References ###
+Author: Michael McCune, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0049
 Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1451931
 OpenStack Security ML : openstack-security@lists.openstack.org

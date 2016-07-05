@@ -38,6 +38,7 @@ volume_clear option” <logfile>)
 
 
 ### Contacts / References ###
+Author: Doug Chivers, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0016
 Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1322766
 OpenStack Security ML : openstack-security@lists.openstack.org

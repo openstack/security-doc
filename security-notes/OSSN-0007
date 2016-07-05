@@ -209,6 +209,7 @@ Please consult the documentation for your firewall software for
 instructions on configuring the appropriate firewall rules.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0007
 Original LaunchPad Bug : https://bugs.launchpad.net/openstack-manuals/+bug/1287194
 OpenStack Security ML : openstack-security@lists.openstack.org

@@ -62,6 +62,7 @@ configured to switch to a customised log format using directive
 'access_log' only for requests matching location '/v2.0/tokens/...'.
 
 ### Contacts / References ###
+Author: Stanislaw Pitucha, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0023
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1348844
 OpenStack Security ML : openstack-security@lists.openstack.org

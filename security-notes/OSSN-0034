@@ -38,6 +38,7 @@ suggest you consider using an on-disk DB such as MySQL / PostgreSQL or
 perhaps look into Memcachedb.
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0034
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1182920
 OpenStack Security ML : openstack-security@lists.openstack.org

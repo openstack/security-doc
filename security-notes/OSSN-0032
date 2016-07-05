@@ -35,6 +35,7 @@ NOTE: Flushing Memcached can result in losing token revocation
 information as addressed in https://bugs.launchpad.net/ossn/+bug/1182920
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0032
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1179955
 OpenStack Security ML : openstack-security@lists.openstack.org

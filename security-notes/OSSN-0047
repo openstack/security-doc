@@ -113,6 +113,7 @@ identity provider specific 'Location' directives as described above in
 addition to using the new 'remote_ids' checking in the Kilo release.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0047
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1390124
 OpenStack Security ML : openstack-security@lists.openstack.org

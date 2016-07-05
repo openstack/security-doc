@@ -43,6 +43,8 @@ Future OpenStack releases are looking to add the ability to restrict
 noVNC and SPICE console connections.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
+Author: Sriram Subramanian, CloudDon
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0008
 Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1227575
 OpenStack Security ML : openstack-security@lists.openstack.org

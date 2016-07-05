@@ -57,6 +57,7 @@ authentication plugin can be created that uses the external username that
 contains an "@" character as-is.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://bugs.launchpad.net/ossn/+bug/1254619
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1254619
 OpenStack Security ML : openstack-security@lists.openstack.org

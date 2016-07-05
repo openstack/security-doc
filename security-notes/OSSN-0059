@@ -31,6 +31,7 @@ secure boot with trusted boot. At the same time, Nova team has
 discussed deprecating Trusted Filter.
 
 ### Contacts / References ###
+Author: Michael Xin, Rackspace
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0059
 Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1456228
 OpenStack Security ML : openstack-security@lists.openstack.org

@@ -56,6 +56,7 @@ installations have increased token lifespans back to the old value of
 24 hours - increasing their exposure to this issue.
 
 ### Contacts / References ###
+Author: Michael McCune, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0053
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1455582
 OpenStack Security ML : openstack-security@lists.openstack.org

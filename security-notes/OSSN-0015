@@ -40,6 +40,7 @@ restrict the ability to publicize images to users with the "admin" role
 in the Juno release of OpenStack.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0015
 Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1313746
 OpenStack Security ML : openstack-security@lists.openstack.org

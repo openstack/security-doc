@@ -57,6 +57,7 @@ underlying compute node by it's serial number may wish to disable
 reporting of any sysinfo serial field at all by using the 'none' value.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0028
 Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1337349
 OpenStack Security ML : openstack-security@lists.openstack.org

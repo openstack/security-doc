@@ -30,6 +30,7 @@ Apache: HTTP Server Project
 Apache Config: http://httpd.apache.org/docs/2.4/mod/core.html#limitrequestbody
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN Bug: https://bugs.launchpad.net/ossn/+bug/1155566
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1098177
 OpenStack Security ML : openstack-security@lists.openstack.org

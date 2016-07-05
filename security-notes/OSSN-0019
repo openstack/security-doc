@@ -56,6 +56,7 @@ that could be used to impersonate a SAN host and enact an Man in the
 Middle attack.
 
 ### Contacts / References ###
+Author: Tim Kelsey, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0019
 Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1320056
 OpenStack Security ML : openstack-security@lists.openstack.org

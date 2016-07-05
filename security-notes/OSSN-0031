@@ -27,6 +27,7 @@ is a requirement without a full verifiable boot chain and network
 hardware.
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0031
 Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1174153
 OpenStack Security ML : openstack-security@lists.openstack.org

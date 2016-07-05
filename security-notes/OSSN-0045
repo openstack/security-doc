@@ -72,6 +72,7 @@ and are beyond the scope of this note. Some good starting places are
 provided below in the section: "Resources for configuring TLS options".
 
 ### Contacts / References ###
+Author: Travis McPeak, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0045
 Original LaunchPad Bug : N/A
 OpenStack Security ML : openstack-security@lists.openstack.org

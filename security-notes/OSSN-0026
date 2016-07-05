@@ -50,6 +50,7 @@ plaintext credentials, can result from permissions which allow
 malicious users to view sensitive data (read access).
 
 ### Contacts / References ###
+Author: Travis McPeak, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0026
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1343657
 OpenStack Security ML : openstack-security@lists.openstack.org

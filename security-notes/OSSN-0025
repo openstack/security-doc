@@ -62,6 +62,7 @@ environment, so test configurations before deploying them in a
 production environment.
 
 ### Contacts / References ###
+Author: Nathaniel Dillon, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0025
 Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1354512
 OpenStack Security ML : openstack-security@lists.openstack.org

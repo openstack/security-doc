@@ -84,6 +84,7 @@ cookie is compromised, an attacker may assume all privileges of the
 user for as long as their session is valid.
 
 ### Contacts / References ###
+Author: Travis McPeak, Symantec
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0017
 Original LaunchPad Bug : https://bugs.launchpad.net/horizon/+bug/1327425
 OpenStack Security ML : openstack-security@lists.openstack.org

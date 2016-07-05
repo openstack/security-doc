@@ -71,6 +71,7 @@ An alternate approach is to never run a production system with the log
 level in DEBUG mode.
 
 ### Contacts / References ###
+Author: Abu Shohel Ahmed, Ericsson
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0024
 Original Launchpad Bug: https://bugs.launchpad.net/python-keystoneclient/+bug/1004114
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1004114

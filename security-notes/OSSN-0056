@@ -43,6 +43,8 @@ time. If this is unacceptable, reduce the cache time to reduce the
 attack window or disable token caching entirely.
 
 ### Contacts / References ###
+Author: Shellee Arnold, HPE
+Author: Dough Chivers, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0056
 Original LaunchPad Bug : https://bugs.launchpad.net/python-keystoneclient/+bug/1287301
 OpenStack Security ML : openstack-security@lists.openstack.org

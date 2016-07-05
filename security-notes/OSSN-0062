@@ -65,6 +65,7 @@ cloud is vulnerable to this issue and you should switch to a different
 token provider.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0062
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1490804
 OpenStack Security ML : openstack-security@lists.openstack.org

@@ -50,6 +50,7 @@ As always, test these configuration settings before deploying them to
 production in order to catch any bugs or errors.
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0035
 SSL Strip : http://www.thoughtcrime.org/software/sslstrip
 Original LaunchPad Bug : https://bugs.launchpad.net/horizon/+bug/1191050

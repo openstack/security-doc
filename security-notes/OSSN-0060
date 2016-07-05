@@ -43,6 +43,7 @@ it is recommended that all users ensure that `use_user_token` is left
 at the default setting (`True`) or commented out.
 
 ### Contacts / References ###
+Author: Travis McPeak, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0060
 Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1493448
 OpenStack Security Documentation : https://security.openstack.org

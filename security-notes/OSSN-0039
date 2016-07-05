@@ -133,6 +133,7 @@ above to verify that each service is configured as expected.
 
 
 ### Contacts / References ###
+Author: Bryan D. Payne, Nebula
 This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0039
 Original Launchpad Bug: https://bugs.launchpad.net/ossn/+bug/1382270
 OpenStack Security ML: openstack-security@lists.openstack.org

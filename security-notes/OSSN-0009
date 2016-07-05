@@ -39,6 +39,7 @@ tokens for other users by performing group deletion operations.  You
 should take caution with who you delegate these capabilities to.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0009
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1268751
 OpenStack Security ML : openstack-security@lists.openstack.org

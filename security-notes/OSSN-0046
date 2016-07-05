@@ -33,6 +33,7 @@ using the debug configuration for affected services in production
 environments.
 
 ### Contacts / References ###
+Author: Robert Clark, IBM
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0046
 Original LaunchPad Bug : https://bugs.launchpad.net/ironic/+bug/1425206
 OpenStack Security ML : openstack-security@lists.openstack.org

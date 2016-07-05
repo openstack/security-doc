@@ -65,6 +65,7 @@ alternatives such as applying mandatory access control policies
 to the files in order to minimize the possible exposure.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0014
 Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1260679
 OpenStack Security ML : openstack-security@lists.openstack.org

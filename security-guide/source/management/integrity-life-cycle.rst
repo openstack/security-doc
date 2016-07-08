@@ -5,9 +5,9 @@ Integrity life-cycle
 We define integrity life cycle as a deliberate process that provides
 assurance that we are always running the expected software with the
 expected configurations throughout the cloud. This process begins with
-secure bootstrapping and is maintained through configuration management
-and security monitoring. This chapter provides recommendations on how to
-approach the integrity life-cycle process.
+:term:`secure bootstrapping <secure boot>` and is maintained through
+configuration management and security monitoring. This chapter provides
+recommendations on how to approach the integrity life-cycle process.
 
 .. _management-secure-bootstrapping:
 
@@ -25,8 +25,8 @@ the boot process.
 
 There are a variety of technologies that enable verification of these
 early boot stages. These typically require hardware support such as the
-trusted platform module (TPM), Intel Trusted Execution Technology (TXT),
-dynamic root of trust measurement (DRTM), and Unified Extensible
+:term:`trusted platform module (TPM)`, Intel Trusted Execution Technology
+(TXT), dynamic root of trust measurement (DRTM), and Unified Extensible
 Firmware Interface (UEFI) secure boot. In this book, we will refer to
 all of these collectively as *secure boot technologies*. We recommend
 using secure boot, while acknowledging that many of the pieces necessary
@@ -86,7 +86,9 @@ piece of code before it is run. In this context, a measurement is
 effectively a SHA-1 hash of the code, taken before it is executed. The
 hash is stored in a platform configuration register (PCR) in the TPM.
 
-Note: SHA-1 is used here because this is what the TPM chips support.
+.. Note::
+
+    SHA-1 is used here because this is what the TPM chips support.
 
 Each TPM has at least 24 PCRs. The TCG Generic Server Specification,
 v1.0, March 2005, defines the PCR assignments for boot-time integrity

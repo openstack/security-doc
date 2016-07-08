@@ -35,8 +35,15 @@ Access and log reviews
 ~~~~~~~~~~~~~~~~~~~~~~
 Periodic access and log reviews are required to ensure authentication,
 authorization, and accountability in a service deployment. Specific
-guidance for OpenStack on these topics are discussed in-depth in the
-logging section.
+guidance for OpenStack on these topics are discussed in-depth in
+:ref:`monitoring-and-logging`.
+
+The OpenStack Identity service supports Cloud Auditing Data
+Federation (CADF) notification, providing auditing data for
+compliance with security, operational, and business processes. For more
+information, see the
+`Keystone developer documentation
+<http://docs.openstack.org/developer/keystone/event_notifications.html#auditing-with-cadf>`_.
 
 Backup and disaster recovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

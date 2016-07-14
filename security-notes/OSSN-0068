@@ -1,0 +1,187 @@
+Repeated token revocation requests, can lead to service degradation or disruption
+---
+
+### Summary ###
+There is currently no limit to the frequency of keystone token revocations that
+can be made by a single user, in any given time frame. If a user repeatedly
+makes token requests, and then immediately revokes the token, a performance
+degradation can occur and possible DoS (Denial of Serice) attacks could be
+directed towards keystone.
+
+### Affected Services / Software ###
+All services using keystone.
+
+Mitaka, Liberty, Kilo, Nova, Juno, Havana, Icehouse, Grizzly, Folsom, Essex.
+
+### Discussion ###
+Token revocation can be self-served, with no restrictions enforced on the
+number of token revocations made by any user (including service users).
+
+If token revocations are made in quick succession, response times starts to lengthen, due
+to the increasing entries made in the revocation_event table.
+
+With no form of rate limiting in place, a single user can cause the OpenStack
+auth service to become poor in response time, resulting in a DoS style attack.
+
+A cleanup of revocation events does occur, based on token expiration plus
+expiration_buffer (which is 30 minutes by default). However, with the default
+token TTL of 3600 seconds, a user can potentially fill up  approximately several
+thousand events during that time.
+
+### Recommended Actions ###
+For current stable OpenStack releases (Mitaka and previous), operators are
+recommended to deploy external rate-limiting proxies or web application firewalls, to
+provide a front layer of protection to keystone.
+
+The following solutions may be considered, however it is key that the operator
+carefully plans and considers the individual performance needs of users
+and services within their OpenStack cloud, when configuring any rate limiting
+functionality.
+
+#### Repose ####
+
+##### Rate Limiting Filter #####
+Repose provides a rate limiting filter, that can limit per IP address and
+to a specific HTTP method (DELETE in relation to this OSSN).
+
+The following config may be considered for a single node. For more complex
+deployments, clusters can be constructed , utilizing a distributed data-store.
+
+##### system-model.cfg.xml #####
+~~~
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- To configure Repose see: http://wiki.openrepose.org/display/REPOSE/Configuration -->
+<system-model xmlns="http://docs.openrepose.org/repose/system-model/v2.0">
+    <repose-cluster id="repose">
+        <nodes>
+            <node id="repose_node1" hostname="localhost" http-port="8080"/>
+        </nodes>
+        <filters>
+            <filter name="ip-user"/>
+            <filter name="rate-limiting"/>
+        </filters>
+        <services>
+        </services>
+        <destinations>
+            <endpoint id="keystone" protocol="http" hostname="http://idenity-server.acme.com" root-path="/" port="35357" default="true"/>
+        </destinations>
+    </repose-cluster>
+
+    <phone-home enabled="false"
+                origin-service-id="your-service"
+                contact-email="your@service.com"/>
+</system-model>
+~~~
+
+##### ip-user.cfg.xml #####
+~~~
+<?xml version="1.0" encoding="UTF-8"?>
+<ip-user xmlns="http://docs.openrepose.org/repose/ip-user/v1.0">
+    <user-header name="X-PP-User" quality="0.4"/>
+    <group-header name="X-PP-Groups" quality="0.4"/>
+    <group name="ipv4-group">
+        <cidr-ip>192.168.0.0/24</cidr-ip>
+    </group>
+    <group name="match-all">
+        <cidr-ip>0.0.0.0/0</cidr-ip>
+        <cidr-ip>0::0/0</cidr-ip>
+    </group>
+</ip-user>
+~~~
+
+* Note: Using the ip-user filter, will mean each IP address sending requests to
+repose, will have its own rate-limit bucket. Therefore any IP exceeding the
+limit, will be blocked - but only that IP. If you are sending NAT'ed connections
+to repose, then you should consider, they will also be seen as a single IP, and
+grouped accordingly.
+
+##### rate-limiting.cfg.xml #####
+~~~
+<?xml version="1.0" encoding="UTF-8"?>
+<rate-limiting xmlns="http://docs.openrepose.org/repose/rate-limiting/v1.0">
+    <request-endpoint uri-regex="/limits" include-absolute-limits="false"/>
+
+    <global-limit-group>
+        <limit id="global" uri="*" uri-regex=".*" value="1000" unit="MINUTE"/>
+    </global-limit-group>
+
+    <limit-group id="limited" groups="limited" default="true">
+        <limit id="all" uri="/auth/token" uri-regex="/.*" http-methods="DELETE" unit="MINUTE" value="10"/>
+    </limit-group>
+    <limit-group id="unlimited" groups="unlimited" default="false"/>
+</rate-limiting>
+~~~
+
+* Key points to note with the above. The rate limit is limited to DELETE
+requests (which is the http method used to revoke a token), and to the URI
+/auth/token. Any IP which exceeds 10 revoke requests per minute, will be blocked
+for 1 minute.
+
+Further details can be found on the openrepose wiki:
+
+https://repose.atlassian.net/wiki/display/REPOSE/Rate+Limiting+filter
+
+### Other possible solutions ###
+
+#### NGINX ####
+NGINX provides the limit_req_module, which can be used to provide a global rate
+limit. Using a map, it can be limited to just the DELETE method.
+
+~~~
+http {
+      map $request_method $keystone {
+      default         "";
+      DELETE            $binary_remote_addr;
+      }
+      limit_req_zone $keystone zone=keystone:10m rate=10r/m;
+
+      server {
+             ...
+             location /auth/token {
+             limit_req zone=keystone;
+             ...
+           }
+}
+~~~
+
+Further details can be found on the nginx site:
+
+http://nginx.org/en/docs/http/ngx_http_limit_req_module.html
+
+#### HAProxy ####
+
+HAProxy can provide inherent rate-limiting, using stick-tables, with a General
+Purpose Counter (gpc)
+
+~~~
+# Monitors the number of request sent by an IP over a period of 10 seconds
+stick-table type ip size 1m expire 10s store gpc0,http_req_rate(10s)
+tcp-request connection track-sc1 src
+tcp-request connection reject if { src_get_gpc0 gt 0 }
+~~~
+
+Further details can be found on the haproxy website:
+
+http://blog.haproxy.com/2012/02/27/use-a-load-balancer-as-a-first-row-of-defense-against-ddos)
+
+#### Apache ####
+A number of solutions can be explored here.
+
+##### mod_ratelimit #####
+http://httpd.apache.org/docs/2.4/mod/mod_ratelimit.html
+
+##### mod_qos #####
+http://opensource.adnovum.ch/mod_qos/dos.html
+
+##### mod_evasive #####
+https://www.digitalocean.com/community/tutorials/how-to-protect-against-dos-and-ddos-with-mod_evasive-for-apache-on-centos-7)
+
+##### mod_security #####
+https://www.modsecurity.org/
+
+### Contacts / References ###
+Author: Luke Hinds, Red Hat
+This OSSN : https://bugs.launchpad.net/ossn/+bug/1553324
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1553324
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

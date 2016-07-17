@@ -35,6 +35,7 @@ A specification for a fix has been proposed by the Glance development
 team and is targeted for the Mitaka release.
 
 ### Contacts / References ###
+Author: Robert Clark, IBM
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0061
 Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1516031
 OpenStack Security ML : openstack-security@lists.openstack.org

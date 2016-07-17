@@ -42,6 +42,7 @@ Concerned users are encouraged to read (OSSG member) Nathan Kinder's
 blog post on this issue and some of the potential future solutions.
 
 ### Contacts / References ###
+Author: Robert Clark, IBM
 Nathan Kinder on Token Scoping : https://blog-nkinder.rhcloud.com/?p=101
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0042
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1341816

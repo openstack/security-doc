@@ -63,6 +63,7 @@ In the future, operators will be able to use keystoneclient for a more
 convenient method of accessing and updating this information.
 
 ### Contacts / References ###
+Author: Stanislaw Pitucha, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0021
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1341849
 OpenStack Security ML : openstack-security@lists.openstack.org

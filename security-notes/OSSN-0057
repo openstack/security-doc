@@ -49,6 +49,7 @@ Adding image metadata... add_image_metadata
 ---- end example glance-api.log snippet ----
 
 ### Contacts / References ###
+Author: Eric Brown, VMware
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0057
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1401170
 OpenStack Security ML : openstack-security@lists.openstack.org

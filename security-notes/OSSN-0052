@@ -31,6 +31,7 @@ the `glance-api.conf` file:
     debug = false
 
 ### Contacts / References ###
+Author: Nathaniel Dillon, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0052
 Original LaunchPad Bug : https://bugs.launchpad.net/python-swiftclient/+bug/1470740
 OpenStack Security ML : openstack-security@lists.openstack.org

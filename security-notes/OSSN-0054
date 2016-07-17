@@ -41,6 +41,7 @@ If possible, affected users should upgrade to the Kilo or newer release
 of Horizon, allowing them to use the fixed version of Django.
 
 ### Contacts / References ###
+Author: Robert Clark, IBM
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0054
 Django fix : https://www.djangoproject.com/weblog/2015/jul/08/security-releases/
 Django CVE : CVE-2015-5143

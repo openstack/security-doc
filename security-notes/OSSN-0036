@@ -22,6 +22,7 @@ true as described in the Django documentation:
   https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SESSION_COOKIE_SECURE
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0036
 Related OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0035
 Original LaunchPad Bug : https://bugs.launchpad.net/horizon/+bug/1191051

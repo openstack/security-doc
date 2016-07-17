@@ -42,6 +42,7 @@ Nova and Cinder. Additionally these patches have been backported to
 stable/kilo and stable/liberty.
 
 ### Contacts / References ###
+Author: Dave McCowan, Cisco
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0063
 Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1523646
 OpenStack Security ML : openstack-security@lists.openstack.org

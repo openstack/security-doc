@@ -57,6 +57,7 @@ allow traffic coming from the running instances to services controlled
 by Nova - DHCP and DNS providers.
 
 ### Contacts / References ###
+Author: Stanislaw Pitucha, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0018
 Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1316271
 OpenStack Security ML : openstack-security@lists.openstack.org

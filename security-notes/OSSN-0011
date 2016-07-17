@@ -138,6 +138,7 @@ security group references to ensure that the resulting network rules
 are as intended.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0011
 Original LaunchPad Bug : https://bugs.launchpad.net/heat/+bug/1291091
 OpenStack Security ML : openstack-security@lists.openstack.org

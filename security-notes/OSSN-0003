@@ -37,6 +37,7 @@ Ensure that in your deployment keystone.conf uses the most restrictive
 permissions that allow the system to continue proper operations.
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN : https://bugs.launchpad.net/ossn/+bug/1168252
 Original LaunchPad Bug : https://bugs.launchpad.net/devstack/+bug/1168252
 OpenStack Security ML : openstack-security@lists.openstack.org

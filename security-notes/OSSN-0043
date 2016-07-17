@@ -52,6 +52,7 @@ of places where these vulnerable functions are used, this effectively
 means that vulnerable systems must be restarted after updating glibc.
 
 ### Contacts / References ###
+Author: Doug Chivers, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0043
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1415416
 OpenStack Security ML : openstack-security@lists.openstack.org

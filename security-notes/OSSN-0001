@@ -37,6 +37,7 @@ The OSSG recommends against using LXC for enforcing secure separation of
 guests. Even with appropriate AppArmour policies applied.
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 Nova : http://docs.openstack.org/developer/nova/
 LXC : http://lxc.sourceforge.net/
 Libvirt : http://libvirt.org/

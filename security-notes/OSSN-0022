@@ -51,6 +51,7 @@ boot <instance_id>" or reboot using "nova reboot --hard <instance_id>"
 to force the security group rules to be applied.
 
 ### Contacts / References ###
+Author: Doug Chivers, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0022
 Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1316822
 OpenStack Security ML : openstack-security@lists.openstack.org

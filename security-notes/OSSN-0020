@@ -53,6 +53,7 @@ The Neutron development team plans to address this issue in a future
 version of Neutron.
 
 ### Contacts / References ###
+Author Priti Desai, Symantec
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0020
 Original LaunchPad Bug : https://bugs.launchpad.net/neutron/+bug/1334926
 OpenStack Security ML : openstack-security@lists.openstack.org

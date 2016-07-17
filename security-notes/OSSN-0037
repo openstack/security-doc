@@ -36,6 +36,7 @@ For Nginx, you can do this by disabling the gzip module:
   http://wiki.nginx.org/HttpGzipModule
 
 ### Contacts / References ###
+Author: Robert Clark, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0037
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1209250
 OpenStack Security ML : openstack-security@lists.openstack.org

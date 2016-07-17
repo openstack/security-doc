@@ -53,6 +53,7 @@ Despite this restriction in Horizon, it is recommended to leave the default
 directly without using Horizon to initiate a password change.
 
 ### Contacts / References ###
+Author: Nathan Kinder, Red Hat
 This OSSN : https://bugs.launchpad.net/ossn/+bug/1237989
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1237989
 OpenStack Security ML : openstack-security@lists.openstack.org

@@ -64,6 +64,7 @@ The Neutron development team plan to address this issue in a future
 version
 
 ### Contacts / References ###
+Author: Tim Kelsey, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0027
 Original LaunchPad Bug : https://bugs.launchpad.net/neutron/+bug/1274034
 OpenStack Security ML : openstack-security@lists.openstack.org

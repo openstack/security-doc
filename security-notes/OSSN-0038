@@ -43,6 +43,7 @@ the cache should ascertain whether or not their vendor shipped suds package
 is susceptible and consider the above advice.
 
 ### Contacts / References ###
+Author: Tim Kelsey, HPE
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0038
 Original Launchpad Bug : https://bugs.launchpad.net/ossn/+bug/1341954
 OpenStack Security ML : openstack-security@lists.openstack.org

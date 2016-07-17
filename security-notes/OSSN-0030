@@ -70,6 +70,7 @@ System logs should also be interrogated for any such strings as an
 indication of possible attacks.
 
 ### Contacts / References ###
+Author: Tim Kelsey, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0030
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1374055
 OpenStack Security ML : openstack-security@lists.openstack.org

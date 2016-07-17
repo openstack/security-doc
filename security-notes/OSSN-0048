@@ -56,6 +56,7 @@ deployments of glance should consider upgrading to the Juno 2014.2.4
 release.
 
 ### Contacts / References ###
+Author: Michael McCune, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0048
 Original LaunchPad Bug : https://bugs.launchpad.net/glance/+bug/1414532
 OpenStack Security ML : openstack-security@lists.openstack.org

@@ -65,6 +65,7 @@ from the API pipelines in keystone-paste.ini.
 ---- end good keystone-paste.ini snippet ----
 
 ### Contacts / References ###
+Author: Robert Clark, IBM
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0064
 Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1545789
 Mailing list [Security] tag on : openstack-dev@lists.openstack.org

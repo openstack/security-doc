@@ -40,6 +40,7 @@ IDs and consider it for applicability to your Keystone deployment:
 https://git.openstack.org/cgit/openstack/keystone/commit/?id=a2fa6a6f01a4884edf369cafa39946636af5cf1a
 
 ### Contacts / References ###
+Author: Jamie Finnigan, HP
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0010
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1287219
 OpenStack Security ML : openstack-security@lists.openstack.org

@@ -5,4 +5,4 @@
 doc8  # Apache-2.0
 openstack-doc-tools>=0.31
 sphinx>=1.1.2,!=1.2.0,!=1.3b1,<1.3
-openstackdocstheme>=1.2.3
+openstackdocstheme>=1.4.0

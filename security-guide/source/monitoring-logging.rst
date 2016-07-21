@@ -1,3 +1,5 @@
+.. _monitoring-and-logging:
+
 ======================
 Monitoring and logging
 ======================

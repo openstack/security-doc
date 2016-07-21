@@ -24,8 +24,8 @@ API see the `OpenStack Block Storage documentation
 .. toctree::
    :maxdepth: 2
 
-   block-storage/checklist.rst
    block-storage/volume_wiping.rst
+   block-storage/checklist.rst
 
 .. note::
 

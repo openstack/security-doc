@@ -19,9 +19,9 @@ patterns.
 
 For more information about the ``lvm_type`` parameter, see the `Configuration
 Reference
-<http://docs.openstack.org/liberty/config-reference/content/lvm-volume-driver.html>__`
+<http://docs.openstack.org/liberty/config-reference/content/lvm-volume-driver.html>`__
 and the `Administrator Guide
-<http://docs.openstack.org/admin-guide/blockstorage_over_subscription.html>__`.
+<http://docs.openstack.org/admin-guide/blockstorage_over_subscription.html>`__.
 
 For more information about the ``volume_clear`` parameter, see the `OpenStack
 Configuration Reference

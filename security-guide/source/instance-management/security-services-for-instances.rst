@@ -47,10 +47,10 @@ the ``nova-scheduler`` which determines how to dispatch compute
 and volume requests.
 
 The ``FilterScheduler`` is the default scheduler for OpenStack
-Compute, although other schedulers exist (see the section
-`Scheduling <http://docs.openstack.org/liberty/config-reference/content/section_compute-scheduler.html>`_
-in the
-`OpenStack Configuration Reference <http://docs.openstack.org/liberty/config-reference/content/config_overview.html>`_
+Compute, although other schedulers exist (see the section `Scheduling
+<http://docs.openstack.org/mitaka/config-reference/compute/scheduler.html>`_
+in the `OpenStack Configuration Reference
+<http://docs.openstack.org/mitaka/config-reference/config-overview.html>`_
 ). This works in collaboration with 'filter hints' to decide where an
 instance should be started. This process of host selection allows
 administrators to fulfill many different security and compliance

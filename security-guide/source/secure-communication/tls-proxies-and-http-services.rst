@@ -12,7 +12,7 @@ that can be used for this purpose:
 
 * `Pound <http://www.apsis.ch/pound>`_
 * `Stud <https://github.com/bumptech/stud>`_
-* `nginx <http://nginx.org/>`_
+* `Nginx <http://nginx.org/>`_
 * `Apache httpd <http://www.apache.org/>`_
 
 In cases where software termination offers insufficient performance,
@@ -209,10 +209,10 @@ However, it is not provided by default.
     # Disabling this until we upgrade to HAProxy 1.5
     write-proxy = off
 
-nginx
+Nginx
 -----
 
-This nginx example requires TLS v1.1 or v1.2 for maximum security. The
+This Nginx example requires TLS v1.1 or v1.2 for maximum security. The
 ``ssl_ciphers`` line can be tweaked based on your needs, however this
 is a reasonable starting place.
 The default configuration file is ``/etc/nginx/nginx.conf``.

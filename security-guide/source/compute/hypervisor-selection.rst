@@ -122,13 +122,13 @@ machine isolation, KVM has been Common Criteria certified to
 
 .. code::
 
-   "*provide system-inherent separation mechanisms to the resources of virtual
+   "provide system-inherent separation mechanisms to the resources of virtual
    machines. This separation ensures that large software component used for
    virtualizing and simulating devices executing for each  virtual machine
    cannot interfere with each other. Using the SELinux multi-category
    mechanism, the virtualization and simulation software instances are
    isolated. The virtual machine management framework configures SELinux
-    multi-category settings transparently to the administrator*"
+   multi-category settings transparently to the administrator"
 
 While many hypervisor vendors, such as Red Hat, Microsoft, and VMware have
 achieved Common Criteria Certification their underlying certified feature set

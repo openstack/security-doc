@@ -29,7 +29,7 @@ expected to only have access to the application, and not the
 instance behind it, Alice installs a host intrusion detection
 system (HIDS) agent on the instance as well to monitor and
 export system events, and also ensures her internal public
-certificate is installed into the certficate store on the
+certificate is installed into the certificate store on the
 system. Alice is also aware that a side effect of this
 architecture is that Alice's team will be expected to manage
 all of the instances in the environment.

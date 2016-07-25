@@ -20,7 +20,7 @@ Service Gateway Interface (WSGI) so that she can take advantage of
 the health monitoring and clustering features of HAProxy, and keep
 a homogeneous deployment in her environment. She modifies the
 ``SECURE_PROXY_SSL_HEADER`` variable and disables
-front end caching with with the session cookies set to httponly to
+front end caching with the session cookies set to httponly to
 apply HSTS protections, which decreases the risk of communication
 being downgraded from TLS to HTTP. Such a downgrade would be more
 vulnerable to a 'man in the middle' (MITM) attack. As her

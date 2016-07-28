@@ -156,7 +156,7 @@ provision IP addresses for share servers, but IPs will all come out of the
 same subnet and that subnet itself is assumed to be reachable by all tenants.
 
 The :ref:`security service part <shared_fs_security_services>` of
-share networks ispecify security
+share networks specify security
 requirements such as AD or LDAP domains or a Kerberos realm. The Shared File
 Systems service assumes that any hosts referred to in security service are
 reachable from a subnet where a share server is created, which limits the

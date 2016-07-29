@@ -133,3 +133,23 @@ Mandatory Access Controls. The goal of these enhanced access controls is to
 aid in the containment and escalation of API endpoint security breaches. With
 mandatory access controls, such breaches severely limit access to resources and
 provide earlier alerting on such events.
+
+API endpoint rate-limiting
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Rate Limiting is a means to control the frequency of events received by a
+network based application. When robust rate limiting is not present, it can
+result in an application being susceptible to various denial of service
+attacks. This is especially true for APIs, which by their nature are designed
+to accept a high frequency of similar request types and operations.
+
+Within OpenStack, it is recommended that all endpoints, especially public, are
+provided with an extra layer of protection, by means of either a rate-limiting
+proxy or web application firewall.
+
+It is key that the operator carefully plans and considers the individual
+performance needs of users and services within their OpenStack cloud when
+configuring and implementing any rate limiting functionality.
+
+Common solutions for providing rate-limiting are NGINX, HAProxy, OpenRepose, or
+Apache Modules such as mod_ratelimit, mod_qos, or mod_security.

@@ -33,7 +33,7 @@ successfully.
 
 Monitoring is a critical component of IT infrastructure, and we recommend the
 `Compute logfiles
-<http://docs.openstack.org/liberty/config-reference/content/section_nova-logs.html>`__
+<http://docs.openstack.org/mitaka/config-reference/compute/logs.html>`__
 be monitored and analyzed so that meaningful alerts can be created.
 
 

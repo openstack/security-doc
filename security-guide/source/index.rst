@@ -45,7 +45,7 @@ Appendix
    :maxdepth: 1
 
    checklist.rst
-   common/app_support.rst
+   common/app-support.rst
 
 Glossary
 ~~~~~~~~

@@ -47,12 +47,8 @@ Differences from previous architecture
 If this is a revision of a prior architecture, briefly list the new components
 and interfaces. If this is a new architecture that replaces a prior service,
 briefly describe how this service differs from its ancestor. If this is an
-entirely new service with no precedent, then state only "This is a new service
-with no related prior solution".
-
-For example:
-
-- New OpenStack service added in Liberty.
+entirely new service with no precedent or one that has not been reviewed
+previously, then remove this section.
 
 
 External dependencies & associated security assumptions
@@ -73,20 +69,23 @@ For example:
 Components
 ~~~~~~~~~~
 
-In the component descriptions that follow, IC means that in a typical
-deployment,they reside in hosted instances on the cloud, and UC means they are
-likely to be in the under cloud infrastructure.
+In the component descriptions that follow, I-C means that in a typical
+deployment, they reside in hosted instances on the cloud, and U-C means they
+are likely to be in the under cloud infrastructure. O-C means they are outside
+of the cloud.
 
-- component-1 (optional product/technology name)[IC or UC]: Describe component
-- component-2 [IC]: Describe component
-- component-3 [UC]: Describe component
+- component-1 (optional product/technology name)[I-C or U-C]: Describe
+  component
+- component-2 [I-C]: Describe component
+- component-3 [U-C]: Describe component
+- component-3 [O-C]: Describe component or service
 
 For Example:
 
-- Worker Queue (rabbitmq) [UC]: This queue is used to process new order
+- Worker Queue (rabbitmq) [U-C]: This queue is used to process new order
   requests. Other systems involved submit and receive data via this queue.
-- Database (MySQL) [IC or UC]: Open-source sql database to store Barbican state
-  data related to its managed entities and their metadata.
+- Database (MySQL) [I-C or U-C]: Open-source sql database to store Barbican
+  state data related to its managed entities and their metadata.
 
 
 Interfaces

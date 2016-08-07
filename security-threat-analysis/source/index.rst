@@ -16,6 +16,8 @@ Contents
    objectives.rst
    threat-analysis-process.rst
    templates/architecture-page.rst
+   templates/review-findings.rst
+   templates/review-notes.rst
    architecture-diagram-guidance.rst
    todo.rst
 

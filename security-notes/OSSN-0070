@@ -1,0 +1,34 @@
+Bandit versions lower than 1.1.0 do not escape HTML in issue reports
+---
+
+### Summary ###
+Bandit versions lower than 1.1.0 have a bug in the HTML report formatter that
+does not escape HTML in issue context snippets. This could lead to an XSS if
+HTML reports are hosted as part of a CI pipeline.
+
+### Affected Services / Software ###
+Bandit: < 1.1.0
+
+### Discussion ###
+Bandit versions lower than 1.1.0 have a bug in the HTML report formatter that
+does not escape HTML in issue context snippets. This could lead to an XSS
+attack if HTML reports are hosted as part of a CI pipeline because HTML in the
+source code would be copied verbatim into the report. For example:
+
+  import subprocess
+  subprocess.Popen("<script>alert(1)</script>", shell=True)
+
+Will cause "<script>alert(1)</script>" to be inserted into the HTML report.
+This issue could allow for arbitrary code injection into CI/CD pipelines that
+feature accessible HTML reports generated from Bandit runs.
+
+### Recommended Actions ###
+Update bandit to version 1.1.0 or greater.
+
+### Contacts / References ###
+Author: Tim Kelsey <tim.kelsey@hpe.com>, HPE
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0063
+Original LaunchPad Bug : https://bugs.launchpad.net/bandit/+bug/1612988
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+CVE: N/A

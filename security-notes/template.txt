@@ -19,6 +19,7 @@ possible).  If the recommendation involves configuration changes,
 example snippets of configuration files should be included here.
 
 ### Contacts / References ###
+Author: <author name(s) and company(s)>
 This OSSN : <link to OSSN on wiki>
 Original LaunchPad Bug : <link to launchpad bug for affected project/service>
 OpenStack Security ML : openstack-security@lists.openstack.org

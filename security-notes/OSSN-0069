@@ -1,0 +1,68 @@
+Host machine exposed to tenant networks via IPv6
+---
+
+### Summary ###
+New interfaces created by Neutron in the default namespace, were done so
+without disabling IPv6 link-local addresses. This resulted in instances gaining
+the ability to directly access the host OS, therefore breaking guest isolation.
+
+In Linux, link-local IPv6 addresses are assigned to all active interfaces,
+unlike IPv4 addresses where an administrator must configure each interface
+explicitly. This leads to a time window between when the interface is enabled
+and when it is attached to bridge device. Within this time window the host
+could be accessed from a tenant network.
+
+IPv6 is now disabled automatically by both Neutron and Nova, prior to bringing
+any links up, however operators should still be aware of the security risks
+associated with re-enabling IPv6 link-local addresses.
+
+### Affected Services / Software ###
+Nova, Neutron, networking-midonet, Kilo, Liberty
+
+### Discussion ###
+Linux assigns link-local IPv6 addresses to all the active interfaces, which is
+different to that of IPv4 addresses, where an administrator must configure
+each interface explicitly. Once an interface is enslaved in a bridge,
+all addresses assigned to it are ignored and only the addresses on the bridge
+are active. They are exposed via LinuxBridgeManager calls to `ensure_vlan` and
+`ensure_vxlan` where a new VLAN or VXLAN interface is created prior to
+enslaving the interfaces in the bridge.
+
+Both Neutron and Nova now disable IPv6 on all interfaces before bringing the
+interface up. This avoids exposing a time window between when the interface is
+enabled and when it is attached to a bridge device, during which time the
+host could be accessible from a tenant network.
+
+### Recommended Actions ###
+IPv6 should remain disabled for each interface, before the interface is brought
+to link up. If an operator, for any given reason, needs to re-enable link-local
+IPv6 adreses, they should be aware of the security implications of allowing
+tenant networks access of the host.
+
+IPv6 is now disabled by default using root_dev.disable_ipv6() in interface.py,
+which calls the method common.ip_utils.is_enabled()
+
+We can verify the value of the IPv6 parameters within sysctl.conf by using the
+following command:
+
+  $ sysctl -a | grep disable | grep ipv6
+
+A value of `0` represents IPv6 enabled, with `1` as disabled.
+
+  net.ipv6.conf.default.disable_ipv6 = 1
+  net.ipv6.conf.$IFACE.disable_ipv6 = 1
+
+Here $IFACE refers to the interface for which IPv6 is disabled by default in
+Neutron.
+
+Note: The value set at /proc/sys/net/ipv6/conf/$IFACE/disable_ipv6 is
+equivalent to net.ipv6.conf.$IFACE.disable_ipv6 in sysctl.conf
+
+### Contacts / References ###
+Author: Vinay Potluri, Intel & Luke Hinds, Red Hat
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0069
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1534652
+This issue was referenced in https://bugs.launchpad.net/Neutron/+bug/1459856
+Related issue addressed in Nova: https://review.openstack.org/#/c/313070/
+OpenStack Security ML : openstack-dev@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

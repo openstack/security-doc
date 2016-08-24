@@ -50,8 +50,8 @@ created and secured.
 
 With documentation created, security domains called out, and it all
 stored where the service teams also have authenticated access, Bob looks
-at system management. He outlines a :term:`configuration management
-database (CMDB)<CMDB>` that will work with the PXE imaging system so
+at system management. He outlines a configuration management
+database (CMDB) that will work with the PXE imaging system so
 that whenever a device calls in for an image, the MAC address will be
 used as the unique identifier in the CMDB entry. A script will report
 back on the hardware and software configuration of the system so that

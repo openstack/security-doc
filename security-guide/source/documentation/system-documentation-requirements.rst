@@ -32,9 +32,8 @@ Hardware inventory
 ------------------
 
 Clouds without stringent compliance requirements for written documentation
-might benefit from having a Configuration Management Database
-(:term:`configuration management database (CMDB)<CMDB>`). CMDBs are
-normally used for hardware asset tracking and overall life-cycle
+might benefit from having a Configuration Management Database (CMDB). CMDBs
+are normally used for hardware asset tracking and overall life-cycle
 management. By leveraging a CMDB, an organization can quickly identify
 cloud infrastructure hardware such as compute nodes, storage nodes, or
 network devices. A CMDB can assist in identifying assets that exist on

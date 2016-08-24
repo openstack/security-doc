@@ -42,8 +42,8 @@ is a multi-tenancy enterprise service, the choice to use for L2 isolation in
 this environment is to use overlay networking. Another aspect of Bob's cloud is
 the self-service aspect where the customer can provision available networking
 services as needed. These networking services encompass L2 networks, L3
-Routing, Network :term:`ACL` and NAT. It is important that per-tenant quota's
-be implemented in this environment.
+Routing, Network :term:`ACL <access control list (ACL)>` and NAT. It is
+important that per-tenant quota's be implemented in this environment.
 
 An added benefit with utilizing OpenStack Networking is when new advanced
 networking services become available, these new features can be easily provided

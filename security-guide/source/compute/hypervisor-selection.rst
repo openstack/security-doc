@@ -154,7 +154,7 @@ satisfy the following requirements:
        combination of all of this.
        Audit records can be transferred to a remote audit daemon.
    * - Discretionary Access Control
-     - :term:`DAC` restricts access to
+     - :term:`Discretionary Access Control (DAC)` restricts access to
        file system objects based on :term:`ACL <access control list (ACL)>`
        that include the standard UNIX permissions for user,
        group and others. Access control mechanisms also protect IPC objects

@@ -4,7 +4,8 @@ How to select virtual consoles
 
 One decision a cloud architect will need to make regarding Compute service
 configuration is whether to use :term:`VNC <Virtual Network Computing (VNC)>`
-or :term:`SPICE`. Below we provide some details on the differences between
+or :term:`SPICE <Simple Protocol for Independent Computing Environments
+(SPICE)>`. Below we provide some details on the differences between
 these options.
 
 Virtual Network Computer (VNC)

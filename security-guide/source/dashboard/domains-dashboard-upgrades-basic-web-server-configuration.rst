@@ -42,11 +42,11 @@ Basic web server configuration
 
 The dashboard should be deployed as a Web Services Gateway
 Interface (WSGI) application behind an HTTPS proxy such as
-Apache or Nginx. If Apache is not already in use, we recommend
-Nginx since it is lightweight and easier to configure
+Apache or :term:`Nginx`. If Apache is not already in use, we recommend
+:term:`Nginx` since it is lightweight and easier to configure
 correctly.
 
-When using Nginx, we recommend
+When using :term:`Nginx`, we recommend
 `gunicorn <http://docs.gunicorn.org/en/latest/deploy.html>`_
 as the WSGI host with an appropriate number
 of synchronous workers. When using Apache, we recommend

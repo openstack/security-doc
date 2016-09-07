@@ -212,7 +212,7 @@ However, it is not provided by default.
 Nginx
 -----
 
-This Nginx example requires TLS v1.1 or v1.2 for maximum security. The
+This :term:`Nginx` example requires TLS v1.1 or v1.2 for maximum security. The
 ``ssl_ciphers`` line can be tweaked based on your needs, however this
 is a reasonable starting place.
 The default configuration file is ``/etc/nginx/nginx.conf``.
@@ -324,7 +324,7 @@ Configuring TLS servers for perfect forward secrecy requires
 careful planning around key size, session IDs, and session
 tickets. In addition, for multi-server deployments, shared
 state is also an important consideration. The example
-configurations for Apache and Nginx above disable the session
+configurations for Apache and :term:`Nginx` above disable the session
 tickets options to help mitigate some of these concerns.
 Real-world deployments may desire to enable this feature for
 improved performance. This can be done securely, but would

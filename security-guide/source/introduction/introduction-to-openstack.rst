@@ -104,6 +104,7 @@ briefly reviews OpenStack components, their use cases and security
 considerations.
 
 .. image:: ../figures/marketecture-diagram.png
+   :width: 100%
 
 Compute
 -------

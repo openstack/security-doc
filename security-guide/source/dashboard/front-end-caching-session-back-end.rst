@@ -10,7 +10,7 @@ dashboard. The dashboard is rendering dynamic content resulting
 directly from OpenStack API requests and front-end caching layers
 such as varnish can prevent the correct content from being
 displayed. In Django, static media is directly served from Apache
-or Nginx and already benefits from web host caching.
+or :term:`Nginx` and already benefits from web host caching.
 
 Session back end
 ~~~~~~~~~~~~~~~~

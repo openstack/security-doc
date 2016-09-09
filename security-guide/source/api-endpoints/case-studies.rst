@@ -39,8 +39,8 @@ Bob's public cloud
 ~~~~~~~~~~~~~~~~~~
 
 Bob must also protect the access to the public and private endpoints, so
-he elects to use the more lightweight Nginx web server on both public
-and internal services. On the public services, he has configured Nginx
+he elects to use the more lightweight :term:`Nginx` web server on both public
+and internal services. On the public services, he has configured :term:`Nginx`
 for high availability and has installed the certificate key files with
 certificates signed by a well-known Certificate Authority. He has used
 his organization's self-signed CA to sign certificates in the internal

@@ -151,5 +151,5 @@ It is key that the operator carefully plans and considers the individual
 performance needs of users and services within their OpenStack cloud when
 configuring and implementing any rate limiting functionality.
 
-Common solutions for providing rate-limiting are Nginx, HAProxy, OpenRepose, or
-Apache Modules such as mod_ratelimit, mod_qos, or mod_security.
+Common solutions for providing rate-limiting are :term:`Nginx`, HAProxy,
+OpenRepose, or Apache Modules such as mod_ratelimit, mod_qos, or mod_security.

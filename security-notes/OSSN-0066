@@ -1,0 +1,49 @@
+MongoDB guest instance allows any user to connect
+---
+
+### Summary ###
+When creating a new MongoDB single instance or cluster the default setting in
+MongoDB `security.authorization` was set as disabled. This resulted in no need
+to provide user credentials to connect to the mongo instance and perform read /
+write operations from any network that is attached on instance create.
+
+### Affected Services / Software ###
+Trove, Liberty
+
+### Discussion ###
+MongoDB contains a security config set within `mongo.conf` as follows:
+
+    security:
+        authorization: "enabled"
+
+When creating a new MongoDB instance, or cluster within Trove the `security`
+value was not populated resulting in MongoDB adopting the default value of
+`disabled`. With security authorization disabled there would be no enforcement
+of user authentification, allowing users to connect and perform read/write data
+operations from any network that is attached on instance create.
+
+A fix was implemented within Mitaka and back ported to Liberty that addresses
+the problem by enabling authorization by default on single instances. This can
+be toggled via configuration groups.
+
+Cluster security is determined by the Trove config variable
+`mongodb.cluster_secure`. This cannot be toggled once the cluster is created.
+
+### Recommended Actions ###
+Single instances are now use role based access control (RBAC) by default. To
+disable RBAC, the Trove user can attach a security group with
+`security.authorization` set to `disabled`. It can be re-enabled by detaching
+the security group or changing the value to `enabled`.
+
+The Trove config variable `mongodb.cluster_secure`
+(boolean type, in `trove.conf`) determines the RBAC state of MongoDB clusters
+that are created. Setting this to true enables RBAC while false disables it.
+This applies to all MongoDB clusters, and requires a restart of the trove-api
+service to change, and cannot be toggled on running clusters.
+
+### Contacts / References ###
+Author: Luke Hinds, Red Hat
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0066
+Original LaunchPad Bug : https://bugs.launchpad.net/trove/+bug/1507841
+Mailing List : [Security] tag on openstack-dev@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

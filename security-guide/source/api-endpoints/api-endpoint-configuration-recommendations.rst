@@ -30,11 +30,11 @@ To register an internal URL for an endpoint:
 .. code:: console
 
    $ openstack endpoint create identity \
-     --region RegionOne \
-     --publicurl='https://public-ip:8776/v1/%(tenant_id)s' \
-     --internalurl='https://management-ip:8776/v1/%(tenant_id)s' \
-     --adminurl='https://management-ip:8776/v1/%(tenant_id)s'
+     --region RegionOne internal \
+     https://MANAGEMENT_IP:5000/v3
 
+Replace ``MANAGEMENT_IP`` with the management IP address of your
+controller node.
 
 Configure applications for internal URLs
 ----------------------------------------

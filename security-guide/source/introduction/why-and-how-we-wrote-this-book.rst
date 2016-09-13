@@ -178,5 +178,6 @@ How to contribute to this book
 The initial work on this book was conducted in an overly air-conditioned room
 that served as our group office for the entirety of the documentation sprint.
 
-Learn more about how to contribute to the OpenStack docs:
-http://docs.openstack.org/contributor-guide/index.html.
+Learn more about how to contribute to the OpenStack docs, see the
+`OpenStack Documentation Contributor Guide
+<http://docs.openstack.org/contributor-guide/index.html>`__.

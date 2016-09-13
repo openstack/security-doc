@@ -191,11 +191,11 @@ Security considerations
    domains with firewalls or other network gear.
 
 -  If you use a web interface to interact with the
-   :term:`BMC`/IPMI, always use the TLS interface, such as HTTPS
-   or port 443. This TLS interface should **NOT** use self-signed
-   certificates, as is often default, but should have trusted
-   certificates using the correctly defined fully qualified domain names
-   (FQDNs).
+   :term:`BMC <BMC (Baseboard Management Controller)>`/IPMI,
+   always use the TLS interface, such as HTTPS or port 443.
+   This TLS interface should **NOT** use self-signed certificates,
+   as is often default, but should have trusted certificates using
+   the correctly defined fully qualified domain names (FQDNs).
 
 -  Monitor the traffic on the management network. The anomalies might be
    easier to track than on the busier compute nodes.

@@ -172,12 +172,12 @@ file system.
 Networking
 ----------
 
-The OpenStack :term:`Networking service` (neutron, previously called quantum)
-provides various networking services to cloud users (tenants) such as
-IP address management, DNS, DHCP, load balancing, and security groups
-(network access rules, like firewall policies). It provides a framework for
-software defined networking (SDN) that allows for pluggable integration with
-various networking solutions.
+The OpenStack :term:`Networking service <Networking service (neutron)>`
+(neutron, previously called quantum) provides various networking services
+to cloud users (tenants) such as IP address management, DNS, DHCP,
+load balancing, and security groups (network access rules, like firewall
+policies). It provides a framework for software defined networking (SDN) that
+allows for pluggable integration with various networking solutions.
 
 OpenStack Networking allows cloud tenants to manage their guest network
 configurations. Security concerns with the networking service include network

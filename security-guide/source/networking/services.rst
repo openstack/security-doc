@@ -160,9 +160,10 @@ and leverage the rich set of security features provided by typical
 firewall products which are typically far more comprehensive than what
 is currently provided by security groups. Both Freescale and Intel
 developed third-party plug-ins as extensions in OpenStack Networking to
-support this component in the Kilo release. Documentation for
-administration of FWaaS is located at
-http://docs.openstack.org/admin-guide/networking_introduction.html#firewall-as-a-service-fwaas-overview
+support this component in the Kilo release. For more details on the
+administration of FWaaS, see `Firewall-as-a-Service (FWaaS) overview
+<http://docs.openstack.org/admin-guide/networking-introduction.html#firewall-as-a-service-fwaas-overview>`__
+in the OpenStack Administrator Guide.
 
 During the design of an OpenStack Networking infrastructure it is
 important that you understand the current features and limitations of

@@ -186,7 +186,7 @@ traffic isolation, availability, integrity and confidentiality.
 Dashboard
 ---------
 
-The OpenStack :term:`Dashboard` (horizon) provides a web-based interface for
+The OpenStack :term:`Dashboard (horizon)` provides a web-based interface for
 both cloud administrators and cloud tenants. Through this interface
 administrators and tenants can provision, manage, and monitor cloud resources.
 Horizon is commonly deployed in a public facing manner with all the usual

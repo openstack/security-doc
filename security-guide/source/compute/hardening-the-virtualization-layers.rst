@@ -238,6 +238,7 @@ the virtual machine's access to resources outside of its boundary such as host
 machine data files or other VMs.
 
 .. image:: ../figures/sVirt_Diagram_1.png
+   :width: 100%
 
 As shown above, sVirt isolation is provided regardless of the guest Operating
 System running inside the virtual machine. Linux or Windows VMs can be

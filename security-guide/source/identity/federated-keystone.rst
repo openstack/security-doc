@@ -440,7 +440,7 @@ Performing Federation authentication
    .. code:: console
 
       # curl -X GET \
-      -H "X-Auth-Token: <unscoped token>"
+      -H "X-Auth-Token: <unscoped token>" \
       http://localhost:5000/v3/OS-FEDERATION/projects
 
    or

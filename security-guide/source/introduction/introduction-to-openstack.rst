@@ -150,7 +150,7 @@ malicious content storage, and cross authentication attack vectors.
 Block Storage
 -------------
 
-The OpenStack :term:`Block Storage service` (cinder) provides persistent block
+The OpenStack :term:`Block Storage service (cinder)` provides persistent block
 storage for compute instances. The Block Storage service is responsible for
 managing the life-cycle of block devices, from the creation and attachment of
 volumes to instances, to their release.

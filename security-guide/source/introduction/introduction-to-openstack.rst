@@ -195,7 +195,7 @@ security concerns of public web portals.
 Identity service
 ----------------
 
-The OpenStack :term:`Identity service` (keystone) is a **shared service** that
+The OpenStack :term:`Identity service (keystone)` is a **shared service** that
 provides authentication and authorization services throughout the entire cloud
 infrastructure. The Identity service has pluggable support for multiple forms
 of authentication.

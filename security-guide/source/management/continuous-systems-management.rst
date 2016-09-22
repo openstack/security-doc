@@ -33,8 +33,8 @@ tracking an upstream Linux distribution.
     -  OpenStack Security Advisories (OSSA) are created by the OpenStack
        Vulnerability Management Team (VMT). They pertain to security
        holes in core OpenStack services. More information on the VMT can
-       be found here:
-       https://wiki.openstack.org/wiki/Vulnerability_Management
+       be found in `Vulnerability Management Process
+       <https://security.openstack.org/vmt-process.html>`_.
 
     -  OpenStack Security Notes (OSSN) are created by the OpenStack
        Security Group (OSSG) to support the work of the VMT. OSSN

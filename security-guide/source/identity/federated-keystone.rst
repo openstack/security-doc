@@ -187,14 +187,14 @@ To enable Federation, perform the following steps:
       .. code:: ini
 
          [token]
-         driver = keystone.token.backends.sql.Token
+         driver = sql
 
       For ``memcached``, in ``/etc/keystone/keystone.conf``, set:
 
       .. code:: ini
 
          [token]
-         driver = keystone.token.backends.memcache.Token
+         driver = memcache
 
       In both cases, all servers that are storing tokens need a shared back
       end. This means either that both point to the same database server, or
@@ -319,7 +319,7 @@ To enable Federation, perform the following steps:
       .. code:: ini
 
          [federation]
-         driver = keystone.contrib.federation.backends.sql.Federation
+         driver = sql
 
    #. Add the saml2 authentication method to the ``[auth]`` section in
       ``keystone.conf`` file:

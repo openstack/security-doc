@@ -8,8 +8,7 @@ Abstract
 This book provides best practices and conceptual information about
 securing an OpenStack cloud.
 
-This guide documents OpenStack Mitaka, OpenStack Liberty, and OpenStack
-Kilo releases.
+This guide documents OpenStack Newton, Mitaka, and Liberty releases.
 
 Contents
 ~~~~~~~~

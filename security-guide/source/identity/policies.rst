@@ -9,7 +9,7 @@ associated policy file. A resource, for example, could be API access, the
 ability to attach to a volume, or to fire up instances. The policy rules are
 specified in JSON format and the file is called ``policy.json``.  The
 syntax and format of this file is discussed in the `Configuration Reference
-<http://docs.openstack.org/mitaka/config-reference/policy-json-file.html>`__.
+<http://docs.openstack.org/newton/config-reference/policy-json-file.html>`__.
 
 These policies can be modified or updated by the cloud administrator to
 control the access to the various resources. Ensure that any changes to the

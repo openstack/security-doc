@@ -161,7 +161,7 @@ storage.
 Shared File Systems
 -------------------
 
-The :term:`Shared File Systems service` (manila) provides a set of services
+The :term:`Shared File Systems service (manila)` provides a set of services
 for management of shared file systems in a multi-tenant cloud environment,
 similar to how OpenStack provides for block-based storage management through
 the OpenStack Block Storage service project. With the Shared File Systems
@@ -216,7 +216,7 @@ are all the previously mentioned issues with respect to data security.
 Data processing service
 -----------------------
 
-The :term:`Data Processing service` for OpenStack (sahara) provides a platform
+The :term:`Data Processing service (sahara)` provides a platform
 for the provisioning, management, and usage of clusters running popular
 processing frameworks.
 

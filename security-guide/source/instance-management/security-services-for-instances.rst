@@ -222,7 +222,7 @@ Several features related to image signing are now available in
 OpenStack. As of the Mitaka release, the Image service can verify
 these signed images, and, to provide a full chain of trust, the
 Compute service has the option to perform image signature verification
-prior to image boot. Sucessful signature validation before image
+prior to image boot. Successful signature validation before image
 boot ensures the signed image hasn't changed. With this feature
 enabled, unauthorized modification of images (e.g., modifying the
 image to include malware or rootkits) can be detected.
@@ -230,12 +230,12 @@ image to include malware or rootkits) can be detected.
 Administrators can enable instance signature verification by setting
 the ``verify_glance_signatures`` flag to ``True`` in the
 ``/etc/nova/nova.conf`` file. When enabled, the Compute service
-automatically validates the signed instance when it is retreived from
+automatically validates the signed instance when it is retrieved from
 the Image service. If this verification fails, the boot won't occur.
 The OpenStack Operations Guide provides guidance on how to create and
 upload a signed image, and how to use this feature. For more
 information, see `Adding Signed Images
-<http://docs.openstack.org/openstack-ops/content/user_facing_images.html>`_
+<http://docs.openstack.org/ops-guide/ops-user-facing-operations.html#adding-signed-images>`_
 in the Operations Guide.
 
 Instance migrations

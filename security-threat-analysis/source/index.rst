@@ -13,7 +13,6 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   objectives.rst
    threat-analysis-process.rst
    templates/architecture-page.rst
    templates/review-findings.rst

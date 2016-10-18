@@ -36,6 +36,7 @@ Contents
    instance-management.rst
    monitoring-logging.rst
    compliance.rst
+   security-review.rst
 
 Appendix
 ~~~~~~~~

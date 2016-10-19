@@ -109,7 +109,7 @@ and the Identity service.
     Support for a specific authentication service by a driver does not
     mean that it can be configured with any shared file system protocol.
     Supported shared file systems protocols are NFS, CIFS, GlusterFS, and HDFS.
-    See the driver vendor's documentation for infomation on a specific driver
+    See the driver vendor's documentation for information on a specific driver
     and its configuration for security services.
 
 Some drivers support security services and other drivers do not support any

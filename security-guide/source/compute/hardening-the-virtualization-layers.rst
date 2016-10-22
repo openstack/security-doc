@@ -280,9 +280,10 @@ SELinux users and roles
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 SELinux can also manage user roles. These can be viewed through the *-Z* flag,
-or with the ``semanage`` command. On the hypervisor, only administrators should
-be able to access the system, and should have an appropriate context around
-both the administrative users and any other users that are on the system.
+or with the :command:`semanage` command. On the hypervisor, only administrators
+should be able to access the system, and should have an appropriate context
+around both the administrative users and any other users that are on the
+system.
 
 SELinux users documentation:
     `SELinux.org Users and Roles Overview

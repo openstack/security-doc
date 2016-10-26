@@ -206,7 +206,7 @@ authorization tokens, and secure communication.
 Image service
 -------------
 
-The OpenStack :term:`Image service` (glance) provides disk image management
+The OpenStack :term:`Image service (glance)` provides disk image management
 services. The Image service provides image discovery, registration, and
 delivery services to the Compute service, as needed.
 

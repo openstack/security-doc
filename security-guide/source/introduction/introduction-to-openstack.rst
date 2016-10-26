@@ -133,7 +133,7 @@ API endpoints.
 Object Storage
 --------------
 
-The OpenStack :term:`Object Storage service` (swift) provides support for
+The OpenStack :term:`Object Storage service (swift)` provides support for
 storing and retrieving arbitrary data in the cloud. The Object Storage
 service provides both a native API and an Amazon Web Services S3 compatible
 API. The service provides a high degree of resiliency through data replication

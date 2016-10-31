@@ -3,8 +3,9 @@ OpenStack Security Documentation
 
 This repository contains the OpenStack Security documentation.
 
-For more details, see the `OpenStack Documentation Contributor
-Guide <http://docs.openstack.org/contributor-guide/>`_.
+For details on how to contribute to the documentation, see the
+`OpenStack Documentation Contributor Guide
+<http://docs.openstack.org/contributor-guide/>`_.
 
 It includes these manuals:
 

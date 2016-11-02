@@ -3,7 +3,7 @@
 mkdir -p publish-docs
 
 # This marker is needed for infra publishing
-MARKER_TEXT="Project: $ZUUL_PROJECT Ref: $ZUUL_REFNAME Build: $ZUUL_UUID"
+MARKER_TEXT="Project: $ZUUL_PROJECT Ref: $ZUUL_REFNAME Build: $ZUUL_UUID Revision: $ZUUL_NEWREV"
 
 doc-tools-build-rst security-guide --build build \
         --target security-guide

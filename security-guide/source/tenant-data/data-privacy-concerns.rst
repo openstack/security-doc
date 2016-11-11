@@ -104,28 +104,31 @@ Cinder volume data
 ------------------
 
 Use of the OpenStack volume encryption feature is highly encouraged.  This is
-discussed in the Data Encryption section below. When this feature is used,
-destruction of data is accomplished by securely deleting the encryption key.
+discussed below in the Data Encryption section under Volume Encryption. When
+this feature is used, destruction of data is accomplished by securely deleting
+the encryption key.  The end user can select this feature while creating a
+volume, but note that an admin must perform a one-time set up of the volume
+encryption feature first.  Instructions for this setup are in the block
+storage section of the `Configuration Reference
+<docs.openstack.org/newton/config-reference/block-storage/volume-encryption.html>`__
+, under volume encryption.
 
-If a back end plug-in is being used, there may be independent ways of doing
-encryption or non-standard overwrite solutions. Plug-ins to OpenStack Block
-Storage will store data in a variety of ways. Many plug-ins are specific to a
-vendor or technology, whereas others are more DIY solutions around filesystems
-such as LVM or ZFS. Methods to securely destroy data will vary from one plug-in
-to another, from one vendor's solution to another, and from one filesystem to
-another.
+If the OpenStack volume encryption feature is not used, then other approaches
+generally would be more difficult to enable.  If a back-end plug-in is being
+used, there may be independent ways of doing encryption or non-standard
+overwrite solutions. Plug-ins to OpenStack Block Storage will store data in
+a variety of ways. Many plug-ins are specific to a vendor or technology,
+whereas others are more DIY solutions around filesystems such as LVM or ZFS.
+Methods to securely destroy data will vary from one plug-in to another, from
+one vendor's solution to another, and from one filesystem to another.
 
-Some back ends such as ZFS will support copy-on-write to prevent data exposure.
+Some back-ends such as ZFS will support copy-on-write to prevent data exposure.
 In these cases, reads from unwritten blocks will always return zero. Other back
 ends such as LVM may not natively support this, thus the Block Storage plug-in
 takes the responsibility to override previously written blocks before handing
 them to users. It is important to review what assurances your chosen volume
-back end provides and to see what mediations may be available for those
+back-end provides and to see what mediations may be available for those
 assurances not provided.
-
-Finally, while not a feature of OpenStack, vendors and implementors may choose
-to add or support encryption of volumes. In this case, destruction of data is
-as simple as throwing away the key.
 
 Image service delay delete feature
 ----------------------------------
@@ -148,8 +151,16 @@ edit the ``etc/nova/nova.conf`` file and leave the
 Compute instance ephemeral storage
 ----------------------------------
 
-The creation and destruction of ephemeral storage will be somewhat dependent on
-the chosen hypervisor and the OpenStack Compute plug-in.
+Note that the OpenStack `Ephemeral disk encryption
+<docs.openstack.org/security-guide/tenant-data/data-encryption.html>`__
+feature provides a means of improving ephemeral storage privacy and isolation,
+during both active use as well as when the data is to be destroyed. As in the
+case of encrypted block storage, one can simply delete the encryption key to
+effectively destroy the data.
+
+Alternate measures to provide data privacy, in the creation and destruction of
+ephemeral storage, will be somewhat dependent on the chosen hypervisor and the
+OpenStack Compute plug-in.
 
 The libvirt plug-in for compute may maintain ephemeral storage directly on a
 filesystem, or in LVM. Filesystem storage generally will not overwrite data

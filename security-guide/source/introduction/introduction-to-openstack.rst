@@ -109,7 +109,7 @@ considerations.
 Compute
 -------
 
-OpenStack :term:`Compute service` (nova) provides services to support the
+OpenStack :term:`Compute service (nova)` provides services to support the
 management of virtual machine instances at scale, instances that host
 multi-tiered applications, dev/test environments, "Big Data" crunching
 Hadoop clusters, and/or high performance computing.

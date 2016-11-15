@@ -10,7 +10,7 @@ Needed
 #. Etherpad template for review tracking
 #. process
 #. Improve documentation around context for OpenStack deployments, namely that
-   they reflect best practice, and the documentation shoud explain what to do
+   they reflect best practice, and the documentation should explain what to do
    when things can be changed.
 #. Add information on filling in interfaces table from diagram.
 #. Remove U-C, O-C, I-C guidance
@@ -29,5 +29,5 @@ Needed
 #. Best practice for each type of asset connection
 #. Document what a trust boundary is
 #. Document what an asset is. Config file? elements within a config file?
-#. Documnet what level of detail we want for external dependencies and give
+#. Document what level of detail we want for external dependencies and give
    examples.

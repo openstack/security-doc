@@ -31,7 +31,7 @@ Preparing artifacts for review
   #. A brief description of the service, its purpose and intended usage.
   #. A list of components in the architecture, their purpose, any sensitive
      data they persist and protocols they expose.
-  #. External dependancies and security assumptions made about them.
+  #. External dependencies and security assumptions made about them.
   #. An architecture block diagram.
   #. Either a sequence diagram or a data flow diagram, describing common
      operations of the service

@@ -1,0 +1,32 @@
+Pre-auth COPY in versioned_writes can result in a successful COPY that
+wouldn't have been authorized
+---
+
+### Summary ###
+This issue is related to the versioning feature of swift and potentially
+allows unauthorized users to drive up the storage usage of a third party
+account.
+
+Specifically a user can create versions of existing objects belonging to
+projects for which he has no authorization. The malicious user cannot
+read or write the specific object, or create objects with arbitrary content.
+
+### Affected Services / Software ###
+Swift < 2.10.0
+
+### Discussion ###
+A versioned write PUT uses a pre-authed request to move an object into
+the versioned container before checking whether the user is authorized.
+So a user can select a versioned object path that it does not have access to,
+request a put on that versioned object, and the request will execute the copy
+part before it fails due to lack of permissions.
+
+### Recommended Actions ###
+Update Swift to version 2.10.0 where possible.
+
+### Contacts / References ###
+Author: Vincenzo Di Somma
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0077
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1562175
+Mailing List : [Security] tag on openstack-dev@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg

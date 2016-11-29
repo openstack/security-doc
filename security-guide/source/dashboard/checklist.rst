@@ -63,19 +63,22 @@ will only be available on your system if it supports ACLs.
 
 .. _check_dashboard_03:
 
-Check-Dashboard-03: Is ``USE_SSL`` parameter set to ``True``?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check-Dashboard-03: Is ``DISALLOW_IFRAME_EMBED`` parameter set to ``True``?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenStack services communicate with each other using various protocols and the
-communication might involve sensitive/confidential information. An attacker
-may try to eavesdrop on the channel in order to get access to sensitive
-information. Thus all the services must communicate with each other using a
-secured communication protocol like HTTPS.
+``DISALLOW_IFRAME_EMBED`` can be used to prevent the OpenStack Dashboard from
+being embedded within an iframe.
 
-**Pass:** If value of parameter ``USE_SSL`` in
+Legacy browsers are still vulnerable to a
+Cross-Frame Scripting (XFS) vulnerability, so this option allows extra
+security hardening where iframes are not used in deployment.
+
+Default setting is True.
+
+**Pass:** If value of parameter ``DISALLOW_IFRAME_EMBED`` in
 ``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
 
-**Fail:** If value of parameter ``USE_SSL`` in
+**Fail:** If value of parameter ``DISALLOW_IFRAME_EMBED`` in
 ``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
 
 Recommended in: :doc:`https-hsts-xss-ssrf`.
@@ -88,8 +91,8 @@ Check-Dashboard-04: Is ``CSRF_COOKIE_SECURE`` parameter set to ``True``?
 CSRF (Cross-site request forgery) is an attack which forces an end user to
 execute unauthorized commands on a web application in which he/she is currently
 authenticated. A successful CSRF exploit can compromise end user data and
-operations in case of normal user. If the targeted end user has admin
-privileges, this can compromise the entire web application.
+operations. If the targeted end user has admin privileges, this can
+compromise the entire web application.
 
 **Pass:** If value of parameter ``CSRF_COOKIE_SECURE`` in
 ``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
@@ -139,7 +142,7 @@ Recommended in: :doc:`cookies`.
 
 .. _check_dashboard_07:
 
-Check-Dashboard-07: Is ``password_autocomplete`` set to ``False``?
+Check-Dashboard-07: Is ``PASSWORD_AUTOCOMPLETE`` set to ``False``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Common feature that applications use to provide users a convenience is to cache
@@ -150,25 +153,76 @@ flaw, as the user account becomes easily accessible to anyone that uses the
 same account on the client machine and thus may lead to compromise of the user
 account.
 
-**Pass:** If value of parameter ``password_autocomplete`` in
+**Pass:** If value of parameter ``PASSWORD_AUTOCOMPLETE`` in
 ``/etc/openstack-dashboard/local_settings.py`` is set to ``off``.
 
-**Fail:** If value of parameter ``password_autocomplete`` in
+**Fail:** If value of parameter ``PASSWORD_AUTOCOMPLETE`` in
 ``/etc/openstack-dashboard/local_settings.py`` is set to ``on``.
 
 .. _check_dashboard_08:
 
-Check-Dashboard-08: Is ``disable_password_reveal`` set to ``True``?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check-Dashboard-08: Is ``DISABLE_PASSWORD_REVEAL`` set to ``True``?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to the previous check, it is recommended not to reveal password fields.
 
-**Pass:** If value of parameter ``disable_password_reveal`` in
+**Pass:** If value of parameter ``DISABLE_PASSWORD_REVEAL`` in
 ``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
 
-**Fail:** If value of parameter ``disable_password_reveal`` in
+**Fail:** If value of parameter ``DISABLE_PASSWORD_REVEAL`` in
 ``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
 
 .. Note::
 
     This option was introduced in Kilo release.
+
+.. _check_dashboard_09:
+
+Check-Dashboard-09: Is ``ENFORCE_PASSWORD_CHECK`` set to ``True``?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Setting ``ENFORCE_PASSWORD_CHECK`` to True will display an 'Admin Password'
+field on the Change Password form to verify that it is indeed the admin
+logged-in who wants to change the password.
+
+**Pass:** If value of parameter ``ENFORCE_PASSWORD_CHECK`` in
+``/etc/openstack-dashboard/local_settings.py`` is set to ``True``.
+
+**Fail:** If value of parameter ``ENFORCE_PASSWORD_CHECK`` in
+``/etc/openstack-dashboard/local_settings.py`` is set to ``False``.
+
+.. _check_dashboard_10:
+
+Check-Dashboard-10: Is ``PASSWORD_VALIDATOR`` configured?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Allows a regular expression to validate user password complexity.
+
+**Pass:** If value of parameter ``PASSWORD_VALIDATOR`` in
+``/etc/openstack-dashboard/local_settings.py`` is set to any value outside
+of the defaul allow all `"regex": '.*',`
+
+**Fail:** If value of parameter ``PASSWORD_VALIDATOR`` in
+``/etc/openstack-dashboard/local_settings.py`` is set to allow all
+`"regex": '.*'`
+
+.. _check_dashboard_11:
+
+Check-Dashboard-11: Is ``SECURE_PROXY_SSL_HEADER`` configured?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the OpenStack Dashboard is deployed behind a proxy and the proxy
+strips ``X-Forwarded-Proto`` header from all incoming requests, or
+sets the ``X-Forwarded-Proto`` header and sends it to the Dashboard,
+but only for requests that originally come in via HTTPS, then you
+should consider configuring ``SECURE_PROXY_SSL_HEADER``
+
+Futher information can be found in the `Django documentation <https://docs.djangoproject.com/en/1.8/ref/settings/#secure-proxy-ssl-header/>`_.
+
+**Pass:** If value of parameter ``SECURE_PROXY_SSL_HEADER`` in
+``/etc/openstack-dashboard/local_settings.py`` is set to
+``'HTTP_X_FORWARDED_PROTO', 'https'``
+
+**Fail:** If value of parameter ``SECURE_PROXY_SSL_HEADER`` in
+``/etc/openstack-dashboard/local_settings.py`` is not set to
+``'HTTP_X_FORWARDED_PROTO', 'https'`` or commented out.

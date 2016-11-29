@@ -34,6 +34,14 @@ for vulnerabilities such as inappropriate use of the
 does not follow these recommended security settings should be
 carefully evaluated before restrictions are relaxed.
 
+Cross-Frame Scripting (XFS)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Legacy browsers are still vulnerable to a Cross-Frame
+Scripting (XFS) vulnerability, so the OpenStack dashboard
+provides an option ``DISALLOW_IFRAME_EMBED`` that allows extra
+security hardening where iframes are not used in deployment.
+
 HTTPS
 ~~~~~
 

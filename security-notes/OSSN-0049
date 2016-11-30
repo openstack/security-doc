@@ -51,7 +51,7 @@ If updating the nova deployment is not feasible, operators should
 turn off the debug logging level whenever it is not in use and ensure
 that log files produced from those debug sessions are stored securely.
 To disable the debug log level, the nova configuration file should be
-editted as follows:
+edited as follows:
 
     [DEFAULT]
     debug = False

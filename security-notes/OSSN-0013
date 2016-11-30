@@ -54,7 +54,7 @@ that matches the property, even if it does not allow the attempted action.
 
 Users of affected releases should avoid using multiple rules that would match
 the same property. Specifically, wildcard rules should be avoided unless they
-are the most restricive rules defined.
+are the most restrictive rules defined.
 
 If a permissive rule is needed that is intended to match all properties that
 are not matched by other rules, a carefully crafted regular expression should

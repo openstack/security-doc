@@ -16,7 +16,7 @@ Preparing artifacts for review
 - Complete the architecture page. The architecture page describes the purpose
   of the service, and captures the information that is required for an
   effective threat analysis review. A template for the architecture page is
-  provided at <link> and there is guidance on diagraming at <link>. If further
+  provided at <link> and there is guidance on diagramming at <link>. If further
   help or advice is needed, please reach out to the Security Project via the
   openstack-dev@lists.openstack.org mailing list, tagging your email
   [security].

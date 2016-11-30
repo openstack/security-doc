@@ -44,7 +44,7 @@ configure the frontend webserver that is used to deploy Keystone to
 perform this enforcement.  Each identity provider supported by Keystone
 has its own authentication URL.  It is recommended that the webserver
 configuration configures its underlying federation plug-ins to
-cryptograhically enforce that an identity provider is only valid for
+cryptographically enforce that an identity provider is only valid for
 its associated authentication URL.
 
 For example, the SAML protocol uses an asymmetric keypair to sign the

@@ -1,12 +1,12 @@
-===================
-Threat Analyis Todo
-===================
+====================
+Threat Analysis Todo
+====================
 
 Needed
 ~~~~~~
 
 
-#. page saying what TAs have been done, and havent.
+#. page saying what TAs have been done, and haven't.
 #. Etherpad template for review tracking
 #. process
 #. Improve documentation around context for OpenStack deployments, namely that

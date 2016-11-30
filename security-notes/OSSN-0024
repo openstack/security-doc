@@ -52,7 +52,7 @@ upgrade to a fixed version of python-keystoneclient.
 For a fresh installation of a service which depends on
 pythone-keystoneclient, make sure it uses at least version 0.10.1 of
 python-keystoneclient. One way to do this is to set a specific version
-in the requirments.txt file. For example, in Horizon, update
+in the requirements.txt file. For example, in Horizon, update
 horizon/requirements.txt file:
 
 ---- begin example ----

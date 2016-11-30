@@ -155,7 +155,7 @@ or encrypted.  It is possible to tunnel the migration traffic over the
 regular libvirt daemon remote access port, which will use the
 authentication and encryption settings that you have defined for that
 port.  It is recommended that you do this for the additional security
-that it provides.  To enable tunnelling of the migration traffic, you
+that it provides. To enable tunneling of the migration traffic, you
 must tell your OpenStack Compute nodes to set the VIR_MIGRATE_TUNNELLED
 flag for live migration.  This is done by setting the following
 directive in /etc/nova/nova.conf:
@@ -165,7 +165,7 @@ live_migration_flag=VIR_MIGRATE_UNDEFINE_SOURCE, VIR_MIGRATE_PEER2PEER,
 VIR_MIGRATE_TUNNELLED
 ---- end example nova.conf snippet ----
 
-The tunnelling of migration traffic described above does not apply to
+The tunneling of migration traffic described above does not apply to
 live block migration.  Live block migration is currently only possible
 over ephemeral ports.
 

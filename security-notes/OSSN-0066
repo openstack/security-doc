@@ -19,7 +19,7 @@ MongoDB contains a security config set within `mongo.conf` as follows:
 When creating a new MongoDB instance, or cluster within Trove the `security`
 value was not populated resulting in MongoDB adopting the default value of
 `disabled`. With security authorization disabled there would be no enforcement
-of user authentification, allowing users to connect and perform read/write data
+of user authentication, allowing users to connect and perform read/write data
 operations from any network that is attached on instance create.
 
 A fix was implemented within Mitaka and back ported to Liberty that addresses

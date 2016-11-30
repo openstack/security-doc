@@ -28,7 +28,7 @@ the Liberty release.
 
 ### Recommended Actions ###
 Users concerned with image security should be aware that the current
-Glance signature algorithm is not secure by todays cryptographic
+Glance signature algorithm is not secure by today's cryptographic
 standards.
 
 A specification for a fix has been proposed by the Glance development

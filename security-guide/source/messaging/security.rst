@@ -52,7 +52,7 @@ configuration file, typically ``/etc/rabbitmq/rabbitmq.config``:
     ].
 
 Note, the ``tcp_listeners`` option is set to ``[]`` to prevent it from
-listening an on non-SSL port. The ``ssl_listeners`` option should be
+listening on a non-SSL port. The ``ssl_listeners`` option should be
 restricted to only listen on the management network for the services.
 
 For more information on RabbitMQ SSL configuration see:

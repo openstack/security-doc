@@ -8,14 +8,14 @@ A few sentences describing the issue at a high level.
 A comma separated list of affected services and OpenStack releases.
 
 ### Discussion ###
-A detailed discussion of the problem.  This should have enough detail
+A detailed discussion of the problem. This should have enough detail
 that the person reading can determine if their deployment is affected,
 when the problem was introduced, and what types of attacks/problems that
 an affected deployment would be exposed to.
 
 ### Recommended Actions ###
 A detailed description of what can be done to remediate the problem (if
-possible).  If the recommendation involves configuration changes,
+possible). If the recommendation involves configuration changes,
 example snippets of configuration files should be included here.
 
 ### Contacts / References ###

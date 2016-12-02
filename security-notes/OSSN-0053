@@ -50,7 +50,7 @@ attack to compromising Keystone directly or man-in-the-middle capture
 of a separate token that has the authorization to create
 trusts/delegate/assign roles.
 
-3. Retain the default token lifespan of 1 hour.  Many workloads require
+3. Retain the default token lifespan of 1 hour. Many workloads require
 a single token for the whole workload, and take more than one hour, so
 installations have increased token lifespans back to the old value of
 24 hours - increasing their exposure to this issue.

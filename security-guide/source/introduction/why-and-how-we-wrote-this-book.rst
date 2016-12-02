@@ -101,7 +101,7 @@ The team included:
    Business Unit where he helps customers implement OpenStack and VMware NSX
    (formerly known as Nicira's Network Virtualization Platform). Prior to
    joining VMware (through the company's acquisition of Nicira), he worked for
-   Q1 Labs, Symantec, Vontu, and Brightmail.  He has a B.S in Electrical
+   Q1 Labs, Symantec, Vontu, and Brightmail. He has a B.S in Electrical
    Engineering/Computer Science and Nuclear Engineering from U.C. Berkeley and
    MBA from the University of San Francisco.
 
@@ -127,14 +127,14 @@ The team included:
    Nathanael Burton is a Computer Scientist at the National Security Agency. He
    has worked for the Agency for over 10 years working on distributed systems,
    large-scale hosting, open source initiatives, operating systems, security,
-   storage, and virtualization technology.  He has a B.S. in Computer Science
+   storage, and virtualization technology. He has a B.S. in Computer Science
    from Virginia Tech.
 
 -  **Vibha Fauver**
 
    Vibha Fauver, GWEB, CISSP, PMP, has over fifteen years of experience in
    Information Technology. Her areas of specialization include software
-   engineering, project management and information security.  She has a B.S. in
+   engineering, project management and information security. She has a B.S. in
    Computer & Information Science and a M.S. in Engineering Management with
    specialization and a certificate in Systems Engineering.
 
@@ -169,7 +169,7 @@ McMillan, Brian Schott and Lorin Hochstein.
 This Book was produced in a 5 day book sprint. A book sprint is an intensely
 collaborative, facilitated process which brings together a group to produce a
 book in 3-5 days. It is a strongly facilitated process with a specific
-methodology founded and developed by Adam Hyde.  For more information visit the
+methodology founded and developed by Adam Hyde. For more information visit the
 book sprint web page at http://www.booksprints.net.
 
 How to contribute to this book

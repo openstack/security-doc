@@ -29,7 +29,7 @@ It is possible to override the use of the compute node's SMBIOS data by
 libvirt in /etc/libvirt/libvirtd.conf by setting the 'host_uuid'
 parameter. This allows setting an arbitrary UUID for identification
 purposes that doesn't leak any information about the real underlying
-hardware.  It is advised to make use of this override ability to prevent
+hardware. It is advised to make use of this override ability to prevent
 potential exposure of information about the underlying compute node
 hardware.
 

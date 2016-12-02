@@ -4,7 +4,7 @@ Sample Keystone v3 policy exposes privilege escalation vulnerability
 ### Summary ###
 The policy.v3cloudsample.json sample Keystone policy file combined with
 the underlying mutability of the domain ID for user, group, and project
-entities exposed a privilege escalation vulnerability.  When this
+entities exposed a privilege escalation vulnerability. When this
 sample policy is applied a domain administrator can elevate their
 privileges to become a cloud administrator.
 
@@ -15,12 +15,12 @@ Keystone, Havana
 Changes to the Keystone v3 sample policy during the Havana release cycle
 set an excessively broad domain administrator scope that allowed
 creation of roles ("create_grant") on other domains (among other
-actions).  There was no check that the domain administrator had
+actions). There was no check that the domain administrator had
 authority to the domain they were attempting to grant a role on.
 
 Combining the mutable state of the domain ID for user, group, and
 project entities with the sample v3 policy resulted in a privilege
-escalation vulnerability.  A domain administrator could execute a series
+escalation vulnerability. A domain administrator could execute a series
 of steps to escalate their access to that of a cloud administrator.
 
 ### Recommended Actions ###
@@ -30,7 +30,7 @@ Icehouse release:
 https://git.openstack.org/cgit/openstack/keystone/commit/?id=0496466821c1ff6e7d4209233b6c671f88aadc50
 
 You should ensure that your Keystone deployment appropriately reflects
-that update.  Domain administrators should generally only be permitted
+that update. Domain administrators should generally only be permitted
 to perform actions against the domain for which they are an
 administrator.
 

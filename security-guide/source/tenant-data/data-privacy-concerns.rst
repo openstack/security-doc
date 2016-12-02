@@ -46,7 +46,7 @@ implement an appropriate level of strength and integrity given the specific
 security domain and sensitivity of the information.
 
     "The sanitization process removes information from the media such that the
-    information cannot be retrieved or reconstructed.  Sanitization
+    information cannot be retrieved or reconstructed. Sanitization
     techniques, including clearing, purging, cryptographic erase, and
     destruction, prevent the disclosure of information to unauthorized
     individuals when such media is reused or released for disposal." `NIST
@@ -82,7 +82,7 @@ auto vacuuming and periodic free-space wiping.
 Instance memory scrubbing
 -------------------------
 
-Specific to various hypervisors is the treatment of instance memory.  This
+Specific to various hypervisors is the treatment of instance memory. This
 behavior is not defined in OpenStack Compute, although it is generally expected
 of hypervisors that they will make a best effort to scrub memory either upon
 deletion of an instance, upon creation of an instance, or both.
@@ -103,18 +103,18 @@ documentation.
 Cinder volume data
 ------------------
 
-Use of the OpenStack volume encryption feature is highly encouraged.  This is
+Use of the OpenStack volume encryption feature is highly encouraged. This is
 discussed below in the Data Encryption section under Volume Encryption. When
 this feature is used, destruction of data is accomplished by securely deleting
-the encryption key.  The end user can select this feature while creating a
+the encryption key. The end user can select this feature while creating a
 volume, but note that an admin must perform a one-time set up of the volume
-encryption feature first.  Instructions for this setup are in the block
+encryption feature first. Instructions for this setup are in the block
 storage section of the `Configuration Reference
 <docs.openstack.org/newton/config-reference/block-storage/volume-encryption.html>`__
 , under volume encryption.
 
 If the OpenStack volume encryption feature is not used, then other approaches
-generally would be more difficult to enable.  If a back-end plug-in is being
+generally would be more difficult to enable. If a back-end plug-in is being
 used, there may be independent ways of doing encryption or non-standard
 overwrite solutions. Plug-ins to OpenStack Block Storage will store data in
 a variety of ways. Many plug-ins are specific to a vendor or technology,
@@ -143,7 +143,7 @@ Compute soft delete feature
 ---------------------------
 
 OpenStack Compute has a soft-delete feature, which enables an instance that is
-deleted to be in a soft-delete state for a defined time period.  The instance
+deleted to be in a soft-delete state for a defined time period. The instance
 can be restored during this time period. To disable the soft-delete feature,
 edit the ``etc/nova/nova.conf`` file and leave the
 ``reclaim_instance_interval`` option empty.
@@ -173,7 +173,7 @@ information disclosure. There have in the past been information disclosure
 vulnerabilities related to improperly erased ephemeral block storage devices.
 
 Filesystem storage is a more secure solution for ephemeral block storage
-devices than LVM as dirty extents cannot be provisioned to users.  However, it
+devices than LVM as dirty extents cannot be provisioned to users. However, it
 is important to be mindful that user data is not destroyed, so it is suggested
 to encrypt the backing filesystem.
 

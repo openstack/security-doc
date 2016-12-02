@@ -26,7 +26,7 @@ Disable Django's GZIP Middleware:
 
   https://docs.djangoproject.com/en/dev/ref/middleware/#module-django.middleware.gzip
 
-Disable GZip compression in your web server's config.  For Apache httpd,
+Disable GZip compression in your web server's config. For Apache httpd,
 you can do this by disabling mod_deflate:
 
   http://httpd.apache.org/docs/2.2/mod/mod_deflate.html

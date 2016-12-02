@@ -14,24 +14,24 @@ Horizon, Nova, noVNC proxy, SPICE console, Grizzly, Havana
 ### Discussion ###
 Currently with a single user token, no restrictions are enforced on the
 number or frequency of noVNC or SPICE console sessions that may be
-established.  While a user can only access their own virtual machine
+established. While a user can only access their own virtual machine
 instances, resources can be exhausted on the console proxy host by
-creating an excessive number of simultaneous console sessions.  This can
+creating an excessive number of simultaneous console sessions. This can
 result in timeouts for subsequent connection requests to instances using
-the same console proxy.  Not only would this prevent the user from
+the same console proxy. Not only would this prevent the user from
 accessing their own instances, but other legitimate users would also be
-deprived of console access.  Further, other services running on the
+deprived of console access. Further, other services running on the
 noVNC proxy and Compute hosts may degrade in responsiveness.
 
 By taking advantage of this lack of restrictions around noVNC or SPICE
 console connections, a single user could cause the console proxy
 endpoint to become unresponsive, resulting in a Denial Of Service (DoS)
-style attack.  It should be noted that there is no amplification effect.
+style attack. It should be noted that there is no amplification effect.
 
 ### Recommended Actions ###
 For current stable OpenStack releases (Grizzly, Havana), users need to
 workaround this vulnerability by using rate-limiting proxies to cover
-access to the noVNC proxy service.  Rate-limiting is a common mechanism
+access to the noVNC proxy service. Rate-limiting is a common mechanism
 to prevent DoS and Brute-Force attacks.
 
 For example, if you are using a proxy such as Repose, enable the rate

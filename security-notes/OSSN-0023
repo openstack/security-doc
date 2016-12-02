@@ -13,7 +13,7 @@ Keystone, Grizzly, Havana, Icehouse, Juno
 Tokens are used to authorize users when making API requests against
 OpenStack services. This allows previously authenticated users to make
 API requests without providing their authentication information again,
-such as their username and password.  This makes them very sensitive
+such as their username and password. This makes them very sensitive
 when stored and transmitted on the wire. Ideally tokens should never be
 stored on the disk to avoid the possibility of an attacker obtaining
 local storage access and reusing them in the system.

@@ -13,7 +13,7 @@ Security domains
 ~~~~~~~~~~~~~~~~
 
 A security domain comprises users, applications, servers or networks that share
-common trust requirements and expectations within a system.  Typically they
+common trust requirements and expectations within a system. Typically they
 have the same :term:`authentication` and :term:`authorization` (AuthN/Z)
 requirements and users.
 
@@ -99,7 +99,7 @@ Bridging security domains
 
 A *bridge* is a component that exists inside more than one security domain. Any
 component that bridges security domains with different trust levels or
-authentication requirements must be carefully configured.  These bridges are
+authentication requirements must be carefully configured. These bridges are
 often the weak points in network architecture. A bridge should always be
 configured to meet the security requirements of the highest trust level of any
 of the domains it is bridging. In many cases the security controls for bridges

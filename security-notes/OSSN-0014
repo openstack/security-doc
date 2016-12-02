@@ -59,7 +59,7 @@ GPFS driver is the only driver in use, your Cinder system is not
 vulnerable to this issue.
 
 In the likely scenario that your system is vulnerable, you should limit
-access to the Cinder host as much as possible.  You should also explore
+access to the Cinder host as much as possible. You should also explore
 alternatives such as applying mandatory access control policies
 (SELinux, AppArmor, etc) or using NFS uid squashing to control access
 to the files in order to minimize the possible exposure.

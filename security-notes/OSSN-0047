@@ -3,7 +3,7 @@ Keystone does not validate that identity providers match federation mappings
 
 ### Summary ###
 Keystone's OS-FEDERATION extension does not enforce a link between an
-identity provider and a federation mapping.  This can lead to assertions
+identity provider and a federation mapping. This can lead to assertions
 or claims from one identity provider being used with mappings intended
 for use with another identity provider, which could result in users
 obtaining access to resources that they are not intended to have.
@@ -22,39 +22,39 @@ different forms.
 In the Juno release of Keystone, there is no ability within Keystone
 itself to enforce that assertions or claims from an identity provider
 are actually being used against a mapping that is associated with that
-same identity provider.  A malicious user from one trusted identity
+same identity provider. A malicious user from one trusted identity
 provider could access a Keystone federated authentication URL for a
-different trusted identity provider.  Depending on the content of the
+different trusted identity provider. Depending on the content of the
 assertions or claims and the mapping rules, this could result in a user
 gaining access to resources that they are not intended to access.
 
 Consider an example deployment where Keystone is configured to trust two
-identity providers ('idp1' and 'idp2').  The federation mapping for
+identity providers ('idp1' and 'idp2'). The federation mapping for
 'idp1' might result in users of the 'devops' group having the 'admin'
-role on a specific project.  If a user with an assertion or claim from
+role on a specific project. If a user with an assertion or claim from
 'idp2' that says they are in the 'devops' group uses the authentication
 URL that is associated with 'idp1', they could also be given the 'admin'
-role just as if they were a 'devops' user from 'idp1'.  This access
+role just as if they were a 'devops' user from 'idp1'. This access
 should not be allowed.
 
 ### Recommended Actions ###
 Even though the Juno release of Keystone does not have the ability to
 enforce that an identity provider and a mapping match, it is possible to
 configure the frontend webserver that is used to deploy Keystone to
-perform this enforcement.  Each identity provider supported by Keystone
-has its own authentication URL.  It is recommended that the webserver
+perform this enforcement. Each identity provider supported by Keystone
+has its own authentication URL. It is recommended that the webserver
 configuration configures its underlying federation plug-ins to
 cryptographically enforce that an identity provider is only valid for
 its associated authentication URL.
 
 For example, the SAML protocol uses an asymmetric keypair to sign the
 requests and responses that are transmitted between an identity provider
-and a service provider (Keystone in our case).  When using Apache HTTPD
+and a service provider (Keystone in our case). When using Apache HTTPD
 as a webserver for Keystone, a separate 'Location' directive can be used
-for each federated authentication URL.  The directives that define the
+for each federated authentication URL. The directives that define the
 certificate of the identity provider for the underlying HTTPD module
 that is handling the SAML protocol can be defined within the identity
-provider specific 'Location' directives.  This will ensure that a signed
+provider specific 'Location' directives. This will ensure that a signed
 SAML assertion from one trusted identity provider will only be
 successfully validated when used against the appropriate authentication
 URL.
@@ -80,29 +80,29 @@ Here is an example with the mod_auth_mellon HTTPD module:
 --- end example httpd configuration snippet ---
 
 In the above example, we have two identity providers ('idp1' and
-'idp2').  Each identity provider has their own 'Location' directive,
+'idp2'). Each identity provider has their own 'Location' directive,
 and the 'MellonIdPMetadataFile' directive that points to the metadata
 that contains the certificate of the identity provider is specific to
-each 'Location' directive.  This configuration will not allow a signed
+each 'Location' directive. This configuration will not allow a signed
 assertion from 'idp1' to be used against the authentication URL for
-'idp2'.  An attempt to do so would be rejected by mod_auth_mellon and
+'idp2'. An attempt to do so would be rejected by mod_auth_mellon and
 would never actually reach Keystone's OS-FEDERATION extension.
 
 It is recommended to read the Keystone federation documentation as well
 as the documentation for the HTTPD module that you are using for your
-federation method of choice.  Some useful links to this documentation
+federation method of choice. Some useful links to this documentation
 are provided in the references section of this note.
 
 In the Kilo release of Keystone, it is also possible to have Keystone
 enforce that an assertion actually comes from the identity provider that
-is associated with the authentication URL.  This is performed by
+is associated with the authentication URL. This is performed by
 comparing an identity provider identifier value from the assertion or
 claim with an identifier that is stored as a part of the identity
 provider within Keystone.
 
 To enable this functionality, you must set the 'remote_id_attribute'
 setting in keystone.conf, which defines the environment variable that
-contains the identity provider identifier.  You then must add the
+contains the identity provider identifier. You then must add the
 identifier value that the 'remote_id_attribute' will contain as one of
 the 'remote_ids' values of the associated identity provider in Keystone.
 This can be done using the Identity API directly, or via the 'openstack'

@@ -51,7 +51,7 @@ multiple instance types. Due to the nature of public clouds, they are exposed
 to a higher degree of risk. As a consumer of a public cloud you should validate
 that your selected provider has the necessary certifications, attestations, and
 other regulatory considerations. As a public cloud provider, depending on your
-target customers, you may be subject to one or more regulations.  Additionally,
+target customers, you may be subject to one or more regulations. Additionally,
 even if not required to meet regulatory requirements, a provider should ensure
 tenant isolation as well as protecting management infrastructure from external
 attacks.
@@ -63,7 +63,7 @@ At the opposite end of the spectrum is the private cloud. As NIST defines it, a
 private cloud is provisioned for exclusive use by a single organization
 comprising multiple consumers, such as business units. It may be owned,
 managed, and operated by the organization, a third-party, or some combination
-of them, and it may exist on or off premises.  Private cloud use cases are
+of them, and it may exist on or off premises. Private cloud use cases are
 diverse, as such, their individual security concerns vary.
 
 Community cloud
@@ -86,7 +86,7 @@ technology that enables data and application portability, such as cloud
 bursting for load balancing between clouds. For example an online retailer may
 have their advertising and catalogue presented on a public cloud that allows
 for elastic provisioning. This would enable them to handle seasonal loads in a
-flexible, cost-effective fashion.  Once a customer begins to process their
+flexible, cost-effective fashion. Once a customer begins to process their
 order, they are transferred to the more secure private cloud back end that is
 PCI compliant.
 
@@ -125,7 +125,7 @@ For information about the current state of feature support, see `OpenStack
 Hypervisor Support Matrix
 <https://wiki.openstack.org/wiki/HypervisorSupportMatrix>`__.
 
-The security of Compute is critical for an OpenStack deployment.  Hardening
+The security of Compute is critical for an OpenStack deployment. Hardening
 techniques should include support for strong instance isolation, secure
 communication between Compute sub-components, and resiliency of public-facing
 API endpoints.

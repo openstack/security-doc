@@ -56,10 +56,10 @@ Allowed hosts
 ~~~~~~~~~~~~~
 
 Configure the ``ALLOWED_HOSTS`` setting with the fully qualified host name(s)
-that are served by the OpenStack dashboard.  Once this setting is provided, if
+that are served by the OpenStack dashboard. Once this setting is provided, if
 the value in the "Host:" header of an incoming HTTP request does not match any
 of the values in this list an error will be raised and the requestor will not
-be able to proceed.  Failing to configure this option, or the use of wild card
+be able to proceed. Failing to configure this option, or the use of wild card
 characters in the specified host names, will cause the dashboard to be
 vulnerable to security breaches associated with fake HTTP Host headers.
 

@@ -3,8 +3,8 @@ Glance configuration option can lead to privilege escalation
 
 ### Summary ###
 Glance exposes a configuration option called `use_user_token` in the
-configuration file `glance-api.conf`.  It should be noted that the
-default setting (`True`) is secure.  If, however, the setting is
+configuration file `glance-api.conf`. It should be noted that the
+default setting (`True`) is secure. If, however, the setting is
 changed to `False` and valid admin credentials are supplied in the
 following section (`admin_user` and `admin_password`), Glance API
 commands will be executed with admin privileges regardless of the
@@ -18,15 +18,15 @@ Glance, Juno, Kilo, Liberty
 The `use_user_token` configuration option was created to enable
 automatic re-authentication for tokens whch are close to expiration,
 thus preventing the tokens from expiring in the middle of
-longer-lasting Glance commands.  Unfortunately the implementation
+longer-lasting Glance commands. Unfortunately the implementation
 enables privilege escalation attacks by automatically executing API
 commands as an administrator level user.
 
-By default `use_user_token` is set to `True` which is secure.  If the
+By default `use_user_token` is set to `True` which is secure. If the
 option is disabled (set to `False`) and valid admin credentials are
 specified in the `glance-api.conf` file, API commands will be executed
 as the supplied admin user regardless of the intended privileges of the
-calling user.  Glance API v2 configurations which don't enable the
+calling user. Glance API v2 configurations which don't enable the
 registry service (`data_api = glance.db.registry.api`) aren't affected.
 
 Enabling unauthenticated and lower privileged users to execute Glance
@@ -38,7 +38,7 @@ expose risks including:
  - denial of service attacks
 
 ### Recommended Actions ###
-A comprehensive fix will be included in the Mitaka release.  Meanwhile
+A comprehensive fix will be included in the Mitaka release. Meanwhile
 it is recommended that all users ensure that `use_user_token` is left
 at the default setting (`True`) or commented out.
 

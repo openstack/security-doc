@@ -26,9 +26,9 @@ publicize images.
 
 ### Recommended Actions ###
 It is recommended that the ability to publicize images in Glance be
-restricted to trusted users, such as users with the "admin" role.  This
+restricted to trusted users, such as users with the "admin" role. This
 can be done by modifying the "publicize_image" capability in Glance's
-policy.json file.  Here is an example of restricting this capability to
+policy.json file. Here is an example of restricting this capability to
 users with the "admin" role:
 
 ---- begin example policy.json snippet ----

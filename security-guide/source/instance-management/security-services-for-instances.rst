@@ -108,7 +108,7 @@ images they upload themselves. In both cases, users should be able to
 ensure the image they are utilizing has not been tampered with. The
 ability to verify images is a fundamental imperative for security. A
 chain of trust is needed from the source of the image to the
-destination where it's used.  This can be accomplished by signing
+destination where it's used. This can be accomplished by signing
 images obtained from trusted sources and by verifying the signature
 prior to use. Various ways to obtain and create verified images will
 be discussed below, followed by a description of the image signature

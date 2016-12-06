@@ -60,10 +60,10 @@ forcing the negotiation of a weak cipher. In particular we need to
 remove support for any export grade ciphers, which are especially weak.
 
 The first step is to find what versions your TLS server currently
-supports.  Two useful solutions exist for this: SSL Server Test at
+supports. Two useful solutions exist for this: SSL Server Test at
 Qualys SSL Labs can be used to scan any web accessible endpoints, and
 SSLScan is a command line tool which attempts a TLS connection to a
-server with all possible cipher suites.  Please see "tools" below for
+server with all possible cipher suites. Please see "tools" below for
 links to both.
 
 The specific steps required to configure which cipher suites are

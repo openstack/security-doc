@@ -16,14 +16,14 @@ cloud providers. It is recommended that a risk assessment and legal consul
 advised before choosing tenant encryption policies.
 
 Per-instance or per-object encryption is preferable over, in descending order,
-per-project, per-tenant, per-host, and per-cloud aggregations.  This
+per-project, per-tenant, per-host, and per-cloud aggregations. This
 recommendation is inverse to the complexity and difficulty of implementation.
 Presently, in some projects it is difficult or impossible to implement
 encryption as loosely granular as even per-tenant. We recommend implementors
 make a best-effort in encrypting tenant data.
 
 Often, data encryption relates positively to the ability to reliably destroy
-tenant and per-instance data, simply by throwing away the keys.  It should be
+tenant and per-instance data, simply by throwing away the keys. It should be
 noted that in doing so, it becomes of great importance to destroy those keys in
 a reliable and secure manner.
 
@@ -76,7 +76,7 @@ release, the following ephemeral disk encryption features are supported:
         - This field sets the cipher and mode used to encrypt ephemeral
           storage. AES-XTS is recommended by NIST_ specifically for disk
           storage, and the name is shorthand for AES encryption using the
-          XTS encryption mode.  Available ciphers depend on kernel support.
+          XTS encryption mode. Available ciphers depend on kernel support.
           At the command line, type 'cyrptsetup benchmark' to determine the
           available options (and see benchmark results), or go to
           */proc/crypto*
@@ -91,7 +91,7 @@ release, the following ephemeral disk encryption features are supported:
           manager that could require the use of 'key_size = 256', which would
           only provide an AES key size of 128-bits. XTS requires it's own
           "tweak key" in addition to the encryption key AES requires.
-          This is typically expressed as a single large key.  In this case,
+          This is typically expressed as a single large key. In this case,
           using the 512-bit setting, 256 bits will be used by AES and 256 bits
           by XTS. (see NIST_)
 
@@ -132,7 +132,7 @@ ends chosen. Some back ends may not support this at all. It is outside the
 scope of this guide to specify recommendations for each Block Storage back-end
 driver.
 
-For the purpose of performance, many storage protocols are unencrypted.  Some
+For the purpose of performance, many storage protocols are unencrypted. Some
 protocols such as iSCSI can provide authentication and encrypted sessions, it
 is our recommendation to enable these features.
 
@@ -147,7 +147,7 @@ physical volume to an LVM volume group (VG).
 Network data
 ~~~~~~~~~~~~
 
-Tenant data for compute could be encrypted over IPsec or other tunnels.  This
+Tenant data for compute could be encrypted over IPsec or other tunnels. This
 is not functionality common or standard in OpenStack, but is an option
 available to motivated and interested implementors.
 

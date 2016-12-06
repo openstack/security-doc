@@ -22,8 +22,8 @@ an endless flood of 'image-create' requests.
 ### Recommended Actions ###
 For current stable OpenStack releases, users can workaround this
 vulnerability by using rate-limiting proxies to cover access to the
-Glance API.  Rate-limiting is a common mechanism to prevent DoS and
-Brute-Force attacks.  Rate limiting on the API requests allows a delay
+Glance API. Rate-limiting is a common mechanism to prevent DoS and
+Brute-Force attacks. Rate limiting on the API requests allows a delay
 in the consequences of the attack, but does not prevent it.
 
 For example, if you are using a proxy such as Repose, enable the rate
@@ -38,7 +38,7 @@ policy.json file.
   "add_image": "role:admin",
 
 Another preventative action would be to monitor the logs to identify
-excessive image create requests.  One example of such a log message
+excessive image create requests. One example of such a log message
 is as follows (single line, wrapped):
 
 ---- begin example glance-api.log snippet ----

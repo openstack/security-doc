@@ -3,7 +3,7 @@ Potential token revocation abuse via group membership
 
 ### Summary ###
 Deletion of groups in Keystone causes token revocation for group
-members.  If group capabilities are delegated to users, they can abuse
+members. If group capabilities are delegated to users, they can abuse
 those capabilities to maliciously revoke tokens for other users.
 
 ### Affected Services / Software ###
@@ -11,20 +11,20 @@ Keystone, Grizzly, Havana, Icehouse
 
 ### Discussion ###
 If a group is deleted from Keystone, all tokens for all users that are
-members of that group are revoked.  By adding users to a group without
+members of that group are revoked. By adding users to a group without
 those users' knowledge and then deleting that group, a group admin can
-revoke all of the users' tokens.  While the default policy file gives
+revoke all of the users' tokens. While the default policy file gives
 the group admin role to global admin, an alternative policy could
 delegate the "create_group", "add_user_to_group", and "delete_group"
-capabilities to a set of users.  In such a system, those users will also
-get a token revocation capability.  Only setups using a custom policy
+capabilities to a set of users. In such a system, those users will also
+get a token revocation capability. Only setups using a custom policy
 file in Keystone are affected.
 
 ### Recommended Actions ###
 Keystone's default policy.json file uses the "admin_required" rule for
 the "create_group", "delete_group", and "add_user_to_group"
-capabilities.  It is recommended that you use this default configuration
-if possible.  Here is an example snippet of a properly configured
+capabilities. It is recommended that you use this default configuration
+if possible. Here is an example snippet of a properly configured
 policy.json file:
 
 ---- begin example policy.json snippet ----
@@ -35,7 +35,7 @@ policy.json file:
 
 If you need to delegate the above capabilities to non-admin users, you
 need to take into account that those users will be able to revoke
-tokens for other users by performing group deletion operations.  You
+tokens for other users by performing group deletion operations. You
 should take caution with who you delegate these capabilities to.
 
 ### Contacts / References ###

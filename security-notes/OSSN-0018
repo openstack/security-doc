@@ -42,7 +42,7 @@ Nova-controlled interfaces.
 
 Using the sshd service as an example, the default configuration on most
 systems is to bind to all interfaces and all local addresses
-("ListenAddress :22" in sshd_config).  In order to configure it only on
+("ListenAddress :22" in sshd_config). In order to configure it only on
 a specific interface, use "ListenAddress a.b.c.d:22" where a.b.c.d is
 the address assigned to the chosen interface. Similar settings can be
 found for most other services.

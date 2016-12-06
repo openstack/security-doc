@@ -3,7 +3,7 @@ Service accounts may have cloud admin privileges
 
 ### Summary ###
 OpenStack services (for example Nova and Glance) typically use a
-service account in Keystone to perform actions.  In some cases this
+service account in Keystone to perform actions. In some cases this
 service account has full admin privileges, may therefore perform any
 action on your cloud, and should be protected appropriately.
 
@@ -12,7 +12,7 @@ Most OpenStack services / all versions
 
 ### Discussion ###
 In many cases, OpenStack services require an OpenStack account to
-perform API actions such as validating Keystone tokens.  Some
+perform API actions such as validating Keystone tokens. Some
 deployment tools grant administrative level access to these service
 accounts, making these accounts very powerful.
 
@@ -24,7 +24,7 @@ A service account with administrator access could be used to:
   - log in to Horizon
 
 ### Recommended Actions ###
-Service accounts can use the "service" role rather than admin.  You
+Service accounts can use the "service" role rather than admin. You
 can check what role the service account has by performing the following
 steps:
 
@@ -37,7 +37,7 @@ steps:
      openstack role assignment list --user <service_user>
 
 3. Compare the ID listed in the "role" column from step 2 with the role
-IDs listed in step 1.  If the role is listed as "admin", the service
+IDs listed in step 1. If the role is listed as "admin", the service
 account has full admin privileges on the cloud.
 
 It is possible to change the role to "service" for some accounts but
@@ -46,7 +46,7 @@ Neutron, and is therefore not recommended for inexperienced admins.
 
 If a service account does have admin, it's advisable to closely
 monitor login events for that user to ensure that it is not used
-unexpectedly.  In particular, pay attention to unusual IPs using the
+unexpectedly. In particular, pay attention to unusual IPs using the
 service account.
 
 ### Contacts / References ###

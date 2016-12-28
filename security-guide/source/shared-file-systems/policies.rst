@@ -45,5 +45,5 @@ management commands are used.
     which allows new policies to be implemented while the Shared File Systems
     service is running. Manual modification of the policy can have unexpected
     side effects and is not encouraged. For details, see
-    `The policy.json file <http://docs.openstack.org/trunk/config-reference/
-    ontent/policy-json-file.html>`_.
+    `The policy.json file
+    <http://docs.openstack.org/newton/config-reference/policy-json-file.html>`_.

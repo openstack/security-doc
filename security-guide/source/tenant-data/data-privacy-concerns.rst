@@ -110,7 +110,7 @@ the encryption key. The end user can select this feature while creating a
 volume, but note that an admin must perform a one-time set up of the volume
 encryption feature first. Instructions for this setup are in the block
 storage section of the `Configuration Reference
-<docs.openstack.org/newton/config-reference/block-storage/volume-encryption.html>`__
+<http://docs.openstack.org/newton/config-reference/block-storage/volume-encryption.html>`__
 , under volume encryption.
 
 If the OpenStack volume encryption feature is not used, then other approaches
@@ -152,7 +152,7 @@ Compute instance ephemeral storage
 ----------------------------------
 
 Note that the OpenStack `Ephemeral disk encryption
-<docs.openstack.org/security-guide/tenant-data/data-encryption.html>`__
+<http://docs.openstack.org/security-guide/tenant-data/data-encryption.html>`__
 feature provides a means of improving ephemeral storage privacy and isolation,
 during both active use as well as when the data is to be destroyed. As in the
 case of encrypted block storage, one can simply delete the encryption key to

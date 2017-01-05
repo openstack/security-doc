@@ -67,13 +67,18 @@ authentication that minimize the risk from weak passwords.
 
 These include:
 
--  Password policy enforcement: Requires user passwords to conform to
-   minimum standards for length, diversity of characters, expiration, or
-   failed login attempts.
+Password policy enforcement
+  Requires user passwords to conform to minimum standards for length,
+  diversity of characters, expiration, or failed login attempts. In an
+  external authentication scenario this would be the password policy on
+  the original identity store.
 
--  Multi-factor authentication: The authentication service requires the
-   user to provide information based on something they have, such as a
-   one-time password token or X.509 certificate, and something they
-   know, such as a password.
+Multi-factor authentication
+  The authentication service requires the user to provide information
+  based on something they have, such as a one-time password token or
+  X.509 certificate, and something they know, such as a password.
 
--  Kerberos
+Kerberos
+  A mutual authentication network protocol using 'tickets' to secure
+  communication between client and server. The Kerberos ticket-granting
+  ticket can be used to securely provide tickets for a given service.

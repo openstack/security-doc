@@ -69,16 +69,6 @@ each other using a secured communication protocol like HTTPS.
 If you use the HTTP/WSGI server for Identity,
 you should enable TLS on the HTTP/WSGI server.
 
-When you use eventlet:
-
-**Pass:** If value of parameter ``enable`` under ``[eventlet_server_ssl]``
-section in ``/etc/keystone/keystone.conf`` is set to ``True``.
-
-**Fail:** If value of parameter ``enable`` under ``[eventlet_server_ssl]``
-section is not set to ``True``.
-
-When you use the HTTP/WSGI server:
-
 **Pass:** If TLS is enabled on the HTTP server.
 
 **Fail:** If TLS is not enabled on the HTTP server.

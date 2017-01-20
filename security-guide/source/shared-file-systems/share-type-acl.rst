@@ -22,7 +22,7 @@ visibility for the share type that defines whether other tenants can or cannot
 see it in a share types list and use it to create a new share.
 
 By default, share types are created as public. While creating a share type,
-use :option:`--is_public` parameter set to ``False`` to make your share type
+use ``--is_public`` parameter set to ``False`` to make your share type
 private which will prevent other tenants from seeing it in a list of share
 types and creating new shares with it. On the other hand,  *public* share
 types are available to every tenant in a cloud.

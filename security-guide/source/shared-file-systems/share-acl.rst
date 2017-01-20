@@ -12,7 +12,7 @@ access to a specified share, and list permissions for a specified share.
 A share can be *public* or *private*. This is a level of visibility for the
 share that defines whether other tenants can or cannot see the share. By
 default, all shares are created as private. While creating a share, use key
-:option:`--public` to make your share public for other tenants to see it in a
+``--public`` to make your share public for other tenants to see it in a
 list of shares and see its detailed information.
 
 According to a :ref:`policy.json <shared_fs_policies>` file, an administrator

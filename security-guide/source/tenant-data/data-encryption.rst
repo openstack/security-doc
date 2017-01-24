@@ -113,15 +113,37 @@ release, the following ephemeral disk encryption features are supported:
 Object Storage objects
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The ability to encrypt objects in Object Storage is presently limited to
-disk-level encryption per node. However, there does exist third-party
-extensions and modules for per-object encryption. These modules have been
-proposed upstream, but have not per this writing been formally accepted. Below
-are some pointers:
+Object Storage (swift) supports the optional encryption of object data at rest
+on storage nodes. The encryption of object data is intended to mitigate the
+risk of users’ data being read if an unauthorized party were to gain
+physical access to a disk.
 
-https://github.com/Mirantis/swift-encrypt
+Encryption of data at rest is implemented by middleware that may be included in
+the proxy server WSGI pipeline. The feature is internal to a Swift cluster and
+not exposed through the API. Clients are unaware that data is encrypted by
+this feature internally to the Swift service; internally encrypted data
+should never be returned to clients through the swift API.
 
-http://www.mirantis.com/blog/on-disk-encryption-prototype-for-openstack-swift/
+The following data are encrypted while at rest in swift:
+
+- Object content. For example, the content of an object PUT request’s body
+- The entity tag (ETag) of objects that have non-zero content
+- All custom user object metadata values. For example, metadata sent using
+  ``X-Object-Meta-`` prefixed headers with PUT or POST requests
+
+Any data or metadata not included in the list above are not encrypted,
+including:
+
+- Account, container, and object names
+- Account and container custom user metadata values
+- All custom user metadata names
+- Object Content-Type values
+- Object size
+- System metadata
+
+For more information on the deployment, operation, or implementation of
+Object Storage encryption, see the swift Developer Documentation on
+`Object Encryption <http://docs.openstack.org/developer/swift/overview_encryption.html>`_.
 
 Block Storage volumes and instance ephemeral filesystems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -7,7 +7,7 @@ security of an OpenStack deployment. Multiple factors should be
 considered when deciding on a database server, however for the scope of
 this book only security considerations will be discussed. OpenStack
 supports a variety of database types (see `OpenStack Administrator
-Guide <http://docs.openstack.org/admin-guide/>`__ for more
+Guide <https://docs.openstack.org/admin-guide/>`__ for more
 information). The Security Guide currently focuses on PostgreSQL and
 MySQL.
 

@@ -70,7 +70,7 @@ Horizon image upload
 ~~~~~~~~~~~~~~~~~~~~
 
 We recommend that implementers
-`disable HORIZON_IMAGES_ALLOW_UPLOAD <http://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads>`_
+`disable HORIZON_IMAGES_ALLOW_UPLOAD <https://docs.openstack.org/developer/horizon/topics/deployment.html#file-uploads>`_
 unless they have implemented a plan to prevent resource
 exhaustion and denial of service.
 

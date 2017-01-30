@@ -12,9 +12,9 @@ An administrator can create and delete share types, and also manage extra
 specifications that give them meaning inside the Shared File Systems service.
 Tenants can list the share types and can use them to create new shares. For
 details of managing the share types, see `Shared File Systems API
-<http://developer.openstack.org/api-ref-share-v2.html#share-type>`_ and
+<https://developer.openstack.org/api-ref-share-v2.html#share-type>`_ and
 `Share types managing
-<http://docs.openstack.org/admin-guide/shared_file_systems_share_types.html>`_
+<https://docs.openstack.org/admin-guide/shared_file_systems_share_types.html>`_
 documentation.
 
 Share types can be created as *public* and *private*. This is the level of

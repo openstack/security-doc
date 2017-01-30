@@ -236,7 +236,7 @@ Bibliography
 ------------
 
 -  OpenStack.org, Chapter 14. Backup and Recovery. 2016.
-   `OpenStack Operations Guide on backup and recovery <http://docs.openstack.org/openstack-ops/content/backup_and_recovery.html>`__
+   `OpenStack Operations Guide on backup and recovery <https://docs.openstack.org/openstack-ops/content/backup_and_recovery.html>`__
 
 -  SANS Institute, Security Considerations for Enterprise Level Backups. 2002.
    `Interested in learning more about security? <http://www.sans.org/reading_room/whitepapers/backup/security-considerations-enterprise-level-backups_515>`__

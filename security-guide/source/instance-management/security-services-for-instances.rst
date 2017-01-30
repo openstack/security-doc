@@ -48,9 +48,9 @@ and volume requests.
 
 The ``FilterScheduler`` is the default scheduler for OpenStack
 Compute, although other schedulers exist (see the section `Scheduling
-<http://docs.openstack.org/newton/config-reference/compute/scheduler.html>`_
+<https://docs.openstack.org/newton/config-reference/compute/scheduler.html>`_
 in the `OpenStack Configuration Reference
-<http://docs.openstack.org/newton/config-reference/config-overview.html>`_
+<https://docs.openstack.org/newton/config-reference/config-overview.html>`_
 ). This works in collaboration with 'filter hints' to decide where an
 instance should be started. This process of host selection allows
 administrators to fulfill many different security and compliance
@@ -139,7 +139,7 @@ The first option is to obtain boot media from a trusted source.
 
 
 The second option is to use the
-`OpenStack Virtual Machine Image Guide <http://docs.openstack.org/image-guide/>`_.
+`OpenStack Virtual Machine Image Guide <https://docs.openstack.org/image-guide/>`_.
 In this case, you will want to follow your organizations OS hardening
 guidelines or those provided by a trusted third-party such as the
 `Linux STIGs <http://iase.disa.mil/stigs/os/unix-linux/Pages/index.aspx>`_.
@@ -235,7 +235,7 @@ the Image service. If this verification fails, the boot won't occur.
 The OpenStack Operations Guide provides guidance on how to create and
 upload a signed image, and how to use this feature. For more
 information, see `Adding Signed Images
-<http://docs.openstack.org/ops-guide/ops-user-facing-operations.html#adding-signed-images>`_
+<https://docs.openstack.org/ops-guide/ops-user-facing-operations.html#adding-signed-images>`_
 in the Operations Guide.
 
 Instance migrations

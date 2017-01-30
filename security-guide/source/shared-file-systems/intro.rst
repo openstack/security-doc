@@ -16,7 +16,7 @@ main services, which are similar to those of the Block Storage service:
    authenticates and routes requests throughout the Shared Filesystem
    service. There is python-manilaclient to interact with the API.
    For more details on the Shared File Systems API, see the `OpenStack
-   Shared File Systems API <http://developer.openstack.org/api-ref-share-v2.html>`_.
+   Shared File Systems API <https://developer.openstack.org/api-ref-share-v2.html>`_.
 ``manila-share``
    Responsible for managing Shared File Service devices, specifically the
    back-end devices.
@@ -36,10 +36,10 @@ PostgreSQL data bases.
 Using SQL, the Shared File Systems service is similar to other OpenStack
 services and can be used with any OpenStack deployment. For more details on
 the API, see the `OpenStack Shared File Systems API
-<http://developer.openstack.org/api-ref-share-v2.html>`_ description. For more
+<https://developer.openstack.org/api-ref-share-v2.html>`_ description. For more
 details on the CLI usage and configuration, see `Shared File Systems Cloud
 Administrative Guide
-<http://docs.openstack.org/admin-guide/shared_file_systems.html>`_.
+<https://docs.openstack.org/admin-guide/shared_file_systems.html>`_.
 
 On the image below you can see how different parts of the Shared File System
 service interact with each other.
@@ -98,7 +98,7 @@ driver and security service you configure and use.
     methods. It also does not support any of the security services, such as
     LDAP, Kerberos, or Active Directory. For details of features supported by
     different drivers, see `Manila share features support mapping
-    <http://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html>`_.
+    <https://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html>`_.
 
 As an administrator, you can create share types that enable the scheduler to
 filter back ends before you create a share. Share types have extra

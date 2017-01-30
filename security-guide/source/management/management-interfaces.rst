@@ -166,10 +166,10 @@ Bibliography
 ------------
 
 OpenStack.org, OpenStack End User Guide section. 2016.
-`OpenStack command-line clients overview  <http://docs.openstack.org/user-guide/common/cli_overview.html>`__
+`OpenStack command-line clients overview  <https://docs.openstack.org/user-guide/common/cli_overview.html>`__
 
 OpenStack.org, Set environment variables using the OpenStack RC file. 2016.
-`Download and source the OpenStack RC file <http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html#download-and-source-the-openstack-rc-file>`__
+`Download and source the OpenStack RC file <https://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html#download-and-source-the-openstack-rc-file>`__
 
 Out-of-band management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

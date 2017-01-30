@@ -162,7 +162,7 @@ is currently provided by security groups. Both Freescale and Intel
 developed third-party plug-ins as extensions in OpenStack Networking to
 support this component in the Kilo release. For more details on the
 administration of FWaaS, see `Firewall-as-a-Service (FWaaS) overview
-<http://docs.openstack.org/admin-guide/networking-introduction.html#firewall-as-a-service-fwaas-overview>`__
+<https://docs.openstack.org/admin-guide/networking-introduction.html#firewall-as-a-service-fwaas-overview>`__
 in the OpenStack Administrator Guide.
 
 During the design of an OpenStack Networking infrastructure it is

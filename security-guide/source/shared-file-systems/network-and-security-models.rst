@@ -195,4 +195,4 @@ flat networks or VLAN-segmented networks of the Legacy networking
 independently from OpenStack networking services. For more information of how
 to use different network plug-ins, see `Shared File Systems service Network
 plug-ins
-<http://docs.openstack.org/admin-guide/shared_file_systems_network_plugins.html#network-plug-ins>`_.
+<https://docs.openstack.org/admin-guide/shared_file_systems_network_plugins.html#network-plug-ins>`_.

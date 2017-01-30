@@ -87,4 +87,4 @@ API network
    IP block. This network is considered the Public Security Domain.
 
 For additional information see the `OpenStack Administrator Guide
-<http://docs.openstack.org/admin-guide/networking.html>`__.
+<https://docs.openstack.org/admin-guide/networking.html>`__.

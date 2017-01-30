@@ -86,9 +86,9 @@ security services for a specified share network and disassociate them from
 a share network.
 
 For details of managing security services via API, see the `Security
-services API <http://developer.openstack.org/api-ref-share-v2.html#share-security-services>`_.
+services API <https://developer.openstack.org/api-ref-share-v2.html#share-security-services>`_.
 You also can manage security services via python-manilaclient,
-see `Security services CLI managing <http://docs.openstack.org/admin-guide/shared_file_systems_security_services.html>`_.
+see `Security services CLI managing <https://docs.openstack.org/admin-guide/shared_file_systems_security_services.html>`_.
 
 An administrator and users as share owners can manage the
 :ref:`access to the shares <shared_fs_share_acl>` by creating access
@@ -105,7 +105,7 @@ and the Identity service.
 
     Different authentication services are supported by different share drivers.
     For details of supporting of features by different drivers, see
-    `Manila share features support mapping <http://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html>`_.
+    `Manila share features support mapping <https://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html>`_.
     Support for a specific authentication service by a driver does not
     mean that it can be configured with any shared file system protocol.
     Supported shared file systems protocols are NFS, CIFS, GlusterFS, and HDFS.

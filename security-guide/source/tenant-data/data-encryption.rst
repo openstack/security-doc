@@ -143,7 +143,7 @@ including:
 
 For more information on the deployment, operation, or implementation of
 Object Storage encryption, see the swift Developer Documentation on
-`Object Encryption <http://docs.openstack.org/developer/swift/overview_encryption.html>`_.
+`Object Encryption <https://docs.openstack.org/developer/swift/overview_encryption.html>`_.
 
 Block Storage volumes and instance ephemeral filesystems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

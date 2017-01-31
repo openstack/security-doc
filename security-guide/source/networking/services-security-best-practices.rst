@@ -122,3 +122,31 @@ quota extension API. To enable per-tenant quotas, you must set the
 .. code:: ini
 
     quota_driver = neutron.db.quota_db.DbQuotaDriver
+
+Mitigate ARP spoofing
+~~~~~~~~~~~~~~~~~~~~~
+
+When using flat networking, you cannot assume that projects which share
+the same layer 2 network (or broadcast domain) are fully isolated from each
+other. These projects may be vulnerable to ARP spoofing, risking the
+possibility of man-in-the-middle attacks.
+
+If using a version of Open vSwitch that supports ARP field matching, you can
+help mitigate this risk by enabling the ``prevent_arp_spoofing`` option for the
+Open vSwitch agent. This option prevents instances from performing spoof
+attacks; it does not protect them from spoof attacks. Note that this setting
+is expected to be removed in Ocata, with the behavior becoming permanently
+active.
+
+For example, in ``/etc/neutron/plugins/ml2/openvswitch_agent.ini``:
+
+.. code:: ini
+
+    prevent_arp_spoofing = True
+
+Plug-ins other than Open vSwitch may also include similar mitigation measures;
+it is recommended you enable this feature, where appropriate.
+
+.. note:: Even with ``prevent_arp_spoofing`` enabled, flat networking
+    does not provide a complete level of project isolation, as all project
+    traffic is still sent to the same VLAN.

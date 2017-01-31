@@ -239,7 +239,7 @@ Bibliography
    `OpenStack Operations Guide on backup and recovery <https://docs.openstack.org/openstack-ops/content/backup_and_recovery.html>`__
 
 -  SANS Institute, Security Considerations for Enterprise Level Backups. 2002.
-   `Interested in learning more about security? <http://www.sans.org/reading_room/whitepapers/backup/security-considerations-enterprise-level-backups_515>`__
+   `Interested in learning more about security? <https://www.sans.org/reading_room/whitepapers/backup/security-considerations-enterprise-level-backups_515>`__
 
 Security auditing tools
 ~~~~~~~~~~~~~~~~~~~~~~~

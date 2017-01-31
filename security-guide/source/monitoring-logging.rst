@@ -13,7 +13,7 @@ the various instances.
 The basics of logging: configuration, setting log level, location of the log
 files, and how to use and customize logs, as well as how to do centralized
 collections of logs is well covered in the `OpenStack Operations Guide
-<http://docs.openstack.org/ops/>`__.
+<https://docs.openstack.org/ops/>`__.
 
 .. toctree::
    :maxdepth: 2

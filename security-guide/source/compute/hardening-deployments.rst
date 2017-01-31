@@ -33,7 +33,7 @@ successfully.
 
 Monitoring is a critical component of IT infrastructure, and we recommend the
 `Compute logfiles
-<http://docs.openstack.org/newton/config-reference/compute/logs.html>`__
+<https://docs.openstack.org/newton/config-reference/compute/logs.html>`__
 be monitored and analyzed so that meaningful alerts can be created.
 
 

@@ -196,7 +196,7 @@ container`_ that runs an OpenStack service.
 .. _installing the selinux-policy source package: https://wiki.centos.org/HowTos/RebuildSRPM
 .. _Fedora's selinux-policy: https://github.com/fedora-selinux/selinux-policy
 .. _rawhide-contrib: https://github.com/fedora-selinux/selinux-policy/tree/rawhide-contrib
-.. _applying AppArmor profiles to each container: http://docs.openstack.org/developer/openstack-ansible/install-guide/overview-security.html#apparmor
+.. _applying AppArmor profiles to each container: https://docs.openstack.org/developer/openstack-ansible/install-guide/overview-security.html#apparmor
 
 .. _hardening-the-virtualization-layers-svirt-selinux-and-virtualization:
 

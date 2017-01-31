@@ -14,7 +14,7 @@ This repository contains the OpenStack Security documentation.
 
 For details on how to contribute to the documentation, see the
 `OpenStack Documentation Contributor Guide
-<http://docs.openstack.org/contributor-guide/>`_.
+<https://docs.openstack.org/contributor-guide/>`_.
 
 It includes these manuals:
 
@@ -58,11 +58,11 @@ Contributing
 
 Our community welcomes all people interested in open source cloud
 computing, and encourages you to join the `OpenStack Foundation
-<http://www.openstack.org/join>`_.
+<https://www.openstack.org/join>`_.
 
 The best way to get involved with the community is to talk with others
 online or at a meet up and offer contributions through our processes,
-the `OpenStack wiki <http://wiki.openstack.org>`_, blogs, or on IRC at
+the `OpenStack wiki <https://wiki.openstack.org>`_, blogs, or on IRC at
 ``#openstack`` on ``irc.freenode.net``.
 
 We welcome all types of contributions, from blueprint designs to
@@ -70,7 +70,7 @@ documentation to testing to deployment scripts.
 
 If you would like to contribute to the documents, please see the
 `OpenStack Documentation contributor guide
-<http://docs.openstack.org/contributor-guide/>`_.
+<https://docs.openstack.org/contributor-guide/>`_.
 
 
 Bugs
@@ -88,5 +88,5 @@ Guide, please see  `How to Report Security Issues to OpenStack
 Installing
 ==========
 
-Refer to http://docs.openstack.org/security-guide to see where these documents
+Refer to https://docs.openstack.org/security-guide to see where these documents
 are published and to learn more about the OpenStack Security Guide.

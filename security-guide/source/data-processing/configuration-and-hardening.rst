@@ -205,7 +205,7 @@ Bibliography
 ~~~~~~~~~~~~
 
 OpenStack.org, Welcome to Sahara!. 2016.
-`Sahara project documentation <http://docs.openstack.org/developer/sahara/>`__
+`Sahara project documentation <https://docs.openstack.org/developer/sahara/>`__
 
 The Apache Software Foundation, Welcome to Apache Hadoop!. 2016.
 `Apache Hadoop project <https://hadoop.apache.org>`__

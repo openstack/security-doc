@@ -13,7 +13,7 @@ HTTP RESTful API. Back-end components of Object Storage follow the same RESTful
 model however some of the APIs for managing durability, for example, are kept
 private to the cluster. For more details on the API see the `OpenStack Storage
 documentation
-<http://docs.openstack.org/api/openstack-object-storage/1.0/content/>`__.
+<https://docs.openstack.org/api/openstack-object-storage/1.0/content/>`__.
 
 For this document the components will be grouped into the following primary
 groups:
@@ -86,9 +86,9 @@ non-root (UID 0) service account. One recommendation is the user name "swift"
 with the primary group "swift." Object Storage services include, for example,
 'proxy-server', 'container-server', 'account-server'. Detailed steps for setup
 and configuration can be found in the `Add Object Storage chapter
-<http://docs.openstack.org/project-install-guide/object-storage/newton/>`__
+<https://docs.openstack.org/project-install-guide/object-storage/newton/>`__
 of the Installation Guide in the `OpenStack Documentation index
-<http://docs.openstack.org>`__. (The link defaults to the Ubuntu version.)
+<https://docs.openstack.org>`__. (The link defaults to the Ubuntu version.)
 
 File permissions
 ----------------
@@ -250,7 +250,7 @@ TempAuth
 TempAuth is the default authentication for Object Storage. In contrast to
 Identity it stores the user accounts, credentials, and metadata in object
 storage itself. More information can be found in the section `The Auth System
-<http://docs.openstack.org/developer/swift/overview_auth.html>`__ of the Object
+<https://docs.openstack.org/developer/swift/overview_auth.html>`__ of the Object
 Storage (swift) documentation.
 
 Keystone

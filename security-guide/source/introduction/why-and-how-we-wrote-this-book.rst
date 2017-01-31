@@ -11,7 +11,7 @@ deployment. The authors bring their expertise from deploying and securing
 OpenStack in a variety of environments.
 
 This guide augments the `OpenStack Operations Guide
-<http://docs.openstack.org/ops/>`__ and can be referenced to harden existing
+<https://docs.openstack.org/ops/>`__ and can be referenced to harden existing
 OpenStack deployments or to evaluate the security controls of OpenStack cloud
 providers.
 
@@ -180,4 +180,4 @@ that served as our group office for the entirety of the documentation sprint.
 
 Learn more about how to contribute to the OpenStack docs, see the
 `OpenStack Documentation Contributor Guide
-<http://docs.openstack.org/contributor-guide/index.html>`__.
+<https://docs.openstack.org/contributor-guide/index.html>`__.

@@ -135,14 +135,17 @@ Check-Block-06: Does cinder communicate with glance over TLS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similar to previous check (:ref:`check_block_05`), it is recommended
-all the components must communicate with each other using a secured
+that all components communicate with each other using a secured
 communication protocol.
 
 **Pass:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]``
-section in ``/etc/cinder/cinder.conf`` is set to ``False``.
+section in ``/etc/cinder/cinder.conf`` is set to ``False`` and value of
+parameter ``glance_api_servers`` is set to a value starting with ``https://``.
 
 **Fail:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]``
-section in ``/etc/cinder/cinder.conf`` is set to ``True``.
+section in ``/etc/cinder/cinder.conf`` is set to ``True`` or the value of
+parameter ``glance_api_servers`` is set to a value that does not start with
+``https://``.
 
 .. _check_block_07:
 

@@ -14,8 +14,9 @@ The OpenStack Networking components are:
 neutron server (*neutron-server* and *neutron-\*-plugin*)
    This service runs on the network node to service the Networking API and its
    extensions. It also enforces the network model and IP addressing of each
-   port. The neutron-server and plugin agents require access to a database for
-   persistent storage and access to a message queue for inter-communication.
+   port. The neutron-server requires indirect access to a persistent database.
+   This is accomplished through plugins, which communicate with the database
+   using AMQP (Advanced Message Queuing Protocol).
 
 plugin agent (*neutron-\*-agent*)
    Runs on each compute node to manage local virtual switch (vswitch)

@@ -100,17 +100,17 @@ try to eavesdrop on the channel in order to get access to sensitive
 information. Thus all the components must communicate with each other using a
 secured communication protocol.
 
-**Pass:** If value of parameter ``auth_protocol`` under
+**Pass:** If value of parameter ``auth_uri`` under
 ``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is set to
-``https``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is set to
-Identity API endpoint starting with ``https://``.
+Identity API endpoint starting with ``https://`` and value of parameter
+``insecure`` under the same ``[keystone_authtoken]`` section in the same
+``/etc/nova/nova.conf`` is set to ``False``.
 
-**Fail:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is set to
-``http```, or if value of parameter ``identity_uri`` under
+**Fail:** If value of parameter ``auth_uri`` under
 ``[keystone_authtoken]`` section in ``/etc/nova/nova.conf`` is not set to
-Identity API endpoint starting with ``https://``.
+Identity API endpoint starting with ``https://`` or value of parameter
+``insecure`` under the same ``[keystone_authtoken]`` section in the same
+``/etc/nova/nova.conf`` is set to ``True``.
 
 .. _check_compute_05:
 

@@ -66,7 +66,7 @@ release = '0.0.1'
 #   bug_tag: Tag for categorizing the bug. Must be set manually.
 #   pwd: source tree - this is needed only for openstackdocstheme <= 1.2.2
 # These variables are passed to the logabug code via html_context.
-giturl = u'http://git.openstack.org/cgit/openstack/security-doc/tree/security-threat-analysis/source'
+giturl = u'https://git.openstack.org/cgit/openstack/security-doc/tree/security-threat-analysis/source'
 git_cmd = "/usr/bin/git log | head -n1 | cut -f2 -d' '"
 gitsha = os.popen(git_cmd).read().strip('\n')
 html_context = {"gitsha": gitsha, "bug_tag": bug_tag,

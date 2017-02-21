@@ -123,12 +123,13 @@ try to eavesdrop on the channel in order to get access to sensitive
 information. Thus all the components must communicate with each other using a
 secured communication protocol.
 
-**Pass:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]``
-section in ``/etc/nova/nova.conf`` is set to ``False``, or if value of
-parameter ``api_insecure`` under ``[glance]`` section in
-``/etc/nova/nova.conf`` is set to ``False``.
+**Pass:** If value of parameter ``api_insecure`` under ``[glance]``
+section in ``/etc/nova/nova.conf`` is set to ``False`` and value of
+parameter ``api_servers`` under ``[glance]`` section in
+``/etc/nova/nova.conf`` is set to a value starting with ``https://``.
 
-**Fail:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]``
+**Fail:** If value of parameter ``api_insecure`` under ``[glance]``
 section in ``/etc/nova/nova.conf`` is set to ``True``, or if value of
-parameter ``api_insecure`` under ``[glance]`` section in
-``/etc/nova/nova.conf`` is set to ``True``.
+parameter ``api_servers`` under ``[glance]`` section in
+``/etc/nova/nova.conf`` is set to a value that does not start with
+``https://``.

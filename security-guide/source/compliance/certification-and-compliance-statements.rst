@@ -186,7 +186,7 @@ in cloud environments. FedRAMP can be extremely intensive from
 specificity around security controls, and the volume of documentation
 required to meet government standards.
 
-For more details see http://www.gsa.gov/portal/category/102371.
+For more details see `FedRAMP <http://www.gsa.gov/portal/category/102371>`_.
 
 ITAR
 ----

@@ -201,7 +201,8 @@ per FISMA requirements, complemented with additional controls
 restricting access to "U.S. Persons" only and background screening.
 
 For more details see
-https://www.pmddtc.state.gov/regulations_laws/itar.html.
+`The International Traffic in Arms Regulations (ITAR)
+<https://www.pmddtc.state.gov/regulations_laws/itar.html>`_.
 
 FISMA
 -----

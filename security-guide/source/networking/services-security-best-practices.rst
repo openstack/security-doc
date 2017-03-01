@@ -3,11 +3,11 @@ Securing OpenStack networking services
 ======================================
 
 This section discusses OpenStack Networking configuration best practices
-as they apply to tenant network security within your OpenStack
+as they apply to project network security within your OpenStack
 deployment.
 
-Tenant network services workflow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Project network services workflow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack Networking provides users self services of network resources
 and configurations. It is important that cloud architects and operators
@@ -19,10 +19,10 @@ Networking resource policy engine
 
 A policy engine and its configuration file, ``policy.json``, within
 OpenStack Networking provides a method to provide finer grained
-authorization of users on tenant networking methods and objects. The
+authorization of users on project networking methods and objects. The
 OpenStack Networking policy definitions affect network availability,
 network security and overall OpenStack security. Cloud architects and
-operators should carefully evaluate their policy towards user and tenant
+operators should carefully evaluate their policy towards user and project
 access to administration of network resources. For a more detailed
 explanation of OpenStack Networking policy definition, please refer to
 the `Authentication and authorization
@@ -36,11 +36,11 @@ in the OpenStack Administrator Guide.
 
 If your deployment of OpenStack provides multiple external access points
 into different security domains it is important that you limit the
-tenant's ability to attach multiple vNICs to multiple external access
+project's ability to attach multiple vNICs to multiple external access
 points—this would bridge these security domains and could lead to
 unforeseen security compromise. It is possible mitigate this risk by
 utilizing the host aggregates functionality provided by OpenStack
-Compute or through splitting the tenant VMs into multiple tenant
+Compute or through splitting the project VMs into multiple project
 projects with different virtual network configurations.
 
 .. _networking-security-groups:
@@ -66,7 +66,7 @@ to OpenStack Networking, use the following configuration values:
    service.
 
 A security group is a container for security group rules. Security
-groups and their rules allow administrators and tenants the ability to
+groups and their rules allow administrators and projects the ability to
 specify the type of traffic and direction (ingress/egress) that is
 allowed to pass through a virtual interface port. When a virtual
 interface port is created in OpenStack Networking it is associated with
@@ -85,7 +85,7 @@ Quotas
 ~~~~~~
 
 Quotas provide the ability to limit the number of network resources
-available to tenants. You can enforce default quotas for all tenants.
+available to projects. You can enforce default quotas for all projects.
 The ``/etc/neutron/neutron.conf`` includes these options for quota:
 
 .. code:: ini
@@ -115,8 +115,8 @@ The ``/etc/neutron/neutron.conf`` includes these options for quota:
     # default driver to use for quota checks
     quota_driver = neutron.quota.ConfDriver
 
-OpenStack Networking also supports per-tenant quotas limit through a
-quota extension API. To enable per-tenant quotas, you must set the
+OpenStack Networking also supports per-project quotas limit through a
+quota extension API. To enable per-project quotas, you must set the
 ``quota_driver`` option in ``neutron.conf``.
 
 .. code:: ini

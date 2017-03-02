@@ -56,7 +56,7 @@ The following books explain how to configure and run an OpenStack cloud:
 
 *  `High Availability Guide <https://docs.openstack.org/ha-guide/>`_
 
-*  `Security Guide <https://docs.openstack.org/sec/>`_
+*  `Security Guide <https://docs.openstack.org/security-guide/>`_
 
 *  `Virtual Machine Image Guide <https://docs.openstack.org/image-guide/>`_
 
@@ -119,8 +119,8 @@ The Launchpad Bugs area
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The OpenStack community values your set up and testing efforts and wants
-your feedback. To log a bug, you must sign up for a Launchpad account at
-`<https://launchpad.net/+login>`_. You can view existing bugs and report bugs
+your feedback. To log a bug, you must `sign up for a Launchpad account
+<https://launchpad.net/+login>`_. You can view existing bugs and report bugs
 in the Launchpad Bugs area. Use the search feature to determine whether
 the bug has already been reported or already been fixed. If it still
 seems like your bug is unreported, fill out a bug report.

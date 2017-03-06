@@ -145,26 +145,27 @@ For more information on the deployment, operation, or implementation of
 Object Storage encryption, see the swift Developer Documentation on
 `Object Encryption <https://docs.openstack.org/developer/swift/overview_encryption.html>`_.
 
-Block Storage volumes and instance ephemeral filesystems
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Block Storage performance and backends
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Block Storage supports a variety of mechanisms for supplying mountable volumes.
-The ability to encrypt volumes on the storage host depends on the service back
-ends chosen. Some back ends may not support this at all. It is outside the
-scope of this guide to specify recommendations for each Block Storage back-end
-driver.
+When enabling the operating system, OpenStack Volume Encryption
+performance can be enhanced by using the hardware acceleration features
+currently available in both Intel and AMD processors. Both the OpenStack Volume
+Encryption feature and the OpenStack Ephemeral Disk Encryption feature use
+``dm-crypt`` to secure volume data. ``dm-crypt`` is a transparent disk
+encryption capability in Linux kernel versions 2.6 and later.  When the Volume
+Encryption is enabled, encrypted data is sent over iSCSI to Block Storage,
+securing data in transit and data at rest simultaneously. When using hardware
+acceleration, the performance impact of both of the encryption features is
+minimized.
 
-For the purpose of performance, many storage protocols are unencrypted. Some
-protocols such as iSCSI can provide authentication and encrypted sessions, it
-is our recommendation to enable these features.
-
-As both block storage and compute support LVM backed storage, we can easily
-provide an example applicable to both systems. In deployments using LVM,
-encryption may be performed against the backing physical volumes. An encrypted
-block device would be created using the standard Linux tools, with the LVM
-physical volume (PV) created on top of the decrypted block device using
-pvcreate. Then, the vgcreate or vgmodify tool may be used to add the encrypted
-physical volume to an LVM volume group (VG).
+Although we recommend using the OpenStack Volume Encryption feature, Block
+Storage supports a large variety of alternative back-ends for supplying
+mountable volumes, and some of these may also provide volume encryption.
+Since there are so many `back-ends
+<https://docs.openstack.org/developer/cinder/drivers.html>`_, and since
+information from each vendor must be obtained, it is outside the scope of this
+guide to specify recommendations for implementing encryption in any of them.
 
 Network data
 ~~~~~~~~~~~~

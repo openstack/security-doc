@@ -2,10 +2,10 @@ Some SSL-Enabled connections fail to perform basic certificate checks
 ---
 
 ### Summary ###
-In many places, OpenStack components use Python 2.x HTTPSConnection to
-establish an SSL connection between endpoints. This does not provide
-many of the assurances one would expect when using SSL and leaves
-connections open to potential man-in-the-middle attacks.
+In many places, OpenStack components use HTTPSConnection to establish
+an SSL connection between endpoints. Early Python versions of this
+class do not provide many of the assurances one would expect when
+using SSL and leaves connections open to potential man-in-the-middle attacks.
 
 ### Affected Services / Software ###
 All OpenStack services, Havana, Icehouse, Juno
@@ -20,9 +20,9 @@ checks include:
   - Certificate subject name matching
 
 The HTTPSConnection class is used in a large number of locations and
-fails to check that certificates are signed by a valid authority.
-Without that check in place, the subsequent checks (some highlighted
-above) are largely invalid.
+early Python versions failed to check that certificates are signed by a
+valid authority. Without that check in place, the subsequent checks (some
+highlighted above) are largely invalid.
 
 The result is that an attacker who has access to the network traffic
 between two endpoints relying on HTTPSConnection can trivially create a
@@ -30,9 +30,13 @@ certificate that will be accepted by HTTPSConnection as valid - allowing
 the attacker to intercept, read and modify traffic that should be
 encrypted by SSL.
 
+Later versions of Python, namedly 2.7.9 and 3.4.3, do perform proper
+validation in establishing connections. So this OSSN only applies
+to environments running older versions of Python.
+
 ### Recommended Actions ###
 Some projects have updated their code to be more secure, others have
-not. The OSSG suggest cloud deployers check the status of the bug
+not. The OSSP suggest cloud deployers check the status of the bug
 mentioned in the 'References' section of this note to see if the
 projects they require have updated.
 
@@ -46,6 +50,9 @@ Launchpad Bugs :
   - https://bugs.launchpad.net/nova/+bug/1276207
   - https://bugs.launchpad.net/vmware-nsx/+bug/1487962
   - https://bugs.launchpad.net/vmware-nsx/+bug/1488265
+
+Python 2.x doc : https://docs.python.org/2/library/httplib.html#httplib.HTTPSConnection
+Python 3.x doc : https://docs.python.org/3.4/library/http.client.html#http.client.HTTPSConnection
 
 OpenStack Security ML : openstack-security@lists.openstack.org
 OpenStack Security Group : https://launchpad.net/~openstack-ossg

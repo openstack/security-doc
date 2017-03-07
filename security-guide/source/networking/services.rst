@@ -118,29 +118,48 @@ IPs for more granular connectivity of tenant VMs.
 Quality of Service (QoS)
 ------------------------
 
-The ability to set QoS on the virtual interface ports of tenant
-instances is a current deficiency for OpenStack Networking. The
-application of QoS for traffic shaping and rate-limiting at the physical
-network edge device is insufficient due to the dynamic nature of
-workloads in an OpenStack deployment and can not be leveraged in the
-traditional way. QoS-as-a-Service (QoSaaS) is currently in development
-for the OpenStack Networking Liberty release as an experimental
-feature. QoSaaS is planning to provide the following services:
+By default, Quality of Service (QoS) policies and rules are managed
+by the cloud administrator, which results in tenants being unable to
+create specific QoS rules, or to attach specific ports to policies. In
+some use cases, such as some telecommunications applications, the
+administrator may trust the tenants and therefore let them create and
+attach their own policies to ports. This can be achieved by modifying
+the ``policy.json`` file and `specific documentation
+<https://specs.openstack.org/openstack/neutron-specs/specs/liberty/qos-api-extension.html>`_.
+will be released with the extension.
 
--  Traffic shaping through DSCP markings
+The Networking service (neutron) supports bandwidth-limiting QoS rules in
+Liberty and later. This QoS rule is named ``QosBandwidthLimitRule`` and it
+accepts two non-negative integers measured in kilobits per second:
 
--  Rate-limiting on a per port/network/tenant basis.
+* ``max-kbps``: bandwidth
+* ``max-burst-kbps``: burst buffer
 
--  Port mirroring (through open source or third-party plug-ins)
+The ``QoSBandwidthLimitRule`` has been implemented in the neutron Open
+vSwitch, Linux bridge and single root input/output virtualization (SR-IOV)
+drivers.
 
--  Flow analysis (through open source or third-party plug-ins)
+In Newton, the QoS rule ``QosDscpMarkingRule`` was added. This rule marks
+the Differentiated Service Code Point (DSCP) value in the type of service
+header on IPv4 (RFC 2474) and traffic class header on IPv6 on all traffic
+leaving a virtual machine, where the rule is applied. This is a 6-bit header
+with 21 valid values that denote the drop priority of a packet as it crosses
+networks should it meet congestion. It can also be used by firewalls to
+match valid or invalid traffic against its access control list.
 
-Tenant traffic port mirroring or Network Flow monitoring is currently
-not an exposed feature in OpenStack Networking. There are third-party
-plug-in extensions that do provide port mirroring on a per
-port/network/tenant basis. If Open vSwitch is used on the networking
-hypervisor, it is possible to enable sFlow and port mirroring, however
-it will require some operational effort to implement.
+Port mirroring service involves sending a copy of packets entering or
+leaving one port to another port, which is usually different from the
+original destinations of the packets being mirrored. Tap-as-a-Service
+(TaaS) is an extension to the OpenStack networking service (neutron).
+It provides remote port mirroring capability for tenant virtual networks.
+This service has been primarily designed to help tenants
+(or the cloud administrator) debug complex virtual networks and gain
+visibility into their VMs, by monitoring the network traffic associated
+with them. TaaS honors tenant boundaries and its mirror sessions are
+capable of spanning across multiple compute and network nodes. It serves
+as an essential infrastructure component that can be utilized for
+supplying data to a variety of network analytics and security
+applications.
 
 Load balancing
 --------------

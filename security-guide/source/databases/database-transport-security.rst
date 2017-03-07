@@ -74,7 +74,8 @@ In ``my.cnf``:
     ssl-key = /path/to/ssl/server-key.pem
 
 Optionally, if you wish to restrict the set of SSL ciphers used for the
-encrypted connection. See http://www.openssl.org/docs/apps/ciphers.html
+encrypted connection. See `ciphers
+<https://www.openssl.org/docs/manmaster/man1/ciphers.html>`_
 for a list of ciphers and the syntax for specifying the cipher string:
 
 .. code:: ini
@@ -92,7 +93,8 @@ configuration file, ``postgresql.conf``.
     ssl = true
 
 Optionally, if you wish to restrict the set of SSL ciphers used for the
-encrypted connection. See http://www.openssl.org/docs/apps/ciphers.html
+encrypted connection. See `ciphers
+<https://www.openssl.org/docs/manmaster/man1/ciphers.html>`_
 for a list of ciphers and the syntax for specifying the cipher string:
 
 .. code:: ini

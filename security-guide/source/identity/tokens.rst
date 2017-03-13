@@ -2,7 +2,7 @@
 Tokens
 ======
 
-Once a user is authenticated a token is generated for authorization and
+Once a user is authenticated, a token is generated for authorization and
 access to an OpenStack environment. A token can have a variable life
 span; however the default value for expiry is one hour. The recommended
 expiry value should be set to a lower value that allows enough time for
@@ -41,3 +41,48 @@ to revoke a token, to list revoked tokens and individual OpenStack
 services that cache tokens to query for the revoked tokens and remove
 them from their cache and append the same to their list of cached
 revoked tokens.
+
+There are four supported token types: UUID, PKI, PKIZ and fernet.
+
+UUID tokens
+~~~~~~~~~~~
+UUID tokens are currently the default token provider. They are persistent
+tokens. UUID tokens are 32 bytes in length and must be persisted in the
+back-end. They are stored in the Identity service back-end along with the
+metadata for authentication. Clients must pass their UUID token to the
+Identity service in order to validate it.
+
+PKI and PKIZ tokens
+~~~~~~~~~~~~~~~~~~~
+PKI and PKIZ tokens are deprecated and not supported in Ocata. They are
+nearly identical and share the same payload. They are signed documents
+that contain the authentication content, as well as the service catalog.
+Depending on the size of the OpenStack deployment, PKI tokens can be very
+long. PKI and PKIZ tokens typically exceed 1600 bytes length. The length
+of a PKI or PKIZ token is dependent on the size of the deployment. Bigger
+service catalogs will result in longer token lengths. The Identity service
+uses public and private key pairs and certificates in order to create and
+validate these tokens. The difference between the two is PKIZ tokens are
+compressed to help mitigate the size issues of PKI.
+
+Fernet tokens
+~~~~~~~~~~~~~
+Fernet is a secure messaging format explicitly designed for use in API tokens.
+They are non-persistent (no need to be persisted to a database), lightweight
+(fall in range of 180 to 240 bytes) and reduce the operational overhead
+required to run a cloud. Authentication and authorization metadata is neatly
+bundled into a message packed payload, which is then encrypted and signed in
+as a fernet token.
+
+Unlike UUID, PKI and PKIZ tokens, fernet tokens do not require persistence.
+The keystone token database no longer suffers bloat as a side effect of
+authentication. Pruning expired tokens from the token database is no longer
+required when using fernet tokens. Since fernet tokens are non-persistent,
+they do not have to be replicated. As long as each keystone node shares the
+same repository, fernet tokens can be created and validated instantly across
+nodes.
+
+Compared to PKI and PKIZ tokens, fernet tokens are smaller in size; usually
+kept under a 250 byte limit. For PKI and PKIZ tokens, bigger service catalogs
+will result in longer token lengths. This pattern does not exist with fernet
+tokens because the contents of the encrypted payload is kept to minimum.

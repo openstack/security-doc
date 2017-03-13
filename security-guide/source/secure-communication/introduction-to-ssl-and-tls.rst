@@ -2,11 +2,11 @@
 Introduction to TLS and SSL
 ===========================
 
-There are a number of situations where there is a security
-requirement to assure the confidentiality or integrity of
-network traffic in an OpenStack deployment. This is generally
-achieved using cryptographic measures, such as the Transport
-Layer Security (TLS) protocol.
+There are situations where there is a security requirement to
+assure the confidentiality or integrity of network traffic
+in an OpenStack deployment. This is generally achieved using
+cryptographic measures, such as the Transport Layer Security (TLS)
+protocol.
 
 In a typical deployment all traffic transmitted over public
 networks is secured, but security best practice dictates that
@@ -31,24 +31,70 @@ with obsolete browsers or libraries is required.
 Public Key Infrastructure (PKI) is the framework for securing
 communication in a network. It consists of a set of systems and
 processes to ensure traffic can be sent securely while validating
-the identities of the parties. The core components of PKI are:
+the identity of the parties. The PKI profile described here
+is the Internet Engineering Task Force (:term:`IETF`) Public Key
+Infrastructure (PKIX) profile developed by the PKIX working group.
+The core components of PKI are:
+
+Digital Certificates
+    Signed public key certificates are data structures that have
+    verifiable data of an entity, its public key along with some
+    other attributes. These certificates are issued by a
+    Certificate Authority (CA). As the certificates are signed by
+    a CA that is trusted, once verified, the public key associated
+    with the entity is guaranteed to be associated with the said entity.
+    The most common standard used to define these certificates is the
+    :term:`X.509` standard. The :term:`X.509` v3 which is the
+    current standard is described in detail in `RFC5280 <http://tools.ietf.org/html/5280>`__.
+
+    Certificates are issued by CAs as a mechanism to prove the identity
+    of online entities. The CA digitally signs the certificate by
+    creating a message digest from the certificate and encrypting the
+    digest with its private key.
 
 End entity
-    User, process, or system that is the subject of a certificate.
+    User, process, or system that is the subject of a certificate. The
+    end entity sends its certificate request to a Registration Authority
+    (RA) for approval. If approved, the RA forwards the request to a
+    Certification Authority (CA). The Certification Authority verifies the
+    request and if the information is correct, a certificate is generated
+    and signed. This signed certificate is then send to a Certificate
+    Repository.
+
+Relying party
+    The endpoint that receives the digitally signed certificate that is
+    verifiable with reference to the public key listed on the certificate.
+
+    The relying party should be in a position to verify the certificate up
+    the chain, ensure that it is not present in the :term:`CRL` and also
+    must be able to verify the expiry date on the certificate.
 
 Certification Authority (:term:`CA <certificate authority (CA)>`)
-    Defines certificate policies, management, and issuance of certificates.
+    CA is a trusted entity, both by the end party and the party that relies
+    upon the certificate for certification policies, management handling,
+    and certificate issuance.
 
 Registration Authority (RA)
-    An optional system to which a CA delegates certain management functions.
+    An optional system to which a CA delegates certain management functions,
+    this includes functions such as, authentication of end entities before they
+    are issued a certificate by a CA.
 
-Repository
+Certificate Revocation Lists (CRL)
+   A Certificate Revocation List (CRL) is a list of certificate serial numbers
+   that have been revoked. End entities presenting these certificates should
+   not be trusted in a PKI model. Revocation can happen because of several
+   reasons for example, key compromise, CA compromise. For more details refer
+   to `RFC5280 <https://tools.ietf.org/html/rfc5280>`__.
+
+CRL issuer
+    An optional system to which a CA delegates the publication of certificate
+    revocation lists.
+
+Certificate Repository
     Where the end entity certificates and certificate revocation lists are
     stored and looked up - sometimes referred to as the *certificate
     bundle*.
 
-Relying party
-    The endpoint that is trusting that the CA is valid.
 
 PKI builds the framework on which to provide encryption algorithms,
 cipher modes, and protocols for securing data and authentication. We
@@ -64,7 +110,7 @@ Certification authorities
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many organizations have an established Public Key Infrastructure with
-their own certification authority (CA), certificate policies, and
+their own Certification Authority (CA), certificate policies, and
 management for which they should use to issue certificates for internal
 OpenStack users or services. Organizations in which the public security
 domain is Internet facing will additionally need certificates signed by a
@@ -87,10 +133,10 @@ Certificates used to support TLS on internet facing cloud endpoints
 installed anything other than standard operating system provided
 certificate bundles) should be provisioned using Certificate
 Authorities that are installed in the operating system certificate
-bundle. Typical well known vendors include Verisign and Thawte but many
-others exist.
+bundle. Typical well known vendors include Let's Encrypt, Verisign
+and Thawte but many others exist.
 
-There are many management, policy, and technical challenges around
+There are management, policy, and technical challenges around
 creating and signing certificates. This is an area where cloud
 architects or operators may wish to seek the advice of industry leaders
 and vendors in addition to the guidance recommended here.
@@ -98,8 +144,8 @@ and vendors in addition to the guidance recommended here.
 TLS libraries
 ~~~~~~~~~~~~~
 
-Various components, services, and applications within the OpenStack
-ecosystem or dependencies of OpenStack are implemented and can be
+Components, services, and applications within the OpenStack
+ecosystem or dependencies of OpenStack are implemented or can be
 configured to use TLS libraries. The TLS and HTTP services within
 OpenStack are typically implemented using OpenSSL which has a module
 that has been validated for FIPS 140-2. However, keep in mind that each
@@ -111,7 +157,7 @@ Cryptographic algorithms, cipher modes, and protocols
 
 We recommend that only TLS 1.2 is used. Other versions such as
 TLS 1.0 and 1.1 are vulnerable to multiple attacks. TLS 1.0 should be
-disabled completely in your environment. TLS 1.1 may be used for broad
+disabled in your environment. TLS 1.1 may be used for broad
 client compatibility, however exercise caution when enabling this
 protocol. Only enable TLS version 1.1 if there is a mandatory compatibility
 requirement and you are aware of the risks involved. All versions of SSL,
@@ -128,7 +174,7 @@ reasonable cipher selection.
 However, as this book does not intend to be a thorough reference on
 cryptography we do not wish to be prescriptive about what specific
 algorithms or cipher modes you should enable or disable in your
-OpenStack services. However, there are some authoritative references
+OpenStack services. There are some authoritative references
 we would like to recommend for further information:
 
 * `National Security Agency, Suite B Cryptography <http://www.nsa.gov/ia/programs/suiteb_cryptography/index.shtml>`_

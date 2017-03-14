@@ -36,8 +36,8 @@ other than cinder.
 Check-Block-02: Are strict permissions set for configuration files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Similar to the previous check, it is recommended to set strict access
-permissions for such configuration files.
+Similar to the previous check, we recommend setting strict access permissions
+for such configuration files.
 
 Run the following commands:
 
@@ -75,9 +75,9 @@ Check-Block-03: Is keystone used for authentication?
 OpenStack supports various authentication strategies like noauth, keystone etc.
 If the 'noauth' strategy is used then the users could interact with OpenStack
 services without any authentication. This could be a potential risk since an
-attacker might gain unauthorized access to the OpenStack components. Thus it is
-strongly recommended that all services must be authenticated with keystone
-using their service accounts.
+attacker might gain unauthorized access to the OpenStack components. Thus we
+strongly recommend that all services must be authenticated with keystone using
+their service accounts.
 
 **Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
 in ``/etc/cinder/cinder.conf`` is set to ``keystone``.
@@ -130,9 +130,8 @@ section in ``/etc/cinder/cinder.conf`` is set to ``True``.
 Check-Block-06: Does cinder communicate with glance over TLS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Similar to previous check (:ref:`check_block_05`), it is recommended
-that all components communicate with each other using a secured
-communication protocol.
+Similar to previous check (:ref:`check_block_05`), we recommend that all
+components communicate with each other using a secured communication protocol.
 
 **Pass:** If value of parameter ``glance_api_insecure`` under ``[DEFAULT]``
 section in ``/etc/cinder/cinder.conf`` is set to ``False`` and value of
@@ -199,3 +198,62 @@ section in ``/etc/cinder/cinder.conf`` is set to ``114688``.
 ``114688`` or if value of parameter ``max_request_body_size`` under
 ``[oslo_middleware]`` section in ``/etc/cinder/cinder.conf`` is not set to
 ``114688``.
+
+.. _check_block_09:
+
+Check-Block-09: Is the volume encryption feature enabled?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Unencrypted volume data makes volume-hosting platforms especially high-value
+targets for attackers, as it allows the attacker to read the data for many
+different VMs. In addition, the physical storage medium could be stolen,
+remounted, and accessed from a different machine. Encrypting volume data
+mitigates these risks and provides defense-in-depth to volume-hosting
+platforms. Block Storage (cinder) is able to encrypt volume data before it is
+written to disk, and we recommend that the volume encryption feature is
+enabled. See `Volume Encryption
+<https://docs.openstack.org/ocata/config-reference/block-storage/volume-encryption.html>`__
+section of Openstack Configuration Reference documentation for instructions.
+
+**Pass:** If value of parameter ``api_class`` under ``[KEY_MANAGER]`` section
+in ``/etc/cinder/cinder.conf`` is set and if the instructions in the
+documentation referenced above are properly followed.
+
+To verify further, perform these steps after completing the volume encryption
+setup and creating the volume-type for LUKS as described in the documentation
+referenced above.
+
+#. Create a VM:
+
+   .. code-block:: console
+
+      $ openstack server create --image cirros-0.3.1-x86_64-disk --flavor m1.tiny TESTVM
+
+#. Create an encrypted volume and attach it to your VM:
+
+   .. code-block:: console
+
+      $ openstack volume create --size 1 --type LUKS 'encrypted volume'
+      $ openstack volume list
+      $ openstack server add volume --device /dev/vdb TESTVM 'encrypted volume'
+
+#. On the VM, send some text to the newly attached volume and synchronize it:
+
+   .. code-block:: console
+
+      # echo "Hello, world (encrypted /dev/vdb)" >> /dev/vdb
+      # sync && sleep 2
+
+#. On the system hosting cinder volume services, synchronize to flush the
+   I/O cache then test to see if your string can be found:
+
+   .. code-block:: console
+
+      # sync && sleep 2
+      # strings /dev/stack-volumes/volume-* | grep "Hello"
+
+The search should not return the string written to the encrypted volume.
+
+**Fail:** If value of parameter ``api_class`` under ``[KEY_MANAGER]`` section
+in ``/etc/cinder/cinder.conf`` is not set or if the instructions in the
+documentation referenced above are not properly followed.

@@ -1,5 +1,5 @@
 ===============
-Security Review
+Security review
 ===============
 
 The goal of security review in the OpenStack community is to identify
@@ -23,7 +23,7 @@ A common reason to perform a security review on an OpenStack project is to
 enable that project to achieve the *vulnerability:managed* governance tag. The
 OpenStack Vulnerability Management Team (VMT) applies the
 `vulnerability:managed tag
-<https://governance.openstack.org/reference/tags/vulnerability_managed.html>`__
+<https://governance.openstack.org/reference/tags/vulnerability_managed.html>`_
 to projects where the report reception and disclosure of vulnerabilities is
 managed by the VMT. One of the requirements for gaining the tag is that
 some form of security review, audit or threat analysis has been performed on
@@ -34,7 +34,7 @@ architectural review of the best practice deployment for a project is an
 appropriate form of security review, balancing the need for review with the
 resource requirements for a project of the scale of OpenStack. Security
 architecture review is also often referred to as *threat analysis*, *security
-analysis* or *threat modeling*, in the context of OpenStack security review
+analysis* or *threat modeling*. In the context of OpenStack security review,
 these terms are synonymous for an architectural security review which may
 identify defects in the design of a project or reference architecture, and may
 lead to further investigative work to verify parts of the implementation.

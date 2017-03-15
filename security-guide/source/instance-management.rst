@@ -10,7 +10,7 @@ that bring improved information assurance for cloud tenants.
 
 Deployers or users of OpenStack with strong security requirements
 may want to consider deploying these technologies. Not all are
-applicable in every situation, indeed in some cases technologies may
+applicable in every situation. In some cases, technologies may
 be ruled out for use in a cloud because of prescriptive business
 requirements. Similarly some technologies inspect instance data such
 as run state which may be undesirable to the users of the system.

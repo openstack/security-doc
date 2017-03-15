@@ -2,20 +2,20 @@
 Dashboard
 =========
 
-Horizon is the OpenStack dashboard that provides users a self-service portal to
-provision their own resources within the limits set by administrators. These
-include provisioning users, defining instance flavors, uploading VM images,
-managing networks, setting up security groups, starting instances, and
-accessing the instances through a console.
+The Dashboard (horizon) is the OpenStack dashboard that provides users a
+self-service portal to provision their own resources within the limits set
+by administrators. These include provisioning users, defining instance flavors,
+uploading virtual machine (VM) images, managing networks, setting up security
+groups, starting instances, and accessing the instances through a console.
 
-The dashboard is based on the Django web framework, therefore secure deployment
-practices for Django apply directly to horizon. This guide provides a popular
+The Dashboard is based on the Django web framework, ensuring secure deployment
+practices for Django apply directly to horizon. This guide provides a
 set of Django security recommendations. Further information can be found by
-reading the `Django documentation <https://docs.djangoproject.com/>`__.
+reading the `Django documentation <https://docs.djangoproject.com/>`_.
 
-The dashboard ships with reasonable default security settings, and has good
+The Dashboard ships with default security settings, and has
 `deployment and configuration documentation
-<https://docs.openstack.org/developer/horizon/topics/deployment.html>`__.
+<https://docs.openstack.org/developer/horizon/topics/deployment.html>`_.
 
 .. toctree::
    :maxdepth: 2

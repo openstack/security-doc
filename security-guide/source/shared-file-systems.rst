@@ -4,10 +4,10 @@ Shared File Systems
 
 The Shared File Systems service (manila) provides a set of services for
 management of shared file systems in a multi-tenant cloud environment. It is
-done similar to how OpenStack provides block-based storage management through
-the OpenStack Block Storage service project. With the Shared File Systems
-service, you can create a shared file system and manage its properties such as
-visibility, accessibility and usage quotas.
+similar to how OpenStack provides block-based storage management through
+the OpenStack Block Storage service (cinder) project. With the Shared File
+Systems service, you can create a shared file system and manage its
+properties, such as visibility, accessibility and usage quotas.
 
 The Shared File Systems service works with various storage providers that use
 the following shared file system protocols:

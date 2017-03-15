@@ -3,9 +3,9 @@ Tenant data privacy
 ===================
 
 OpenStack is designed to support multitenancy and those tenants will
-most probably have different data requirements. As a cloud builder and
-operator you need to ensure your OpenStack environment can address
-various data privacy concerns and regulations. In this chapter we will
+most probably have different data requirements. As a cloud builder or operator,
+you must ensure your OpenStack environment addresses data privacy concerns
+and regulations. In this chapter we will
 address data residency and disposal as it pertains to OpenStack
 implementations.
 

@@ -2,8 +2,8 @@
 Secure communication
 ====================
 
-Inter-device communication is an issue still plaguing security
-researchers. Between large project errors such as Heartbleed or more
+Inter-device communication is a serious security concern.
+Between large project errors, such as Heartbleed, or more
 advanced attacks such as BEAST and CRIME, secure methods of
 communication over a network are becoming more important. It should
 be remembered, however that encryption should be applied as one part

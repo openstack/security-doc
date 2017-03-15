@@ -18,7 +18,7 @@ decentralized pool of queue servers. ZeroMQ provides direct peer-to-peer
 communication through TCP sockets.
 
 Message queues effectively facilitate command and control functions
-across OpenStack deployments. Once access to the queue is permitted no
+across OpenStack deployments. Once access to the queue is permitted, no
 further authorization checks are performed. Services accessible through
 the queue do validate the contexts and tokens within the actual message
 payload. However, you must note the expiration date of the token because

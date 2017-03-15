@@ -9,15 +9,15 @@ Check-Compute-01: Is user/group ownership of config files set to root/nova?
 
 Configuration files contain critical parameters and information required
 for smooth functioning of the component. If an unprivileged user, either
-intentionally or accidentally modifies or deletes any of the parameters or
+intentionally or accidentally, modifies or deletes any of the parameters or
 the file itself then it would cause severe availability issues causing a
-denial of service to the other end users. Thus user ownership of such critical
-configuration files must be set to root and group ownership must be set to
-nova.
+denial of service to the other end users. User ownership of such critical
+configuration files must be set to ``root`` and group ownership must be set to
+``nova``.
 
 Run the following commands:
 
-.. code:: console
+.. code-block:: console
 
     $ stat -L -c "%U %G" /etc/nova/nova.conf | egrep "root nova"
     $ stat -L -c "%U %G" /etc/nova/api-paste.ini | egrep "root nova"
@@ -25,11 +25,12 @@ Run the following commands:
     $ stat -L -c "%U %G" /etc/nova/rootwrap.conf | egrep "root nova"
 
 **Pass:** If user and group ownership of all these config files is set
-to root and nova respectively. The above commands show output of root nova.
+to ``root`` and ``nova`` respectively. The above commands show output of
+``root nova``.
 
-**Fail:** If the above commands does not return any output as the user
-and group ownership might have set to any user other than root or any group
-other than nova.
+**Fail:** If the above commands do not return any output, the user
+and group ownership might have set to any user other than ``root`` or any group
+other than ``nova``.
 
 Recommended in: :doc:`../compute`.
 
@@ -38,12 +39,12 @@ Recommended in: :doc:`../compute`.
 Check-Compute-02: Are strict permissions set for configuration files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Similar to the previous check, it is recommended to set strict access
+Similar to the previous check, we recommend to set strict access
 permissions for such configuration files.
 
 Run the following commands:
 
-.. code:: console
+.. code-block:: console
 
     $ stat -L -c "%a" /etc/nova/nova.conf
     $ stat -L -c "%a" /etc/nova/api-paste.ini
@@ -51,13 +52,17 @@ Run the following commands:
     $ stat -L -c "%a" /etc/nova/rootwrap.conf
 
 **Pass:** If permissions are set to 640 or stricter. The permissions of 640
-translates into owner r/w, group r, and no rights to others i.e. "u=rw,g=r,o=".
-Note that with :ref:`check_compute_01` and permissions set to 640, root has
-read/write access and nova has read access to these configuration files. The
-access rights can also be validated using the following command. This command
-will only be available on your system if it supports ACLs.
+translates into owner r/w, group r, and no rights to others. For example,
+"u=rw,g=r,o=".
 
-.. code:: console
+.. note::
+
+   If :ref:`check_compute_01` and permissions set to 640, root has
+   read/write access and nova has read access to these configuration files. The
+   access rights can also be validated using the following command. This command
+   will only be available on your system if it supports ACLs.
+
+.. code-block:: console
 
     $ getfacl --tabular -a /etc/nova/nova.conf
     getfacl: Removing leading '/' from absolute path names
@@ -76,11 +81,11 @@ Recommended in: :doc:`../compute`.
 Check-Compute-03: Is keystone used for authentication?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenStack supports various authentication strategies like noauth, keystone etc.
-If the 'noauth' strategy is used then the users could interact with OpenStack
+OpenStack supports various authentication strategies like noauth, and keystone.
+If the noauth strategy is used, then the users could interact with OpenStack
 services without any authentication. This could be a potential risk since an
-attacker might gain unauthorized access to the OpenStack components. Thus it is
-strongly recommended that all services must be authenticated with keystone
+attacker might gain unauthorized access to the OpenStack components. We
+strongly recommend that all services must be authenticated with keystone
 using their service accounts.
 
 **Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
@@ -95,9 +100,9 @@ Check-Compute-04: Is secure protocol used for authentication?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack components communicate with each other using various protocols and
-the communication might involve sensitive / confidential data. An attacker may
+the communication might involve sensitive or confidential data. An attacker may
 try to eavesdrop on the channel in order to get access to sensitive
-information. Thus all the components must communicate with each other using a
+information. All the components must communicate with each other using a
 secured communication protocol.
 
 **Pass:** If value of parameter ``auth_uri`` under
@@ -118,9 +123,9 @@ Check-Compute-05: Does Nova communicate with Glance securely?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenStack components communicate with each other using various protocols and
-the communication might involve sensitive / confidential data. An attacker may
+the communication might involve sensitive or confidential data. An attacker may
 try to eavesdrop on the channel in order to get access to sensitive
-information. Thus all the components must communicate with each other using a
+information. All the components must communicate with each other using a
 secured communication protocol.
 
 **Pass:** If value of parameter ``api_insecure`` under ``[glance]``

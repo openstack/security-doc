@@ -23,5 +23,5 @@ Author: <author name(s) and company(s)>
 This OSSN : <link to OSSN on wiki>
 Original LaunchPad Bug : <link to launchpad bug for affected project/service>
 Mailing List : [Security] tag on openstack-dev@lists.openstack.org
-OpenStack Security Group : https://launchpad.net/~openstack-ossg
+OpenStack Security Project : https://launchpad.net/~openstack-ossg
 CVE: <CVE number if one was filed>

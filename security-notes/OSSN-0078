@@ -1,0 +1,32 @@
+copy_from in Image Service API v1 allows network port scan
+----------------------------------------------------------
+
+### Summary ###
+The `copy_from` feature in Image Service API v1 supplied by Glance can
+allow an attacker to perform masked network port scans.
+
+### Affected Services / Software ###
+Version 1 of the Glance Image Service (deprecated in Newton).
+
+### Discussion ###
+In Version 1 of the Glance Image Service API it is possible to create
+images with a URL such as `http://localhost:22`. This could then allow
+an attacker to enumerate internal network details while appearing
+masked, since the scan would appear to originate from the Glance image
+service.
+
+### Recommended Actions ###
+Version 1 of the Glance Image Service API was deprecated in the Newton
+cycle, so operators should upgrade to a later version that will allow
+use of Version 2.
+
+Existing deployments can limit policy on `copy_from` by restricting use
+to `admin` within `policy.json` as follows:
+
+    "copy_from": "role:admin"
+
+### Contacts / References ###
+Author: Luke Hinds, Red Hat
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0078
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1606495
+OpenStack Security Project : https://launchpad.net/~openstack-ossg

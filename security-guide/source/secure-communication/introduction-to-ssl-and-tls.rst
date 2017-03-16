@@ -45,8 +45,7 @@ Digital Certificates
     with the entity is guaranteed to be associated with the said entity.
     The most common standard used to define these certificates is the
     :term:`X.509` standard. The :term:`X.509` v3 which is the
-    current standard is described in detail in `RFC5280 <http://tools.ietf.org/html/5280>`__.
-
+    current standard is described in detail in `RFC5280 <http://tools.ietf.org/html/5280>`_.
     Certificates are issued by CAs as a mechanism to prove the identity
     of online entities. The CA digitally signs the certificate by
     creating a message digest from the certificate and encrypting the
@@ -64,7 +63,6 @@ End entity
 Relying party
     The endpoint that receives the digitally signed certificate that is
     verifiable with reference to the public key listed on the certificate.
-
     The relying party should be in a position to verify the certificate up
     the chain, ensure that it is not present in the :term:`CRL` and also
     must be able to verify the expiry date on the certificate.
@@ -83,8 +81,7 @@ Certificate Revocation Lists (CRL)
    A Certificate Revocation List (CRL) is a list of certificate serial numbers
    that have been revoked. End entities presenting these certificates should
    not be trusted in a PKI model. Revocation can happen because of several
-   reasons for example, key compromise, CA compromise. For more details refer
-   to `RFC5280 <https://tools.ietf.org/html/rfc5280>`__.
+   reasons for example, key compromise, CA compromise.
 
 CRL issuer
     An optional system to which a CA delegates the publication of certificate
@@ -94,7 +91,6 @@ Certificate Repository
     Where the end entity certificates and certificate revocation lists are
     stored and looked up - sometimes referred to as the *certificate
     bundle*.
-
 
 PKI builds the framework on which to provide encryption algorithms,
 cipher modes, and protocols for securing data and authentication. We

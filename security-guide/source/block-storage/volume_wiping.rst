@@ -7,7 +7,7 @@ to set the ``lvm_type`` to ``thin``, and then use the ``volume_clear``
 parameter. Alternatively, if the volume encryption feature is used, then
 volume wiping is not necessary if the volume encryption key is deleted.
 See the OpenStack Configuration Reference doc in the `Volume Encryption
-<https://docs.openstack.org/newton/config-reference/block-storage/volume-encryption.html>`__
+<https://docs.openstack.org/ocata/config-reference/block-storage/volume-encryption.html>`__
 section for set up details and also the `Castellan usage
 <https://docs.openstack.org/developer/castellan/usage.html>`__ document
 for key deletion.
@@ -25,7 +25,7 @@ patterns.
 
 For more information about the ``lvm_type`` parameter, see
 the `LVM Block Storage section
-<https://docs.openstack.org/newton/config-reference/block-storage/drivers/lvm-volume-driver.html>`__
+<https://docs.openstack.org/ocata/config-reference/block-storage/drivers/lvm-volume-driver.html>`__
 
 of OpenStack Configuration Reference and
 the `Oversubscription in thin provisioning
@@ -34,5 +34,5 @@ of OpenStack Administrator Guide.
 
 For more information about the ``volume_clear`` parameter, see the
 `Block Storage sample configuration files
-<https://docs.openstack.org/newton/config-reference/block-storage/samples/index.html>`__
+<https://docs.openstack.org/ocata/config-reference/block-storage/samples/index.html>`__
 of OpenStack Configuration Reference.

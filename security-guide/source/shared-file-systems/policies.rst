@@ -46,4 +46,4 @@ management commands are used.
     service is running. Manual modification of the policy can have unexpected
     side effects and is not encouraged. For details, see
     `The policy.json file
-    <https://docs.openstack.org/newton/config-reference/policy-json-file.html>`_.
+    <https://docs.openstack.org/ocata/config-reference/policy-json-file.html>`_.

@@ -86,7 +86,7 @@ non-root (UID 0) service account. One recommendation is the user name "swift"
 with the primary group "swift." Object Storage services include, for example,
 'proxy-server', 'container-server', 'account-server'. Detailed steps for setup
 and configuration can be found in the `Add Object Storage chapter
-<https://docs.openstack.org/project-install-guide/object-storage/newton/>`__
+<https://docs.openstack.org/project-install-guide/object-storage/ocata/>`__
 of the Installation Guide in the `OpenStack Documentation index
 <https://docs.openstack.org>`__. (The link defaults to the Ubuntu version.)
 

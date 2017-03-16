@@ -53,7 +53,7 @@ basis. As of the Kilo release, the following features are supported:
 
    -  Volume encryption is supported by back-end key storage for
       enhanced security (for example, a Hardware Security Module (HSM)
-      or a KMIP server can be used as a Barbican back-end secret store)
+      or a KMIP server can be used as a barbican back-end secret store)
 
 Ephemeral disk encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,9 +119,9 @@ risk of users’ data being read if an unauthorized party were to gain
 physical access to a disk.
 
 Encryption of data at rest is implemented by middleware that may be included in
-the proxy server WSGI pipeline. The feature is internal to a Swift cluster and
+the proxy server WSGI pipeline. The feature is internal to a swift cluster and
 not exposed through the API. Clients are unaware that data is encrypted by
-this feature internally to the Swift service; internally encrypted data
+this feature internally to the swift service; internally encrypted data
 should never be returned to clients through the swift API.
 
 The following data are encrypted while at rest in swift:

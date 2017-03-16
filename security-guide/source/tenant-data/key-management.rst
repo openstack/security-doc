@@ -29,7 +29,7 @@ called PyKMIP.
 Bibliography:
 ~~~~~~~~~~~~~
 
--  OpenStack.org, Welcome to Barbican's Developer Documentation!. 2014.
+-  OpenStack.org, Welcome to barbican's Developer Documentation!. 2014.
    `Barbican developer
    documentation <https://docs.openstack.org/developer/barbican>`__
 

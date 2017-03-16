@@ -48,9 +48,9 @@ and volume requests.
 
 The ``FilterScheduler`` is the default scheduler for OpenStack
 Compute, although other schedulers exist (see the section `Scheduling
-<https://docs.openstack.org/newton/config-reference/compute/scheduler.html>`_
+<https://docs.openstack.org/ocata/config-reference/compute/scheduler.html>`_
 in the `OpenStack Configuration Reference
-<https://docs.openstack.org/newton/config-reference/config-overview.html>`_
+<https://docs.openstack.org/ocata/config-reference/config-overview.html>`_
 ). This works in collaboration with 'filter hints' to decide where an
 instance should be started. This process of host selection allows
 administrators to fulfill many different security and compliance

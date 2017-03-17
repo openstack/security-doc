@@ -1803,12 +1803,6 @@ I
       design summit took place in Hong Kong and Ice House is a
       street in that city.
 
-   IETF
-
-     Internet Engineering Task Force (IETF) is an open standards
-     organization that develops Internet standards, particularly
-     the standards pertaining to TCP/IP.
-
    ID number
 
       Unique numeric ID associated with each user in Identity,
@@ -1841,6 +1835,12 @@ I
 
       The API used to access the OpenStack Identity service provided
       through keystone.
+
+   IETF
+
+     Internet Engineering Task Force (IETF) is an open standards
+     organization that develops Internet standards, particularly the
+     standards pertaining to TCP/IP.
 
    image
 
@@ -4099,11 +4099,12 @@ X
 
    X.509
 
-      X.509 is the most widely used standard for defining digital certificates.
-      It is a data structure that contains the subject (entity) identifiable
-      information such as its name along with its public key. The certificate
-      can contain a few other attributes as well depending upon the version.
-      The most recent and standard version of X.509 is v3.
+      X.509 is the most widely used standard for defining digital
+      certificates. It is a data structure that contains the subject
+      (entity) identifiable information such as its name along with
+      its public key. The certificate can contain a few other
+      attributes as well depending upon the version. The most recent
+      and standard version of X.509 is v3.
 
    Xen
 

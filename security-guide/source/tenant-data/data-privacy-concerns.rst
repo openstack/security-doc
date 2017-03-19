@@ -110,7 +110,7 @@ the encryption key. The end user can select this feature while creating a
 volume, but note that an admin must perform a one-time set up of the volume
 encryption feature first. Instructions for this setup are in the block
 storage section of the `Configuration Reference
-<https://docs.openstack.org/newton/config-reference/block-storage/volume-encryption.html>`__
+<https://docs.openstack.org/ocata/config-reference/block-storage/volume-encryption.html>`__
 , under volume encryption.
 
 If the OpenStack volume encryption feature is not used, then other approaches

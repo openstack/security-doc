@@ -20,7 +20,7 @@ information such as the last time the file was modified and when it was
 created.
 
 The ``/var/lib/nova`` directory is used to hold details about the instances
-on a given Compute host. This directory should be considered sensitive as well,
+on a given compute host. This directory should be considered sensitive as well,
 with strictly enforced file permissions. Additionally, it should be backed up
 regularly as it contains information and metadata for the instances associated
 with that host.
@@ -28,12 +28,12 @@ with that host.
 If your deployment does not require full virtual machine backups, we recommend
 excluding the ``/var/lib/nova/instances`` directory as it will be as large
 as the combined space of each vm running on that node. If your deployment does
-require full vm backups, you will need to ensure this directory is backed up
+require full VM backups, you will need to ensure this directory is backed up
 successfully.
 
-Monitoring is a critical component of IT infrastructure, and we recommend the
+Monitoring is a critical component of IT infrastructure, we recommend the
 `Compute logfiles
-<https://docs.openstack.org/ocata/config-reference/compute/logs.html>`__
+<https://docs.openstack.org/newton/config-reference/compute/logs.html>`_
 be monitored and analyzed so that meaningful alerts can be created.
 
 
@@ -42,18 +42,18 @@ OpenStack vulnerability management team
 
 We recommend keeping up to date on security issues and advisories as they are
 published. The OpenStack Security Portal (`https://security.openstack.org
-<https://security.openstack.org>`__) is the central portal where advisories,
+<https://security.openstack.org>`_) is the central portal where advisories,
 notices, meetings, and processes can be coordinated. Additionally, the
 OpenStack Vulnerability Management Team (VMT) portal
 (`https://security.openstack.org/#openstack-vulnerability-management-team
-<https://security.openstack.org/#openstack-vulnerability-management-team>`__)
+<https://security.openstack.org/#openstack-vulnerability-management-team>`_)
 coordinates remediation within the OpenStack project, as well as the process of
 investigating reported bugs which are responsibly disclosed (privately) to the
 VMT, by marking the bug as 'This bug is a security vulnerability'. Further
 detail is outlined in the VMT process page
 (`https://security.openstack.org/vmt-process.html#process
-<https://security.openstack.org/vmt-process.html#process>`__) and results in an
-OpenStack Security Advisory or OSSA. This OSSA outlines the issue and the fix,
+<https://security.openstack.org/vmt-process.html#process>`_) and results in an
+OpenStack Security Advisory (OSSA). This OSSA outlines the issue and the fix,
 as well as linking to both the original bug, and the location where the where
 the patch is hosted.
 
@@ -63,12 +63,12 @@ OpenStack security notes
 
 Reported security bugs that are found to be the result of a misconfiguration,
 or are not strictly part of OpenStack are drafted into OpenStack Security Notes
-or OSSNs. These include configuration issues such as ensuring Identity provider
+(OSSNs). These include configuration issues such as ensuring Identity provider
 mappings as well as non-OpenStack but critical issues such as the Bashbug/Ghost
 or Venom vulnerabilities that affect the platform OpenStack utilizes. The
 current set of OSSNs is in the Security Note wiki
 (`https://wiki.openstack.org/wiki/Security_Notes
-<https://wiki.openstack.org/wiki/Security_Notes>`__).
+<https://wiki.openstack.org/wiki/Security_Notes>`_).
 
 
 OpenStack-dev mailinglist
@@ -80,11 +80,11 @@ subscribing to this list as well as mail filtering rules that ensure OSSNs,
 OSSAs, and other important advisories are not missed. The openstack-dev
 mailinglist is managed through
 `http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev
-<http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev>`__.
+<http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev>`_.
 The openstack-dev list has a high traffic rate, and filtering is discussed in
 the thread
 `http://lists.openstack.org/pipermail/openstack-dev/2013-November/019233.html
-<http://lists.openstack.org/pipermail/openstack-dev/2013-November/019233.html>`__.
+<http://lists.openstack.org/pipermail/openstack-dev/2013-November/019233.html>`_.
 
 
 Hypervisor mailinglists
@@ -96,8 +96,8 @@ hypervisor(s) you have chosen. Several common hypervisor security lists are
 below:
 
 Xen:
-    `http://xenbits.xen.org/xsa/ <http://xenbits.xen.org/xsa/>`__
+    `http://xenbits.xen.org/xsa/ <http://xenbits.xen.org/xsa/>`_
 VMWare:
-    `http://blogs.vmware.com/security/ <http://blogs.vmware.com/security/>`__
+    `http://blogs.vmware.com/security/ <http://blogs.vmware.com/security/>`_
 Others (KVM, and more):
-    `http://seclists.org/oss-sec <http://seclists.org/oss-sec>`__
+    `http://seclists.org/oss-sec <http://seclists.org/oss-sec>`_

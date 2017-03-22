@@ -21,5 +21,4 @@ file, and a mandatory access control framework should be implemented.
    compute/hardening-deployments.rst
    compute/vulnerability-awareness.rst
    compute/how-to-select-virtual-consoles.rst
-   compute/case-studies.rst
    compute/checklist.rst

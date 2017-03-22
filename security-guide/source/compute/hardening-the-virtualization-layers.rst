@@ -24,14 +24,14 @@ video cards have this capability. However, an instance should not be given
 arbitrary physical memory access because this would give it full view of both
 the host system and other instances running on the same node. Hardware vendors
 use an input/output memory management unit (IOMMU) to manage DMA access in
-these situations. Therefore, cloud architects should ensure that the hypervisor
-is configured to utilize this hardware feature.
+these situations. We recommend cloud architects should ensure that the
+hypervisor is configured to utilize this hardware feature.
 
 KVM:
     `How to assign devices with VT-d in KVM
-    <http://www.linux-kvm.org/page/How_to_assign_devices_with_VT-d_in_KVM>`__
+    <http://www.linux-kvm.org/page/How_to_assign_devices_with_VT-d_in_KVM>`_
 Xen:
-    `Xen VTd Howto <http://wiki.xen.org/wiki/VTd_HowTo>`__
+    `Xen VTd Howto <http://wiki.xen.org/wiki/VTd_HowTo>`_
 
 .. note::
 
@@ -48,7 +48,7 @@ access to the management network.
 Solutions to the hardware infection problem are domain specific. The strategy
 is to identify how an instance can modify hardware state then determine how to
 reset any modifications when the instance is done using the hardware. For
-example, one option could be to re-flash the firmware after use. Clearly there
+example, one option could be to re-flash the firmware after use. There
 is a need to balance hardware longevity with security as some firmwares will
 fail after a large number of writes. TPM technology, described in
 :ref:`management-secure-bootstrapping`, is a solution for detecting
@@ -56,7 +56,7 @@ unauthorized firmware changes. Regardless of the strategy selected, it is
 important to understand the risks associated with this kind of hardware sharing
 so that they can be properly mitigated for a given deployment scenario.
 
-Additionally, due to the risk and complexities associated with PCI passthrough,
+Due to the risk and complexities associated with PCI passthrough,
 it should be disabled by default. If enabled for a specific need, you will need
 to have appropriate processes in place to ensure the hardware is clean before
 re-issue.
@@ -73,31 +73,33 @@ The major open source hypervisors use :term:`QEMU <Quick EMUlator (QEMU)>` for
 this functionality. While QEMU fills an important need for virtualization
 platforms, it has proven to be a very challenging software project to write
 and maintain. Much of the functionality in QEMU is implemented with low-level
-code that is difficult for most developers to comprehend. Furthermore, the
+code that is difficult for most developers to comprehend. The
 hardware virtualized by QEMU includes many legacy devices that have their own
 set of quirks. Putting all of this together, QEMU has been the source of many
 security problems, including hypervisor breakout attacks.
 
-Therefore, it is important to take proactive steps to harden QEMU. Three
-specific steps are recommended: minimizing the code base, using compiler
-hardening, and using mandatory access controls such as sVirt, SELinux, or
-AppArmor.
+It is important to take proactive steps to harden QEMU. We recommend three
+specific steps:
 
-Additionally, ensure iptables has the default policy filtering network traffic,
+* Minimizing the code base.
+* Using compiler hardening.
+* Using mandatory access controls such as sVirt, SELinux, or AppArmor.
+
+Ensure your iptables have the default policy filtering network traffic,
 and consider examining the existing rule set to understand each rule and
 determine if the policy needs to be expanded upon.
 
 Minimizing the QEMU code base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first recommendation is to minimize the QEMU code base by removing unused
+We recommend minimizing the QEMU code base by removing unused
 components from the system. QEMU provides support for many different virtual
 hardware devices, however only a small number of devices are needed for a given
 instance. The most common hardware devices are the virtio devices. Some legacy
 instances will need access to specific hardware, which can be specified using
 glance metadata:
 
-.. code:: console
+.. code-block:: console
 
     $ glance image-update \
     --property hw_disk_bus=ide \
@@ -115,18 +117,17 @@ what is needed for your deployment, and disable the remaining options.
 Compiler hardening
 ~~~~~~~~~~~~~~~~~~
 
-The next step is to harden QEMU using compiler hardening options. Modern
+Harden QEMU using compiler hardening options. Modern
 compilers provide a variety of compile time options to improve the security of
-the resulting binaries. These features, which we will describe in more detail
-below, include relocation read-only (RELRO), stack canaries, never execute
-(NX), position independent executable (PIE), and address space layout
-randomization (ASLR).
+the resulting binaries. These features include relocation read-only (RELRO),
+stack canaries, never execute (NX), position independent executable (PIE),
+and address space layout randomization (ASLR).
 
 Many modern Linux distributions already build QEMU with compiler hardening
-enabled, so you may want to verify your existing executable before
-proceeding with the information below. One tool that can assist you with this
+enabled, we recommend verifying your existing executable before
+proceeding. One tool that can assist you with this
 verification is called
-`checksec.sh <http://www.trapkit.de/tools/checksec.html>`__
+`checksec.sh <http://www.trapkit.de/tools/checksec.html>`_
 
 RELocation Read-Only (RELRO)
     Hardens the data sections of an executable. Both full and partial RELRO
@@ -149,7 +150,7 @@ Address Space Layout Randomization (ASLR)
 
 The following compiler options are recommend for GCC when compiling QEMU:
 
-.. code:: console
+.. code-block:: console
 
    CFLAGS="-arch x86_64 -fstack-protector-all -Wstack-protector \
    --param ssp-buffer-size=4 -pie -fPIE -ftrapv -D_FORTIFY_SOURCE=2 -O2 \
@@ -158,29 +159,29 @@ The following compiler options are recommend for GCC when compiling QEMU:
 We recommend testing your QEMU executable file after it is compiled to ensure
 that the compiler hardening worked properly.
 
-Most cloud deployments will not want to build software such as QEMU by hand. It
+Most cloud deployments will not build software, such as QEMU, by hand. It
 is better to use packaging to ensure that the process is repeatable and to
 ensure that the end result can be easily deployed throughout the cloud. The
 references below provide some additional details on applying compiler hardening
 options to existing packages.
 
 DEB packages:
-     `Hardening Walkthrough <https://wiki.debian.org/HardeningWalkthrough>`__
+     `Hardening Walkthrough <https://wiki.debian.org/HardeningWalkthrough>`_
 RPM packages:
      `How to create an RPM package
-     <http://fedoraproject.org/wiki/How_to_create_an_RPM_package>`__
+     <http://fedoraproject.org/wiki/How_to_create_an_RPM_package>`_
 
 Mandatory access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Compiler hardening makes it more difficult to attack the QEMU process. However,
-if an attacker does succeed, we would like to limit the impact of the attack.
+if an attacker does succeed, you want to limit the impact of the attack.
 Mandatory access controls accomplish this by restricting the privileges on QEMU
-process to only what is needed. This can be accomplished using sVirt / SELinux
-or AppArmor. When using sVirt, SELinux is configured to run each QEMU process
-under a separate security context. AppArmor can be configured to provide
-similar functionality. We provide more details on sVirt and instance isolation
-in the section below
+process to only what is needed. This can be accomplished by using sVirt,
+SELinux, or AppArmor. When using sVirt, SELinux is configured to run each QEMU
+process under a separate security context. AppArmor can be configured to
+provide similar functionality. We provide more details on sVirt and instance
+isolation in the section below
 :ref:`hardening-the-virtualization-layers-svirt-selinux-and-virtualization`.
 
 Specific SELinux policies are available for many OpenStack services. CentOS
@@ -189,14 +190,14 @@ package`_. The most up to date policies appear in `Fedora's selinux-policy`_
 repository. The `rawhide-contrib`_ branch has files that end in ``.te``, such
 as ``cinder.te``, that can be used on systems running SELinux.
 
-AppArmor profiles for OpenStack services don't currently exist, but the
+AppArmor profiles for OpenStack services do not currently exist, but the
 OpenStack-Ansible project handles this by `applying AppArmor profiles to each
 container`_ that runs an OpenStack service.
 
 .. _installing the selinux-policy source package: https://wiki.centos.org/HowTos/RebuildSRPM
 .. _Fedora's selinux-policy: https://github.com/fedora-selinux/selinux-policy
 .. _rawhide-contrib: https://github.com/fedora-selinux/selinux-policy/tree/rawhide-contrib
-.. _applying AppArmor profiles to each container: https://docs.openstack.org/developer/openstack-ansible/install-guide/overview-security.html#apparmor
+.. _applying AppArmor profiles to each container: https://docs.openstack.org/project-deploy-guide/openstack-ansible/draft/app-security.html
 
 .. _hardening-the-virtualization-layers-svirt-selinux-and-virtualization:
 
@@ -234,14 +235,14 @@ Virtual Machine (multi-tenant) threats
 Each KVM-based virtual machine is a process which is labeled by SELinux,
 effectively establishing a security boundary around each virtual machine. This
 security boundary is monitored and enforced by the Linux kernel, restricting
-the virtual machine's access to resources outside of its boundary such as host
+the virtual machine's access to resources outside of its boundary, such as host
 machine data files or other VMs.
 
 .. image:: ../figures/sVirt_Diagram_1.png
    :width: 100%
 
-As shown above, sVirt isolation is provided regardless of the guest Operating
-System running inside the virtual machine. Linux or Windows VMs can be
+sVirt isolation is provided regardless of the guest operating
+system running inside the virtual machine. Linux or Windows VMs can be
 used. Additionally, many Linux distributions provide SELinux within the
 operating system, allowing the virtual machine to protect internal virtual
 resources from threats.
@@ -250,20 +251,20 @@ Labels and categories
 ~~~~~~~~~~~~~~~~~~~~~
 
 KVM-based virtual machine instances are labelled with their own SELinux data
-type, known as svirt_image_t. Kernel level protections prevent unauthorized
+type, known as ``svirt_image_t``. Kernel level protections prevent unauthorized
 system processes, such as malware, from manipulating the virtual machine image
 files on disk. When virtual machines are powered off, images are stored as
-svirt_image_t as shown below:
+``svirt_image_t`` as shown below:
 
-.. code::
+.. code-block:: console
 
    system_u:object_r:svirt_image_t:SystemLow image1
    system_u:object_r:svirt_image_t:SystemLow image2
    system_u:object_r:svirt_image_t:SystemLow image3
    system_u:object_r:svirt_image_t:SystemLow image4
 
-The *svirt_image_t* label uniquely identifies image files on disk, allowing for
-the SELinux policy to restrict access. When a KVM-based Compute image is
+The ``svirt_image_t`` label uniquely identifies image files on disk, allowing
+for the SELinux policy to restrict access. When a KVM-based compute image is
 powered on, sVirt appends a random numerical identifier to the image. sVirt is
 capable of assigning numeric identifiers to a maximum of 524,288 virtual
 machines per hypervisor node, however most OpenStack deployments are highly
@@ -271,7 +272,7 @@ unlikely to encounter this limitation.
 
 This example shows the sVirt category identifier:
 
-.. code::
+.. code-block:: console
 
    system_u:object_r:svirt_image_t:s0:c87,c520 image1
    system_u:object_r:svirt_image_t:s0:419,c172 image2
@@ -279,15 +280,12 @@ This example shows the sVirt category identifier:
 SELinux users and roles
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-SELinux can also manage user roles. These can be viewed through the *-Z* flag,
+SELinux manages user roles. These can be viewed through the ``-Z`` flag,
 or with the :command:`semanage` command. On the hypervisor, only administrators
 should be able to access the system, and should have an appropriate context
 around both the administrative users and any other users that are on the
-system.
-
-SELinux users documentation:
-    `SELinux.org Users and Roles Overview
-    <http://selinuxproject.org/page/BasicConcepts#Users>`__
+system. For more information, see the `SELinux users documentation
+<http://selinuxproject.org/page/BasicConcepts#Users>`_.
 
 Booleans
 ~~~~~~~~
@@ -306,7 +304,7 @@ booleans:
    * - sVirt SELinux Boolean
      - Description
    * - virt_use_common
-     - Allow virt to use serial/parallel communication ports.
+     - Allow virt to use serial or parallel communication ports.
    * - virt_use_fusefs
      - Allow virt to read FUSE mounted files.
    * - virt_use_nfs

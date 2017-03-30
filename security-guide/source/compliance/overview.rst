@@ -4,6 +4,7 @@ Compliance overview
 
 Security principles
 ~~~~~~~~~~~~~~~~~~~
+
 Industry standard security principles provide a baseline for compliance
 certifications and attestations. If these principles are considered and
 referenced throughout an OpenStack deployment, certification activities
@@ -25,15 +26,17 @@ protection and minimize exposure.
 
 Fail securely
 -------------
+
 In the case of failure, systems should be configured to fail into a
 closed secure state. For example, TLS certificate verification should
-fail closed by severing the network connection if the CNAME doesn't
+fail closed by severing the network connection if the CNAME does not
 match the server's DNS name. Software often fails open in this
 situation, allowing the connection to proceed without a CNAME match,
 which is less secure and not recommended.
 
 Least privilege
 ---------------
+
 Only the minimum level of access for users and system services is
 granted. This access is based upon role, responsibility and job
 function. This security principle of least privilege is written into
@@ -42,6 +45,7 @@ Section AC-6 within the United States.
 
 Compartmentalize
 ----------------
+
 Systems should be segregated in such a way that if one machine, or
 system-level service, is compromised the security of the other systems
 will remain intact. Practically, the enablement and proper usage of
@@ -49,24 +53,26 @@ SELinux helps accomplish this goal.
 
 Promote privacy
 ----------------
+
 The amount of information that can be gathered about a system and its
 users should be minimized.
 
 Logging capability
 ------------------
+
 Appropriate logging is implemented to monitor for unauthorized use,
-incident response and forensics. It is highly recommended that selected
+incident response and forensics. We highly recommend selected
 audit subsystems be Common Criteria certified, which provides
 non-attestable event records in most countries.
 
 Common control frameworks
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The following is a list of Control Frameworks that an organization can
 use to build their security controls.
 
-
 `Cloud Security Alliance (CSA) Common Control Matrix
-(CCM) <https://cloudsecurityalliance.org/media/news/csa-releases-new-ccm-caiq-v3-0-1/>`__
+(CCM) <https://cloudsecurityalliance.org/media/news/csa-releases-new-ccm-caiq-v3-0-1/>`_
 
 The CSA CCM is specifically designed to provide fundamental security
 principles to guide cloud vendors and to assist prospective cloud
@@ -85,7 +91,7 @@ operational risk management, and seeks to normalize security
 expectations, cloud taxonomy and terminology, and security measures
 implemented in the cloud.
 
-`ISO 27001/2:2013 <http://www.27000.org/iso-27001.htm>`__
+`ISO 27001/2:2013 <http://www.27000.org/iso-27001.htm>`_
 
 The ISO 27001 Information Security standard and certification has been
 used for many years to evaluate and distinguish an organizations
@@ -100,7 +106,7 @@ a risk management process and gives confidence to interested parties
 that risks are adequately managed.
 
 `Trusted Security
-Principles <http://www.aicpa.org/interestareas/informationtechnology/resources/soc/trustservices/pages/trust%20services%20principles—an%20overview.aspx>`__
+Principles <http://www.aicpa.org/interestareas/informationtechnology/resources/soc/trustservices/pages/trust%20services%20principles—an%20overview.aspx>`_
 
 Trust Services are a set of professional attestation and advisory
 services based on a core set of principles and criteria that address

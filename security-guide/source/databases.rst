@@ -18,4 +18,4 @@ The Security Guide currently focuses on PostgreSQL and MySQL.
    databases/database-backend-considerations.rst
    databases/database-access-control.rst
    databases/database-transport-security.rst
-   databases/case-studies.rst
+.. case-studies/database-case-studies.rst

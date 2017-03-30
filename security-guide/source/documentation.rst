@@ -14,4 +14,4 @@ information up-to-date.
    :maxdepth: 2
 
    documentation/system-documentation-requirements.rst
-   documentation/case-studies.rst
+.. case-studies/documentation-case-studies.rst

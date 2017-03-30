@@ -49,14 +49,14 @@ additionally a number of external entities provide comprehensive lists.
 The following are some examples:
 
 The `Cloud Security Alliance Cloud Controls
-Matrix <https://cloudsecurityalliance.org/group/cloud-controls-matrix/>`__ (CCM)
+Matrix <https://cloudsecurityalliance.org/group/cloud-controls-matrix/>`_ (CCM)
 assists both cloud providers and consumers in assessing the overall
 security of a cloud provider. The CSA CMM provides a controls framework
 that map to many industry-accepted standards and regulations including
 the ISO 27001/2, ISACA, COBIT, PCI, NIST, Jericho Forum and NERC CIP.
 
 The `SCAP Security
-Guide <https://fedorahosted.org/scap-security-guide/>`__ is another
+Guide <https://fedorahosted.org/scap-security-guide/>`_ is another
 useful reference. This is still an emerging source, but we anticipate
 that this will grow into a tool with controls mappings that are more
 focused on the US federal government certifications and recommendations.
@@ -88,7 +88,7 @@ note that the auditors will use a two part process for evaluating the controls
 in place. The first part is evaluating the design effectiveness of the
 control. This is where the auditor will evaluate whether the control is
 capable of effectively preventing or detecting and correcting weaknesses and
-deficiencies. A control must "pass" this test to be evaluated in the second
+deficiencies. A control must pass this test to be evaluated in the second
 phase. This is because with a control that is designed ineffectually, there
 is no point considering whether it is operating effectively. The second part
 is operational effectiveness. Operational effectiveness testing will determine
@@ -170,11 +170,11 @@ audit preparation is so important.
 Compliance maintenance
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The process doesn't end with a single external audit. Most
+The process does not end with a single external audit. Most
 certifications require continual compliance activities which means
 repeating the audit process periodically. We recommend integrating
 automated compliance verification tools into a cloud to ensure that it
 is compliant at all times. This should be in done in addition to other
-security monitoring tools. Remember that the goal is both security *and*
+security monitoring tools. Remember that the goal is both security and
 compliance. Failing on either of these fronts will significantly
 complicate future audits.

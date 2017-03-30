@@ -18,4 +18,4 @@ collections of logs is well covered in the `OpenStack Operations Guide
    :maxdepth: 2
 
    monitoring-logging/forensics-and-incident-response.rst
-   monitoring-logging/case-studies.rst
+.. case-studies/monitoring-logging-case-studies.rst

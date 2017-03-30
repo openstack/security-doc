@@ -38,4 +38,4 @@ operator has secured them.
    :maxdepth: 2
 
    messaging/security.rst
-   messaging/case-studies.rst
+.. case-studies/messaging-case-studies.rst

@@ -18,4 +18,4 @@ transient groups created for a single workload.
    data-processing/introduction-to-data-processing.rst
    data-processing/deployment.rst
    data-processing/configuration-and-hardening.rst
-   data-processing/case-studies.rst
+.. case-studies/data-processing-case-studies.rst

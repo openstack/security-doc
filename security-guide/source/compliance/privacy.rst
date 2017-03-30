@@ -12,23 +12,23 @@ an organization's Privacy Policy, with the U.S.-E.U. Safe Harbor
 framework, the ISO/IEC 29100:2011 privacy framework or with other
 privacy-specific guidelines. In the U.S. the AICPA has `defined 10
 privacy areas of
-focus <http://www.aicpa.org/interestareas/informationtechnology/resources/privacy/generallyacceptedprivacyprinciples/>`__,
+focus <http://www.aicpa.org/interestareas/informationtechnology/resources/privacy/generallyacceptedprivacyprinciples/>`_,
 OpenStack deployments within a commercial environment may desire to
 attest to some or all of these principles.
 
-To aid OpenStack architects in the protection of personal data, it is
-recommended that OpenStack architects review the NIST publication
+To aid OpenStack architects in the protection of personal data, we
+recommend OpenStack architects review the NIST publication
 800-122, titled "*Guide to Protecting the Confidentiality of Personally
 Identifiable Information (PII)*." This guide steps through the process
 of protecting:
 
-   "any information about an individual maintained by an agency,
+   "... any information about an individual maintained by an agency,
    including (1) any information that can be used to distinguish or
    trace an individual's identity, such as name, social security
    number, date and place of birth, mother's maiden name, or biometric
    records; and (2) any other information that is linked or linkable to
    an individual, such as medical, educational, financial, and
-   employment information"
+   employment information..."
 
 Comprehensive privacy management requires significant preparation,
 thought and investment. Additional complications are introduced when

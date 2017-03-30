@@ -29,5 +29,5 @@ should be considered when implementing OpenStack Networking.
    networking/services.rst
    networking/securing-services.rst
    networking/services-security-best-practices.rst
-   networking/case-studies.rst
    networking/checklist.rst
+.. case-studies/networking-case-studies.rst

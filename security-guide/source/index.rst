@@ -37,25 +37,5 @@ Contents
    monitoring-logging.rst
    compliance.rst
    security-review.rst
-
-Appendix
-~~~~~~~~
-
-.. toctree::
-   :maxdepth: 1
-
    checklist.rst
-   common/app-support.rst
-
-Glossary
-~~~~~~~~
-
-.. toctree::
-   :maxdepth: 1
-
-   common/glossary.rst
-
-Search in this guide
-~~~~~~~~~~~~~~~~~~~~
-
-* :ref:`search`
+   appendix.rst

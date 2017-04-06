@@ -23,4 +23,4 @@ attention.
    secure-communication/introduction-to-ssl-and-tls.rst
    secure-communication/tls-proxies-and-http-services.rst
    secure-communication/secure-reference-architectures.rst
-   secure-communication/case-studies.rst
+.. case-studies/secure-communication-case-studies.rst

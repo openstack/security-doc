@@ -29,5 +29,5 @@ The Dashboard ships with default security settings, and has
    dashboard/cookies.rst
    dashboard/cross-origin-resource-sharing-cors.rst
    dashboard/debug.rst
-   dashboard/case-studies.rst
    dashboard/checklist.rst
+.. case-studies/dashboard-case-studies.rst

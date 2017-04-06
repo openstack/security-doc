@@ -34,4 +34,4 @@ following additional security services:
    :maxdepth: 2
 
    instance-management/security-services-for-instances.rst
-   instance-management/case-studies.rst
+.. case-studies/instance-management-case-studies.rst

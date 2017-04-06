@@ -15,4 +15,4 @@ implementations.
    tenant-data/data-privacy-concerns.rst
    tenant-data/data-encryption.rst
    tenant-data/key-management.rst
-   tenant-data/case-studies.rst
+.. case-studies/tenant-data-case-studies.rst

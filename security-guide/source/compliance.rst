@@ -32,4 +32,4 @@ This chapter has several objectives:
    compliance/compliance-activities.rst
    compliance/certification-and-compliance-statements.rst
    compliance/privacy.rst
-   compliance/case-studies.rst
+..   case-studies/compliance-case-studies.rst

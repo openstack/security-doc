@@ -25,4 +25,4 @@ control facilities are understood and secured.
    management/continuous-systems-management.rst
    management/integrity-life-cycle.rst
    management/management-interfaces.rst
-   management/case-studies.rst
+.. case-studies/management-case-studies.rst

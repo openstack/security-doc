@@ -18,4 +18,3 @@ feasible due to complexity or other environment specific details.
    introduction/introduction-to-openstack.rst
    introduction/security-boundaries-and-threats.rst
    introduction/selecting-supporting-software.rst
-   introduction/introduction-to-case-studies.rst

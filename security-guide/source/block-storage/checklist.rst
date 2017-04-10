@@ -215,9 +215,11 @@ enabled. See `Volume Encryption
 <https://docs.openstack.org/ocata/config-reference/block-storage/volume-encryption.html>`__
 section of Openstack Configuration Reference documentation for instructions.
 
-**Pass:** If value of parameter ``api_class`` under ``[KEY_MANAGER]`` section
-in ``/etc/cinder/cinder.conf`` is set and if the instructions in the
-documentation referenced above are properly followed.
+**Pass:** If 1) the value of parameter ``api_class`` under ``[KEY_MANAGER]``
+section in ``/etc/cinder/cinder.conf`` is set, 2) the value of parameter
+``api_class`` under ``[KEY_MANAGER]`` in ``/etc/nova/nova.conf`` is set,
+and 3) if the instructions in the documentation referenced above are properly
+followed.
 
 To verify further, perform these steps after completing the volume encryption
 setup and creating the volume-type for LUKS as described in the documentation
@@ -255,5 +257,7 @@ referenced above.
 The search should not return the string written to the encrypted volume.
 
 **Fail:** If value of parameter ``api_class`` under ``[KEY_MANAGER]`` section
-in ``/etc/cinder/cinder.conf`` is not set or if the instructions in the
-documentation referenced above are not properly followed.
+in ``/etc/cinder/cinder.conf`` is not set, or if the value of parameter
+``api_class`` under ``[KEY_MANAGER]`` section in ``/etc/nova/nova.conf``
+is not set, or if the instructions in the documentation referenced above are
+not properly followed.

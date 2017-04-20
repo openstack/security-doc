@@ -14,4 +14,3 @@ private-facing API endpoints.
    :maxdepth: 2
 
    api-endpoints/api-endpoint-configuration-recommendations.rst
-   api-endpoints/case-studies.rst

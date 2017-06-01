@@ -8,7 +8,22 @@ Abstract
 This book provides best practices and conceptual information about
 securing an OpenStack cloud.
 
-This guide documents OpenStack Newton and Mitaka releases.
+.. important::
+
+   This guide was last updated as of the Ocata release, documenting
+   the OpenStack Ocata, Newton, and Mitaka releases. It may
+   not apply to EOL releases Kilo and Liberty.
+
+   We advise that you read this at your own discretion when planning
+   on implementing security measures for your OpenStack cloud.
+
+   This guide is intended as advice only.
+
+   The OpenStack Security team is based on voluntary contributions
+   from the OpenStack community. You can contact the security community
+   directly in the #openstack-security channel on Freenode IRC, or by
+   sending mail to the openstack-dev mailing list with the
+   [security] prefix in the subject header.
 
 Contents
 ~~~~~~~~

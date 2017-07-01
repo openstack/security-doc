@@ -48,6 +48,7 @@ master_doc = 'index'
 repository_name = 'openstack/security-doc'
 project = u'Security Guide'
 bug_tag = u'sec-guide'
+bug_project = u'ossp-security-documentation'
 copyright = u'2015-2017, OpenStack contributors'
 
 # The version info for the project you're documenting, acts as replacement for

@@ -108,11 +108,11 @@ reasonable value based on your environment.
 **Fail:** If value of parameter ``max_request_body_size`` is not set.
 
 Check-Identity-06: Disable admin token in ``/etc/keystone/keystone.conf``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The admin token is generally used to bootstrap Identity. This token is the
-most valuable Identity asset, which could be used to gain cloud admin
-privileges.
+The admin token is generally used to bootstrap Identity. This token is
+the most valuable Identity asset, which could be used to gain cloud
+admin privileges.
 
 **Pass:** If ``admin_token`` under ``[DEFAULT]`` section in
 ``/etc/keystone/keystone.conf`` is disabled. And,
@@ -121,3 +121,17 @@ from ``/etc/keystone/keystone-paste.ini``
 
 **Fail:** If ``admin_token`` under [DEFAULT] section is set and
 AdminTokenAuthMiddleware exists in ``keystone-paste.ini``.
+
+Check-Identity-07: insecure_debug false in ``/etc/keystone/keystone.conf``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If ``insecure_debug`` is set to true, then the server will return
+information in HTTP responses that may allow an unauthenticated or
+authenticated user to get more information than normal, such as
+additional details about why authentication failed.
+
+**Pass:** If ``insecure_debug`` under ``[DEFAULT]`` section in
+``/etc/keystone/keystone.conf`` is false.
+
+**Fail:** If ``insecure_debug`` under ``[DEFAULT]`` section in
+``/etc/keystone/keystone.conf`` is true.

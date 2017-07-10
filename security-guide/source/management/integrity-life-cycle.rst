@@ -200,38 +200,77 @@ right policy here will be deployment and failure mode specific.
 Node hardening
 --------------
 
-At this point we know that the node has booted with the correct kernel
-and underlying components. There are many paths for hardening a given
-operating system deployment. The specifics on these steps are outside of
-the scope of this book. We recommend following the guidance from a
-hardening guide specific to your operating system. For example, the
-`security technical implementation
-guides <http://iase.disa.mil/stigs/>`__ (STIG) and the `NSA
-guides <https://www.nsa.gov/ia/mitigation_guidance/security_configuration_guides/>`__
-are useful starting places.
+At this point we know that the node has booted with the correct kernel and
+underlying components. The next step is to harden the operating system and it
+starts with a set of industry-accepted hardening controls. The following guides
+are good examples:
 
-The nature of the nodes makes additional hardening possible. We
-recommend the following additional steps for production nodes:
+`Security Technical Implementation Guide (STIG) <http://iase.disa.mil/stigs/Pages/index.aspx>`_
+  The Defense Information Systems Agency (DISA) (part of the United States
+  Department of Defense) publishes STIG content for various operating systems,
+  applications, and hardware. The controls are published without any license
+  attached.
 
--  Use a read-only file system where possible. Ensure that writeable
-   file systems do not permit execution. This can be handled through the
-   mount options provided in ``/etc/fstab``.
+`Center for Internet Security (CIS) Benchmarks <https://www.cisecurity.org/cis-benchmarks/>`_
+  CIS regularly publishes security benchmarks as well as automated tools that
+  apply those security controls automatically. These benchmarks are published
+  under a
+  `Creative Commons license <https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>`_
+  that has some limitations.
 
--  Use a mandatory access control policy to contain the instances, the
-   node services, and any other critical processes and data on the node.
-   See the discussions on sVirt / SELinux and AppArmor below.
+These security controls are best applied via automated methods. Automation
+ensures that the controls are applied the same way each time for each system
+and they also provide a quick method for auditing an existing system. There are
+multiple options for automation:
 
--  Remove any unnecessary software packages. This should result in a
-   very stripped down installation because a compute node has a
-   relatively small number of dependencies.
+`OpenSCAP <https://www.open-scap.org/>`_
+  OpenSCAP is an open source tool which takes SCAP content (XML files that
+  describe security controls) and applies that content to various systems. Most
+  of the available content available today is for Red Hat Enterprise Linux and
+  CentOS, but the tools work on any Linux or Windows system.
 
-Finally, the node kernel should have a mechanism to validate that the
-rest of the node starts in a known good state. This provides the
-necessary link from the boot validation process to validating the entire
-system. The steps for doing this will be deployment specific. As an
-example, a kernel module could verify a hash over the blocks comprising
-the file system before mounting it using
-`dm-verity <https://gitlab.com/cryptsetup/cryptsetup/wikis/DMVerity>`__.
+`ansible-hardening <https://docs.openstack.org/ansible-hardening/latest/>`_
+  The ansible-hardening project provides an Ansible role that applies security
+  controls to a wide array of Linux operating systems. It can also be used to
+  audit an existing system. Each control is carefully reviewed to determine if
+  it could cause harm to a production system. The controls are based on the
+  Red Hat Enterprise Linux 7 STIG.
+
+Fully hardening a system is a challenging process and it may require a
+substantial amount of changes to some systems. Some of these changes could
+impact production workloads. If a system cannot be fully hardened, the
+following two changes are highly recommended to increase security without large
+disruptions:
+
+Mandatory Access Control (MAC)
+  Mandatory access controls affect all users on the system, including root, and
+  it is the kernel's job to review the activity against the current security
+  policy. If the activity isn't within the allowed policy, it is blocked, even
+  for the root user.  Review the discussion on sVirt, SELinux, and AppArmor
+  below for more details.
+
+Remove packages and stop services
+  Ensure that the system has the fewest number of packages installed and
+  services running as possible. Removing unneeded packages makes patching
+  easier and it reduces the number of items on the system which could lead to
+  a breach. Stopping unneeded services shrinks the attack surface on the system
+  and makes it more difficult to attack.
+
+We also recommend the following additional steps for production nodes:
+
+Read-only file system
+  Use a read-only file system where possible. Ensure that writeable
+  file systems do not permit execution. This can be handled with the
+  ``noexec``, ``nosuid``, and ``nodev`` mount options in ``/etc/fstab``.
+
+System validation
+  Finally, the node kernel should have a mechanism to validate that the
+  rest of the node starts in a known good state. This provides the
+  necessary link from the boot validation process to validating the entire
+  system. The steps for doing this will be deployment specific. As an
+  example, a kernel module could verify a hash over the blocks comprising
+  the file system before mounting it using
+  `dm-verity <https://gitlab.com/cryptsetup/cryptsetup/wikis/DMVerity>`__.
 
 Runtime verification
 ~~~~~~~~~~~~~~~~~~~~

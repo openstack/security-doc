@@ -56,7 +56,7 @@ that map to many industry-accepted standards and regulations including
 the ISO 27001/2, ISACA, COBIT, PCI, NIST, Jericho Forum and NERC CIP.
 
 The `SCAP Security
-Guide <https://fedorahosted.org/scap-security-guide/>`_ is another
+Guide <https://github.com/OpenSCAP/scap-security-guide/>`_ is another
 useful reference. This is still an emerging source, but we anticipate
 that this will grow into a tool with controls mappings that are more
 focused on the US federal government certifications and recommendations.

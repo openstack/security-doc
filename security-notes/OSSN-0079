@@ -1,0 +1,40 @@
+Ceph credentials included in logs using older versions of libvirt/qemu
+----------------------------------------------------------------------
+
+### Summary ###
+Older versions of libvirt included network storage authentication
+information on the qemu command line. If libvirt raises an exception
+which logs the qemu command line it used, for example an error starting
+a domain, this authentication information will available in the logs.
+
+### Affected Services / Software ###
+Versions 2.5 and earlier of QEMU and libvirt versions of 2.1 or ealier.
+
+The issue has been resolved in all QEMU versions 2.6 and above and
+libvirt 2.2 and above.
+
+No patches or specific releases of Nova or Ceph are required, the
+issue is completely resolved in QEMU and libvirt.
+
+### Discussion ###
+If a deployment is using ceph, a libvirt error starting a domain would
+log the cephx secret key and the monitor addresses on the qemu command
+line.
+
+A local attacker could then use this flaw to gain access of the cephx
+secret key and perform certain privileged operations within the cluster.
+
+An existing CVE is already present for this issue [1].
+
+### Recommended Actions ###
+The issue has been resolved upstream. Users running qemu version 2.6 or
+later, and libvirt version 2.2 or later, are not vulnerable.
+
+No change is required in Nova or Ceph to resolve this issue.
+
+### Contacts / References ###
+Author: Luke Hinds, Red Hat
+https://access.redhat.com/security/cve/CVE-2015-5160
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0079
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1686743
+OpenStack Security Project : https://launchpad.net/~openstack-ossg

@@ -88,7 +88,7 @@ Bibliography
 
 Siwczak, Piotr. Some Practical Considerations for Monitoring in the
 OpenStack Cloud. 2012.
-`http://www.mirantis.com/blog/openstack-monitoring <http://www.mirantis.com/blog/openstack-monitoring/>`__
+https://www.mirantis.com/blog/openstack-monitoring/
 
 blog.sflow.com, sflow: Host sFlow distributed agent. 2012.
 http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html

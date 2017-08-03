@@ -13,8 +13,8 @@ industry-standard HTTP RESTful API. Back end components of Object Storage
 follow the same RESTful model, although some APIs, such as those managing
 durability, are kept private to the cluster.
 For more details on the API see the
-`OpenStack Storage documentation
-<https://docs.openstack.org/api/openstack-object-storage/1.0/content/>`_.
+`OpenStack Storage API
+<https://developer.openstack.org/api-ref/object-storage/>`_.
 
 The components of Object Storage are grouped into the following primary groups:
 

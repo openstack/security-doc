@@ -10,9 +10,9 @@ securing an OpenStack cloud.
 
 .. important::
 
-   This guide was last updated as of the Ocata release, documenting
-   the OpenStack Ocata, Newton, and Mitaka releases. It may
-   not apply to EOL releases Kilo and Liberty.
+   This guide was last updated as of the Pike release, documenting
+   the OpenStack Pike, Ocata, and Newton releases. It may
+   not apply to EOL releases Mitaka, Kilo and Liberty.
 
    We advise that you read this at your own discretion when planning
    on implementing security measures for your OpenStack cloud.

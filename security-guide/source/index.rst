@@ -45,6 +45,7 @@ Contents
    shared-file-systems.rst
    networking.rst
    object-storage.rst
+   secrets-management.rst
    messaging.rst
    data-processing.rst
    databases.rst

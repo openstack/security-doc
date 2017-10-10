@@ -98,7 +98,7 @@ driver and security service you configure and use.
     methods. It also does not support any of the security services, such as
     LDAP, Kerberos, or Active Directory. For details of features supported by
     different drivers, see `Manila share features support mapping
-    <https://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html>`_.
+    <https://docs.openstack.org/manila/latest/contributor/share_back_ends_feature_support_mapping.html>`_.
 
 As an administrator, you can create share types that enable the scheduler to
 filter back ends before you create a share. Share types have extra

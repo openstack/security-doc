@@ -10,7 +10,7 @@ combined fashion by the front end. For example, an authentication call
 validates user and project credentials with the identity service.
 If successful, it will create and return a token with the token service.
 More information can be found by reading the `keystone Developer
-Documentation <https://docs.openstack.org/developer/keystone/index.html>`_.
+Documentation <https://docs.openstack.org/keystone/latest/index.html>`_.
 
 .. toctree::
    :maxdepth: 2

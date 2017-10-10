@@ -143,7 +143,7 @@ including:
 
 For more information on the deployment, operation, or implementation of
 Object Storage encryption, see the swift Developer Documentation on
-`Object Encryption <https://docs.openstack.org/developer/swift/overview_encryption.html>`_.
+`Object Encryption <https://docs.openstack.org/swift/latest/overview_encryption.html>`_.
 
 Block Storage performance and backends
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +163,7 @@ Although we recommend using the OpenStack Volume Encryption feature, Block
 Storage supports a large variety of alternative back-ends for supplying
 mountable volumes, and some of these may also provide volume encryption.
 Since there are so many `back-ends
-<https://docs.openstack.org/developer/cinder/drivers.html>`_, and since
+<https://docs.openstack.org/cinder/latest/drivers.html>`_, and since
 information from each vendor must be obtained, it is outside the scope of this
 guide to specify recommendations for implementing encryption in any of them.
 

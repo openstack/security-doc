@@ -9,7 +9,7 @@ volume wiping is not necessary if the volume encryption key is deleted.
 See the OpenStack Configuration Reference doc in the `Volume Encryption
 <https://docs.openstack.org/ocata/config-reference/block-storage/volume-encryption.html>`__
 section for set up details and also the `Castellan usage
-<https://docs.openstack.org/developer/castellan/usage.html>`__ document
+<https://docs.openstack.org/castellan/latest/user/index.html>`__ document
 for key deletion.
 
 .. note::

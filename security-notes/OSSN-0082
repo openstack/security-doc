@@ -1,0 +1,38 @@
+Heap and Stack based buffer overflows in dnsmasq prior to version 2.78
+----------------------------------------------------------------------
+
+### Summary ###
+A series of heap and stack based buffer overflows have been discovered in
+versions of dnsmasq prior to release 2.78.
+
+### Affected Services / Software ###
+Any neutron based OpenStack deployment on a version of dnsmasq prior to
+2.78.
+
+### Discussion ###
+The following attack vectors have been assigned the following CVE numbers.
+
+* CVE-2017-14491
+* CVE-2017-14492
+* CVE-2017-14493
+* CVE-2017-14494
+* CVE-2017-14495
+* CVE-2017-14496
+* CVE-2017-13704
+
+Each of these CVE's exposes a neutron based OpenStack deployment to various
+attacks such as leakage of sensitive memory information or causing a denial of
+service. Nodes are exposed to this risk by the crafting of various nefarious
+DNS or DHCP requests.
+
+### Recommended Actions ###
+Operators should update the dnsmasq service using the affected nodes operating
+systems packaging tools to version 2.78 and later, or a distribution packaged
+version that contains relevant backports for these vulnerabilities.
+
+### Contacts / References ###
+Author: Luke Hinds <lhinds@redhat.com>
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0082
+Mailing List : [Security] tag on openstack-dev@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg
+CVE: CVE-2017-14491

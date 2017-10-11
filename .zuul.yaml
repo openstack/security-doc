@@ -1,0 +1,5 @@
+- project:
+    name: openstack/security-doc
+    templates:
+      - openstack-manuals-build-translation
+      - openstack-manuals-jobs

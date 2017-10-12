@@ -31,7 +31,7 @@ Bibliography:
 
 -  OpenStack.org, Welcome to barbican's Developer Documentation!. 2014.
    `Barbican developer
-   documentation <https://docs.openstack.org/developer/barbican>`__
+   documentation <https://docs.openstack.org/barbican/latest/>`__
 
 -  oasis-open.org, OASIS Key Management Interoperability Protocol
    (KMIP). 2014.

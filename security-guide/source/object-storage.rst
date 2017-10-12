@@ -247,7 +247,7 @@ TempAuth
 TempAuth is the default authentication for Object Storage. In contrast to
 Identity, it stores the user accounts, credentials, and metadata in object
 storage itself. More information can be found in the section `The Auth System
-<https://docs.openstack.org/developer/swift/overview_auth.html>`_ of the Object
+<https://docs.openstack.org/swift/latest/overview_auth.html>`_ of the Object
 Storage (swift) documentation.
 
 Keystone

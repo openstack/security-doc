@@ -15,7 +15,7 @@ reading the `Django documentation <https://docs.djangoproject.com/>`_.
 
 The Dashboard ships with default security settings, and has
 `deployment and configuration documentation
-<https://docs.openstack.org/developer/horizon/topics/deployment.html>`_.
+<https://docs.openstack.org/horizon/latest/user/index.html>`_.
 
 .. toctree::
    :maxdepth: 2

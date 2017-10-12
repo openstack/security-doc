@@ -11,7 +11,7 @@ machine images. Glance has a RESTful API that allows querying of VM image
 metadata as well as retrieval of the actual image.
 
 For more details on the service see the `OpenStack Glance documentation
-<http://docs.openstack.org/developer/glance/>`__.
+<https://docs.openstack.org/glance/latest/>`__.
 
 .. toctree::
    :maxdepth: 2

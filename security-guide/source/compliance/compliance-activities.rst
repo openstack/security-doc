@@ -46,7 +46,7 @@ Federation (CADF) notification, providing auditing data for
 compliance with security, operational, and business processes. For more
 information, see the
 `Keystone developer documentation
-<https://docs.openstack.org/developer/keystone/event_notifications.html#auditing-with-cadf>`_.
+<https://docs.openstack.org/keystone/latest/advanced-topics/event_notifications.html#auditing-with-cadf>`_.
 
 Backup and disaster recovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

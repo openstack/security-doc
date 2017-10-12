@@ -105,7 +105,7 @@ and the Identity service.
 
     Different authentication services are supported by different share drivers.
     For details of supporting of features by different drivers, see
-    `Manila share features support mapping <https://docs.openstack.org/developer/manila/devref/share_back_ends_feature_support_mapping.html>`_.
+    `Manila share features support mapping <https://docs.openstack.org/manila/latest/contributor/share_back_ends_feature_support_mapping.html>`_.
     Support for a specific authentication service by a driver does not
     mean that it can be configured with any shared file system protocol.
     Supported shared file systems protocols are NFS, CIFS, GlusterFS, and HDFS.

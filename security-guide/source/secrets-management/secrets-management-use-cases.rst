@@ -61,7 +61,7 @@ configured to enable the external storage of secrets. Sahara uses the
 Castellan library to interface with the OpenStack Key Manager service.
 This library provides configurable access to a key manager.
 
-For more information, see the `Sahara advanced configuration guide <https://docs.openstack.org/developer/sahara/userdoc/advanced.configuration.guide.html#external-key-manager-usage>`_.
+For more information, see the `Sahara advanced configuration guide <https://docs.openstack.org/sahara/latest/admin/advanced-configuration-guide.html#external-key-manager-usage>`_.
 
 Magnum
 ------
@@ -74,7 +74,9 @@ Database (``x590keypair``).
 A local directory can also be used (``local``), but is considered insecure and
 not suitable for a production enviroment.
 
-For more details on setting up a certificate manager for Magnum, see the `Container Infrastructure Management service <https://docs.openstack.org/project-install-guide/container-infrastructure-management/newton/install.html>`_ documentation.
+For more details on setting up a certificate manager for Magnum, see the
+`Container Infrastructure Management service <https://docs.openstack.org/magnum/latest/install/>`_
+documentation.
 
 Octavia/LBaaS
 -------------
@@ -84,7 +86,9 @@ Octavia project need certificates and their private keys to provide
 load balancing for TLS connections. Barbican can be used to store this
 sensitive information.
 
-For more details, see  `How to create a TLS Loadbalancer <https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer>`_.  and `Deploy a TLS-terminated HTTPS load balancer <https://docs.openstack.org/developer/octavia/guides/basic-cookbook.html#deploy-a-tls-terminated-https-load-balancer>`_.
+For more details, see
+`How to create a TLS Loadbalancer <https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer>`_
+and `Deploy a TLS-terminated HTTPS load balancer <https://docs.openstack.org/octavia/latest/user/guides/basic-cookbook.html#deploy-a-tls-terminated-https-load-balancer>`_.
 
 Swift
 -----
@@ -93,8 +97,8 @@ Symmetric keys can be used to encrypt Swift containers to mitigate the risk of
 users data being read if an unauthorised party were to gain physical access to
 a disk.
 
-For more details, see  `Object Encryption <https://docs.openstack.org/swift/pike/overview_encryption.html>`_ within the official swift
-documentation.
+For more details, see `Object Encryption <https://docs.openstack.org/swift/pike/overview_encryption.html>`_
+within the official swift documentation.
 
 Passwords in Config Files
 -------------------------
@@ -104,7 +108,7 @@ passwords which are in plain text. These include, for instance, the
 passwords used by service users to authenticate to keystone to validate
 keystone tokens.
 
-There is no current solution to obfuscate these passwords.  It is recommended
+There is no current solution to obfuscate these passwords. It is recommended
 that these files be appropriately secured by file permissions.
 
 There is currently an effort underway to store these secrets in a Castellan

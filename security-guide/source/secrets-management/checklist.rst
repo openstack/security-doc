@@ -87,10 +87,10 @@ the OpenStack components. We strongly recommend that all services must
 be authenticated with keystone using their service accounts.
 
 **Pass:** If the parameter ``authtoken`` is listed under the
-``pipeline:barbican_api`` section in ``barbican-api-paste.ini``.
+``pipeline:barbican-api-keystone`` section in ``barbican-api-paste.ini``.
 
 **Fail:** If the parameter ``authtoken`` is missing under the
-``pipeline:barbican_api`` section in ``barbican-api-paste.ini``.
+``pipeline:barbican-api-keystone`` section in ``barbican-api-paste.ini``.
 
 .. _check_key_mgr_04:
 

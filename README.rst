@@ -37,8 +37,8 @@ Directory Structure
 Security Guide is in the directory ``security-guide``, which source files in
 RST format in the directory ``security-guide/source``.
 
-Security Threat Analysis is in the directory ``security-guide``, which source
-files in RST format in the directory ``security-threat-analysis/source``.
+Security Threat Analysis is in the directory ``security-threat-analysis``, which
+source files in RST format in the directory ``security-threat-analysis/source``.
 
 The security notes are in the directory ``security-notes``.
 

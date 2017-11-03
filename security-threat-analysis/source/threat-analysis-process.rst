@@ -16,8 +16,9 @@ Preparing artifacts for review
 - Complete the architecture page. The architecture page describes the purpose
   of the service, and captures the information that is required for an
   effective threat analysis review. A template for the architecture page is
-  provided at <link> and there is guidance on diagramming at <link>. If further
-  help or advice is needed, please reach out to the Security Project via the
+  provided at :ref:`architecture-page` and there is guidance on
+  diagramming at :ref:`architecture-diagram-guidance`. If further help or
+  advice is needed, please reach out to the Security Project via the
   openstack-dev@lists.openstack.org mailing list, tagging your email
   [security].
 - The architecture page should describe a best practice deployment. If a
@@ -41,9 +42,9 @@ Before the review
 ~~~~~~~~~~~~~~~~~
 
 - Verify that the service’s architecture page contains all the sections
-  listed in the Architecture Page Template <link>.
+  listed in the Architecture Page Template :ref:`architecture-page`.
 - The architecture page should include diagrams as specified in the
-  Architecture Diagram guidance <link>.
+  Architecture Diagram guidance :ref:`architecture-diagram-guidance`.
 - Send an email to the openstack-dev@lists.openstack.org mailing list with a
   [security] tag to announce the up-coming threat analysis review.
 - Prepare a threat analysis review etherpad, using this template <link>.

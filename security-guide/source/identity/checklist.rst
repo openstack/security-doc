@@ -135,3 +135,15 @@ additional details about why authentication failed.
 
 **Fail:** If ``insecure_debug`` under ``[DEFAULT]`` section in
 ``/etc/keystone/keystone.conf`` is true.
+
+Check-Identity-08: Use fernet token in ``/etc/keystone/keystone.conf``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+OpenStack Identity service provides ``uuid`` and ``fernet`` as token providers.
+The ``uuid`` tokens must be persisted and is considered as insecure.
+
+**Pass:** If value of parameter ``provider`` under ``[token]``
+section in ``/etc/keystone/keystone.conf`` is set to fernet.
+
+**Fail:** If value of parameter ``provider`` under ``[token]``
+section is set to uuid.

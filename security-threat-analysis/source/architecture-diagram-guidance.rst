@@ -1,3 +1,5 @@
+.. _architecture-diagram-guidance:
+
 =============================
 Architecture diagram guidance
 =============================

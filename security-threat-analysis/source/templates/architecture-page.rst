@@ -1,3 +1,5 @@
+.. _architecture-page:
+
 =============================
 Architecture page template
 =============================

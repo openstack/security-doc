@@ -1,3 +1,5 @@
+.. _secrets-management:
+
 ==================
 Secrets Management
 ==================

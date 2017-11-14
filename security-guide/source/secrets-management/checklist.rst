@@ -70,9 +70,7 @@ example "u=rw,g=r,o=".
   mask         r--
   other        ---
 
-**Fail:** If permissions are set to at least 640.
-
-**Fail:** If permissions are set greater then 640.
+**Fail:** If permissions are set greater than 640.
 
 .. _check_key_mgr_03:
 

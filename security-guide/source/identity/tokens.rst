@@ -42,15 +42,19 @@ services that cache tokens to query for the revoked tokens and remove
 them from their cache and append the same to their list of cached
 revoked tokens.
 
-There are four supported token types: UUID, PKI, PKIZ and fernet.
+In OpenStack Newton release, there are four supported token types:
+UUID, PKI, PKIZ and fernet. Since OpenStack Ocata release, there are
+two supported token types: UUID and fernet.
 
 UUID tokens
 ~~~~~~~~~~~
-UUID tokens are currently the default token provider. They are persistent
-tokens. UUID tokens are 32 bytes in length and must be persisted in the
-back-end. They are stored in the Identity service back-end along with the
-metadata for authentication. Clients must pass their UUID token to the
-Identity service in order to validate it.
+UUID tokens are persistent tokens. UUID tokens are 32 bytes in length
+and must be persisted in the back-end. They are stored in the Identity
+service back-end along with the metadata for authentication. Clients
+must pass their UUID token to the Identity service in order to validate it.
+According to the release notes for Pike(see `release notes
+<https://docs.openstack.org/releasenotes/keystone/pike.html#deprecation-notes>`_),
+UUID token provider is being deprecated in favor of Fernet tokens.
 
 PKI and PKIZ tokens
 ~~~~~~~~~~~~~~~~~~~
@@ -67,7 +71,8 @@ compressed to help mitigate the size issues of PKI.
 
 Fernet tokens
 ~~~~~~~~~~~~~
-Fernet is a secure messaging format explicitly designed for use in API tokens.
+Fernet tokens are the supported token provider for Pike (default). Fernet
+is a secure messaging format explicitly designed for use in API tokens.
 They are non-persistent (no need to be persisted to a database), lightweight
 (fall in range of 180 to 240 bytes) and reduce the operational overhead
 required to run a cloud. Authentication and authorization metadata is neatly

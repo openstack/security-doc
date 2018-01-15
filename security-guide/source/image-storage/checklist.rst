@@ -127,3 +127,18 @@ section in ``/etc/glance/glance-api.conf`` is not set to Identity API endpoint
 starting with ``https://``, or value of parameter ``insecure`` under the same
 ``[keystone_authtoken]`` section in the same ``/etc/glance/glance-api.conf``
 is set to ``True``.
+
+.. _check_image_05:
+
+Check-Image-05: Are masked port scans prevented?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``copy_from`` feature in Image Service API v1 supplied by Glance can allow
+an attacker to perform masked network port scans. If the v1 API is enabled,
+this policy should be set to a restricted value.
+
+**Pass:** If value of parameter ``copy_from`` in ``/etc/glance/policy.json``
+is set to a restricted value, for example ``role:admin``.
+
+**Fail:** If value of parameter ``copy_from`` in ``/etc/glance/policy.json``
+is not set.

@@ -116,11 +116,14 @@ admin privileges.
 
 **Pass:** If ``admin_token`` under ``[DEFAULT]`` section in
 ``/etc/keystone/keystone.conf`` is disabled. And,
-AdminTokenAuthMiddleware under ``[filter:admin_token_auth]`` is deleted
+``AdminTokenAuthMiddleware`` under ``[filter:admin_token_auth]`` is deleted
 from ``/etc/keystone/keystone-paste.ini``
 
-**Fail:** If ``admin_token`` under [DEFAULT] section is set and
-AdminTokenAuthMiddleware exists in ``keystone-paste.ini``.
+**Fail:** If ``admin_token`` under ``[DEFAULT]`` section is set and
+``AdminTokenAuthMiddleware`` exists in ``keystone-paste.ini``.
+
+.. tip::
+    Disabling ``admin_token`` means it has a value of ``<none>``.
 
 Check-Identity-07: insecure_debug false in ``/etc/keystone/keystone.conf``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

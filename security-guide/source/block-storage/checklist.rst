@@ -211,13 +211,14 @@ remounted, and accessed from a different machine. Encrypting volume data
 mitigates these risks and provides defense-in-depth to volume-hosting
 platforms. Block Storage (cinder) is able to encrypt volume data before it is
 written to disk, and we recommend that the volume encryption feature is
-enabled. See `Volume Encryption
-<https://docs.openstack.org/ocata/config-reference/block-storage/volume-encryption.html>`__
-section of Openstack Configuration Reference documentation for instructions.
+enabled. See the `Volume Encryption
+<https://docs.openstack.org/cinder/latest/configuration/block-storage/volume-encryption.html>`__
+section of the Openstack Cinder Service Configuration documentation for
+instructions.
 
-**Pass:** If 1) the value of parameter ``api_class`` under ``[KEY_MANAGER]``
+**Pass:** If 1) the value of parameter ``backend`` under the ``[key_manager]``
 section in ``/etc/cinder/cinder.conf`` is set, 2) the value of parameter
-``api_class`` under ``[KEY_MANAGER]`` in ``/etc/nova/nova.conf`` is set,
+``backend`` under ``[key_manager]`` in ``/etc/nova/nova.conf`` is set,
 and 3) if the instructions in the documentation referenced above are properly
 followed.
 
@@ -256,8 +257,8 @@ referenced above.
 
 The search should not return the string written to the encrypted volume.
 
-**Fail:** If value of parameter ``api_class`` under ``[KEY_MANAGER]`` section
+**Fail:** If value of parameter ``backend`` under ``[key_manager]`` section
 in ``/etc/cinder/cinder.conf`` is not set, or if the value of parameter
-``api_class`` under ``[KEY_MANAGER]`` section in ``/etc/nova/nova.conf``
+``backend`` under ``[key_manager]`` section in ``/etc/nova/nova.conf``
 is not set, or if the instructions in the documentation referenced above are
 not properly followed.

@@ -77,7 +77,7 @@ release, the following ephemeral disk encryption features are supported:
           storage. AES-XTS is recommended by NIST_ specifically for disk
           storage, and the name is shorthand for AES encryption using the
           XTS encryption mode. Available ciphers depend on kernel support.
-          At the command line, type 'cyrptsetup benchmark' to determine the
+          At the command line, type 'cryptsetup benchmark' to determine the
           available options (and see benchmark results), or go to
           */proc/crypto*
 

@@ -50,7 +50,7 @@ Service Architecture diagrams contain these elements:
       types
 
       -  A vertical cylinder indicates storage or a database
-      -  A horizontal cylinder (a “pipe” shape) indicates a message
+      -  A horizontal cylinder (a "pipe" shape) indicates a message
          queue (use an elongated rectangle if horizontal cylinders are
          unavailable)
 

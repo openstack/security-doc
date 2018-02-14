@@ -23,7 +23,7 @@ to alerts coming from the new infrastructure. She uses a currently
 existing Security Event and Incident Management (SEIM) solution, and
 configures secure logging to the SEIM event collector. Alice and the SOC
 analyst build the SEIM views so that logs are correlated by type, and
-trigger alerts on unexpected or “interesting” events, such as a
+trigger alerts on unexpected or "interesting" events, such as a
 successful login by a user immediately after a string of failed login
 attempts within a given timeframe. The SOC analyst is also given
 escalation protocols and contact information so that when an specific

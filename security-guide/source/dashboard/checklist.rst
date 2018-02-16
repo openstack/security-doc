@@ -127,7 +127,7 @@ Recommended in: :doc:`cookies`.
 Check-Dashboard-06: Is ``SESSION_COOKIE_HTTPONLY`` parameter set to ``True``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The “HTTPONLY” cookie attribute instructs web browsers not to allow scripts
+The "HTTPONLY" cookie attribute instructs web browsers not to allow scripts
 (e.g. JavaScript or VBscript) an ability to access the cookies via the DOM
 ``document.cookie`` object. This session ID protection is mandatory to prevent
 session ID stealing through XSS attacks.

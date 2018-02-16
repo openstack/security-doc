@@ -54,7 +54,7 @@ Before the review
 Running the threat analysis review
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Identify the “scribe” role, who will record the discussion and any
+- Identify the "scribe" role, who will record the discussion and any
   findings in the etherpad.
 - Ask the project architect to briefly describe the purpose of the service,
   typical uses cases, who will use it and how it will be deployed.

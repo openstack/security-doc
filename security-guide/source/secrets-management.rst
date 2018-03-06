@@ -12,7 +12,7 @@ operate.
 
 Secrets Management describes a group of technologies that are designed to
 protect key materials within a software system. Traditionally, key management
-involves deployment of `Hardware Security Modules (HSM) <https://en.wikipedia.org/wiki/Hardware_security_module/>`_.
+involves deployment of `Hardware Security Modules (HSM) <https://en.wikipedia.org/wiki/Hardware_security_module>`_.
 These devices have been physically hardened against tampering.
 
 As technology has advanced the number of secret things that need to be

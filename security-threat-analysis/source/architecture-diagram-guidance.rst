@@ -58,7 +58,7 @@ Service Architecture diagrams contain these elements:
    -  Multi-instances of a component should be indicated by a quantity after
       the component name, for example (100), and if possible layered component
       boxes
-   -  Component shapes don’t need to be all the same size. Some component
+   -  Component shapes don't need to be all the same size. Some component
       shapes may be shrunk to allow application layers to be easily recognized,
       without creating a maze of crossed interface lines
    -  User access over the internet can be indicated by a cloud-shaped

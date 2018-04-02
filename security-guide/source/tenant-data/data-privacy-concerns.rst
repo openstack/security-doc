@@ -187,5 +187,6 @@ ironic does not appear to address sanitization of tenant data resident the
 physical hardware.
 
 Additionally, it is possible for tenants of a bare metal system to modify
-system firmware. TPM technology, described in ?, provides a solution for
-detecting unauthorized firmware changes.
+system firmware. TPM technology, described in
+:ref:`management-secure-bootstrapping`, provides a solution for detecting
+unauthorized firmware changes.

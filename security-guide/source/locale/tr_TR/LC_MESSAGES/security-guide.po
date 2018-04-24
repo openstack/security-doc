@@ -8,9 +8,9 @@
 # işbaran akçayır <isbaran@gmail.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: Security Guide\n"
+"Project-Id-Version: openstacksecurityguide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-24 08:48+0000\n"
+"POT-Creation-Date: 2018-04-19 23:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1852,15 +1852,6 @@ msgstr ""
 
 msgid "Additional security features"
 msgstr "Ek güvenlik özellikleri"
-
-msgid ""
-"Additionally, it is possible for tenants of a bare metal system to modify "
-"system firmware. TPM technology, described in ?, provides a solution for "
-"detecting unauthorized firmware changes."
-msgstr ""
-"Buna ek olarak, düz sistem kiracılarının sistem yazılımını değiştirmesi "
-"mümkündür. ? de açıklanan TPM teknolojisi, yetkisiz bellenim "
-"değişikliklerini tespit etmek için bir çözüm sunar."
 
 msgid ""
 "Additionally, the following security-related criteria are highly encouraged "

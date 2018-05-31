@@ -63,7 +63,7 @@ deployments, clusters can be constructed , utilizing a distributed data-store.
         <services>
         </services>
         <destinations>
-            <endpoint id="keystone" protocol="http" hostname="http://idenity-server.acme.com" root-path="/" port="35357" default="true"/>
+            <endpoint id="keystone" protocol="http" hostname="http://identity-server.acme.com" root-path="/" port="35357" default="true"/>
         </destinations>
     </repose-cluster>
 

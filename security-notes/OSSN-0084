@@ -1,0 +1,39 @@
+Data retained after deletion of a ScaleIO volume
+---
+
+### Summary ###
+Certain storage volume configurations allow newly created volumes to
+contain previous data. This could lead to leakage of sensitive
+information between tenants.
+
+### Affected Services / Software ###
+Cinder releases up to and including Queens with ScaleIO volumes
+using thin volumes and zero padding.
+
+### Discussion ###
+Using both thin volumes and zero padding does not ensure data contained
+in a volume is actually deleted. The default volume provisioning rule is
+set to thick so most installations are likely not affected. Operators
+can check their configuration in `cinder.conf` or check for zero padding
+with this command `scli --query_all`.
+
+### Recommended Actions ###
+Update Cinder to Rocky or later.
+
+Alternatively operators can use one of two workarounds:
+
+Swap to thin volumes
+
+Ensure ScaleIO storage pools use zero-padding with:
+`scli --modify_zero_padding_policy
+    (((--protection_domain_id <ID> |
+    --protection_domain_name <NAME>)
+    --storage_pool_name <NAME>) | --storage_pool_id <ID>)
+    (--enable_zero_padding | --disable_zero_padding)`
+
+### Contacts / References ###
+Author: Nick Tait
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0084
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1699573
+Mailing List : [Security] tag on openstack-dev@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg

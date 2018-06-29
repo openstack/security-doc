@@ -17,14 +17,15 @@ set to thick so most installations are likely not affected. Operators
 can check their configuration in `cinder.conf` or check for zero padding
 with this command `scli --query_all`.
 
-### Recommended Actions ###
-Update Cinder to Rocky or later.
+#### Recommended Actions ####
 
-Alternatively operators can use one of two workarounds:
+Operators can use the following two workarounds, until the release of
+Rocky (planned 30th August 2018) which resolves the issue.
 
-Swap to thin volumes
+1. Swap to thin volumes
 
-Ensure ScaleIO storage pools use zero-padding with:
+2. Ensure ScaleIO storage pools use zero-padding with:
+
 `scli --modify_zero_padding_policy
     (((--protection_domain_id <ID> |
     --protection_domain_name <NAME>)

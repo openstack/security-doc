@@ -86,16 +86,16 @@ want to run such tools on their instances.
 Bibliography
 ~~~~~~~~~~~~
 
-Siwczak, Piotr. Some Practical Considerations for Monitoring in the
-OpenStack Cloud. 2012.
-https://www.mirantis.com/blog/openstack-monitoring/
+Siwczak, Piotr. `Some Practical Considerations for Monitoring in the
+OpenStack Cloud <https://www.mirantis.com/blog/openstack-monitoring/>`_. 2012.
 
-blog.sflow.com, sflow: Host sFlow distributed agent. 2012.
-http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html
+blog.sflow.com, sflow: `Host sFlow distributed agent
+<http://blog.sflow.com/2012/01/host-sflow-distributed-agent.html>`_. 2012.
 
-blog.sflow.com, sflow: LAN and WAN. 2009.
-http://blog.sflow.com/2009/09/lan-and-wan.html
+blog.sflow.com, sflow: `LAN and WAN
+<http://blog.sflow.com/2009/09/lan-and-wan.html>`_. 2009.
 
-blog.sflow.com, sflow: Rapidly detecting large flows sFlow vs.
+blog.sflow.com, sflow: `Rapidly detecting large flows sFlow vs
+<http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html>`_.
 NetFlow/IPFIX. 2013.
-http://blog.sflow.com/2013/01/rapidly-detecting-large-flows-sflow-vs.html
+

@@ -37,6 +37,6 @@ Bibliography:
    (KMIP). 2014.
    `KMIP <https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=kmip>`__
 
--  PyKMIP library https://github.com/OpenKMIP/PyKMIP
+-  `PyKMIP library <https://github.com/OpenKMIP/PyKMIP>`__
 
 -  Secrets Management :ref:`secrets-management`

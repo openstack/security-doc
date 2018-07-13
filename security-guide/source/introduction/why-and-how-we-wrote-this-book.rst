@@ -170,7 +170,7 @@ This Book was produced in a 5 day book sprint. A book sprint is an intensely
 collaborative, facilitated process which brings together a group to produce a
 book in 3-5 days. It is a strongly facilitated process with a specific
 methodology founded and developed by Adam Hyde. For more information visit the
-book sprint web page at http://www.booksprints.net.
+book sprint web page at `BookSprints <http://www.booksprints.net>`__.
 
 How to contribute to this book
 ------------------------------

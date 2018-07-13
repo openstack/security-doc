@@ -40,7 +40,7 @@ tracking an upstream Linux distribution.
        Security Group (OSSG) to support the work of the VMT. OSSN
        address issues in supporting software and common deployment
        configurations. They are referenced throughout this guide.
-       Security Notes are archived at https://wiki.openstack.org/wiki/OSSN
+       Security Notes are archived at `OSSN <https://wiki.openstack.org/wiki/OSSN>`_.
 
 Triage
 ------

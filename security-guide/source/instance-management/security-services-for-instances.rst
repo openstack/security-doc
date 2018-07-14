@@ -236,7 +236,7 @@ the Image service. If this verification fails, the boot won't occur.
 The OpenStack Operations Guide provides guidance on how to create and
 upload a signed image, and how to use this feature. For more
 information, see `Adding Signed Images
-<https://docs.openstack.org/ops-guide/ops-user-facing-operations.html#adding-signed-images>`_
+<https://docs.openstack.org/operations-guide/ops-user-facing-operations.html#adding-signed-images>`_
 in the Operations Guide.
 
 Instance migrations

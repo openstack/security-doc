@@ -23,13 +23,13 @@ It includes these manuals:
  * Security Threat Analysis
 
 The Security Notes are published by the OpenStack Security Project (OSSP) to
-advise users of security related issues. For more information refer
-https://wiki.openstack.org/wiki/Security_Notes and
-https://wiki.openstack.org/wiki/Security/Security_Note_Process.
+advise users of security related issues. For more information refer to the
+`Security Notes <https://wiki.openstack.org/wiki/Security_Notes>`_ and
+`Security Note Process <https://wiki.openstack.org/wiki/Security/Security_Note_Process>`_.
 
 Security Advisories are issued by the Vulnerability Management Team (VMT). For
 more information about OpenStack's Vulnerability Management Team (VMT) refer
-https://security.openstack.org/vmt-process.html.
+to the `Vulnerability Management Process <https://security.openstack.org/vmt-process.html>`_.
 
 Directory Structure
 -------------------
@@ -78,7 +78,7 @@ Bugs
 
 Bugs should be filed on Launchpad, not GitHub:
 
-   https://bugs.launchpad.net/openstack-manuals
+   `Bugs:openstack-manuals <https://bugs.launchpad.net/openstack-manuals>`_
 
 If you find a security issue in OpenStack, not in the contents of the Security
 Guide, please see  `How to Report Security Issues to OpenStack
@@ -88,5 +88,6 @@ Guide, please see  `How to Report Security Issues to OpenStack
 Installing
 ==========
 
-Refer to https://docs.openstack.org/security-guide to see where these documents
-are published and to learn more about the OpenStack Security Guide.
+Refer to the `OpenStack Security Guide <https://docs.openstack.org/security-guide>`_
+to see where these documents are published and to learn more about the
+OpenStack Security Guide.

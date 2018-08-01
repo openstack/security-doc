@@ -181,6 +181,7 @@ Section *AC-19(d)* in Oz.
       <command name='update'>
       yum update
       yum clean all
+      rm -rf /var/log/yum
       sed -i '/^HWADDR/d' /etc/sysconfig/network-scripts/ifcfg-eth0
       echo -n > /etc/udev/rules.d/70-persistent-net.rules
       echo -n > /lib/udev/rules.d/75-persistent-net-generator.rules

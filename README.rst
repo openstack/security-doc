@@ -85,6 +85,12 @@ Guide, please see  `How to Report Security Issues to OpenStack
 <https://security.openstack.org/>`_.
 
 
+Release Notes
+=============
+
+https://docs.openstack.org/releasenotes/openstack-manuals
+
+
 Installing
 ==========
 

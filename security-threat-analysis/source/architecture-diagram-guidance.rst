@@ -157,8 +157,9 @@ The following template illustrates the elements of a sequence diagram.
 .. image:: figures/Template_Sequence-diagram.png
 
 Sequence diagrams can be quickly and easily generated from text using
-http://WebSequenceDiagrams.com . Enter a specification using a simple scripting
-language, as follows. Be sure to include authentication steps in your diagram.
+`WebSequenceDiagrams <http://WebSequenceDiagrams.com>`_ . Enter a
+specification using a simple scripting language, as follows. Be sure
+to include authentication steps in your diagram.
 
 title Issue Certificate
 

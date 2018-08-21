@@ -351,7 +351,7 @@ form of an email with the messages of interest. An interesting
 event could be a significant failure, or known health indicator
 of a pending failure. Two common utilities for managing alerts
 are `Nagios <https://www.nagios.org>`_ and
-`Zabbix <http://www.zabbix.com>`_.
+`Zabbix <https://www.zabbix.com/>`_.
 
 Updates and patches
 ~~~~~~~~~~~~~~~~~~~

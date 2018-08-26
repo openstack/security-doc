@@ -180,4 +180,4 @@ that served as our group office for the entirety of the documentation sprint.
 
 Learn more about how to contribute to the OpenStack docs, see the
 `OpenStack Documentation Contributor Guide
-<https://docs.openstack.org/contributor-guide/index.html>`__.
+<https://docs.openstack.org/doc-contrib-guide/index.html>`__.

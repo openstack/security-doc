@@ -14,7 +14,7 @@ This repository contains the OpenStack Security documentation.
 
 For details on how to contribute to the documentation, see the
 `OpenStack Documentation Contributor Guide
-<https://docs.openstack.org/contributor-guide/>`_.
+<https://docs.openstack.org/doc-contrib-guide/>`_.
 
 It includes these manuals:
 
@@ -70,7 +70,7 @@ documentation to testing to deployment scripts.
 
 If you would like to contribute to the documents, please see the
 `OpenStack Documentation contributor guide
-<https://docs.openstack.org/contributor-guide/>`_.
+<https://docs.openstack.org/doc-contrib-guide/>`_.
 
 
 Bugs

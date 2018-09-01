@@ -41,18 +41,15 @@ OpenStack vulnerability management team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We recommend keeping up to date on security issues and advisories as they are
-published. The OpenStack Security Portal (`https://security.openstack.org
-<https://security.openstack.org>`_) is the central portal where advisories,
-notices, meetings, and processes can be coordinated. Additionally, the
-OpenStack Vulnerability Management Team (VMT) portal
-(`https://security.openstack.org/#openstack-vulnerability-management-team
-<https://security.openstack.org/#openstack-vulnerability-management-team>`_)
+published. The `OpenStack Security Portal <https://security.openstack.org>`_
+is the central portal where advisories, notices, meetings, and processes can
+be coordinated. Additionally, the `OpenStack Vulnerability Management Team
+(VMT) portal <https://security.openstack.org/#openstack-vulnerability-management-team>`_
 coordinates remediation within the OpenStack project, as well as the process of
 investigating reported bugs which are responsibly disclosed (privately) to the
 VMT, by marking the bug as 'This bug is a security vulnerability'. Further
-detail is outlined in the VMT process page
-(`https://security.openstack.org/vmt-process.html#process
-<https://security.openstack.org/vmt-process.html#process>`_) and results in an
+detail is outlined in the `VMT process page
+<https://security.openstack.org/vmt-process.html#process>`_ and results in an
 OpenStack Security Advisory (OSSA). This OSSA outlines the issue and the fix,
 as well as linking to both the original bug, and the location where the where
 the patch is hosted.
@@ -66,9 +63,8 @@ or are not strictly part of OpenStack are drafted into OpenStack Security Notes
 (OSSNs). These include configuration issues such as ensuring Identity provider
 mappings as well as non-OpenStack but critical issues such as the Bashbug/Ghost
 or Venom vulnerabilities that affect the platform OpenStack utilizes. The
-current set of OSSNs is in the Security Note wiki
-(`https://wiki.openstack.org/wiki/Security_Notes
-<https://wiki.openstack.org/wiki/Security_Notes>`_).
+current set of OSSNs is in the `Security Note wiki
+<https://wiki.openstack.org/wiki/Security_Notes>`_.
 
 
 OpenStack-dev mailinglist
@@ -79,11 +75,11 @@ mailinglist with the [security] topic in the subject line. We recommend
 subscribing to this list as well as mail filtering rules that ensure OSSNs,
 OSSAs, and other important advisories are not missed. The openstack-dev
 mailinglist is managed through
-`http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev
+`OpenStack Development Mailing List
 <http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev>`_.
 The openstack-dev list has a high traffic rate, and filtering is discussed in
 the thread
-`http://lists.openstack.org/pipermail/openstack-dev/2013-November/019233.html
+`filtering traffic on the mailing list
 <http://lists.openstack.org/pipermail/openstack-dev/2013-November/019233.html>`_.
 
 

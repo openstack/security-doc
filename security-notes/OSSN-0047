@@ -118,7 +118,7 @@ This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0047
 Original LaunchPad Bug : https://bugs.launchpad.net/keystone/+bug/1390124
 OpenStack Security ML : openstack-security@lists.openstack.org
 OpenStack Security Group : https://launchpad.net/~openstack-ossg
-Keystone Federation Docs : http://docs.openstack.org/developer/keystone/configure_federation.html
+Keystone Federation Docs : https://docs.openstack.org/keystone/latest/admin/federated-identity.html
 mod_auth_mellon Docs : https://github.com/UNINETT/mod_auth_mellon/wiki
 mod_shib Docs : https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPApacheConfig
 mod_auth_openidc Docs : https://github.com/pingidentity/mod_auth_openidc

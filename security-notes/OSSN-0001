@@ -38,10 +38,10 @@ guests. Even with appropriate AppArmour policies applied.
 
 ### Contacts / References ###
 Author: Robert Clark, HP
-Nova : http://docs.openstack.org/developer/nova/
-LXC : http://lxc.sourceforge.net/
-Libvirt : http://libvirt.org/
-KVM : http://www.linux-kvm.org/page/Main_Page
-Xen: http://xen.org/products/xenhyp.html
+Nova : https://docs.openstack.org/nova/latest/
+LXC : https://linuxcontainers.org/
+Libvirt : https://libvirt.org/
+KVM : https://www.linux-kvm.org/page/Main_Page
+Xen: https://www.xenproject.org/developers/teams/hypervisor.html
 LXC DAC : https://wiki.ubuntu.com/UserNamespace
 LXC LibVirt Discussion : https://www.berrange.com/posts/2011/09/27/getting-started-with-lxc-using-libvirt/

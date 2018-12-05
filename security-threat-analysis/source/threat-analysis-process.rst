@@ -19,7 +19,7 @@ Preparing artifacts for review
   provided at :ref:`architecture-page` and there is guidance on
   diagramming at :ref:`architecture-diagram-guidance`. If further help or
   advice is needed, please reach out to the Security Project via the
-  openstack-dev@lists.openstack.org mailing list, tagging your email
+  openstack-discuss@lists.openstack.org mailing list, tagging your email
   [security].
 - The architecture page should describe a best practice deployment. If a
   reference architecture is available this may be a good example to use,
@@ -45,8 +45,8 @@ Before the review
   listed in the Architecture Page Template :ref:`architecture-page`.
 - The architecture page should include diagrams as specified in the
   Architecture Diagram guidance :ref:`architecture-diagram-guidance`.
-- Send an email to the openstack-dev@lists.openstack.org mailing list with a
-  [security] tag to announce the up-coming threat analysis review.
+- Send an email to the openstack-discuss@lists.openstack.org mailing
+  list with a [security] tag to announce the up-coming threat analysis review.
 - Prepare a threat analysis review etherpad, using this template <link>.
 - Print the architecture page as a PDF, to be checked in along with the review
   notes, as evidence of what was reviewed.

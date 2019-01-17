@@ -10,9 +10,10 @@ internal services to complete tasks. In the event that the token expires
 before tasks complete, the cloud may become unresponsive or stop providing
 services. An example of expended time during use would be the time
 needed by the Compute service to transfer a disk image onto the
-hypervisor for local caching.
+hypervisor for local caching. Fetching expired tokens when using
+a valid service token is allowed.
 
-The following example shows a PKI token. Note that token id values are
+The following example shows a PKI token. Note that token ID values are
 typically 3500 bytes. In this example, the value has been truncated.
 
 .. code:: json

@@ -4,7 +4,9 @@ Hardening the virtualization layers
 
 In the beginning of this chapter we discuss the use of both physical and
 virtual hardware by instances, the associated security risks, and some
-recommendations for mitigating those risks. We conclude the chapter with a
+recommendations for mitigating those risks. Then we discuss how the Secure
+Encrypted Virtualizaion tehcnology can be used to encrypt the memory of VMs on
+AMD-based machines which support the technology. We conclude the chapter with a
 discussion of sVirt, an open source project for integrating SELinux mandatory
 access controls with the virtualization components.
 
@@ -15,7 +17,7 @@ Many hypervisors offer a functionality known as PCI passthrough. This allows an
 instance to have direct access to a piece of hardware on the node. For example,
 this could be used to allow instances to access video cards or GPUs offering
 the compute unified device architecture (CUDA) for high performance
-computation. This feature carries two types of security risks: direct memory
+computation. This feature  carries two types of security risks: direct memory
 access and hardware infection.
 
 Direct memory access (DMA) is a feature that permits certain hardware devices
@@ -170,6 +172,144 @@ DEB packages:
 RPM packages:
      `How to create an RPM package
      <http://fedoraproject.org/wiki/How_to_create_an_RPM_package>`_
+
+Secure Encrypted Virtualization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Secure Encrypted Virtualization (SEV) <https://developer.amd.com/sev/>`_ is a
+technology from AMD which enables the the memory for a VM to be encrypted with
+a key unique to the VM. SEV is available with KVM guests on certain AMD-based
+machines. 
+
+To use SEV several items must be prepared:
+
+- The compute node machine and KVM Hypervisor need to be configured for SEV
+  usage. The `KVM Hypervisor section of the Nova Configuration Guide
+  <https://docs.openstack.org/nova/latest/admin/configuration/hypervisor-kvm.html>`_
+  contains information needed to configure the machine and hypervisor, and
+  lists several limitations of SEV.
+
+- One or more flavors must be created that include the capability
+  ``supports_amd_sev`` which maps to the ``os_trait`` of ``HW_CPU_AMD_SEV``.
+  Using one of these flavors will cause the VM memory to be encrypted using
+  SEV.
+
+- The VM must be configured in a particular manner as described in the
+  remainder of this section.
+
+The VM must be the modern ``Q35`` machine type and must use UEFI firmware.
+``SATA`` and ``virtio-scsi`` disks are supported. ``virtio-blk`` and IDE disks
+are not supported at this time. All ``virtio`` devices need to be configured
+with the ``iommu='on'`` attribute in their ``<driver>`` configuration. All
+memory regions used by the VM must be locked for Direct Memory Access (DMA) to
+prevent swapping.
+
+The ``iommu`` attribute must be ``on`` for all virtio devices.  Despite the
+name, this does not require the guest or host to have an IOMMU device, but
+merely enables the virtio flag which indicates that virtualized DMA should be
+used.
+
+The domain must include a <launchSecurity type='sev'> section as shown in the
+example below.
+
+All the memory regions allocated by QEMU must be pinned, so that they cannot
+be swapped to disk.  This can be achieved by setting a hard memory limit via
+``<hard_limit>`` in the ``<memtune>`` section of the domain's XML.  This does
+not reflect a requirement for additional memory; it is only required in order
+to achieve the memory pinning.
+
+Another method for pinning the memory is to enable `hugepages
+<https://docs.openstack.org/nova/latest/admin/huge-pages.html>`_ by booting
+with the ``hw:mem_page_size=large`` property set either on the flavor or the
+image, although using this method may require undesirable duplication of
+flavors or images.
+
+Note that this memory pinning is expected to be a temporary requirement; the
+latest firmware versions already support page copying, so when the OS starts
+supporting the page-move or page-migration commmand then it will no longer be
+needed.
+
+Based on instrumentation of QEMU, the limit per VM should be calculated and
+accounted for as follows:
+
+=======================  =====================  ==========================
+Memory region type       Size                   Accounting mechanism
+=======================  =====================  ==========================
+VM RAM                   set by flavor          placement service
+video memory             set by flavor/image    placement service
+UEFI ROM                 4096KB                 `reserved_host_memory_mb`_
+UEFI var store (pflash)  4096KB                 `reserved_host_memory_mb`_
+pc.rom                   128KB                  `reserved_host_memory_mb`_
+isa-bios                 128KB                  `reserved_host_memory_mb`_
+ACPI tables              2384KB                 `reserved_host_memory_mb`_
+=======================  =====================  ==========================
+
+.. _reserved_host_memory_mb:
+   https://docs.openstack.org/nova/latest/configuration/config.html#DEFAULT.reserved_host_memory_mb
+
+It is also recommended to include an additional padding of at least 256KB for
+safety, since ROM sizes can occasionally change. For example the total of
+10832KB required here for ROMs / ACPI tables could be rounded up to 16MB.
+
+The first two values are expected to commonly vary per VM, and are already
+accounted for dynamically by the placement service.
+
+The remainder have traditionally (i.e. for non-SEV instances) been accounted
+for alongside the overhead for the host OS via nova's memory pool defined by
+the `reserved_host_memory_mb`_ config option, and this does not need to
+change.  However, whilst the overhead incurred is no different to that
+required for non-SEV instances, it is much more important to get the hard
+limit right when pinning memory; if the limit is too low the VM will get
+killed, and if the limit is too high there is a risk of the host's OOM killer
+being invoked, or failing that, the host crashing because it cannot reclaim
+the memory used by the guest.
+
+So as an example a 4GB VM would contain the following XML configuration:
+
+  .. code-block:: ini
+
+     <domain type='kvm'>
+       <os>
+         <type arch='x86_64' machine='pc-q35-2.11'>hvm</type>
+         <loader readonly='yes' type='pflash'>/usr/share/qemu/ovmf-x86_64-ms-4m-code.bin</loader>
+         <nvram>/var/lib/libvirt/qemu/nvram/sles15-sev-guest_VARS.fd</nvram>
+         <boot dev='hd'/>
+       </os>
+       <launchSecurity type='sev'>
+         <cbitpos>47</cbitpos>
+         <reducedPhysBits>1</reducedPhysBits>
+         <policy>0x0037</policy>
+       </launchSecurity>
+       <memtune>
+         <hard_limit unit='KiB'>4718592</hard_limit>
+         ...
+       </memtune>
+       <devices>
+         <rng model='virtio'>
+           <driver iommu='on'/>
+           ...
+         </rng>
+         <memballoon model='virtio'>
+           <driver iommu='on' />
+           ...
+         </memballoon>
+         ...
+         <video>
+           <model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1'  primary='yes'/>
+         </video>
+         ...
+       </devices>
+       ...
+     </domain>
+
+``cbitpos`` and ``reducedPhysBits`` are dependent on the processor family, and
+can be obtained through the ``sev`` element from `the domain capabilities
+<https://libvirt.org/formatdomaincaps.html#elementsSEV>`_.
+
+``policy`` specifies a particular SEV policy as documented in `the AMD SEV-KM
+API Specification <https://developer.amd.com/wp-content/resources/55766.PDF>`_.
+
+
 
 Mandatory access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -121,7 +121,7 @@ quota extension API. To enable per-project quotas, you must set the
 
 .. code:: ini
 
-    quota_driver = neutron.db.quota_db.DbQuotaDriver
+    quota_driver = neutron.db.quota.driver.DbQuotaDriver
 
 Mitigate ARP spoofing
 ~~~~~~~~~~~~~~~~~~~~~

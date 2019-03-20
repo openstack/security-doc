@@ -116,17 +116,17 @@ may try to eavesdrop on the channel in order to get access to sensitive
 information. All components must communicate with each other using a
 secured communication protocol.
 
-**Pass:** If value of parameter ``auth_uri`` under ``[keystone_authtoken]``
-section in ``/etc/glance/glance-api.conf`` is set to the Identity API endpoint
-starting with ``https://``, and the value of the parameter ``insecure`` is under
-the same ``[keystone_authtoken]`` section in the same
-``/etc/glance/glance-registry.conf`` is set to ``False``.
+**Pass:** If value of parameter ``www_authenticate_uri`` under
+``[keystone_authtoken]`` section in ``/etc/glance/glance-api.conf`` is set to
+the Identity API endpoint starting with ``https://``, and the value of the
+parameter ``insecure`` is under the same ``[keystone_authtoken]`` section
+in the same ``/etc/glance/glance-registry.conf`` is set to ``False``.
 
-**Fail:** If value of parameter ``auth_uri`` under ``[keystone_authtoken]``
-section in ``/etc/glance/glance-api.conf`` is not set to Identity API endpoint
-starting with ``https://``, or value of parameter ``insecure`` under the same
-``[keystone_authtoken]`` section in the same ``/etc/glance/glance-api.conf``
-is set to ``True``.
+**Fail:** If value of parameter ``www_authenticate_uri`` under
+``[keystone_authtoken]`` section in ``/etc/glance/glance-api.conf`` is not set
+to Identity API endpoint starting with ``https://``, or value of parameter
+``insecure`` under the same ``[keystone_authtoken]`` section in the same
+``/etc/glance/glance-api.conf`` is set to ``True``.
 
 .. _check_image_05:
 

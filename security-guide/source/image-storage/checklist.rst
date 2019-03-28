@@ -13,7 +13,8 @@ intentionally or accidentally, modifies or deletes any of the parameters or
 the file itself then it would cause severe availability issues resulting in a
 denial of service to the other end users. Therefore, user ownership of such
 critical configuration files must be set to ``root`` and group ownership
-must be set to ``glance``.
+must be set to ``glance``. Additionally, the containing directory should have
+the same ownership to ensure that new files are owned correctly.
 
 Run the following commands:
 
@@ -30,6 +31,7 @@ Run the following commands:
    $ stat -L -c "%U %G" /etc/glance/policy.json | egrep "root glance"
    $ stat -L -c "%U %G" /etc/glance/schema-image.json | egrep "root glance"
    $ stat -L -c "%U %G" /etc/glance/schema.json | egrep "root glance"
+   $ stat -L -c "%U %G" /etc/glance | egrep "root glance"
 
 **Pass:** If user and group ownership of all these configuration files is set
 to root and glance respectively. The above commands show output of root glance.
@@ -59,10 +61,15 @@ Run the following commands:
     $ stat -L -c "%a" /etc/glance/policy.json
     $ stat -L -c "%a" /etc/glance/schema-image.json
     $ stat -L -c "%a" /etc/glance/schema.json
+    $ stat -L -c "%a" /etc/glance
 
-**Pass:** If permissions are set to 640 or stricter. The permissions of 640
-translates into owner r/w, group r, and no rights to others. For example,
-``u=rw,g=r,o=``.
+A broader restriction is also possible: if the containing directory is set
+to 750, the guarantee is made that newly created files inside this directory
+would have the desired permissions.
+
+**Pass:** If permissions are set to 640 or stricter, or the containing
+directory is set to 750. The permissions of 640/750 translates into owner r/w,
+group r, and no rights to others. For example, ``u=rw,g=r,o=``.
 
 .. note::
 

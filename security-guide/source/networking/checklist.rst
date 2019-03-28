@@ -13,7 +13,8 @@ intentionally or accidentally modifies or deletes any of the parameters or
 the file itself then it would cause severe availability issues causing a
 denial of service to the other end users. Thus user ownership of such critical
 configuration files must be set to root and group ownership must be set to
-neutron.
+neutron. Additionally, the containing directory should have the same ownership
+to ensure that new files are owned correctly.
 
 Run the following commands:
 
@@ -23,6 +24,7 @@ Run the following commands:
     $ stat -L -c "%U %G" /etc/neutron/api-paste.ini | egrep "root neutron"
     $ stat -L -c "%U %G" /etc/neutron/policy.json | egrep "root neutron"
     $ stat -L -c "%U %G" /etc/neutron/rootwrap.conf | egrep "root neutron"
+    $ stat -L -c "%U %G" /etc/neutron | egrep "root neutron"
 
 **Pass:** If user and group ownership of all these config files is set
 to root and neutron respectively. The above commands show output of root
@@ -48,9 +50,16 @@ Run the following commands:
     $ stat -L -c "%a" /etc/neutron/api-paste.ini
     $ stat -L -c "%a" /etc/neutron/policy.json
     $ stat -L -c "%a" /etc/neutron/rootwrap.conf
+    $ stat -L -c "%a" /etc/neutron
 
-**Pass:** If permissions are set to 640 or stricter. The permissions of 640
-translates into owner r/w, group r, and no rights to others i.e. "u=rw,g=r,o=".
+A broader restriction is also possible: if the containing directory is set
+to 750, the guarantee is made that newly created files inside this directory
+would have the desired permissions.
+
+**Pass:** If permissions are set to 640 or stricter, or the containing
+directory is set to 750. The permissions of 640 translates into owner r/w,
+group r, and no rights to others i.e. "u=rw,g=r,o=".
+
 Note that with :ref:`check_neutron_01` and permissions set to 640, root has
 read/write access and neutron has read access to these configuration files. The
 access rights can also be validated using the following command. This command

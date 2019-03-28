@@ -11,7 +11,8 @@ intentionally or accidentally modifies or deletes any of the parameters or
 the file itself then it would cause severe availability issues causing a
 denial of service to the other end users. Thus user and group ownership
 of such critical configuration files must be set to that component
-owner.
+owner. Additionally, the containing directory should have the same ownership
+to ensure that new files are owned correctly.
 
 Run the following commands:
 
@@ -24,6 +25,7 @@ Run the following commands:
     $ stat -L -c "%U %G" /etc/keystone/ssl/certs/signing_cert.pem | egrep "keystone keystone"
     $ stat -L -c "%U %G" /etc/keystone/ssl/private/signing_key.pem | egrep "keystone keystone"
     $ stat -L -c "%U %G" /etc/keystone/ssl/certs/ca.pem | egrep "keystone keystone"
+    $ stat -L -c "%U %G" /etc/keystone | egrep "keystone keystone"
 
 **Pass:** If user and group ownership of all these config files is set
 to keystone. The above commands show output of keystone keystone.
@@ -50,10 +52,16 @@ Run the following commands:
     $ stat -L -c "%a" /etc/keystone/ssl/certs/signing_cert.pem
     $ stat -L -c "%a" /etc/keystone/ssl/private/signing_key.pem
     $ stat -L -c "%a" /etc/keystone/ssl/certs/ca.pem
+    $ stat -L -c "%a" /etc/keystone
 
-**Pass:** If permissions are set to 640 or stricter.
+A broader restriction is also possible: if the containing directory is set
+to 750, the guarantee is made that newly created files inside this directory
+would have the desired permissions.
 
-**Fail:** If permissions are not set to at least 640.
+**Pass:** If permissions are set to 640 or stricter, or the containing
+directory is set to 750.
+
+**Fail:** If permissions are not set to at least 640/750.
 
 Recommended in: :ref:`internally-implemented-authentication-methods`.
 

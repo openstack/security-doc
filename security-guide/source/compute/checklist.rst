@@ -13,7 +13,8 @@ intentionally or accidentally, modifies or deletes any of the parameters or
 the file itself then it would cause severe availability issues causing a
 denial of service to the other end users. User ownership of such critical
 configuration files must be set to ``root`` and group ownership must be set to
-``nova``.
+``nova``. Additionally, the containing directory should have the same ownership
+to ensure that new files are owned correctly.
 
 Run the following commands:
 
@@ -23,6 +24,7 @@ Run the following commands:
     $ stat -L -c "%U %G" /etc/nova/api-paste.ini | egrep "root nova"
     $ stat -L -c "%U %G" /etc/nova/policy.json | egrep "root nova"
     $ stat -L -c "%U %G" /etc/nova/rootwrap.conf | egrep "root nova"
+    $ stat -L -c "%U %G" /etc/nova | egrep "root nova"
 
 **Pass:** If user and group ownership of all these config files is set
 to ``root`` and ``nova`` respectively. The above commands show output of
@@ -51,9 +53,13 @@ Run the following commands:
     $ stat -L -c "%a" /etc/nova/policy.json
     $ stat -L -c "%a" /etc/nova/rootwrap.conf
 
-**Pass:** If permissions are set to 640 or stricter. The permissions of 640
-translates into owner r/w, group r, and no rights to others. For example,
-"u=rw,g=r,o=".
+A broader restriction is also possible: if the containing directory is set
+to 750, the guarantee is made that newly created files inside this directory
+would have the desired permissions.
+
+**Pass:** If permissions are set to 640 or stricter, or the containing
+directory is set to 750. The permissions of 640/750 translates into owner r/w,
+group r, and no rights to others. For example, "u=rw,g=r,o=".
 
 .. note::
 
@@ -72,7 +78,7 @@ translates into owner r/w, group r, and no rights to others. For example,
     mask         r--
     other        ---
 
-**Fail:** If permissions are not set to at least 640.
+**Fail:** If permissions are not set to at least 640/750.
 
 Recommended in: :doc:`../compute`.
 

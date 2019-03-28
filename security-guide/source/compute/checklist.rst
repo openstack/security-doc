@@ -88,11 +88,21 @@ attacker might gain unauthorized access to the OpenStack components. We
 strongly recommend that all services must be authenticated with keystone
 using their service accounts.
 
+Before Ocata:
+
 **Pass:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
 in ``/etc/nova/nova.conf`` is set to ``keystone``.
 
 **Fail:** If value of parameter ``auth_strategy`` under ``[DEFAULT]`` section
 is set to ``noauth`` or ``noauth2``.
+
+After Ocata:
+
+**Pass:** If value of parameter ``auth_strategy`` under ``[api]`` or
+``[DEFAULT]`` section in ``/etc/nova/nova.conf`` is set to ``keystone``.
+
+**Fail:** If value of parameter ``auth_strategy`` under ``[api]`` or
+``[DEFAULT]`` section is set to ``noauth`` or ``noauth2``.
 
 .. _check_compute_04:
 

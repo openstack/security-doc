@@ -460,8 +460,8 @@ Performing Federation authentication
 
       # curl -X POST \
       -H "Content-Type: application/json" \
-      -d '{"auth":{"identity":{"methods":["saml2"],"saml2":{"id":
-      "<unscoped_token_id>"}},"scope":{"project":{"domain": {"name":
+      -d '{"auth":{"identity":{"methods":["saml2"],"saml2":{"id": \
+      "<unscoped_token_id>"}},"scope":{"project":{"domain": {"name": \
       "Default"},"name":"service"}}}}' \
       -D - http://localhost:5000/v3/auth/tokens
 

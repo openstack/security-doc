@@ -294,8 +294,10 @@ following lines to the nova ``policy.json`` file:
 
 .. code:: json
 
-    "compute_extension:admin_actions:migrate": "!",
-    "compute_extension:admin_actions:migrateLive": "!",
+    {
+        "compute_extension:admin_actions:migrate": "!",
+        "compute_extension:admin_actions:migrateLive": "!",
+    }
 
 Migration network
 -----------------

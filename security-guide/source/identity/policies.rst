@@ -51,6 +51,5 @@ or ``admin``.
        "identity:update_endpoint": "rule:cloud_admin",
        "identity:delete_endpoint": "rule:cloud_admin",
 
-       ...
    }
 

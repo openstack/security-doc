@@ -15,7 +15,8 @@ intentionally or accidentally, modifies or deletes any of the parameters
 or the file itself then it would cause severe availability issues
 resulting in a denial of service to the other end users. User ownership
 of such critical configuration files must be set to root and group
-ownership must be set to barbican.
+ownership must be set to barbican. Additionally, the containing directory
+should have the same ownership to ensure that new files are owned correctly.
 
 Run the following commands:
 
@@ -24,6 +25,7 @@ Run the following commands:
   $ stat -L -c "%U %G" /etc/barbican/barbican.conf | egrep "root barbican"
   $ stat -L -c "%U %G" /etc/barbican/barbican-api-paste.ini | egrep "root barbican"
   $ stat -L -c "%U %G" /etc/barbican/policy.json | egrep "root barbican"
+  $ stat -L -c "%U %G" /etc/barbican | egrep "root barbican"
 
 **Pass:** If user and group ownership of all these config files is set
 to root and barbican respectively. The above commands show output of
@@ -48,10 +50,15 @@ Run the following commands:
   $ stat -L -c "%a" /etc/barbican/barbican.conf
   $ stat -L -c "%a" /etc/barbican/barbican-api-paste.ini
   $ stat -L -c "%a" /etc/barbican/policy.json
+  $ stat -L -c "%a" /etc/barbican
 
-**Pass:** If permissions are set to 640 or stricter. The permissions of
-640 translates into owner r/w, group r, and no rights to others, for
-example "u=rw,g=r,o=".
+A broader restriction is also possible: if the containing directory is set
+to 750, the guarantee is made that newly created files inside this directory
+would have the desired permissions.
+
+**Pass:** If permissions are set to 640 or stricter, or the containing
+directory is set to 750. The permissions of 640 translates into owner r/w,
+group r, and no rights to others, for example "u=rw,g=r,o=".
 
 .. note::
   With :ref:`check_key_mgr_01` and permissions set to 640, root

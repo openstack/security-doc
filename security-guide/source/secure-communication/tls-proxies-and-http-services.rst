@@ -251,7 +251,7 @@ The default configuration file is ``/etc/apache2/apache2.conf`` on Ubuntu,
     <VirtualHost <ip address>:443>
       ServerName <site FQDN>
       SSLEngine On
-      SSLProtocol +TLSv1 +TLSv1.1 +TLSv1.2,
+      SSLProtocol +TLSv1 +TLSv1.1 +TLSv1.2
       SSLCipherSuite HIGH:!RC4:!MD5:!aNULL:!eNULL:!EXP:!LOW:!MEDIUM
       SSLCertificateFile    /path/<site FQDN>.crt
       SSLCACertificateFile  /path/<site FQDN>.crt

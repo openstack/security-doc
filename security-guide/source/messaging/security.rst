@@ -121,12 +121,12 @@ Replace RABBIT\_PASS with a suitable password.
 For additional configuration information see:
 
 -  `RabbitMQ Access
-   Control <http://www.rabbitmq.com/access-control.html>`__
+   Control <https://www.rabbitmq.com/access-control.html>`__
 
 -  `RabbitMQ
-   Authentication <http://www.rabbitmq.com/authentication.html>`__
+   Authentication <https://www.rabbitmq.com/authentication.html>`__
 
--  `RabbitMQ Plugins <http://www.rabbitmq.com/plugins.html>`__
+-  `RabbitMQ Plugins <https://www.rabbitmq.com/plugins.html>`__
 
 -  `RabbitMQ SASL External
    Auth <http://hg.rabbitmq.com/rabbitmq-auth-mechanism-ssl/file/rabbitmq_v3_1_3/README>`__

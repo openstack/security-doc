@@ -1,8 +1,8 @@
 .. _architecture-page:
 
-=============================
+==========================
 Architecture page template
-=============================
+==========================
 
 Project name architecture - version/release
 ===========================================

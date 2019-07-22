@@ -16,7 +16,7 @@ main services, which are similar to those of the Block Storage service:
    authenticates and routes requests throughout the Shared Filesystem
    service. There is python-manilaclient to interact with the API.
    For more details on the Shared File Systems API, see the `OpenStack
-   Shared File Systems API <https://developer.openstack.org/api-ref-share-v2.html>`_.
+   Shared File Systems API <https://docs.openstack.org/api-ref/shared-file-system/>`_.
 ``manila-share``
    Responsible for managing Shared File Service devices, specifically the
    back-end devices.
@@ -36,7 +36,7 @@ PostgreSQL data bases.
 Using SQL, the Shared File Systems service is similar to other OpenStack
 services and can be used with any OpenStack deployment. For more details on
 the API, see the `OpenStack Shared File Systems API
-<https://developer.openstack.org/api-ref-share-v2.html>`_ description. For more
+<https://docs.openstack.org/api-ref/shared-file-system/>`_ description. For more
 details on the CLI usage and configuration, see `Shared File Systems Cloud
 Administrative Guide
 <https://docs.openstack.org/admin-guide/shared_file_systems.html>`_.

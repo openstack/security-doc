@@ -151,14 +151,12 @@ the OpenSSL libraries.
 Cryptographic algorithms, cipher modes, and protocols
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We recommend that only TLS 1.2 is used. Other versions such as
-TLS 1.0 and 1.1 are vulnerable to multiple attacks. TLS 1.0 should be
-disabled in your environment. TLS 1.1 may be used for broad
-client compatibility, however exercise caution when enabling this
-protocol. Only enable TLS version 1.1 if there is a mandatory compatibility
-requirement and you are aware of the risks involved. All versions of SSL,
-the predecessor to TLS, must not be used due to multiple public
-vulnerabilities.
+We recommend that a minimum of TLS 1.2 be used. Older versions such as
+TLS 1.0, 1.1, and all versions of SSL (TLS's predecessor) are vulnerable to
+multiple publicly known attacks and therefore must not be used. TLS 1.2 may be
+used for broad client compatibility, however exercise caution when enabling
+this protocol. Only enable TLS version 1.1 if there is a mandatory
+compatibility requirement and you are aware of the risks involved.
 
 When you are using TLS 1.2 and control both the clients and
 the server, the cipher suite should be limited to

@@ -26,17 +26,17 @@ client authentication.
 Invalid login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Identity service does not provide a method to limit access to
+As of the Newton release, the Identity service can limit access to
 accounts after repeated unsuccessful login attempts. A pattern of
 repetitive failed login attempts is generally an indicator of
 brute-force attacks (refer to
 :ref:`introduction_attack_types`). This type
 of attack is more prevalent in public cloud deployments.
 
-Prevention is possible by using an external authentication system that
-blocks out an account after some configured number of failed login
-attempts. The account then may only be unlocked with further
-side-channel intervention.
+For older deployments needing this functionality, prevention is possible by
+using an external authentication system that locks out an account after some
+configured number of failed login attempts. The account then may only be
+unlocked with further side-channel intervention.
 
 If prevention is not an option, detection can be used to mitigate
 damage. Detection involves frequent review of access control logs to

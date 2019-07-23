@@ -152,10 +152,8 @@ deployed is configured exactly as desired.
      - Platform specific
      - Software
 
-At the time of this writing, very few clouds are using secure boot
-technologies in a production environment. As a result, these
-technologies are still somewhat immature. We recommend planning
-carefully in terms of hardware selection. For example, ensure that you
+Secure boot may be an option for building your cloud, but requires careful
+planning in terms of hardware selection. For example, ensure that you
 have a TPM and Intel TXT support. Then verify how the node hardware
 vendor populates the PCR values. For example, which values will be
 available for validation. Typically the PCR values listed under the

@@ -19,7 +19,7 @@ industry-standard storage protocols such as iSCSI, ATA over Ethernet,
 or Fibre-Channel. These resources are managed and configured via
 OpenStack native standard HTTP RESTful API. For more details on the
 API see the `OpenStack Block Storage documentation
-<http://developer.openstack.org/api-ref-blockstorage-v2.html>`__.
+<https://docs.openstack.org/api-ref/block-storage/>`__.
 
 .. toctree::
    :maxdepth: 2

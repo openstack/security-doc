@@ -14,7 +14,7 @@ follow the same RESTful model, although some APIs, such as those managing
 durability, are kept private to the cluster.
 For more details on the API see the
 `OpenStack Storage API
-<https://developer.openstack.org/api-ref/object-storage/>`_.
+<https://docs.openstack.org/api-ref/object-store/>`_.
 
 The components of Object Storage are grouped into the following primary groups:
 

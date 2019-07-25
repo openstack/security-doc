@@ -86,7 +86,7 @@ security services for a specified share network and disassociate them from
 a share network.
 
 For details of managing security services via API, see the `Security
-services API <https://developer.openstack.org/api-ref-share-v2.html#share-security-services>`_.
+services API <https://docs.openstack.org/api-ref/shared-file-system/index.html#security-services>`_.
 You also can manage security services via python-manilaclient,
 see `Security services CLI managing <https://docs.openstack.org/admin-guide/shared_file_systems_security_services.html>`_.
 

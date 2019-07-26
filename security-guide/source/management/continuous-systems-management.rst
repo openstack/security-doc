@@ -212,7 +212,7 @@ Secure backup and recovery
 It is important to include backup procedures and policies in the overall
 System Security Plan. For a good overview of OpenStack's Backup and
 Recovery capabilities and procedures, refer to the
-`OpenStack Operations Guide on backup and recovery <https://docs.openstack.org/openstack-ops/content/backup_and_recovery.html>`__.
+`OpenStack Operations Guide on backup and recovery <https://docs.openstack.org/operations-guide/ops-backup-recovery.html>`__.
 
 -  Ensure only authenticated users and backup clients have access to the
    backup server.

@@ -72,7 +72,7 @@ the certificates, it is recommended to use Barbican , or the Magnum
 Database (``x590keypair``).
 
 A local directory can also be used (``local``), but is considered insecure and
-not suitable for a production enviroment.
+not suitable for a production environment.
 
 For more details on setting up a certificate manager for Magnum, see the
 `Container Infrastructure Management service <https://docs.openstack.org/magnum/latest/install/>`_

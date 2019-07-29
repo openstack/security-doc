@@ -49,7 +49,7 @@ After you are notified of a security update, the next step is to
 determine how critical this update is to a given cloud deployment. In
 this case, it is useful to have a pre-defined policy. Existing
 vulnerability rating systems such as the common vulnerability scoring
-system (CVSS) v2 do not properly account for cloud deployments.
+system (CVSS) do not properly account for cloud deployments.
 
 In this example we introduce a scoring matrix that places
 vulnerabilities in three categories: Privilege Escalation, Denial of

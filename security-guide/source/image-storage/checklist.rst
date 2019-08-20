@@ -95,6 +95,11 @@ group r, and no rights to others. For example, ``u=rw,g=r,o=``.
 Check-Image-03: Is keystone used for authentication?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note:: This item only applies to OpenStack releases Rocky and before as
+    ``auth_strategy`` was deprecated in Stein.
+
+
+
 OpenStack supports various authentication strategies including noauth, and
 keystone. If the ``noauth`` strategy is used, then users can interact with
 OpenStack services without any authentication. This could be a potential

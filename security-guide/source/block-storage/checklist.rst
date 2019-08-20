@@ -80,6 +80,11 @@ will only be available on your system if it supports ACLs.
 Check-Block-03: Is keystone used for authentication?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note:: This item only applies to OpenStack releases Rocky and before as
+    ``auth_strategy`` was deprecated in Stein.
+
+
+
 OpenStack supports various authentication strategies like noauth, keystone etc.
 If the 'noauth' strategy is used then the users could interact with OpenStack
 services without any authentication. This could be a potential risk since an

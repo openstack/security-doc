@@ -29,7 +29,7 @@ TLS in some of the more popular web servers/TLS terminators.
 Before we delve into the configurations, we briefly discuss the ciphers'
 configuration element and its format. A more exhaustive treatment on
 available ciphers and the OpenSSL cipher list format can be found at:
-`ciphers <https://www.openssl.org/docs/apps/ciphers.html>`_.
+`ciphers <https://www.openssl.org/docs/manmaster/man1/ciphers.html>`_.
 
 .. code:: ini
 

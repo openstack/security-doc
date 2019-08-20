@@ -125,7 +125,7 @@ relates to hypervisors.
 
 For information about the current state of feature support, see `OpenStack
 Hypervisor Support Matrix
-<https://wiki.openstack.org/wiki/HypervisorSupportMatrix>`__.
+<https://docs.openstack.org/nova/latest/user/support-matrix.html>`__.
 
 Compute security is critical for an OpenStack deployment. Hardening
 techniques should include support for strong instance isolation, secure

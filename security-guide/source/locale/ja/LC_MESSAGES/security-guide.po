@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openstacksecurityguide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-29 01:07+0000\n"
+"POT-Creation-Date: 2019-09-03 10:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -774,32 +774,6 @@ msgstr ""
 "ネージャーです。 Booktype はオンラインで本の執筆、編集、出版を行うオープン"
 "ソースプロジェクトです。"
 
-msgid "Add Identity Providers, Mappings and Protocols."
-msgstr "認証プロバイダー、マッピング、プロトコルを追加します。"
-
-msgid "Add ``WSGIScriptAlias`` directive to your vhost configuration:"
-msgstr ""
-"``WSGIScriptAlias`` ディレクティブをお使いの仮想ホスト設定に追加します。"
-
-msgid ""
-"Add the ``federation_extension`` middleware to the ``api_v3`` pipeline in "
-"the ``keystone-paste.ini`` file. For example:"
-msgstr ""
-"``federation_extension`` ミドルウェアを ``keystone-paste.ini`` の ``api_v3`` "
-"パイプラインに追加します。例:"
-
-msgid ""
-"Add the saml2 authentication method to the ``[auth]`` section in ``keystone."
-"conf`` file:"
-msgstr ""
-"saml2 認証方式を ``keystone.conf`` ファイルの ``[auth]`` セクションに追加しま"
-"す。"
-
-msgid "Add two ``<Location>`` directives to the ``wsgi-keystone.conf`` file:"
-msgstr ""
-"2 つの ``<Location>`` ディレクティブを ``wsgi-keystone.conf`` ファイルに追加"
-"します。"
-
 msgid "Additional security features"
 msgstr "追加のセキュリティ機能"
 
@@ -1075,13 +1049,6 @@ msgstr "監査参照"
 msgid "Auth services"
 msgstr "認証サービス"
 
-msgid ""
-"Authenticate externally and generate an :term:`unscoped token` in Identity "
-"service."
-msgstr ""
-"外部的に認証して、Identity サービスにおいて :term:`スコープなしトークン "
-"<unscoped token>` を生成します。"
-
 msgid "Authentication"
 msgstr "認証"
 
@@ -1164,16 +1131,6 @@ msgstr ""
 "導入前に、キューサーバが使用する TLS ライブラリについて考慮します。Qpid は"
 "Mozilla の NSS ライブラリを、RabbitMQ は OpenSSL を使う Erlang の TLS モ"
 "ジュールを用いています。"
-
-msgid ""
-"Before we delve into the configurations, we briefly discuss the ciphers' "
-"configuration element and its format. A more exhaustive treatment on "
-"available ciphers and the OpenSSL cipher list format can be found at: "
-"`ciphers <https://www.openssl.org/docs/apps/ciphers.html>`_."
-msgstr ""
-"設定を掘り下げる前に、暗号の設定要素とその形式について簡単に議論します。利用"
-"可能な暗号におけるより包括的な使い方、および OpenSSL 暗号一覧形式が `ciphers "
-"<https://www.openssl.org/docs/apps/ciphers.html>`_ にあります。"
 
 msgid ""
 "Being able to detect the load on the OpenStack servers also enables "
@@ -1703,9 +1660,6 @@ msgstr ""
 "見解を持っています。これらのツールの運用におけるセキュリティ確保については、"
 "本書の対象外となっています。"
 
-msgid "Configuration options"
-msgstr "設定オプション"
-
 msgid ""
 "Configure HTTP requests to the dashboard domain to redirect to the fully "
 "qualified HTTPS URL."
@@ -1720,21 +1674,11 @@ msgid "Configure internal URLs in the Identity service catalog"
 msgstr "Identity サービスカタログの内部 URL の設定"
 
 msgid ""
-"Configure your Service Provider by editing ``/etc/shibboleth/shibboleth2."
-"xml``."
-msgstr ""
-"``/etc/shibboleth/shibboleth2.xml`` を編集して、サービスプロバイダーを設定し"
-"ます。"
-
-msgid ""
 "Configure your web server to send a restrictive CORS header with each "
 "response, allowing only the dashboard domain and protocol:"
 msgstr ""
 "ウェブブラウザが各レスポンスに限定的な CORS ヘッダーを付けて送信するよう設定"
 "します。ダッシュボードのドメインとプロトコルのみを許可します。"
-
-msgid "Configuring Federation"
-msgstr "フェデレーションの設定"
 
 msgid ""
 "Considered by this guide as the most capable adversary. Intelligence "
@@ -1750,13 +1694,6 @@ msgstr ""
 
 msgid "Container service"
 msgstr "コンテナーサービス"
-
-msgid ""
-"Contains information about a user as provided by an IdP. It is an indication "
-"that a user has been authenticated."
-msgstr ""
-"認証プロバイダーにより提供されたとおり、ユーザーに関する情報を含む。ユーザー"
-"が認証済みであることを意味する。"
 
 msgid "Contents"
 msgstr "内容"
@@ -1784,9 +1721,6 @@ msgid ""
 msgstr ""
 "Core Root of Trust Measurement (CRTM)、 BIOS コード、ホストプラットフォームの"
 "拡張機能"
-
-msgid "Create Identity groups and assign roles."
-msgstr "Identity グループを作成して、ロールを"
 
 msgid ""
 "Create and manage security groups through dashboard. The security groups "
@@ -2028,9 +1962,6 @@ msgstr ""
 "害、または一時的にログをオフにしたり、監視者から隠れるためにログレベルを変更"
 "した侵入者を示している可能性があります。"
 
-msgid "Determine accessible resources."
-msgstr "アクセスできるリソースを判断します。"
-
 msgid "Determining audit scope"
 msgstr "監査の範囲を決定する"
 
@@ -2221,18 +2152,6 @@ msgstr ""
 "スをサポートします。サーバーは証明書を使用したクライアント認証を強制すること"
 "もできます。"
 
-msgid "Enable ``OS-FEDERATION`` extension:"
-msgstr "``OS-FEDERATION`` 拡張を有効化します。"
-
-msgid "Enable the Identity service virtual host:"
-msgstr "Identity の仮想ホストを有効化します。"
-
-msgid "Enable the ``ssl`` and ``shib2`` modules:"
-msgstr "``ssl`` および ``shib2`` モジュールを有効化します。"
-
-msgid "Enabling Federation"
-msgstr "フェデレーションの有効化"
-
 msgid "Encrypted live migration"
 msgstr "ライブマイグレーションの暗号化"
 
@@ -2407,21 +2326,11 @@ msgstr "ファイアウォール"
 msgid "Firewalls and other host-based security controls"
 msgstr "ファイア\\ウォールおよび他のホストベースのセキュリティ制御"
 
-msgid "For SQL, in ``/etc/keystone/keystone.conf`` , set:"
-msgstr "SQL の場合、``/etc/keystone/keystone.conf`` に以下を設定します。"
-
-msgid "For ``memcached``, in ``/etc/keystone/keystone.conf``, set:"
-msgstr ""
-"``memcached`` の場合、``/etc/keystone/keystone.conf`` に以下を設定います。"
-
 msgid "For additional configuration information see:"
 msgstr "追加の設定情報は以下を参照してください。"
 
 msgid "For configuration information see:"
 msgstr "設定情報は以下を参照してください。"
-
-msgid "For example,"
-msgstr "たとえば、"
 
 msgid ""
 "For further details, see the `Django documentation <https://docs."
@@ -2457,13 +2366,6 @@ msgstr ""
 "rootwrap プロジェクトの詳細は公式ドキュメント `https://wiki.openstack.org/"
 "wiki/Rootwrap <https://wiki.openstack.org/wiki/Rootwrap>`_ を参照してくださ"
 "い。"
-
-msgid ""
-"For more information, see `Shibboleth Service Provider Configuration "
-"<https://wiki.shibboleth.net/confluence/display/SHIB2/Configuration>`__."
-msgstr ""
-"詳細は `Shibboleth Service Provider Configuration <https://wiki.shibboleth."
-"net/confluence/display/SHIB2/Configuration>`__ を参照してください。"
 
 msgid ""
 "For these and other hypervisors, we recommend referring to hypervisor-"
@@ -2503,9 +2405,6 @@ msgstr "フロントエンドキャッシュ"
 msgid "Front-end caching and session back end"
 msgstr "フロントエンドキャッシュおよびセッションバックエンド"
 
-msgid "Future"
-msgstr "将来"
-
 msgid "GUEST"
 msgstr "ゲスト"
 
@@ -2518,12 +2417,6 @@ msgstr ""
 
 msgid "General security information"
 msgstr "一般的なセキュリティー情報"
-
-msgid "Generate metadata"
-msgstr "メタデータの生成"
-
-msgid "Get a scoped token."
-msgstr "スコープ付きトークンを取得します。"
 
 msgid ""
 "Given the complexity of the OpenStack components and the number of "
@@ -2795,10 +2688,6 @@ msgid ""
 msgstr ""
 "ネットワークネームスペースサポートがない場合、L3エージェントでは追加の制限事"
 "項として単一の論理ルータのみサポートされます。"
-
-msgid ""
-"If new certificates are required, they can be easily created by executing:"
-msgstr "新しい証明書が必要な場合、次のとおり簡単に作成できます。"
 
 msgid ""
 "If prevention is not an option, detection can be used to mitigate damage. "
@@ -3074,9 +2963,6 @@ msgstr ""
 "``security_service`` は、Shared File Systems API の中で、 ``share_networks`` "
 "と関連づけられます。"
 
-msgid "Install Shibboleth:"
-msgstr "Shibboleth をインストールします。"
-
 msgid "Instance data is copied from the hypervisor to libvirtd."
 msgstr ""
 "インスタンスのデータが、ハイパーバイザーから libvirtd にコピーされます。"
@@ -3172,14 +3058,6 @@ msgstr ""
 "OpenStack デプロイメントでの SSH の範囲や重要性において、SSH デプロイメントの"
 "ベストプラクティスを把握することが重要です。"
 
-msgid "It is also recommended the following ``Contact`` options are set."
-msgstr "以下の ``Contact`` オプションも設定することを推奨します。"
-
-msgid ""
-"It is assumed that the ``keystone`` service is running on port ``5000``."
-msgstr ""
-"``keystone`` サービスがポート ``5000`` 番で動作していることを仮定しています。"
-
 msgid "It is highly recommended to use HTTP Strict Transport Security (HSTS)."
 msgstr "HTTP Strict Transport Security (HSTS) の使用が強く推奨されます。"
 
@@ -3240,11 +3118,6 @@ msgstr ""
 "メイン用にPKIデプロイを分割使用しても構いません。これは、デプロイする人が環境"
 "の暗号の分断を管理できるようにし、一方で発行された証明書が他方で認証されない"
 "事を保証します。"
-
-msgid ""
-"It is recommended that the following ``Organization`` configuration options "
-"be setup."
-msgstr "以下の ``Organization`` オプションを設定することが推奨されます。"
 
 msgid ""
 "It is recommended that you follow the guidelines provided in :ref:`database-"
@@ -3347,18 +3220,6 @@ msgstr "最小権限"
 
 msgid "Limitations"
 msgstr "制限事項"
-
-msgid ""
-"List domains a federated user can access: ``GET /OS-FEDERATION/domains``"
-msgstr ""
-"フェデレーションのユーザーがアクセスできるドメインの一覧表示: ``GET /OS-"
-"FEDERATION/domains``"
-
-msgid ""
-"List projects a federated user can access: ``GET /OS-FEDERATION/projects``"
-msgstr ""
-"フェデレーションのユーザーがアクセスできるプロジェクトの一覧表示: ``GET /OS-"
-"FEDERATION/projects``"
 
 msgid "Live migration mitigations"
 msgstr "ライブマイグレーションのリスクの軽減"
@@ -3478,9 +3339,6 @@ msgstr ""
 "MapR Technologies, Apache Hadoop for the MapR Converged Data Platform. 2016. "
 "`MapR project <https://www.mapr.com/products/mapr-distribution-including-"
 "apache-hadoop>`__"
-
-msgid "Mapping"
-msgstr "対応付け"
 
 msgid "Medium"
 msgstr "中"
@@ -4451,9 +4309,6 @@ msgstr "Paste と ミドルウェア"
 msgid "Perfect forward secrecy"
 msgstr "Perfect forward secrecy"
 
-msgid "Performing Federation authentication"
-msgstr "フェデレーション認証の実行"
-
 msgid ""
 "Periodic access and log reviews are required to ensure authentication, "
 "authorization, and accountability in a service deployment. Specific guidance "
@@ -4596,9 +4451,6 @@ msgstr "保存データの保護"
 msgid "Protection of data at rest, protected data transfer"
 msgstr "保存データの保護、保護されたデータ転送"
 
-msgid "Protocol"
-msgstr "プロトコル"
-
 msgid "Protocols"
 msgstr "プロトコル"
 
@@ -4735,12 +4587,6 @@ msgstr "PCI Express デバイスをセキュアに共有するために必要で
 msgid "Resource based filters"
 msgstr "リソースベースのフィルター"
 
-msgid "Restart Apache:"
-msgstr "Apache を再起動します。"
-
-msgid "Restart the Shibboleth daemon:"
-msgstr "Shibboleth デーモンを再起動します。"
-
 msgid "Restrict DB and RPC communication of the OpenStack Networking services"
 msgstr "OpenStack Networking サービス群の DB と RPC 通信の制限"
 
@@ -4795,11 +4641,6 @@ msgstr "Rsync [1]_"
 msgid "Run services as non-root user"
 msgstr "非 root ユーザーとしてのサービスの実行"
 
-msgid ""
-"Run the Identity service under Apache, instead of using ``keystone-all``."
-msgstr ""
-"``keystone-all`` の代わりに、Apache の下で Identity サービスを実行します。"
-
 msgid "Run the following commands:"
 msgstr "以下のコマンドを実行します。"
 
@@ -4819,9 +4660,6 @@ msgstr ""
 
 msgid "Runtime verification"
 msgstr "ランタイムの検証"
-
-msgid "SAML assertion"
-msgstr "SAML アサーション"
 
 msgid ""
 "SANS Technology Institute, InfoSec Handlers Diary Blog. 2012. `Hacking "
@@ -4889,9 +4727,6 @@ msgstr ""
 "範囲や機能を不当に省かないことが重要です。典型的な例はPCI-DSSガイドラインで"
 "す。決済に関わるインフラはセキュリティを精査されるでしょう。が、その影でその"
 "周辺サービスが放置されれば、そこが攻撃に対し無防備となります。"
-
-msgid "Scoped token"
-msgstr "スコープ付きトークン"
 
 msgid "Script kiddies"
 msgstr "スクリプトキディー"
@@ -5150,9 +4985,6 @@ msgstr "セッションバックエンド"
 
 msgid "Session cookies should be set to HTTPONLY:"
 msgstr "セッションクッキーは HTTPONLY に設定すべきです。"
-
-msgid "Setting Identity service as Identity Provider"
-msgstr "認証プロバイダーとしての Identity の設定"
 
 msgid "Share access control"
 msgstr "共有のアクセス制御"
@@ -5579,13 +5411,6 @@ msgstr ""
 "になるかもしれません。"
 
 msgid ""
-"The Identity service administrator can create as many groups as there are "
-"SAML attributes, whatever the mapping calls for."
-msgstr ""
-"Identity サービスの管理者は、SAML 属性のマッピングが呼び出せるだけの数を作成"
-"できます。"
-
-msgid ""
 "The Identity service can directly provide end-user authentication, or can be "
 "configured to use external authentication methods to conform to an "
 "organization's security policies and requirements."
@@ -5644,18 +5469,6 @@ msgstr ""
 "ウェアにより、各リソースに関連付けられたポリシールール、ユーザーのグループと"
 "ロール、関連性を考慮して、要求されたリソースへのアクセスが許可されるかを判断"
 "されます。"
-
-msgid ""
-"The Identity service supports token revocation. This manifests as an API to "
-"revoke a token, to list revoked tokens and individual OpenStack services "
-"that cache tokens to query for the revoked tokens and remove them from their "
-"cache and append the same to their list of cached revoked tokens."
-msgstr ""
-"Identity はトークン失効をサポートします。これは、トークンを失効するため、失効"
-"済みトークンを一覧表示するために API として宣言されます。また、トークンを"
-"キャッシュしている各 OpenStack サービスが失効済みトークンを問い合わせるため、"
-"それらのキャッシュから失効済みトークンを削除するため、キャッシュした失効済み"
-"トークンの一覧に追加するためにもあります。"
 
 msgid ""
 "The International Traffic in Arms Regulations (ITAR) is a set of United "
@@ -5845,32 +5658,11 @@ msgstr ""
 "同時に有効化すべきではありません。"
 
 msgid ""
-"The ``ShibRequireSession`` rule is invalid in Apache 2.4 or newer and should "
-"be dropped in that specific setup."
-msgstr ""
-"``ShibRequireSession`` ルールは、Apache 2.4 以降で無効です。そのセットアップ"
-"時に捨てるべきです。"
-
-msgid ""
-"The ``apt-get`` command is Ubuntu specific. For other distributions, replace "
-"with appropriate command."
-msgstr ""
-"``apt-get`` コマンドは Ubuntu 固有です。他のディストリビューションは、適切な"
-"コマンドに置き換えてください。"
-
-msgid ""
 "The ``md5`` parameter defines the authentication method as a hashed "
 "password. We provide a secure authentication example in the section below."
 msgstr ""
 "``md5`` パラメーターは認証方式をハッシュ化パスワードとして定義します。以下の"
 "セクションでセキュアな認証例を提供します。"
-
-msgid ""
-"The ``service apache2 restart`` command is Ubuntu-specific. For other "
-"distributions, replace with appropriate command."
-msgstr ""
-"``service apache2 restart`` コマンドは Ubuntu 固有です。他のディストリビュー"
-"ションは、適切なコマンドに置き換えてください。"
 
 msgid ""
 "The actual data objects. ACLs at the object level are also possible with "
@@ -6261,11 +6053,6 @@ msgstr ""
 "サポートしています。"
 
 msgid ""
-"The newly created file will be stored under ``/etc/shibboleth/sp-key.pem``"
-msgstr ""
-"新しく作成されたファイルは ``/etc/shibboleth/sp-key.pem`` に保存されます。"
-
-msgid ""
 "The nova command-line utility can return a URL for SPICE console for access "
 "by a SPICE-html client."
 msgstr ""
@@ -6627,13 +6414,6 @@ msgstr ""
 msgid "This option was introduced in Kilo release."
 msgstr "このオプションは Kilo リリースで導入されました。"
 
-msgid ""
-"This path is Ubuntu-specific. For other distributions, replace with "
-"appropriate path."
-msgstr ""
-"このパスは Ubuntu 固有です。他のディストリビューションは、適切なパスに置き換"
-"えてください。"
-
 msgid "This process is broken apart into three primary categories:"
 msgstr "このプロセスは三つの主要カテゴリに分割されています。"
 
@@ -6716,9 +6496,6 @@ msgstr ""
 "SELinux の管理負担を減らすために、多くのエンタープライズ Linux プラットフォー"
 "ムは sVirt のセキュリティ設定を簡単に変更するために、SELinux ブーリアンを利用"
 "します。"
-
-msgid "To enable Federation, perform the following steps:"
-msgstr "以下の手順を実行して、フェデレーションを有効化します。"
 
 msgid ""
 "To enforce policies, you can configure services, host-based firewalls (such "
@@ -6806,13 +6583,6 @@ msgid "To use ephemeral disk encryption, set **option**: 'enabled = true'"
 msgstr ""
 "**オプション** 'enabled = true' を設定して、一時ディスクの暗号化を使用しま"
 "す。"
-
-msgid ""
-"To utilize Federation, create the following in the Identity service: "
-"Identity Provider, Mapping, Protocol."
-msgstr ""
-"フェデレーションを利用する場合、Identity に認証プロバイダー、マッピング、プロ"
-"トコルを作成します。"
 
 msgid "Tokens"
 msgstr "トークン"
@@ -6951,16 +6721,8 @@ msgstr ""
 "Unicode 文字を許可します。このことは、開発者が XSS 攻撃の余地を残すエスケープ"
 "ミスをする範囲が少なくなることを意味します。"
 
-msgid "Unscoped token"
-msgstr "スコープなしトークン"
-
 msgid "Updates and patches"
 msgstr "更新および"
-
-msgid "Upload your Service Provider’s metadata file to your Identity Provider."
-msgstr ""
-"サービスプロバイダーのメタデータファイルをお使いの認証プロバイダーにアップ"
-"ロードします。"
 
 msgid ""
 "Use a dedicated and hardened backup servers. The logs for the backup server "

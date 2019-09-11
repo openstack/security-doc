@@ -4,9 +4,11 @@ Hardening the virtualization layers
 
 In the beginning of this chapter we discuss the use of both physical and
 virtual hardware by instances, the associated security risks, and some
-recommendations for mitigating those risks. We conclude the chapter with a
-discussion of sVirt, an open source project for integrating SELinux mandatory
-access controls with the virtualization components.
+recommendations for mitigating those risks. Then we discuss how the Secure
+Encrypted Virtualization technology can be used to encrypt the memory of VMs
+on AMD-based machines which support the technology. We conclude the chapter
+with a discussion of sVirt, an open source project for integrating SELinux
+mandatory access controls with the virtualization components.
 
 Physical hardware (PCI passthrough)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,6 +172,50 @@ DEB packages:
 RPM packages:
      `How to create an RPM package
      <http://fedoraproject.org/wiki/How_to_create_an_RPM_package>`_
+
+Secure Encrypted Virtualization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Secure Encrypted Virtualization (SEV) <https://developer.amd.com/sev/>`_ is a
+technology from AMD which enables the memory for a VM to be encrypted with a
+key unique to the VM. SEV is available in the Train release as a technical
+preview with KVM guests on certain AMD-based machines for the purpose of
+evaluating the technology.
+
+The `KVM hypervisor section of the nova configuration guide
+<https://docs.openstack.org/nova/latest/admin/configuration/hypervisor-kvm.html#amd-sev-secure-encrypted-virtualization>`_
+contains information needed to configure the machine and hypervisor, and lists
+several limitations of SEV.
+
+SEV provides protection for data in the memory used by the running VM.
+However, while the first phase of SEV integration with OpenStack enables
+encrypted memory for VMs, importantly it does not provide the
+``LAUNCH_MEASURE`` or ``LAUNCH_SECRET`` capabilities which are available with
+the SEV firmware. This means that data used by an SEV-protected VM may be
+subject to attacks from a motivated adversary who has control of the
+hypervisor. For example, a rogue administrator on the hypervisor machine could
+provide a VM image for tenants with a backdoor and spyware capable of stealing
+secrets, or replace the VNC server process to snoop data sent to or from the
+VM console including passwords which unlock full disk encryption solutions.
+
+To reduce the chances for a rogue administrator to gain unauthorized access to
+data, the following security practices should accompany the use of SEV:
+
+- A full disk encryption solution should be used by the VM.
+
+- A bootloader password should be used on the VM.
+
+In addition, standard security best practices should be used with the VM
+including the following:
+
+- The VM should be well maintained, including regular security scanning and
+  patching to ensure a continuously strong security posture for the VM.
+
+- Connections to the VM should use encrypted and authenticated protocols such
+  as HTTPS and SSH.
+
+- Additional security tools and processes should be considered and used for
+  the VM appropriate to the level of sensitivity of the data.
 
 Mandatory access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~

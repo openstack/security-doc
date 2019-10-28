@@ -30,7 +30,7 @@ MySQL:
    Authentication <http://dev.mysql.com/doc/refman/5.5/en/pluggable-authentication.html>`__
 
 -  `Security in
-   MySQL <http://downloads.mysql.com/docs/mysql-security-excerpt-5.1-en.pdf>`__
+   MySQL <https://dev.mysql.com/doc/refman/5.5/en/security.html>`__
 
 PostgreSQL:
 

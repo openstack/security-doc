@@ -1,0 +1,47 @@
+Cinder configuration option can leak secret key from Ceph backend
+---
+
+### Summary ###
+This vulnerability is present only when Cinder has a Ceph backend
+*and* the ``rbd_keyring_conf`` option in the Cinder configuration
+file is set.  (The option is unset by default.)  Under these
+circumstances, the keyring content may be leaked to a regular user.
+
+### Affected Services / Software ###
+Cinder, Pike, Queens, Rocky, Stein, Train
+
+### Discussion ###
+When the ``rbd_keyring_conf`` option is set, a user who creates a volume
+and then does a local attach of that volume using the Cinder REST API,
+may discover the keyring content for the Ceph cluster.  (This does not
+apply to the normal Nova attach process.  The user must contact the
+Cinder REST API directly for this exploit.)
+
+If this user then gains access to the Ceph cluster independently of
+Cinder, these credentials may be used to access any volume in the
+cluster.
+
+This issue was reported by Raphael Glon of OVH.
+
+NOTE: This issue is different from OSSA-2019-003, through which Ceph
+credentials could be leaked from the Nova REST API during error
+conditions, but we suggest you take this opportunity to review that
+security advisory and make sure your system has been updated or patched
+to address it:
+
+    https://security.openstack.org/ossa/OSSA-2019-003.html
+
+### Recommended Actions ###
+Any installation currently using the ``rbd_keyring_conf`` option should
+immediately stop using that option.  In order for Cinder backups to
+continue working, the Ceph keyring secrets should be deployed directly
+on cinder-backup hosts in their standard location:
+
+    /etc/ceph/<cluster_name>.client.<user_name>.keyring
+
+### Contacts / References ###
+Author: Brian Rosmaita, Red Hat
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0085
+Original LaunchPad Bug : https://bugs.launchpad.net/cinder/+bug/1849624
+Mailing List : [Security] tag on openstack-discuss@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg

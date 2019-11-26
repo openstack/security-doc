@@ -39,6 +39,10 @@ on cinder-backup hosts in their standard location:
 
     /etc/ceph/<cluster_name>.client.<user_name>.keyring
 
+The ``rbd_keyring_conf`` is deprecated in the Ussuri release and will
+be removed early in the 'V' development cycle.  There is no replacement
+planned for this functionality.
+
 ### Contacts / References ###
 Author: Brian Rosmaita, Red Hat
 This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0085

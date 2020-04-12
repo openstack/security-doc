@@ -138,12 +138,6 @@ html_theme = 'openstackdocs'
 # directly to the root of the documentation.
 # html_extra_path = []
 
-# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
-# using the given strftime format.
-# So that we can enable "log-a-bug" links from each output HTML page, this
-# variable must be set to a format that includes year, month, day, hours and
-# minutes.
-html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.

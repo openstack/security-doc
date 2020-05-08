@@ -8,7 +8,7 @@ file is set.  (The option is unset by default.)  Under these
 circumstances, the keyring content may be leaked to a regular user.
 
 ### Affected Services / Software ###
-Cinder, Pike, Queens, Rocky, Stein, Train
+Cinder, Pike, Queens, Rocky, Stein, Train, Ussuri
 
 ### Discussion ###
 When the ``rbd_keyring_conf`` option is set, a user who creates a volume

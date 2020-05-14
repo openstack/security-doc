@@ -44,11 +44,13 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-repository_name = 'openstack/security-doc'
+openstackdocs_repo_name = 'openstack/security-doc'
 project = u'Security Guide'
-bug_tag = u'sec-guide'
-bug_project = u'ossp-security-documentation'
+openstackdocs_bug_tag = u'sec-guide'
+openstackdocs_bug_project = u'ossp-security-documentation'
 copyright = u'2015-2017, OpenStack contributors'
+openstackdocs_auto_version = False
+openstackdocs_auto_name = False
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -89,7 +91,7 @@ exclude_patterns = []
 # show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'native'
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []

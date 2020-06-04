@@ -94,9 +94,9 @@ Ussuri
 Alternatively, point releases for Stein, Train, and Ussuri will be
 made as soon as possible.  These will be:
 
-Stein: cinder 14.0.5, requires os-brick 2.8.5
-Train: cinder 15.1.1, requires os-brick 2.10.3
-Ussuri: cinder 16.0.1, requires os-brick 3.0.2
+Stein: cinder 14.1.0, requires os-brick 2.8.5
+Train: cinder 15.2.0, requires os-brick 2.10.3
+Ussuri: cinder 16.1.0, requires os-brick 3.0.2
 
 ### Contacts / References ###
 Author: Brian Rosmaita, Red Hat

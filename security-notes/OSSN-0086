@@ -71,21 +71,34 @@ as part of the cinder patch concerning the new configuration file that
 must be deployed to all compute nodes, cinder nodes, and anywhere you
 would perform a volume attachment in your deployment.
 
+NOTE (added 2020-06-18): The original patch for os-brick contained
+a flaw [0] that prevented the scaleio connector from operating when run
+under Python 2.7.  Thus for OpenStack releases supporting Python 2.7
+(that is, Train and earlier), a second os-brick patch is required and
+is listed below.  The list of available releases has also been updated
+to address this issue.
+
+[0] https://bugs.launchpad.net/os-brick/+bug/1883654
+
 Queens
 * cinder: https://review.opendev.org/733110
 * os-brick: https://review.opendev.org/733104
+            and https://review.opendev.org/736749
 
 Rocky
 * cinder: https://review.opendev.org/733109
 * os-brick: https://review.opendev.org/733103
+            and https://review.opendev.org/736415
 
 Stein
 * cinder: https://review.opendev.org/733108
 * os-brick: https://review.opendev.org/733102
+            and https://review.opendev.org/736395
 
 Train
 * cinder: https://review.opendev.org/733107
 * os-brick: https://review.opendev.org/733100
+            and https://review.opendev.org/735989
 
 Ussuri
 * cinder: https://review.opendev.org/733106
@@ -94,8 +107,8 @@ Ussuri
 Alternatively, point releases for Stein, Train, and Ussuri will be
 made as soon as possible.  These will be:
 
-Stein: cinder 14.1.0, requires os-brick 2.8.5
-Train: cinder 15.2.0, requires os-brick 2.10.3
+Stein: cinder 14.1.1, requires os-brick 2.8.6
+Train: cinder 15.2.1, requires os-brick 2.10.4
 Ussuri: cinder 16.1.0, requires os-brick 3.0.2
 
 ### Contacts / References ###

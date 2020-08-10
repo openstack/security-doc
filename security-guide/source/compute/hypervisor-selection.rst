@@ -480,7 +480,7 @@ Bibliography
   the Guest OS. 2011.
   `https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf
   <https://staff.aist.go.jp/c.artho/papers/EuroSec2011-suzaki.pdf>`_
-* KVM: Kernal-based Virtual Machine. Kernal Samepage Merging. 2010.
+* KVM: Kernel-based Virtual Machine. Kernel Samepage Merging. 2010.
   `http://www.linux-kvm.org/page/KSM <http://www.linux-kvm.org/page/KSM>`_
 * Xen Project, Xen Security Modules: XSM-FLASK. 2014.
   `http://wiki.xen.org/wiki/Xen_Security_Modules_:_XSM-FLASK

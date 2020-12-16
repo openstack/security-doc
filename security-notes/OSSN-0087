@@ -1,0 +1,117 @@
+Ceph user credential leakage to consumers of OpenStack Manila
+-------------------------------------------------------------
+
+### Summary ###
+
+OpenStack Manila users can request access on a share to any
+arbitrary cephx user, including privileged pre-existing users
+of a Ceph cluster. They can then retrieve access secret keys
+for these pre-existing ceph users via Manila APIs. A cephx
+client user name and access secret key are required to mount
+a Native CephFS manila share. With a secret key, a manila user
+can impersonate a pre-existing ceph user and gain capabilities
+to manipulate resources that the manila user was never intended
+to have access to. It is possible to even obtain the default
+ceph "admin" user's key in this manner, and execute any commands
+as the ceph administrator.
+
+
+### Affected Services / Software ###
+
+- OpenStack Shared File Systems Service (Manila) versions Mitaka (2.0.0)
+  through Victoria (11.0.0)
+- Ceph Luminous (<=v12.2.13), Mimic (<=v13.2.10),
+  Nautilus (<=v14.2.15), Octopus (<=v15.2.7)
+
+### Discussion ###
+
+OpenStack Manila can provide users with Native CephFS shared
+file systems. When a user creates a "share" (short for
+"shared file system") via Manila, a CephFS "subvolume" is
+created on the Ceph cluster and exported. After creating
+their share, a user  can specify who can have access to the
+share with the help of "cephx" client user names. A cephx
+client corresponds to Ceph Client Users [2]. When access
+is provided, a client user "access key" is returned via
+manila.
+
+A ceph client user account is required to access any ceph
+resource. This includes interacting with Ceph cluster
+infrastructure daemons (ceph-mgr, ceph-mds, ceph-mon, ceph-osd)
+or consuming Ceph storage via RBD, RGW or CephFS. Deployment and
+orchestration services like ceph-ansible, nfs-ganesha, kolla,
+tripleo need ceph client users to work, as do OpenStack services
+such as cinder, manila, glance and nova for their own interactions
+with Ceph. For the purpose of illustrating this vulnerability,
+we'll call them "pre-existing" users of the Ceph cluster. Another
+example of a pre-existing user includes the "admin" user that
+is created by default on the ceph cluster.
+
+In theory, manila's cephx users are no different from a ceph
+client user. When a manila user requests access to a share,
+a corresponding ceph user account is created if one already
+does not exist. If a ceph user account already exists, the
+existing capabilities of that user are adjusted to provide
+them permissions to access the manila share in question.
+There is no reasonable way for this mechanism to know what
+pre-existing ceph client users must be protected against
+unauthorized abuse. Therefore there is a risk that a
+manila user can claim to be a pre-existing ceph user to
+steal their access secret key.
+
+To resolve this issue, the ceph interface that manila uses
+was patched to no longer allow manila to claim a pre-existing
+user account that didn't create. By consequence this means
+that manila users cannot use cephx usernames that correspond
+to ceph client users that exist outside of manila.
+
+
+### Recommended Actions ###
+
+#. Upgrade your ceph software to the latest patched releases of
+   ceph to take advantage of the fix to this vulnerability.
+
+#. Audit cephx access keys provisioned via manila. You may use
+   "ceph auth ls" and ensure that no clients have been compromised.
+   If they have been, you may need to delete and recreate the
+   client credentials to prevent unauthorized access.
+
+#. The audit can also be performed on manila by enumerating all
+   CephFS shares and their access rules as a system administrator. If a
+   reserved ceph client username has been used, you may deny access
+   and recreate the client credential on ceph to refresh the
+   access secret.
+
+No code changes were necessary in the OpenStack Shared File
+System service (manila). With an upgraded ceph, when manila
+users attempt to provide share access to a cephx username
+that they cannot use, the access rule's "state" attribute is
+set to "error" because this operation is no longer permitted.
+
+### Patches ###
+
+The Ceph community has provided the following patches:
+
+Ceph Octopus: https://github.com/ceph/ceph/commit/1b8a634fdcd94dfb3ba650793fb1b6d09af65e05
+Ceph Nautilus: https://github.com/ceph/ceph/commit/7e3e4e73783a98bb07ab399438eb3aab41a6fc8b
+Ceph Luminous: https://github.com/ceph/ceph/commit/956ceb853a58f6b6847b31fac34f2f0228a70579
+
+The patch for Luminous was provided as a courtesy to possible users of
+OpenStack Manila, however the Ceph community no longer produces releases for
+Luminous or Mimic as they are end of life. See `here for information
+about ceph releases. <https://docs.ceph.com/en/latest/releases/general/>`_
+
+### Contacts / References ###
+
+Author:
+- Pacha Ravi, Goutham gouthamr@redhat.com (Red Hat)
+
+Credits:
+- Garbutt, John john@johngarbutt.com (StackHPC)
+- Babel, Jahson jahson.babel@cc.in2p3.fr (Centre de Calcul de l'IN2P3)
+
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0087
+Original LaunchPad Bug : https://launchpad.net/bugs/1904015
+Mailing List : [Security] tag on openstack-discuss@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg
+CVE: CVE-2020-27781

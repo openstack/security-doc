@@ -96,10 +96,11 @@ Ceph Octopus: https://github.com/ceph/ceph/commit/1b8a634fdcd94dfb3ba650793fb1b6
 Ceph Nautilus: https://github.com/ceph/ceph/commit/7e3e4e73783a98bb07ab399438eb3aab41a6fc8b
 Ceph Luminous: https://github.com/ceph/ceph/commit/956ceb853a58f6b6847b31fac34f2f0228a70579
 
-The patch for Luminous was provided as a courtesy to possible users of
-OpenStack Manila, however the Ceph community no longer produces releases for
-Luminous or Mimic as they are end of life. See `here for information
-about ceph releases. <https://docs.ceph.com/en/latest/releases/general/>`_
+The fixes are in the latest releases of Ceph Nautilus (14.2.16) and Ceph
+Octopus (15.2.8). The patch for Luminous was provided as a courtesy to possible
+users of OpenStack Manila, however the Ceph community no longer produces
+releases for Luminous or Mimic as they are end of life. See `here for
+information about ceph releases. <https://docs.ceph.com/en/latest/releases/general/>`_
 
 ### Contacts / References ###
 

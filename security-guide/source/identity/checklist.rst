@@ -83,21 +83,9 @@ you should enable TLS on the HTTP/WSGI server.
 
 Recommended in: :doc:`../secure-communication`.
 
-Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?
+Check-Identity-04: (Obsolete)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-MD5 is a weak and depreciated hashing algorithm. It can be cracked using
-brute force attack. Identity tokens are sensitive and need to be
-protected with a stronger hashing algorithm to prevent unauthorized
-disclosure and subsequent access.
-
-**Pass:** If value of parameter ``hash_algorithm`` under ``[token]``
-section in ``/etc/keystone/keystone.conf`` is set to SHA256.
-
-**Fail:** If value of parameter ``hash_algorithm`` under
-``[token]``\ section is set to MD5.
-
-Recommended in: :doc:`tokens`.
 
 Check-Identity-05: Is ``max_request_body_size`` set to default (114688)?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -20,9 +20,9 @@
 # KATO Tomoyuki <kato.tomoyuki@jp.fujitsu.com>, 2017. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: openstacksecurityguide\n"
+"Project-Id-Version: Security Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-05 03:53+0000\n"
+"POT-Creation-Date: 2021-01-22 18:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -184,13 +184,6 @@ msgid ""
 msgstr ""
 "**失敗:** ``manila.conf`` の ``[DEFAULT]`` にある ``cinder_api_insecure`` が "
 "``True`` に設定されている場合。"
-
-msgid ""
-"**Fail:** If value of parameter ``hash_algorithm`` under ``[token]``\\ "
-"section is set to MD5."
-msgstr ""
-"**失敗:** ``[token]`` セクションの ``hash_algorithm`` パラメーターが MD5 に設"
-"定されている場合。"
 
 msgid "**Fail:** If value of parameter ``max_request_body_size`` is not set."
 msgstr ""
@@ -1354,13 +1347,6 @@ msgstr ""
 
 msgid "Check-Identity-03: is TLS enabled for Identity?"
 msgstr "Check-Identity-03: Identity の TLS を有効化していますか?"
-
-msgid ""
-"Check-Identity-04: Does Identity use strong hashing algorithms for PKI "
-"tokens?"
-msgstr ""
-"Check-Identity-04: Identity が PKI トークンに強固なハッシュアルゴリズムを使用"
-"していますか?"
 
 msgid ""
 "Check-Identity-05: Is ``max_request_body_size`` set to default (114688)?"
@@ -4527,9 +4513,6 @@ msgstr "推奨事項: :doc:`cookies`."
 
 msgid "Recommended in: :doc:`https-hsts-xss-ssrf`."
 msgstr "推奨事項: :doc:`https-hsts-xss-ssrf`"
-
-msgid "Recommended in: :doc:`tokens`."
-msgstr ":doc:`tokens` に推奨事項があります。"
 
 msgid "Recommended in: :ref:`internally-implemented-authentication-methods`."
 msgstr ""

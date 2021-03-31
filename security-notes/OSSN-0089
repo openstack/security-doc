@@ -1,0 +1,69 @@
+Missing configuration option in Secure Live Migration guide leads to
+unencrypted traffic
+---
+
+### Summary ###
+The guide to enable secure live migration with QEMU-native tls on nova compute
+nodes missed an important config option. Without this option a hard-coded part
+in nova is triggerd which sets the default route to TCP instead of TLS. This
+leads to an unecrypted migration of the ram without throwing any kind of Error.
+
+### Affected Services / Software ###
+Nova / Victoria, Ussuri, Train, Stein
+(might also be affected: Rocky, Queens, Pike, Ocata)
+
+### Discussion ###
+In the OpenStack guide to setup secure live migration with QEMU-native tls
+there are a few configuration options given, which have to be applied to nova
+compute nodes. After following the instructions and setting up everything it
+seems to work as expected. But after checking that libvirt is able to use tls
+using tcpdump to listen on the port for tls while manually executing libvirt
+commands, the same check for live migration of an instance through openstack
+fails. Listening on the port for unencrypted tcp-traffic shows that OpenStack
+still uses the unencrypted TCP path instead of the TLS one for the migration.
+
+The reason for this is a patch from Ocata which adds the calculation of the
+live-migration-uri in code:
+https://review.opendev.org/c/openstack/nova/+/410817/
+The config parameter ``live_migration_uri`` was deprecated in favor of
+``live_migration_scheme`` and the default set to tcp. This leads to the
+problem that if none of these two config options are set, libvirt will
+always use the default tcp connection. To enable QEMU-native TLS to be used in
+nova one of them has to be set so that a TLS connection can be established.
+Currently the guide does not show that this is necessary and there was no
+other documentation indicating that these config options are important for the
+usage of QEMU-native TLS.
+
+As there is no documentation which recognizes this and it is hard to find this
+problem as the migration happens even without those config option set - not
+stating that it is still unencrypted, it might have been unrecognized in
+various deployments, which followed the guide.
+
+### Recommended Actions ###
+For deployments using secure live migration with QEMU-native TLS:
+
+1. Check the config of all nova compute nodes. The ``libvirt`` section needs
+to have either ``live_migration_uri`` (deprecated) or
+``live_migration_scheme`` configured.
+
+2. If neither of those config options are present, add
+``live_migration_scheme = tls`` to enable the use of the tls connection.
+
+#### Patches ####
+The guide for secure live migration was updated to reflect the necessary
+configuration options and now has a note, which warns users that not setting
+all config options may lead into a seemingly working deployment, which still
+uses unencrypted traffic for the ram-migration.
+
+Master(Wallaby): https://review.opendev.org/c/openstack/nova/+/781030
+Victoria: https://review.opendev.org/c/openstack/nova/+/781211
+Ussuri: https://review.opendev.org/c/openstack/nova/+/782126
+Train: https://review.opendev.org/c/openstack/nova/+/782430
+Stein: https://review.opendev.org/c/openstack/nova/+/783199
+
+### Contacts / References ###
+Author: Josephine Seifert, secustack GmbH
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0089
+Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/1919357
+Mailing List : [Security] tag on openstack-discuss@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg

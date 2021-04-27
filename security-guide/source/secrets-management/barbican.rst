@@ -71,8 +71,8 @@ Secret store plugins
 --------------------
 
 Secret store plugins interface with secure storage systems to store the
-secrets within those systems. There are two types of secret store
-plugins: the KMIP plugin and the Dogtag plugin.
+secrets within those systems. There are three types of secret store
+plugins: the KMIP plugin, the Dogtag plugin, and the Vault plugin.
 
 KMIP plugin
 -----------
@@ -101,6 +101,20 @@ provides a secure option for deployments that do not wish to use a HSM.
 The KRA is a component of FreeIPA, therefore it is possible to configure
 the plugin with a FreeIPA server. More detailed instructions on how to
 set up Barbican with FreeIPA are provided `in the following blog post <https://vakwetu.wordpress.com/2015/11/30/barbican-and-dogtagipa/>`_.
+
+Vault plugin
+------------
+
+`Vault <https://www.vaultproject.io/>`_ is a secret storage developed by
+Hashicorp for securely accessing secrets and other objects, such as API
+keys, passwords, or certificates. Vault provides a unified interface to
+any secret, while providing tight access control and recording a detailed
+audit log. The enterprise version of Vault also allows to integrate with
+HSM for auto-unseal, provide FIPS KeyStorage and entropy augmentation.
+However, the downside of the Vault plugin is that it does not support
+multitenancy, thus all secrets will be stored under the same
+`Key/Value secret engine <https://www.vaultproject.io/docs/secrets/kv/kv-v2>`_.
+mountpoint.
 
 Threat analysis
 ~~~~~~~~~~~~~~~

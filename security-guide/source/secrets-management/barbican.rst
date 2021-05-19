@@ -61,11 +61,12 @@ PKCS#11 crypto plugin
 The PKCS#11 crypto plugin can be used to interface with a Hardware
 Security Module (HSM) using the PKCS#11 protocol. Secrets are encrypted
 (and decrypted on retrieval) by a project specific Key Encryption Key
-(KEK) which resides in the HSM. Since a different KEK is used for each
-project, and since the KEKs are stored inside an HSM (instead of in
-plaintext in the configuration file) the PKCS#11 plugin is much more
-secure than the simple crypto plugin. It is the most popular back end
-amongst Barbican deployments.
+(KEK). The KEK is protected (encrypted) with a Master KEK (MKEK). The MKEK
+resides in the HSM along with a HMAC. Since the different KEK is used for
+each project, and since the KEKs are stored inside a database in an encrypted
+form (instead of a plaintext in the configuration file) the PKCS#11 plugin
+is much more secure than the simple crypto plugin. It is the most popular
+back end amongst Barbican deployments.
 
 Secret store plugins
 --------------------

@@ -21,7 +21,7 @@ securing an OpenStack cloud.
 
    The OpenStack Security team is based on voluntary contributions
    from the OpenStack community. You can contact the security community
-   directly in the #openstack-security channel on Freenode IRC, or by
+   directly in the #openstack-security channel on OFTC IRC, or by
    sending mail to the openstack-discuss mailing list with the
    [security] prefix in the subject header.
 

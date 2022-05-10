@@ -1,0 +1,96 @@
+Users of Glance may be able to replace active image data
+---
+
+### Summary ###
+When Glance has been configured with the "show_multiple_locations" option
+enabled with default policy for set and delete locations, it is possible for a
+non-admin user having write access to the image metadata to replace active
+image data.
+
+Affected Services / Software
+Glance, Havana, Icehouse, Juno, Kilo, Liberty, Mitaka, Newton, Ocata
+
+### Discussion ###
+As a convenience to operators, Glance has a multiple location feature, disabled
+by default, that allows a single image to be stored in multiple places. This is
+intended to offer an extra degree of resilience by improving the availability
+of Glance images. This feature involves a user setting a new entry in an
+image's 'locations' list, not visible to users by default, via the Glance
+API. However, this process does not involve taking a checksum of the data in a
+newly created image location, and hence does not involve comparing the
+'checksum' field of the image (which is always visible to users) with the
+checksum of any added locations. This design opens the possibility that a
+malicious user could create an image in Glance, set an additional location on
+that image pointing to an altered image, then delete the original location, so
+that consumers of the original image would unwittingly be using the malicious
+image. Note, however, that this attack vector cannot change the original
+image's checksum, and it is limited to images that are owned by the attacker.
+
+### Recommended Actions ###
+The reach of this attack depends upon how broadly usage of the original image
+is spread among consumers who do not checksum images before they are
+used. Glance enables three ways for an image to be made available to other
+users:
+
+1. Making an image "public". This makes an image available to all users of a
+   cloud. The ability to do this is governed by the 'publicize_image' policy,
+   which is restricted to the admin role by default since the Juno release.
+
+2. Making an image "community". This feature is only available since
+   Ocata. This makes an image available to all users of a cloud, but unlike a
+   "public" image, it does not appear in the default image-list response of any
+   user (other than the owner). It is governed by the 'communitize_image'
+   policy, which is unrestricted by default.
+
+3. Making an image "shared". Glance allows project-to-project image sharing, in
+   which a user in project A shares an image with project B by making project B
+   a *member* of the image. The ability to do this is governed by the
+   'add_member' policy, which is unrestricted by default.
+
+   * Project-to-project sharing is the default, based on the 'owner_is_tenant'
+     configuration setting in Glance. In a cloud configured so that
+     'owner_is_tenant' is false, image sharing is user-to-user. This is a
+     cloud-wide configuration, users may not determine whether sharing is
+     project-to-project or owner-to-owner.
+
+Note that what has been discussed so far is independent of the specific
+vulnerability discussed in this notice. We encourage cloud operators to review
+their current settings for the policies mentioned above. In particular, we
+recommend that the 'publicize_image' policy be restricted to admins (as it has
+been by default since the Juno release) so that users can rely on the
+trustworthiness of a "public" image.
+
+With respect to the image location vulnerability described above, we recommend
+that operators review the settings of the following configuration options and
+policies:
+
+* The configuration option 'show_multiple_locations'. If this is set to False,
+  this attack vector is not available.
+
+* The policy 'set_image_location'. When 'show_multiple_locations' is set to
+  True, we recommend that this policy be restricted to administrators, and if
+  necessary, to trusted users. It is currently unrestricted by default.
+
+* The policies 'get_image_location' and 'delete_image_location'. These policies
+  are unrestricted by default (but note that if 'show_multiple_locations' is
+  False, they do not come into play).  Additionally, image consumers should be
+  encouraged to checksum images they consume and compare the result to the
+  'checksum' field in the response from the Images API.
+
+Finally, in addition to reviewing the specific location policy targets
+mentioned above, we encourage operators to review the 'default' target in their
+Glance policy.json file. This target is used when the software references a
+policy target that is not specifically defined in the policy.json file, as may
+happen when new targets are introduced in the software but the policy file
+being used is from a prior release. Since Newton, Glance has shipped with
+"default":"role:admin", but prior to that, Glance shipped with "default":"",
+which would make any target not specifically mentioned in the file
+unrestricted.
+
+### Contacts / References ###
+Author: Robert Clark, IBM
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0065
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1549483
+OpenStack Security ML : openstack-security@lists.openstack.org
+OpenStack Security Group : https://launchpad.net/~openstack-ossg
+Multiple Image Location BP : https://blueprints.launchpad.net/glance/+spec/multiple-image-locations

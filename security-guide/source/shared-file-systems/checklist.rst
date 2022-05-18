@@ -128,6 +128,9 @@ Identity API endpoint starting with ``https://`` or value of parameter
 Check-Shared-05: Does Shared File Systems contact with Compute over TLS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note:: This item only applies to OpenStack releases Train and before as
+    ``auth_strategy`` was deprecated in Ussuri.
+
 OpenStack components communicate with each other using various protocols and
 the communication might involve sensitive or confidential data. An attacker may
 try to eavesdrop on the channel in order to get access to sensitive
@@ -145,6 +148,9 @@ section in ``manila.conf`` is set to ``True``.
 Check-Shared-06: Does Shared File Systems contact with Networking over TLS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note:: This item only applies to OpenStack releases Train and before as
+    ``auth_strategy`` was deprecated in Ussuri.
+
 Similar to previous check (:ref:`check_shared_fs_05`), it is recommended
 all the components must communicate with each other using a secured
 communication protocol.
@@ -159,6 +165,9 @@ section in ``manila.conf`` is set to ``True``.
 
 Check-Shared-07: Does Shared File Systems contact with Block Storage over TLS?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note:: This item only applies to OpenStack releases Train and before as
+    ``auth_strategy`` was deprecated in Ussuri.
 
 Similar to previous check (:ref:`check_shared_fs_05`), it is recommended
 all the components must communicate with each other using a secured

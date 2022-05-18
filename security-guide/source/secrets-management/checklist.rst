@@ -102,24 +102,20 @@ be authenticated with keystone using their service accounts.
 Check-Key-Manager-04: Is TLS enabled for authentication?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenStack components communicate with each other using various protocols
-and communication might involve sensitive or confidential data. An
-attacker may try to eavesdrop on the channel in order to get access to
-sensitive information. Therefore all components must communicate with
-each other using a secured communication protocol.
+OpenStack components communicate with each other using various protocols and
+the communication might involve sensitive or confidential data. An attacker may
+try to eavesdrop on the channel in order to get access to sensitive
+information. All the components must communicate with each other using a
+secured communication protocol.
 
-**Pass:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in ``barbican.conf`` is set to
-``https``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in ``barbican.conf`` is set to
+**Pass:** If value of parameter ``www_authenticate_uri`` under
+``[keystone_authtoken]`` section in ``/etc/barbican/barbican.conf`` is set to
 Identity API endpoint starting with ``https://`` and value of parameter
 ``insecure`` under the same ``[keystone_authtoken]`` section in the same
-``barbican.conf`` is set to ``False``.
+``/etc/barbican/barbican.conf`` is set to ``False``.
 
-**Fail:** If value of parameter ``auth_protocol`` under
-``[keystone_authtoken]`` section in ``barbican.conf`` is set to
-``http``, or if value of parameter ``identity_uri`` under
-``[keystone_authtoken]`` section in ``barbican.conf`` is not set
+**Fail:** If value of parameter ``www_authenticate_uri`` under
+``[keystone_authtoken]`` section in ``/etc/barbican/barbican.conf`` is not set
 to Identity API endpoint starting with ``https://`` or value of parameter
 ``insecure`` under the same ``[keystone_authtoken]`` section in the same
-``barbican.conf`` is set to ``True``.
+``/etc/barbican/barbican.conf`` is set to ``True``.

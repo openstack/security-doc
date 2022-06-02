@@ -128,5 +128,5 @@ these issues.
 
 The Barbican threat analysis identified eight security findings and two
 recommendations to improve the security of a barbican deployment. These
-results can be reviewed in the `security analysis repo <https://github.com/openstack/security-analysis/tree/master/doc/source/artifacts/barbican/newton>`_., along with the
+results can be reviewed in the `security analysis repo <https://opendev.org/openstack/security-analysis/src/commit/ac43025/doc/source/artifacts/barbican/newton>`_., along with the
 Barbican architecture diagram and architecture description page.

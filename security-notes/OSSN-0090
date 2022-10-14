@@ -1,0 +1,143 @@
+Best practices when configuring Glance with COW backends
+---
+
+### Summary ###
+When deploying Glance in a popular configuration where Glance shares a
+common storage backend with Nova and/or Cinder, it is possible to open
+some known attack vectors by which malicious data modification can
+occur.  This note reviews the known issues and suggests a Glance
+deployment configuration that can mitigate such attacks.
+
+### Affected Services / Software ###
+Glance, all supported releases (Queens through Zed)
+
+### Discussion ###
+This note applies to you if you are operating an end-user-facing
+glance-api service with the 'show_multiple_locations' option set to True
+(the default value is False) or if your end-user-facing glance-api has
+the 'show_image_direct_url' option set to True (default value is False).
+
+Our recommendation is that the image "locations" and "direct_url"
+fields [0] *never* be displayed to end users in a cloud.  This can be
+accomplished by running two glance-api services:
+
+- A "user-facing" glance-api that is accessible to end users and
+  which appears in users' service catalogs.
+
+- An "internal-only-facing" glance-api that is accessible only to those
+  services that require access to the 'direct_url' or image location fields,
+  and which is protected by firewalls from access by end users.  (Nova,
+  Cinder, and Ironic all have configuration options to specify the Glance
+  API endpoint each service uses [1].)
+
+This dual glance-api deployment was suggested in "Known Issues" in Glance
+release notes in the Rocky [2] through Ussuri releases, but it seems that
+the idea has not received sufficient attention.  Hence this security note.
+
+The attack vector that becomes available when image locations are exposed to
+end users was originally outlined in OSSN-0065 [3], though that note was not
+clear about the attack surface or mitigation, and contained some
+forward-looking statements that were not fulfilled.  The attack vector is:
+
+   [A] malicious user could create an image in Glance, set an additional
+   location on that image pointing to an altered image, then delete the
+   original location, so that consumers of the original image would
+   unwittingly be using the malicious image.  Note, however, that this
+   attack vector cannot change the original image's checksum, and it is
+   limited to images that are owned by the attacker.
+
+OSSN-0065 suggests that this is only an issue when users do not checksum
+their image data.  It neglects the fact that in some popular deployment
+configurations in which Nova creates a root disk snapshot, data is never
+uploaded to Glance, but instead a snapshot is created directly in the
+backend and Nova creates a Glance image record with "size" 0 and an
+empty "os_hash_value" [4], making it impossible to compare the hash of
+downloaded image data to the value maintained by Glance.
+
+Further, when Nova is configured to use the same storage for ephemeral disks
+that is used as a Glance image store, Nova efficiently creates a server root
+disk directly in the backend without checksumming the image data.  This is
+an intentional design choice to optimize storage space and host resources,
+but an implication is that even if the image record has a recorded hash, it
+is not being checked at the point of image consumption.
+
+Similarly, when using a shared backend, or a cinder glance_store, Cinder
+will efficiently clone a volume created from an image directly in the
+backend without checksumming the image data.  Again, this is done
+intentionally in order to optimize resources, but it is important to be
+aware of the security tradeoff being made by this configuration.  In other
+words, if the image data is not going to be checked at the point of image
+consumption, then extra care needs to be taken to ensure the integrity of
+the data path.
+
+OSSN-0065 suggested that the attack vector of substituting image data by
+modifying the image locations could be addressed by using policies, but that
+has turned out not to be the case.  The only way currently to mitigate this
+vector is to deploy glance-api in a dual configuration as described above,
+namely with an internal-only-facing glance-api used by Nova and Cinder (that
+has show_multiple_locations enabled), and an end-user-facing glance-api (that
+has show_multiple_locations disabled).
+
+So far the focus has been on 'show_multiple_locations'.  When that setting
+is disabled in Glance, it is not possible to manipulate the locations
+via the OpenStack Images API.  Keep in mind, however, that in any
+Glance/Nova/Cinder configuration where Nova and/or Cinder do copy-on-write
+directly in the image store, image data transfer takes place outside Glance's
+image data download path, and hence the os_hash_value is *not* checked.  Thus,
+if the backend store is itself compromised and image data is replaced
+directly in the backend, the substitution will *not* be detected.
+
+This brings us to the 'show_image_direct_url' option, which includes a
+"direct_url" field in the image-show response that can be used by various
+OpenStack services to consume images directly from the storage backend.
+Exposing the 'direct_url' to end users leaks information about the storage
+backend.  What exactly that information consists of depends upon the backend
+in use and how it is configured, but in general, it is not a good idea to
+provide hints that could be useful to malicious actors in their attempts to
+compromise the backend storage by some type of independent exploit.  The
+'direct_url', being read-only, may appear innocuous, but its use by services
+is usually to perform some kind of optimized image data access that most
+likely does not include computing a hash of the image data.
+
+We therefore recommend that OpenStack services that require exposure of
+the 'direct_url' image property be similarly configured to use an
+internal-only-facing glance-api.  It is worth nothing that end users who
+wish to download an image do not require access to the 'direct_url' image
+property because they can simply use the image-data-download API call [5].
+
+### Recommended Actions ###
+A glance-api service with 'show_multiple_locations' enabled should
+*never* be exposed directly to end users.  This setting should only be
+enabled on an internal-only-facing glance-api that is used by OpenStack
+services that require access to image locations.  This could be done,
+for example, by running two glance-api services with different
+configuration files and using the appropriate configuration options for
+each service to specify the Image API endpoint to access, and making
+sure the special internal endpoint is firewalled in such a way that only
+the appropriate OpenStack services can contact it.
+
+Similarly, enabling 'show_image_direct_url' exposes information about
+the storage backend that could be of use to malicious actors in as yet
+unknown exploits, so it should likewise only be enabled on an
+internal-only-facing glance-api.
+
+### Notes / References ###
+[0] https://docs.openstack.org/api-ref/image/v2/index.html#show-image-schema
+[1] Nova and Ironic use 'endpoint_override' in the '[glance]' section of the
+    configuration file; Cinder uses 'glance_api_servers' in the '[DEFAULT]'
+    section.
+[2] OSSN-0065: https://wiki.openstack.org/wiki/OSSN/OSSN-0065
+[3] The Glance "multihash" metadata pair of 'os_hash_algo' and
+    'os_hash_value' were introduced in Rocky to replace the legacy md5
+    'checksum' field.  The python-glanceclient has used multihash
+    checksumming for download verification since version 2.13.0.
+[4] https://docs.openstack.org/releasenotes/glance/rocky.html#known-issues
+[5] https://docs.openstack.org/api-ref/image/v2/index.html?#download-binary-image-data
+
+### Contacts / References ###
+Author: Brian Rosmaita, Red Hat
+This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0090
+Original LaunchPad Bug : https://bugs.launchpad.net/ossn/+bug/1990157
+Mailing List : [Security] tag on openstack-discuss@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg
+CVE: none

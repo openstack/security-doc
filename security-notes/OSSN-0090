@@ -12,10 +12,10 @@ deployment configuration that can mitigate such attacks.
 Glance, all supported releases (Queens through Zed)
 
 ### Discussion ###
-This note applies to you if you are operating an end-user-facing
-glance-api service with the 'show_multiple_locations' option set to True
-(the default value is False) or if your end-user-facing glance-api has
-the 'show_image_direct_url' option set to True (default value is False).
+This note applies to you if you are operating a glance-api service with
+the 'show_multiple_locations' option set to True (the default value
+is False) or if your end-user-facing glance-api has the
+'show_image_direct_url' option set to True (default value is False).
 
 Our recommendation is that the image "locations" and "direct_url"
 fields [0] *never* be displayed to end users in a cloud.  This can be
@@ -35,7 +35,7 @@ release notes in the Rocky [2] through Ussuri releases, but it seems that
 the idea has not received sufficient attention.  Hence this security note.
 
 The attack vector that becomes available when image locations are exposed to
-end users was originally outlined in OSSN-0065 [3], though that note was not
+users was originally outlined in OSSN-0065 [3], though that note was not
 clear about the attack surface or mitigation, and contained some
 forward-looking statements that were not fulfilled.  The attack vector is:
 
@@ -83,7 +83,7 @@ is disabled in Glance, it is not possible to manipulate the locations
 via the OpenStack Images API.  Keep in mind, however, that in any
 Glance/Nova/Cinder configuration where Nova and/or Cinder do copy-on-write
 directly in the image store, image data transfer takes place outside Glance's
-image data download path, and hence the os_hash_value is *not* checked.  Thus,
+image data download path, and the os_hash_value is *not* checked.  Thus,
 if the backend store is itself compromised and image data is replaced
 directly in the backend, the substitution will *not* be detected.
 

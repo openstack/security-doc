@@ -1,0 +1,52 @@
+BMC emulators developed in OpenStack community do not preserve passwords on VMs
+---
+
+### Summary ###
+When deploying VirtualBMC or Sushy-Tools in an unsupported, production-like
+configuration, it can remove secret data, including VNC passwords, from a
+libvirt domain permanently. Operators impacted by this vulnerability must
+reconfigure any secret data, including VNC passwords, for the libvirt domain.
+
+These virtual machine emulators are tools to help emulate a physical machine's
+Baseboard Management Controller (BMC) to aid in development and testing of
+software that would otherwise require physical machines to perform integration
+testing activities. They are not intended or supported for production or
+long-term use of any kind.
+
+### Affected Services / Software ###
+- Sushy-Tools, <=0.21.0
+- VirtualBMC, <=2.2.2
+
+There is no impact to any OpenStack software or services intended for
+production use.
+
+### Discussion ###
+To perform some advanced operations on Libvirt virtual machines, the underlying
+XML document describing the virtual machine's domain must be extracted,
+modified, and then updated. These specific actions are for aspects such as
+"setting a boot device" (VirtualBMC, Sushy-Tools), Setting a boot mode
+(Sushy-Tools), and setting a virtual media device (Sushy-Tools).
+
+This issue is triggered when a VM has any kind of "secure" information defined
+in the XML domain definition. If an operator deploys VirtualBMC or Sushy-Tools
+to manage one of these libvirt VMs, the first time any action is performed that
+requires rewriting of the XML domain definition, all secure information --
+including a VNC console password, if set -- is lost and removed from the domain
+definition, leaving the libvirt VM's exposed to a malicious console user.
+
+### Recommended Actions ###
+Operators who may have been impacted by this vulnerability should immediately
+remove use of VirtualBMC and/or Sushy-Tools from their production environment.
+Then, validate and if necessary, reconfigure passwords for VNC access or any
+other impacted secrets.
+
+### Credits ###
+Julia Kreger, Red Hat
+
+### Contacts / References ###
+Author: Jay Faulkner, G-Research Open Source Software
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0091#Discussion
+Original Storyboard bug: https://storyboard.openstack.org/#!/story/2010382
+Mailing List : [Security] tag on openstack-discuss@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg
+CVE: CVE-2022-44020

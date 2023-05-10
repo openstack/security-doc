@@ -1,0 +1,130 @@
+Using Configuration as a Short-Term Mitigation for OSSA-2023-003
+---
+
+### Summary ###
+An unauthorized access to a volume could occur when an iSCSI or FC
+connection from a host is severed due to a volume being unmapped on
+the storage system and the device is later reused for another volume
+on the same host.
+
+### Affected Services / Software ###
+- cinder: <20.2.1, >=21.0.0 <21.2.1, ==22.0.0
+- glance_store: <3.0.1, >=4.0.0 <4.1.1, >=4.2.0 <4.3.1
+- nova: <25.1.2, >=26.0.0 <26.1.2, ==27.0.0
+- os-brick: <5.2.3, >=6.0.0 <6.1.1, >=6.2.0 <6.2.2
+
+### Discussion ###
+It is recommended to apply the fixes provided in OSSA-2023-003
+https://security.openstack.org/ossa/OSSA-2023-003.html but updating
+an OpenStack deployment may take a long time requiring a proper
+maintenance window and may even require a validation process of the
+release prior to the deployment, so operators may prefer applying
+tactical configuration changes to their cloud to prevent harmful
+actions while they go through their standarized process.
+
+In this case the fastest way to prevent an unsafe attach deletion is
+twofold:
+    1. ensuring that Nova uses a user with a service role to send
+    its token on all the requests made to Cinder on behalf of users,
+    and
+    2. Cinder protects the vulnerable APIs via policy.
+
+### Recommended Actions ###
+If the deployment has Glance using Cinder as a backend, in order to
+use this alternative short-term mitigation, Glance must be
+configured to use a single user having the service role for all its
+requests to Cinder. If your deployment is *not* using a single user
+(that is, instead of all the image-volumes being stored in a single
+project, they are stored in each user's project), then you cannot
+use this Short-Term Mitigation strategy, but must instead apply the
+full change described in the previous section.
+
+Steps for Mitigation:
+A. Ensure the users used by Nova (and Glance, if applicable) have
+the service role
+      * In Nova, this is the user configured in the [service_user]
+        section of nova.conf
+      * In Glance, this user will only be defined if you are using
+        Cinder as a Glance storage backend. It is defined in the
+        [cinder] section of glance.conf
+        ** if you do not use Cinder as a backend for Glance, you do
+        not need to define a service user for Glance
+
+B. Configure Nova to send the service token
+https://docs.openstack.org/cinder/latest/configuration/block-storage/service-token.html
+      * Glance does not have the ability to send a service token to
+        Cinder; instead, the mitigation-by-policy strategy described
+        below relies upon the user configured in glance in the
+        [cinder]/cinder_store_user_name option in glance.conf having
+        been granted the service role in Keystone
+
+C. Configure the cinder policies as per
+https://docs.openstack.org/cinder/latest/configuration/block-storage/policy-config-HOWTO.html
+to have the following:
+
+    "is_service":
+        "role:service or service_user_id:<nova_service_uuid>"
+    "volume:attachment_delete":
+        "rule:xena_system_admin_or_project_member and rule:is_service"
+    "volume_extension:volume_actions:terminate_connection":
+        "rule:xena_system_admin_or_project_member and rule:is_service"
+    "volume_extension:volume_actions:detach":
+        "rule:xena_system_admin_or_project_member and rule:is_service"
+    "volume_extension:volume_admin_actions:force_detach":
+        "!"
+
+    Notes:
+          - The operator should replace "<nova_service_uuid>" with
+            the actual UUID of the user configured in the
+            [service_user] section of nova.conf
+          - If the role name in Keystone to identify a service is
+            not "service"' then the operator should also replace
+            "role:service" accordingly and also make appropriate
+            adjustment to the
+            [keystone_authtoken]/service_token_roles setting in your
+            cinder configuration file.
+          - It may not be obvious why there are four policy targets
+            defined. It's because the Block Storage API v3 provides
+            four different API calls by which an attachment-delete
+            may be accomplished:
+            ** DELETE /v3/attachments/{attachment_id}
+               (introduced in microversion 3.27, the preferred way to do this)
+            ** POST /v3/volumes/{volume_id}
+               with 'os-detach' action in the request body
+            ** POST /v3/volumes/{volume_id}
+               with 'os-terminate_connection' action in the request body
+            ** POST /v3/volumes/{volume_id}
+               with 'os-force_detach' action in the request body
+
+Limitations:
+The drawback to this configuration-only approach is that while it
+protects against the intentional case described earlier, it does not
+protect against the accidental case. Additionally, it is not
+fine-grained enough to distinguish acceptable end-user Block Storage
+API attachment-delete requests from unsafe ones (the Cinder code
+change is required for that). For these reasons, we emphasize that
+this is only a short-term mitigation, and we recommend that the full
+fix be applied as soon as possible in your deployment.
+
+Warning:
+Note that if you deploy this short-term mitigation, you should roll
+back the policy changes after the full fix is applied, or end users
+will continue to be unable to make acceptable attachment-delete
+requests.
+
+### Credits ###
+Jan Wasilewski, Atman
+Gorka Eguileor, Red Hat
+
+### Contacts / References ###
+Authors:
+- Brian Rosmaita, Red Hat
+- Dan Smith, Red Hat
+- Gorka Eguileor, Red Hat
+- Jeremy Stanley, OpenInfra Foundation
+- Nick Tait, Red Hat
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0092#Discussion
+Original Launchpad bug: https://launchpad.net/bugs/2004555
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security Project : https://launchpad.net/~openstack-ossg
+CVE: CVE-2023-2088

@@ -176,7 +176,7 @@ we would like to recommend for further information:
 * `OWASP Transport Layer Protection Cheat Sheet <https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet>`_
 * `SoK: SSL and HTTPS: Revisiting past challenges and evaluating certificate trust model enhancements <http://www.ieee-security.org/TC/SP2013/papers/4977a511.pdf>`_
 * `The Most Dangerous Code in the World: Validating SSL Certificates in Non-Browser Software <http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf>`_
-* `OpenSSL and FIPS 140-2 <http://www.openssl.org/docs/fips/fipsnotes.html>`_
+* `OpenSSL and FIPS 140-2 <https://www.openssl.org/docs/fips.html>`_
 
 Summary
 ~~~~~~~

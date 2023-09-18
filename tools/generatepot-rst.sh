@@ -34,9 +34,8 @@ rm $DOCNAME/source/locale/common.pot
 
 # Take care of deleting all temporary files so that git add
 # doc/$DOCNAME/source/locale will only add the single pot file.
-# Remove UUIDs, those are not necessary and change too often
-msgcat --sort-by-file $DOCNAME/source/locale/*.pot | \
-  awk '$0 !~ /^\# [a-z0-9]+$/' > $DOCNAME/source/$DOCNAME.pot
+msgcat --sort-by-file $DOCNAME/source/locale/*.pot \
+  > $DOCNAME/source/$DOCNAME.pot
 rm  $DOCNAME/source/locale/*.pot
 rm -rf $DOCNAME/source/locale/.doctrees/
 mv $DOCNAME/source/$DOCNAME.pot $DOCNAME/source/locale/$DOCNAME.pot

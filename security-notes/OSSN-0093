@@ -1,0 +1,36 @@
+Unresolved Vulnerability in Murano
+---
+
+### Summary ###
+A severe security vulnerability in all versions of the Murano
+service will be disclosed at a later date. Murano is an inactive
+project, so no fix is currently under development for this
+vulnerability. It is strongly recommended that any OpenStack
+deployments disable or fully remove Murano, if installed, at the
+earliest opportunity. This security note will be amended at the time
+of public disclosure to include further details and context, but
+action should be taken as soon as possible in order to minimize the
+risk it poses.
+
+### Affected Services / Software ###
+- murano: all versions
+
+### Discussion ###
+This security note is a redacted placeholder, and will be amended
+with complete details once the associated bug report becomes public.
+
+### Recommended Actions ###
+Disable the Murano service in, or fully remove it from, all
+OpenStack deployments at the earliest opportunity.
+
+### Credits ###
+Not yet disclosed.
+
+### Contacts / References ###
+Authors:
+- Jeremy Stanley, OpenStack Vulnerability Coordinator
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0093
+Original Launchpad bug: https://launchpad.net/bugs/2048114
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: Not yet disclosed.

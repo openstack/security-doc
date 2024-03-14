@@ -1,30 +1,39 @@
-Unresolved Vulnerability in Murano
+Unsafe Environment Handling in MuranoPL
 ---
 
 ### Summary ###
-A severe security vulnerability in all versions of the Murano
-service will be disclosed at a later date. Murano is an inactive
+The Murano service's MuranoPL extension to the YAQL language fails
+to sanitize the supplied environment, leading to potential leakage
+of sensitive service account information. Murano is an inactive
 project, so no fix is currently under development for this
 vulnerability. It is strongly recommended that any OpenStack
 deployments disable or fully remove Murano, if installed, at the
-earliest opportunity. This security note will be amended at the time
-of public disclosure to include further details and context, but
-action should be taken as soon as possible in order to minimize the
-risk it poses.
+earliest opportunity.
 
 ### Affected Services / Software ###
 - murano: all versions
 
 ### Discussion ###
-This security note is a redacted placeholder, and will be amended
-with complete details once the associated bug report becomes public.
+The YAQL interpreter project has released a new major version
+(3.0.0) which removes support for format strings, a feature
+necessary to exploit this condition in MuranoPL. Because Murano is
+not considered under active maintenance in OpenStack, its complete
+removal from all deployments is still strongly advised.
+
+Note that this behavior change in YAQL means configurations relying
+on string formatting will no longer be interpreted the same after
+upgrading, which could cause them to not work as intended by their
+users in services which accept YAQL (including Heat and Mistral).
+Reliance on that feature is considered to be unusual, but users
+should be made aware in case it negatively impacts their
+configuration.
 
 ### Recommended Actions ###
 Disable the Murano service in, or fully remove it from, all
 OpenStack deployments at the earliest opportunity.
 
 ### Credits ###
-Not yet disclosed.
+kirualawliet and edwardpeng from Sangfor Security Research Team
 
 ### Contacts / References ###
 Authors:
@@ -33,4 +42,4 @@ This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0093
 Original Launchpad bug: https://launchpad.net/bugs/2048114
 Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
 OpenStack Security : https://security.openstack.org/
-CVE: Not yet disclosed.
+CVE: Not yet assigned.

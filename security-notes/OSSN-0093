@@ -33,7 +33,8 @@ Disable the Murano service in, or fully remove it from, all
 OpenStack deployments at the earliest opportunity.
 
 ### Credits ###
-kirualawliet and edwardpeng from Sangfor Security Research Team
+kirualawliet and Zhiniang Peng (@edwardzpeng) from Sangfor Security
+Research Team
 
 ### Contacts / References ###
 Authors:

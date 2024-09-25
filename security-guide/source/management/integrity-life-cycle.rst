@@ -61,7 +61,7 @@ Note that the node boot process begins with two insecure operations:
 DHCP and TFTP. Then the boot process uses TLS to download the remaining
 information required to deploy the node. This may be an operating system
 installer, a basic install managed by
-`Chef <https://www.chef.io/chef/>`__ or
+`Ansible <https://www.ansible.com/>`__ or
 `Puppet <https://puppetlabs.com/>`__, or even a complete file system
 image that is written directly to disk.
 

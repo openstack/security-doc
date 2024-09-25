@@ -40,6 +40,10 @@ OpenStack contribution process.
 
       The code name for the thirtieth release of OpenStack.
 
+   2025.1 Epoxy
+
+      The code name for the thirty first release of OpenStack.
+
    6to4
 
       A mechanism that allows IPv6 packets to be transmitted
@@ -157,7 +161,7 @@ A
 
       The open standard messaging protocol used by OpenStack
       components for intra-service communications, provided by RabbitMQ,
-      Qpid, or ZeroMQ.
+      or Qpid.
 
    Advanced RISC Machine (ARM)
 
@@ -190,11 +194,6 @@ A
 
       Both a VM container format and disk format. Supported by Image
       service.
-
-   Anvil
-
-      A project that ports the shell script-based project named
-      DevStack to Python.
 
    aodh
 
@@ -693,11 +692,6 @@ C
       item since your last request, instead of downloading a new, fresh set
       of data and comparing it against the old data.
 
-   Chef
-
-      An operating system configuration management tool supporting
-      OpenStack deployments.
-
    child cell
 
       If a requested resource such as CPU time, disk storage, or
@@ -905,11 +899,6 @@ C
       requests from the compute process. Using conductor improves security
       because compute nodes do not need direct access to the
       database.
-
-   congress
-
-      Code name for the :term:`Governance service
-      <Governance service (congress)>`.
 
    consistency window
 
@@ -1704,12 +1693,6 @@ G
       A method of operating system installation where a finalized disk
       image is created and then used by all nodes without
       modification.
-
-   Governance service (congress)
-
-      The project that provides Governance-as-a-Service across
-      any collection of cloud services in order to monitor,
-      enforce, and audit policy over dynamic infrastructure.
 
    Graphic Interchange Format (GIF)
 
@@ -2896,7 +2879,7 @@ O
       `"year"."release count within the year"` and the name will be
       used mostly for marketing purposes. The first such release is
       2023.1 Antelope. Followed by, respectively, 2023.2 Bobcat,
-      2024.1 Caracal, 2024.2 Dalmatian.
+      2024.1 Caracal, 2024.2 Dalmatian, 2025.1 Epoxy.
 
    openSUSE
 
@@ -3442,8 +3425,7 @@ R
    RPC driver
 
       Modular system that allows the underlying message queue software
-      of Compute to be changed. For example, from RabbitMQ to ZeroMQ or
-      Qpid.
+      of Compute to be changed. For example, from RabbitMQ to Qpid.
 
    rsync
 
@@ -4367,11 +4349,6 @@ Z
 
       The code name for the twenty sixth release of OpenStack.
       The release is named after the pronunciation of the letter Z.
-
-   ZeroMQ
-
-      Message queue software supported by OpenStack. An alternative to
-      RabbitMQ. Also spelled 0MQ.
 
    Zuul
 

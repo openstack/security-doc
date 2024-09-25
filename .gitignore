@@ -1,6 +1,3 @@
-.DS_Store
-*.xpr
-
 # Packages
 .venv
 *.egg
@@ -12,12 +9,8 @@
 # Build directories
 publish-docs/
 security-guide/build
+security-guide/source/locale/.doctrees
 security-threat-analysis/build
 
 # Transifex Client Setting
 .tx
-
-# Editors
-*~
-.*.swp
-.bak

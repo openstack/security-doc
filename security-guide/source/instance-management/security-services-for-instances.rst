@@ -194,7 +194,7 @@ Section *AC-19(d)* in Oz.
 It is recommended to avoid the manual image building process as it is
 complex and prone to error. Additionally, using an automated system
 like Oz for image building or a configuration management utility like
-Chef or Puppet for post-boot image hardening gives you the ability to
+Ansible or Puppet for post-boot image hardening gives you the ability to
 produce a consistent image as well as track compliance of your base
 image to its respective hardening guidelines over time.
 

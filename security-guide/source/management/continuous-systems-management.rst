@@ -187,16 +187,14 @@ use it.
 
 There are many configuration management solutions; at the time of this
 writing there are two in the marketplace that are robust in their
-support of OpenStack environments: Chef and :term:`Puppet`. A
+support of OpenStack environments: Ansible and :term:`Puppet`. A
 non-exhaustive listing of tools in this space is provided below:
-
--  Chef
 
 -  Puppet
 
--  Salt Stack
+-  OpenStack-Ansible
 
--  Ansible
+-  Kolla-Ansible
 
 Policy changes
 --------------

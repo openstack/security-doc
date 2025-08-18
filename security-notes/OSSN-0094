@@ -1,0 +1,96 @@
+= OSSN-0094: Ensuring Volume Safety with Nova and Watcher =
+
+== Summary ==
+A vulnerability has been identified in OpenStack Nova and OpenStack Watcher
+in conjunction with volume swap operations performed by the Watcher service.
+Under specific circumstances, this can lead to a situation where two Nova
+libvirt instances could reference the same block device, allowing accidental
+information disclosure to the unauthorized instance.
+
+== Affected Services / Software ==
+
+'''Services''': Nova,Watcher
+
+'''Releases''': all supported releases
+
+== Discussion ==
+
+The issue occurs when Watcher's zone migration strategy performs the following
+sequence of events:
+
+# Watcher initiates a volume swap using Nova's internal-only volume swap API
+# Watcher initiates a live migration of the same instance
+# In some error cases connection details may have failed to update storage
+  references. These invalid details are used during the live migration.
+
+=== Required Access ===
+The swap volume, live migration and all Watcher APIs are admin only so with
+default policy is only possible to create the inconsistent state described in
+this OSSN if you have admin rights on the relevant OpenStack project.
+
+=== Further Watcher Hardening ===
+The Watcher service, when first created, often implemented its own means
+to perform operations. Many of those operations can now be done natively
+via other OpenStack services. In the specific context of OSSN-0094,
+the ability to migrate Cinder volumes between storage backends is such an
+example.
+
+Additionally, the Cinder volume migration in Watcher created a new Keystone
+user with the admin role assigned for the instance owners' project and then
+used that user to perform API requests on behalf of the project. This code
+has been removed.
+
+Finally, due to limited error handling and no validation that the objects
+involved were migrated properly, some error scenarios could have led to
+a source volume being deleted despite not having been migrated properly.
+
+=== Resolution ===
+Nova will now reject any request to swap a volume that has an empty migration
+status, effectively restricting the usage of this API to Cinder. This brings
+the API validation in line with the documentation.
+
+Watchers internal implementation of swap volume has been deleted and updated
+to use Cinder's native volume migration as a replacement. Watcher no longer
+creates temporary Keystone users in normal operation.
+
+=== Patches ===
+Patches for Nova and Watcher have been backported to all supported stable
+branches and committed to master branch.
+
+'''stable/2025.1''':
+* Watcher: https://review.opendev.org/c/openstack/watcher/+/957770
+* Nova: https://review.opendev.org/c/openstack/nova/+/957759
+
+
+'''stable/2024.2''':
+* Watcher: https://review.opendev.org/c/openstack/watcher/+/957773
+* Nova: https://review.opendev.org/c/openstack/nova/+/957762
+
+
+'''stable/2024.1''':
+* Watcher: https://review.opendev.org/c/openstack/watcher/+/957774
+* Nova: https://review.opendev.org/c/openstack/nova/+/957764
+
+== Recommended Actions ==
+
+* Operators using Watcher's zone migration strategy should apply the provided
+  Watcher and Nova patches as soon as possible.
+* Operators should refrain from using the swap volume migration action in
+  Watcher. The compatibility code for swap volume that uses a Cinder-based
+  migration may be removed in a future API version.
+* Operators should audit all users with the admin role and ensure no temporary
+  Watcher-created users remain.
+* Operators using custom policy for volume attachment
+  (''/servers/{server_id}/os-volume_attachments/{volume_id}'') or live
+  migration API should review the state of existing instances which have had
+  volume migrations. Any instance in an inconsistent state can be resolved by
+  hard rebooting the instance using Nova's API.
+
+== Contacts / References ==
+* Author: Sean Mooney <smooney@redhat.com>, Jay Faulkner <jay@jvf.cc>
+* This OSSN : https://wiki.openstack.org/wiki/OSSN/OSSN-0094
+* Original LaunchPad Bug : https://bugs.launchpad.net/nova/+bug/2112187
+* Mailing List : [Security] tag on openstack-discuss@lists.openstack.org
+* OpenStack Security Project : https://launchpad.net/~openstack-ossg
+* CVE: None
+

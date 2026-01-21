@@ -215,16 +215,6 @@ Compute service, as needed.
 Trusted processes for managing the life cycle of disk images are required, as
 are all the previously mentioned issues with respect to data security.
 
-Data processing service
------------------------
-
-The :term:`Data Processing service (sahara)` provides a platform
-for the provisioning, management, and usage of clusters running popular
-processing frameworks.
-
-Security considerations for data processing should focus on data privacy and
-secure communications to provisioned clusters.
-
 Other supporting technology
 ---------------------------
 

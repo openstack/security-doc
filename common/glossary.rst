@@ -48,6 +48,10 @@ OpenStack contribution process.
 
       The code name for the thirty second release of OpenStack.
 
+   2026.1 Gazpacho
+
+      The code name for the thirty third release of OpenStack.
+
    6to4
 
       A mechanism that allows IPv6 packets to be transmitted
@@ -209,6 +213,12 @@ A
       Both a VM container format and disk format. Supported by Image
       service.
 
+   Ansible
+
+      Ansible is an open-source automation tool that can be used to deploy,
+      configure, and manage OpenStack environments using simple, repeatable
+      playbooks.
+
    aodh
 
       Part of the OpenStack :term:`Telemetry service <Telemetry
@@ -268,12 +278,6 @@ A
    applet
 
       A Java program that can be embedded into a web page.
-
-   Application Catalog service (murano)
-
-      The project that provides an application catalog service so that users
-      can compose and deploy composite environments on an application
-      abstraction level while managing the application lifecycle.
 
    Application Programming Interface (API)
 
@@ -977,14 +981,6 @@ C
       or the main API of a specific core project, such as Compute,
       Networking, Image service, and so on.
 
-   core service
-
-      An official OpenStack service defined as core by
-      Interop Working Group. Currently, consists of
-      Block Storage service (cinder), Compute service (nova),
-      Identity service (keystone), Image service (glance),
-      Networking service (neutron), and Object Storage service (swift).
-
    cost
 
       Under the Compute distributed scheduler, this is calculated by
@@ -1062,12 +1058,6 @@ D
       Software programs used to protect sensitive information
       and prevent it from leaking outside a network boundary
       through the detection and denying of the data transportation.
-
-   Data Processing service (sahara)
-
-      OpenStack project that provides a scalable
-      data-processing stack and associated management
-      interfaces.
 
    data store
 
@@ -2878,9 +2868,12 @@ O
       2023.1 Antelope. Followed by, respectively, 2023.2 Bobcat,
       2024.1 Caracal, 2024.2 Dalmatian, 2025.1 Epoxy, 2025.2 Flamingo.
 
-   openSUSE
+   OpenStack-Ansible
 
-      A Linux distribution that is compatible with OpenStack.
+      OpenStack-Ansible (OSA) provides Ansible playbooks and
+      roles for deploying and configuring an OpenStack
+      environment, enabling scalable and automated cloud
+      infrastructure management.
 
    operator
 
@@ -3823,10 +3816,6 @@ S
    subnet
 
       Logical subdivision of an IP network.
-
-   SUSE Linux Enterprise Server (SLES)
-
-      A Linux distribution that is compatible with OpenStack.
 
    suspend
 

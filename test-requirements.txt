@@ -3,7 +3,7 @@
 # process, which may cause wedges in the gate later.
 
 doc8 # Apache-2.0
-openstack-doc-tools>=2.0.0 # Apache-2.0
+openstack-doc-tools>=2.0.0,!=4.0.2 # Apache-2.0
 sphinx>=2.0.0,!=2.1.0 # BSD
 openstackdocstheme>=2.1.1 # Apache-2.0
 

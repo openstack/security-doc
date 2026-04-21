@@ -1,0 +1,47 @@
+OVN security group rules created before address group support may
+be ineffective
+---
+
+### Summary ###
+In deployments using the OVN ML2 driver, security group rules
+referencing remote address groups that were created before OVN
+address group support was added do not enforce source address
+filtering. The resulting OVN ACLs allow traffic from any source
+to the destination port.
+
+### Affected Services / Software ###
+- neutron (OVN ML2 driver): <25.2.3, >=26.0.0 <26.0.3, >=27.0.0 <27.0.2
+
+### Discussion ###
+Before OVN address group support was added, the Neutron API
+accepted address group references in security group rules without
+error, but the OVN driver silently ignored them. The resulting ACLs
+had no source address set, effectively allowing 0.0.0.0/0.
+
+After upgrading, new rules work correctly but pre-existing ones are
+not fixed. The neutron-ovn-db-sync-util repair mode also does not
+correct them. Deleting an affected rule via the API orphans the ACL
+in OVN, which continues to pass traffic.
+
+A fix has been merged that adds a maintenance task to automatically
+create missing address sets and update affected ACLs on service
+restart.
+
+### Recommended Actions ###
+Upgrade to a version of neutron containing the fix
+(https://review.opendev.org/c/openstack/neutron/+/976832) and
+restart the neutron services. The maintenance task will
+correct pre-existing rules automatically. Operators should verify
+that orphaned ACLs from previously deleted rules are removed.
+
+### Credits ###
+James Denton, Rackspace
+
+### Contacts / References ###
+Authors:
+- Goutham Pacha Ravi, Red Hat
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0095
+Original Launchpad bug: https://launchpad.net/bugs/2141589
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: none

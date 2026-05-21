@@ -1,0 +1,65 @@
+oslo.messaging does not verify RabbitMQ broker hostname during TLS handshake
+---
+
+### Summary ###
+Tim Shephard reported that oslo.messaging validates the RabbitMQ
+broker's certificate chain when ssl_ca_file is configured, but does
+not verify the broker's hostname against the certificate. An attacker
+with control plane network access and a certificate trusted by the
+deployment's CA can perform a man-in-the-middle attack on RPC and
+notification traffic between OpenStack services.
+
+### Affected Services / Software ###
+- oslo.messaging: >=1.0.0 <16.2.0, >=17.0.0 <17.1.1, >=17.2.0 <17.3.1
+
+All OpenStack services that use oslo.messaging for RPC or
+notifications with RabbitMQ TLS are affected. The fix is included
+in oslo.messaging 18.0.0 (2026.2/Hibiscus) with hostname verification
+enabled by default. Code patches for stable/2026.1, 2025.2,
+and 2025.1 default to disabling this validation (opt-in)
+to avoid breaking deployments on upgrade.
+
+### Discussion ###
+When ssl_ca_file is configured, oslo.messaging validates the
+certificate chain but does not pass the broker hostname to the
+TLS stack. Any certificate trusted by the deployment's CA is
+accepted regardless of which hostname it was issued for.
+
+The fix adds ssl_enforce_hostname_verification to
+[oslo_messaging_rabbit]. On master (2026.2/Hibiscus) this defaults
+to True (secure by default). On stable branches it defaults to
+False to avoid breaking deployments whose broker certificates lack
+correct SAN entries. Multi-host configurations require
+Kombu >= 5.2.0 when hostname verification is enabled.
+
+### Recommended Actions ###
+Operators running stable branches should:
+
+- Ensure RabbitMQ broker certificates have SAN entries matching
+  the hostnames used in transport_url.
+- Set ssl_enforce_hostname_verification=True in
+  [oslo_messaging_rabbit] in each service's configuration.
+- For multi-host configurations, verify Kombu >= 5.2.0 first.
+- Upgrade to the next major release when available, which
+  enables hostname verification by default.
+
+#### Patches ####
+Hostname verification support was added on master and backported to
+supported stable branches with verification disabled by default.
+
+2026.2/hibiscus (master): https://review.opendev.org/c/openstack/oslo.messaging/+/988095
+2026.1/gazpacho: https://review.opendev.org/c/openstack/oslo.messaging/+/988979
+2025.2/flamingo: https://review.opendev.org/c/openstack/oslo.messaging/+/988980
+2025.1/epoxy: https://review.opendev.org/c/openstack/oslo.messaging/+/988981
+
+### Credits ###
+Tim Shephard, roiai.ca
+
+### Contacts / References ###
+Authors:
+- Goutham Pacha Ravi, Red Hat
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0096
+Original Launchpad bug: https://launchpad.net/bugs/2150316
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: CVE-2026-44393

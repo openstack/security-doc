@@ -186,6 +186,12 @@ A
       Lower power consumption CPU often found in mobile and embedded
       devices. Supported by OpenStack.
 
+   Aetos
+
+      The aetos service provides a multi-tenancy layer and OpenStack
+      authentication for Prometheus. Part of the OpenStack
+      :term:`Telemetry service <Telemetry service (telemetry)>`.
+
    alert
 
       The Compute service can send alerts through its notification
@@ -2473,10 +2479,6 @@ M
       Can concurrently use multiple layer-2 networking technologies,
       such as 802.1Q and VXLAN, in Networking.
 
-   monasca
-
-      Codename for OpenStack :term:`Monitoring <Monitoring (monasca)>`.
-
    Monitor (LBaaS)
 
       LBaaS feature that provides availability monitoring using the
@@ -2486,15 +2488,6 @@ M
 
       A Ceph component that communicates with external clients, checks
       data state and consistency, and performs quorum functions.
-
-   Monitoring (monasca)
-
-      The OpenStack service that provides a multi-project, highly scalable,
-      performant, fault-tolerant monitoring-as-a-service solution for metrics,
-      complex event processing and logging. To build an extensible platform for
-      advanced monitoring services that can be used by both operators and
-      projects to gain operational insight and visibility, ensuring availability
-      and stability.
 
    multi-cloud computing
 
@@ -3064,6 +3057,10 @@ P
    project VPN
 
       Alternative term for a cloudpipe.
+
+   Prometheus
+
+      Open source metrics and monitoring for systems and services.
 
    promiscuous mode
 
@@ -3731,11 +3728,6 @@ S
 
       The Block Storage driver for the SolidFire iSCSI storage
       appliance.
-
-   solum
-
-      Code name for the :term:`Software Development Lifecycle Automation
-      service <Software Development Lifecycle Automation service (solum)>`.
 
    spread-first scheduler
 

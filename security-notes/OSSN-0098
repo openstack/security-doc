@@ -1,0 +1,50 @@
+Mistral workflow execution context exposes Keystone auth token
+---
+
+### Summary ###
+Eduardo Gonzalez Gutierrez reported that Mistral stores the
+Keystone authentication token in the workflow execution context.
+Any user who can create or inspect workflow executions can retrieve
+active tokens via YAQL or Jinja2 expressions and use them to
+perform actions as the workflow initiator. Deployments where
+untrusted users can create or execute workflows are affected.
+
+### Affected Services / Software ###
+- mistral: <=22.0.0
+
+### Discussion ###
+When a workflow execution starts, Mistral copies the full Keystone
+authentication context into the execution's stored context. This
+includes the auth_token and service_catalog. The fix masks these
+fields and is only applied to the master branch. Backporting to
+stable branches would break workflows that rely on the
+$.openstack.auth_token context variable.
+
+### Recommended Actions ###
+Operators running stable branches of Mistral should:
+
+- Restrict who can create and inspect workflow executions
+  using Mistral's policy configuration.
+- Audit workflow definitions for references to
+  $.openstack.auth_token.
+- Upgrade to the next major release of Mistral when available,
+  which will include the fix.
+
+#### Patches ####
+The fix masks auth_token and service_catalog in the workflow
+execution context. It is applied to the master branch only.
+
+2026.2/hibiscus (master): https://review.opendev.org/c/openstack/mistral/+/991391
+
+### Credits ###
+Eduardo Gonzalez Gutierrez (Independent)
+Arnaud Morin, OVHCloud
+
+### Contacts / References ###
+Authors:
+- Goutham Pacha Ravi, Red Hat
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0098
+Original Launchpad bug: https://launchpad.net/bugs/2146554
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: none

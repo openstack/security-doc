@@ -1,0 +1,71 @@
+Denial of Service in Ironic under reduced process stack size
+---
+
+### Summary ###
+An unauthenticated malicious user could submit a specially crafted
+JSON string to certain endpoints on the API service or the JSON-RPC
+endpoint if enabled, and cause a service crash until the service is
+restarted. This was due to the memory allocation exceeding the stack
+size of the Python runtime due to Ironic's reduced default stack size
+prior to the initial payload validation.
+
+### Affected Services / Software ###
+- ironic: >=32.0.0, <37.0.0
+
+### Discussion ###
+The Ironic project has introduced a customized size check
+middleware which looks for excessive and invalid recursive JSON data
+structures while also enforcing path awareness and endpoint size limits
+based upon the intended patterns of interaction with Ironic.
+
+### Recommended Actions ###
+Apply the provided Ironic patches.
+
+Review the newly provided configuration variables defaults in context of your
+cluster.
+
+Several options were added related to permitted JSON body sizing. The defaults
+should be sufficient for most clouds but can be adjusted:
+- '[api]/max_json_body_depth', default 25, will reject requests with JSON
+  documents with more recursion depth than this.
+- '[api]/max_json_body_size', default 1024, is the maximum size, in KiB, the
+  API service will accept for any endpoint except the node provision state and
+  continue_inspection endpoints. Requests with a larger content-length will
+  receive an HTTP 413 response.
+- '[api]/max_json_body_size_provision', default 65536 (64MiB), is the max size,
+  in KiB, for the node provision state endpoint. The larger default is due to
+  the need to accomodate configdrives or deploy_steps.
+- '[api]/max_json_body_size_inspection', default 16384 (16MiB), is the max
+  size, in KiB, for the continue_inspection endpoint. The larger default is
+  due to the need to accomodate inspection data from the ramdisk, which can
+  include system logs and data larger than normal API requests.
+
+Operators unable or unwilling to patch their Ironic installations can work
+around the issue by increasing the process stack size by setting the
+environment variable 'IRONIC_THREAD_STACK_SIZE=8388608' before starting Ironic
+services.
+
+#### Patches ####
+The following reviews contain the fix for this issue:
+
+2026.2/hibiscus (master): https://review.opendev.org/c/openstack/ironic/+/991717
+2026.1/gazpacho: https://review.opendev.org/c/openstack/ironic/+/991854
+2025.2/flamingo: https://review.opendev.org/c/openstack/ironic/+/991858
+bugfix/34.0: https://review.opendev.org/c/openstack/ironic/+/991856
+bugfix/33.0: https://review.opendev.org/c/openstack/ironic/+/991857
+
+### Credits ###
+Dmitry Tantsur, Red Hat
+Tuomo Tanskanen, Ericsson Software Technology
+Metal3.io Security Team
+
+### Contacts / References ###
+Authors:
+- Jay Faulkner, G-Research Open Source Software (GR-OSS)
+- Julia Kreger, Red Hat
+
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0099
+Original Launchpad bug: https://bugs.launchpad.net/ironic/+bug/2154288
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: CVE-2026-50589

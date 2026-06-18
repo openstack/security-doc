@@ -40,4 +40,4 @@ This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0097
 Original Launchpad bug: https://launchpad.net/bugs/2152240
 Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
 OpenStack Security : https://security.openstack.org/
-CVE: none
+CVE: CVE-2026-55748

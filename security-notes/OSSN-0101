@@ -1,0 +1,50 @@
+Nova console WebSocket proxy Origin allow-list poisoning
+---
+
+### Summary ###
+The Nova console WebSocket proxy mutates a shared, process-global
+oslo.config allowed_origins list on every incoming request by
+appending the client-controlled Host header value. Because oslo.config
+returns a cached list object, these appends persist for the lifetime
+of the proxy process. This permanently weakens the cross-origin
+protection on the console proxy and causes unbounded memory growth.
+
+### Affected Services / Software ###
+- nova: >=12.0.0
+
+### Discussion ###
+On each request, the proxy appends the Host header to
+CONF.console.allowed_origins to allow the proxy's own hostname.
+This mutates the shared oslo.config cached list rather than
+operating on a copy, so any Host value ever seen is retained
+permanently for the life of the process.
+
+An unauthenticated attacker can inject arbitrary hostnames into
+the allow-list by sending requests with crafted Host headers,
+defeating the Origin check for all subsequent requests. The
+unbounded list growth also enables a slow memory exhaustion DoS.
+
+### Recommended Actions ###
+Apply the provided Nova patches. The fix copies the config list
+before appending, so mutations do not persist across requests.
+
+#### Patches ####
+The following reviews contain the fix for this issue:
+
+2026.2/hibiscus (development): https://review.opendev.org/c/openstack/nova/+/995870
+2026.1/gazpacho: https://review.opendev.org/c/openstack/nova/+/995956
+2025.2/flamingo: https://review.opendev.org/c/openstack/nova/+/995957
+2025.1/epoxy: https://review.opendev.org/c/openstack/nova/+/995958
+
+### Credits ###
+Sergey r0binak Kanibor, Luntry
+
+### Contacts / References ###
+Authors:
+- Goutham Pacha Ravi, Red Hat
+
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0101
+Original Launchpad bug: https://bugs.launchpad.net/nova/+bug/2158919
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: none

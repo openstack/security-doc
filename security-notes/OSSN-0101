@@ -10,7 +10,7 @@ of the proxy process. This permanently weakens the cross-origin
 protection on the console proxy and causes unbounded memory growth.
 
 ### Affected Services / Software ###
-- nova: >=12.0.0
+- nova: >=12.0.0 <31.3.2, >=32.0.0 <32.2.2, >=33.0.0 <33.0.3
 
 ### Discussion ###
 On each request, the proxy appends the Host header to

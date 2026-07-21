@@ -1,0 +1,68 @@
+Neutron sub-resource APIs do not verify parent ownership
+---
+
+### Summary ###
+Several Neutron APIs that operate on sub-resources (port forwardings
+under floating IPs, conntrack helpers under routers) authorize the
+request using the parent resource ID from the URL but load the child
+resource by its own ID without verifying it belongs to that parent.
+A project member can read or modify another project's sub-resource
+by substituting their own parent resource ID in the URL. For
+conntrack helpers, deletion is also possible. The attack requires
+knowing the victim's sub-resource UUID, which is a random UUIDv4
+that cannot be enumerated through the API.
+
+### Affected Services / Software ###
+- neutron: >=13.0.0 <26.0.4, >=27.0.0 <27.0.3, ==28.0.0
+
+### Discussion ###
+The affected endpoints follow this pattern:
+
+- GET/PUT /floatingips/{fip_id}/port_forwardings/{pf_id}
+  (DELETE is not affected; it already validates the parent)
+- GET/PUT/DELETE /routers/{router_id}/conntrack_helpers/{ct_id}
+
+Policy checks authorize against the parent (floating IP or router)
+from the URL. The plugin then loads the child by bare UUID without
+checking that the child's parent matches the URL parent. This
+allows a caller who owns one floating IP or router to operate on
+port forwardings or conntrack helpers belonging to a different
+project's floating IP or router.
+
+The mitigating factor is that the victim's sub-resource UUID cannot
+be discovered through the API. The list endpoints are scoped to
+the caller's own parent resources. An attacker would need to obtain
+the UUID through other means.
+
+### Recommended Actions ###
+Upgrade Neutron to a version containing the fixes.
+
+#### Patches ####
+The following reviews contain the fixes:
+
+##### Port Forwarding (LP#2150121) #####
+2026.2/hibiscus (development): https://review.opendev.org/989624
+2026.1/gazpacho: https://review.opendev.org/990125
+2025.2/flamingo: https://review.opendev.org/990126
+2025.1/epoxy: https://review.opendev.org/990127
+
+##### Conntrack Helpers (LP#2152109) #####
+2026.2/hibiscus (development): https://review.opendev.org/991586
+2026.1/gazpacho: https://review.opendev.org/991776
+2025.2/flamingo: https://review.opendev.org/991777
+2025.1/epoxy: https://review.opendev.org/991778
+
+### Credits ###
+Tim Shephard, roiai.ca
+
+### Contacts / References ###
+Authors:
+- Goutham Pacha Ravi, Red Hat
+
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0102
+Original Launchpad bugs:
+- https://bugs.launchpad.net/neutron/+bug/2150121
+- https://bugs.launchpad.net/neutron/+bug/2152109
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: none

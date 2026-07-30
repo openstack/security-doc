@@ -1,0 +1,57 @@
+Manila resource-lock list trusts a foreign project_id filter
+---
+
+### Summary ###
+A non-admin user with a project-scoped token can retrieve another
+project's resource lock metadata by supplying a foreign project_id
+in the GET /resource-locks request. The API only enforces the
+all-project policy check when the all_projects parameter is present;
+without it, a user-supplied project_id reaches the database filter
+unchanged, bypassing project scoping.
+
+### Affected Services / Software ###
+- manila: >=17.0.0 <20.0.2, >=21.0.0 <21.0.2, >=22.0.0 <22.0.1
+
+### Discussion ###
+Manila's resource-lock list API accepts an optional project UUID query
+parameter. The ID is added as a filter and there is no verification
+whether that the caller is authorized to view locks belonging to that project.
+
+This allows any authenticated user with at least a reader role on any
+project to retrieve resource lock metadata belonging to
+other projects. Access rule lock information (deletion and visibility
+locks) is also exposed, since the same filtering mechanism is reused.
+
+The attack requires that the caller already possesses a valid
+project-scoped token and knows the target project's UUID. Project
+UUIDs are not enumerable, and therefore not guessable, which limits the
+practical impact.
+
+A fix that adds an extra policy check to validate whether the caller belongs
+to the supplied project has been merged.
+
+### Recommended Actions ###
+Upgrade Manila to a version containing the fix
+(https://review.opendev.org/998388) and restart
+the manila API services, or apply the relevant patch to your deployment.
+
+#### Patches ####
+The following reviews contain the fix for this issue:
+
+2026.2/hibiscus (development): https://review.opendev.org/998388
+2026.1/gazpacho: https://review.opendev.org/998567
+2025.2/flamingo: https://review.opendev.org/998568
+2025.1/epoxy: https://review.opendev.org/998569
+
+### Credits ###
+Chen YuXiang, Institute of Computing Technology, Chinese Academy of Sciences
+
+### Contacts / References ###
+Authors:
+- Carlos da Silva, Red Hat
+
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0103
+Original Launchpad bug: https://bugs.launchpad.net/manila/+bug/2161287
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+CVE: none

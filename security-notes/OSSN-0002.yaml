@@ -1,0 +1,42 @@
+id: OSSN-0002
+
+title: HTTP POST limiting advised to avoid Essex/Folsom Keystone DoS
+
+affected-services: Keystone, Databases
+
+summary: |
+  Concurrent Keystone POST requests with large body messages are held in memory without filtering or rate limiting, this can lead to resource exhaustion on the Keystone server.
+
+
+discussion: |
+  Keystone stores POST messages in memory before validation, concurrent submission of multiple large POST messages can cause the Keystone process to be killed due to memory exhaustion, resulting in a remote Denial of Service.
+
+  In many cases Keystone will be deployed behind a load-balancer or proxy that can rate limit POST messages inbound to Keystone. Grizzly is protected against that through the sizelimit middleware.
+
+
+recommended-actions: |
+  If you are in a situation where Keystone is directly exposed to incoming
+  POST messages and not protected by the ``sizelimit`` middleware there are
+  a number of load-balancing/proxy options, we suggest you consider one of
+  the following:
+
+  **Nginx**, Open-source, high-performance HTTP server and reverse proxy:
+    - Nginx Config: http://wiki.nginx.org/HttpCoreModule#client_max_body_size
+
+  **Apache HTTP Server Project:**
+    - Apache config: http://httpd.apache.org/docs/2.4/mod/core.html#limitrequestbody
+
+
+references:
+  links:
+  - description: This OSSN Bug
+    url: https://bugs.launchpad.net/ossn/+bug/1155566
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/keystone/+bug/1098177
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+
+author: Robert Clark, HP
+

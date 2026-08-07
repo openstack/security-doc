@@ -1,0 +1,40 @@
+id: OSSN-0061
+
+title: Glance image signature uses an insecure hash algorithm (MD5)
+
+affected-services: Glance, Liberty
+
+summary: >
+  During the Liberty release the Glance project added a feature that supports verifying images by their signature. There is a flaw in the implementation that degrades verification by using the weak MD5 algorithm.
+
+
+discussion: |
+  A signature algorithm is typically created by hashing data and then encrypting that hash in some way. In the case of the new Glance feature the signature algorithm does not hash the image to be verified. It rehashes the existing MD5 checksum that is used to locally verify the integrity of image data stored in Glance.
+
+  The Glance image signature algorithm uses configurable hash algorithms. No matter which algorithm is used, the overall security of the algorithm is degraded to that of MD5 because instead of applying it to the image data it's applied only to the MD5 checksum that already exists in Glance.
+
+  The image signature algorithm is a relatively new feature, introduced in the Liberty release.
+
+
+recommended-actions: >
+  Users concerned with image security should be aware that the current Glance signature algorithm is not secure by today's cryptographic standards.
+  A specification for a fix has been proposed by the Glance development team and is targeted for the Mitaka release.
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0061
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/glance/+bug/1516031
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: Glance Spec for fix
+    url: https://review.openstack.org/#/c/252462/
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-8234
+
+author: Robert Clark, IBM
+

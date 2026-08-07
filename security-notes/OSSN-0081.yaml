@@ -1,0 +1,45 @@
+id: OSSN-0081
+
+title: sha512_crypt is insufficient for password hashing
+
+affected-services: OpenStack Identity Service (Keystone). OpenStack Releases Ocata, Newton.
+
+summary: >
+  Use of sha512_crypt for password hashing in versions of Keystone prior
+  to Pike, is insufficient and provides limited protection against brute-
+  forcing of password hashes.
+
+discussion: >
+  Keystone uses sha512_crypt for password hashing. This provides
+  insufficient and limited protection, since sha512_crypt algorithm has a
+  low computational cost factor, therefore making it easier to crack
+  passwords offline in a short period of time.
+
+  The correct mechanism is to use the more secure hashing algorithms with
+  a higher computational cost factor such as bcrypt, scrypt, or
+  pbkdf2_sha512 instead of sha512_crypt.
+
+recommended-actions: |
+  It is recommended that operators upgrade to the Pike release where all
+  future passwords would be bcrypt hashed.
+
+  Operators should also force password changes on all users [1], which
+  will result in the users newly generated passwords being bcrypt hashed.
+
+references:
+  links:
+  - url: https://docs.openstack.org/keystone/latest/admin/identity-security-compliance.html#force-users-to-change-password-upon-first-use
+    description: '[1]'
+  - url: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
+    description: '[2]'
+  - url: https://wiki.openstack.org/wiki/OSSN/OSSN-0081
+    description: This OSSN
+  - url: https://bugs.launchpad.net/ossn/+bug/1668503
+    description: Original LaunchPad Bug
+  - url: '[Security] tag on openstack-dev@lists.openstack.org'
+    description: Mailing List
+  - url: https://launchpad.net/~openstack-ossg
+    description: OpenStack Security Project
+
+
+author: Luke Hinds <lhinds@redhat.com>

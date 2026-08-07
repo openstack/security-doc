@@ -1,0 +1,53 @@
+id: OSSN-0060
+
+title: Glance configuration option can lead to privilege escalation
+
+affected-services: Glance, Juno, Kilo, Liberty
+
+summary: >
+  Glance exposes a configuration option called ``use_user_token`` in the configuration file ``glance-api.conf``. It should be noted that the default setting (``True``) is secure. If, however, the setting is changed to ``False`` and valid admin credentials are supplied in the following section (``admin_user`` and ``admin_password``), Glance API commands will be executed with admin privileges regardless of the intended privilege level of the calling user.
+
+
+discussion: |
+  The ``use_user_token`` configuration option was created to enable
+  automatic re-authentication for tokens which are close to expiration,
+  thus preventing the tokens from expiring in the middle of longer-lasting
+  Glance commands. Unfortunately the implementation enables privilege
+  escalation attacks by automatically executing API commands as an
+  administrator level user.
+
+  By default ``use_user_token`` is set to ``True`` which is secure. If
+  the option is disabled (set to ``False``) and valid admin credentials
+  are specified in the ``glance-api.conf`` file, API commands will be
+  executed as the supplied admin user regardless of the intended
+  privileges of the calling user. Glance API v2 configurations which
+  don't enable the registry service
+  (``data_api = glance.db.registry.api``) aren't affected.
+
+  Enabling unauthenticated and lower privileged users to execute Glance
+  commands with administrator privileges is very dangerous and may expose
+  risks including:
+
+  - tampering with images
+  - deleting images
+  - denial of service attacks
+
+recommended-actions: >
+  A comprehensive fix will be included in the Mitaka release. Meanwhile it is recommended that all users ensure that ``use_user_token`` is left at the default setting (``True``) or commented out.
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0060
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/glance/+bug/1493448
+  - description: OpenStack Security Documentation
+    url: https://security.openstack.org
+  - description: OpenStack Security Project
+    url: https://wiki.openstack.org/wiki/Security
+  - description: Bug Introduction
+    url: https://review.openstack.org/#/c/29967/
+
+author: Travis McPeak, HPE
+

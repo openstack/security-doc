@@ -1,0 +1,98 @@
+id: OSSN-0088
+
+title: Some of the Glance metadef APIs likely to leak resources
+
+affected-services: Glance, Horizon
+
+summary: >
+  Metadef APIs are vulnerable and potentially leaking information to
+  unauthorized users and also there is currently no limit on creation of
+  metadef namespaces, objects, properties, resources and tags. This can
+  be abused by malicious users to fill the Glance database resulting in a
+  Denial of Service (DoS) condition.
+
+discussion: |
+  There is no restriction on creation of metadef namespaces, objects,
+  properties, resources and tags as well as it could also leak the
+  information to unauthorized users or to the users outside of the
+  project. By taking advantage of this lack of restrictions around metadef
+  APIs, a single user could fill the Glance database by creating unlimited
+  resources, resulting in a Denial Of Service (DoS) style attack.
+
+  Glance does allow metadef APIs to be controlled by policy. However, the
+  default policy setting for metadef APIs allows all users to create or
+  read the metadef information.
+
+  Because metadef resources are not properly isolated to the owner, any
+  use of them with potentially sensitive names (such as internal
+  infrastructure details, customer names, etc) could unintentionally
+  expose that information to a malicious user.
+
+recommended-actions: |
+  Since these fundamental issues have been present since the API was
+  introduced, the Glance project is recommending operators to keep
+  create/modify/delete APIs to admin only and provide read access to all
+  users in their deployments.
+
+  Here is an example of allowing create/modify/delete metadef APIs to be
+  admin only and read access to normal users in the deployments for
+  current stable OpenStack releases either in ``policy.json`` or
+  ``policy.yaml``::
+
+    "metadef_default": "",
+    "metadef_admin": "role:admin",
+    "get_metadef_namespace": "rule:metadef_default",
+    "get_metadef_namespaces": "rule:metadef_default",
+    "modify_metadef_namespace": "rule:metadef_admin",
+    "add_metadef_namespace": "rule:metadef_admin",
+    "delete_metadef_namespace": "rule:metadef_admin",
+    "get_metadef_object": "rule:metadef_default",
+    "get_metadef_objects": "rule:metadef_default",
+    "modify_metadef_object": "rule:metadef_admin",
+    "add_metadef_object": "rule:metadef_admin",
+    "delete_metadef_object": "rule:metadef_admin",
+    "list_metadef_resource_types": "rule:metadef_default",
+    "get_metadef_resource_type": "rule:metadef_default",
+    "add_metadef_resource_type_association": "rule:metadef_admin",
+    "remove_metadef_resource_type_association": "rule:metadef_admin",
+    "get_metadef_property": "rule:metadef_default",
+    "get_metadef_properties": "rule:metadef_default",
+    "modify_metadef_property": "rule:metadef_admin",
+    "add_metadef_property": "rule:metadef_admin",
+    "remove_metadef_property": "rule:metadef_admin",
+    "get_metadef_tag": "rule:metadef_default",
+    "get_metadef_tags": "rule:metadef_default",
+    "modify_metadef_tag": "rule:metadef_admin",
+    "add_metadef_tag": "rule:metadef_admin",
+    "add_metadef_tags": "rule:metadef_admin",
+    "delete_metadef_tag": "rule:metadef_admin",
+    "delete_metadef_tags": "rule:metadef_admin",
+
+  Operators with users that depend on metadef APIs may choose to leave
+  these accessible to all users. In that case, education of users about
+  the potential for information leakage in the resource names is advisable
+  so that vulnerable practices can be altered as mitigation.
+
+  To re-enable metadef policies to all users, operator(s) can make a
+  change in respective ``policy.json`` or ``policy.yaml`` as shown below
+  (assuming metadef create/modify/delete policies are configured to use
+  ``rule:metadef_admin`` as shown in the above example)::
+
+    "metadef_admin": "",
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0088
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/glance/+bug/1545702
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/glance/+bug/1916926
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/glance/+bug/1916922
+  - description: Mailing List
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Project
+    url: https://launchpad.net/~openstack-ossg
+
+author: Abhishek Kekane (Red Hat), Lance Bragstad (Red Hat)

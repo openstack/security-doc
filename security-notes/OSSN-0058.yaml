@@ -1,0 +1,61 @@
+id: OSSN-0058
+
+title: Cinder LVMISCIDriver allows possible unauthenticated mounting of volumes
+
+affected-services: Cinder, Icehouse
+
+summary: >
+  When using the LVMISCSIDriver with Cinder, the credentials for CHAP authentication are not formatted correctly in the tgtadm configuration file. This leads to a condition where an operator will expect that volumes can only be mounted with the authentication credentials when, in fact, they can be mounted without the credentials.
+
+
+discussion: |
+  When requesting that LVMISCSIDriver based volumes use the CHAP
+  authentication protocol, Cinder will add the credentials for
+  authentication to the configuration file for the tgtadm application. In
+  pre-Juno versions of Cinder the key name for these credentials is
+  incorrect. This incorrect key name will cause tgtadm to not properly
+  parse those credentials.
+
+  With incorrect credentials in place, tgtadm will fail to authenticate
+  volume mounting when requested by Cinder. The failed setting of
+  credentials through the configuration file will also allow
+  unauthenticated access to these volumes. This can allow instances on the
+  same network as the volumes to mount them without providing the
+  credentials to the tgtadm application.
+
+  This behavior can be confirmed by displaying the accounts associated
+  with a volume. For volumes which have authentication enabled, you will
+  see an account listed in the output of the tgtadm application. The
+  account names created by Cinder will be randomly generated and will
+  appear as 20 character strings. To print the information for volumes the
+  following command can be run on nodes with attached volumes::
+
+    # tgtadm --lld iscsi --op show --mode target
+
+  User names will be found in the ``Account information:`` section.
+
+recommended-actions: |
+  If possible, Cinder should be updated to the Juno release or newer. If
+  this is not possible, then the following guidance will help mitigate
+  unwanted traffic to the affected nodes.
+
+  1. Identify the nodes that will be exposing Cinder volumes with the
+     LVMISCSIDriver and the nodes that will need to attach those volumes.
+
+  2. Implement either security group port rules or iptables rules on the
+     nodes exposing the volumes to only allow traffic through port 3260
+     from nodes that will need to attach volumes.
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0058
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/cinder/+bug/1329214
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+
+author: Michael McCune, Red Hat
+

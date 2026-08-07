@@ -1,0 +1,69 @@
+id: OSSN-0064
+
+title: Keystone admin_token_auth use by default causes insecure operation
+
+affected-services: Keystone, Folsom, Grizzly, Havana, Icehouse, Juno, Kilo, Liberty, Mitaka
+
+summary: |
+  A Keystone setting intended for use only during initial installation is often left configured in its default value by OpenStack deployers.
+
+  An attacker could gain administrative access to the Keystone API by providing the string ``ADMIN`` as a token.
+
+
+discussion: |
+  The Keystone service supports an authentication middleware called ``admin_token_auth``. This provides a simple token for accessing the Keystone API and is intended to be used only for the initial setup of Keystone, allowing the deployer access to the Keystone API which can be used to setup appropriate Keystone administrator accounts.
+
+  The ``admin_token_auth`` method is configured through the ``keystone- paste.ini`` file. The token for the ``ADMIN_TOKEN`` that this method validates against is set in the keystone.conf file.
+
+  Some deployments copy these files from the example versions and use them unchanged. This means that some production OpenStack clouds may have ``admin_token_auth`` enabled and ``ADMIN_TOKEN`` set to the default value of ``ADMIN``.
+
+  It is likely that OpenStack deployments using the default Keystone configuration files are vulnerable to exploitation by an attacker who accesses the API using a token of ``ADMIN``.
+
+recommended-actions: |
+  Use of ``ADMIN_TOKEN`` for bootstrapping Keystone deployments is
+  deprecated and will be removed in a future release. Deployers are
+  encouraged to bootstrap Keystone using the 'bootstrap' feature of the
+  keystone-manage CLI tool::
+
+    $ keystone-manage bootstrap --bootstrap-password s3cr3t
+
+  Existing deployments should remove the ``admin_token_auth`` middleware
+  from the API pipelines in ``keystone-paste.ini``.
+
+  Bad configuration example::
+
+    [pipeline:public_api]
+    pipeline =  [...] token_auth admin_token_auth json_body [...]
+
+    [pipeline:admin_api]
+    pipeline = [...] token_auth admin_token_auth json_body [...]
+
+    [pipeline:api_v3]
+    pipeline = [...] token_auth admin_token_auth json_body [...]
+
+  Good configuration example::
+
+    [pipeline:public_api]
+    pipeline = [...] token_auth json_body [...]
+
+    [pipeline:admin_api]
+    pipeline = [...] token_auth json_body [...]
+
+    [pipeline:api_v3]
+    pipeline = [...] token_auth json_body [...]
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0064
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/ossn/+bug/1545789
+  - description: Mailing list [Security] tag on
+    url: openstack-dev@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: Keystone Change
+    url: https://review.openstack.org/#/c/282104/1/releasenotes/notes/admin_token-c634ec12fc714255.yaml
+
+author: Robert Clark, IBM
+

@@ -1,0 +1,63 @@
+id: OSSN-0062
+
+title: Potential reuse of revoked Identity tokens
+
+affected-services: Keystone, Icehouse, Juno, Kilo, Liberty
+
+summary: >
+  An authorization token issued by the Identity service can be revoked, which is designed to immediately make that token invalid for future use. When the PKI or PKIZ token providers are used, it is possible for an attacker to manipulate the token contents of a revoked token such that the token will still be considered to be valid. This can allow unauthorized access to cloud resources if a revoked token is intercepted by an attacker.
+
+
+discussion: |
+  Token revocation is used in OpenStack to invalidate a token for further use. This token revocation takes place automatically in certain situations, such as when a user logs out of the Dashboard. If a revoked token is obtained by another party, it should no longer be possible to use it to perform any actions within the cloud. Unfortunately, this is not the case when the PKI or PKIZ token providers are used.
+
+  When a PKI or PKIZ token is validated, the Identity service checks it by searching for a revocation by the entire token. It is possible for an attacker to manipulate portions of an intercepted PKI or PKIZ token that are not cryptographically protected, which will cause the revocation check to improperly consider the token to be valid.
+
+recommended-actions: |
+  We recommend that you do not use the PKI or PKIZ token providers. The
+  PKI and PKIZ token providers do not offer any significant benefit over
+  other token providers such as the UUID or Fernet.
+
+  If you are using the PKI or PKIZ token providers, it is recommended that
+  you switch to using another supported token provider such as the UUID
+  provider. This issue might be fixed in a future update of the PKI and
+  PKIZ token providers in the Identity service.
+
+  To check what token provider you are using, you must look in the
+  ``keystone.conf`` file for your Identity service. An example is provided
+  below::
+
+    [token]
+    #provider = keystone.token.providers.pki.Provider
+    #provider = keystone.token.providers.pkiz.Provider
+    provider = keystone.token.providers.uuid.Provider
+
+  In the Liberty release of the Identity service, the token provider
+  configuration is different than previous OpenStack releases. An
+  example from the Liberty release is provided below::
+
+    [token]
+    #provider = pki
+    #provider = pkiz
+    provider = uuid
+
+  These configuration snippets are using the UUID token provider. If you
+  are using any of the commented out settings from these examples, your
+  cloud is vulnerable to this issue and you should switch to a different
+  token provider.
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0062
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/keystone/+bug/1490804
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-7546
+
+author: Nathan Kinder, Red Hat
+

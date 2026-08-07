@@ -1,0 +1,37 @@
+id: OSSN-0073
+
+title: Horizon dashboard leaks internal information through cookies
+
+affected-services: horizon
+
+summary: |
+  When horizon is configured, its URL contains the IP address of the internal URL of keystone, as the default value for the identity service is ``internalURL``.[1]
+
+  The cookie ``login_region`` will be set to the value configured as ``OPENSTACK_KEYSTONE_URL``, given in the ``local_settings.py`` file.
+
+  Usually, the ``OPENSTACK_KEYSTONE_URL`` is the publicURL, and hence the cookie URL will also be the public one. If set to internal URL (by default), then the login cookie URL will be the internal URL or IP. So, by putting the ``OPENSTACK_KEYSTONE_URL`` in the cookie that is sent to the public network, horizon leaks the values of the internal network IP address.
+
+
+discussion: |
+  This is not a bug in horizon, but a possible misconfiguration issue.
+
+  Exposing the internal URL is not a bug, since one can view the internal URL as it's a freely accessible endpoint to authorized users, or it's hidden behind a firewall. Also, the data for internal URLs are freely available in the catalog and the catalog is not considered private information.
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0073
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/ossn/+bug/1585831
+  - description: Related bug
+    url: https://bugs.launchpad.net/horizon/+bug/1597864
+  - description: OpenStack Security ML
+    url: openstack-dev@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: [1]
+    url: https://docs.openstack.org/horizon/latest/contributor/topics/index.html
+
+author: Khanak Nangia, Intel
+

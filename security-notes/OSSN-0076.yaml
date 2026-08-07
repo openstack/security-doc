@@ -1,0 +1,92 @@
+id: OSSN-0076
+
+title: Glance Image service v1 and v2 api image-create vulnerability
+
+affected-services: All versions of Glance image service.
+
+summary: >
+  No limits are enforced within the Glance image service for both v1 and
+  v2 ``/images`` API POST method for authenticated users, resulting in
+  possible denial of service attacks through database table saturation.
+
+discussion: |
+  Within the Glance image service, calls to the POST method within v1 or
+  v2/images creates an image (record) in ``queued`` status. There is no
+  limit enforced within the Glance API on the number of images a single
+  tenant may create, just on the total amount of storage a single user
+  may consume.
+
+  Therefore a user could either maliciously or unintentionally fill
+  multiple database tables (images, image_properties, image_tags,
+  image_members) with useless image records, thereby causing a denial of
+  service by lengthening transaction response times in the Glance
+  database.
+
+recommended-actions: |
+  For all versions of Glance that expose either the v1 and v2/images API,
+  operators are recommended to deploy external rate-limiting proxies or
+  web application firewalls, to provide a front layer of protection to
+  glance. The Glance database should be monitored for abnormal growth.
+  Although rate-limiting does not eliminate this attack vector, it will
+  slow it to the point where you can react prior to a denial of service
+  occurring.
+
+  The following solutions may be considered, however it is key that the
+  operator carefully plans and considers the individual performance needs
+  of users and services within their OpenStack cloud, when configuring
+  any rate limiting functionality.
+
+  **Repose**
+
+  Repose provides a rate limiting filter, that can utilise limits by IP,
+  Role (OpenStack Identity v3 filter) or header.
+  https://repose.atlassian.net/wiki/display/REPOSE/Rate+Limiting+Filter
+
+  **NGINX**
+
+  NGINX provides the ``limit_req_module``, which can be used to provide a
+  global rate limit. By means of a ``map``, it can be limited to just the
+  POST method.
+  http://nginx.org/en/docs/http/ngx_http_limit_req_module.html
+
+  **HAProxy**
+
+  HAProxy can provide inherent rate-limiting using stick-tables with a
+  General Purpose Counter (gpc).
+  http://blog.haproxy.com/2012/02/27/use-a-load-balancer-as-a-first-row-of-defense-against-ddos
+
+  **Apache**
+
+  A number of solutions can be explored here as follows.
+
+  - mod_ratelimit: http://httpd.apache.org/docs/2.4/mod/mod_ratelimit.html
+  - mod_qos: http://opensource.adnovum.ch/mod_qos/dos.html
+  - mod_evasive: https://www.digitalocean.com/community/tutorials/how-to-protect-against-dos-and-ddos-with-mod_evasive-for-apache-on-centos-7
+  - mod_security: https://www.modsecurity.org/
+
+  **Limit add_image to admin role**
+
+  Another possible mitigation is to restrict image creation to the admin
+  role, however this should only be done for those cases in which there
+  are Glance nodes dedicated to end-user access only. Restriction to
+  admin only on Glance nodes that serve OpenStack services will for
+  example, remove the ability to create snapshots from the Compute API
+  or to create bootable volumes from Cinder.
+
+  To restrict image creation to the role admin only, amend
+  ``/etc/glance/policy.json`` accordingly::
+
+    "add_image": "role:admin",
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0076
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/ossn/+bug/1545092
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+
+author: Luke Hinds, Red Hat

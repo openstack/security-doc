@@ -1,0 +1,57 @@
+id: OSSN-0075
+
+title: Deleted Glance image IDs may be reassigned
+
+affected-services: Glance, Liberty, Mitaka, Newton
+
+summary: |
+  It is possible for image IDs from deleted images to be reassigned to
+  other images. This creates the possibility that:
+
+  - Alice creates a VM that boots from image ID X which has been shared
+    with her by a trusted party, Bob.
+  - Bob (image X's owner) deletes the image. As per design, Alice receives
+    no notification this happened.
+  - Mallory creates a new image and specifies that the ID should be X.
+  - Mallory shares image X with Alice. Again, per design, Alice is not
+    notified of this change.
+  - Alice boots her VM without realizing that the image has changed.
+
+  It's worth noting that in this scenario Mallory needs to know Alice's
+  project ID to share the new image with Alice. This isn't enough to
+  mitigate the issue as project IDs weren't designed to be confidential.
+
+  Also, if the environment allows non-administrators to publish images,
+  Mallory doesn't have to explicitly share with Alice or know her project
+  ID to perform this attack.
+
+discussion: |
+  Glance's image table doesn't maintain a list of previously used image
+  IDs. Previously assigned image IDs will be listed in the image table as
+  deleted, but these records may be removed (for performance reasons) with
+  the ``glance-manage db purge`` utility or manually by an administrator.
+
+  If these records are removed a malicious user may intentionally upload a
+  new image using the same ID (Glance allows an image creator to optionally
+  specify the image ID). This would cause any victim instances referencing
+  the ID to use an attacker supplied image.
+
+recommended-actions: |
+  The combination of purged Glance database entries and non-admin image
+  upload is dangerous. In environments where normal users are permitted to
+  upload images, the ``images`` table should not be purged. It is however
+  safe to delete rows from ``image_properties``, ``image_tags``,
+  ``image_members``, and ``image_locations`` tables.
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0075
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/glance/+bug/1593799/
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+
+author: Travis McPeak, IBM

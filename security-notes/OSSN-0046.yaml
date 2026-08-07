@@ -1,0 +1,44 @@
+id: OSSN-0046
+
+title: Setting services to debug mode can also set Pecan to debug
+
+affected-services: Blazar, Ceilometer, Cue, Gnocchi, Ironic, Kite, Libra, Pecan, Tuskar
+
+summary: >
+  When debug mode is set for a service using Pecan (``via --debug or CONF.debug=True``) Pecan is also set to debug. This can result in accidental information disclosures.
+
+
+discussion: |
+  Although it's best practice to run production environments with debugging
+  functionality disabled, experience shows us that many deployers choose to
+  run OpenStack with debugging enabled to aid with administration and fault
+  finding.
+
+  When Pecan is running in debug mode, the following capabilities are made
+  available to anyone who can interact with the API service:
+
+  - Retrieve a stack trace of failed Pecan calls
+  - Retrieve a full list of environment variables containing potentially
+    sensitive information such as API credentials, passwords etc.
+  - Set an execution breakpoint which hangs the service with a pdb shell,
+    resulting in a denial of service
+
+recommended-actions: >
+  At time of writing, Ceilometer, Gnocchi and Ironic have released fixes. Deployers are encouraged to apply these fixes (see launchpad bug in References) in their clouds. For services that do not have a fix, or where fixes cannot be applied in existing deployments, we advise not using the debug configuration for affected services in production environments.
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0046
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/ironic/+bug/1425206
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: Pecan
+    url: http://www.pecanpy.org/
+
+author: Robert Clark, IBM
+

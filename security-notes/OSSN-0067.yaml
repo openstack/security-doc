@@ -1,0 +1,22 @@
+id: OSSN-0067
+
+title: Barbican server discloses SQL Connection String and X-auth token
+
+affected-services: Barbican, Liberty, Mitaka
+
+summary: >
+  Barbican server discloses SQL Connection String and X-auth token values
+  via LOG.debug statements.
+
+discussion: >
+  This OSSN is a work in progress. Discussion content has not yet been
+  published to the wiki.
+
+recommended-actions: >
+  This OSSN is a work in progress. Recommended actions have not yet been
+  published to the wiki.
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0067

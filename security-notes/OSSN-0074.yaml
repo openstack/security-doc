@@ -1,0 +1,88 @@
+id: OSSN-0074
+
+title: Nova metadata service should not be used for sensitive information
+
+affected-services: Nova, All Versions
+
+summary: >
+  A recent security report has highlighted how users may be using the
+  metadata service to store security sensitive information. The Nova
+  metadata service should not be considered a secure repository of
+  confidential information required by compute instances.
+
+discussion: |
+  A recent vulnerability report for Nova stated that the metadata service
+  will obey the ``X-Forwarded-For`` HTTP header. This header is often
+  supplied by proxies so that the end service can identify which IP the
+  request originated from.
+
+  The Nova metadata service typically uses the source IP address of the
+  incoming request to respond with the appropriate data for the compute
+  instance making the request. This is a sort of weak authentication,
+  designed to ensure that metadata for one tenant isn't accidentally
+  provided to another.
+
+  If the request contains a ``X-Forwarded-For`` HTTP header then the
+  metadata service will use that for the source authentication rather than
+  the actual TCP/IP source.
+
+  An attacker with access to a compute instance in the cloud could send a
+  request to the metadata service and include the ``X-Forwarded-For``
+  header in order to effectively spoof their source and cause the metadata
+  service to provide information that should not have been provided to that
+  instance.
+
+  Consider the following: Alice creates a compute instance. She places the
+  root password for that instance in the metadata service. The instance is
+  assigned a 10.1.2.2 IP address. Alice believes that the root password
+  for her instance is safe within the metadata service.
+
+  Alice retrieves metadata by running a command similar to::
+
+    curl http://169.254.169.254/latest/meta-data
+
+  This will retrieve any metadata stored for Alice's compute instance,
+  which has an IP address of 10.1.2.2.
+
+  Bob has a compute instance with IP address 10.1.9.9 however Bob wants
+  access to the metadata for Alice's compute instance. If Bob runs a
+  similar command to Alice, but includes a custom header as below, he will
+  get access to all of Alice's metadata, including the root password she
+  chose to store there::
+
+    curl -H "X-Forwarded-For: 10.1.2.2" http://169.254.169.254/latest/meta-data
+
+  The Nova metadata service is a useful utility within OpenStack but
+  clearly not intended as a strongly authenticated system for storing
+  sensitive data such as private keys or passwords.
+
+recommended-actions: |
+  The metadata service should not be used to store sensitive information.
+
+  The IP forwarding issue is not a defect of itself, it exists to allow
+  the metadata service to provide IP addresses for instances that are
+  behind a proxy as may be the case in more complex deployments.
+
+  Cloud users who have a requirement to store sensitive information that
+  compute instances require for operation should instead look to the
+  Config drive to provide this service. Its operation is much more tightly
+  bound to individual compute instances.
+
+  Where use of config drive is not an option, operators should consider
+  other mitigations such as placing a proxy in front of the metadata
+  service which can filter out these sorts of malicious activities.
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0074
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/nova/+bug/1563954
+  - description: Mailing List
+    url: openstack-dev@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: Config Drive
+    url: http://docs.openstack.org/user-guide/cli-config-drive.html
+
+author: Robert Clark, IBM

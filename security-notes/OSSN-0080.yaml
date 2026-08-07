@@ -1,0 +1,56 @@
+id: OSSN-0080
+
+title: Aodh can be used to launder Keystone trusts
+
+affected-services: >
+  Aodh, the alarm engine of the Telemetry project.
+  Pike, Ocata and Newton.
+
+summary: >
+  When adding an alarm action with the scheme ``trust+http:`` Aodh does
+  not verify that the user creating the alarm is the trustor or has the
+  same rights as the trustor, nor that the trust is for the same project
+  as the alarm.
+
+discussion: |
+  When adding an alarm action with the scheme ``trust+http:``, Aodh allows
+  the user to provide a trust ID to acquire a token with which to make a
+  webhook request. (If no trust ID is provided then Aodh creates a trust
+  internally, in which case the issue is not present.) However, Aodh makes
+  no attempt to verify that the user creating the alarm is the trustor or
+  has the same rights as the trustor - it also does not attempt to check
+  that the trust is for the same project as the alarm.
+
+  The nature of the ``trust+http:`` alarm notifier is that it allows the
+  user to obtain a token given the ID of a trust for which Aodh is the
+  trustee, since the URL is arbitrary and not limited to services in the
+  Keystone catalog.
+
+recommended-actions: |
+  A patchfile is attached to the launchpad referenced below. It will block
+  use of trust URLs which contain trust IDs and log an error message of
+  "trust URL cannot contain a trust ID.". Any trust action without a trust
+  ID will result in Aodh internally creating a trust ID as before.
+
+  You will also need to restart the web server used for Aodh API. This is
+  typically apache. In cases of eventlet (in older versions) it will
+  require restart openstack-aodh-api for centos/RHEL/Suse and aodh-api
+  for ubuntu.
+
+  The fix has also been merged to master (Pike), Ocata and Newton.
+
+credits:
+  - Zane Bitter, Red Hat
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0080
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/ossn/+bug/1649333
+  - description: OpenStack Security Project
+    url: https://launchpad.net/~openstack-ossg
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-12440
+
+author: Luke Hinds, Red Hat

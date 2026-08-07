@@ -1,0 +1,46 @@
+id: OSSN-0034
+
+title: Restarting memcached loses revoked token list
+
+affected-services: Keystone, Memcached, Havana, Icehouse, Juno
+
+summary: >
+  When a cloud is deployed using Memcached as a backend for Keystone tokens, there is a security concern that restarting Memcached will lose the list of revoked tokens, potentially allowing bad tokens / users to access the system after they had been revoked.
+
+
+discussion: |
+  The list of revoked tokens, stored in Memcached could be lost if the
+  Memcached service is stopped or crashes before the revocation list is
+  persisted on disk.
+
+  There might be ways to mitigate this issue in the future, such as
+  running Memcached on multiple machines to ensure redundancy should the
+  Keystone server fail. In a clustered environment, it will only be an
+  issue if all of the Memcached machines shutdown. This would require
+  replication of data between the Memcached backends, which is not
+  possible with Keystone today.
+
+  Memcachedb might also be a potential way to mitigate this issue:
+  http://memcachedb.org/
+
+  NOTE: Some deployments may intentionally flush Memcached in response to
+  https://bugs.launchpad.net/ossn/+bug/1179955 - please exercise caution
+  when considering how to approach this problem.
+
+recommended-actions: >
+  This is a fundamental problem with using in-memory ephemeral storage for security information. If your deployment has strong security requirements or a reliance on up-to-date revoked token information, we suggest you consider using an on-disk DB such as MySQL / PostgreSQL or perhaps look into Memcachedb.
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0034
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/keystone/+bug/1182920
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+
+author: Robert Clark, HP
+

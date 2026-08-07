@@ -1,0 +1,35 @@
+id: OSSN-0036
+
+title: Horizon does not set Secure Attribute in cookies
+
+affected-services: Horizon, Django, SSL, TLS
+
+summary: >
+  Horizon does not, by default, set the Secure Attribute in cookies.
+
+
+discussion: >
+  When used in production, Horizon should have the Secure Attribute for cookies set. When this flag is set, browsers will only transfer the cookie over secure channels. Without it set, browsers may transfer the cookie over plain-text channels, potentially exposing the contents to an attacker who can then use the cookie to authenticate with the Horizon server as the original user.
+
+
+recommended-actions: |
+  Enable secure cookie by setting the ``SESSION_COOKIE_SECURE`` config flag
+  to ``true`` as described in the Django documentation:
+
+  https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SESSION_COOKIE_SECURE
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0036
+  - description: Related OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0035
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/horizon/+bug/1191051
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+
+author: Robert Clark, HP
+

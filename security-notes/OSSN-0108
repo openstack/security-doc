@@ -1,0 +1,160 @@
+OSSN-0108: Multiple authentication vulnerabilities in Ceph
+---
+
+### Summary ###
+
+The latest Ceph releases of Ceph 20.2.4 and Ceph 19.2.6 patch four CVEs
+across several components (CVE-2025-30156, CVE-2026-39944, CVE-2026-50152
+and CVE-2026-54330). All OpenStack services using CephX keyrings are affected.
+Ceph servers should be upgraded and their CephX keyrings should be rotated.
+The CephX keyrings used by OpenStack should be rotated only after Ceph client
+software on every OpenStack server is upgraded and then virtual machines need
+to be restarted or live migrated in order to load the new keyring.
+
+
+### Affected Services / Software ###
+
+- Ceph: all versions prior to v20.2.4 or v19.2.6
+- OpenStack services with CephX keyrings: Nova, Cinder, Glance, Manila
+- Ceph RADOS Gateway (RGW), when used as an Object Store (Swift/S3)
+  backend
+
+### Discussion ###
+
+Any OpenStack service with a CephX keyring (Nova, Cinder, Glance,
+Manila) is at risk. Data-at-rest encryption is not affected by
+CVE-2025-30156 but is affected by CVE-2026-50152. Both are fixed
+by the update in addition to CVE-2026-39944 and CVE-2026-54330.
+
+For an OpenStack cloud using RBD, RGW or NFS, this can be considered
+an internal vulnerability, potentially enabling an insider to escalate
+privilege. For example, a Nova _guest_ using Cinder RBD does not have
+access to the CephX key or Ceph's storage network; the Nova _host_ has
+access to them but only an insider should have access to the Nova
+_host_. However, if an OpenStack tenant is using Manila with native
+CephFS (not with NFS-Ganesha), then those tenants could exploit these CVEs.
+
+The hardcoded initialization vector means identical plaintexts produce
+identical ciphertexts. The missing HMAC allows CBC bit-flipping. An
+attacker who compromises any CephX entity (or obtains its shared
+secret from network traffic) can tamper with a ticket's permissions
+without detection and forge credentials for privileged services.
+
+The fix modifies Ceph to use AES256-CTS-HMAC-SHA384-192 (RFC 8009),
+a new CephX key type named aes256k. Both Ceph server and client
+packages must be upgraded to use it. If `krbd` (in place of
+`librbd`) or CephFS kernel mounts (in place of `ceph-fuse` or
+NFS-Ganesha) are used, the client also requires Linux kernel 7.0 or
+later. Upgrading the servers and rotating their keys to aes256k
+resolves the vulnerabilities; clients that have not yet been upgraded
+continue to authenticate with their existing aes keys in the
+meantime.
+
+### Recommended Actions ###
+
+- Upgrade Ceph to a patched release and update Ceph clients on
+  OpenStack.
+- Re-create every CephX credential with the new aes256k cipher.
+- Every OpenStack Nova guest must be live migrated (or restarted) to
+  pick up the new CephX key.
+
+#### OpenStack Service Keyrings (Nova, Cinder, Glance) ####
+
+To use RBD with Nova, Cinder or Glance, these services should be
+configured with a Ceph user that uses a CephX key to authenticate
+to the Ceph cluster. This OSSN will refer to a single `client.openstack`
+key for simplicity but configurations with multiple keys are possible.
+Before rotating or replacing this key:
+
+- The Ceph cluster should be using the new cipher for its internals.
+  For example, the Ceph Monitor, OSD, RGW, MDS and other services
+  should already have rotated their CephX keys so they use the new
+  cipher.
+
+- The Ceph cluster should allow connections from both the old and
+  new cipher as confirmed by the following command.
+
+~~~
+# ceph mon dump | grep allowed_ciphers
+auth_allowed_ciphers aes, aes256k
+#
+~~~
+
+There are two strategies:
+
+1. Rotate: Use `ceph auth rotate` to rotate `client.openstack`.
+2. Replace: Create a new CephX key (e.g. `client.openstack2`),
+   which uses the new cipher, and switch clients to use the new
+   key.
+
+If you are concerned about the time required to migrate Nova guests
+(so they start using the new key), then use the replacement strategy.
+
+There is no immediate downtime when the credential is rotated but
+there is limited time to switch to the new credential. The client
+will continue to function until it tries to reauthenticate with
+the Ceph Monitors to get new tickets. During that time you can
+rotate and then restart clients incrementally. Knowing exactly
+how long you have to rotate the key for all clients can be
+difficult to predict given the distributed nature of Ceph but
+we believe it to be a matter of hours, not days.
+
+Rather than be bound by the above, you can have complete control
+of when the old credential is no longer valid by having two valid
+credentials and rotating them on your own schedule and then disabling
+support for the old credential's cipher.
+
+The new CephX key must be distributed to every OpenStack node which
+connects to Ceph and be imported into libvirt prior migrating Nova
+guests to have them pick up the new key.
+
+#### Manila with Native CephFS ####
+
+With Manila, users create CephX keys for native CephFS share access.
+These keys are exposed to tenant VMs. To rotate, for each share:
+
+1. Grant new share access (new CephX key with aes256k)
+2. Remount the share using the new credentials
+3. Revoke the old share access
+
+All shares for a tenant must be covered. Partial rotation leaves
+the old CephX user and key valid for any shares not yet rotated.
+
+#### Manila with NFS-Ganesha ####
+
+The main NFS-Ganesha CephX key can be rotated and the service redeployed.
+Per-export CephX keys (created automatically per share) do not have
+a rotation mechanism yet. To rotate these, delete and recreate access
+rules for each share. This requires unmount/remount and is disruptive.
+
+These per-export keys are internal to the Ceph cluster and not
+exposed to tenants. Operators can defer their rotation until Ceph
+provides a rotation mechanism if the risk is tolerable.
+
+#### Enforcing the New Cipher ####
+
+After all CephX keys have been rotated, enforce the new cipher:
+~~~
+ceph mon set auth_allowed_ciphers aes256k
+~~~
+
+### Credits ###
+
+- Erin Shepherd, e43.eu
+- David Mohren, Clyso
+- Mark Nelson, Clyso
+
+
+### Contacts / References ###
+
+Authors:
+- John Fulton, Red Hat
+- Goutham Pacha Ravi, Red Hat
+- Sage McTaggart, IBM
+
+This OSSN: https://wiki.openstack.org/wiki/OSSN/OSSN-0108
+Original LaunchPad Bug: None
+Mailing List : [security-sig] tag on openstack-discuss@lists.openstack.org
+OpenStack Security : https://security.openstack.org/
+Ceph Advisory: https://ceph.io/en/news/blog/2026/v20-2-4-v19-2-6-combo-released/
+CVE: CVE-2025-30156, CVE-2026-39944, CVE-2026-50152, CVE-2026-54330

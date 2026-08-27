@@ -16,9 +16,10 @@ It includes these manuals:
 
 The Security Notes are published by the OpenStack Security Project (OSSP) to
 advise users of security related issues. They are published at
-`Security Notes <https://docs.openstack.org/security-guide/security-notes/>`_ and the
+`Security Notes <https://docs.openstack.org/security-notes/>`_ and the
 process is documented at
-`Security Note Process <https://wiki.openstack.org/wiki/Security/Security_Note_Process>`_.
+`Creating an OpenStack Security Note
+<https://docs.openstack.org/security-notes/ossn-process.html>`_.
 
 Security Advisories are issued by the Vulnerability Management Team (VMT). For
 more information about OpenStack's Vulnerability Management Team (VMT) refer

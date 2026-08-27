@@ -30,9 +30,10 @@ A list of published Security Notes is available here:
 
     https://wiki.openstack.org/wiki/Security_Notes
 
-The process used to create new Security Notes is available here:
+The process used to create new Security Notes is documented in
+source/ossn-process.rst, published here:
 
-    https://wiki.openstack.org/wiki/Security/Security_Note_Process
+    https://docs.openstack.org/security-notes/ossn-process.html
 
 How the Build Pipeline Works
 -----------------------------

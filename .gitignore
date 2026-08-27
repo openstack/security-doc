@@ -16,6 +16,6 @@ security-threat-analysis/build
 .tx
 # Security notes build output
 security-notes/build/
-security-notes/source/*.rst
+security-notes/source/OSSN-*.rst
 security-notes/source/index.rst
 security-notes/source/__pycache__/

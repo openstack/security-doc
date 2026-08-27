@@ -97,6 +97,7 @@ def build_notes(app):
         idx.write("========================\n")
         idx.write("OpenStack Security Notes\n")
         idx.write("========================\n\n")
+        idx.write("OpenStack Security Notes (OSSN) advise users of security related issues that do not warrant an `OpenStack Security Advisory (OSSA) <https://security.openstack.org/#openstack-security-advisories-ossa>`__.\n\nFor more information on OSSNs, see :doc:`ossn-process`.\n\n")
         idx.write(".. toctree::\n")
         idx.write("   :maxdepth: 1\n\n")
         for name in ossn_names:

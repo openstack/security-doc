@@ -43,15 +43,13 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://bugs.launchpad.net/ossn/+bug/1237989
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0004
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/keystone/+bug/1237989
   - description: OpenStack Security ML
     url: openstack-security@lists.openstack.org
   - description: OpenStack Security Group
     url: https://launchpad.net/~openstack-ossg
-  - description: CVE
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0004
 
 author: Nathan Kinder, Red Hat
 

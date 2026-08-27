@@ -17,7 +17,7 @@ discussion: |
   in the shell of any user who downloads and sources the RC file for
   that project.
 
-recommended-actions: >
+recommended-actions: |
   Upgrade to a version of horizon containing the fix. As a workaround,
   inspect downloaded RC files before sourcing them, or use ``clouds.yaml``
   for CLI authentication instead.

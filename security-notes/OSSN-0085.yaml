@@ -2,6 +2,9 @@ id: OSSN-0085
 
 title: Cinder configuration option can leak secret key from Ceph backend
 
+# Backfilled from the OSSN/OSSN-0085 wiki page creation date
+date: '2019-10-31'
+
 affected-services: Cinder, Pike, Queens, Rocky, Stein, Train, Ussuri
 
 summary: >

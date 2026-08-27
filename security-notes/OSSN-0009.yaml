@@ -2,6 +2,9 @@ id: OSSN-0009
 
 title: Potential token revocation abuse via group membership
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-04-02'
+
 affected-services: Keystone, Grizzly, Havana, Icehouse
 
 summary: >

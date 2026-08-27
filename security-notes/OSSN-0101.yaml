@@ -2,6 +2,10 @@ id: OSSN-0101
 
 title: Nova console WebSocket proxy Origin allow-list poisoning
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0101
+date: '2026-07-09'
+
 affected-services: nova (>=12.0.0 <31.3.2, >=32.0.0 <32.2.2, >=33.0.0 <33.0.3)
 
 summary: |

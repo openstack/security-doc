@@ -2,6 +2,9 @@ id: OSSN-0020
 
 title: Disassociating floating IPs does not terminate NAT connections with Neutron L3 agent
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-09-15'
+
 affected-services: Neutron, Icehouse, Havana, Grizzly, Folsom
 
 summary: >

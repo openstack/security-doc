@@ -2,6 +2,9 @@ id: OSSN-0015
 
 title: Glance allows non-admin users to create public images
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-05-31'
+
 affected-services: Glance, Folsom, Grizzly, Havana, Icehouse
 
 summary: >

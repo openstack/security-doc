@@ -2,6 +2,11 @@ id: OSSN-0032
 
 title: Disabling a tenant does not disable a user token
 
+# Backfilled from the OSSN/OSSN-0032 wiki page creation date. The
+# Security_Notes wiki index gives 2013-08-30, contradicted by both
+# the page history and the git merge date (2014-10-20)
+date: '2014-10-21'
+
 affected-services: Keystone, Folsom, Grizzly
 
 summary: >

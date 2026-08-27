@@ -2,6 +2,10 @@ id: OSSN-0102
 
 title: Neutron sub-resource APIs do not verify parent ownership
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0102
+date: '2026-07-20'
+
 affected-services: neutron (>=13.0.0 <26.0.4, >=27.0.0 <27.0.3, ==28.0.0)
 
 summary: |

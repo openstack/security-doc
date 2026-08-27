@@ -2,6 +2,9 @@ id: OSSN-0003
 
 title: Keystone configuration should not be world readable
 
+# Backfilled from the Security_Notes wiki index
+date: '2013-05-13'
+
 affected-services: Keystone, DevStack, Deployment
 
 summary: |

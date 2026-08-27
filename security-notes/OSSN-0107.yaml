@@ -2,6 +2,10 @@ id: OSSN-0107
 
 title: Ironic Python Agent Container HardwareManager Security Misimplemented
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0107
+date: '2026-08-13'
+
 affected-services: ironic-python-agent (>=11.0.0, <12.0.1)
 
 summary: |

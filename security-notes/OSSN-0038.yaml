@@ -2,6 +2,9 @@ id: OSSN-0038
 
 title: Suds client subject to cache poisoning by local attacker
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-12-17'
+
 affected-services: Cinder, Nova, Grizzly, Havana, Icehouse
 
 summary: >

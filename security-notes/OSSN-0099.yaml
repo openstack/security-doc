@@ -2,6 +2,10 @@ id: OSSN-0099
 
 title: Denial of Service in Ironic under reduced process stack size
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0099
+date: '2026-06-05'
+
 affected-services: ironic (>=32.0.0, <37.0.0)
 
 summary: >

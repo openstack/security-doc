@@ -2,6 +2,9 @@ id: OSSN-0045
 
 title: Vulnerable clients allow a TLS protocol downgrade (FREAK)
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-03-11'
+
 affected-services: |
   Any service using TLS. Depending on the backend TLS library, this can
   include many components of an OpenStack cloud:

@@ -2,6 +2,9 @@ id: OSSN-0014
 
 title: Multiple Cinder drivers set insecure file permissions
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-05-31'
+
 affected-services: Cinder, Folsom, Grizzly, Havana, Icehouse
 
 summary: >

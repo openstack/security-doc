@@ -2,6 +2,9 @@ id: OSSN-0079
 
 title: Ceph credentials included in logs using older versions of libvirt/qemu
 
+# Backfilled from the OSSN/OSSN-0079 wiki page creation date
+date: '2017-07-18'
+
 affected-services: |
   Versions 2.5 and earlier of QEMU and libvirt versions of 2.1 or ealier.
 

@@ -2,6 +2,10 @@ id: OSSN-0103
 
 title: Manila resource-lock list trusts a foreign project_id filter
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0103
+date: '2026-07-31'
+
 affected-services: manila (>=17.0.0 <20.0.2, >=21.0.0 <21.0.2, >=22.0.0 <22.0.1)
 
 summary: >

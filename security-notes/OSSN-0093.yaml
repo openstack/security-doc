@@ -2,6 +2,9 @@ id: OSSN-0093
 
 title: Unsafe Environment Handling in MuranoPL
 
+# Backfilled from the OSSN/OSSN-0093 wiki page creation date
+date: '2024-03-06'
+
 affected-services: murano (all versions)
 
 summary: >

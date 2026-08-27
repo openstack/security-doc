@@ -2,6 +2,9 @@ id: OSSN-0074
 
 title: Nova metadata service should not be used for sensitive information
 
+# Backfilled from the OSSN/OSSN-0074 wiki page creation date
+date: '2016-08-17'
+
 affected-services: Nova, All Versions
 
 summary: >

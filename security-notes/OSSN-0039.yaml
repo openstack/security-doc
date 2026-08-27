@@ -2,6 +2,9 @@ id: OSSN-0039
 
 title: Configuring OpenStack deployments to prevent POODLE attacks
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-10-21'
+
 affected-services: |
   Any service using SSLv3. Depending on the backend SSL library, this can
   include many components of an OpenStack cloud:

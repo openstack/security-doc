@@ -2,6 +2,9 @@ id: OSSN-0007
 
 title: Live migration instructions recommend unsecured libvirt remote access
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-03-06'
+
 affected-services: Nova, Compute, KVM, libvirt, Grizzly, Havana, Icehouse
 
 summary: >

@@ -2,6 +2,9 @@ id: OSSN-0030
 
 title: Bash 'shellshock' bug can lead to code injection vulnerability.
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-09-26'
+
 affected-services: GNU Bash, Grizzly, Havana, Icehouse
 
 summary: >

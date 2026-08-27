@@ -2,6 +2,9 @@ id: OSSN-0081
 
 title: sha512_crypt is insufficient for password hashing
 
+# Backfilled from the OSSN/OSSN-0081 wiki page creation date
+date: '2017-08-30'
+
 affected-services: OpenStack Identity Service (Keystone). OpenStack Releases Ocata, Newton.
 
 summary: >

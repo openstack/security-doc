@@ -2,6 +2,9 @@ id: OSSN-0055
 
 title: Service accounts may have cloud admin privileges
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-09-17'
+
 affected-services: Most OpenStack services / all versions
 
 summary: >

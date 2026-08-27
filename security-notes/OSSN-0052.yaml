@@ -2,6 +2,9 @@ id: OSSN-0052
 
 title: Python-swiftclient exposes raw token values in debug logs
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-09-17'
+
 affected-services: Python-swiftclient, Swift, Glance, Juno, Kilo
 
 summary: >

@@ -2,6 +2,9 @@ id: OSSN-0012
 
 title: OpenSSL Heartbleed vulnerability can lead to OpenStack compromise
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-04-10'
+
 affected-services: Grizzly, Havana, OpenSSL
 
 summary: >

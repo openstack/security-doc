@@ -2,6 +2,9 @@ id: OSSN-0062
 
 title: Potential reuse of revoked Identity tokens
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-12-15'
+
 affected-services: Keystone, Icehouse, Juno, Kilo, Liberty
 
 summary: >

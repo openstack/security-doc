@@ -2,6 +2,9 @@ id: OSSN-0021
 
 title: Owners of compromised accounts should verify Keystone trusts
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-07-25'
+
 affected-services: Keystone, Grizzly, Havana, Icehouse
 
 summary: >

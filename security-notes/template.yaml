@@ -2,6 +2,10 @@ id: OSSN-XXXX
 
 title: Title (single sentence, no period)
 
+# Publication date, ISO 8601. Set this to the date the note is
+# announced, not the date the patch was proposed.
+date: 'YYYY-MM-DD'
+
 affected-services: |
   - service-name (>=1.0.0 <1.2.3, >=2.0.0 <2.1.0)
   - other-service (>=3.0.0 <3.1.0)

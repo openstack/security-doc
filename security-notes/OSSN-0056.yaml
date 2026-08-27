@@ -2,6 +2,9 @@ id: OSSN-0056
 
 title: Cached keystone tokens may be accepted after revocation
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-09-17'
+
 affected-services: OpenStack Services that use Keystone middleware (Juno, Kilo, Liberty)
 
 summary: >

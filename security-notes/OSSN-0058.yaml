@@ -2,6 +2,9 @@ id: OSSN-0058
 
 title: Cinder LVMISCIDriver allows possible unauthenticated mounting of volumes
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-09-17'
+
 affected-services: Cinder, Icehouse
 
 summary: >

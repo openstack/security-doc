@@ -2,6 +2,9 @@ id: OSSN-0076
 
 title: Glance Image service v1 and v2 api image-create vulnerability
 
+# Backfilled from the OSSN/OSSN-0076 wiki page creation date
+date: '2016-10-27'
+
 affected-services: All versions of Glance image service.
 
 summary: >

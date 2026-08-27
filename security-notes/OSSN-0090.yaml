@@ -2,6 +2,9 @@ id: OSSN-0090
 
 title: Best practices when configuring Glance with COW backends
 
+# Backfilled from the OSSN/OSSN-0090 wiki page creation date
+date: '2022-09-22'
+
 affected-services: Glance, all supported releases (Queens through Zed)
 
 summary: >

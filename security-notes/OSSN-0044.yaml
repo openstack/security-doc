@@ -2,6 +2,9 @@ id: OSSN-0044
 
 title: Older versions of noVNC allow session theft
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-03-02'
+
 affected-services: Nova, when embedding noVNC prior to v0.5
 
 summary: >

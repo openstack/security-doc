@@ -2,6 +2,10 @@ id: OSSN-0096
 
 title: oslo.messaging does not verify RabbitMQ broker hostname during TLS handshake
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0096
+date: '2026-06-02'
+
 affected-services: |
   - oslo.messaging (>=1.0.0 <16.2.0, >=17.0.0 <17.1.1, >=17.2.0 <17.3.1)
 

@@ -2,6 +2,9 @@ id: OSSN-0017
 
 title: Session-fixation vulnerability in Horizon when using the default signed cookie sessions
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-06-20'
+
 affected-services: Horizon, Folsom, Grizzly, Havana, Icehouse
 
 summary: >

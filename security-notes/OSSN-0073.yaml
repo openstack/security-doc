@@ -2,6 +2,9 @@ id: OSSN-0073
 
 title: Horizon dashboard leaks internal information through cookies
 
+# Backfilled from the OSSN/OSSN-0073 wiki page creation date
+date: '2016-08-17'
+
 affected-services: horizon
 
 summary: |

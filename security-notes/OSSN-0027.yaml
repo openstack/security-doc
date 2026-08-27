@@ -2,6 +2,9 @@ id: OSSN-0027
 
 title: Neutron ARP cache poisoning vulnerability
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-09-16'
+
 affected-services: Neutron, Grizzly, Havana, Icehouse, Juno
 
 summary: >

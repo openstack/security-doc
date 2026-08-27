@@ -2,6 +2,9 @@ id: OSSN-0065
 
 title: Users of Glance may be able to replace active image data
 
+# Backfilled from the OSSN/OSSN-0065 wiki page creation date
+date: '2016-04-06'
+
 affected-services: Glance (Havana, Icehouse, Juno, Kilo, Liberty, Mitaka, Newton, Ocata)
 
 summary: >

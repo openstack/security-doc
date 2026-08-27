@@ -2,6 +2,9 @@ id: OSSN-0048
 
 title: Glance method filtering does not work under certain conditions
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-04-30'
+
 affected-services: Glance, Icehouse, Juno, Kilo
 
 summary: >

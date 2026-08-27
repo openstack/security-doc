@@ -2,6 +2,9 @@ id: OSSN-0008
 
 title: DoS style attack on noVNC server can lead to service interruption or disruption
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-03-09'
+
 affected-services: Horizon, Nova, noVNC proxy, SPICE console, Grizzly, Havana
 
 summary: >

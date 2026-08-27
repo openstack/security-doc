@@ -2,6 +2,9 @@ id: OSSN-0054
 
 title: Potential Denial of Service in Horizon login
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-09-17'
+
 affected-services: Horizon, Django, Essex, Folsom, Grizzly, Havana, Icehouse, Juno
 
 summary: >

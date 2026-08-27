@@ -2,6 +2,10 @@ id: OSSN-0108
 
 title: Multiple authentication vulnerabilities in Ceph
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0108
+date: '2026-08-20'
+
 affected-services: |
   - Ceph (all versions prior to v20.2.4 or v19.2.6)
   - OpenStack services with CephX keyrings (Nova, Cinder, Glance, Manila)

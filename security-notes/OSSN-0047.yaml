@@ -2,6 +2,9 @@ id: OSSN-0047
 
 title: Keystone does not validate that identity providers match federation mappings
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-04-19'
+
 affected-services: Keystone, Juno, Kilo
 
 summary: >

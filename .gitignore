@@ -14,3 +14,8 @@ security-threat-analysis/build
 
 # Transifex Client Setting
 .tx
+# Security notes build output
+security-notes/build/
+security-notes/source/*.rst
+security-notes/source/index.rst
+security-notes/source/__pycache__/

@@ -1,0 +1,65 @@
+id: OSSN-0104
+
+title: Ironic-Python-Agent may fallback to mDNS unexpectedly
+
+affected-services: ironic-python-agent (>=3.7.0 <11.6.2)
+
+summary: >
+  Ironic-Python-Agent (IPA) has had support for several releases for
+  configuring your agent via multicast DNS (mDNS). This feature's design
+  is such that, in some extremely rare cases, a booted IPA could be
+  reconfigured or directed to a different Ironic API service.
+
+discussion: |
+  When IPA is booted, the first thing it does is look for a valid URL to
+  check into the Ironic API or an Ironic Inspection service. The mDNS
+  fallback would, in situations where IPA had no API url configured, use
+  mDNS lookups to configure IPA, including the endpoint of the Ironic API
+  service. This is typically only used in rare cases for bootstrapping
+  clusters with minimal infrastructure using virtual media or physical USB
+  thumb drives.
+
+  Ironic's default configuration always sends a valid API url. The current
+  development branch has been updated to always require an explicit opt-in
+  to mDNS fallback, either by setting ``ipa-api-url`` to ``mdns``, or by
+  setting ``ipa-use-mdns`` to ``True`` on the command line.
+
+recommended-actions: |
+  Ensure all IPA boots are managed by Ironic; do not boot any IPA
+  ramdisks without proper configuration. This is the default behavior
+  but may be different in environments with unique networking or DHCP
+  configurations.
+
+  Operators utilizing the mDNS discovery features should, before
+  upgrading to 2026.2, ensure they are explicitly enabling mDNS fallback
+  in their virtual media images.
+
+  **Patches:** The following patches are backwards incompatible and were not
+  merged into stable branches. Operators are welcome to backport them
+  manually if they feel it improves their security standing and they do
+  not use mDNS fallback.
+
+  **2026.2/hibiscus** (development):
+
+  - https://review.opendev.org/997637
+  - https://review.opendev.org/997638
+  - https://review.opendev.org/999337
+
+credits:
+  - Dmitry Tantsur, Red Hat (Metal3.io Security Team),
+  - Tuomo Tanskanen, Ericsson Software Technology (Metal3.io Security Team)
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0104
+  - description: Original Launchpad bug
+    url: https://bugs.launchpad.net/ironic-python-agent/+bug/2160054
+  - description: Mailing List
+    url: openstack-discuss@lists.openstack.org
+  - description: OpenStack Security
+    url: https://security.openstack.org/
+  - description: CVE
+    url: none
+
+author: Jay Faulkner, G-Research OSS

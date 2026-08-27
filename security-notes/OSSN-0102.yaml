@@ -1,0 +1,75 @@
+id: OSSN-0102
+
+title: Neutron sub-resource APIs do not verify parent ownership
+
+affected-services: neutron (>=13.0.0 <26.0.4, >=27.0.0 <27.0.3, ==28.0.0)
+
+summary: |
+  Several Neutron APIs that operate on sub-resources (port forwardings
+  under floating IPs, conntrack helpers under routers) authorize the
+  request using the parent resource ID from the URL but load the child
+  resource by its own ID without verifying it belongs to that parent.
+  A project member can read or modify another project's sub-resource
+  by substituting their own parent resource ID in the URL. For
+  conntrack helpers, deletion is also possible. The attack requires
+  knowing the victim's sub-resource UUID, which is a random UUIDv4
+  that cannot be enumerated through the API.
+
+discussion: |
+  The affected endpoints follow this pattern::
+
+    GET/PUT /floatingips/{fip_id}/port_forwardings/{pf_id}
+    (DELETE is not affected; it already validates the parent)
+    GET/PUT/DELETE /routers/{router_id}/conntrack_helpers/{ct_id}
+
+  Policy checks authorize against the parent (floating IP or router)
+  from the URL. The plugin then loads the child by bare UUID without
+  checking that the child's parent matches the URL parent. This
+  allows a caller who owns one floating IP or router to operate on
+  port forwardings or conntrack helpers belonging to a different
+  project's floating IP or router.
+
+  The mitigating factor is that the victim's sub-resource UUID cannot
+  be discovered through the API. The list endpoints are scoped to
+  the caller's own parent resources. An attacker would need to obtain
+  the UUID through other means.
+
+recommended-actions: |
+
+  **Patches:**
+
+  The following reviews contain the fix for this issue:
+
+  Upgrade Neutron to a version containing the fixes.
+
+  Port Forwarding patches (LP#2150121):
+
+  - 2026.2/hibiscus (development): https://review.opendev.org/989624
+  - 2026.1/gazpacho: https://review.opendev.org/990125
+  - 2025.2/flamingo: https://review.opendev.org/990126
+  - 2025.1/epoxy: https://review.opendev.org/990127
+
+  Conntrack Helpers patches (LP#2152109):
+
+  - 2026.2/hibiscus (development): https://review.opendev.org/991586
+  - 2026.1/gazpacho: https://review.opendev.org/991776
+  - 2025.2/flamingo: https://review.opendev.org/991777
+  - 2025.1/epoxy: https://review.opendev.org/991778
+
+credits:
+ - Tim Shephard, roiai.ca
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0102
+  - description: Original Launchpad bug (Port Forwarding)
+    url: https://bugs.launchpad.net/neutron/+bug/2150121
+  - description: Original Launchpad bug (Conntrack Helpers)
+    url: https://bugs.launchpad.net/neutron/+bug/2152109
+  - description: Mailing List
+    url: openstack-discuss@lists.openstack.org
+  - description: OpenStack Security
+    url: https://security.openstack.org/
+
+author: Goutham Pacha Ravi, Red Hat

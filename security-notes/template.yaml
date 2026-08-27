@@ -1,0 +1,276 @@
+id: OSSN-XXXX
+
+title: Title (single sentence, no period)
+
+affected-services: |
+  - service-name (>=1.0.0 <1.2.3, >=2.0.0 <2.1.0)
+  - other-service (>=3.0.0 <3.1.0)
+
+summary: |
+  A few sentences describing the issue at a high level. This deployment
+  is *not* affected if the ``show_multiple_locations`` option is disabled.
+  Deployments using ``neutron`` with the OVN ML2 driver are affected.
+
+discussion: |
+  A detailed discussion of the problem, covering what the vulnerability
+  is, how it can be exploited, and what the impact is.
+
+  The affected endpoints follow this pattern:
+
+  - GET ``/v1/resource/{id}``
+  - PUT ``/v1/resource/{id}``
+
+  The following services are affected:
+
+  - Nova (all configurations)
+  - Cinder (only when using the LVMISCSIDriver)
+
+    - The ``volume_driver`` option must be set to ``LVMISCSIDriver``
+    - Deployments using other drivers are not affected
+
+  The attack requires the following conditions to be true:
+
+  1. The attacker has a valid project-scoped token.
+  2. The attacker knows the target resource UUID.
+  3. The ``show_multiple_locations`` option is set to ``True``.
+
+  **Note:** This issue does *not* affect deployments using Neutron with
+  the ML2/OVS driver. Only the OVN ML2 driver is affected.
+
+recommended-actions: |
+  Upgrade to a version containing the fix and restart the affected
+  services. Set the following in ``/etc/nova/nova.conf``::
+
+    [DEFAULT]
+    debug = False
+
+    [service]
+    secure_option = True
+
+  If upgrading is not immediately possible, apply the following
+  workaround:
+
+  1. Disable the affected feature::
+
+       openstack feature disable affected-feature
+
+  2. Verify the change took effect::
+
+       openstack feature list
+
+  3. Monitor logs for any exploitation attempts::
+
+       grep "suspicious_pattern" /var/log/nova/nova-api.log
+
+  **Warning:** Rolling back this workaround after applying the fix
+  requires a service restart.
+
+  **Patches:**
+
+  - 2026.2/hibiscus (development): https://review.opendev.org/XXXXXX
+  - 2026.1/gazpacho: https://review.opendev.org/XXXXXX
+  - 2025.2/flamingo: https://review.opendev.org/XXXXXX
+  - 2025.1/epoxy: https://review.opendev.org/XXXXXX
+
+credits: Reporter Name, Affiliation
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-XXXX
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/ossn/+bug/XXXXXXX
+  - description: Mailing List
+    url: openstack-discuss@lists.openstack.org
+  - description: OpenStack Security
+    url: https://security.openstack.org/
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-XXXX-XXXXX
+
+author: Name, Company
+
+
+# OSSN Template
+# For YAML syntax reference: https://yaml.org/spec/1.2-old/spec.html
+#
+# ============================================================
+# YAML SYNTAX RULES
+# ============================================================
+#
+# - Do NOT use colons (:) in unquoted field values — they break YAML
+#   parsing. Use parentheses instead:
+#   CORRECT:   affected-services: Cinder (Icehouse, Juno)
+#   INCORRECT: affected-services: Cinder: Icehouse, Juno
+#
+# - Do NOT start a line with a dash (-) in unquoted string values.
+#   Dashes are only valid inside a block scalar (| or >) or in the
+#   references links section.
+#
+# ============================================================
+# SCALAR STYLE GUIDE
+# ============================================================
+#
+# Use | (literal) for all fields — it preserves line breaks exactly
+# as written and handles all content types correctly.
+#
+# ============================================================
+# RST INLINE FORMATTING (works inside | blocks)
+# ============================================================
+#
+# INLINE CODE — double backticks:
+#   ``keystone.conf``        config file names
+#   ``debug``                config option names
+#   ``project_id``           API parameters
+#   ``os-brick``             library or tool names
+#   ``nova token-get``       CLI commands
+#   ``/etc/nova/nova.conf``  file paths
+#
+# BOLD — double asterisks:
+#   **Patches:**    section label
+#   **Warning:**    warnings
+#
+# ITALIC — single asterisks:
+#   *never*   emphasis
+#   *not*     negation
+#
+# CODE BLOCKS — :: followed by 4-space indented content:
+#
+#   Set the following in ``nova.conf``::
+#
+#     [DEFAULT]
+#     debug = False
+#
+# BULLETED LISTS — dash followed by space, blank line before and after:
+#
+#   The affected services include:
+#
+#   - Nova
+#   - Cinder
+#   - Glance
+#
+# NUMBERED LISTS — number followed by period, blank line before and after:
+#
+#   Follow these steps:
+#
+#   1. Stop the service.
+#   2. Apply the patch.
+#   3. Restart the service.
+#
+# NESTED LISTS — indent sub-items by 2 spaces:
+#
+#   - Nova
+#
+#     - nova-compute
+#     - nova-api
+#
+# WARNING/NOTE — bold label followed by prose:
+#
+#   **Warning:** If you disable this option, existing sessions will be
+#   terminated immediately.
+#
+#   **Note:** This only affects deployments using the LVMISCSIDriver.
+#
+# ============================================================
+# PATCH EXAMPLES
+# ============================================================
+#
+# EXAMPLE 1 — Single component, one patch per release:
+#
+#   recommended-actions: |
+#     Apply the provided patches.
+#
+#     **Patches:**
+#
+#     - 2026.2/hibiscus (development): https://review.opendev.org/XXXXXX
+#     - 2026.1/gazpacho: https://review.opendev.org/XXXXXX
+#     - 2025.2/flamingo: https://review.opendev.org/XXXXXX
+#     - 2025.1/epoxy: https://review.opendev.org/XXXXXX
+#
+# EXAMPLE 2 — Single component, multiple patches per release:
+#
+#   recommended-actions: |
+#     Apply the provided patches.
+#
+#     **2026.2/hibiscus (development):**
+#
+#     - https://review.opendev.org/XXXXXX
+#     - https://review.opendev.org/XXXXXX
+#
+#     **2026.1/gazpacho:**
+#
+#     - https://review.opendev.org/XXXXXX
+#     - https://review.opendev.org/XXXXXX
+#
+# EXAMPLE 3 — Multiple components, one patch per release each:
+#
+#   recommended-actions: |
+#     Apply the provided patches for both components.
+#
+#     **Component A patches (LP#XXXXXXX):**
+#
+#     - 2026.2/hibiscus (development): https://review.opendev.org/XXXXXX
+#     - 2026.1/gazpacho: https://review.opendev.org/XXXXXX
+#
+#     **Component B patches (LP#XXXXXXX):**
+#
+#     - 2026.2/hibiscus (development): https://review.opendev.org/XXXXXX
+#     - 2026.1/gazpacho: https://review.opendev.org/XXXXXX
+#
+# EXAMPLE 4 — Multiple components, multiple patches per release:
+#
+#   recommended-actions: |
+#     Apply the provided patches for both components.
+#
+#     **Component A patches (LP#XXXXXXX):**
+#
+#     2026.2/hibiscus (development):
+#
+#     - https://review.opendev.org/XXXXXX
+#     - https://review.opendev.org/XXXXXX
+#
+#     **Component B patches (LP#XXXXXXX):**
+#
+#     2026.2/hibiscus (development):
+#
+#     - https://review.opendev.org/XXXXXX
+#     - https://review.opendev.org/XXXXXX
+#
+# EXAMPLE 5 — Patches not backported to stable branches:
+#
+#   recommended-actions: |
+#     The following patches are backwards incompatible and were not
+#     merged into stable branches. Operators are welcome to backport
+#     them manually.
+#
+#     **2026.2/hibiscus (development):**
+#
+#     - https://review.opendev.org/XXXXXX
+#     - https://review.opendev.org/XXXXXX
+#
+# EXAMPLE 6 — Workaround available, fix coming later:
+#
+#   recommended-actions: |
+#     **Workaround:** Disable the affected feature by setting
+#     ``feature_enabled = False`` in ``/etc/nova/nova.conf``.
+#
+#     **Fix:** A patch is available for supported releases.
+#
+#     **Patches:**
+#
+#     - 2026.2/hibiscus (development): https://review.opendev.org/XXXXXX
+#     - 2026.1/gazpacho: https://review.opendev.org/XXXXXX
+#
+# ============================================================
+# CREDITS — single person:
+#
+#   credits: Reporter Name, Affiliation
+#
+# Multiple reporters:
+#
+#   credits:
+#     - Reporter One, Affiliation One
+#     - Reporter Two, Affiliation Two
+#
+# ============================================================
+# REFERENCES — each link needs description and url
+# ============================================================

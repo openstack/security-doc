@@ -11,3 +11,9 @@ echo $MARKER_TEXT > publish-docs/html/security-guide/.root-marker
 doc-tools-build-rst security-threat-analysis --build build \
         --target security-threat-analysis
 echo $MARKER_TEXT > publish-docs/html/security-threat-analysis/.root-marker
+
+# This code marker is for the new OSSN updated docs
+
+doc-tools-build-rst security-notes --build build \
+        --target security-notes
+echo $MARKER_TEXT > publish-docs/html/security-notes/.root-marker

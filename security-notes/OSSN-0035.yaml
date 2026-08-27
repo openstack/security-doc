@@ -1,0 +1,56 @@
+id: OSSN-0035
+
+title: HTTP Strict Transport Security not enabled on Horizon Dashboard
+
+affected-services: Horizon, SSL, TLS, Apache, Nginx
+
+summary: >
+  Deployers using Horizon for production or internet facing operations should strongly consider configuring HTTP Strict Transport Security (HSTS) for their deployment.
+
+
+discussion: |
+  HTTP Strict Transport Security (HSTS) enforces that all communications with a server go over SSL. This mitigates the threat from attacks such as SSL-Strip which replaces links on the wire, stripping away https prefixes and potentially allowing an attacker to view confidential information on the wire.
+
+  HSTS can be enabled in Apache and Nginx, the two primary ways of serving Horizon at scale.
+
+
+recommended-actions: |
+  If using Apache httpd to host Horizon, add the following to the relevant
+  'VirtualHost' entry in your Apache httpd configuration file::
+
+    Header add Strict-Transport-Security "max-age=15768000"
+
+  We suggest also using ``mod_rewrite`` to ensure all visitors to Horizon land
+  on a secure page. To accomplish this, add the following into your Apache
+  httpd configuration file::
+
+    <IfModule mod_rewrite.c>
+      RewriteEngine On
+      RewriteCond %{HTTPS} off
+      RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+    </IfModule>
+
+  If using Nginx to host Horizon, add the following to your Nginx
+  configuration file::
+
+    add_header Strict-Transport-Security max-age=15768000;
+
+  As always, test these configuration settings before deploying them to
+  production in order to catch any bugs or errors.
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0035
+  - description: SSL Strip
+    url: http://www.thoughtcrime.org/software/sslstrip
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/horizon/+bug/1191050
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: HTTP Strict Transport Security
+    url: https://www.owasp.org/index.php/HTTP_Strict_Transport_Security
+author: Robert Clark, HP
+

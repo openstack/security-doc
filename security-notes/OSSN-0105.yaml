@@ -1,0 +1,47 @@
+id: OSSN-0105
+
+title: Glance legacy Tasks import bypasses image import URI filtering
+
+affected-services: glance (>=30.0.0 <30.3.0, >=31.0.0 <31.1.1, ==32.0.0)
+
+summary: >
+  The deprecated Glance /v2/tasks API accepts type=import tasks that
+  bypass ``import_filtering_opts``, allowing an admin to fetch internal URLs
+  from the Glance service network (SSRF). The tasks API has been
+  admin-only since Xena and deprecated for several releases.
+
+discussion: >
+  The legacy tasks import path uses a permissive URI validator that only
+  checks for ``http://`` or ``https://`` prefixes, bypassing the host and port
+  restrictions enforced by the modern web-download import.
+
+recommended-actions: |
+  Disable the legacy tasks API via policy if you are not using it.
+  Otherwise, upgrade Glance to a version containing the fix.
+
+  **Patches:**
+
+  The following reviews contain the fix for this issue:
+
+  - 2026.2/hibiscus (development): https://review.opendev.org/c/openstack/glance/+/993588
+  - 2026.1/gazpacho: https://review.opendev.org/c/openstack/glance/+/994466
+  - 2025.2/flamingo: https://review.opendev.org/c/openstack/glance/+/994592
+  - 2025.1/epoxy: https://review.opendev.org/c/openstack/glance/+/1000061
+
+credits:
+  - Tim Shephard, roiai.ca
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0105
+  - description: Original Launchpad bug
+    url: https://bugs.launchpad.net/glance/+bug/2152110
+  - description: Mailing List [security-sig] tag on
+    url: openstack-discuss@lists.openstack.org
+  - description: OpenStack Security
+    url: https://security.openstack.org/
+  - description: CVE
+    url: none
+
+author: Goutham Pacha Ravi, Red Hat

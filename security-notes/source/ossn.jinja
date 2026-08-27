@@ -1,0 +1,63 @@
+==============={% for _ in title %}={% endfor %}
+
+{{ id }}: {{ title }}
+==============={% for _ in title %}={% endfor %}
+
+Summary
+~~~~~~~
+{{ summary }}
+
+
+Affected Services / Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{% if affected_services is iterable and affected_services is not string %}
+{% for service in affected_services %}
+* {{ service | trim }}
+{% endfor %}
+{% else %}
+{{ affected_services }}
+{% endif %}
+
+Discussion
+~~~~~~~~~~
+{{ discussion | format_code_blocks }}
+
+{% if recommended_actions %}
+
+Recommended Actions
+~~~~~~~~~~~~~~~~~~~
+{{ recommended_actions | format_code_blocks }}
+{% endif %}
+
+{% if credits %}
+{% if credits is iterable and credits is not string %}
+**Credits:**
+
+{% for credit in credits %}
+* {{ credit | trim }}
+{% endfor %}
+
+{% else %}
+**Credits:** {{ credits }}
+
+{% endif %}
+{% endif %}
+
+Contacts / References
+~~~~~~~~~~~~~~~~~~~~~
+{% if author %}
+**Author:** {{ author }}
+
+
+{% endif %}
+{% for link in references['links'] %}
+{% if link is mapping %}
+{% if link.get('description') and link.get('url') %}
+* {{ link.get('description') | trim }} : {{ link.get('url') | trim }}
+{% elif link.get('url') %}
+* {{ link.get('url') | trim }}
+{% endif %}
+{% else %}
+* {{ link | trim }}
+{% endif %}
+{% endfor %}

@@ -1,0 +1,49 @@
+id: OSSN-0097
+
+title: Horizon RC file generation does not escape special characters in project names
+
+affected-services: >
+  horizon (>=8.0.0 <25.3.3, >=25.4.0 <25.5.3, >=25.6.0 <25.7.4)
+
+summary: >
+  Horizon generates shell scripts for OpenStack RC file downloads with
+  user-provided values in double-quoted strings without escaping shell
+  metacharacters. A domain manager can set a project name containing
+  $() or backtick sequences that execute arbitrary commands when a user
+  sources the RC file.
+
+discussion: |
+  A domain manager who can rename a project can inject commands that run
+  in the shell of any user who downloads and sources the RC file for
+  that project.
+
+recommended-actions: >
+  Upgrade to a version of horizon containing the fix. As a workaround,
+  inspect downloaded RC files before sourcing them, or use ``clouds.yaml``
+  for CLI authentication instead.
+
+  **Patches:**
+
+  - 2026.2/hibiscus (master): https://review.opendev.org/c/openstack/horizon/+/990661
+  - 2026.1/gazpacho: https://review.opendev.org/c/openstack/horizon/+/991038
+  - 2025.2/flamingo: https://review.opendev.org/c/openstack/horizon/+/991039
+  - 2025.1/epoxy: https://review.opendev.org/c/openstack/horizon/+/991040
+
+credits:
+  - Tim Shephard, roiai.ca
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0097
+  - description: Original Launchpad bug
+    url: https://launchpad.net/bugs/2152240
+  - description: Mailing List
+    url: openstack-discuss@lists.openstack.org
+  - description: OpenStack Security
+    url: https://security.openstack.org/
+  - description: CVE
+    url: CVE-2026-55748
+
+author: Goutham Pacha Ravi, Red Hat

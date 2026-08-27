@@ -1,0 +1,53 @@
+id: OSSN-0054
+
+title: Potential Denial of Service in Horizon login
+
+affected-services: Horizon, Django, Essex, Folsom, Grizzly, Havana, Icehouse, Juno
+
+summary: >
+  Horizon uses the Python based Django web framework. Older versions of this framework allow an unauthorized user to fill up the session store database causing a Horizon denial of service. A fix for Django is available but works only with Kilo and later versions of Horizon.
+
+
+discussion: >
+  Django will record the session ID of web requests even when the request is from an unauthorized user. This allows an attacker to populate the session store database with invalid session information, potentially causing a denial of service condition by filling the database with useless session information.
+
+
+recommended-actions: |
+  The Django developers have released a fix for this issue which is
+  included in software versions 1.4.21, 1.7.9 and 1.8.3. Horizon
+  administrators should ensure that they are using an up to date version
+  of Django to avoid being affected by this vulnerability.
+
+  Versions of Horizon prior to Kilo cannot run with the fixed version of
+  Django, and may require updating to a newer version of OpenStack.
+  Administrators can test if their deployment is affected by attempting to
+  inject invalid sessions into the session store database using the
+  following script and then querying the session store database to check
+  if multiple 'aaaaa' session ID's were recorded::
+
+    for i in {1..100}
+    do
+      curl -b "sessionid=aaaaa;" http://HORIZON__IP/auth/login/ &> /dev/null
+    done
+
+  If possible, affected users should upgrade to the Kilo or newer release
+  of Horizon, allowing them to use the fixed version of Django.
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0054
+  - description: Django fix
+    url: https://www.djangoproject.com/weblog/2015/jul/08/security-releases/
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/horizon/+bug/1457551
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-5143
+
+author: Robert Clark, IBM
+

@@ -19,8 +19,8 @@ the VM. Once the VM is launched, the scheduler is no longer involved
 unless a migration, a resize or an evacuation is asked for that VM.
 
 Malicious users can bypass the trust check by the Attestation API using
-these steps: 1) Launch a trusted VM on a trusted host; 2) Stop the
-VM on the trusted host; 3) Compromise the host; 4) Power on the VM from
+these steps: 1. Launch a trusted VM on a trusted host; 2. Stop the
+VM on the trusted host; 3. Compromise the host; 4. Power on the VM from
 the compromised host. There is no check by the Attestation API for
 powering on the VM in this case.
 

@@ -1,0 +1,38 @@
+id: OSSN-0083
+
+title: Keystone policy rule "identity:get_identity_providers" was ignored
+
+affected-services: OpenStack Identity Service (Keystone) versions through Mitaka, as well as Newton (<= 10.0.3), and Ocata (<= 11.0.3).
+
+summary: >
+  A policy rule in Keystone did not behave as intended leading to a less
+  secure configuration than would be expected.
+
+discussion: |
+  Deployments were unaffected by this problem if the default rule was
+  changed or the ``get_identity_providers`` rule was manually changed to be
+  ``get_identity_provider`` (singular) in keystone's ``policy.json``.
+
+  A spelling mistake in the default policy configuration caused these
+  rules to be ignored. As a result operators that attempted to restrict
+  this API were unlikely to actually enforce it.
+
+recommended-actions: |
+  Update Keystone to a minimum version of 12.0.0.0b3. Additionally, this
+  fix has been backported to Ocata (11.0.3) and Newton (10.0.3).
+
+  Fix any lingering rules: ``identity:get_identity_providers`` should be
+  changed to ``identity:get_identity_provider``.
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0083
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/ossn/+bug/1703369
+  - description: Mailing List
+    url: tag on openstack-dev@lists.openstack.org
+  - description: OpenStack Security Project
+    url: https://launchpad.net/~openstack-ossg
+
+author: Nick Tait

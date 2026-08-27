@@ -1,0 +1,72 @@
+id: OSSN-0091
+
+title: BMC emulators developed in OpenStack community do not preserve passwords on VMs
+
+affected-services: |
+  - Sushy-Tools (<=0.21.0)
+  - VirtualBMC (<=2.2.2)
+
+  No impact to any OpenStack software or services intended for production use.
+
+summary: |
+  When deploying VirtualBMC or Sushy-Tools in an unsupported, production-
+  like configuration, it can remove secret data, including VNC passwords,
+  from a libvirt domain permanently. Operators impacted by this
+  vulnerability must reconfigure any secret data, including VNC passwords,
+  for the libvirt domain.
+
+  These virtual machine emulators are tools to help emulate a physical
+  machine's Baseboard Management Controller (BMC) to aid in development
+  and testing of software that would otherwise require physical machines
+  to perform integration testing activities. They are not intended or
+  supported for production or long-term use of any kind.
+
+discussion: |
+  To perform some advanced operations on Libvirt virtual machines, the
+  underlying XML document describing the virtual machine's domain must be
+  extracted, modified, and then updated. These specific actions are for
+  aspects such as "setting a boot device" (VirtualBMC, Sushy-Tools),
+  Setting a boot mode (Sushy-Tools), and setting a virtual media device
+  (Sushy-Tools).
+
+  This issue is triggered when a VM has any kind of "secure" information
+  defined in the XML domain definition. If an operator deploys VirtualBMC
+  or Sushy-Tools to manage one of these libvirt VMs, the first time any
+  action is performed that requires rewriting of the XML domain
+  definition, all secure information -- including a VNC console password,
+  if set -- is lost and removed from the domain definition, leaving the
+  libvirt VM's exposed to a malicious console user.
+
+recommended-actions: |
+  **Patches:**
+
+  - VirtualBMC: https://review.opendev.org/c/openstack/virtualbmc/+/862620
+  - Sushy-Tools: https://review.opendev.org/c/openstack/sushy-tools/+/862625
+
+  Operators who may have been impacted by this vulnerability should
+  immediately remove use of VirtualBMC and/or Sushy-Tools from their
+  production environment. Then, validate and if necessary, reconfigure
+  passwords for VNC access or any other impacted secrets.
+
+  **Notes**
+
+  The OpenStack team will ensure documentation is updated to clearly state these software packages are intended for development/CI use only, and are not safe to run in production.
+
+
+credits: Julia Kreger, Red Hat
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0091#Discussion
+  - description: Original Storyboard bug
+    url: https://storyboard.openstack.org/#!/story/2010382
+  - description: Mailing List
+    url: tag on openstack-discuss@lists.openstack.org
+  - description: OpenStack Security Project
+    url: https://launchpad.net/~openstack-ossg
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-2022-44020
+
+author: Jay Faulkner, G-Research Open Source Software
+

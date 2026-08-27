@@ -15,8 +15,9 @@ It includes these manuals:
  * Security Threat Analysis
 
 The Security Notes are published by the OpenStack Security Project (OSSP) to
-advise users of security related issues. For more information refer to the
-`Security Notes <https://wiki.openstack.org/wiki/Security_Notes>`_ and
+advise users of security related issues. They are published at
+`Security Notes <https://docs.openstack.org/security-guide/security-notes/>`_ and the
+process is documented at
 `Security Note Process <https://wiki.openstack.org/wiki/Security/Security_Note_Process>`_.
 
 Security Advisories are issued by the Vulnerability Management Team (VMT). For
@@ -32,8 +33,8 @@ RST format in the directory ``security-guide/source``.
 Security Threat Analysis is in the directory ``security-threat-analysis``, which
 source files in RST format in the directory ``security-threat-analysis/source``.
 
-The security notes are in the directory ``security-notes``.
-
+The security notes are in the directory ``security-notes``, with Sphinx
+configuration and build tooling in ``security-notes/source``.
 
 Testing of changes and building of the guides
 =============================================

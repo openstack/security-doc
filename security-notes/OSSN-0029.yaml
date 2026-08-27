@@ -1,0 +1,64 @@
+id: OSSN-0029
+
+title: Neutron FWaaS rules lack port restrictions when using protocol 'any'
+
+affected-services: Neutron FWaaS, Grizzly, Havana, Icehouse
+
+summary: |
+  A bug in the experimental Neutron FWaaS (Firewall as a Service) extension results in iptables rules being generated that do not reflect desired port restrictions. This behaviour is triggered when a protocol other than 'udp' or 'tcp' is specified, e.g. 'any'.
+
+  The scope of this bug is limited to the experimental Neutron FWaaS extension and systems built upon it. It does not affect the supported core Neutron functionality. Security Groups are not affected.
+
+
+discussion: |
+  When specifying firewall rules using Neutron that should match multiple
+  protocols, it is convenient to specify a protocol of 'any' in place of
+  defining multiple specific rules.
+
+  For example, in order to allow DNS (TCP and UDP) requests, the following
+  rule might be defined::
+
+    neutron firewall-rule-create --protocol any --destination-port 53 \
+      --action allow
+
+  However, this rule results in the generation of iptables firewall rules
+  that do not reflect the desired port restriction. An example generated
+  iptables rule might look like the following::
+
+    -A neutron-l3-agent-iv441c58eb2 -j ACCEPT
+
+  Note that the restriction on port 53 is missing. As a result, the
+  generated rule will match and accept any traffic being processed by the
+  rule chain to which it belongs.
+
+  Additionally, iptables arranges sets of rules into chains and processes
+  packets entering a chain one rule at a time. Rule matching stops at the
+  first matched exit condition (e.g. accept or drop). Since the generated
+  rule above will match and accept all packets, it will effectively short
+  circuit any filtering rules lower down in the chain. Consequently, this
+  can break other firewall rules regardless of the protocol specified when
+  defining those rules with Neutron. They simply need to appear later in
+  the generated iptables rule chain.
+
+  This bug is triggered when any protocol other than 'tcp' or 'udp' is
+  specified in conjunction with a source or destination port number.
+
+recommended-actions: |
+  The Neutron FWaaS extension is currently experimental, and should not be used in production at this point. If you are using it, you should avoid the use of 'any' when specifying the protocol for Neutron FWaaS rules. Instead, create multiple rules for both 'tcp' and 'udp' protocols independently.
+
+  This issue has been fixed in the Juno release of OpenStack.
+
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0029
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/neutron/+bug/1365961
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+
+author: Tim Kelsey, HP
+

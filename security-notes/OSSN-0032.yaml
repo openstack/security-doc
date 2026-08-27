@@ -1,0 +1,47 @@
+id: OSSN-0032
+
+title: Disabling a tenant does not disable a user token
+
+affected-services: Keystone, Folsom, Grizzly
+
+summary: >
+  When a tenant is disabled in Keystone, tokens that have been issued to that tenant are not invalidated. This can result in users having access to your cloud after you have attempted to revoke them.
+
+
+discussion: >
+  Keystone does not purge the tokens given out to tenants when a tenant is disabled. In some scenarios this could be very important to cloud providers. Take the case where a cloud provider must revoke a tenant's access because of some legal investigation. Even though the tenant is disabled it would be possible for them to terminate VMs / delete Swift files etc. There are many other abuse-cases.
+
+
+recommended-actions: |
+  This issue has been fixed in the OpenStack Havana release. The fix has
+  also been backported to OpenStack Grizzly as a part of the 2013.1.4
+  Keystone release.
+
+  How the tokens are stored depends on your cloud deployment. If you
+  deploy using Memcached to back Keystone then flushing the cache when
+  disabling a token would resolve this issue for you, at the cost of other
+  token lookups which are no longer in the cache requiring Keystone
+  interaction.
+
+  It is of course possible to script something to remove tokens from any
+  backend DB or cache, but there is no 'official' way to do this.
+
+  NOTE: Flushing Memcached can result in losing token revocation
+  information as addressed in:
+  https://bugs.launchpad.net/ossn/+bug/1182920
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0032
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/keystone/+bug/1179955
+  - description: OpenStack Security ML
+    url: openstack-security@lists.openstack.org
+  - description: OpenStack Security Group
+    url: https://launchpad.net/~openstack-ossg
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-2013-4222
+
+author: Robert Clark, HP
+

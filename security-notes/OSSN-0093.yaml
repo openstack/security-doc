@@ -1,0 +1,48 @@
+id: OSSN-0093
+
+title: Unsafe Environment Handling in MuranoPL
+
+affected-services: murano (all versions)
+
+summary: >
+  The Murano service's MuranoPL extension to the YAQL language fails to
+  sanitize the supplied environment, leading to potential leakage of
+  sensitive service account information. Murano is an inactive project, so
+  no fix is currently under development for this vulnerability. It is
+  strongly recommended that any OpenStack deployments disable or fully
+  remove Murano, if installed, at the earliest opportunity.
+
+discussion: |
+  The YAQL interpreter project has released a new major version (3.0.0)
+  which removes support for format strings, a feature necessary to exploit
+  this condition in MuranoPL. Because Murano is not considered under
+  active maintenance in OpenStack, its complete removal from all
+  deployments is still strongly advised.
+
+  Note that this behavior change in YAQL means configurations relying on
+  string formatting will no longer be interpreted the same after
+  upgrading, which could cause them to not work as intended by their users
+  in services which accept YAQL (including Heat and Mistral). Reliance on
+  that feature is considered to be unusual, but users should be made aware
+  in case it negatively impacts their configuration.
+
+recommended-actions: |
+  Disable the Murano service in, or fully remove it from, all OpenStack
+  deployments at the earliest opportunity.
+
+  Credits: kirualawliet and Zhiniang Peng (@edwardzpeng) from Sangfor
+  Security Research Team
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0093
+  - description: Original Launchpad bug
+    url: https://launchpad.net/bugs/2048114
+  - description: Mailing List
+    url: openstack-discuss@lists.openstack.org
+  - description: OpenStack Security [security-sig]
+    url: https://security.openstack.org/
+  - description: CVE
+    url: https://nvd.nist.gov/vuln/detail/CVE-2024-29156
+

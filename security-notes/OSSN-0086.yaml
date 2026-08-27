@@ -1,0 +1,126 @@
+id: OSSN-0086
+
+title: Dell EMC ScaleIO/VxFlex OS Backend Credentials Exposure
+
+affected-services: |
+  Cinder (Ocata, Pike, Queens, Rocky, Stein, Train, Ussuri).
+
+  This vulnerability applies only when using a Dell EMC ScaleIO/VxFlex OS
+  backend with Cinder. Other drivers are not impacted.
+
+summary: >
+  This vulnerability is present when using Cinder with a Dell EMC
+  ScaleIO or VxFlex OS storage backend. Note: The Dell EMC "ScaleIO"
+  driver was rebranded as "VxFlex OS" in the Train release.
+
+discussion: >
+  When using Cinder with the Dell EMC ScaleIO or VxFlex OS backend
+  storage driver, credentials for the entire backend are exposed in the
+  ``connection_info`` element in all Block Storage v3 Attachments API calls
+  containing that element. This enables an end user to create a volume,
+  make an API call to show the attachment detail information, and
+  retrieve a username and password that may be used to connect to
+  another user's volume. Additionally, these credentials are valid for
+  the ScaleIO or VxFlex OS Management API, should an attacker discover
+  the Management API endpoint.
+
+  This issue was reported by David Hill and Eric Harney of Red Hat.
+
+recommended-actions: |
+  Remediation of this issue consists of the following:
+
+  1. Patching the ScaleIO or VxFlex OS Cinder driver so that it no longer
+     provides the password to Cinder when a Block Storage v3 Attachments
+     API response is constructed.
+
+  2. Patching the ScaleIO connector in the ``os-brick`` library so that it
+     retrieves the password from a configuration file readable only by
+     root. (Note: the connector was not rebranded; both ScaleIO and VxFlex
+     OS backends use the ``scaleio`` ``os-brick`` connector.)
+
+  3. Patching the ScaleIO ``os-brick`` privileged file that allows the
+     ``scaleio`` connector to escalate privileges for specific operations;
+     this is necessary to allow the connector process to access the
+     configuration file that is readable only by root.
+
+  4. Deploying a configuration file containing the password (and
+     replication password, if applicable) to all compute nodes, cinder
+     nodes, and anywhere you would perform a volume attachment in your
+     deployment.
+
+  To refresh database information, all volumes should be detached and
+  reattached.
+
+  Because this remediation consists of deploying credentials in a
+  root-readable-only file, it is not suitable for the use case of
+  attaching a volume to a bare metal host. Thus, the Dell EMC
+  ScaleIO/VxFlex OS storage backend for Cinder is not recommended for
+  use with bare metal hosts.
+
+  Note: The Ocata, Pike, Queens, and Rocky branches of OpenStack are in
+  the Extended Maintenance phase. Point releases are no longer made from
+  these branches and security patches are produced only on a reasonable
+  effort basis. Patches for Queens and Rocky are provided as a courtesy.
+  Patches for Ocata and Pike are not available.
+
+  **Patches**
+
+  Both cinder and ``os-brick`` must be patched. Documentation is provided
+  as part of the cinder patch concerning the new configuration file that
+  must be deployed to all compute nodes, cinder nodes, and anywhere you
+  would perform a volume attachment in your deployment.
+
+  **NOTE:** (added 2020-06-18): The original patch for ``os-brick`` contained
+  a flaw that prevented the ``scaleio`` connector from operating when run
+  under Python 2.7. Thus for OpenStack releases supporting Python 2.7
+  (Train and earlier), a second ``os-brick`` patch is required and is
+  listed below. See: https://bugs.launchpad.net/os-brick/+bug/1883654
+
+  **Queens:**
+
+  - cinder: https://review.opendev.org/733110
+  - os-brick: https://review.opendev.org/733104 and https://review.opendev.org/736749
+
+  **Rocky:**
+
+  - cinder: https://review.opendev.org/733109
+  - os-brick: https://review.opendev.org/733103 and https://review.opendev.org/736415
+
+  **Stein:**
+
+  - cinder: https://review.opendev.org/733108
+  - os-brick: https://review.opendev.org/733102 and https://review.opendev.org/736395
+
+  **Train:**
+
+  - cinder: https://review.opendev.org/733107
+  - os-brick: https://review.opendev.org/733100 and https://review.opendev.org/735989
+
+  **Ussuri:**
+
+  - cinder: https://review.opendev.org/733106
+  - os-brick: https://review.opendev.org/733099
+
+  Alternatively, point releases for Stein, Train, and Ussuri will be
+  made as soon as possible. These will be:
+
+  - Stein: cinder 14.2.0, requires ``os-brick`` 2.8.6
+  - Train: cinder 15.3.0, requires ``os-brick`` 2.10.4
+  - Ussuri: cinder 16.1.0, requires ``os-brick`` 3.0.2
+
+references:
+  links:
+  - description: This OSSN
+    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0086
+  - description: Original LaunchPad Bug
+    url: https://bugs.launchpad.net/cinder/+bug/1823200
+  - description: Mailing List
+    url: openstack-discuss@lists.openstack.org
+  - description: OpenStack Security Project
+    url: https://launchpad.net/~openstack-ossg
+  - description: os-brick flaw bug
+    url: https://bugs.launchpad.net/os-brick/+bug/1883654
+  - description: CVE
+    url: CVE-2020-10755
+
+author: Brian Rosmaita, Red Hat

@@ -58,7 +58,7 @@ credits: Julia Kreger, Red Hat
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0091#Discussion
+    url: https://docs.openstack.org/security-notes/OSSN-0091.html
   - description: Original Storyboard bug
     url: https://storyboard.openstack.org/#!/story/2010382
   - description: Mailing List

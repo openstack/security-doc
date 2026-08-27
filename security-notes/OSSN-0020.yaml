@@ -37,7 +37,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0020
+    url: https://docs.openstack.org/security-notes/OSSN-0020.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/neutron/+bug/1334926
   - description: OpenStack Security ML

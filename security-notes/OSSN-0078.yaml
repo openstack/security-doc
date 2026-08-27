@@ -25,7 +25,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0078
+    url: https://docs.openstack.org/security-notes/OSSN-0078.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1606495
   - description: OpenStack Security Project

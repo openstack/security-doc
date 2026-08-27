@@ -21,9 +21,9 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0036
+    url: https://docs.openstack.org/security-notes/OSSN-0036.html
   - description: Related OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0035
+    url: https://docs.openstack.org/security-notes/OSSN-0035.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/horizon/+bug/1191051
   - description: OpenStack Security ML

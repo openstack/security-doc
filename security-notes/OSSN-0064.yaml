@@ -55,7 +55,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0064
+    url: https://docs.openstack.org/security-notes/OSSN-0064.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1545789
   - description: Mailing list [Security] tag on

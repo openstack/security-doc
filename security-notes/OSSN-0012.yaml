@@ -65,7 +65,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0012
+    url: https://docs.openstack.org/security-notes/OSSN-0012.html
   - description: OpenStack Security ML
     url: openstack-security@lists.openstack.org
   - description: OpenStack Security Group

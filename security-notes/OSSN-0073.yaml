@@ -21,7 +21,7 @@ discussion: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0073
+    url: https://docs.openstack.org/security-notes/OSSN-0073.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1585831
   - description: Related bug

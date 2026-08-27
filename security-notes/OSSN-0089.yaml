@@ -65,7 +65,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0089
+    url: https://docs.openstack.org/security-notes/OSSN-0089.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/nova/+bug/1919357
   - description: Mailing List

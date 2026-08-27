@@ -30,7 +30,7 @@ recommended-actions: >
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0070
+    url: https://docs.openstack.org/security-notes/OSSN-0070.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/bandit/+bug/1612988
   - description: OpenStack Security ML

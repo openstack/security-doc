@@ -27,7 +27,7 @@ references:
   - description: Nathan Kinder on Token Scoping
     url: https://blog-nkinder.rhcloud.com/?p=101
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0042
+    url: https://docs.openstack.org/security-notes/OSSN-0042.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1341816
   - description: OpenStack Security ML

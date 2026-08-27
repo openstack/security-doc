@@ -34,7 +34,7 @@ recommended-actions: >
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0082
+    url: https://docs.openstack.org/security-notes/OSSN-0082.html
   - description: Mailing List
     url: tag on openstack-dev@lists.openstack.org
   - description: OpenStack Security Project

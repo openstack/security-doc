@@ -31,7 +31,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0009
+    url: https://docs.openstack.org/security-notes/OSSN-0009.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/keystone/+bug/1268751
   - description: OpenStack Security ML

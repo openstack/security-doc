@@ -50,7 +50,7 @@ credits:
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0103
+    url: https://docs.openstack.org/security-notes/OSSN-0103.html
   - description: Original Launchpad bug
     url: https://bugs.launchpad.net/manila/+bug/2161287
   - description: Mailing List

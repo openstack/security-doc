@@ -33,7 +33,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0084
+    url: https://docs.openstack.org/security-notes/OSSN-0084.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1699573
   - description: Mailing List

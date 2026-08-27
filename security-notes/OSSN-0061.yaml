@@ -24,7 +24,7 @@ recommended-actions: >
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0061
+    url: https://docs.openstack.org/security-notes/OSSN-0061.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/glance/+bug/1516031
   - description: OpenStack Security ML

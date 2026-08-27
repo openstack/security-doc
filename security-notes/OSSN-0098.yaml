@@ -43,7 +43,7 @@ credits:
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0098
+    url: https://docs.openstack.org/security-notes/OSSN-0098.html
   - description: Original Launchpad bug
     url: https://launchpad.net/bugs/2146554
   - description: Mailing List

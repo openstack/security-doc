@@ -45,7 +45,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0018
+    url: https://docs.openstack.org/security-notes/OSSN-0018.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/nova/+bug/1316271
   - description: OpenStack Security ML

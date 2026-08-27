@@ -35,7 +35,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0049
+    url: https://docs.openstack.org/security-notes/OSSN-0049.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/nova/+bug/1451931
   - description: OpenStack Security ML

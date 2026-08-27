@@ -126,7 +126,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0039
+    url: https://docs.openstack.org/security-notes/OSSN-0039.html
   - description: Original Launchpad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1382270
   - description: OpenStack Security ML

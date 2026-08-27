@@ -37,7 +37,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0054
+    url: https://docs.openstack.org/security-notes/OSSN-0054.html
   - description: Django fix
     url: https://www.djangoproject.com/weblog/2015/jul/08/security-releases/
   - description: Original LaunchPad Bug

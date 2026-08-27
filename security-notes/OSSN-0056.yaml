@@ -45,7 +45,7 @@ recommended-actions: >
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0056
+    url: https://docs.openstack.org/security-notes/OSSN-0056.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/python-keystoneclient/+bug/1287301
   - description: OpenStack Security ML

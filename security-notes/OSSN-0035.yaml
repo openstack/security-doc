@@ -41,7 +41,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0035
+    url: https://docs.openstack.org/security-notes/OSSN-0035.html
   - description: SSL Strip
     url: http://www.thoughtcrime.org/software/sslstrip
   - description: Original LaunchPad Bug

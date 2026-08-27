@@ -179,7 +179,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0007
+    url: https://docs.openstack.org/security-notes/OSSN-0007.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/openstack-manuals/+bug/1287194
   - description: OpenStack Security ML

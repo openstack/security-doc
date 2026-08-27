@@ -126,7 +126,7 @@ recommended-actions: |
   of the configuration file; Cinder uses ``glance_api_servers`` in the
   ``[DEFAULT]`` section.
 
-  [2] OSSN-0065: https://wiki.openstack.org/wiki/OSSN/OSSN-0065
+  [2] OSSN-0065: https://docs.openstack.org/security-notes/OSSN-0065.html
 
   [3] The Glance "multihash" metadata pair of ``os_hash_algo`` and
   ``os_hash_value`` were introduced in Rocky to replace the legacy md5
@@ -140,7 +140,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0090
+    url: https://docs.openstack.org/security-notes/OSSN-0090.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1990157
   - description: Mailing List

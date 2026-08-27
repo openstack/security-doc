@@ -62,7 +62,7 @@ credits:
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0102
+    url: https://docs.openstack.org/security-notes/OSSN-0102.html
   - description: Original Launchpad bug (Port Forwarding)
     url: https://bugs.launchpad.net/neutron/+bug/2150121
   - description: Original Launchpad bug (Conntrack Helpers)

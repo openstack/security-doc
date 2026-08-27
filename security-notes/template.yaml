@@ -77,7 +77,7 @@ credits: Reporter Name, Affiliation
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-XXXX
+    url: https://docs.openstack.org/security-notes/OSSN-XXXX.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/XXXXXXX
   - description: Mailing List

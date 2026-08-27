@@ -46,7 +46,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0069
+    url: https://docs.openstack.org/security-notes/OSSN-0069.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/ossn/+bug/1534652
   - description: This issue was referenced in

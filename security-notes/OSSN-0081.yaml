@@ -32,7 +32,7 @@ references:
     description: '[1]'
   - url: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
     description: '[2]'
-  - url: https://wiki.openstack.org/wiki/OSSN/OSSN-0081
+  - url: https://docs.openstack.org/security-notes/OSSN-0081.html
     description: This OSSN
   - url: https://bugs.launchpad.net/ossn/+bug/1668503
     description: Original LaunchPad Bug

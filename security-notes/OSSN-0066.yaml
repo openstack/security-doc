@@ -58,7 +58,7 @@ recommended-actions: |
 references:
   links:
   - description: This OSSN
-    url: https://wiki.openstack.org/wiki/OSSN/OSSN-0066
+    url: https://docs.openstack.org/security-notes/OSSN-0066.html
   - description: Original LaunchPad Bug
     url: https://bugs.launchpad.net/trove/+bug/1507841
   - description: Mailing List

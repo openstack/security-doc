@@ -1,5 +1,6 @@
+================================
 OpenStack Security Notes (OSSN)
-===============================
+================================
 
 The OpenStack Security Group (OSSG) publishes Security Notes to advise users
 of security related issues. Security notes are similar to advisories; they
@@ -11,43 +12,41 @@ Repository Layout
 -----------------
 
 This repository contains published Security Notes and templates that should
-be used when creating new Security Notes.
+be used when creating new Security Notes::
 
     OSSN-XXXX.yaml  - Security Notes in YAML format (use for new notes)
     template.yaml   - YAML template for creating new Security Notes
 
-    OSSN-XXXX - Legacy Security Notes in plain text format (historical)
-    template.txt - Legacy plain text template (historical)
+    original-txt/OSSN-XXXX - Legacy Security Notes in plain text format (historical)
+    original-txt/template.txt - Legacy plain text template (historical)
 
 New Security Notes should be authored directly in YAML format, following
-the same approach used for OSSAs. Use template.yaml as a template.
-    
+the same approach used for OSSAs. Use ``template.yaml`` as a template.
 
 Useful Links
 ------------
 
-A list of published Security Notes is available here:
-
-    https://wiki.openstack.org/wiki/Security_Notes
+A list of published Security Notes is available at
+`Security Notes <https://wiki.openstack.org/wiki/Security_Notes>`_.
 
 The process used to create new Security Notes is documented in
-source/ossn-process.rst, published here:
-
-    https://docs.openstack.org/security-notes/ossn-process.html
+``source/ossn-process.rst``, published at
+`Creating an OpenStack Security Note
+<https://docs.openstack.org/security-notes/ossn-process.html>`_.
 
 How the Build Pipeline Works
------------------------------
+----------------------------
 
 Security Notes are published via a Sphinx build pipeline that mirrors the
 approach used for OSSAs (OpenStack Security Advisories).
 
-At build time, the Sphinx extension ossn.py reads all OSSN-XXXX.yaml
+At build time, the Sphinx extension ``ossn.py`` reads all OSSN-XXXX.yaml
 files from the security-notes/ directory, renders each one through the
-ossn.jinja Jinja2 template, and writes the resulting RST files to
+``ossn.jinja`` Jinja2 template, and writes the resulting RST files to
 security-notes/source/. Sphinx then builds those RST files into HTML.
 
 The generated RST files and build output are excluded from git via
-.gitignore. Do not commit them.
+``.gitignore``. Do not commit them.
 
 To build locally::
 
@@ -62,4 +61,3 @@ To run the linter::
 To preview the built HTML::
 
     open security-notes/build/html/index.html
-

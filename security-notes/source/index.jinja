@@ -1,0 +1,16 @@
+========================
+OpenStack Security Notes
+========================
+
+OpenStack Security Notes (OSSN) advise users of security related issues that do
+not warrant an `OpenStack Security Advisory (OSSA)
+<https://security.openstack.org/#openstack-security-advisories-ossa>`__.
+
+For more information on OSSNs, see :doc:`ossn-process`.
+
+.. toctree::
+   :maxdepth: 1
+
+{% for name in ossn_names %}
+   {{ name }}
+{% endfor %}

@@ -94,14 +94,9 @@ def build_notes(app):
         for f in input_files
     ]
     with open(index_path, "w") as idx:
-        idx.write("========================\n")
-        idx.write("OpenStack Security Notes\n")
-        idx.write("========================\n\n")
-        idx.write("OpenStack Security Notes (OSSN) advise users of security related issues that do not warrant an `OpenStack Security Advisory (OSSA) <https://security.openstack.org/#openstack-security-advisories-ossa>`__.\n\nFor more information on OSSNs, see :doc:`ossn-process`.\n\n")
-        idx.write(".. toctree::\n")
-        idx.write("   :maxdepth: 1\n\n")
-        for name in ossn_names:
-            idx.write(f"   {name}\n")
+        idx.write(render_template("index.jinja",
+                                  {"ossn_names": ossn_names},
+                                  template_dir=template_files))
 
 def setup(app):
     LOG.info('Loading the ossn extension')

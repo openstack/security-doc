@@ -2,6 +2,9 @@ id: OSSN-0016
 
 title: Cinder wipe fails in an insecure manner on Grizzly
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-06-03'
+
 affected-services: Cinder, Grizzly
 
 summary: >

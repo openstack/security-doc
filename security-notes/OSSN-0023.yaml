@@ -2,6 +2,9 @@ id: OSSN-0023
 
 title: Keystone logs auth tokens in URLs at the INFO log level
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-09-04'
+
 affected-services: Keystone, Grizzly, Havana, Icehouse, Juno
 
 summary: >

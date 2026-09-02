@@ -2,6 +2,9 @@ id: OSSN-0019
 
 title: Cinder SSH Pool will auto-accept SSH host signatures by default
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-06-30'
+
 affected-services: Cinder, Icehouse, Havana, Grizzly, Folsom
 
 summary: >

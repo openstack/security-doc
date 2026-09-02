@@ -2,6 +2,9 @@ id: OSSN-0010
 
 title: Sample Keystone v3 policy exposes privilege escalation vulnerability
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-04-17'
+
 affected-services: Keystone, Havana
 
 summary: >

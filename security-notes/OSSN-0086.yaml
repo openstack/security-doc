@@ -2,6 +2,9 @@ id: OSSN-0086
 
 title: Dell EMC ScaleIO/VxFlex OS Backend Credentials Exposure
 
+# Backfilled from the OSSN/OSSN-0086 wiki page creation date
+date: '2020-05-29'
+
 affected-services: |
   Cinder (Ocata, Pike, Queens, Rocky, Stein, Train, Ussuri).
 

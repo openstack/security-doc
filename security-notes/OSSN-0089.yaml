@@ -2,6 +2,9 @@ id: OSSN-0089
 
 title: Missing configuration option in Secure Live Migration guide leads to unencrypted traffic
 
+# Backfilled from the OSSN/OSSN-0089 wiki page creation date
+date: '2021-03-31'
+
 affected-services: Nova (Victoria, Ussuri, Train, Stein, possibly Rocky, Queens, Pike, Ocata)
 
 summary: >

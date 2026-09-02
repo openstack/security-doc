@@ -2,6 +2,10 @@ id: OSSN-0100
 
 title: Command Injection in IPA via chroot Execution of Tenant-Controlled binaries
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0100
+date: '2026-06-16'
+
 affected-services:
   - ironic (<29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2, >=36.0.0 <37.0.0),
   - ironic-python-agent (<10.2.3, >=11.0.0 <11.2.1, >=11.3.0 <11.5.1)

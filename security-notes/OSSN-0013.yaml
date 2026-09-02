@@ -2,6 +2,9 @@ id: OSSN-0013
 
 title: Some versions of Glance do not apply property protections as expected
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-05-07'
+
 affected-services: Glance, Folsom, Grizzly
 
 summary: >

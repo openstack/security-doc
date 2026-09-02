@@ -2,6 +2,9 @@ id: OSSN-0063
 
 title: Nova and Cinder key manager for Barbican misuses cached credentials
 
+# Backfilled from the Security_Notes wiki index
+date: '2016-06-09'
+
 affected-services: >
   Cinder (Icehouse, Juno, Kilo, Liberty), Nova (Juno, Kilo, Liberty)
 

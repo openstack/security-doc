@@ -2,6 +2,9 @@ id: OSSN-0006
 
 title: Keystone can allow user impersonation when using REMOTE_USER for external authentication
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-01-17'
+
 affected-services: Keystone, Havana
 
 summary: >

@@ -2,6 +2,10 @@ id: OSSN-0104
 
 title: Ironic-Python-Agent may fallback to mDNS unexpectedly
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0104
+date: '2026-08-03'
+
 affected-services: ironic-python-agent (>=3.7.0 <11.6.2)
 
 summary: >

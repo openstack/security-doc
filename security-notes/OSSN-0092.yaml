@@ -2,6 +2,9 @@ id: OSSN-0092
 
 title: Using Configuration as a Short-Term Mitigation for OSSA-2023-003
 
+# Backfilled from the OSSN/OSSN-0092 wiki page creation date
+date: '2023-05-10'
+
 affected-services: |
   - cinder (<20.2.1, >=21.0.0 <21.2.1, ==22.0.0)
   - glance_store (<3.0.1, >=4.0.0 <4.1.1, >=4.2.0 <4.3.1)

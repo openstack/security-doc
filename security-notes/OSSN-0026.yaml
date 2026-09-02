@@ -2,6 +2,9 @@ id: OSSN-0026
 
 title: Unrestricted write permission to config files can allow code execution
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-09-05'
+
 affected-services: Nova / All versions, Trove / Juno, possibly others
 
 summary: >

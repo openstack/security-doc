@@ -2,6 +2,9 @@ id: OSSN-0091
 
 title: BMC emulators developed in OpenStack community do not preserve passwords on VMs
 
+# Backfilled from the OSSN/OSSN-0091 wiki page creation date
+date: '2022-10-26'
+
 affected-services: |
   - Sushy-Tools (<=0.21.0)
   - VirtualBMC (<=2.2.2)

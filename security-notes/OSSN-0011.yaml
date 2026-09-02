@@ -2,6 +2,9 @@ id: OSSN-0011
 
 title: Heat templates with invalid references allows unintended network access
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-04-04'
+
 affected-services: Heat, nova-network, Havana
 
 summary: >

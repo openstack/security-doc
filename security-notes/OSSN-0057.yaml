@@ -2,6 +2,9 @@ id: OSSN-0057
 
 title: DoS attack on Glance service can lead to interruption or disruption
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-10-15'
+
 affected-services: Glance, Icehouse, Juno, Kilo, Liberty
 
 summary: >

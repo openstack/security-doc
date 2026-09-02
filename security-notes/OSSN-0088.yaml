@@ -2,6 +2,9 @@ id: OSSN-0088
 
 title: Some of the Glance metadef APIs likely to leak resources
 
+# Backfilled from the OSSN/OSSN-0088 wiki page creation date
+date: '2021-03-09'
+
 affected-services: Glance, Horizon
 
 summary: >

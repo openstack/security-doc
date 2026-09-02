@@ -2,6 +2,9 @@ id: OSSN-0077
 
 title: Pre-auth COPY in versioned_writes can result in a successful COPY that wouldn't have been authorized
 
+# Backfilled from the OSSN/OSSN-0077 wiki page creation date
+date: '2016-11-07'
+
 affected-services: Swift < 2.10.0
 
 summary: >

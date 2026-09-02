@@ -2,6 +2,9 @@ id: OSSN-0018
 
 title: Nova Network configuration allows guest VMs to connect to host services
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-06-25'
+
 affected-services: Nova, Folsom, Grizzly, Havana, Icehouse
 
 summary: >

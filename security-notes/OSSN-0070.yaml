@@ -2,6 +2,9 @@ id: OSSN-0070
 
 title: Bandit versions lower than 1.1.0 do not escape HTML in issue reports
 
+# Backfilled from the OSSN/OSSN-0070 wiki page creation date
+date: '2016-08-17'
+
 affected-services: Bandit < 1.1.0
 
 summary: >

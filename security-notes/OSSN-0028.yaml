@@ -2,6 +2,9 @@ id: OSSN-0028
 
 title: Nova leaks compute host SMBIOS serial number to guests
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-10-03'
+
 affected-services: Nova, Icehouse, Havana
 
 summary: >

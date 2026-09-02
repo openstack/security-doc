@@ -2,6 +2,9 @@ id: OSSN-0046
 
 title: Setting services to debug mode can also set Pecan to debug
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-05-11'
+
 affected-services: Blazar, Ceilometer, Cue, Gnocchi, Ironic, Kite, Libra, Pecan, Tuskar
 
 summary: >

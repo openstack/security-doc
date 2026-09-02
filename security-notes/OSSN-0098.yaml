@@ -2,6 +2,10 @@ id: OSSN-0098
 
 title: Mistral workflow execution context exposes Keystone auth token
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0098
+date: '2026-06-05'
+
 affected-services: mistral (<=22.0.0)
 
 summary: >

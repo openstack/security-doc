@@ -2,6 +2,9 @@ id: OSSN-0024
 
 title: Sensitive data is exposed in log statements by python-keystoneclient
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-09-25'
+
 affected-services: Python-keystoneclient=<0.10.0
 
 summary: >

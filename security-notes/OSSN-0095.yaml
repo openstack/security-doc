@@ -2,6 +2,9 @@ id: OSSN-0095
 
 title: OVN security group rules created before address group support may be ineffective
 
+# Backfilled from the OSSN/OSSN-0095 wiki page creation date
+date: '2026-04-23'
+
 affected-services: >
   neutron (OVN ML2 driver) (<25.2.3, >=26.0.0 <26.0.3, >=27.0.0 <27.0.2)
 

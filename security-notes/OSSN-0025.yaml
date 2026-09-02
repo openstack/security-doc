@@ -2,6 +2,9 @@ id: OSSN-0025
 
 title: Possible Glance image exposure via Swift
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-10-21'
+
 affected-services: Glance, Swift, Havana, Icehouse
 
 summary: >

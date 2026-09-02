@@ -2,6 +2,9 @@ id: OSSN-0029
 
 title: Neutron FWaaS rules lack port restrictions when using protocol 'any'
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-09-24'
+
 affected-services: Neutron FWaaS, Grizzly, Havana, Icehouse
 
 summary: |

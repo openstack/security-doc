@@ -2,6 +2,9 @@ id: OSSN-0053
 
 title: Keystone token disclosure may result in malicious trust creation
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-09-23'
+
 affected-services: Keystone, Grizzly, Havana, Icehouse, Juno, Kilo
 
 summary: >

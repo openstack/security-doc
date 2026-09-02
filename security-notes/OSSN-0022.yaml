@@ -2,6 +2,9 @@ id: OSSN-0022
 
 title: Nova Networking does not enforce security group rules following a soft reboot of an instance
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-08-11'
+
 affected-services: Nova, Havana, Grizzly
 
 summary: >

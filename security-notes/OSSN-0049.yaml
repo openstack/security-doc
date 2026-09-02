@@ -2,6 +2,9 @@ id: OSSN-0049
 
 title: Nova ironic driver logs sensitive information while operating in debug mode
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-07-07'
+
 affected-services: Nova, Ironic, Juno, Kilo
 
 summary: >

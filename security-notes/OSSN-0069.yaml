@@ -2,6 +2,9 @@ id: OSSN-0069
 
 title: Host machine exposed to tenant networks via IPv6
 
+# Backfilled from the OSSN/OSSN-0069 wiki page creation date
+date: '2016-09-08'
+
 affected-services: Nova, Neutron, networking-midonet, Kilo, Liberty
 
 summary: |

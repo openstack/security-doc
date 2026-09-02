@@ -2,6 +2,9 @@ id: OSSN-0060
 
 title: Glance configuration option can lead to privilege escalation
 
+# Backfilled from the Security_Notes wiki index
+date: '2016-01-25'
+
 affected-services: Glance, Juno, Kilo, Liberty
 
 summary: >

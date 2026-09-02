@@ -2,6 +2,9 @@ id: OSSN-0059
 
 title: Trusted VM can be powered on untrusted hosts
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-11-16'
+
 affected-services: Nova, Trusted Computing Pools
 
 summary: >

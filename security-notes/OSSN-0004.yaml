@@ -2,6 +2,9 @@ id: OSSN-0004
 
 title: Authenticated users are able to update passwords without providing their current password
 
+# Backfilled from the Security_Notes wiki index
+date: '2013-11-22'
+
 affected-services: Horizon, Keystone, Identity, Grizzly
 
 summary: >

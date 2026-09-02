@@ -2,6 +2,10 @@ id: OSSN-0097
 
 title: Horizon RC file generation does not escape special characters in project names
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0097
+date: '2026-06-02'
+
 affected-services: >
   horizon (>=8.0.0 <25.3.3, >=25.4.0 <25.5.3, >=25.6.0 <25.7.4)
 

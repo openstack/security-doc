@@ -2,6 +2,9 @@ id: OSSN-0068
 
 title: Repeated token revocation requests can lead to service degradation or disruption
 
+# Backfilled from the OSSN/OSSN-0068 wiki page creation date
+date: '2016-07-21'
+
 affected-services: All services using Keystone (Mitaka, Liberty, Kilo, Juno, Havana, Icehouse, Grizzly, Folsom, Essex).
 
 summary: >

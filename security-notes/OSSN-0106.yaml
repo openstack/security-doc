@@ -2,6 +2,10 @@ id: OSSN-0106
 
 title: Ironic API ramdisk endpoints require network-level access controls
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0106
+date: '2026-08-10'
+
 affected-services: |
   - ironic (>=6.2.0)
     - /v1/lookup and /v1/heartbeat: API version 1.22 (Newton, ironic 6.2.0)

@@ -2,6 +2,9 @@ id: OSSN-0083
 
 title: Keystone policy rule "identity:get_identity_providers" was ignored
 
+# Backfilled from the OSSN/OSSN-0083 wiki page creation date
+date: '2018-04-06'
+
 affected-services: OpenStack Identity Service (Keystone) versions through Mitaka, as well as Newton (<= 10.0.3), and Ocata (<= 11.0.3).
 
 summary: >

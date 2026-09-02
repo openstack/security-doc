@@ -2,6 +2,9 @@ id: OSSN-0075
 
 title: Deleted Glance image IDs may be reassigned
 
+# Backfilled from the OSSN/OSSN-0075 wiki page creation date
+date: '2016-08-18'
+
 affected-services: Glance, Liberty, Mitaka, Newton
 
 summary: |

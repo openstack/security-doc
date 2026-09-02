@@ -33,7 +33,9 @@ Process
 #. Copy ``security-notes/template.yaml`` to
    ``security-notes/OSSN-XXXX.yaml`` and fill it in.
 #. Propose the change to ``openstack/security-doc`` for review.
-#. Once merged, announce the note as described below.
+#. Once merged, set ``date`` to the date the note is announced and
+   announce it as described below. This is deliberately not the date
+   the change was proposed or merged; the two can differ by weeks.
 
 Fields
 ======
@@ -55,6 +57,10 @@ the YAML and reStructuredText conventions to follow within them.
    * - ``title``
      - yes
      - Single sentence, no trailing period.
+   * - ``date``
+     - yes
+     - Publication date as a quoted ``'YYYY-MM-DD'`` string.
+       Rendered as a parenthetical after the note's title.
    * - ``affected-services``
      - yes
      - Affected software and version ranges. Either a block scalar of

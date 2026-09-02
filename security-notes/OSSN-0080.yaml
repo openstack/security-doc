@@ -2,6 +2,9 @@ id: OSSN-0080
 
 title: Aodh can be used to launder Keystone trusts
 
+# Backfilled from the OSSN/OSSN-0080 wiki page creation date
+date: '2017-08-17'
+
 affected-services: >
   Aodh, the alarm engine of the Telemetry project.
   Pike, Ocata and Newton.

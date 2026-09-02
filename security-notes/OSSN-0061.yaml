@@ -2,6 +2,9 @@ id: OSSN-0061
 
 title: Glance image signature uses an insecure hash algorithm (MD5)
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-12-15'
+
 affected-services: Glance, Liberty
 
 summary: >

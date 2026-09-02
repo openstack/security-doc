@@ -2,6 +2,9 @@ id: OSSN-0001
 
 title: Selecting LXC as Nova Virtualization Driver can lead to data compromise
 
+# Backfilled from the Security_Notes wiki index
+date: '2013-03-15'
+
 affected-services: Nova, LXC, Libvirt, Virtualization Driver
 
 summary: |

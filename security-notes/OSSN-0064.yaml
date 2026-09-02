@@ -2,6 +2,9 @@ id: OSSN-0064
 
 title: Keystone admin_token_auth use by default causes insecure operation
 
+# Backfilled from the OSSN/OSSN-0064 wiki page creation date
+date: '2016-03-31'
+
 affected-services: Keystone, Folsom, Grizzly, Havana, Icehouse, Juno, Kilo, Liberty, Mitaka
 
 summary: |

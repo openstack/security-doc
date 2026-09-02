@@ -2,6 +2,9 @@ id: OSSN-0042
 
 title: Keystone token scoping provides no security benefit
 
+# Backfilled from the Security_Notes wiki index
+date: '2014-12-17'
+
 affected-services: Keystone, Diablo, Essex, Folsom, Grizzly, Havana, Icehouse, Juno, Kilo
 
 summary: >

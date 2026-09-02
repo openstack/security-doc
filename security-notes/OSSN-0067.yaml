@@ -2,6 +2,9 @@ id: OSSN-0067
 
 title: Barbican server discloses SQL Connection String and X-auth token
 
+# Backfilled from the OSSN/OSSN-0067 wiki page creation date
+date: '2016-04-19'
+
 affected-services: Barbican, Liberty, Mitaka
 
 summary: >

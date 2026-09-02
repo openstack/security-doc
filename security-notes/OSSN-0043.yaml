@@ -2,6 +2,9 @@ id: OSSN-0043
 
 title: glibc 'GHOST' vulnerability can allow remote code execution
 
+# Backfilled from the Security_Notes wiki index
+date: '2015-02-05'
+
 affected-services: All versions running on Linux installations with a vulnerable glibc library.
 
 summary: |

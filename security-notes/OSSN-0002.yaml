@@ -2,6 +2,9 @@ id: OSSN-0002
 
 title: HTTP POST limiting advised to avoid Essex/Folsom Keystone DoS
 
+# Backfilled from the Security_Notes wiki index
+date: '2013-04-23'
+
 affected-services: Keystone, Databases
 
 summary: |

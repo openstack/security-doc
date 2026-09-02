@@ -2,6 +2,9 @@ id: OSSN-0087
 
 title: Ceph user credential leakage to consumers of OpenStack Manila
 
+# Backfilled from the OSSN/OSSN-0087 wiki page creation date
+date: '2020-12-16'
+
 affected-services: |
   - OpenStack Manila (Mitaka 2.0.0 through Victoria 11.0.0)
   - Ceph Luminous (<=v12.2.13), Mimic (<=v13.2.10),

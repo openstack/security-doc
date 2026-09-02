@@ -2,6 +2,10 @@ id: OSSN-0105
 
 title: Glance legacy Tasks import bypasses image import URI filtering
 
+# Backfilled from git: merge date of the commit adding
+# security-notes/OSSN-0105
+date: '2026-08-06'
+
 affected-services: glance (>=30.0.0 <30.3.0, >=31.0.0 <31.1.1, ==32.0.0)
 
 summary: >

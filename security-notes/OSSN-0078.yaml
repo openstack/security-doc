@@ -2,6 +2,9 @@ id: OSSN-0078
 
 title: copy_from in Image Service API v1 allows network port scan
 
+# Backfilled from the OSSN/OSSN-0078 wiki page creation date
+date: '2017-03-09'
+
 affected-services: Version 1 of the Glance Image Service (deprecated in Newton).
 
 summary: >

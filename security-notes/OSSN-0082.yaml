@@ -2,6 +2,9 @@ id: OSSN-0082
 
 title: Heap and Stack based buffer overflows in dnsmasq prior to version 2.78
 
+# Backfilled from the OSSN/OSSN-0082 wiki page creation date
+date: '2017-10-04'
+
 affected-services: Any neutron based OpenStack deployment on a version of dnsmasq prior to 2.78.
 
 summary: >
